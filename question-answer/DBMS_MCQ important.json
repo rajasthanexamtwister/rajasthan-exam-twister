@@ -5,7 +5,7 @@
     "subtopic": "SQL Terminology / Abbreviations",
     "question_hindi": "DDL का पूर्ण रूप है-",
     "question_english": "What is the full form of DDL?",
-    "options": [
+    "options ": [
       "(a) Data Definition Language",
       "(b) Data Description Language",
       "(c) Data Derivation Language",
@@ -34,7 +34,7 @@
     "subtopic": "SQL Commands",
     "question_hindi": "कौनसी कमाण्ड SQL में टेबल के कॉलम की redefine करने के लिए प्रयोग की जाती है?",
     "question_english": "Which command is used in SQL to redefine a column of a table?",
-    "options": [
+    "options ": [
       "(a) ALTER TABLE",
       "(b) DEFINE TABLE",
       "(c) MODIFY TABLE",
@@ -62,7 +62,7 @@
     "subtopic": "Keys in Database",
     "question_hindi": "इण्टी के प्राप्त Primary Key (प्राइमरी 'की') क्या कहलाती है?",
     "question_english": "What is the derived/obtained Primary Key of an entity called?",
-    "options": [
+    "options ": [
       "(a) Primary key",
       "(b) Strong entities",
       "(c) Weak entities",
@@ -91,7 +91,7 @@
     "subtopic": "Database Elements",
     "question_hindi": "इनमें से कौनसा Database का Element नहीं है?",
     "question_english": "Which of the following is NOT an element of a database?",
-    "options": [
+    "options ": [
       "(a) सारणी / Table",
       "(b) क्वैरी / Query",
       "(c) फॉर्म / Form",
@@ -120,7 +120,7 @@
     "subtopic": "DBMS Software",
     "question_hindi": "निम्न में से कौनसा DBMS सॉफ्टवेयर नहीं है?",
     "question_english": "Which of the following is NOT a DBMS software?",
-    "options": [
+    "options ": [
       "(a) DBASE",
       "(b) FOXPRO",
       "(c) ORACLE",
@@ -146,7 +146,7 @@
     "subtopic": "File Operations",
     "question_hindi": "समय-समय पर, किसी फाइल में डाटा को जोड़ना, डाटा को बदलना तथा डाटा को मिटाना, फाइल का ___ कहलाता है?",
     "question_english": "Adding data to a file, changing data, and deleting data from time to time is called ___ of the file?",
-    "options": [
+    "options ": [
       "(a) अपडेशन / Updation",
       "(b) अपग्रेडिंग / Upgrading",
       "(c) रिस्ट्रक्चरिंग / Restructuring",
@@ -241,7 +241,7 @@
     "book_answer": "(b)",
     "answer_verified": true,
     "explanation": "DML stands for Data Manipulation Language. It includes SQL commands like SELECT, INSERT, UPDATE, DELETE that manipulate data within tables.",
-    "trap_point": "All four options start with 'Data M___ Language'. Students must remember: Manipulation = working with data (CRUD operations).",
+    "trap_point": "All four options  start with 'Data M___ Language'. Students must remember: Manipulation = working with data (CRUD operations).",
     "memory_trick": "DML = Data Manipulation Language. Think: Manipulate = CRUD (Create/Insert, Read/Select, Update, Delete).",
     "one_line_fact": "DML = Data Manipulation Language → SELECT, INSERT, UPDATE, DELETE",
     "difficulty": "Easy",
@@ -2834,7 +2834,7 @@
     "correct_answer_actual": "(d) A & C Both",
     "bug_reason": "E-R Model (option a) and Entity Relationship Model (option c) are the SAME thing. So both (a) and (c) are correct, making (d) the best answer.",
     "technical_proof": "E-R Model = Entity Relationship Model. These are just different ways of writing the same model name. Option (d) = both (a) and (c) = correct.",
-    "explanation": "The E-R Model (Entity Relationship Model) is used to show relationships between entities. Options (a) and (c) refer to the same model.",
+    "explanation": "The E-R Model (Entity Relationship Model) is used to show relationships between entities. options (a) and (c) refer to the same model.",
     "trap_point": "E-R Model and Entity Relationship Model are the same. R-R Model doesn't exist.",
     "memory_trick": "E-R = Entity-Relationship. Used to model entity relationships in database design.",
     "one_line_fact": "E-R Model (Entity Relationship Model) represents relationships between entities in database design.",
@@ -3011,7 +3011,7 @@
     "book_answer": "(c)",
     "answer_verified": true,
     "explanation": "Stack follows LIFO = Last In First Out, which is equivalent to FILO = First In Last Out. Both describe the same behavior. FIFO = Queue. Stack = LIFO = FILO.",
-    "trap_point": "FIFO = Queue. LIFO = FILO = Stack. Options (b) LIFO and (c) FILO are both correct for Stack. Book chose FILO.",
+    "trap_point": "FIFO = Queue. LIFO = FILO = Stack. option  (b) LIFO and (c) FILO are both correct for Stack. Book chose FILO.",
     "memory_trick": "STACK = plates stacked. Last plate added is First removed = LIFO = FILO.",
     "one_line_fact": "Stack = LIFO = FILO. Last item pushed is First item popped.",
     "difficulty": "Easy",
