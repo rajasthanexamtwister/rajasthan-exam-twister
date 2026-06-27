@@ -1,0 +1,389 @@
+
+<style>
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #FFF8F0;
+  --color-border-primary: #1A2744;
+  --color-border-secondary: #E5E9F2;
+  --color-border-tertiary: #E5E9F2;
+  --color-text-primary: #1A2744;
+  --color-text-secondary: #6b7a99;
+  --color-text-tertiary: #a3b1cc;
+  --border-radius-md: 10px;
+  --border-radius-lg: 14px;
+  
+  --color-background-danger: #fee2e2;
+  --color-border-danger: #fca5a5;
+  --color-text-danger: #dc2626;
+
+  --color-background-success: #dcfce7;
+  --color-border-success: #86efac;
+  --color-text-success: #16a34a;
+
+  --color-background-warning: #fef3c7;
+  --color-border-warning: #fde047;
+  --color-text-warning: #d97706;
+
+  --color-background-info: #e0f2fe;
+  --color-border-info: #7dd3fc;
+  --color-text-info: #0369a1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.sheet{padding:1rem 0;max-width:100%}
+.trap-box{background:var(--color-background-danger);border:1.5px solid var(--color-border-danger);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-bottom:1.5rem}
+.trap-title{font-size:15px;font-weight:500;color:var(--color-text-danger);margin-bottom:.75rem;letter-spacing:.02em}
+.trap-item{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:6px 0;border-bottom:.5px solid var(--color-border-danger)}
+.trap-item:last-child{border-bottom:none}
+.wrong{font-size:12px;color:var(--color-text-danger);text-decoration:line-through;opacity:.8}
+.right{font-size:13px;color:var(--color-text-success);font-weight:500}
+.label{font-size:11px;color:var(--color-text-tertiary);margin-bottom:2px}
+h2{font-size:16px;font-weight:500;color:var(--color-text-primary);margin:1.25rem 0 .6rem;padding-bottom:4px;border-bottom:1.5px solid var(--color-border-primary)}
+h3{font-size:13px;font-weight:500;color:var(--color-text-secondary);margin:.75rem 0 .4rem;text-transform:uppercase;letter-spacing:.05em}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin-bottom:1rem}
+th{background:var(--color-background-secondary);font-weight:500;font-size:11px;text-align:left;padding:6px 8px;color:var(--color-text-secondary);border:.5px solid var(--color-border-tertiary)}
+td{padding:5px 8px;border:.5px solid var(--color-border-tertiary);color:var(--color-text-primary);vertical-align:top;line-height:1.4}
+tr:nth-child(even) td{background:var(--color-background-secondary)}
+.badge{display:inline-block;font-size:10px;font-weight:500;padding:2px 7px;border-radius:4px;margin-left:4px}
+.b-red{background:var(--color-background-danger);color:var(--color-text-danger)}
+.b-green{background:var(--color-background-success);color:var(--color-text-success)}
+.b-amber{background:var(--color-background-warning);color:var(--color-text-warning)}
+.b-blue{background:var(--color-background-info);color:var(--color-text-info)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1rem}
+.card{background:var(--color-background-primary);border:.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:.75rem 1rem}
+.card h3{margin-top:0}
+ul{padding-left:1rem;margin-bottom:.5rem}
+li{font-size:12.5px;color:var(--color-text-primary);line-height:1.6;margin-bottom:1px}
+li strong{font-weight:500}
+.diff-box{background:var(--color-background-warning);border:.5px solid var(--color-border-warning);border-radius:var(--border-radius-md);padding:.75rem 1rem;margin-bottom:1rem}
+.diff-box .diff-title{font-size:12px;font-weight:500;color:var(--color-text-warning);margin-bottom:.5rem}
+.hl{background:var(--color-background-success);color:var(--color-text-success);font-weight:500;padding:1px 5px;border-radius:3px;font-size:11.5px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.print-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:6px 14px;border:.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:transparent;color:var(--color-text-primary);cursor:pointer;margin-bottom:1.25rem}
+.print-btn:hover{background:var(--color-background-secondary)}
+.section-note{font-size:11px;color:var(--color-text-tertiary);margin-bottom:.5rem}
+.charn-row td:first-child{font-weight:500}
+</style>
+<h2 class="sr-only">Rajasthan Ekikaran — High-Yield Final Revision Sheet</h2>
+<div class="sheet">
+
+<button class="print-btn" onclick="window.print()"><i class="ti ti-printer" aria-hidden="true"></i> Print this sheet</button>
+
+<!-- TRAP BOX -->
+<div class="trap-box">
+  <div class="trap-title">🚨 MERI EXAM TRAPS & CONFUSIONS — SABSE PEHLE PADHO</div>
+
+  <div style="font-size:11px;color:var(--color-text-danger);margin-bottom:.75rem;opacity:.85">Jo galat kiya — ek baar dekh lo aur fix karo</div>
+
+  <div class="trap-item">
+    <div><div class="label">TRAP 1 — Rajasthan Sangh PM</div><div class="wrong">Heeralal Shastri / Shobharam</div></div>
+    <div><div class="label">✅ SAHI</div><div class="right">Gokul Lal Asawa — 25 March 1948</div></div>
+  </div>
+  <div class="trap-item">
+    <div><div class="label">TRAP 2 — Matsya Sangh Raj-Pramukh</div><div class="wrong">Ganesha pal / Bharatpur / Alwar ka raja</div></div>
+    <div><div class="label">✅ SAHI</div><div class="right">Uday Bhan Singh — Dholpur maharaja</div></div>
+  </div>
+  <div class="trap-item">
+    <div><div class="label">TRAP 3 — Matsya Sangh ka naam kisne diya?</div><div class="wrong">Sardar Patel / Nehru</div></div>
+    <div><div class="label">✅ SAHI</div><div class="right">K.M. Munshi</div></div>
+  </div>
+  <div class="trap-item">
+    <div><div class="label">TRAP 4 — Sanyukt Rajasthan udghatan</div><div class="wrong">Sardar Patel (30 March wala yaad aata hai)</div></div>
+    <div><div class="label">✅ SAHI</div><div class="right">Jawaharlal Nehru — 18 April 1948, Udaipur</div></div>
+  </div>
+  <div class="trap-item">
+    <div><div class="label">TRAP 5 — Brihat Rajasthan Raj-Pramukh</div><div class="wrong">Bhupal Singh / Bheem Singh</div></div>
+    <div><div class="label">✅ SAHI</div><div class="right">Sawai Man Singh II (Jaipur) = Rajpramukh; Bhupal Singh = Maharaj Pramukh</div></div>
+  </div>
+  <div class="trap-item">
+    <div><div class="label">TRAP 6 — Shankarrao Dev samiti kisme nahi tha?</div><div class="wrong">R.S. Saini (option mein tha, lagta tha sahi hai)</div></div>
+    <div><div class="label">✅ SAHI</div><div class="right">R.S. Saini — samiti mein NAHI tha. Sahi sadsya: Shankarrao Dev + Prabhudayal + R.K. Sidhwa</div></div>
+  </div>
+  <div class="trap-item">
+    <div><div class="label">TRAP 7 — Rajasthan ki sabse badi riyasat</div><div class="wrong">Jaipur / Udaipur</div></div>
+    <div><div class="label">✅ SAHI</div><div class="right">Jodhpur (Marwar) — kshetrafal mein sabse bada</div></div>
+  </div>
+  <div class="trap-item">
+    <div><div class="label">TRAP 8 — Udaipur ka Rajasthan Sangh mein vilay</div><div class="wrong">25 March 1948 (Rajasthan Sangh ke saath)</div></div>
+    <div><div class="label">✅ SAHI</div><div class="right">18 April 1948 — 3rd charan, Sanyukt Rajasthan mein</div></div>
+  </div>
+  <div class="trap-item">
+    <div><div class="label">TRAP 9 — Death Warrant kisne kaha?</div><div class="wrong">Alwar ke Tej Singh / Kota ke Bheem Singh</div></div>
+    <div><div class="label">✅ SAHI</div><div class="right">Banswara ke Maharawal Chandraveer Singh</div></div>
+  </div>
+  <div class="trap-item">
+    <div><div class="label">TRAP 10 — Matsya Sangh vilay samiti</div><div class="wrong">Satyanarayan Rao / Fazal Ali</div></div>
+    <div><div class="label">✅ SAHI</div><div class="right">Dr. Shankarrao Dev Samiti → 15 May 1949</div></div>
+  </div>
+  <div class="trap-item">
+    <div><div class="label">TRAP 11 — 25 March 1948 Rajasthan Sangh mein NAHI tha</div><div class="wrong">Pratigarh / Dungarpir</div></div>
+    <div><div class="label">✅ SAHI</div><div class="right">Udaipur — 3rd charan mein aaya (18 April 1948)</div></div>
+  </div>
+  <div class="trap-item">
+    <div><div class="label">TRAP 12 — Rajpramukh pad kab samaapt?</div><div class="wrong">1950 (constitution lagu hua)</div></div>
+    <div><div class="label">✅ SAHI</div><div class="right">1 November 1956 — 7th Constitutional Amendment</div></div>
+  </div>
+  <div class="trap-item">
+    <div><div class="label">TRAP 13 — UP mein milna chahta tha matsya ka kaun sa rajya?</div><div class="wrong">Dholpur / Alwar</div></div>
+    <div><div class="label">✅ SAHI</div><div class="right">Bharatpur — UP mein milna chahta tha</div></div>
+  </div>
+  <div class="trap-item">
+    <div><div class="label">TRAP 14 — Sirojahi ka vilay</div><div class="wrong">Ek hi baar mein</div></div>
+    <div><div class="label">✅ SAHI</div><div class="right">Do charon mein — pahle Bombay ko, phir 1956 mein Rajasthan mein</div></div>
+  </div>
+</div>
+
+<!-- MASTER TABLE -->
+<h2>Master Table — Sabhi 7 Charan</h2>
+<p class="section-note">Sabse zyada exam mein aata hai — dates + pramukh + PM ek saath yaad karo</p>
+<table>
+  <tr>
+    <th>#</th><th>Naam</th><th>Tarikh</th><th>Rajdhani</th><th>Rajpramukh</th><th>PM / CM</th><th>Udghatan</th>
+  </tr>
+  <tr class="charn-row">
+    <td>1</td>
+    <td><strong>Matsya Sangh</strong><br><span style="font-size:10px;color:var(--color-text-tertiary)">Alwar,Bharatpur,Dholpur,Karauli + Neemurana</span></td>
+    <td>18 March 1948</td>
+    <td>Alwar</td>
+    <td>Uday Bhan Singh<br><span style="font-size:10px;color:var(--color-text-tertiary)">(Dholpur)</span></td>
+    <td>Shobharam Kumawat<br><span style="font-size:10px">Dy: Jugal Kishor Chaturvedi</span></td>
+    <td>N.V. Gadgil</td>
+  </tr>
+  <tr class="charn-row">
+    <td>2</td>
+    <td><strong>Purv Rajasthan</strong><br><span style="font-size:10px;color:var(--color-text-tertiary)">Kota,Bundi,Jhalawar,Tonk,Kishangad,Pratapgarh,Dungarpor,Banaswara,Shahpura+Kushalgarh</span></td>
+    <td>25 March 1948</td>
+    <td>Kota</td>
+    <td>Bheem Singh<br><span style="font-size:10px;color:var(--color-text-tertiary)">(Kota)</span></td>
+    <td>Gokul Lal Asawa</td>
+    <td>N.V. Gadgil</td>
+  </tr>
+  <tr class="charn-row">
+    <td>3</td>
+    <td><strong>Sanyukt Rajasthan</strong><br><span style="font-size:10px;color:var(--color-text-tertiary)">Purv Rajasthan + Udaipur</span></td>
+    <td>18 April 1948</td>
+    <td>Udaipur</td>
+    <td>Bhupal Singh<br><span style="font-size:10px;color:var(--color-text-tertiary)">(Mewar — apahij tha)</span></td>
+    <td>Manikya Lal Verma<br><span style="font-size:10px">Dy PM: Gokul Lal Asawa</span></td>
+    <td>Jawaharlal Nehru</td>
+  </tr>
+  <tr class="charn-row">
+    <td>4</td>
+    <td><strong>Brihat Rajasthan</strong><br><span style="font-size:10px;color:var(--color-text-tertiary)">+Jaipur,Jodhpur,Bikaner,Jaisalmer,Lawa(14 riyasat+2 thikane)</span></td>
+    <td>30 March 1949 🏆</td>
+    <td>Jaipur</td>
+    <td><strong>Sawai Man Singh II</strong> = Rajpramukh<br><strong>Bhupal Singh</strong> = Maharaj Pramukh<br><span style="font-size:10px">Upar-Raj: Bheem Singh (Kota)</span></td>
+    <td>Heeralal Shastri</td>
+    <td>Sardar Vallabhbhai Patel</td>
+  </tr>
+  <tr class="charn-row">
+    <td>5</td>
+    <td><strong>Sanyukt Brihat Rajasthan</strong><br><span style="font-size:10px;color:var(--color-text-tertiary)">Brihat + Matsya Sangh</span></td>
+    <td>15 May 1949</td>
+    <td>Jaipur</td>
+    <td>Man Singh II / Bhupal Singh</td>
+    <td>Heeralal Shastri<br><span style="font-size:10px">Shobharam → Revenue Minister</span></td>
+    <td>Sardar Patel</td>
+  </tr>
+  <tr class="charn-row">
+    <td>6</td>
+    <td><strong>Rajasthan</strong> (B Shreni ka rajya)<br><span style="font-size:10px;color:var(--color-text-tertiary)">+Adha Sirohi; "Rajasthan" naam rakha</span></td>
+    <td>26 Jan 1950</td>
+    <td>Jaipur</td>
+    <td>Man Singh II / Bhupal Singh</td>
+    <td>Heeralal Shastri (Manorit)<br><span style="font-size:10px">Badme: Tikaram Palival → Jai Narayan Vyas</span></td>
+    <td>—</td>
+  </tr>
+  <tr class="charn-row">
+    <td>7</td>
+    <td><strong>Vartaman Rajasthan</strong><br><span style="font-size:10px;color:var(--color-text-tertiary)">+Ajmer-Merwada+Abu-Delwada+Sunel Tappa; Sironji MP ko diya</span></td>
+    <td>1 Nov 1956</td>
+    <td>Jaipur</td>
+    <td>Rajpramukh samaapt → <strong>1st Governor: Gurmukh Nihal Singh</strong></td>
+    <td>Mohanlal Sukhadia<br><span style="font-size:10px">7th Constitution Amendment</span></td>
+    <td>Fazal Ali Aayog</td>
+  </tr>
+</table>
+
+<!-- CONFUSION TABLE — RAJPRAMUKH vs MAHARAJ PRAMUKH -->
+<div class="diff-box">
+  <div class="diff-title">⚠️ CONFUSION TABLE — Rajpramukh vs Maharaj Pramukh (Brihat Rajasthan, 30 March 1949)</div>
+  <table style="margin-bottom:0">
+    <tr><th>Pad</th><th>Naam</th><th>Riyasat</th></tr>
+    <tr><td><span class="hl">Maharaj Pramukh</span> (senior)</td><td>Maharana Bhupal Singh</td><td>Mewar / Udaipur</td></tr>
+    <tr><td><span class="badge b-blue">Rajpramukh</span></td><td>Sawai Man Singh II</td><td>Jaipur</td></tr>
+    <tr><td>Varish Uparajpramukh</td><td>Bheem Singh</td><td>Kota</td></tr>
+    <tr><td>Kanishth Uparajpramukh</td><td>Bhadur Singh (Bundi) / Laxman Singh (Dungarpor)</td><td>—</td></tr>
+  </table>
+</div>
+
+<!-- CONFUSION TABLE — UDGHATAN -->
+<div class="diff-box">
+  <div class="diff-title">⚠️ CONFUSION TABLE — Udghatan karta (kaun kab kahan)</div>
+  <table style="margin-bottom:0">
+    <tr><th>Charan</th><th>Udghatan Karta</th><th>Jagah</th><th>Tarikh</th></tr>
+    <tr><td>Matsya Sangh (1st)</td><td>N.V. Gadgil</td><td>Lohagarh Kila, Bharatpur</td><td>18 March 1948</td></tr>
+    <tr><td>Purv Rajasthan (2nd)</td><td>N.V. Gadgil</td><td>Kota</td><td>25 March 1948</td></tr>
+    <tr><td><strong>Sanyukt Rajasthan (3rd)</strong></td><td><strong>Jawaharlal Nehru</strong></td><td>Udaipur</td><td>18 April 1948</td></tr>
+    <tr><td><strong>Brihat Rajasthan (4th)</strong></td><td><strong>Sardar Patel</strong></td><td>Jaipur (City Palace)</td><td>30 March 1949</td></tr>
+    <tr><td>Sanyukt Brihat (5th)</td><td>Sardar Patel</td><td>Jaipur</td><td>15 May 1949</td></tr>
+  </table>
+</div>
+
+<!-- KEY FACTS GRID -->
+<h2>Key One-Liners — Exam Mein Seedha Aate Hain</h2>
+<div class="grid2">
+  <div class="card">
+    <h3>Riyasat Records</h3>
+    <ul>
+      <li><strong>Sabse badi (kshetrafal):</strong> Jodhpur</li>
+      <li><strong>Sabse choti (kshetrafal):</strong> Shahpura</li>
+      <li><strong>Sabse badi (jansankhya):</strong> Jaipur</li>
+      <li><strong>Sabse prachin:</strong> Mewar (565 AD, Guhil dwara)</li>
+      <li><strong>Sabse navin:</strong> Jhalawar (Kota se alag)</li>
+      <li><strong>Kendra shashit pradesh:</strong> Ajmer-Merwada</li>
+      <li><strong>Total:</strong> 19 riyasat + 3 thikane + 1 chief-ship</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Thikane</h3>
+    <ul>
+      <li><strong>Neemurana</strong> — Alwar (sabse chota)</li>
+      <li><strong>Kushalgarh</strong> — Banswara (sabse bada)</li>
+      <li><strong>Lawa</strong> — Jaipur</li>
+    </ul>
+    <h3 style="margin-top:.75rem">Ajmer Ke Fact</h3>
+    <ul>
+      <li>Dhara Sabha: 30 sadasya</li>
+      <li>1st & only CM: Haribhau Upadhyay</li>
+      <li>Vilay: 1 Nov 1956</li>
+      <li>26th jila bana Rajasthan ka</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Matsya Sangh ke Andar</h3>
+    <ul>
+      <li><strong>4 riyasat:</strong> Alwar, Bharatpur, Dholpur, Karauli</li>
+      <li><strong>1 thikana:</strong> Neemurana (Alwar)</li>
+      <li>Naam: K.M. Munshi</li>
+      <li>Jansankhya: ~19 lakh | Aay: 1.84 crore</li>
+      <li>Rajdhani: Alwar</li>
+      <li>Rajpramukh: Udaybhan Singh (Dholpur)</li>
+      <li>PM: Shobharam Kumawat</li>
+      <li>Dy PM: Jugal Kishor Chaturvedi</li>
+      <li><strong>Mantrimandal mein NAHI tha:</strong> Prem Narayan Mathur ❌</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Important People</h3>
+    <ul>
+      <li><strong>Pehla vilay patra:</strong> Bikaner ke Sadul Singh</li>
+      <li><strong>"Death Warrant":</strong> Banswara ke Chandraveer Singh</li>
+      <li><strong>Swatantra rakhna chahta tha:</strong> Jodhpur — Hanwant Singh</li>
+      <li><strong>Pakistan mein milna chahte the:</strong> Jodhpur, Jaisalmer, Bikaner, Dholpur</li>
+      <li><strong>Antim Maharaj Pramukh:</strong> Bhupal Singh</li>
+      <li><strong>1st Rajyapal:</strong> Gurmukh Nihal Singh (25 Oct 1956)</li>
+      <li><strong>1939 ekikaran prashn:</strong> Lord Linlithgow</li>
+      <li><strong>Riyasati Vibhag sachiv:</strong> V.P. Menon</li>
+    </ul>
+  </div>
+</div>
+
+<!-- COMMITTEES TABLE -->
+<h2>Samitiyaan — Confusing Ones</h2>
+<table>
+  <tr><th>Samiti</th><th>Kaam</th><th>Result</th></tr>
+  <tr><td><strong>Shankarrao Dev Samiti</strong><br><span style="font-size:10px">Sadsya: Prabhudayal, R.K. Sidhwa (3 total)</span></td><td>Bharatpur-Dholpur ke log UP ya Raj — janata ki raay</td><td>Matsya Sangh → Brihat Raj (15 May 1949) — Sanyukt Brihat</td></tr>
+  <tr><td><strong>B.R. Patel Samiti</strong><br><span style="font-size:10px">T.C. Puri, S.P. Sinha</span></td><td>Rajdhani vivad (Jaipur vs Jodhpur)</td><td>Jaipur = Rajdhani; Jodhpur = High Court</td></tr>
+  <tr><td><strong>P. Satyanarayan Rao Samiti</strong><br><span style="font-size:10px">V. Vishwanathan, B.K. Guha</span></td><td>1958 — Rajdhani confirm karna + vibhag batana</td><td>Jaipur confirmed; HC-Jodhpur, Education-Bikaner, Agriculture-Bharatpur, Minerals-Udaipur</td></tr>
+  <tr><td><strong>Fazal Ali Aayog</strong><br><span style="font-size:10px">Hridaynath Kunzru, K.M. Panikkar</span></td><td>Rajya Punarghatan (1952–1956)</td><td>Ajmer+Abu-Delwada+Sunel Tappa → Rajasthan; Sironji → MP</td></tr>
+  <tr><td><strong>Muni Jinvijay Samiti</strong></td><td>Abu-Delwada ka Rajasthan mein vilay</td><td>Abu Road + Delwada → Rajasthan (1956)</td></tr>
+</table>
+
+<!-- VIBHAG TABLE -->
+<h2>Vibhag — Brihat Rajasthan (30 March 1949)</h2>
+<table>
+  <tr><th>Shahar</th><th>Vibhag / Karyalay</th></tr>
+  <tr><td>Bikaner</td><td>Shiksha Vibhag</td></tr>
+  <tr><td>Jodhpur</td><td>High Court / Nyay Vibhag</td></tr>
+  <tr><td>Kota</td><td>Van evam Sahkari Vibhag</td></tr>
+  <tr><td>Bharatpur</td><td>Krishi Vibhag</td></tr>
+  <tr><td>Udaipur</td><td>Khanij Vibhag</td></tr>
+  <tr><td>Ajmer</td><td>Lok Seva Aayog</td></tr>
+</table>
+
+<!-- MISC FACTS -->
+<h2>Misc But High-Yield Facts</h2>
+<div class="grid2">
+  <div class="card">
+    <h3>Riyasat Firsts</h3>
+    <ul>
+      <li>Angrejo se pehli sandhi: Karauli (Nov 1817)</li>
+      <li>Angrejo se antim sandhi: Sirohi (Sept 1823)</li>
+      <li>Shikaar Act: Tonk (1901)</li>
+      <li>Daak ticket: Jaipur (1904 — Madhosing II)</li>
+      <li>Vaniki adhiniym: Alwar (1935)</li>
+      <li>Jantantrik shasan: Shahpura ✅</li>
+      <li>Jantantrik shasan NAHI: Jaisalmer ❌</li>
+      <li>Jaisalmer = "Rajasthan ka Andaman" = sabse pichhda</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>CM List — Rajasthan ke CM</h3>
+    <ul>
+      <li><strong>Manorit (appointed, not elected):</strong></li>
+      <li>1. Heeralal Shastri</li>
+      <li>2. C.S. Venkatachar (ICS)</li>
+      <li>3. Jai Narayan Vyas</li>
+      <li><strong>Nirvachit (elected):</strong></li>
+      <li>1. Tikaram Palival</li>
+      <li>2. Jai Narayan Vyas (dono baar)</li>
+      <li>3. Mohanlal Sukhadia (1954 → 17 saal = "Aadhunik Rajasthan")</li>
+      <li><strong>JNV = ek matr manorit + nirvachit CM</strong></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Rajasthan shabd ka itihas</h3>
+    <ul>
+      <li>Rigved mein: Brahmavarta</li>
+      <li>Ramayan mein: Marukaantay</li>
+      <li>1800 — "Rajputana" shabd: George Thomas</li>
+      <li>1829 — "Rajasthan" shabd: Col. James Tod (Annals & Antiquities of Rajasthan)</li>
+      <li>Tod = Rajasthan itihas ka pita</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Kuch Aur Important</h3>
+    <ul>
+      <li>Ekikaran ka time: 8 saal 7 mahine 14 din</li>
+      <li>Riyasati Vibhag: 5 July 1947 | Adhyaksh: Sardar Patel</li>
+      <li>Bharat me kul riyasat: 562 | Rajasthan mein: 19</li>
+      <li>Nehru ne "8th wonder of world" kaha: Jaisalmer ko</li>
+      <li>Rajasthan = "B" shreni ka rajya (26 Jan 1950)</li>
+      <li>Rajasthan = Uttar Kshetriya Parishad ka sadasya</li>
+      <li>26th Constitution (1971) — Privy Purse samaapt</li>
+      <li>Privy purse: Jaipur-18L, Jodhpur-17.5L, Bikaner-27L</li>
+    </ul>
+  </div>
+</div>
+
+<!-- QUICK DATES STRIP -->
+<h2>Date Strip — Ratto Lo</h2>
+<table>
+  <tr>
+    <th>Tarikh</th><th>Event</th>
+  </tr>
+  <tr><td>5 July 1947</td><td>Riyasati Vibhag / Sachivaalaya sthapna</td></tr>
+  <tr><td>18 March 1948</td><td>Matsya Sangh — Charan 1</td></tr>
+  <tr><td>25 March 1948</td><td>Purv Rajasthan (Rajasthan Sangh) — Charan 2</td></tr>
+  <tr><td>18 April 1948</td><td>Sanyukt Rajasthan — Charan 3 (Udaipur shaamil)</td></tr>
+  <tr><td>14 Jan 1949</td><td>Udaipur mein Patel ki ghoshna (4th charan ki ghoshna)</td></tr>
+  <tr><td><strong>30 March 1949 🏆</strong></td><td><strong>Brihat Rajasthan — RAJASTHAN DIWAS</strong></td></tr>
+  <tr><td>15 May 1949</td><td>Matsya Sangh → Brihat mein milaya — Sanyukt Brihat</td></tr>
+  <tr><td>26 Jan 1950</td><td>Rajasthan = B rajya; "Rajasthan" naam official</td></tr>
+  <tr><td>25 Oct 1956</td><td>Gurmukh Nihal Singh = 1st Rajyapal niyukt</td></tr>
+  <tr><td><strong>1 Nov 1956</strong></td><td><strong>Vartaman Rajasthan — Charan 7 — Rajpramukh samaapt</strong></td></tr>
+</table>
+
+</div>

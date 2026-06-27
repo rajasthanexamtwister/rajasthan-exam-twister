@@ -1,0 +1,544 @@
+
+<style>
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #FFF8F0;
+  --color-border-primary: #1A2744;
+  --color-border-secondary: #E5E9F2;
+  --color-border-tertiary: #E5E9F2;
+  --color-text-primary: #1A2744;
+  --color-text-secondary: #6b7a99;
+  --color-text-tertiary: #a3b1cc;
+  --border-radius-md: 10px;
+  --border-radius-lg: 14px;
+  
+  --color-background-danger: #fee2e2;
+  --color-border-danger: #fca5a5;
+  --color-text-danger: #dc2626;
+
+  --color-background-success: #dcfce7;
+  --color-border-success: #86efac;
+  --color-text-success: #16a34a;
+
+  --color-background-warning: #fef3c7;
+  --color-border-warning: #fde047;
+  --color-text-warning: #d97706;
+
+  --color-background-info: #e0f2fe;
+  --color-border-info: #7dd3fc;
+  --color-text-info: #0369a1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.page{padding:1rem 1.25rem;max-width:100%}
+h1{font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+h2{font-size:15px;font-weight:500;color:var(--color-text-primary);margin:1.2rem 0 0.5rem}
+h3{font-size:13px;font-weight:500;color:var(--color-text-secondary);margin:0.8rem 0 0.3rem;text-transform:uppercase;letter-spacing:.5px}
+.sub{font-size:13px;color:var(--color-text-secondary)}
+.trap-box{background:#FCEBEB;border:0.5px solid #F09595;border-radius:var(--border-radius-md);padding:0.75rem 1rem;margin-bottom:0.5rem}
+.trap-box .label{font-size:11px;font-weight:500;color:#A32D2D;margin-bottom:4px}
+.trap-box .q{font-size:13px;color:#501313;margin-bottom:4px}
+.trap-box .ans{font-size:13px;color:#3B6D11;font-weight:500}
+.trap-box .wrong{font-size:12px;color:#A32D2D;text-decoration:line-through}
+.trap-box .logic{font-size:12px;color:#791F1F;margin-top:3px;font-style:italic}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:0.6rem 0.8rem}
+.card .label{font-size:11px;color:var(--color-text-secondary);margin-bottom:3px}
+.card .val{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+.card .sub{font-size:12px;color:var(--color-text-secondary)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{font-weight:500;font-size:12px;color:var(--color-text-secondary);text-align:left;padding:4px 6px;border-bottom:0.5px solid var(--color-border-tertiary)}
+td{padding:4px 6px;color:var(--color-text-primary);border-bottom:0.5px solid var(--color-border-tertiary)}
+td:first-child{font-weight:500}
+.ok{color:#3B6D11;font-weight:500}
+.bad{color:#A32D2D}
+.warn{color:#854F0B;font-weight:500}
+.badge{display:inline-block;font-size:11px;padding:1px 6px;border-radius:var(--border-radius-md);margin-left:4px}
+.badge-r{background:#FCEBEB;color:#A32D2D}
+.badge-g{background:#EAF3DE;color:#3B6D11}
+.badge-a{background:#FAEEDA;color:#854F0B}
+.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:1rem 0}
+.row{display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}
+.pill{font-size:12px;padding:2px 8px;border-radius:99px;border:0.5px solid var(--color-border-tertiary);color:var(--color-text-secondary)}
+.sc-box{background:#E1F5EE;border:0.5px solid #5DCAA5;border-radius:var(--border-radius-md);padding:0.6rem 0.8rem;font-size:13px;color:#04342C}
+.sc-box strong{color:#0F6E56}
+.diff-table td:nth-child(2){color:#3B6D11}
+.diff-table td:nth-child(3){color:#A32D2D}
+.sec-title{display:flex;align-items:center;gap:8px;margin:1.2rem 0 0.5rem}
+.sec-title .icon{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.icon-r{background:#FCEBEB}
+.icon-g{background:#E1F5EE}
+.icon-b{background:#E6F1FB}
+.icon-a{background:#FAEEDA}
+</style>
+
+<div class="page">
+<h1>🗒️ Computer Exam — High-Yield Revision Sheet</h1>
+<p class="sub">Based on your error log + notes. Print-ready.</p>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-r"><i class="ti ti-alert-triangle" style="font-size:14px;color:#A32D2D"></i></div>
+  <h2 style="margin:0">🚨 MY EXAM TRAPS &amp; CONFUSIONS</h2>
+</div>
+
+<div class="trap-box">
+  <div class="label">TRAP 1 — Memory Type</div>
+  <div class="q">Q: Volatile memory kaun si hai?</div>
+  <div class="ans">✅ RAM (power off → data gone)</div>
+  <div class="wrong">❌ ROM, HDD, SSD — ye non-volatile hain</div>
+  <div class="logic">Logic: RAM = temporary workspace. Bijli gayi, sab gayi.</div>
+</div>
+
+<div class="trap-box">
+  <div class="label">TRAP 2 — Memory Units</div>
+  <div class="q">Q: 1024 Bytes = ?</div>
+  <div class="ans">✅ 1 KB (Kilobyte)</div>
+  <div class="wrong">❌ 1 GB — bohot common galti!</div>
+  <div class="logic">Logic: Bit → Nibble(4) → Byte(8) → KB(1024B) → MB → GB → TB → PB → EB → ZB → YB</div>
+</div>
+
+<div class="trap-box">
+  <div class="label">TRAP 3 — OS vs Application Software</div>
+  <div class="q">Q: Word Processing, Spreadsheet, Photo Editing kis software ke example hain?</div>
+  <div class="ans">✅ Application Software</div>
+  <div class="wrong">❌ System Software — OS nahi hai ye!</div>
+  <div class="logic">Logic: OS = Windows/Linux. MS Word, Excel, Photoshop = Application.</div>
+</div>
+
+<div class="trap-box">
+  <div class="label">TRAP 4 — System Software Mein Kya Nahi</div>
+  <div class="q">Q: Desktop Publishing (DTP), Database Software — System Software hai?</div>
+  <div class="ans">✅ Nahi — ye Application Software hain</div>
+  <div class="wrong">❌ System Software includes: OS, Device Driver, Utility, Language Translator</div>
+  <div class="logic">Logic: DTP (PageMaker, Corel) user ke liye hai = Application.</div>
+</div>
+
+<div class="trap-box">
+  <div class="label">TRAP 5 — Impact vs Non-Impact Printer</div>
+  <div class="q">Q: Laser Printer kis category mein?</div>
+  <div class="ans">✅ Non-Impact (koi contact nahi, toner use karta hai)</div>
+  <div class="wrong">❌ Dot Matrix, Daisy Wheel, Drum = Impact printers</div>
+  <div class="logic">Logic: Impact = dhaka deta hai paper ko. Laser/Inkjet = nahi deta.</div>
+</div>
+
+<div class="trap-box">
+  <div class="label">TRAP 6 — Plotter Input hai ya Output?</div>
+  <div class="q">Q: Plotter kya hai?</div>
+  <div class="ans">✅ Output Device — large CAD drawings, maps print karta hai</div>
+  <div class="wrong">❌ Input Device — bilkul nahi!</div>
+  <div class="logic">Logic: Plotter pen use karke lines draw karta hai — Output.</div>
+</div>
+
+<div class="trap-box">
+  <div class="label">TRAP 7 — Browser vs Email vs Search Engine</div>
+  <div class="q">Q: Gmail web browser hai?</div>
+  <div class="ans">✅ Nahi — Gmail = Email Service</div>
+  <div class="wrong">❌ KompoZer bhi browser nahi — HTML editor hai</div>
+  <div class="logic">Logic: Browser = Chrome, Firefox, Safari, Opera, Edge. Gmail browser ke andar chalta hai.</div>
+</div>
+
+<div class="trap-box">
+  <div class="label">TRAP 8 — Booting Sequence</div>
+  <div class="q">Q: Computer ON hone par sabse pehle kya load hota hai?</div>
+  <div class="ans">✅ BIOS (ROM mein store hai)</div>
+  <div class="wrong">❌ OS nahi, Driver nahi — pehle BIOS, phir OS</div>
+  <div class="logic">Logic: BIOS → POST → OS Load (Booting). BIOS ROM ka hissa hai.</div>
+</div>
+
+<div class="trap-box">
+  <div class="label">TRAP 9 — ICT vs IT</div>
+  <div class="q">Q: ICT = IT ka subset hai?</div>
+  <div class="ans">✅ Galat — IT ICT ka subset hai (ICT bada concept hai)</div>
+  <div class="wrong">❌ Software use rights = License, Copyright nahi exactly</div>
+  <div class="logic">Logic: ICT = IT + Communication technology. IT = iska ek hissa.</div>
+</div>
+
+<div class="trap-box">
+  <div class="label">TRAP 10 — Antivirus vs OS Confusion</div>
+  <div class="q">Q: Fedora, Linux — Antivirus hai?</div>
+  <div class="ans">✅ Nahi — ye Operating Systems hain</div>
+  <div class="wrong">❌ Antivirus = Avast, Norton, Kaspersky, McAfee, AVG, NOD32</div>
+  <div class="logic">Logic: Linux ek OS hai, virus se protect nahi karta directly.</div>
+</div>
+
+<div class="trap-box">
+  <div class="label">TRAP 11 — Open Source Nahi Hai</div>
+  <div class="q">Q: Open Source nahi hai?</div>
+  <div class="ans">✅ Adobe Photoshop = Proprietary (Paid)</div>
+  <div class="wrong">❌ Linux, Firefox, LibreOffice, Ubuntu, WordPress = Open Source hain</div>
+  <div class="logic">Logic: "Free to use and modify" = Open Source. Adobe = pay karno.</div>
+</div>
+
+<div class="trap-box">
+  <div class="label">TRAP 12 — GUI Use Kya Nahi Karta</div>
+  <div class="q">Q: GUI interface mein kya use nahi hota?</div>
+  <div class="ans">✅ Graphs — GUI mein Icons, Menus, Colors use hote hain</div>
+  <div class="wrong">❌ MS-DOS = GUI nahi, CUI (Command Line) hai</div>
+  <div class="logic">Logic: GUI = Windows/Mac/Android style. DOS = text commands.</div>
+</div>
+
+<div class="trap-box">
+  <div class="label">TRAP 13 — Hard Disk Cylinder Count</div>
+  <div class="q">Q: 10 surfaces, har surface mein 5 tracks → kitne cylinders?</div>
+  <div class="ans">✅ 5 Cylinders (same track number = 1 cylinder)</div>
+  <div class="wrong">❌ 50 nahi (surfaces × tracks = cylinders count is tracks per surface)</div>
+  <div class="logic">Logic: Cylinder = ek hi track number sab surfaces par. Tracks count = Cylinder count.</div>
+</div>
+
+<div class="trap-box">
+  <div class="label">TRAP 14 — Nibble vs Byte</div>
+  <div class="q">Q: Computer ki sabse chhoti unit?</div>
+  <div class="ans">✅ Bit (0 ya 1)</div>
+  <div class="wrong">❌ Nibble = 4 bits, Byte = 8 bits — ye chhoti units hain lekin Bit sabse chhhoti</div>
+  <div class="logic">Logic: Bit → Nibble(4) → Byte(8). Nibble sabse chhoti nahi, Bit hai.</div>
+</div>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-g"><i class="ti ti-layout-grid" style="font-size:14px;color:#0F6E56"></i></div>
+  <h2 style="margin:0">Software Classification — Complete Chart</h2>
+</div>
+
+<table>
+  <tr><th>Category</th><th>Examples ✅</th><th>NOT in this category ❌</th></tr>
+  <tr><td>System Software</td><td>Windows, Linux, Unix, Android, iOS, Device Driver, Compiler, Utility</td><td>MS Word, Excel, Photoshop, Chrome, DTP</td></tr>
+  <tr><td>Application Software</td><td>MS Word, Excel, Photoshop, Chrome, AutoCAD, Firefox, Tally, PageMaker</td><td>OS, Device Driver</td></tr>
+  <tr><td>Utility Software</td><td>Antivirus, Disk Defragmenter, Disk Cleanup, CCleaner, WinZip, Backup</td><td>MS Word, OS</td></tr>
+  <tr><td>Open Source</td><td>Linux, Ubuntu, Firefox, LibreOffice, WordPress, GIMP, OpenOffice</td><td>Adobe Photoshop, MS Windows, MS Office</td></tr>
+</table>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-b"><i class="ti ti-devices" style="font-size:14px;color:#185FA5"></i></div>
+  <h2 style="margin:0">Input vs Output — Exam Traps Table</h2>
+</div>
+
+<div class="grid2">
+  <div>
+    <h3>Input Devices ✅</h3>
+    <table>
+      <tr><td>Keyboard</td><td class="sub">Text input</td></tr>
+      <tr><td>Mouse</td><td class="sub">Pointing device</td></tr>
+      <tr><td>Scanner</td><td class="sub">Hardcopy → Softcopy</td></tr>
+      <tr><td>OCR</td><td class="sub">Printed text → editable</td></tr>
+      <tr><td>OMR</td><td class="sub">Answer sheet check</td></tr>
+      <tr><td>MICR</td><td class="sub">Bank cheque</td></tr>
+      <tr><td>Barcode Reader</td><td class="sub">Product scan</td></tr>
+      <tr><td>Joystick</td><td class="sub">Games/robot</td></tr>
+      <tr><td>Light Pen</td><td class="sub">Screen drawing</td></tr>
+      <tr><td>Trackball</td><td class="sub">Mouse alternative</td></tr>
+      <tr><td>Microphone</td><td class="sub">Voice input</td></tr>
+      <tr><td>Webcam</td><td class="sub">Video/image input</td></tr>
+    </table>
+  </div>
+  <div>
+    <h3>Output Devices ✅</h3>
+    <table>
+      <tr><td>Monitor/VDU</td><td class="sub">Soft copy</td></tr>
+      <tr><td>Printer</td><td class="sub">Hard copy</td></tr>
+      <tr><td>Plotter</td><td class="sub">CAD/large drawings</td></tr>
+      <tr><td>Speaker</td><td class="sub">Audio</td></tr>
+      <tr><td>Projector</td><td class="sub">Large screen display</td></tr>
+      <tr><td colspan="2" style="color:#A32D2D;font-size:12px;padding-top:6px">❌ Scanner = Input (not output)</td></tr>
+      <tr><td colspan="2" style="color:#A32D2D;font-size:12px">❌ Mouse = Input (not output)</td></tr>
+      <tr><td colspan="2" style="color:#A32D2D;font-size:12px">❌ Joystick = Input (not output)</td></tr>
+      <tr><td colspan="2" style="color:#0F6E56;font-size:12px;padding-top:6px">✅ Touch Screen = Both I/O</td></tr>
+      <tr><td colspan="2" style="color:#0F6E56;font-size:12px">✅ Modem = Both I/O</td></tr>
+    </table>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-a"><i class="ti ti-printer" style="font-size:14px;color:#854F0B"></i></div>
+  <h2 style="margin:0">Printer Types — Complete Comparison</h2>
+</div>
+
+<table>
+  <tr><th>Printer</th><th>Type</th><th>Speed Unit</th><th>Special Feature</th></tr>
+  <tr><td>Dot Matrix</td><td>Impact</td><td>CPS</td><td>Pin/Ribbon use, Serial printer</td></tr>
+  <tr><td>Daisy Wheel</td><td>Impact</td><td>CPS</td><td>No graphics, text only</td></tr>
+  <tr><td>Drum Printer</td><td>Impact</td><td>LPM</td><td>Line printer</td></tr>
+  <tr><td>Chain Printer</td><td>Impact</td><td>LPM</td><td>Steel chain, line printer</td></tr>
+  <tr><td>Inkjet</td><td>Non-Impact</td><td>PPM</td><td>Nozzle spray, CMYK cartridge</td></tr>
+  <tr><td>Laser</td><td>Non-Impact</td><td>PPM</td><td>Toner, fastest, best quality, page printer</td></tr>
+  <tr><td>Thermal</td><td>Non-Impact</td><td>PPM</td><td>ATM receipts, heat-sensitive paper</td></tr>
+  <tr><td>Plotter</td><td>Output</td><td>—</td><td>Pen draws lines, maps/CAD/engineering</td></tr>
+</table>
+<p style="font-size:12px;color:var(--color-text-secondary);margin-top:4px">Quality = DPI (Dots Per Inch) | Speed = PPM (Pages/Min) or LPM or CPS</p>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-b"><i class="ti ti-cpu" style="font-size:14px;color:#185FA5"></i></div>
+  <h2 style="margin:0">Memory Hierarchy — Speed &amp; Classification</h2>
+</div>
+
+<div class="sc-box" style="margin-bottom:8px">
+  <strong>Speed order (Fastest → Slowest):</strong> Register → Cache → RAM → SSD → HDD<br>
+  <strong>Size order (Smallest → Largest):</strong> Register → Cache → RAM → HDD<br>
+  <strong>Unit order:</strong> Bit → Nibble(4b) → Byte(8b) → KB → MB → GB → TB → PB → EB → ZB → YB
+</div>
+
+<table>
+  <tr><th>Memory</th><th>Type</th><th>Volatile?</th><th>Key Fact</th></tr>
+  <tr><td>Register</td><td>Primary</td><td class="warn">Yes</td><td>Fastest, CPU ke andar, Flip-Flops se bana</td></tr>
+  <tr><td>Cache (L1/L2/L3)</td><td>Primary</td><td class="warn">Yes</td><td>CPU+RAM ke beech, SRAM se bana</td></tr>
+  <tr><td>RAM</td><td>Primary</td><td class="warn">Yes</td><td>Working memory, DRAM (capacitor-based)</td></tr>
+  <tr><td>ROM</td><td>Primary</td><td class="ok">No</td><td>BIOS store, Non-volatile, Read only</td></tr>
+  <tr><td>HDD</td><td>Secondary</td><td class="ok">No</td><td>Aluminium + Iron Oxide, RPM speed</td></tr>
+  <tr><td>SSD</td><td>Secondary</td><td class="ok">No</td><td>Flash memory, HDD se fast</td></tr>
+  <tr><td>CD-R</td><td>Secondary</td><td class="ok">No</td><td>Write Once Read Many (WORM)</td></tr>
+  <tr><td>DVD</td><td>Secondary</td><td class="ok">No</td><td>4.7 GB single layer</td></tr>
+  <tr><td>Magnetic Tape</td><td>Secondary</td><td class="ok">No</td><td>Sequential access, slowest, backup</td></tr>
+</table>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-g"><i class="ti ti-history" style="font-size:14px;color:#0F6E56"></i></div>
+  <h2 style="margin:0">Computer Generations — Matching Table</h2>
+</div>
+
+<table>
+  <tr><th>Generation</th><th>Years</th><th>Technology</th><th>Example</th></tr>
+  <tr><td>1st</td><td>1940–56</td><td>Vacuum Tube</td><td>ENIAC, UNIVAC</td></tr>
+  <tr><td>2nd</td><td>1956–63</td><td>Transistor</td><td>IBM 1401, IBM 7030</td></tr>
+  <tr><td>3rd</td><td>1964–71</td><td>IC (SSI/MSI)</td><td>IBM 360, IBM System/360</td></tr>
+  <tr><td>4th</td><td>1971–now</td><td>VLSI / Microprocessor</td><td>PCs, Laptops</td></tr>
+  <tr><td>5th</td><td>Now</td><td>ULSI + AI</td><td>PARAM, i-Series</td></tr>
+</table>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-r"><i class="ti ti-user-check" style="font-size:14px;color:#A32D2D"></i></div>
+  <h2 style="margin:0">Important People &amp; Inventions</h2>
+</div>
+
+<table>
+  <tr><th>Person</th><th>Invention</th><th>Key Fact</th></tr>
+  <tr><td>Charles Babbage</td><td>Analytical Engine</td><td>Father of Computer (1837)</td></tr>
+  <tr><td>Blaise Pascal</td><td>Pascaline</td><td>First Mechanical Calculator (1642)</td></tr>
+  <tr><td>John Von Neumann</td><td>EDVAC</td><td>Stored Program Concept</td></tr>
+  <tr><td>Herman Hollerith</td><td>Punch Card</td><td>Tabulating Machine, 1890 Census</td></tr>
+  <tr><td>Douglas Engelbart</td><td>Mouse</td><td>1964, Father of Mouse</td></tr>
+  <tr><td>Jack Kilby + Noyce</td><td>IC</td><td>Integrated Circuit — 3rd Gen</td></tr>
+  <tr><td>Ada Lovelace</td><td>1st Programmer</td><td>Mother of Computer</td></tr>
+  <tr><td>Samaren Kumar Mitra</td><td>India's 1st Analog Computer</td><td>1953-54</td></tr>
+</table>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-a"><i class="ti ti-keyboard" style="font-size:14px;color:#854F0B"></i></div>
+  <h2 style="margin:0">Keyboard Shortcuts — Exam Favourites</h2>
+</div>
+
+<div class="grid2">
+<table>
+  <tr><th>Shortcut</th><th>Action</th></tr>
+  <tr><td>Ctrl+C</td><td>Copy</td></tr>
+  <tr><td>Ctrl+X</td><td>Cut</td></tr>
+  <tr><td>Ctrl+V</td><td>Paste</td></tr>
+  <tr><td>Ctrl+Z</td><td>Undo</td></tr>
+  <tr><td>Ctrl+Y</td><td>Redo</td></tr>
+  <tr><td>Ctrl+P</td><td>Print</td></tr>
+  <tr><td>Ctrl+S</td><td>Save</td></tr>
+  <tr><td>Ctrl+A</td><td>Select All</td></tr>
+  <tr><td>Ctrl+F</td><td>Find</td></tr>
+  <tr><td>Ctrl+E</td><td>Center Align</td></tr>
+</table>
+<table>
+  <tr><th>Shortcut</th><th>Action</th></tr>
+  <tr><td>Ctrl+I</td><td>Italic</td></tr>
+  <tr><td>Ctrl+B</td><td>Bold</td></tr>
+  <tr><td>Alt+F4</td><td>Close window</td></tr>
+  <tr><td>Alt+Tab</td><td>Switch program</td></tr>
+  <tr><td>Win+R</td><td>Run command</td></tr>
+  <tr><td>Win+D</td><td>Show desktop</td></tr>
+  <tr><td>Win+E</td><td>File Explorer</td></tr>
+  <tr><td>Win+Shift+S</td><td>Snipping Tool</td></tr>
+  <tr><td>Shift+Del</td><td>Permanent delete</td></tr>
+  <tr><td>Ctrl+F2</td><td>Print Preview</td></tr>
+</table>
+</div>
+
+<h3 style="margin-top:0.8rem">Key Types (Exam Trap)</h3>
+<table>
+  <tr><th>Key Name</th><th>Examples</th></tr>
+  <tr><td>Modifier Keys</td><td>Ctrl, Shift, Alt — alone kaam nahi karte</td></tr>
+  <tr><td>Toggle Keys</td><td>Caps Lock, Num Lock, Scroll Lock (ON/OFF)</td></tr>
+  <tr><td>Function Keys</td><td>F1–F12 (12 total)</td></tr>
+  <tr><td>Special Keys</td><td>Ctrl, Shift, Del, Insert (विशिष्ट कुंजी)</td></tr>
+  <tr><td>Navigation Keys</td><td>Arrow keys, Page Up/Down, Home, End</td></tr>
+</table>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-g"><i class="ti ti-world" style="font-size:14px;color:#0F6E56"></i></div>
+  <h2 style="margin:0">OS &amp; Internet Quick Facts</h2>
+</div>
+
+<div class="grid2">
+<div>
+  <h3>OS Types</h3>
+  <table>
+    <tr><td>Desktop</td><td>Windows, Mac OS, Linux</td></tr>
+    <tr><td>Mobile</td><td>Android, iOS, Symbian</td></tr>
+    <tr><td>Server</td><td>Windows Server, Linux Server</td></tr>
+    <tr><td>RTOS</td><td>Real-Time OS (embedded)</td></tr>
+  </table>
+  <p style="font-size:12px;color:#A32D2D;margin-top:4px">❌ Not OS: BIOS, Apache, Firefox, Oracle, Pentium</p>
+</div>
+<div>
+  <h3>Browsers</h3>
+  <table>
+    <tr><td>Chrome</td><td>Google</td></tr>
+    <tr><td>Firefox</td><td>Mozilla</td></tr>
+    <tr><td>Safari</td><td>Apple</td></tr>
+    <tr><td>Edge</td><td>Microsoft</td></tr>
+    <tr><td>Opera</td><td>Opera</td></tr>
+  </table>
+  <p style="font-size:12px;color:#A32D2D;margin-top:4px">❌ Not browsers: Gmail, KompoZer, MS Office 365</p>
+</div>
+</div>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-r"><i class="ti ti-bug" style="font-size:14px;color:#A32D2D"></i></div>
+  <h2 style="margin:0">Virus / Malware / Security</h2>
+</div>
+
+<table>
+  <tr><th>Term</th><th>Meaning / Example</th></tr>
+  <tr><td>Virus</td><td>Software hai, file attach karke spread hota — Creeper = first virus</td></tr>
+  <tr><td>Worm</td><td>Self replicate karta — Morris Worm example</td></tr>
+  <tr><td>Spyware</td><td>User activity track karta without knowledge — Pegasus = spyware</td></tr>
+  <tr><td>Trojan Horse</td><td>Legitimate software dikhke harm karta</td></tr>
+  <tr><td>Software Piracy</td><td>Illegal copy/distribution of software</td></tr>
+  <tr><td>Debugging</td><td>Program ki errors dhundna aur theek karna</td></tr>
+  <tr><td>Antivirus</td><td>Avast, Norton, Kaspersky, McAfee, AVG, NOD32</td></tr>
+</table>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-b"><i class="ti ti-file-text" style="font-size:14px;color:#185FA5"></i></div>
+  <h2 style="margin:0">Important Full Forms</h2>
+</div>
+
+<div class="grid3">
+  <div class="card"><div class="label">VIRUS</div><div class="val">Vital Information Resources Under Siege</div></div>
+  <div class="card"><div class="label">DTP</div><div class="val">Desktop Publishing</div></div>
+  <div class="card"><div class="label">PDF</div><div class="val">Portable Document Format</div></div>
+  <div class="card"><div class="label">WYSIWYG</div><div class="val">What You See Is What You Get</div></div>
+  <div class="card"><div class="label">GUI</div><div class="val">Graphical User Interface</div></div>
+  <div class="card"><div class="label">OMR</div><div class="val">Optical Mark Reader</div></div>
+  <div class="card"><div class="label">MICR</div><div class="val">Magnetic Ink Character Recognition</div></div>
+  <div class="card"><div class="label">OCR</div><div class="val">Optical Character Recognition</div></div>
+  <div class="card"><div class="label">UPC</div><div class="val">Universal Product Code (12 digits)</div></div>
+  <div class="card"><div class="label">BIOS</div><div class="val">Basic Input/Output System</div></div>
+  <div class="card"><div class="label">EEPROM</div><div class="val">Electrically Erasable Programmable ROM</div></div>
+  <div class="card"><div class="label">FLOPS</div><div class="val">Floating Point Operations Per Second</div></div>
+  <div class="card"><div class="label">VDU</div><div class="val">Visual Display Unit (Monitor)</div></div>
+  <div class="card"><div class="label">USB</div><div class="val">Universal Serial Bus</div></div>
+  <div class="card"><div class="label">HDMI</div><div class="val">High Definition Multimedia Interface</div></div>
+  <div class="card"><div class="label">NAS</div><div class="val">Network Attached Storage</div></div>
+  <div class="card"><div class="label">RAM</div><div class="val">Random Access Memory</div></div>
+  <div class="card"><div class="label">ROM</div><div class="val">Read Only Memory</div></div>
+</div>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-g"><i class="ti ti-star" style="font-size:14px;color:#0F6E56"></i></div>
+  <h2 style="margin:0">India Computer History — 1-Liners</h2>
+</div>
+
+<table>
+  <tr><td>First Computer in India</td><td>HEC-2M — ISI Kolkata (1955)</td></tr>
+  <tr><td>First Indigenous Computer</td><td>TIFRAC — Tata Institute (1961)</td></tr>
+  <tr><td>First Indian Micro Computer</td><td>Siddharth — ECIL Hyderabad (1978)</td></tr>
+  <tr><td>First Supercomputer India</td><td>PARAM 8000 — C-DAC Pune (1991)</td></tr>
+  <tr><td>C-DAC Founded</td><td>1988, Pune</td></tr>
+  <tr><td>First Indian Microprocessor</td><td>SHAKTI — IIT Madras (2018)</td></tr>
+  <tr><td>First Bilingual Computer India</td><td>Siddharth (Hindi + English)</td></tr>
+  <tr><td>First Analog Computer India</td><td>Samarendra Kumar Mitra (1953)</td></tr>
+  <tr><td>Father of Indian Computer</td><td>Raṅgaswāmi Narasimhan</td></tr>
+  <tr><td>IBM Nickname</td><td>Big Blue; HQ = New York</td></tr>
+  <tr><td>IBM Old Name</td><td>Computing Tabulating Recording Company (→ IBM 1924)</td></tr>
+  <tr><td>World First Laptop</td><td>Epson HX-20 (1981)</td></tr>
+  <tr><td>First Computer in Nepal</td><td>IBM 1401 (2nd Gen, 1971 census)</td></tr>
+  <tr><td>Supercomputer Speed Unit</td><td>FLOPS</td></tr>
+</table>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-a"><i class="ti ti-calculator" style="font-size:14px;color:#854F0B"></i></div>
+  <h2 style="margin:0">Memory Unit Conversion — Quick Calc</h2>
+</div>
+
+<div class="sc-box">
+  <strong>Formula Chain:</strong> 8 Bits = 1 Byte → ×1024 each step<br>
+  Byte → KB → MB → GB → TB → PB → EB → ZB → YB<br><br>
+  <strong>Powers of 2:</strong> 2¹⁰=1024(KB) | 2²⁰=1MB | 2³⁰=1GB | 2⁴⁰=1TB | 2⁵⁰=1PB<br><br>
+  <strong>Common exam Qs:</strong> 1 Petabyte = 1024 TB | 1 Yottabyte = 1024 ZB | 1 ZB = 1024 EB
+</div>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-r"><i class="ti ti-arrows-diff" style="font-size:14px;color:#A32D2D"></i></div>
+  <h2 style="margin:0">Difference Tables — Most Confused Pairs</h2>
+</div>
+
+<h3>DRAM vs SRAM</h3>
+<table class="diff-table">
+  <tr><th>Feature</th><th>DRAM (Dynamic)</th><th>SRAM (Static)</th></tr>
+  <tr><td>Refresh</td><td>Required (hata hai)</td><td>Not required</td></tr>
+  <tr><td>Made of</td><td>Capacitors</td><td>Flip-Flops (transistors)</td></tr>
+  <tr><td>Speed</td><td>Slower</td><td>Faster</td></tr>
+  <tr><td>Cost</td><td>Cheaper</td><td>Expensive</td></tr>
+  <tr><td>Used in</td><td>Main RAM</td><td>Cache Memory</td></tr>
+</table>
+
+<h3 style="margin-top:1rem">OCR vs OMR vs MICR vs Barcode</h3>
+<table>
+  <tr><th>Device</th><th>Full Form</th><th>Used For</th></tr>
+  <tr><td>OCR</td><td>Optical Character Recognition</td><td>Printed/handwritten text → editable</td></tr>
+  <tr><td>OMR</td><td>Optical Mark Reader</td><td>MCQ answer sheets, bubble check</td></tr>
+  <tr><td>MICR</td><td>Magnetic Ink Character Recognition</td><td>Bank cheque reading</td></tr>
+  <tr><td>Barcode</td><td>UPC = 12 digits + black bars</td><td>Product scanning in shops</td></tr>
+  <tr><td>QR Code</td><td>Quick Response Code</td><td>Online payment, small squares grid</td></tr>
+</table>
+
+<hr class="divider">
+
+<div class="sec-title">
+  <div class="icon icon-g"><i class="ti ti-checklist" style="font-size:14px;color:#0F6E56"></i></div>
+  <h2 style="margin:0">Computer Characteristics — 1-Liner Defs</h2>
+</div>
+
+<table>
+  <tr><td>Speed</td><td>Microsecond mein calculations — bohot tez</td></tr>
+  <tr><td>Accuracy</td><td>Galat input → galat output (GIGO); sahi input → sahi output</td></tr>
+  <tr><td>Diligence</td><td>Bina thake repeat kaam karta hai</td></tr>
+  <tr><td>Versatility</td><td>Alag-alag kaam ek saath kar sakta hai</td></tr>
+  <tr><td>Automation</td><td>Program load karo, human intervention nahi chahiye</td></tr>
+  <tr><td>Reliability</td><td>Bar bar same result deta hai</td></tr>
+  <tr><td>No IQ</td><td>Khud sochne ki koi ability nahi — limitation</td></tr>
+</table>
+
+<p style="font-size:12px;color:var(--color-text-secondary);text-align:center;margin-top:1.5rem;padding-bottom:0.5rem">Revision Sheet | All topics from your error log — zero fluff ✓</p>
+</div>

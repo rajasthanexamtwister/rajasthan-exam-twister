@@ -797,6 +797,66 @@ function showToast(msg) {
   toastTimeout = setTimeout(() => t.classList.remove('show'), 2500);
 }
 
+// ============ NOTES & STUDY SHEETS ============
+function openNotesSheet(url, title) {
+  const modal = document.getElementById('notesIframeModal');
+  const iframe = document.getElementById('notesIframe');
+  const titleEl = document.getElementById('notesIframeTitle');
+  const tabLink = document.getElementById('notesIframeTabLink');
+  
+  if (modal && iframe && titleEl && tabLink) {
+    titleEl.textContent = title;
+    tabLink.href = url;
+    iframe.src = url;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Stop body scrolling
+  }
+}
+
+function closeNotesSheet() {
+  const modal = document.getElementById('notesIframeModal');
+  const iframe = document.getElementById('notesIframe');
+  
+  if (modal && iframe) {
+    modal.style.display = 'none';
+    iframe.src = ''; // Clear source to stop iframe loading/playing
+    document.body.style.overflow = ''; // Restore scrolling
+  }
+}
+
+let activeNotesCategory = 'all';
+
+function filterCategory(cat, btnEl) {
+  activeNotesCategory = cat;
+  
+  // Set active button styles
+  document.querySelectorAll('.notes-filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  if (btnEl) btnEl.classList.add('active');
+  
+  filterNotes();
+}
+
+function filterNotes() {
+  const searchVal = document.getElementById('notesSearch').value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.note-card');
+  
+  cards.forEach(card => {
+    const titleAttr = card.dataset.title || '';
+    const catAttr = card.dataset.category || '';
+    
+    const matchesCategory = (activeNotesCategory === 'all' || catAttr === activeNotesCategory);
+    const matchesSearch = (!searchVal || titleAttr.includes(searchVal) || card.querySelector('.note-card-title').textContent.toLowerCase().includes(searchVal));
+    
+    if (matchesCategory && matchesSearch) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
 // ============ INIT ============
 function init() {
   showScreen('home');

@@ -21,6 +21,7 @@
       <button class="nav-btn active" onclick="showScreen('home')">🏠 Home</button>
       <button class="nav-btn" onclick="showScreen('dashboard')">📊 Dashboard</button>
       <button class="nav-btn" onclick="showScreen('revision')">🔁 Revision</button>
+      <button class="nav-btn" onclick="showScreen('notes')">📖 Notes</button>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleNav()">☰</button>
   </nav>
@@ -28,6 +29,7 @@
     <button onclick="showScreen('home'); toggleNav()">🏠 Home</button>
     <button onclick="showScreen('dashboard'); toggleNav()">📊 Dashboard</button>
     <button onclick="showScreen('revision'); toggleNav()">🔁 Revision</button>
+    <button onclick="showScreen('notes'); toggleNav()">📖 Notes</button>
   </div>
 
   <!-- ====== SCREENS CONTAINER ====== -->
@@ -296,6 +298,120 @@
       <div class="rev-note">Wrong Questions are automatically saved from every test.</div>
     </div>
 
+    <!-- ===== SCREEN: NOTES ===== -->
+    <div class="screen" id="screen-notes">
+      <div class="dash-title">📖 Revision & Study Sheets</div>
+      
+      <!-- Search & Filters -->
+      <div class="notes-search-row">
+        <input type="text" id="notesSearch" placeholder="🔍 Search sheets (e.g. DCCN, Lakes, Mela...)" oninput="filterNotes()" />
+        <div class="notes-category-filters">
+          <button class="notes-filter-btn active" onclick="filterCategory('all', this)">All</button>
+          <button class="notes-filter-btn" onclick="filterCategory('cs', this)">💻 Computer Science</button>
+          <button class="notes-filter-btn" onclick="filterCategory('gk', this)">🗺️ Rajasthan GK</button>
+        </div>
+      </div>
+
+      <!-- Notes Grid -->
+      <div class="notes-grid" id="notesGrid">
+        <!-- Card 1: FOC -->
+        <div class="note-card" data-category="cs" data-title="computer fundamentals foc basic hardware software history">
+          <div class="note-card-badge cs">CS</div>
+          <div class="note-card-icon">💻</div>
+          <div class="note-card-title">Computer Fundamentals (FOC)</div>
+          <div class="note-card-desc">High-yield revision notes covering basic concepts, computer history, generations, memory organization, and input/output hardware.</div>
+          <div class="note-card-actions">
+            <button class="note-card-btn read" onclick="openNotesSheet('FOC.html', 'Computer Fundamentals (FOC)')">👁️ Read Inside</button>
+            <a href="FOC.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+          </div>
+        </div>
+
+        <!-- Card 2: DCCN -->
+        <div class="note-card" data-category="cs" data-title="data communication computer networking dccn protocol osi tcp ip address devices topology">
+          <div class="note-card-badge cs">CS</div>
+          <div class="note-card-icon">🌐</div>
+          <div class="note-card-title">Computer Networking (DCCN)</div>
+          <div class="note-card-desc">Bug-free high-yield review sheet focusing on OSI/TCP models, protocols, port numbers, IPv4/IPv6 addressing, subnetting, and devices.</div>
+          <div class="note-card-actions">
+            <button class="note-card-btn read" onclick="openNotesSheet('dccn.html', 'Computer Networking (DCCN)')">👁️ Read Inside</button>
+            <a href="dccn.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+          </div>
+        </div>
+
+        <!-- Card 3: Ancient Civilizations -->
+        <div class="note-card" data-category="gk" data-title="rajasthan ancient civilizations prachin sabhytaye kalibangan ahar bairath ganeshwar">
+          <div class="note-card-badge gk">Rajasthan GK</div>
+          <div class="note-card-icon">🏺</div>
+          <div class="note-card-title">Ancient Civilizations (सभ्यताएं)</div>
+          <div class="note-card-desc">Very short notes & exam-oriented traps on Kalibangan, Ahar, Bairath, Ganeshwar, Bagore, Balathal, and other archaeological sites.</div>
+          <div class="note-card-actions">
+            <button class="note-card-btn read" onclick="openNotesSheet('prachin_sabhytaye_very_short_notes.html', 'Ancient Civilizations (प्राचीन सभ्यताएं)')">👁️ Read Inside</button>
+            <a href="prachin_sabhytaye_very_short_notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+          </div>
+        </div>
+
+        <!-- Card 4: Rajasthan Integration -->
+        <div class="note-card" data-category="gk" data-title="rajasthan integration ekikaran 7 stages dates rulers prime ministers satyanarayan samiti">
+          <div class="note-card-badge gk">Rajasthan GK</div>
+          <div class="note-card-icon">🗺️</div>
+          <div class="note-card-title">Rajasthan Integration (एकीकरण)</div>
+          <div class="note-card-desc">7 stages of Rajasthan integration, dates, capitals, Rajpramukhs, PMs, and critical exam confusion traps.</div>
+          <div class="note-card-actions">
+            <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_ekikaran_revision_sheet.html', 'Rajasthan Integration (राजस्थान एकीकरण)')">👁️ Read Inside</button>
+            <a href="rajasthan_ekikaran_revision_sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+          </div>
+        </div>
+
+        <!-- Card 5: Rajasthan Lakes -->
+        <div class="note-card" data-category="gk" data-title="rajasthan lakes jheel salt water fresh water sambhar jaisamand rajasmand pachpadra">
+          <div class="note-card-badge gk">Rajasthan GK</div>
+          <div class="note-card-icon">💧</div>
+          <div class="note-card-title">Rajasthan Lakes (झीलें)</div>
+          <div class="note-card-desc">Complete facts sheet about saltwater and freshwater lakes in Rajasthan, their geographical locations, and economic importance.</div>
+          <div class="note-card-actions">
+            <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_lakes_revision_sheet.html', 'Rajasthan Lakes (राजस्थान की झीलें)')">👁️ Read Inside</button>
+            <a href="rajasthan_lakes_revision_sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+          </div>
+        </div>
+
+        <!-- Card 6: Rajasthan Festivals -->
+        <div class="note-card" data-category="gk" data-title="rajasthan festivals festival tyohar hindu muslim jain lunar calendar months teej gangaur">
+          <div class="note-card-badge gk">Rajasthan GK</div>
+          <div class="note-card-icon">🗓️</div>
+          <div class="note-card-title">Rajasthan Festivals (त्योहार)</div>
+          <div class="note-card-desc">Detailed calendar of Hindu, Muslim, Jain, and Christian festivals sorted by lunar months, along with previous year questions.</div>
+          <div class="note-card-actions">
+            <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_festival_revision_sheet.html', 'Rajasthan Festivals (राजस्थान के त्योहार)')">👁️ Read Inside</button>
+            <a href="rajasthan_festival_revision_sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+          </div>
+        </div>
+
+        <!-- Card 7: Rajasthan Fairs Guide -->
+        <div class="note-card" data-category="gk" data-title="rajasthan mela fairs guide pushkar karni mata ramdevra tejaji jambheshwar">
+          <div class="note-card-badge gk">Rajasthan GK</div>
+          <div class="note-card-icon">🎪</div>
+          <div class="note-card-title">Rajasthan Fairs Guide (मेले)</div>
+          <div class="note-card-desc">High-yield district-wise and month-wise lists of major fairs (mela), related deities, locations, and historical significance.</div>
+          <div class="note-card-actions">
+            <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Mela_Revision_Guide.html', 'Rajasthan Fairs (राजस्थान के मेले)')">👁️ Read Inside</button>
+            <a href="Rajasthan_Mela_Revision_Guide.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+          </div>
+        </div>
+
+        <!-- Card 8: Fairs & Festivals Combined -->
+        <div class="note-card" data-category="gk" data-title="rajasthan fairs festivals mela tyohar combined comprehensive list">
+          <div class="note-card-badge gk">Rajasthan GK</div>
+          <div class="note-card-icon">📚</div>
+          <div class="note-card-title">Mela & Tyohar (Combined)</div>
+          <div class="note-card-desc">A comprehensive unified list combining fairs and festivals to avoid overlapping confusion during revisions.</div>
+          <div class="note-card-actions">
+            <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Mela_Tyohar_Combined.html', 'Mela & Tyohar (Combined)')">👁️ Read Inside</button>
+            <a href="Rajasthan_Mela_Tyohar_Combined.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <!-- ====== MODAL: Confirm Submit ====== -->
@@ -306,6 +422,27 @@
       <div class="modal-actions">
         <button class="modal-btn cancel" onclick="closeModal()">Cancel</button>
         <button class="modal-btn confirm" onclick="submitTest()">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== MODAL: Notes Iframe Viewer ====== -->
+  <div class="notes-iframe-overlay" id="notesIframeModal" style="display:none">
+    <div class="notes-iframe-box">
+      <div class="notes-iframe-header">
+        <div class="notes-iframe-title-area">
+          <span class="notes-iframe-logo">📖</span>
+          <span class="notes-iframe-title" id="notesIframeTitle">Revision Sheet</span>
+        </div>
+        <div class="notes-iframe-actions">
+          <a href="#" target="_blank" class="notes-iframe-btn-tab" id="notesIframeTabLink" title="Open in new tab">
+            ↗ Open in New Tab
+          </a>
+          <button class="notes-iframe-close-btn" onclick="closeNotesSheet()" title="Close viewer">✕</button>
+        </div>
+      </div>
+      <div class="notes-iframe-body">
+        <iframe id="notesIframe" src="" frameborder="0"></iframe>
       </div>
     </div>
   </div>

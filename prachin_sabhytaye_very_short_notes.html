@@ -1,0 +1,253 @@
+
+<style>
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #FFF8F0;
+  --color-border-primary: #1A2744;
+  --color-border-secondary: #E5E9F2;
+  --color-border-tertiary: #E5E9F2;
+  --color-text-primary: #1A2744;
+  --color-text-secondary: #6b7a99;
+  --color-text-tertiary: #a3b1cc;
+  --border-radius-md: 10px;
+  --border-radius-lg: 14px;
+  
+  --color-background-danger: #fee2e2;
+  --color-border-danger: #fca5a5;
+  --color-text-danger: #dc2626;
+
+  --color-background-success: #dcfce7;
+  --color-border-success: #86efac;
+  --color-text-success: #16a34a;
+
+  --color-background-warning: #fef3c7;
+  --color-border-warning: #fde047;
+  --color-text-warning: #d97706;
+
+  --color-background-info: #e0f2fe;
+  --color-border-info: #7dd3fc;
+  --color-text-info: #0369a1;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+.sheet { padding: 1rem 0; color: var(--color-text-primary); font-size: 14px; line-height: 1.6; }
+h1 { font-size: 20px; font-weight: 500; margin-bottom: 4px; }
+.subtitle { font-size: 13px; color: var(--color-text-secondary); margin-bottom: 1.5rem; }
+h2 { font-size: 16px; font-weight: 500; margin: 1.5rem 0 0.5rem; padding: 6px 12px; background: var(--color-background-secondary); border-left: 3px solid var(--color-border-info); border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; }
+h3 { font-size: 14px; font-weight: 500; margin: 1rem 0 0.4rem; color: var(--color-text-secondary); }
+table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 0.5rem 0 1rem; }
+th { background: var(--color-background-secondary); font-weight: 500; text-align: left; padding: 6px 8px; border: 0.5px solid var(--color-border-tertiary); }
+td { padding: 5px 8px; border: 0.5px solid var(--color-border-tertiary); vertical-align: top; }
+tr:nth-child(even) td { background: var(--color-background-secondary); }
+.fact-block { margin: 0.4rem 0; }
+.fact-row { display: flex; gap: 8px; align-items: flex-start; padding: 4px 8px; border-radius: var(--border-radius-md); font-size: 13px; }
+.fact-row.T { background: var(--color-background-success); }
+.fact-row.F { background: var(--color-background-danger); }
+.badge { font-size: 11px; font-weight: 500; min-width: 22px; padding: 1px 5px; border-radius: var(--border-radius-md); text-align: center; flex-shrink: 0; margin-top: 1px; }
+.badge.T { background: var(--color-background-success); color: var(--color-text-success); border: 0.5px solid var(--color-border-success, #3B6D11); }
+.badge.F { background: var(--color-background-danger); color: var(--color-text-danger); border: 0.5px solid var(--color-border-danger, #A32D2D); }
+.fact-row.T .fact-text { color: var(--color-text-success); }
+.fact-row.F .fact-text { color: var(--color-text-danger); }
+.ar-box { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 10px 12px; margin: 0.5rem 0 1rem; font-size: 13px; }
+.ar-box .a-label { font-weight: 500; color: var(--color-text-info); margin-bottom: 4px; font-size: 12px; }
+.ar-box .r-label { font-weight: 500; color: var(--color-text-warning); margin-top: 8px; margin-bottom: 4px; font-size: 12px; }
+.ar-box .verdict { font-size: 12px; margin-top: 8px; padding: 4px 8px; border-radius: var(--border-radius-md); background: var(--color-background-secondary); color: var(--color-text-secondary); }
+.trap-section { border: 1.5px solid var(--color-border-danger, #A32D2D); border-radius: var(--border-radius-lg); padding: 12px 14px; margin: 1rem 0; }
+.trap-section h2 { margin: 0 0 0.7rem; background: var(--color-background-danger); border-left: 3px solid var(--color-text-danger); color: var(--color-text-danger); }
+.trap-item { font-size: 13px; margin: 0.35rem 0; padding: 5px 10px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); }
+.trap-item strong { color: var(--color-text-danger); }
+.keyword { display: inline-block; font-size: 11px; font-weight: 500; padding: 1px 7px; border-radius: 10px; margin: 0 2px; background: var(--color-background-warning); color: var(--color-text-warning); }
+.section-divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 1rem 0; }
+.note { font-size: 12px; color: var(--color-text-secondary); padding: 4px 10px; background: var(--color-background-info); border-radius: var(--border-radius-md); margin: 0.3rem 0; }
+</style>
+
+<div class="sheet">
+  <h1>RSMSSB BCI 2026 — Last-30-Days Rapid Revision</h1>
+  <p class="subtitle">राजस्थान का प्राचीन इतिहास · Multi-Statement MCQ Optimized · Zero Fluff</p>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <h2>① प्रमुख सभ्यताएँ — Comparative Table (सुमेलन)</h2>
+  <table>
+    <tr><th>सभ्यता</th><th>जिला</th><th>नदी</th><th>प्रथम खोजकर्ता / उत्खनन</th><th>Key Identity / उपनाम</th></tr>
+    <tr><td>कालीबंगा</td><td>हनुमानगढ़</td><td>घग्घर (सरस्वती)</td><td>अमलानंद घोष 1952 / B.B. Lal, B.K. Thapar 1961-69</td><td>दीन-हीन बस्ती · सैंधव सभ्यता की तीसरी राजधानी (Dashrath Sharma)</td></tr>
+    <tr><td>आहड़</td><td>उदयपुर</td><td>आयड़ / बेड़च</td><td>Akshay Kirti Vyas 1953 / R.C. Agarwal, V.N. Mishra</td><td>ताम्रवती नगरी · आघाटपुर · धूलकोट · बनास संस्कृति</td></tr>
+    <tr><td>गणेश्वर</td><td>सीकर</td><td>कांतली</td><td>R.C. Agarwal (2800 BC by Radio-Carbon)</td><td>ताम्रयुगीन सभ्यताओं की जननी · पुरातत्व का पुष्कर</td></tr>
+    <tr><td>बागोर</td><td>भीलवाड़ा</td><td>कोठारी</td><td>V.N. Mishra 1967-68</td><td>आदिम संस्कृति का संग्रहालय · पशुपालन का प्राचीनतम साक्ष्य</td></tr>
+    <tr><td>बैराठ</td><td>जयपुर</td><td>बाणगंगा</td><td>Daya Ram Sahni 1936-37 (बीजक पहाड़ी)</td><td>मत्स्य जनपद राजधानी · विराटनगर · लौहयुगीन</td></tr>
+    <tr><td>बालाथल</td><td>उदयपुर</td><td>बेड़च</td><td>V.N. Mishra 1962-63 / V.S. Shinde 1993</td><td>कुष्ठ रोग का प्राचीनतम साक्ष्य (4000 yr skeleton)</td></tr>
+    <tr><td>रैढ़</td><td>टोंक</td><td>ढील</td><td>Daya Ram Sahni 1938-39 / Kedar Nath Puri</td><td>प्राचीन भारत का टाटानगर · Asia का सबसे बड़ा सिक्का भंडार</td></tr>
+    <tr><td>गिलूंड</td><td>राजसमंद</td><td>बनास</td><td>B.B. Lal 1957-58</td><td>पक्की ईंटें प्रचुरता में · मोड़िया मगरी टीला</td></tr>
+    <tr><td>रंगमहल</td><td>हनुमानगढ़</td><td>घग्घर</td><td>Dr. Hannariéd (Swedish team) 1952-54</td><td>कुषाणकालीन सभ्यता समान · 105 ताँबे की मुद्राएँ</td></tr>
+    <tr><td>सुनारी</td><td>झुंझुनूं</td><td>कांतली</td><td>Rajasthan Puratatva Vibhag 1980-81</td><td>लोहा गलाने की प्राचीनतम भट्टियाँ</td></tr>
+    <tr><td>नगरी</td><td>चित्तौड़गढ़</td><td>बेड़च</td><td>Carlyle 1872 / D.R. Bhandarkar 1904</td><td>मध्यमिका · शिवि जनपद राजधानी</td></tr>
+    <tr><td>नगर</td><td>टोंक</td><td>—</td><td>Shrikrishna Dev 1942-43</td><td>मालव नगर · मालव जनपद राजधानी · खेड़ा सभ्यता</td></tr>
+  </table>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <h2>② True ✓ / False ✗ — Multi-Statement Fact Checks</h2>
+
+  <h3>कालीबंगा (Kalibangan)</h3>
+  <div class="fact-block">
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">कालीबंगा में जुते हुए खेत (Ploughed field) मिले हैं — mixed cropping: चना + सरसों एक साथ।</span></div>
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">यहाँ 7 आयताकार अग्निवेदिकाएँ (Fire Altars) मिली हैं।</span></div>
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">मकान कच्ची ईंटों (Sun-dried, 30×15×7.5 cm) से बने थे; नालियाँ लकड़ी की थीं।</span></div>
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">एक बच्चे की खोपड़ी में 6 छिद्र मिले → शल्य चिकित्सा (Surgery) का प्राचीनतम साक्ष्य।</span></div>
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">भूकंप (Earthquake) का प्राचीनतम साक्ष्य भी कालीबंगा से ही।</span></div>
+    <div class="fact-row F"><span class="badge F">F</span><span class="fact-text">कालीबंगा सिर्फ हड़प्पाकालीन है। — WRONG: यह Pre-Harappan (Level 1-2) + Harappan (Level 3-5) दोनों है।</span></div>
+    <div class="fact-row F"><span class="badge F">F</span><span class="fact-text">कालीबंगा में मातृदेवी की मूर्तियाँ मिली हैं। — WRONG: यह सैंधव सभ्यता का एकमात्र स्थल है जहाँ मातृदेवी की मूर्तियाँ नहीं मिलीं।</span></div>
+    <div class="fact-row F"><span class="badge F">F</span><span class="fact-text">यहाँ अलंकृत ईंटें (Decorated bricks) भारी मात्रा में मिली हैं। — WRONG: केवल फर्श पर, हड़प्पाकाल में यह एकमात्र उदाहरण है।</span></div>
+  </div>
+
+  <h3>आहड़ (Ahar)</h3>
+  <div class="fact-block">
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">लाल-काले मृद्भांड (Red-Black Pottery) आहड़ की पहचान; भंडारण पात्र = 'गोरे/कोठे'।</span></div>
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">एक मकान में 4-6 चूल्हे = संयुक्त परिवार व्यवस्था का साक्ष्य।</span></div>
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">टेराकोटा वृषभ = 'बनासियन बुल'; यूनानी सिक्का (अपोलो + त्रिशूल) मिला।</span></div>
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">मृतकों को गहनों के साथ दफनाया जाता था।</span></div>
+    <div class="fact-row F"><span class="badge F">F</span><span class="fact-text">आहड़ में पक्की ईंटों का प्रयोग होता था। — WRONG: आहड़ में पक्की ईंटें नहीं, गिलूंड में होती थीं।</span></div>
+  </div>
+
+  <h3>गणेश्वर (Ganeshwar)</h3>
+  <div class="fact-block">
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">99% शुद्ध ताँबे के उपकरण; ताँबा हड़प्पा व मोहनजोदड़ो को भेजा जाता था।</span></div>
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">बाढ़ रोकने के लिए पत्थर के बाँध बनाए गए।</span></div>
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">मछली पकड़ने के काँटे (Fish hooks) = खेती से इतर आहार का साक्ष्य।</span></div>
+  </div>
+
+  <h3>बैराठ (Bairath)</h3>
+  <div class="fact-block">
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">Captain Burt ने 1837 में बीजक पहाड़ी से भाब्रू शिलालेख खोजा — अशोक के बौद्ध धर्म का सबसे ठोस प्रमाण।</span></div>
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">36 मुद्राएँ मिलीं: 8 Punch-marked + 28 Indo-Greek (16 = मिनेंडर की)।</span></div>
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">ह्वेनसांग ने 634 ई. में यात्रा की → 8 बौद्ध मठों का उल्लेख किया।</span></div>
+    <div class="fact-row T"><span class="badge T">T</span><span class="fact-text">हूण आक्रांता मिहिरकुल ने बैराठ को नष्ट किया।</span></div>
+    <div class="fact-row F"><span class="badge F">F</span><span class="fact-text">बैराठ ताम्रयुगीन सभ्यता है। — WRONG: यह लौहयुगीन (Iron Age) सभ्यता है।</span></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <h2>③ Mahajanapadas — Comparative Table</h2>
+  <table>
+    <tr><th>जनपद</th><th>राजधानी</th><th>वर्तमान क्षेत्र</th><th>विशेष</th></tr>
+    <tr><td>मत्स्य</td><td>विराटनगर (Bairath)</td><td>जयपुर, अलवर, भरतपुर, करौली, धौलपुर, दौसा</td><td>पांडवों ने अज्ञातवास बिताया; जानकारी स्रोत = ऋग्वेद, महाभारत</td></tr>
+    <tr><td>शिवि</td><td>मध्यमिका (नगरी)</td><td>उदयपुर, चित्तौड़गढ़ (मेवाड़)</td><td>उत्खनन Dr. R. Bhandarkar 1904; हाथीबाड़ी व उग्रदीवट शिलालेख; "मेदपाट" व "प्रागवाट" भी कहा जाता था</td></tr>
+    <tr><td>मालव</td><td>नगर (कार्कोटनगर), टोंक</td><td>जयपुर, टोंक, अजमेर</td><td>Mint (टकसाल); महाभारत का सातानगर; कतलाराम की पूरी; खेड़ा सभ्यता</td></tr>
+    <tr><td>कुरु</td><td>इंद्रप्रस्थ</td><td>अलवर का उत्तरी भाग</td><td>—</td></tr>
+    <tr><td>शूरसेन</td><td>मथुरा</td><td>भरतपुर, धौलपुर, करौली</td><td>पौराणिक काण्य / वेशाना जोड़ा</td></tr>
+    <tr><td>शाल्व</td><td>—</td><td>अलवर</td><td>—</td></tr>
+    <tr><td>यौधेय</td><td>—</td><td>श्रीगंगानगर-हनुमानगढ़ सीमा</td><td>जाँविया राजछत्र; इंद्र पूजक; Coins मिले</td></tr>
+    <tr><td>अर्जुनायन</td><td>—</td><td>अलवर, भरतपुर, सीकर (नोरावाही)</td><td>—</td></tr>
+    <tr><td>राजन्य</td><td>—</td><td>भरतपुर</td><td>—</td></tr>
+  </table>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <h2>④ Iron Age vs Copper Age — तुलनात्मक</h2>
+  <table>
+    <tr><th>ताम्रयुगीन (Copper Age)</th><th>लौहयुगीन (Iron Age)</th></tr>
+    <tr><td>आहड़, गणेश्वर, बालाथल, कुराड़ा, तिलवाड़ा</td><td>बैराठ, रैढ़, सुनारी, जोधपुरा, नोह (भरतपुर)</td></tr>
+    <tr><td>ताँबे के उपकरण प्रमुख; Copper Tools</td><td>लोहा गलाने की भट्टियाँ; Iron smelting furnaces</td></tr>
+    <tr><td>गणेश्वर: 99% शुद्ध ताँबा; Supply to Harappa</td><td>सुनारी: Rajasthan की सबसे प्राचीन Iron furnace</td></tr>
+    <tr><td>कुराड़ा (नागौर): ताम्र उपकरणों की Industrial city</td><td>नोह (भरतपुर): Yaksha pratima + Mauryan polish stone</td></tr>
+  </table>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <h2>⑤ प्रमुख अभिलेख (Inscriptions) — Fact Table</h2>
+  <table>
+    <tr><th>अभिलेख</th><th>वर्ष / काल</th><th>स्थान</th><th>महत्व (Unique Fact)</th></tr>
+    <tr><td>बडली अभिलेख</td><td>443 BC</td><td>भीलोत माता मंदिर, अजमेर</td><td>राजस्थान का सबसे प्राचीन अभिलेख; ब्राह्मी लिपि; Gaurishankar Ojha को मिला</td></tr>
+    <tr><td>घोसुंडी शिलालेख</td><td>द्वितीय शती ई.पू.</td><td>चित्तौड़गढ़ के घोसुंडी गाँव</td><td>राजस्थान में वैष्णव/भागवत सम्प्रदाय + अश्वमेध यज्ञ का सबसे प्राचीन साक्ष्य; Dr. Bhandarkar ने खोजा</td></tr>
+    <tr><td>बिजौलिया शिलालेख</td><td>1170 ई.</td><td>पार्श्वनाथ मंदिर, बिजौलिया</td><td>चौहान = वत्सगोत्र ब्राह्मण (Dr. Dashrath Sharma); प्राचीन नगर नाम: जाबालिपुर, श्रीमाल आदि; रचयिता गुणभद्र</td></tr>
+    <tr><td>चीरवा शिलालेख</td><td>1273 ई.</td><td>उदयपुर के चीरवा गाँव में मंदिर</td><td>सती प्रथा + पशुपत शैव धर्म की सर्वप्रथम जानकारी; रचयिता रत्नप्रभु सूरी</td></tr>
+    <tr><td>सामोली शिलालेख</td><td>646 ई.</td><td>सामोली गाँव, उदयपुर</td><td>मेवाड़ के गुहिल वंश की सामाजिक, धार्मिक, साहित्यिक जानकारी; भाषा संस्कृत + लिपि कुटिल</td></tr>
+    <tr><td>मानमोरी अभिलेख</td><td>713 ई.</td><td>मानसरोवर झील, चित्तौड़गढ़</td><td>मौर्य वंश से सम्बद्ध; चित्तौड़गढ़ दुर्ग निर्माण की जानकारी; रचयिता पुष्पदत्त</td></tr>
+    <tr><td>कुंभलगढ़ शिलालेख</td><td>1460 ई.</td><td>कुंभश्याम मंदिर (मामादेव मंदिर)</td><td>5 शिलाओं पर; खुमाण की विजयों का वर्णन; रचयिता महेश</td></tr>
+    <tr><td>भाब्रू शिलालेख</td><td>मौर्यकाल</td><td>बीजक पहाड़ी, बैराठ (Kolkata museum में)</td><td>अशोक के बौद्ध धर्म का ठोस प्रमाण — बुद्ध, धम्म, संघ लिखा है; Capt. Burt ने 1837 में खोजा</td></tr>
+  </table>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <h2>⑥ प्रमुख ख्यात साहित्य — Quick Reference</h2>
+  <table>
+    <tr><th>ख्यात / ग्रंथ</th><th>रचनाकार</th><th>विषय</th></tr>
+    <tr><td>नैणसी री ख्यात (सबसे पुरानी)</td><td>मुहणोत नैणसी</td><td>मारवाड़ का इतिहास (Marwar Rathod rulers)</td></tr>
+    <tr><td>मुंडियार री ख्यात</td><td>—</td><td>मारवाड़ के राठौड़ शासक</td></tr>
+    <tr><td>दयालदास री ख्यात</td><td>दयालदास सिंढायच</td><td>बीकानेर के शासकों का इतिहास</td></tr>
+    <tr><td>बाँकीदास री ख्यात (= जोधपुर राज्य री ख्यात)</td><td>बाँकीदास</td><td>जोधपुर राज्य</td></tr>
+    <tr><td>वेलि किसन रुकमणी री</td><td>पृथ्वीराज राठौड़</td><td>कृष्ण-रुक्मणी विवाद; "5वाँ वेद" + "19वाँ पुराण" (दुरसा आढा ने कहा)</td></tr>
+  </table>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <h2>⑦ सिक्के (Coins) — State-wise Key Facts</h2>
+  <table>
+    <tr><th>रियासत / काल</th><th>सिक्के</th><th>विशेष पहचान</th></tr>
+    <tr><td>मेवाड़</td><td>चित्तौड़ी, भिलाड़ी, सिक्का एलची, चांदोड़ी, उदयपुरी, स्वरूपशाही, ढींगला, शाहआलमी, भिंडरिया</td><td>ढींगला = हूणों द्वारा चलाए गए; स्वरूपशाही = स्वरूपसिंह का रुपया (एक तरफ चित्रकूट-उदयपुर)</td></tr>
+    <tr><td>मारवाड़</td><td>भीमशाही, विजयशाही, गजशाही, लल्लूलिया, फदिया, गधिया</td><td>विजयशाही 1780 ई. में विजयसिंह ने शुरू किया; टकसाल = जोधपुर + नागौर</td></tr>
+    <tr><td>जयपुर</td><td>झाड़शाही, मुहम्मदशाही, हाली</td><td>6 टहनियों के झाड़ का चिह्न; माधोसिंह का रुपया = 'हाली'</td></tr>
+    <tr><td>बीकानेर</td><td>गजशाही, आलमशाही</td><td>गजसिंह का चिह्न 'ध्वज'; सूरतसिंह का 'त्रिशूल'; रत्नसिंह का 'नक्षत्र'</td></tr>
+    <tr><td>जैसलमेर</td><td>अखैशाही, मुहम्मदशाही, डोडिया</td><td>डोडिया = ताँबे का सिक्का</td></tr>
+    <tr><td>धौलपुर</td><td>तमंचाशाही</td><td>तमंचे का चिह्न लगाया जाता था</td></tr>
+    <tr><td>बयाना (भरतपुर)</td><td>गुप्तकालीन सिक्के (~2000 स्वर्ण मुद्राएँ)</td><td>गोपीनाथ शर्मा के अनुसार: अधिकतम चंद्रगुप्त II के</td></tr>
+    <tr><td>रैढ़</td><td>~3075 आहत मुद्राएँ + 300 मालव सिक्के</td><td>Asia का सबसे बड़ा सिक्का भंडार</td></tr>
+  </table>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <h2>⑧ Assertion & Reason (कथन और कारण) Sets</h2>
+
+  <div class="ar-box">
+    <div class="a-label">ASSERTION (A)</div>
+    <div>कालीबंगा में मातृदेवी की मूर्तियाँ नहीं मिली हैं।</div>
+    <div class="r-label">REASON (R)</div>
+    <div>कालीबंगा सैंधव सभ्यता का एकमात्र स्थल है जहाँ मातृसत्तात्मक परिवार की व्यवस्था का साक्ष्य है, किन्तु मूर्ति पूजा का कोई प्रमाण नहीं मिला।</div>
+    <div class="verdict">✅ A सही है, R भी सही है, और R, A की सही व्याख्या है।</div>
+  </div>
+
+  <div class="ar-box">
+    <div class="a-label">ASSERTION (A)</div>
+    <div>गणेश्वर को "ताम्रयुगीन सभ्यताओं की जननी" कहा जाता है।</div>
+    <div class="r-label">REASON (R)</div>
+    <div>गणेश्वर से प्राप्त ताँबे के उपकरण सभी ताम्रयुगीन सभ्यताओं में सबसे प्राचीन तिथि के हैं, और यहाँ का ताँबा हड़प्पा व मोहनजोदड़ो को supply किया जाता था।</div>
+    <div class="verdict">✅ A सही है, R भी सही है, और R, A की सही व्याख्या है।</div>
+  </div>
+
+  <div class="ar-box">
+    <div class="a-label">ASSERTION (A)</div>
+    <div>बिजौलिया शिलालेख (1170 ई.) के आधार पर चौहानों को वत्सगोत्र ब्राह्मण बताया गया है।</div>
+    <div class="r-label">REASON (R)</div>
+    <div>इस शिलालेख में "विप्र श्री वत्सगौत्रभूत" अंकन मिलता है, जिसके आधार पर Dr. Dashrath Sharma ने चौहानों को ब्राह्मण वर्ण का बताया।</div>
+    <div class="verdict">✅ A सही है, R भी सही है, और R, A का सही कारण है।</div>
+  </div>
+
+  <div class="ar-box">
+    <div class="a-label">ASSERTION (A)</div>
+    <div>बालाथल में 4000 वर्ष पुराना कंकाल मिला है।</div>
+    <div class="r-label">REASON (R)</div>
+    <div>यह भारत में कुष्ठ रोग (Leprosy) के साक्ष्य का सबसे पुराना उदाहरण माना जाता है; यहाँ के निवासी मांसाहारी भी थे।</div>
+    <div class="verdict">✅ A सही है, R भी सही है, और R, A की सही व्याख्या है।</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="trap-section">
+    <h2>🚨 RSMSSB Board Traps — परीक्षा में सबसे ज्यादा गलती यहाँ होती है</h2>
+
+    <div class="trap-item"><strong>TRAP 1 — नगर vs नगरी:</strong> <span class="keyword">नगरी</span> = चित्तौड़गढ़ (मध्यमिका, शिवि जनपद). <span class="keyword">नगर</span> = टोंक (मालव नगर, मालव जनपद). दोनों का जिला और नदी अलग है।</div>
+
+    <div class="trap-item"><strong>TRAP 2 — जोधपुरा ≠ जोधपुर:</strong> <span class="keyword">जोधपुरा सभ्यता</span> → जयपुर जिले में, साबी नदी के किनारे। यह लौहयुगीन है। जोधपुर शहर में नहीं।</div>
+
+    <div class="trap-item"><strong>TRAP 3 — पक्की ईंटें कहाँ?</strong> <span class="keyword">आहड़ में नहीं</span> थीं पक्की ईंटें। <span class="keyword">गिलूंड में</span> पक्की ईंटें प्रचुरता में मिली हैं। MCQ में "आहड़ में पक्की ईंटें" = WRONG।</div>
+
+    <div class="trap-item"><strong>TRAP 4 — कालीबंगा खोजकर्ता भ्रम:</strong> प्रथम खोज = <span class="keyword">L.P. Tessitori</span> (early mention) → फिर <span class="keyword">Amalanand Ghosh 1952</span> (formal discovery) → उत्खनन = <span class="keyword">B.B. Lal + B.K. Thapar 1961-69</span>. तीनों अलग-अलग व्यक्ति हैं।</div>
+
+    <div class="trap-item"><strong>TRAP 5 — आहड़ के उत्खननकर्ता (4 नाम याद करें):</strong> ① Akshay Kirti Vyas 1953 ② R.C. Agarwal ③ V.N. Mishra ④ Hansmukhbhai Dheerabhai Sankalia. बोर्ड इनमें से किसी एक के बारे में पूछेगा।</div>
+
+    <div class="trap-item"><strong>TRAP 6 — भाब्रू शिलालेख की 2 पहाड़ियाँ:</strong> ① <span class="keyword">बीजक पहाड़ी</span> — यहीं से मिला, अशोक का अभिलेख। ② <span class="keyword">भीमलत पहाड़ी</span> — बैराठ के अन्य पुरातात्विक अवशेष। दोनों अलग हैं।</div>
+
+    <div class="trap-item"><strong>TRAP 7 — रैढ़ का "Asia का सबसे बड़ा सिक्का भंडार":</strong> यहाँ से ~3075 आहत मुद्राएँ मिली हैं। Confusion: बयाना (भरतपुर) = गुप्तकालीन सिक्के (~2000)। दोनों अलग हैं।</div>
+
+    <div class="trap-item"><strong>TRAP 8 — "Only/All/Never" वाले keyword:</strong> <span class="keyword">"एकमात्र"</span> शब्द जहाँ आए, ध्यान से पढ़ें। Example: कालीबंगा = एकमात्र स्थल जहाँ मातृदेवी मूर्ति नहीं। कालीबंगा = हड़प्पाकाल का एकमात्र फर्श जहाँ अलंकृत ईंटें।</div>
+
+    <div class="trap-item"><strong>TRAP 9 — बागोर खोजकर्ता:</strong> <span class="keyword">V.N. Mishra</span> (1967-68), Deccan College Pune के साथ। Confuse न करें Balathal (V.N. Mishra 1962-63) से — दोनों में same person है, dates अलग हैं।</div>
+
+    <div class="trap-item"><strong>TRAP 10 — Sati प्रथा का प्रथम उल्लेख:</strong> <span class="keyword">चीरवा शिलालेख 1273 ई.</span> → यहाँ पहली बार सती प्रथा + पाशुपत संप्रदाय का उल्लेख। Ermanul inscription नहीं।</div>
+  </div>
+
+  <hr class="section-divider">
+  <p class="note">💡 Tip: इस sheet में जो "T" है वो multi-statement MCQ में "Statement 1 सही है" बनेगा। "F" वाले = बोर्ड trap statements। AR sets = Paper 2 level questions।</p>
+</div>
