@@ -6,12 +6,32 @@
 // ============ TOPIC CONFIG ============
 // Add your JSON filenames here when you add new topics
 const TOPIC_FILES = [
+  { file: 'DBMS_overview of database management.json', name: 'DBMS Overview',        icon: '📖' },
+  { file: 'DBMS_architecture of database system .json',name: 'DBMS Architecture',    icon: '🏛️' },
+  { file: 'DBMS_database design.json',                name: 'Database Design',      icon: '📐' },
+  { file: 'DBMS_MCQ important.json',                 name: 'DBMS Important MCQs',  icon: '⭐' },
   { file: 'computer.json',          name: 'Computer',          icon: '💻' },
   { file: 'rajasthan_history.json', name: 'Rajasthan History', icon: '🏰' },
   { file: 'geography.json',         name: 'Geography',         icon: '🗺️' },
   { file: 'culture.json',           name: 'Culture',           icon: '🎭' },
   { file: 'other_topics.json',      name: 'Other Topics',      icon: '📖' },
 ];
+
+// Helper to normalize question fields from different JSON formats
+function normalizeQuestions(questions) {
+  if (!Array.isArray(questions)) return [];
+  questions.forEach(q => {
+    // Standardize answers
+    if (!q.answer && q.correct_answer) {
+      q.answer = q.correct_answer;
+    }
+    // Standardize importance (boolean)
+    if (q.important === undefined && q.importance) {
+      q.important = (q.importance === 'Important' || q.importance === 'Very Important');
+    }
+  });
+  return questions;
+}
 
 // ============ STATE ============
 let state = {
@@ -108,8 +128,9 @@ async function loadTopics() {
     try {
       const res = await fetch(`question-answer/${topic.file}`);
       if (!res.ok) continue;
-      const questions = await res.json();
+      let questions = await res.json();
       if (!Array.isArray(questions) || questions.length === 0) continue;
+      questions = normalizeQuestions(questions);
 
       const card = document.createElement('div');
       card.className = 'topic-card';
@@ -613,7 +634,8 @@ async function startRevision(type) {
       try {
         const res = await fetch(`question-answer/${topic.file}`);
         if (!res.ok) continue;
-        const qs = await res.json();
+        let qs = await res.json();
+        qs = normalizeQuestions(qs);
         pool.push(...qs.filter(q => q.important));
       } catch(e) {}
     }
@@ -625,7 +647,8 @@ async function startRevision(type) {
       try {
         const res = await fetch(`question-answer/${topic.file}`);
         if (!res.ok) continue;
-        const qs = await res.json();
+        let qs = await res.json();
+        qs = normalizeQuestions(qs);
         pool.push(...qs.filter(q => bIds.has(String(q.id))));
       } catch(e) {}
     }
