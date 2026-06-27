@@ -21,11 +21,51 @@ const TOPIC_FILES = [
 function normalizeQuestions(questions) {
   if (!Array.isArray(questions)) return [];
   questions.forEach(q => {
-    // Standardize answers
-    if (!q.answer && q.correct_answer) {
-      q.answer = q.correct_answer;
+    // 0. Normalize option key trailing spaces if any
+    if (!q.options && q['options ']) {
+      q.options = q['options '];
     }
-    // Standardize importance (boolean)
+
+    // 1. Standardize question text (merge English and Hindi if available)
+    if (!q.question) {
+      const en = q.question_english || q.question_en || '';
+      const hi = q.question_hindi || q.question_hi || '';
+      if (en && hi) {
+        q.question = `${en}\n[${hi}]`;
+      } else {
+        q.question = en || hi || '';
+      }
+    }
+
+    // 2. Standardize answers
+    let ans = q.answer || q.correct_answer;
+    if (ans && q.options) {
+      ans = ans.trim();
+      // Match (a) or just a
+      const match = ans.match(/^\(([a-dAD])\)$/) || ans.match(/^[a-dAD]$/);
+      if (match) {
+        const label = (match[1] || match[0]).toLowerCase(); // 'a', 'b', 'c', or 'd'
+        const labelIndex = label.charCodeAt(0) - 97; // 0, 1, 2, 3
+        
+        // Try to find the full option string that starts with "(a)" or "a." or "a "
+        let foundOpt = q.options.find(opt => {
+          const cleanOpt = opt.trim().toLowerCase();
+          return cleanOpt.startsWith(`(${label})`) || cleanOpt.startsWith(`${label}.`) || cleanOpt.startsWith(`${label} `);
+        });
+        
+        // Fallback to index if not found by prefix
+        if (!foundOpt && labelIndex >= 0 && labelIndex < q.options.length) {
+          foundOpt = q.options[labelIndex];
+        }
+        
+        if (foundOpt) {
+          ans = foundOpt;
+        }
+      }
+    }
+    q.answer = ans;
+
+    // 3. Standardize importance (boolean)
     if (q.important === undefined && q.importance) {
       q.important = (q.importance === 'Important' || q.importance === 'Very Important');
     }
