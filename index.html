@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BCI Quiz — RSMSSB Preparation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ====== NAV ====== -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="nav-logo">📚</span>
+      <span class="nav-title">BCI Quiz</span>
+      <span class="nav-sub">RSMSSB Prep</span>
+    </div>
+    <div class="nav-links">
+      <button class="nav-btn active" onclick="showScreen('home')">🏠 Home</button>
+      <button class="nav-btn" onclick="showScreen('dashboard')">📊 Dashboard</button>
+      <button class="nav-btn" onclick="showScreen('revision')">🔁 Revision</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleNav()">☰</button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <button onclick="showScreen('home'); toggleNav()">🏠 Home</button>
+    <button onclick="showScreen('dashboard'); toggleNav()">📊 Dashboard</button>
+    <button onclick="showScreen('revision'); toggleNav()">🔁 Revision</button>
+  </div>
+
+  <!-- ====== SCREENS CONTAINER ====== -->
+  <main class="screens-wrap">
+
+    <!-- ===== SCREEN: HOME ===== -->
+    <div class="screen active" id="screen-home">
+      <div class="home-hero">
+        <div class="hero-badge">RSMSSB BCI 2024–25</div>
+        <h1 class="hero-title">Smart Practice.<br/>Exam Ready.</h1>
+        <p class="hero-sub">6666+ questions · Negative marking · Performance tracking</p>
+      </div>
+
+      <div class="section-label">TOPIC चुनें</div>
+      <div class="topic-grid" id="topicGrid">
+        <div class="topic-skeleton"></div>
+        <div class="topic-skeleton"></div>
+        <div class="topic-skeleton"></div>
+      </div>
+
+      <div class="config-box" id="configBox" style="display:none">
+        <div class="config-header">
+          <span id="selectedTopicLabel">Topic</span>
+          <button class="clear-btn" onclick="clearTopic()">✕ बदलें</button>
+        </div>
+
+        <div class="config-row">
+          <div class="config-label">📝 Questions</div>
+          <div class="config-options" id="qCountOptions">
+            <button class="cfg-btn active" data-val="25">25</button>
+            <button class="cfg-btn" data-val="50">50</button>
+            <button class="cfg-btn" data-val="100">100</button>
+            <button class="cfg-btn" data-val="all">Full Test</button>
+          </div>
+        </div>
+
+        <div class="config-row">
+          <div class="config-label">🔀 Order</div>
+          <div class="config-options" id="qOrderOptions">
+            <button class="cfg-btn active" data-val="random">Random</button>
+            <button class="cfg-btn" data-val="sequential">Sequential</button>
+          </div>
+        </div>
+
+        <div class="config-row">
+          <div class="config-label">⏱ Timer</div>
+          <div class="config-options" id="timerOptions">
+            <button class="cfg-btn active" data-val="none">No Timer</button>
+            <button class="cfg-btn" data-val="30">30 min</button>
+            <button class="cfg-btn" data-val="60">60 min</button>
+            <button class="cfg-btn" data-val="custom">Custom</button>
+          </div>
+        </div>
+
+        <div class="custom-timer-row" id="customTimerRow" style="display:none">
+          <input type="number" id="customMinutes" placeholder="Minutes (e.g. 45)" min="1" max="300" />
+        </div>
+
+        <div class="config-row">
+          <div class="config-label">🎯 Mode</div>
+          <div class="config-options" id="modeOptions">
+            <button class="cfg-btn active" data-val="practice">Practice</button>
+            <button class="cfg-btn" data-val="exam">Exam Simulation</button>
+          </div>
+        </div>
+
+        <button class="start-btn" onclick="startTest()">
+          <span>Start Test →</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== SCREEN: QUIZ ===== -->
+    <div class="screen" id="screen-quiz">
+      <!-- Timer bar -->
+      <div class="timer-bar" id="timerBar" style="display:none">
+        <div class="timer-inner">
+          <span class="timer-icon">⏱</span>
+          <span id="timerDisplay">00:00</span>
+        </div>
+        <div class="timer-progress-wrap">
+          <div class="timer-progress" id="timerProgress"></div>
+        </div>
+      </div>
+
+      <!-- Progress -->
+      <div class="quiz-progress-row">
+        <span class="progress-label" id="progressLabel">Q 1 / 25</span>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+        </div>
+        <span class="score-live" id="scoreLive">Score: 0</span>
+      </div>
+
+      <!-- Question palette toggle -->
+      <div class="palette-toggle-row">
+        <button class="palette-toggle-btn" onclick="togglePalette()">📋 Question Map</button>
+        <div class="mini-legend">
+          <span class="dot dot-answered"></span>Answered
+          <span class="dot dot-skipped"></span>Skipped
+          <span class="dot dot-current"></span>Current
+        </div>
+      </div>
+      <div class="question-palette" id="questionPalette" style="display:none">
+        <div class="palette-grid" id="paletteGrid"></div>
+      </div>
+
+      <!-- Question card -->
+      <div class="question-card" id="questionCard">
+        <div class="q-meta">
+          <span class="q-number" id="qNumber">Q1</span>
+          <span class="q-difficulty" id="qDifficulty">Medium</span>
+          <span class="q-important" id="qImportant" style="display:none">⭐ Important</span>
+        </div>
+        <div class="q-text" id="questionText">Loading...</div>
+        <div class="options-list" id="optionsList"></div>
+
+        <!-- Answer reveal (shown after selection in practice mode) -->
+        <div class="answer-reveal" id="answerReveal" style="display:none">
+          <div class="reveal-correct">✅ Correct Answer: <strong id="revealAnswer"></strong></div>
+          <div class="reveal-explanation" id="revealExplanation"></div>
+        </div>
+      </div>
+
+      <!-- Nav buttons -->
+      <div class="quiz-nav">
+        <button class="qnav-btn" id="prevBtn" onclick="navigate(-1)">← Prev</button>
+        <button class="skip-btn" id="skipBtn" onclick="skipQuestion()">Skip →</button>
+        <button class="qnav-btn" id="nextBtn" onclick="navigate(1)">Next →</button>
+      </div>
+      <button class="submit-quiz-btn" id="submitBtn" onclick="confirmSubmit()">🏁 Submit Test</button>
+    </div>
+
+    <!-- ===== SCREEN: RESULT ===== -->
+    <div class="screen" id="screen-result">
+      <div class="result-hero">
+        <div class="result-emoji" id="resultEmoji">🎯</div>
+        <div class="result-score" id="resultScore">0.00</div>
+        <div class="result-label">Final Score</div>
+        <div class="result-status" id="resultStatus">Calculating...</div>
+      </div>
+
+      <div class="result-grid">
+        <div class="result-stat">
+          <div class="rstat-val" id="rTotal">0</div>
+          <div class="rstat-label">Total</div>
+        </div>
+        <div class="result-stat">
+          <div class="rstat-val green" id="rCorrect">0</div>
+          <div class="rstat-label">Correct</div>
+        </div>
+        <div class="result-stat">
+          <div class="rstat-val red" id="rWrong">0</div>
+          <div class="rstat-label">Wrong</div>
+        </div>
+        <div class="result-stat">
+          <div class="rstat-val muted" id="rSkipped">0</div>
+          <div class="rstat-label">Skipped</div>
+        </div>
+        <div class="result-stat">
+          <div class="rstat-val" id="rAttempted">0</div>
+          <div class="rstat-label">Attempted</div>
+        </div>
+        <div class="result-stat">
+          <div class="rstat-val accent" id="rAccuracy">0%</div>
+          <div class="rstat-label">Accuracy</div>
+        </div>
+      </div>
+
+      <div class="marking-note">
+        Marking: +1 Correct | −⅓ Wrong | 0 Skipped &nbsp;·&nbsp; Qualifying: 40%
+      </div>
+
+      <div class="result-actions">
+        <button class="ra-btn primary" onclick="reviewAnswers()">📖 Review Answers</button>
+        <button class="ra-btn" onclick="showScreen('home')">🏠 Home</button>
+        <button class="ra-btn" onclick="retestWrong()">🔁 Redo Wrong Qs</button>
+      </div>
+    </div>
+
+    <!-- ===== SCREEN: REVIEW ===== -->
+    <div class="screen" id="screen-review">
+      <div class="review-header">
+        <button class="back-btn" onclick="showScreen('result')">← Back to Result</button>
+        <h2>Answer Review</h2>
+      </div>
+      <div class="review-filters">
+        <button class="rf-btn active" data-filter="all" onclick="filterReview(this,'all')">All</button>
+        <button class="rf-btn" data-filter="correct" onclick="filterReview(this,'correct')">✅ Correct</button>
+        <button class="rf-btn" data-filter="wrong" onclick="filterReview(this,'wrong')">❌ Wrong</button>
+        <button class="rf-btn" data-filter="skipped" onclick="filterReview(this,'skipped')">⏭ Skipped</button>
+      </div>
+      <div class="review-list" id="reviewList"></div>
+    </div>
+
+    <!-- ===== SCREEN: DASHBOARD ===== -->
+    <div class="screen" id="screen-dashboard">
+      <div class="dash-title">📊 My Performance</div>
+      <div class="dash-grid">
+        <div class="dash-card big">
+          <div class="dash-num" id="dTotalTests">0</div>
+          <div class="dash-label">Tests Taken</div>
+        </div>
+        <div class="dash-card big">
+          <div class="dash-num green" id="dOverallAccuracy">0%</div>
+          <div class="dash-label">Overall Accuracy</div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-num" id="dTotalQs">0</div>
+          <div class="dash-label">Qs Attempted</div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-num green" id="dTotalCorrect">0</div>
+          <div class="dash-label">Correct</div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-num red" id="dTotalWrong">0</div>
+          <div class="dash-label">Wrong</div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-num accent" id="dTotalScore">0</div>
+          <div class="dash-label">Total Score</div>
+        </div>
+      </div>
+
+      <div class="dash-section">
+        <div class="dash-sec-title">🔥 Weak Topics</div>
+        <div id="weakTopics" class="weak-list">No data yet</div>
+      </div>
+
+      <div class="dash-section">
+        <div class="dash-sec-title">📈 Topic-wise Stats</div>
+        <div id="topicStats" class="topic-stats-list"></div>
+      </div>
+
+      <button class="danger-btn" onclick="clearAllData()">🗑 Clear All Data</button>
+    </div>
+
+    <!-- ===== SCREEN: REVISION ===== -->
+    <div class="screen" id="screen-revision">
+      <div class="dash-title">🔁 Revision Center</div>
+
+      <div class="revision-cards">
+        <div class="rev-card" onclick="startRevision('wrong')">
+          <div class="rev-icon">❌</div>
+          <div class="rev-label">Wrong Questions</div>
+          <div class="rev-count" id="revWrongCount">0 questions</div>
+        </div>
+        <div class="rev-card" onclick="startRevision('important')">
+          <div class="rev-icon">⭐</div>
+          <div class="rev-label">Important Questions</div>
+          <div class="rev-count" id="revImportantCount">0 questions</div>
+        </div>
+        <div class="rev-card" onclick="startRevision('skipped')">
+          <div class="rev-icon">⏭</div>
+          <div class="rev-label">Skipped Questions</div>
+          <div class="rev-count" id="revSkippedCount">0 questions</div>
+        </div>
+        <div class="rev-card" onclick="startRevision('bookmarked')">
+          <div class="rev-icon">📌</div>
+          <div class="rev-label">Bookmarked</div>
+          <div class="rev-count" id="revBookmarkedCount">0 questions</div>
+        </div>
+      </div>
+
+      <div class="rev-note">Wrong Questions are automatically saved from every test.</div>
+    </div>
+
+  </main>
+
+  <!-- ====== MODAL: Confirm Submit ====== -->
+  <div class="modal-overlay" id="confirmModal" style="display:none">
+    <div class="modal-box">
+      <div class="modal-title">Submit Test?</div>
+      <div class="modal-body" id="confirmModalBody">Are you sure?</div>
+      <div class="modal-actions">
+        <button class="modal-btn cancel" onclick="closeModal()">Cancel</button>
+        <button class="modal-btn confirm" onclick="submitTest()">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== TOAST ====== -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
