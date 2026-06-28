@@ -9,7 +9,20 @@ const TOPIC_FILES = [
   { file: 'DBMS_overview of database management.json', name: 'DBMS Overview',        icon: '📖' },
   { file: 'DBMS_architecture of database system .json',name: 'DBMS Architecture',    icon: '🏛️' },
   { file: 'DBMS_database design.json',                name: 'Database Design',      icon: '📐' },
+  { file: 'DBMS_manipulating data.json',              name: 'Manipulating Data',     icon: '⚙️' },
+  { file: 'DBMS_Rdbms.json',                          name: 'RDBMS',                icon: '💾' },
+  { file: 'DBMS_no sql technology .js',               name: 'NoSQL Technology',     icon: '🌐' },
   { file: 'DBMS_MCQ important.json',                 name: 'DBMS Important MCQs',  icon: '⭐' },
+
+  // IT Pathshala Books Topics
+  { file: 'DBMS_IT_Pathshala_Basics of DBMS.json',    name: 'Basics of DBMS (Pathshala)',    icon: '📚' },
+  { file: 'DBMS_IT_Pathshala_Data Models.json',       name: 'Data Models (Pathshala)',       icon: '🗂️' },
+  { file: 'DBMS_IT_Pathshala_Relational Algebra.json',name: 'Relational Algebra (Pathshala)',icon: '🧮' },
+  { file: 'DBMS_IT_Pathshala_RDBMS.json',             name: 'RDBMS Basics (Pathshala)',      icon: '📁' },
+  { file: 'DBMS_IT_Pathshala_Normalization.json',     name: 'Normalization (Pathshala)',     icon: '📋' },
+  { file: 'DBMS_IT_Pathshala_Transaction Concurrency.json', name: 'Transaction & Concurrency (Pathshala)', icon: '🔄' },
+  { file: 'DBMS_IT_Pathshala_NoSQL Data Warehouse.json',name: 'NoSQL & Data Warehouse (Pathshala)', icon: '☁️' },
+
   { file: 'computer.json',          name: 'Computer',          icon: '💻' },
   { file: 'rajasthan_history.json', name: 'Rajasthan History', icon: '🏰' },
   { file: 'geography.json',         name: 'Geography',         icon: '🗺️' },
@@ -24,6 +37,25 @@ function normalizeQuestions(questions) {
     // 0. Normalize option key trailing spaces if any
     if (!q.options && q['options ']) {
       q.options = q['options '];
+    }
+
+    // Normalize options from objects {id, text} to simple strings if necessary
+    if (Array.isArray(q.options)) {
+      q.options = q.options.map((opt, optIdx) => {
+        let textVal = (typeof opt === 'object' && opt !== null) ? (opt.text || opt.option || '') : String(opt);
+        textVal = textVal.trim();
+        
+        // Add (a), (b), (c), (d) prefixes if not already present
+        const prefix = ['(a) ', '(b) ', '(c) ', '(d) '][optIdx] || '';
+        const hasPrefix = textVal.toLowerCase().startsWith('(a)') ||
+                          textVal.toLowerCase().startsWith('(b)') ||
+                          textVal.toLowerCase().startsWith('(c)') ||
+                          textVal.toLowerCase().startsWith('(d)');
+        if (!hasPrefix && prefix) {
+          textVal = prefix + textVal;
+        }
+        return textVal;
+      });
     }
 
     // 1. Standardize question text (merge English and Hindi if available)
@@ -168,7 +200,23 @@ async function loadTopics() {
     try {
       const res = await fetch(`question-answer/${topic.file}`);
       if (!res.ok) continue;
-      let questions = await res.json();
+
+      const text = await res.text();
+      let questions;
+      try {
+        questions = JSON.parse(text);
+      } catch (e) {
+        // Fallback for JS files or JSON files with comments/trailing commas
+        const startIndex = text.indexOf('[');
+        const endIndex = text.lastIndexOf(']');
+        if (startIndex !== -1 && endIndex !== -1 && endIndex > startIndex) {
+          const arrayText = text.substring(startIndex, endIndex + 1);
+          questions = new Function(`return ${arrayText}`)();
+        } else {
+          continue;
+        }
+      }
+
       if (!Array.isArray(questions) || questions.length === 0) continue;
       questions = normalizeQuestions(questions);
 
@@ -304,7 +352,7 @@ function renderQuestion() {
   document.getElementById('qNumber').textContent = `Q${idx + 1}`;
   const diffEl = document.getElementById('qDifficulty');
   diffEl.textContent = capitalize(q.difficulty || 'medium');
-  diffEl.className = `q-difficulty ${q.difficulty || 'medium'}`;
+  diffEl.className = `q-difficulty ${(q.difficulty || 'medium').toLowerCase()}`;
   const impEl = document.getElementById('qImportant');
   impEl.style.display = q.important ? 'inline' : 'none';
 
