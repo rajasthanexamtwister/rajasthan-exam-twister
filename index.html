@@ -23,6 +23,7 @@
       <button class="nav-btn" onclick="showScreen('revision')">🔁 Revision</button>
       <button class="nav-btn" onclick="showScreen('notes')">📖 Notes</button>
     </div>
+    <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" style="background:none;border:none;color:#fff;font-size:18px;cursor:pointer;padding:6px 10px;display:inline-flex;align-items:center;justify-content:center;transition:transform 0.2s ease;" title="Toggle Dark/Light Mode">🌙</button>
     <button class="hamburger" id="hamburger" onclick="toggleNav()">☰</button>
   </nav>
   <div class="mobile-nav" id="mobileNav">
@@ -143,6 +144,7 @@
           <span class="q-number" id="qNumber">Q1</span>
           <span class="q-difficulty" id="qDifficulty">Medium</span>
           <span class="q-important" id="qImportant" style="display:none">⭐ Important</span>
+          <span class="q-source" id="qSource" style="display:none"></span>
         </div>
         <div class="q-text" id="questionText">Loading...</div>
         <div class="options-list" id="optionsList"></div>
@@ -190,6 +192,14 @@
           <div class="rstat-label">Skipped</div>
         </div>
         <div class="result-stat">
+          <div class="rstat-val" id="rOptionE">0</div>
+          <div class="rstat-label">Option E</div>
+        </div>
+        <div class="result-stat">
+          <div class="rstat-val red" id="rBlank">0</div>
+          <div class="rstat-label">Blank</div>
+        </div>
+        <div class="result-stat">
           <div class="rstat-val" id="rAttempted">0</div>
           <div class="rstat-label">Attempted</div>
         </div>
@@ -200,7 +210,7 @@
       </div>
 
       <div class="marking-note">
-        Marking: +1 Correct | −⅓ Wrong | 0 Skipped &nbsp;·&nbsp; Qualifying: 40%
+        Marking: +1 Correct | −⅓ Wrong | 0 Option E | −⅓ Blank &nbsp;·&nbsp; Qualifying: 40% &nbsp;·&nbsp; Disqualification: >10% Blank
       </div>
 
       <div class="result-actions">

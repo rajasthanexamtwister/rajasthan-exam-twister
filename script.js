@@ -23,6 +23,9 @@ const TOPIC_FILES = [
   { file: 'DBMS_IT_Pathshala_Transaction Concurrency.json', name: 'Transaction & Concurrency (Pathshala)', icon: '🔄' },
   { file: 'DBMS_IT_Pathshala_NoSQL Data Warehouse.json',name: 'NoSQL & Data Warehouse (Pathshala)', icon: '☁️' },
 
+  // IT Pathshala DBMS Additional Topics
+  { file: 'IT PATHSHALA DBMS/forester.json',             name: 'RSSB Forest Guard',            icon: '🌳' },
+
   { file: 'computer.json',          name: 'Computer',          icon: '💻' },
   { file: 'rajasthan_history.json', name: 'Rajasthan History', icon: '🏰' },
   { file: 'geography.json',         name: 'Geography',         icon: '🗺️' },
@@ -56,6 +59,12 @@ function normalizeQuestions(questions) {
         }
         return textVal;
       });
+
+      // Add Option E dynamically if it doesn't exist
+      const hasE = q.options.some(opt => opt.toLowerCase().startsWith('(e)'));
+      if (!hasE && q.options.length === 4) {
+        q.options.push("(e) अनुत्तरित प्रश्न / Not Attempted (Option E)");
+      }
     }
 
     // 1. Standardize question text (merge English and Hindi if available)
@@ -63,7 +72,7 @@ function normalizeQuestions(questions) {
       const en = q.question_english || q.question_en || '';
       const hi = q.question_hindi || q.question_hi || '';
       if (en && hi) {
-        q.question = `${en}\n[${hi}]`;
+        q.question = `${en}\n\n${hi}`;
       } else {
         q.question = en || hi || '';
       }
@@ -74,7 +83,7 @@ function normalizeQuestions(questions) {
     if (ans && q.options) {
       ans = ans.trim();
       // Match (a) or just a
-      const match = ans.match(/^\(([a-dAD])\)$/) || ans.match(/^[a-dAD]$/);
+      const match = ans.match(/^\(([a-dA-D])\)$/) || ans.match(/^[a-dA-D]$/);
       if (match) {
         const label = (match[1] || match[0]).toLowerCase(); // 'a', 'b', 'c', or 'd'
         const labelIndex = label.charCodeAt(0) - 97; // 0, 1, 2, 3
@@ -202,21 +211,22 @@ async function loadTopics() {
       if (!res.ok) continue;
 
       const text = await res.text();
-      let questions;
+      let parsed;
       try {
-        questions = JSON.parse(text);
+        parsed = JSON.parse(text);
       } catch (e) {
         // Fallback for JS files or JSON files with comments/trailing commas
         const startIndex = text.indexOf('[');
         const endIndex = text.lastIndexOf(']');
         if (startIndex !== -1 && endIndex !== -1 && endIndex > startIndex) {
           const arrayText = text.substring(startIndex, endIndex + 1);
-          questions = new Function(`return ${arrayText}`)();
+          parsed = new Function(`return ${arrayText}`)();
         } else {
           continue;
         }
       }
 
+      let questions = Array.isArray(parsed) ? parsed : (parsed.questions || parsed.data || []);
       if (!Array.isArray(questions) || questions.length === 0) continue;
       questions = normalizeQuestions(questions);
 
@@ -356,13 +366,24 @@ function renderQuestion() {
   const impEl = document.getElementById('qImportant');
   impEl.style.display = q.important ? 'inline' : 'none';
 
+  // Exam source
+  const sourceEl = document.getElementById('qSource');
+  if (sourceEl) {
+    if (q.exam_source) {
+      sourceEl.textContent = q.exam_source;
+      sourceEl.style.display = 'inline';
+    } else {
+      sourceEl.style.display = 'none';
+    }
+  }
+
   // Question text
   document.getElementById('questionText').textContent = q.question;
 
   // Options
   const optList = document.getElementById('optionsList');
   optList.innerHTML = '';
-  const labels = ['A', 'B', 'C', 'D'];
+  const labels = ['A', 'B', 'C', 'D', 'E'];
 
   q.options.forEach((opt, i) => {
     const btn = document.createElement('button');
@@ -372,8 +393,15 @@ function renderQuestion() {
     const existingAnswer = state.answers[idx];
     if (existingAnswer !== undefined) {
       btn.disabled = true;
-      if (opt === q.answer) btn.classList.add('correct');
-      else if (opt === existingAnswer) btn.classList.add('wrong');
+      if (opt === q.answer) {
+        btn.classList.add('correct');
+      } else if (opt === existingAnswer) {
+        if (opt.toLowerCase().includes('(e)')) {
+          btn.classList.add('skipped-opt');
+        } else {
+          btn.classList.add('wrong');
+        }
+      }
     } else {
       btn.onclick = () => selectAnswer(opt, btn, q);
     }
@@ -407,8 +435,15 @@ function selectAnswer(selectedOpt, clickedBtn, q) {
   // Mark correct / wrong
   opts.forEach(b => {
     const optText = b.querySelector('.opt-text').textContent;
-    if (optText === q.answer) b.classList.add('correct');
-    else if (b === clickedBtn) b.classList.add('wrong');
+    if (optText === q.answer) {
+      b.classList.add('correct');
+    } else if (b === clickedBtn) {
+      if (optText.toLowerCase().includes('(e)')) {
+        b.classList.add('skipped-opt');
+      } else {
+        b.classList.add('wrong');
+      }
+    }
   });
 
   state.answers[idx] = selectedOpt;
@@ -419,7 +454,8 @@ function selectAnswer(selectedOpt, clickedBtn, q) {
   document.getElementById('skipBtn').style.display = 'none';
   document.getElementById('scoreLive').textContent = `Score: ${calcLiveScore().toFixed(2)}`;
 
-  updatePalette(idx, selectedOpt === q.answer ? 'answered' : 'wrong-ans');
+  const paletteStatus = selectedOpt === q.answer ? 'answered' : (selectedOpt.toLowerCase().includes('(e)') ? 'skipped' : 'wrong-ans');
+  updatePalette(idx, paletteStatus);
 
   // Automatically navigate to the next question after a 1-second delay
   if (idx < state.questions.length - 1) {
@@ -434,7 +470,25 @@ function selectAnswer(selectedOpt, clickedBtn, q) {
 function showReveal(q) {
   document.getElementById('answerReveal').style.display = 'block';
   document.getElementById('revealAnswer').textContent = q.answer;
-  document.getElementById('revealExplanation').textContent = q.explanation || '';
+  
+  let html = '';
+  if (q.explanation) {
+    html += `<div class="reveal-explanation-section explanation"><strong>💡 Explanation:</strong> ${q.explanation}</div>`;
+  }
+  if (q.trap_point) {
+    html += `<div class="reveal-explanation-section trap-point"><strong>⚠️ Trap Point:</strong> ${q.trap_point}</div>`;
+  }
+  if (q.memory_trick) {
+    html += `<div class="reveal-explanation-section memory-trick"><strong>💡 Memory Trick:</strong> ${q.memory_trick}</div>`;
+  }
+  if (q.revision_fact || q.one_line_fact) {
+    html += `<div class="reveal-explanation-section revision-fact"><strong>📋 Revision Fact:</strong> ${q.revision_fact || q.one_line_fact}</div>`;
+  }
+  if (q.technical_proof) {
+    html += `<div class="reveal-explanation-section technical-proof"><strong>⚙️ Technical Proof:</strong> ${q.technical_proof}</div>`;
+  }
+  
+  document.getElementById('revealExplanation').innerHTML = html || '<div class="reveal-explanation-section">No explanation available.</div>';
 }
 
 function skipQuestion() {
@@ -524,34 +578,61 @@ function calcLiveScore() {
   let score = 0;
   Object.keys(state.answers).forEach(idx => {
     const q = state.questions[parseInt(idx)];
-    if (state.answers[idx] === q.answer) score += 1;
-    else score -= (1/3);
+    const ans = state.answers[idx];
+    if (ans === q.answer) {
+      score += 1;
+    } else if (ans.toLowerCase().startsWith('(e)')) {
+      score += 0;
+    } else {
+      score -= (1/3);
+    }
   });
   return score;
 }
 
 function calcResult() {
-  let correct = 0, wrong = 0, skipped = 0;
+  let correct = 0;
+  let wrong = 0;
+  let skippedE = 0;
+  let blank = 0;
 
   state.questions.forEach((q, idx) => {
-    if (state.answers[idx] === undefined || state.skipped.has(idx)) {
-      skipped++;
-    } else if (state.answers[idx] === q.answer) {
+    const ans = state.answers[idx];
+    if (ans === undefined) {
+      blank++;
+    } else if (ans === q.answer) {
       correct++;
+    } else if (ans.toLowerCase().startsWith('(e)')) {
+      skippedE++;
     } else {
       wrong++;
     }
   });
 
   const total = state.questions.length;
-  const attempted = correct + wrong;
-  const score = correct - (wrong / 3);
-  const maxScore = total;
-  const accuracy = attempted > 0 ? (correct / attempted * 100) : 0;
-  const pct = (score / maxScore) * 100;
-  const pass = pct >= 40;
+  const score = correct - (wrong / 3) - (blank / 3);
+  const attempted = correct + wrong + skippedE;
+  const accuracy = (correct + wrong) > 0 ? (correct / (correct + wrong) * 100) : 0;
+  const pct = (score / total) * 100;
+  const blankPercentage = (blank / total) * 100;
+  const disqualified = blankPercentage > 10;
+  const pass = pct >= 40 && !disqualified;
 
-  return { total, correct, wrong, skipped, attempted, score, accuracy, pct, pass };
+  return { 
+    total, 
+    correct, 
+    wrong, 
+    skipped: skippedE + blank, 
+    skippedE, 
+    blank, 
+    attempted, 
+    score, 
+    accuracy, 
+    pct, 
+    pass, 
+    disqualified, 
+    blankPercentage 
+  };
 }
 
 // ============ SUBMIT ============
@@ -620,18 +701,28 @@ function submitTest() {
 
 // ============ RESULT RENDER ============
 function renderResult(r) {
-  const emoji = r.pass ? '🎉' : (r.pct >= 30 ? '💪' : '😤');
+  let emoji = r.pass ? '🎉' : (r.pct >= 30 ? '💪' : '😤');
+  if (r.disqualified) {
+    emoji = '🚫';
+  }
   document.getElementById('resultEmoji').textContent = emoji;
   document.getElementById('resultScore').textContent = r.score.toFixed(2);
 
   const status = document.getElementById('resultStatus');
-  status.textContent = r.pass ? `✅ Qualified (${r.pct.toFixed(1)}%)` : `❌ Not Qualified (${r.pct.toFixed(1)}%)`;
-  status.className = 'result-status ' + (r.pass ? 'pass' : 'fail');
+  if (r.disqualified) {
+    status.textContent = `🚫 DISQUALIFIED (${r.blankPercentage.toFixed(1)}% Blank)`;
+    status.className = 'result-status fail';
+  } else {
+    status.textContent = r.pass ? `✅ Qualified (${r.pct.toFixed(1)}%)` : `❌ Not Qualified (${r.pct.toFixed(1)}%)`;
+    status.className = 'result-status ' + (r.pass ? 'pass' : 'fail');
+  }
 
   document.getElementById('rTotal').textContent = r.total;
   document.getElementById('rCorrect').textContent = r.correct;
   document.getElementById('rWrong').textContent = r.wrong;
   document.getElementById('rSkipped').textContent = r.skipped;
+  document.getElementById('rOptionE').textContent = r.skippedE;
+  document.getElementById('rBlank').textContent = r.blank;
   document.getElementById('rAttempted').textContent = r.attempted;
   document.getElementById('rAccuracy').textContent = r.accuracy.toFixed(1) + '%';
 }
@@ -648,18 +739,41 @@ function renderReviewList(filter) {
   if (!state.lastResult) return;
 
   const { questions, answers } = state.lastResult;
-  const labels = ['A','B','C','D'];
+  const labels = ['A','B','C','D','E'];
 
   questions.forEach((q, idx) => {
     const userAns = answers[idx];
     let status = 'skipped';
     if (userAns !== undefined) {
-      status = userAns === q.answer ? 'correct' : 'wrong';
+      if (userAns === q.answer) {
+        status = 'correct';
+      } else if (userAns.toLowerCase().includes('(e)')) {
+        status = 'skipped';
+      } else {
+        status = 'wrong';
+      }
     }
 
     if (filter !== 'all' && filter !== status) return;
 
     const statusLabel = { correct: '✅ Correct', wrong: '❌ Wrong', skipped: '⏭ Skipped' }[status];
+
+    let detailsHtml = '';
+    if (q.explanation) {
+      detailsHtml += `<div class="ri-detail-sec explanation"><strong>💡 Explanation:</strong> ${q.explanation}</div>`;
+    }
+    if (q.trap_point) {
+      detailsHtml += `<div class="ri-detail-sec trap-point"><strong>⚠️ Trap Point:</strong> ${q.trap_point}</div>`;
+    }
+    if (q.memory_trick) {
+      detailsHtml += `<div class="ri-detail-sec memory-trick"><strong>💡 Memory Trick:</strong> ${q.memory_trick}</div>`;
+    }
+    if (q.revision_fact || q.one_line_fact) {
+      detailsHtml += `<div class="ri-detail-sec revision-fact"><strong>📋 Revision Fact:</strong> ${q.revision_fact || q.one_line_fact}</div>`;
+    }
+    if (q.technical_proof) {
+      detailsHtml += `<div class="ri-detail-sec technical-proof"><strong>⚙️ Technical Proof:</strong> ${q.technical_proof}</div>`;
+    }
 
     const item = document.createElement('div');
     item.className = `review-item ${status}`;
@@ -667,17 +781,20 @@ function renderReviewList(filter) {
       <div class="ri-head">
         <span class="ri-status ${status}">${statusLabel}</span>
         <span style="font-size:12px;color:var(--text-muted)">Q${idx+1}</span>
+        ${q.exam_source ? `<span class="ri-source-tag">${q.exam_source}</span>` : ''}
       </div>
       <div class="ri-qtext">${q.question}</div>
       <div class="ri-options">
         ${q.options.map((opt, i) => {
           let cls = '';
           if (opt === q.answer) cls = 'correct-opt';
-          else if (opt === userAns) cls = 'wrong-opt';
+          else if (opt === userAns) {
+            cls = opt.toLowerCase().includes('(e)') ? 'skipped-opt' : 'wrong-opt';
+          }
           return `<div class="ri-opt ${cls}">${labels[i]}. ${opt}</div>`;
         }).join('')}
       </div>
-      ${q.explanation ? `<div class="ri-explanation">💡 ${q.explanation}</div>` : ''}
+      ${detailsHtml ? `<div class="ri-details">${detailsHtml}</div>` : ''}
     `;
     list.appendChild(item);
   });
@@ -905,8 +1022,38 @@ function filterNotes() {
   });
 }
 
+// ============ THEME MANAGEMENT ============
+function initTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    document.body.classList.add('dark');
+    const toggleBtn = document.getElementById('themeToggle');
+    if (toggleBtn) toggleBtn.textContent = '☀️';
+  } else {
+    document.body.classList.remove('dark');
+    const toggleBtn = document.getElementById('themeToggle');
+    if (toggleBtn) toggleBtn.textContent = '🌙';
+  }
+}
+
+function toggleTheme() {
+  const isDark = document.body.classList.toggle('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  const toggleBtn = document.getElementById('themeToggle');
+  if (toggleBtn) {
+    toggleBtn.textContent = isDark ? '☀️' : '🌙';
+    toggleBtn.style.transform = 'scale(1.2) rotate(360deg)';
+    setTimeout(() => {
+      toggleBtn.style.transform = '';
+    }, 300);
+  }
+}
+
 // ============ INIT ============
 function init() {
+  initTheme();
   showScreen('home');
   loadTopics();
   initConfigButtons();
