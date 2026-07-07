@@ -1,0 +1,2992 @@
+[
+  {
+    "id": "BCI-000001",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Fundamentals / Security",
+    "subtopic": "Authentication",
+    "question_hindi": "एक कम्प्यूटर उपयोग करने देने से पहले यूज़रनेम और पासवर्ड के ___ की जाँच करता है।",
+    "question_english": "A computer checks the ___ of username and password before allowing it to be used.",
+    "options": [
+      {
+        "id": "A",
+        "text": "वेबसाइट / Website"
+      },
+      {
+        "id": "B",
+        "text": "नेटवर्क / Network"
+      },
+      {
+        "id": "C",
+        "text": "बैक-अप फाइल / Backup file"
+      },
+      {
+        "id": "D",
+        "text": "डेटाबेस / Database"
+      }
+    ],
+    "correct_answer": "D",
+    "book_answer": "D",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Login credentials (username/password) are validated by checking stored records in a database/user-authentication table.",
+    "explanation": "The system verifies entered credentials against records maintained in a database of authorized users.",
+    "trap_point": "Students may confuse 'Network' with credential validation because logins are often network-based, but the actual check is against stored data (database), not the network itself.",
+    "memory_trick": "Login = Look-In (the system looks IN the database).",
+    "revision_fact": "Username/password validation happens against a database of registered users.",
+    "difficulty": "Easy",
+    "importance": "Normal",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "76",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000002",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "ER Model",
+    "subtopic": "Entity Sets",
+    "question_hindi": "एंटिटी सेट, जिसमें प्राइमरी की बनाने के लिए पर्याप्त फील्ड नहीं होते हैं, कहलाता है।",
+    "question_english": "Entity set, which does not have enough fields to form the primary key, is called-",
+    "options": [
+      {
+        "id": "A",
+        "text": "स्ट्रॉन्ग एंटिटी सेट / Strong entity set"
+      },
+      {
+        "id": "B",
+        "text": "वीक एंटिटी सेट / Weak entity set"
+      },
+      {
+        "id": "C",
+        "text": "सिम्पल एंटिटी सेट / Simple entity set"
+      },
+      {
+        "id": "D",
+        "text": "प्राइमरी एंटिटी सेट / Primary entity set"
+      }
+    ],
+    "correct_answer": "B",
+    "book_answer": "B",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "By definition, a weak entity set lacks sufficient attributes to form its own primary key and depends on a strong (owner) entity via a foreign key.",
+    "explanation": "A weak entity set cannot have a primary key of its own and depends on a related strong entity set for unique identification.",
+    "trap_point": "Do not confuse 'Weak entity' (no own primary key) with 'Simple entity' (not a standard DB term).",
+    "memory_trick": "Weak = 'Wanting' a key of its own.",
+    "revision_fact": "Weak entity sets are identified using a partial key + the primary key of the owner (strong) entity.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "76",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000003",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "DBMS Basics",
+    "subtopic": "Terminology/Full Forms",
+    "question_hindi": "RDBMS का पूरा नाम है-",
+    "question_english": "The full name of RDBMS is-",
+    "options": [
+      {
+        "id": "A",
+        "text": "Relational Data Base Management System"
+      },
+      {
+        "id": "B",
+        "text": "Real Data Board Master System"
+      },
+      {
+        "id": "C",
+        "text": "Regional Dash Board Mix Size"
+      },
+      {
+        "id": "D",
+        "text": "इनमें से कोई नहीं / None of these"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "RDBMS is the standard acronym for Relational Database Management System, a DBMS based on the relational model proposed by E.F. Codd.",
+    "explanation": "RDBMS stands for Relational Database Management System.",
+    "trap_point": "Distractors b and c are meaningless expansions designed to test rote memorization.",
+    "memory_trick": "R-D-B-M-S = Relational Data Base Management System.",
+    "revision_fact": "RDBMS organizes data into tables (relations) linked by keys.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "76",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000004",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "SQL/DML-DDL",
+    "subtopic": "Full Forms",
+    "question_hindi": "DML का पूरा नाम है-",
+    "question_english": "Full form of DML is-",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data Management Language"
+      },
+      {
+        "id": "B",
+        "text": "Data Manipulation Language"
+      },
+      {
+        "id": "C",
+        "text": "Data Modern Language"
+      },
+      {
+        "id": "D",
+        "text": "इनमें से कोई नहीं / None of these"
+      }
+    ],
+    "correct_answer": "B",
+    "book_answer": "B",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "DML (Data Manipulation Language) includes SQL commands like SELECT, INSERT, UPDATE, DELETE used to manipulate data.",
+    "explanation": "DML stands for Data Manipulation Language, used to insert, update, delete and retrieve data.",
+    "trap_point": "Students often confuse DML with DDL (Data Definition Language, used for CREATE/ALTER/DROP).",
+    "memory_trick": "DML = Manipulate the data (INSERT/UPDATE/DELETE/SELECT).",
+    "revision_fact": "DDL defines structure; DML manipulates data within that structure.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "76",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000005",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Database Architecture",
+    "subtopic": "Three-Level Architecture",
+    "question_hindi": "डेटाबेस की संरचना ___ में होती है।",
+    "question_english": "Database is structured in ___.",
+    "options": [
+      {
+        "id": "A",
+        "text": "दो स्तरों / Two levels"
+      },
+      {
+        "id": "B",
+        "text": "चार स्तरों / Four levels"
+      },
+      {
+        "id": "C",
+        "text": "तीन स्तरों / Three levels"
+      },
+      {
+        "id": "D",
+        "text": "एक स्तर / One level"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "The ANSI-SPARC architecture defines three levels: External (view), Conceptual (logical), and Internal (physical) level.",
+    "explanation": "Database architecture is structured into three levels — external, conceptual, and internal.",
+    "trap_point": "Remember it's the classic 'three-schema architecture', not two or four.",
+    "memory_trick": "3 Levels: E-C-I (External-Conceptual-Internal).",
+    "revision_fact": "The three-level (ANSI-SPARC) architecture provides data independence.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "76",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000006",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Data Storage Basics",
+    "subtopic": "Field vs Database",
+    "question_hindi": "एक डेटा आइटम के संग्रहण के लिए ___ की आवश्यकता होती है।",
+    "question_english": "Storage of a data item requires ___.",
+    "options": [
+      {
+        "id": "A",
+        "text": "फील्ड / Field"
+      },
+      {
+        "id": "B",
+        "text": "फीड / Feed"
+      },
+      {
+        "id": "C",
+        "text": "डेटाबेस / Database"
+      },
+      {
+        "id": "D",
+        "text": "इनमें से कोई नहीं / None of these"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "C",
+    "answer_key_verified": false,
+    "answer_key_bug": true,
+    "technical_proof": "A single data item (e.g., a name, a number) is stored in a 'Field' — the smallest labeled storage unit in a record. A 'Database' is a much larger structure containing many tables, records and fields; a database is not required merely to store one data item.",
+    "explanation": "🚨 ANSWER KEY BUG DETECTED! Book Answer: Database (c). Correct Answer: Field (a). Reason: In data hierarchy (Bit→Byte→Character→Field→Record→File→Database), an individual data item is held in a Field, not an entire Database. Technical Proof: Standard data-hierarchy concept taught in every DBMS syllabus (see also Q58 of this same paper, which itself lists Field before Record before Database in the hierarchy).",
+    "trap_point": "This question is internally inconsistent with Q58 of the same paper, which correctly places Field before Record/Database in the size hierarchy.",
+    "memory_trick": "One item → One field (smallest labeled box for data).",
+    "revision_fact": "Data hierarchy: Bit < Byte < Character < Field < Record < File < Database.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": true,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "76",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified - Bug Flagged"
+  },
+  {
+    "id": "BCI-000007",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "SQL/DML-DDL",
+    "subtopic": "Full Forms",
+    "question_hindi": "DDL का पूरा नाम है-",
+    "question_english": "Full form of DDL is-",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data Definition Language"
+      },
+      {
+        "id": "B",
+        "text": "Data Dynamic Language"
+      },
+      {
+        "id": "C",
+        "text": "Data Disk Language"
+      },
+      {
+        "id": "D",
+        "text": "Data Direct Language"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "DDL (Data Definition Language) includes commands like CREATE, ALTER, DROP used to define database structure.",
+    "explanation": "DDL stands for Data Definition Language, used to define/modify schema objects.",
+    "trap_point": "Don't confuse with DML (manipulation) or DCL (control).",
+    "memory_trick": "DDL = Design the structure (CREATE/ALTER/DROP).",
+    "revision_fact": "DDL commands are auto-committed in most RDBMS.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "76",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000008",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Access 2010 Features",
+    "subtopic": "Web Database",
+    "question_hindi": "माइक्रोसॉफ्ट एक्सेस 2010 से ___ कर सकते हैं।",
+    "question_english": "From Microsoft Access 2010 you can ___.",
+    "options": [
+      {
+        "id": "A",
+        "text": "डाटाबेस को वेबब्राउज़र में प्रयोग / Using the database in a web browser"
+      },
+      {
+        "id": "B",
+        "text": "डाटाबेस को वेब पर क्रिएट / Create the database on the web"
+      },
+      {
+        "id": "C",
+        "text": "शेयर पॉइंट साइट पर पब्लिश / Publish on SharePoint site"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त सभी / All of the above"
+      }
+    ],
+    "correct_answer": "D",
+    "book_answer": "D",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "MS Access 2010 introduced Web Databases which can be created, published to a SharePoint server, and accessed through a web browser.",
+    "explanation": "Access 2010's Web Database feature supports creating, publishing to SharePoint, and browser-based use — so all listed options are correct.",
+    "trap_point": "This is a feature-specific (version-specific) fact unique to Access 2010's 'Web Database' capability.",
+    "memory_trick": "2010 = 'Web-ready' Access (Create + Publish + Browser).",
+    "revision_fact": "Access 2010 Web Databases require SharePoint Server with Access Services.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "76",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000009",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Getting Started",
+    "subtopic": "Launching Access",
+    "question_hindi": "माइक्रोसॉफ्ट एक्सेस शुरू करने का तरीका है-",
+    "question_english": "How to start Microsoft Access-",
+    "options": [
+      {
+        "id": "A",
+        "text": "M.S.Access शॉर्टकट पर डबल क्लिक करें / Double click on M.S.Access shortcut"
+      },
+      {
+        "id": "B",
+        "text": "Start → All Programs → MS Office → MS Access"
+      },
+      {
+        "id": "C",
+        "text": "a और b दोनों / Both a and b"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त में से कोई नहीं / None of the above"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Access can be launched either via a desktop shortcut or through the Start Menu Programs path — both are valid standard methods.",
+    "explanation": "Both the shortcut method and the Start Menu path are valid ways of launching MS Access.",
+    "trap_point": "Straightforward application-launch fact question.",
+    "memory_trick": "Two doors, one room: Shortcut OR Start Menu.",
+    "revision_fact": "Any Windows application can typically be launched via shortcut or Start Menu.",
+    "difficulty": "Easy",
+    "importance": "Normal",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "76",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000010",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Interface",
+    "subtopic": "Ribbon Tabs",
+    "question_hindi": "निम्न में से माइक्रोसॉफ्ट एक्सेस से संबंधित टैब नहीं है-",
+    "question_english": "Which of the following is not a Microsoft Access related tab-",
+    "options": [
+      {
+        "id": "A",
+        "text": "होम / Home"
+      },
+      {
+        "id": "B",
+        "text": "क्रिएट / Create"
+      },
+      {
+        "id": "C",
+        "text": "डाटाबेस टूल / Database Tools"
+      },
+      {
+        "id": "D",
+        "text": "हाइपरलिंक / Hyperlink"
+      }
+    ],
+    "correct_answer": "D",
+    "book_answer": "D",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Access 2010's default ribbon tabs are Home, Create, External Data, and Database Tools. 'Hyperlink' is a command/object type, not a ribbon tab.",
+    "explanation": "Hyperlink is not a ribbon tab in MS Access; it's a data type/command found inside tabs.",
+    "trap_point": "Students may mistake 'Hyperlink' for a tab because it appears as a button within the Create tab.",
+    "memory_trick": "Tabs: Home, Create, External Data, Database Tools — no 'Hyperlink' tab.",
+    "revision_fact": "Access 2010 ribbon has 4 core tabs: Home, Create, External Data, Database Tools.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "76",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000011",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Interface",
+    "subtopic": "Home Tab Groups",
+    "question_hindi": "माइक्रोसॉफ्ट एक्सेस के होम टैब में पाया जाने वाला ग्रुप है-",
+    "question_english": "The group found in the Home tab of Microsoft Access is-",
+    "options": [
+      {
+        "id": "A",
+        "text": "रिपोर्ट / Report"
+      },
+      {
+        "id": "B",
+        "text": "सॉर्ट और फ़िल्टर / Sort and Filter"
+      },
+      {
+        "id": "C",
+        "text": "फॉर्म / Form"
+      },
+      {
+        "id": "D",
+        "text": "एक्सपोर्ट / Export"
+      }
+    ],
+    "correct_answer": "B",
+    "book_answer": "B",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "The Home tab in Access contains groups: Views, Clipboard, Sort & Filter, Records, Find, Text Formatting.",
+    "explanation": "'Sort and Filter' is a group under the Home tab; Report, Form, and Export belong to Create/External Data tabs.",
+    "trap_point": "Report/Form are under Create tab; Export is under External Data tab — easy to mix up.",
+    "memory_trick": "Home tab = Sort & Filter (basic record-editing tools).",
+    "revision_fact": "Home tab groups: Views, Clipboard, Sort & Filter, Records, Find, Text Formatting.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "76",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000012",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Interface",
+    "subtopic": "Database Tools Tab",
+    "question_hindi": "डाटाबेस को मैनिपुलेट करने से संबंधित टूल उपलब्ध होते हैं-",
+    "question_english": "Tools for manipulating the database are available in-",
+    "options": [
+      {
+        "id": "A",
+        "text": "डाटाबेस टूल / Database Tools"
+      },
+      {
+        "id": "B",
+        "text": "क्रिएट / Create"
+      },
+      {
+        "id": "C",
+        "text": "एक्सटर्नल डेटा टैब / External Data tab"
+      },
+      {
+        "id": "D",
+        "text": "होम / Home"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "The 'Database Tools' tab contains options for compact & repair, relationships, macros, and analysis tools that manipulate the database.",
+    "explanation": "Database manipulation utilities (Relationships, Compact & Repair, Analyze) reside under the Database Tools tab.",
+    "trap_point": "Do not confuse with 'External Data' tab which is for import/export.",
+    "memory_trick": "Database Tools = 'Maintenance & Manipulation Hub'.",
+    "revision_fact": "Database Tools tab includes Relationships, Analyze, Macro, Add-ins groups.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "76",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000013",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Interface",
+    "subtopic": "External Data Tab",
+    "question_hindi": "डाटाबेस में वैल्यू इम्पोर्ट व एक्सपोर्ट से संबंधित टूल्स उपलब्ध होते हैं-",
+    "question_english": "Tools related to value import and export are available in the database-",
+    "options": [
+      {
+        "id": "A",
+        "text": "एक्सटर्नल डेटा टैब / External Data tab"
+      },
+      {
+        "id": "B",
+        "text": "डाटाबेस टूल / Database Tools"
+      },
+      {
+        "id": "C",
+        "text": "क्रिएट टैब / Create tab"
+      },
+      {
+        "id": "D",
+        "text": "होम टैब / Home tab"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "The 'External Data' tab houses Import & Link and Export groups for exchanging data with other applications/formats.",
+    "explanation": "Import/Export functionality is grouped under the External Data tab.",
+    "trap_point": "Distinguish 'External Data' (import/export) from 'Database Tools' (maintenance/relationships).",
+    "memory_trick": "External Data = Data's 'Passport Office' (Import/Export).",
+    "revision_fact": "External Data tab groups: Import & Link, Export.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "76",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000014",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Fundamentals",
+    "subtopic": "Database Objects",
+    "question_hindi": "डाटाबेस के अवयव हैं-",
+    "question_english": "Components of the database are-",
+    "options": [
+      {
+        "id": "A",
+        "text": "फॉर्म / Form"
+      },
+      {
+        "id": "B",
+        "text": "क्वेरी / Query"
+      },
+      {
+        "id": "C",
+        "text": "ऑब्जेक्ट / Object"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त सभी / All of the above"
+      }
+    ],
+    "correct_answer": "D",
+    "book_answer": "D",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Access database objects include Tables, Queries, Forms, Reports, Macros, and Modules — all are components/objects of the database.",
+    "explanation": "Form, Query, and other objects are all valid components of an Access database.",
+    "trap_point": "Note: option 'Object' is a generic umbrella term but the question intends 'all listed items are valid components'.",
+    "memory_trick": "Access objects: Tables, Queries, Forms, Reports, Macros, Modules.",
+    "revision_fact": "A relational database contains multiple object types serving different purposes.",
+    "difficulty": "Easy",
+    "importance": "Normal",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "76",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000015",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "File Systems",
+    "subtopic": "Terminology",
+    "question_hindi": "सम्बन्धित फाइल्स का व्यवस्थित समूह कहलाता है।",
+    "question_english": "An organized group of related files is called.",
+    "options": [
+      {
+        "id": "A",
+        "text": "कैरेक्टर / Character"
+      },
+      {
+        "id": "B",
+        "text": "फील्ड / Field"
+      },
+      {
+        "id": "C",
+        "text": "डेटाबेस / Database"
+      },
+      {
+        "id": "D",
+        "text": "रिकॉर्ड / Record"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A database is, by definition, an organized collection of related data/files that can be accessed and managed together.",
+    "explanation": "A database is an organized collection of related files/data.",
+    "trap_point": "Character and Field are smaller units; Record is a single row, not a group of files.",
+    "memory_trick": "Group of related files = Database.",
+    "revision_fact": "Data hierarchy top level (of the listed units): Database.",
+    "difficulty": "Easy",
+    "importance": "Normal",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000016",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "SQL Basics",
+    "subtopic": "Full Forms",
+    "question_hindi": "SQL का पूरा नाम-",
+    "question_english": "Full name of SQL-",
+    "options": [
+      {
+        "id": "A",
+        "text": "Structured Query Language"
+      },
+      {
+        "id": "B",
+        "text": "System Query Language"
+      },
+      {
+        "id": "C",
+        "text": "Service Query Language"
+      },
+      {
+        "id": "D",
+        "text": "Signal Query Language"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "SQL universally stands for Structured Query Language, the standard language for relational database operations.",
+    "explanation": "SQL = Structured Query Language.",
+    "trap_point": "Common trick options replace 'Structured' with similar-sounding words.",
+    "memory_trick": "SQL = Structured (not System/Service/Signal).",
+    "revision_fact": "SQL is used for both DDL and DML operations in RDBMS.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000017",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Fundamentals",
+    "subtopic": "Database Type",
+    "question_hindi": "एम.एस.एक्सेस में डाटाबेस का प्रकार है-",
+    "question_english": "The type of database in M.S.Access is-",
+    "options": [
+      {
+        "id": "A",
+        "text": "नेटवर्क डाटाबेस / Network database"
+      },
+      {
+        "id": "B",
+        "text": "हैरार्किकल डाटाबेस / Hierarchical database"
+      },
+      {
+        "id": "C",
+        "text": "रिलेशनल डाटाबेस / Relational database"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त सभी / All of the above"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "D",
+    "answer_key_verified": false,
+    "answer_key_bug": true,
+    "technical_proof": "MS Access is explicitly a Relational Database Management System (RDBMS) — it stores data in related tables using keys. It does not natively implement the network or hierarchical database models.",
+    "explanation": "🚨 ANSWER KEY BUG DETECTED! Book Answer: All of the above (d). Correct Answer: Relational database (c). Reason: Microsoft Access is officially classified and marketed by Microsoft as a Relational Database Management System (RDBMS); it does not support hierarchical or network data models. Technical Proof: Microsoft's own documentation and every standard textbook describe Access as an RDBMS based on tables/relations, not hierarchical or network models.",
+    "trap_point": "Do not confuse 'types of database models that exist' (as a general topic) with 'the type Access actually uses' — the question is Access-specific.",
+    "memory_trick": "Access = Always Relational.",
+    "revision_fact": "MS Access uses the relational model exclusively (tables linked via primary/foreign keys).",
+    "difficulty": "Medium",
+    "importance": "Very Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": true,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified - Bug Flagged"
+  },
+  {
+    "id": "BCI-000018",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Interface",
+    "subtopic": "Views",
+    "question_hindi": "एम.एस.एक्सेस में पाया जाने वाला व्यू है-",
+    "question_english": "M.S. Views found in Access are-",
+    "options": [
+      {
+        "id": "A",
+        "text": "डेटा शीट व्यू / Datasheet view"
+      },
+      {
+        "id": "B",
+        "text": "डिजाइन व्यू / Design view"
+      },
+      {
+        "id": "C",
+        "text": "a और b दोनों / Both a and b"
+      },
+      {
+        "id": "D",
+        "text": "टेबल व्यू / Table view"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Access objects (tables, queries, forms) can commonly be opened in both Datasheet View and Design View.",
+    "explanation": "Both Datasheet view and Design view are standard Access views.",
+    "trap_point": "'Table view' (option d) is not a distinct formal view name in Access terminology.",
+    "memory_trick": "Two main working views: Design (structure) + Datasheet (data).",
+    "revision_fact": "Design view edits structure; Datasheet view edits/browses data directly.",
+    "difficulty": "Easy",
+    "importance": "Normal",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000019",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Database Architecture",
+    "subtopic": "Logical Level",
+    "question_hindi": "डाटा का लॉजिकल स्तर कहलाता है-",
+    "question_english": "The logical level of data is called-",
+    "options": [
+      {
+        "id": "A",
+        "text": "कांसेप्चुअल लेवल / Conceptual level"
+      },
+      {
+        "id": "B",
+        "text": "एक्सटर्नल लेवल / External level"
+      },
+      {
+        "id": "C",
+        "text": "इंटरनल लेवल / Internal level"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त में से कोई नहीं / None of the above"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "In the ANSI-SPARC three-level architecture, the logical (community) view of the entire database is the Conceptual level.",
+    "explanation": "The logical level of data corresponds to the Conceptual level in the three-level DB architecture.",
+    "trap_point": "Internal level = physical storage; External level = user views; Conceptual = logical/global schema.",
+    "memory_trick": "Logical = Conceptual (the middle layer).",
+    "revision_fact": "Three levels: External (view) > Conceptual (logical) > Internal (physical).",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000020",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "ER Model",
+    "subtopic": "E-R Diagram Purpose",
+    "question_hindi": "ई-आर डायग्राम (E-R Diagram) ___ को प्रदर्शित करने का ग्राफिकल तरीका है।",
+    "question_english": "E-R Diagram is a graphical way of representing ___.",
+    "options": [
+      {
+        "id": "A",
+        "text": "प्राइमरी की और उनका आपस में सम्बन्ध / Primary keys and their relationships"
+      },
+      {
+        "id": "B",
+        "text": "प्राइमरी की और उनका इन्स्टैन्स से सम्बन्ध / Primary keys and their instances"
+      },
+      {
+        "id": "C",
+        "text": "एंटिटी क्लॉसेस और उनका आपस में सम्बन्ध / Entities and their relationships"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त में से कोई नहीं / None of these"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "An Entity-Relationship (E-R) diagram graphically models entities, their attributes, and the relationships between entities.",
+    "explanation": "E-R diagrams represent entities and the relationships among them.",
+    "trap_point": "Primary keys are a component within entities, not the core subject of an E-R diagram.",
+    "memory_trick": "E-R = Entities + Relationships (the diagram's name says it all).",
+    "revision_fact": "E-R diagrams use rectangles (entities), ellipses (attributes), and diamonds (relationships).",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000021",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Keys",
+    "subtopic": "Foreign Key",
+    "question_hindi": "की, जिसका प्रयोग दो सारणियों के बीच सम्बन्ध को प्रदर्शित करने के लिए किया जाता है, कहलाती है।",
+    "question_english": "Key, which is used to represent the relation between two tables, is called-",
+    "options": [
+      {
+        "id": "A",
+        "text": "प्राइमरी की / Primary Key"
+      },
+      {
+        "id": "B",
+        "text": "सेकेंडरी की / Secondary Key"
+      },
+      {
+        "id": "C",
+        "text": "फॉरिन की / Foreign Key"
+      },
+      {
+        "id": "D",
+        "text": "कंपोजिट की / Composite Key"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A Foreign Key in one table references the Primary Key of another table, establishing the relationship between the two tables.",
+    "explanation": "A Foreign Key links two tables by referencing the primary key of the related table.",
+    "trap_point": "Primary Key uniquely identifies rows within its own table; Foreign Key is what links across tables.",
+    "memory_trick": "Foreign Key = the 'bridge' between two tables.",
+    "revision_fact": "Foreign Key enforces referential integrity between related tables.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000022",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Data Types",
+    "subtopic": "Default Data Type",
+    "question_hindi": "एम.एस.एक्सेस में डिफॉल्ट डेटा टाइप का प्रकार है-",
+    "question_english": "The default data type in M.S.Access is-",
+    "options": [
+      {
+        "id": "A",
+        "text": "संख्या / Number"
+      },
+      {
+        "id": "B",
+        "text": "टैक्स्ट / Text"
+      },
+      {
+        "id": "C",
+        "text": "मुद्रा / Currency"
+      },
+      {
+        "id": "D",
+        "text": "हाँ/नहीं / Yes/No"
+      }
+    ],
+    "correct_answer": "B",
+    "book_answer": "B",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "When a new field is created in Access, its default data type is 'Short Text' (referred to generically as 'Text').",
+    "explanation": "Access assigns the 'Text' (Short Text) data type by default to new fields.",
+    "trap_point": "Number is a common wrong guess since it seems 'basic', but Access defaults new fields to Text.",
+    "memory_trick": "New field in Access = Text by default.",
+    "revision_fact": "Access field data types: Short Text, Long Text, Number, Date/Time, Currency, AutoNumber, Yes/No, etc.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000023",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "File Formats",
+    "subtopic": "Default File Format",
+    "question_hindi": "M.S. Access-2010 में किए की गयी नयी डेटाबेस फाइल का डिफॉल्ट फॉर्मेट होता है-",
+    "question_english": "The default format for newly created database files in M.S. Access-2010 is-",
+    "options": [
+      {
+        "id": "A",
+        "text": ".sqldb"
+      },
+      {
+        "id": "B",
+        "text": ".accdb"
+      },
+      {
+        "id": "C",
+        "text": ".odcbd"
+      },
+      {
+        "id": "D",
+        "text": "सभी / All"
+      }
+    ],
+    "correct_answer": "B",
+    "book_answer": "B",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Access 2007 onward (including 2010) uses the .accdb file format by default for new databases (replacing the older .mdb format).",
+    "explanation": "New Access 2010 databases default to the .accdb file extension.",
+    "trap_point": "Older versions (2003 and earlier) used .mdb; from 2007 onward it's .accdb.",
+    "memory_trick": "2010 → accdb (a-c-c-d-b).",
+    "revision_fact": ".accdb supports features like multi-value fields and attachments not available in .mdb.",
+    "difficulty": "Easy",
+    "importance": "Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000024",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Database Models",
+    "subtopic": "Hierarchical Model",
+    "question_hindi": "___ डेटाबेस में डेटा को वृक्ष के रूप में नोड्स के माध्यम से व्यवस्थित किया जाता है।",
+    "question_english": "The data in a ___ database is organized in form of a tree through nodes.",
+    "options": [
+      {
+        "id": "A",
+        "text": "नेटवर्क / Network"
+      },
+      {
+        "id": "B",
+        "text": "हैरार्किकल / Hierarchical"
+      },
+      {
+        "id": "C",
+        "text": "रिलेशनल / Relational"
+      },
+      {
+        "id": "D",
+        "text": "a और b दोनों / Both a and b"
+      }
+    ],
+    "correct_answer": "B",
+    "book_answer": "B",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "The Hierarchical data model arranges data in a tree-like structure with parent-child (one-to-many) relationships between nodes.",
+    "explanation": "Hierarchical databases organize data as a tree structure using nodes.",
+    "trap_point": "Network model uses a graph structure (multiple parents allowed), not a strict tree — don't confuse the two.",
+    "memory_trick": "Hierarchical = Tree (like a family tree with one parent per child).",
+    "revision_fact": "Hierarchical model predates the relational model; used in early systems like IBM's IMS.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000025",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Data Models",
+    "subtopic": "Types of Data Models",
+    "question_hindi": "इनमें से डेटा मॉडल क्या है-",
+    "question_english": "What is a data model-",
+    "options": [
+      {
+        "id": "A",
+        "text": "एंटिटी रिलेशनशिप मॉडल / Entity Relationship Model"
+      },
+      {
+        "id": "B",
+        "text": "रिलेशनल डेटा मॉडल / Relational Data Model"
+      },
+      {
+        "id": "C",
+        "text": "ऑब्जेक्ट बेस्ड डेटा मॉडल / Object Based Data Model"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त सभी / All of the above"
+      }
+    ],
+    "correct_answer": "D",
+    "book_answer": "D",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Entity-Relationship, Relational, and Object-based models are all recognized categories of data models used to describe database structures.",
+    "explanation": "All three listed models (E-R, Relational, Object-based) are legitimate types of data models.",
+    "trap_point": "This is a classification question — students should know data models are broadly grouped into record-based, object-based, and conceptual (E-R) models.",
+    "memory_trick": "Data models come in many flavors: E-R, Relational, Object-based, Hierarchical, Network.",
+    "revision_fact": "A data model defines how data is logically structured and manipulated.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000026",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Interface",
+    "subtopic": "Title Bar",
+    "question_hindi": "M.S. Access-2010 Window के शीर्ष में दिखायी देने वाला भाग जो डेटाबेस फाईल का नाम व पथ प्रदर्शित करता है, है-",
+    "question_english": "The part visible at the top of the M.S. Access 2010 window that displays the name and path of that database file is-",
+    "options": [
+      {
+        "id": "A",
+        "text": "नेविगेशन पेन / Navigation Pane"
+      },
+      {
+        "id": "B",
+        "text": "टाइटल बार / Title Bar"
+      },
+      {
+        "id": "C",
+        "text": "स्टेटस बार / Status Bar"
+      },
+      {
+        "id": "D",
+        "text": "बैकस्टेज व्यू / Backstage view"
+      }
+    ],
+    "correct_answer": "B",
+    "book_answer": "B",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "The Title Bar, located at the very top of the application window, displays the file name (and sometimes path) of the currently open database.",
+    "explanation": "The Title Bar at the top of the Access window shows the database file's name.",
+    "trap_point": "Status Bar is at the bottom, not top; Navigation Pane is on the left side listing objects.",
+    "memory_trick": "Top of window = Title Bar (like the top of a book cover shows its title).",
+    "revision_fact": "Title Bar in Access also contains Quick Access Toolbar and window control buttons.",
+    "difficulty": "Easy",
+    "importance": "Normal",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000027",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Relational Model",
+    "subtopic": "Cardinality",
+    "question_hindi": "रिलेशनल मॉडल में कार्डिनेलिटी ___ कुल संख्या होती है।",
+    "question_english": "In relational model cardinality is total number of-",
+    "options": [
+      {
+        "id": "A",
+        "text": "ट्यूपल्स / Tuples"
+      },
+      {
+        "id": "B",
+        "text": "एट्रिब्यूट्स / Attributes"
+      },
+      {
+        "id": "C",
+        "text": "सारणियों / Tables"
+      },
+      {
+        "id": "D",
+        "text": "कन्स्ट्रेण्ट्स / Constraints"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Cardinality of a relation (table) refers to the number of tuples (rows) it contains; the number of attributes is called 'degree'.",
+    "explanation": "Cardinality = number of tuples (rows) in a relation.",
+    "trap_point": "Do not confuse Cardinality (number of rows) with Degree (number of columns/attributes).",
+    "memory_trick": "Cardinality → Count of rows (Tuples). Degree → Count of columns (Attributes).",
+    "revision_fact": "Cardinality changes as rows are inserted/deleted; Degree changes only when schema is altered.",
+    "difficulty": "Medium",
+    "importance": "Very Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000028",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "ER Model",
+    "subtopic": "ER Notation",
+    "question_hindi": "ई-आर डायग्राम में, रिलेशनशिप टाइप को ___ द्वारा प्रदर्शित किया जाता है।",
+    "question_english": "In E-R diagram, relationship type represented by-",
+    "options": [
+      {
+        "id": "A",
+        "text": "एलिप्टिकल बॉक्स / Elliptical box"
+      },
+      {
+        "id": "B",
+        "text": "डैश्ड एलिप्सोइडल बॉक्स / Dashed ellipsoidal box"
+      },
+      {
+        "id": "C",
+        "text": "रेक्टेंगुलर बॉक्स / Rectangular box"
+      },
+      {
+        "id": "D",
+        "text": "डायमंड बॉक्स / Diamond Box"
+      }
+    ],
+    "correct_answer": "D",
+    "book_answer": "D",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Standard Chen notation for E-R diagrams uses a diamond shape to represent relationship types, rectangles for entities, and ellipses for attributes.",
+    "explanation": "Relationships in an E-R diagram are represented using a diamond-shaped box.",
+    "trap_point": "Rectangle = Entity, Ellipse = Attribute, Diamond = Relationship — a classic mix-up trio.",
+    "memory_trick": "Diamond = Relationship (think of a 'diamond ring' connecting two entities).",
+    "revision_fact": "E-R notation: Rectangle-Entity, Ellipse-Attribute, Diamond-Relationship, Line-Connector.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000029",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Relationships",
+    "subtopic": "Cardinality Ratios",
+    "question_hindi": "निम्न में से कौनसी Valid Relationship नहीं है-",
+    "question_english": "Which of the following is not a valid relationship-",
+    "options": [
+      {
+        "id": "A",
+        "text": "1:1, 1:N"
+      },
+      {
+        "id": "B",
+        "text": "0:1, 0:N"
+      },
+      {
+        "id": "C",
+        "text": "N:1, N:N"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त सभी / All of the above"
+      }
+    ],
+    "correct_answer": "B",
+    "book_answer": "B",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Standard relationship (cardinality) types in the relational/E-R model are One-to-One (1:1), One-to-Many (1:N), Many-to-One (N:1), and Many-to-Many (N:N). '0:1, 0:N' notation describes minimum cardinality/optional participation, not a named relationship type itself.",
+    "explanation": "1:1, 1:N, N:1, N:N are the standard named relationship types; '0:1, 0:N' is not a standard relationship type name.",
+    "trap_point": "Students may think '0' indicates an invalid/nonexistent relationship, but it actually refers to participation constraints, a different concept from relationship type.",
+    "memory_trick": "Valid relationship types always pair 1s and Ns, not 0s.",
+    "revision_fact": "The four standard relationship cardinalities: 1:1, 1:N, N:1, N:N.",
+    "difficulty": "Hard",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "77",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000030",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Fundamentals",
+    "subtopic": "Terminology",
+    "question_hindi": "इंटररिलेटेड रिकॉर्ड का कलेक्शन कहलाता है-",
+    "question_english": "Collection of interrelated records is called-",
+    "options": [
+      {
+        "id": "A",
+        "text": "स्प्रेडशीट / Spreadsheet"
+      },
+      {
+        "id": "B",
+        "text": "टैक्स्ट / Text"
+      },
+      {
+        "id": "C",
+        "text": "डेटाबेस / Database"
+      },
+      {
+        "id": "D",
+        "text": "रिपोर्ट / Report"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A database is formally defined as an organized collection of interrelated data/records.",
+    "explanation": "A collection of interrelated records is called a Database.",
+    "trap_point": "Spreadsheet stores tabular data but isn't inherently 'interrelated' across multiple tables like a database.",
+    "memory_trick": "Interrelated records = Database.",
+    "revision_fact": "Databases link multiple related tables/records together via keys.",
+    "difficulty": "Easy",
+    "importance": "Normal",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000031",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Hardware",
+    "subtopic": "Input Devices",
+    "question_hindi": "डेटाबेस में डेटा को इनपुट करने के लिए प्रयोग में आने वाली युक्तियाँ हैं-",
+    "question_english": "The devices used for inputting data into the database are-",
+    "options": [
+      {
+        "id": "A",
+        "text": "कीबोर्ड, प्रिंटर / Keyboard, Printer"
+      },
+      {
+        "id": "B",
+        "text": "माउस, कीबोर्ड, मॉनिटर / Mouse, Keyboard, Monitor"
+      },
+      {
+        "id": "C",
+        "text": "माउस, कीबोर्ड, टचस्क्रीन / Mouse, Keyboard, Touchscreen"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त सभी / All of the above"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Printer and Monitor are output devices, not input devices. Mouse, Keyboard, and Touchscreen are all genuine input devices used to enter data.",
+    "explanation": "Mouse, Keyboard, and Touchscreen are all input devices; Printer and Monitor are output devices, so option (c) is the only fully correct set.",
+    "trap_point": "Options (a) and (b) each contain one output device disguised among input devices — a classic trap.",
+    "memory_trick": "Input goes IN (Mouse/Keyboard/Touchscreen); Output comes OUT (Printer/Monitor).",
+    "revision_fact": "Common input devices: Keyboard, Mouse, Touchscreen, Scanner, Microphone.",
+    "difficulty": "Easy",
+    "importance": "Normal",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000032",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Objects",
+    "subtopic": "Query Object",
+    "question_hindi": "डेटाबेस का वह Object जो डेटा को व्यू, चेंज तथा विभिन्न प्रकार से विश्लेषण करने के काम आता है-",
+    "question_english": "The object of the database which is used to view, change and analyze the data in different ways-",
+    "options": [
+      {
+        "id": "A",
+        "text": "क्वेरी / Query"
+      },
+      {
+        "id": "B",
+        "text": "रिपोर्ट / Report"
+      },
+      {
+        "id": "C",
+        "text": "फॉर्म / Form"
+      },
+      {
+        "id": "D",
+        "text": "इनमें से कोई नहीं / None of these"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A Query lets users view a filtered/sorted dataset, perform calculations/analysis, and (via action queries) update data — matching all three described capabilities.",
+    "explanation": "Query objects allow viewing, changing (via action queries), and analyzing data.",
+    "trap_point": "Form is mainly for data entry/viewing; Report is mainly for presenting/printing analyzed data — Query uniquely covers all three actions described.",
+    "memory_trick": "Query = the 'Swiss army knife' Access object (view + change + analyze).",
+    "revision_fact": "Access query types: Select, Action (Update/Delete/Append/Make-table), Crosstab, Parameter.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000033",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Shortcuts",
+    "subtopic": "Keyboard Shortcuts",
+    "question_hindi": "MS Access में Alt + F4 का प्रयोग होता है-",
+    "question_english": "Alt + F4 is used in MS Access-",
+    "options": [
+      {
+        "id": "A",
+        "text": "नया डेटाबेस खोलने में / Opening a new database"
+      },
+      {
+        "id": "B",
+        "text": "पहले से रक्षित डेटाबेस खोलने में / Opening an already protected database"
+      },
+      {
+        "id": "C",
+        "text": "MS Access-2010 से बाहर आने के लिये / To exit MS Access-2010"
+      },
+      {
+        "id": "D",
+        "text": "इनमें से कोई नहीं / None of these"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Alt+F4 is a universal Windows shortcut to close/exit the active application, including MS Access.",
+    "explanation": "Alt+F4 exits/closes the MS Access application.",
+    "trap_point": "This is a standard Windows-wide shortcut, not Access-specific — easy marks if remembered.",
+    "memory_trick": "Alt+F4 = 'Farewell 4ever' (closes the app).",
+    "revision_fact": "Ctrl+W closes the current window/object; Alt+F4 closes the entire application.",
+    "difficulty": "Easy",
+    "importance": "Normal",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000034",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Fundamentals",
+    "subtopic": "Database Instance",
+    "question_hindi": "Instance ऑफ डेटाबेस से क्या तात्पर्य है-",
+    "question_english": "What is meant by Instance of Database-",
+    "options": [
+      {
+        "id": "A",
+        "text": "डेटाबेस के किसी निश्चित क्षण में स्टोर जानकारी का संग्रह / Collection of information stored in a database at a given moment"
+      },
+      {
+        "id": "B",
+        "text": "डेटाबेस में संग्रहित डेटा की पुर्नप्राप्ति / Retrieval of data stored in the database"
+      },
+      {
+        "id": "C",
+        "text": "डेटाबेस में संग्रहित जानकारी का संग्रह / Collection of information stored in the database"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त सभी / All of the above"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A database 'instance' refers to the state of the data (the actual content) stored in the database at one particular point in time; the 'schema' is the unchanging overall design.",
+    "explanation": "Database Instance = the snapshot of stored data at a specific moment in time.",
+    "trap_point": "Don't confuse Instance (a snapshot in time) with Schema (the overall, mostly static structure).",
+    "memory_trick": "Instance = a 'photograph' of the database at one moment.",
+    "revision_fact": "Schema rarely changes; Instance changes every time data is inserted/updated/deleted.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000035",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Relational Model",
+    "subtopic": "Components",
+    "question_hindi": "रिलेशनल मॉडल में होता है-",
+    "question_english": "Relational model consists of-",
+    "options": [
+      {
+        "id": "A",
+        "text": "टेबल / Table"
+      },
+      {
+        "id": "B",
+        "text": "दोनों / Both"
+      },
+      {
+        "id": "C",
+        "text": "एंटिटी / Entity"
+      },
+      {
+        "id": "D",
+        "text": "इनमें से कोई नहीं / None of these"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "C",
+    "answer_key_verified": false,
+    "answer_key_bug": true,
+    "technical_proof": "The relational model represents data purely as a collection of relations, i.e., Tables (rows and columns). 'Entity' is a modeling concept used in the E-R model at the design stage, not the storage structure of the relational model itself.",
+    "explanation": "🚨 ANSWER KEY BUG DETECTED! Book Answer: Entity (c). Correct Answer: Table (a). Reason: By definition, the relational model organizes data strictly into relations (tables) consisting of rows (tuples) and columns (attributes) — 'Entity' belongs to the conceptual E-R model, used before the relational schema is derived. Technical Proof: Codd's relational model (1970) defines a database as a set of relations/tables; entities are mapped INTO tables during the ER-to-relational conversion process, so 'Table' is the correct structural component, not 'Entity'.",
+    "trap_point": "Students often blur E-R model concepts (Entity) with the Relational model's actual storage unit (Table) — they are related but distinct stages of database design.",
+    "memory_trick": "Relational Model = Tables (rows & columns), not Entities (that's E-R modeling).",
+    "revision_fact": "E-R model concepts (Entities) are converted into Tables when implementing the Relational model.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": true,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified - Bug Flagged"
+  },
+  {
+    "id": "BCI-000036",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "DBMS Advantages",
+    "subtopic": "Purpose of DBMS",
+    "question_hindi": "___ डेटा के दोहराव को, डेटा की अस्थिरता को, निर्भरता को तथा डेटा के अनाधिकृत उपयोग को कम करने के लिए समाधान प्रदान करता है।",
+    "question_english": "___ provides solutions to reduce duplication of data, volatility of data, dependency and unauthorized access to data.",
+    "options": [
+      {
+        "id": "A",
+        "text": "DBMS"
+      },
+      {
+        "id": "B",
+        "text": "टेबल्स / Tables"
+      },
+      {
+        "id": "C",
+        "text": "डाटाबेस / Database"
+      },
+      {
+        "id": "D",
+        "text": "सुरक्षा पासवर्ड / Security Password"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A DBMS (Database Management System) is specifically designed to control redundancy, maintain data consistency, provide data independence, and enforce access security.",
+    "explanation": "DBMS reduces data duplication, inconsistency, dependency, and provides security against unauthorized access.",
+    "trap_point": "The question describes the general purpose/advantages of a DBMS as a software system, not just a raw 'database' or 'table'.",
+    "memory_trick": "DBMS = Data's Bodyguard, Manager & Sorter.",
+    "revision_fact": "Core DBMS advantages: reduced redundancy, data independence, improved security, data integrity.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000037",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Storage",
+    "subtopic": "Rows and Columns",
+    "question_hindi": "डेटाबेस सूचना को ___ में संग्रहीत करती है।",
+    "question_english": "Database stores information in ___.",
+    "options": [
+      {
+        "id": "A",
+        "text": "पंक्तियों और स्तम्भों / Rows and Columns"
+      },
+      {
+        "id": "B",
+        "text": "ब्लॉक्स / Blocks"
+      },
+      {
+        "id": "C",
+        "text": "ट्रैक्स और सेक्टर्स / Tracks and Sectors"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त सभी / All of the above"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "In the relational model, information is stored as tables composed of rows (records) and columns (fields).",
+    "explanation": "Databases logically store data in rows and columns (tables).",
+    "trap_point": "Tracks/Sectors and Blocks describe physical disk storage, not the logical database storage structure being asked about here.",
+    "memory_trick": "Rows and Columns = the classic 'table' structure of a relational database.",
+    "revision_fact": "Logical storage: Rows & Columns. Physical storage: Blocks/Tracks/Sectors (disk-level).",
+    "difficulty": "Easy",
+    "importance": "Normal",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000038",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Table Creation",
+    "subtopic": "Creating Tables",
+    "question_hindi": "MS Access-2010 में यूज़र टेबल क्रियेट कर सकता है-",
+    "question_english": "In MS Access-2010 user can create table-",
+    "options": [
+      {
+        "id": "A",
+        "text": "डिजाइन व्यू में / In design view"
+      },
+      {
+        "id": "B",
+        "text": "डेटा शीट व्यू में / In datasheet view"
+      },
+      {
+        "id": "C",
+        "text": "दोनों / Both"
+      },
+      {
+        "id": "D",
+        "text": "इनमें से कोई नहीं / None of these"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Access allows table creation both by defining fields manually in Design View and by directly entering data in Datasheet View (auto-detecting types).",
+    "explanation": "Tables can be created in both Design view and Datasheet view in Access 2010.",
+    "trap_point": "Beginners often assume only Design View can create tables — Datasheet view table creation is equally valid.",
+    "memory_trick": "Both views can birth a new table in Access.",
+    "revision_fact": "Design View gives full control over field properties; Datasheet View is a quicker, data-first approach.",
+    "difficulty": "Easy",
+    "importance": "Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000039",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "DBMS Advantages",
+    "subtopic": "Disadvantages of File System",
+    "question_hindi": "निम्न में से DBMS का लाभ नहीं है-",
+    "question_english": "Which of the following is not an advantage of DBMS-",
+    "options": [
+      {
+        "id": "A",
+        "text": "डेटा डिपेंडेंस / Data dependence"
+      },
+      {
+        "id": "B",
+        "text": "कुशल डेटा एक्सेस / Efficient Data Access"
+      },
+      {
+        "id": "C",
+        "text": "डेटा सुरक्षा और अखंडता / Data Security and Integrity"
+      },
+      {
+        "id": "D",
+        "text": "विकास समय में कमी / Reduced Development Time"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "DBMS provides 'data independence' (a major advantage), while 'data dependence' is actually a drawback of traditional file-processing systems that DBMS solves.",
+    "explanation": "Data dependence is NOT an advantage of DBMS — DBMS instead provides data independence.",
+    "trap_point": "The double-negative-like wording ('not an advantage') plus a term that sounds similar to a real advantage (data independence) makes this a common trap.",
+    "memory_trick": "DBMS gives independence, not dependence.",
+    "revision_fact": "Physical & logical data independence are hallmark benefits of a DBMS.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000040",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Data Models",
+    "subtopic": "Definition",
+    "question_hindi": "डेटा, रिलेशनशिप, सिमेंटिक्स और कन्स्ट्रेंट्स का वर्णन करने के लिए प्रयोग किए जाने वाले टूल को कहते हैं-",
+    "question_english": "The tool used to describe data, relationships, semantics and constraints is called-",
+    "options": [
+      {
+        "id": "A",
+        "text": "ER मॉडल / ER Model"
+      },
+      {
+        "id": "B",
+        "text": "डेटाबेस / Database"
+      },
+      {
+        "id": "C",
+        "text": "डेटा मॉडल / Data Model"
+      },
+      {
+        "id": "D",
+        "text": "इनमें से कोई नहीं / None of these"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A 'Data Model' is the general conceptual tool that describes data, relationships among data, semantics, and consistency constraints — the E-R model is just one specific type of data model.",
+    "explanation": "A Data Model broadly describes data, relationships, semantics, and constraints; E-R Model is one specific example of a data model.",
+    "trap_point": "Because E-R model is a data model, students may pick option (a); but the question asks for the general umbrella term.",
+    "memory_trick": "Data Model = the umbrella term; E-R Model is one type under it.",
+    "revision_fact": "Types of data models: Relational, E-R, Object-based, Hierarchical, Network.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000041",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Limits & Specifications",
+    "subtopic": "Naming Limits",
+    "question_hindi": "फील्ड व टेबल नाम की अधिकतम लंबाई होती है-",
+    "question_english": "The maximum length of field and table name is-",
+    "options": [
+      {
+        "id": "A",
+        "text": "16 अक्षर / 16 characters"
+      },
+      {
+        "id": "B",
+        "text": "64 अक्षर / 64 characters"
+      },
+      {
+        "id": "C",
+        "text": "32 अक्षर / 32 characters"
+      },
+      {
+        "id": "D",
+        "text": "12 अक्षर / 12 characters"
+      }
+    ],
+    "correct_answer": "B",
+    "book_answer": "B",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Microsoft Access imposes a 64-character maximum limit for table names and field names.",
+    "explanation": "Field and table names in Access can be up to 64 characters long.",
+    "trap_point": "This is a specific version-independent Access specification fact worth memorizing directly.",
+    "memory_trick": "64 = the magic number for Access names (fields, tables, and more).",
+    "revision_fact": "Access naming limit: 64 characters for tables, queries, fields, and most object names.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000042",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Administration",
+    "subtopic": "DBA Role",
+    "question_hindi": "किसी डेटाबेस व्यवस्थापक की क्या जिम्मेदारी होती है?",
+    "question_english": "What are the responsibilities of a database administrator?-",
+    "options": [
+      {
+        "id": "A",
+        "text": "किसी डेटाबेस को विकसित करना और मेंटेन करना / Develop and maintain a database"
+      },
+      {
+        "id": "B",
+        "text": "एक सारणी बनाना / Create a table"
+      },
+      {
+        "id": "C",
+        "text": "डेटाबेस को डेवलेप करना / Develop a database"
+      },
+      {
+        "id": "D",
+        "text": "दोनों (a) और (c) / Both (a) and (c)"
+      }
+    ],
+    "correct_answer": "D",
+    "book_answer": "D",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A DBA's core responsibility spans both developing and maintaining the database — 'develop and maintain' (a) and 'develop a database' (c) together capture the DBA's role, making 'both' the most complete answer.",
+    "explanation": "A DBA is responsible for developing and maintaining databases (encompassing both a and c).",
+    "trap_point": "Option (b) 'create a table' is too narrow a task compared to the broad DBA role.",
+    "memory_trick": "DBA = Develop + maintain (full lifecycle responsibility).",
+    "revision_fact": "DBA duties: schema design, security, backup/recovery, performance tuning, user access control.",
+    "difficulty": "Easy",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000043",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Data Integrity",
+    "subtopic": "Causes of Integrity Problems",
+    "question_hindi": "___ डेटा की सम्पूर्णता (Data integrity) की समस्याओं के लिए एक कारण है।",
+    "question_english": "___ is one of the reasons for the problems of data integrity-",
+    "options": [
+      {
+        "id": "A",
+        "text": "डेटा की उपलब्धता का अभाव / Lack of availability of data"
+      },
+      {
+        "id": "B",
+        "text": "डेटा की संगति का अभाव / Lack of consistency of data"
+      },
+      {
+        "id": "C",
+        "text": "सुरक्षा का अभाव / Lack of security"
+      },
+      {
+        "id": "D",
+        "text": "डेटा की पुनरावृत्ति / Duplication of data"
+      }
+    ],
+    "correct_answer": "D",
+    "book_answer": "A",
+    "answer_key_verified": false,
+    "answer_key_bug": true,
+    "technical_proof": "Data integrity problems (inconsistent/contradictory data) most directly arise from data redundancy/duplication — the same fact stored in multiple places can be updated inconsistently. 'Lack of availability' relates to accessibility, not integrity/correctness of data.",
+    "explanation": "🚨 ANSWER KEY BUG DETECTED! Book Answer: Lack of availability of data (a). Correct Answer: Duplication of data (d). Reason: Data integrity refers to the accuracy and consistency of data; the classic textbook cause of integrity problems is data redundancy (the same data stored in multiple places becoming inconsistent after updates). 'Availability' is a separate concern related to accessibility/uptime, not correctness. Technical Proof: Standard DBMS textbooks (e.g., Elmasri & Navathe) list data redundancy/duplication as the primary cause of update anomalies and integrity violations, which DBMS/normalization aims to solve.",
+    "trap_point": "Do not confuse 'availability' (can data be accessed) with 'integrity' (is the data correct/consistent) — they are different DBMS quality attributes.",
+    "memory_trick": "Integrity is broken mainly by duplication, not by unavailability.",
+    "revision_fact": "Redundancy → Update anomalies → Integrity problems; normalization reduces this.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": true,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified - Bug Flagged"
+  },
+  {
+    "id": "BCI-000044",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "DBMS Software",
+    "subtopic": "Identifying Real Software",
+    "question_hindi": "निम्न में से कौन-सा DBMS सॉफ्टवेयर नहीं है?",
+    "question_english": "Which of the following is not a DBMS software?",
+    "options": [
+      {
+        "id": "A",
+        "text": "OBASE"
+      },
+      {
+        "id": "B",
+        "text": "FOXPRO"
+      },
+      {
+        "id": "C",
+        "text": "ORACLE"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त सभी / All of the above"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "FoxPro and Oracle are well-known, real DBMS software products. 'OBASE' is not a genuine DBMS product name (the real product is 'dBASE').",
+    "explanation": "OBASE is not a real DBMS software; it appears to be a distractor resembling 'dBASE'.",
+    "trap_point": "Watch out for near-identical fake names (OBASE vs dBASE) designed to trick quick readers.",
+    "memory_trick": "OBASE = a fake twin of the real 'dBASE'.",
+    "revision_fact": "Popular DBMS software: Oracle, MySQL, MS SQL Server, FoxPro, dBASE, MS Access.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000045",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "File Maintenance",
+    "subtopic": "Updation",
+    "question_hindi": "समय-समय पर, किसी फाइल में डेटा को जोड़ना, डेटा को बदलना तथा डेटा को मिटाना, फाइल का ___ कहलाता है।",
+    "question_english": "Addition of data, change of data and deletion of data in a file from time to time is called ___ of the file.",
+    "options": [
+      {
+        "id": "A",
+        "text": "अपडेटेशन / Updation"
+      },
+      {
+        "id": "B",
+        "text": "अपग्रेडिंग / Upgrading"
+      },
+      {
+        "id": "C",
+        "text": "री-स्ट्रक्चरिंग / Restructuring"
+      },
+      {
+        "id": "D",
+        "text": "रिन्यूइंग / Renewing"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "The ongoing process of inserting, modifying, and deleting data in a file over time is collectively termed 'Updation' (updating) of the file.",
+    "explanation": "Insert + Modify + Delete operations over time = Updation of the file.",
+    "trap_point": "'Upgrading' and 'Restructuring' relate to system/schema changes, not routine data changes — a common confusion.",
+    "memory_trick": "Add + Change + Delete = Updation (routine data maintenance).",
+    "revision_fact": "File updation is a core DML activity (INSERT, UPDATE, DELETE).",
+    "difficulty": "Easy",
+    "importance": "Normal",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000046",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "DBMS Advantages",
+    "subtopic": "Data Sharing",
+    "question_hindi": "डेटाबेस प्रबन्धन प्रणाली का लाभ है।",
+    "question_english": "The advantage of database management system is-",
+    "options": [
+      {
+        "id": "A",
+        "text": "डेटा, प्रोग्राम्स पर निर्भर करता है / Data depends on the programs"
+      },
+      {
+        "id": "B",
+        "text": "डेटा की पुनरावृत्ति बढ़ती है / Repetition of data increases"
+      },
+      {
+        "id": "C",
+        "text": "डेटा एकीकृत होता है और कई प्रोग्राम्स द्वारा प्रयोग किया जा सकता है / The data is integrated and can be used by many programs"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त सभी / All of the above"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A DBMS integrates data into a single repository that can be shared across multiple applications/programs, which is a defining advantage over isolated file systems.",
+    "explanation": "Data integration and multi-program sharing is a core DBMS advantage.",
+    "trap_point": "Options (a) and (b) describe drawbacks of traditional file systems, not DBMS advantages — read carefully.",
+    "memory_trick": "DBMS = One shared pool of data for many programs.",
+    "revision_fact": "Data sharing/integration reduces redundancy and inconsistency across applications.",
+    "difficulty": "Easy",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000047",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "SQL/DML-DDL",
+    "subtopic": "DDL Definition",
+    "question_hindi": "वह भाषा जो डेटाबेस ऑब्जेक्ट्स की विशेषताओं को परिभाषित करती है, कहलाती है।",
+    "question_english": "The language which defines the characteristics of database objects is called-",
+    "options": [
+      {
+        "id": "A",
+        "text": "DML"
+      },
+      {
+        "id": "B",
+        "text": "DDL"
+      },
+      {
+        "id": "C",
+        "text": "क्वेरी / Query"
+      },
+      {
+        "id": "D",
+        "text": "दोनों 'a' और 'b' / Both 'a' and 'b'"
+      }
+    ],
+    "correct_answer": "B",
+    "book_answer": "B",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "DDL (Data Definition Language) is used to define and describe the structure/characteristics (schema) of database objects like tables.",
+    "explanation": "DDL defines the structure/characteristics of database objects (e.g., CREATE TABLE statements).",
+    "trap_point": "DML manipulates data values, not the object's defining structure — a frequent mix-up.",
+    "memory_trick": "DDL = Defines the 'shape' of objects; DML = Manages the 'content'.",
+    "revision_fact": "DDL commands: CREATE, ALTER, DROP, TRUNCATE.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000048",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Database Types",
+    "subtopic": "Relational Database",
+    "question_hindi": "वह डेटाबेस जो कॉमन फील्ड से जुड़ी टेबलों को रखता है-",
+    "question_english": "The database that holds tables associated with common fields-",
+    "options": [
+      {
+        "id": "A",
+        "text": "केंद्रीकृत डेटाबेस / Centralized Database"
+      },
+      {
+        "id": "B",
+        "text": "फ्लैट फाइल डेटाबेस / Flat File Database"
+      },
+      {
+        "id": "C",
+        "text": "रिलेशनल डेटाबेस / Relational database"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त सभी / All of these"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A Relational Database links multiple tables together through common fields (foreign key to primary key relationships).",
+    "explanation": "Tables associated via common (shared) fields describe a Relational Database.",
+    "trap_point": "A Flat File Database stores data in a single table with no linking to other tables — the opposite of what's described.",
+    "memory_trick": "Common fields linking tables = Relational Database's core idea.",
+    "revision_fact": "Relational databases use common key fields (PK-FK) to connect related tables.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "78",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000049",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "History of DBMS",
+    "subtopic": "E-R Model Origin",
+    "question_hindi": "ई-आर डेटा मॉडल किसके द्वारा दिया गया था?",
+    "question_english": "E-R data model was given by-",
+    "options": [
+      {
+        "id": "A",
+        "text": "पास्कल / Pascal"
+      },
+      {
+        "id": "B",
+        "text": "C.S.Date"
+      },
+      {
+        "id": "C",
+        "text": "Dr.Edgar F.Codd"
+      },
+      {
+        "id": "D",
+        "text": "'a' और 'b' दोनों / Both 'a' and 'b'"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": false,
+    "answer_key_bug": true,
+    "technical_proof": "Historically, the Entity-Relationship (E-R) model was proposed by Peter Chen in 1976 in his paper 'The Entity-Relationship Model — Toward a Unified View of Data'. Dr. E.F. Codd is instead credited with inventing the Relational Model (1970), not the E-R model.",
+    "explanation": "🚨 ANSWER KEY BUG DETECTED (Flawed Question)! Book Answer: Dr. Edgar F. Codd (c). Correct historical answer: Peter Chen — who is NOT listed among the given options. Reason: E.F. Codd's landmark contribution is the Relational Model; the E-R model is a separate, later contribution specifically credited to Peter Chen. Technical Proof: Peter Chen's 1976 ACM paper is the universally cited origin of the E-R model; none of Pascal, C.S. Date, or Codd created it, making all four options technically incorrect as stated, though exam-setters likely intended Codd due to confusion with the relational model.",
+    "trap_point": "This is a frequently mis-set exam question — many Indian exam question banks incorrectly attribute the E-R model to Codd instead of the actual originator, Peter Chen.",
+    "memory_trick": "Codd → Relational Model. Chen → E-R Model. Don't swap them!",
+    "revision_fact": "Codd (1970) = Relational Model; Chen (1976) = E-R Model.",
+    "difficulty": "Hard",
+    "importance": "Very Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": true,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "79",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified - Bug Flagged"
+  },
+  {
+    "id": "BCI-000050",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "DBMS Limitations",
+    "subtopic": "Disadvantages",
+    "question_hindi": "डेटाबेस की हानियाँ हैं?",
+    "question_english": "What are the disadvantages of database?",
+    "options": [
+      {
+        "id": "A",
+        "text": "आसान / Easy"
+      },
+      {
+        "id": "B",
+        "text": "असुरक्षित / Unsafe"
+      },
+      {
+        "id": "C",
+        "text": "अविश्वसनीय / Unreliable"
+      },
+      {
+        "id": "D",
+        "text": "महंगा / More expensive"
+      }
+    ],
+    "correct_answer": "D",
+    "book_answer": "D",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A commonly cited disadvantage of implementing a DBMS is the higher cost — requiring investment in software licenses, hardware, and skilled personnel.",
+    "explanation": "Higher cost ('More expensive') is a recognized disadvantage of adopting a DBMS.",
+    "trap_point": "'Unsafe'/'Unreliable' are not accurate general DBMS drawbacks since DBMS is designed to improve security and reliability compared to file systems.",
+    "memory_trick": "DBMS pros come at a price — literally (cost is the main con).",
+    "revision_fact": "DBMS disadvantages: cost, complexity, need for skilled staff, hardware requirements.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "79",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000051",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Objects",
+    "subtopic": "Report Object",
+    "question_hindi": "निम्न में से कौन-सा ऑब्जेक्ट छपे हुए फॉर्मेट में होता है?",
+    "question_english": "Which of the following objects are in printed format?",
+    "options": [
+      {
+        "id": "A",
+        "text": "सारणी / Table"
+      },
+      {
+        "id": "B",
+        "text": "क्वेरी / Query"
+      },
+      {
+        "id": "C",
+        "text": "फॉर्म / Form"
+      },
+      {
+        "id": "D",
+        "text": "रिपोर्ट / Report"
+      }
+    ],
+    "correct_answer": "D",
+    "book_answer": "D",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A 'Report' in Access is specifically designed and formatted for printing/presenting summarized data, unlike Tables, Queries, or Forms which are primarily for on-screen data storage/entry.",
+    "explanation": "Reports are the Access object type designed for a printed/presentation format.",
+    "trap_point": "Forms can look similar to reports on-screen but are meant for data entry, not printing.",
+    "memory_trick": "Reports = Print-ready Access objects.",
+    "revision_fact": "Reports support grouping, sorting, and totals ideal for printed summaries.",
+    "difficulty": "Easy",
+    "importance": "Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "79",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000052",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Relational Model",
+    "subtopic": "Codd's 12 Rules",
+    "question_hindi": "डॉ.E.F. Codd ने ___ नियमों का प्रतिनिधित्व किया जिनका पालन एक डेटाबेस द्वारा किया जाना चाहिए-",
+    "question_english": "Dr.E.F. Codd represented ___ rules that must be followed by a database-",
+    "options": [
+      {
+        "id": "A",
+        "text": "10"
+      },
+      {
+        "id": "B",
+        "text": "8"
+      },
+      {
+        "id": "C",
+        "text": "12"
+      },
+      {
+        "id": "D",
+        "text": "6"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Dr. E.F. Codd formulated 12 rules (Codd's 12 Rules, numbered 0-12 in some references) that define what qualifies a database as truly relational.",
+    "explanation": "Codd proposed 12 rules to determine if a DBMS is genuinely relational.",
+    "trap_point": "Some sources mention 'Rule Zero' plus 12 more, occasionally causing confusion, but the standard cited number is 12.",
+    "memory_trick": "Codd's Commandments = 12 Rules for a true relational database.",
+    "revision_fact": "Codd's rules cover aspects like the information rule, guaranteed access rule, and systematic treatment of null values.",
+    "difficulty": "Hard",
+    "importance": "Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "79",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000053",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Keys",
+    "subtopic": "Unique Identification",
+    "question_hindi": "एक रिकॉर्ड का एक विशेष फील्ड, जो प्रत्येक रिकॉर्ड को विशिष्ट रूप से पहचान दिलाता है।",
+    "question_english": "A special field of a record that uniquely identifies each record.",
+    "options": [
+      {
+        "id": "A",
+        "text": "की-फील्ड / Key field"
+      },
+      {
+        "id": "B",
+        "text": "प्राइमरी फील्ड / Primary field"
+      },
+      {
+        "id": "C",
+        "text": "मास्टर फील्ड / Master field"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त में से कोई नहीं / None of these"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A field that uniquely identifies each record is generically called a 'Key field' (commonly implemented as the Primary Key).",
+    "explanation": "The field that uniquely identifies records is called the Key field.",
+    "trap_point": "'Primary field' and 'Master field' are not standard database terms — don't be misled by plausible-sounding wording.",
+    "memory_trick": "Unique identifier field = Key field.",
+    "revision_fact": "The Primary Key is the most common type of key field ensuring uniqueness.",
+    "difficulty": "Easy",
+    "importance": "Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "79",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000054",
+    "exam_source": "Unknown",
+    "chapter": "Microsoft Access",
+    "topic": "Query Results",
+    "subtopic": "Dynaset",
+    "question_hindi": "किसी क्वेरी के उत्तर में जो सूचनाएँ या रिकॉर्ड प्राप्त होता है, उसे उस क्वेरी का ___ कहते हैं।",
+    "question_english": "The information or record that response to a query is called ___.",
+    "options": [
+      {
+        "id": "A",
+        "text": "रिजल्ट / Result"
+      },
+      {
+        "id": "B",
+        "text": "डायनासेट / Dynaset"
+      },
+      {
+        "id": "C",
+        "text": "आउटपुट / Output"
+      },
+      {
+        "id": "D",
+        "text": "सारणी / Table"
+      }
+    ],
+    "correct_answer": "B",
+    "book_answer": "B",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "In MS Access, the set of records returned by running a query is specifically called a 'Dynaset' (dynamic set) — a virtual, updatable result set.",
+    "explanation": "The record set returned by a query in Access is called a Dynaset.",
+    "trap_point": "'Result' and 'Output' are generic terms; Access uses the specific technical term 'Dynaset'.",
+    "memory_trick": "Query answer in Access = Dynaset (dynamic + set).",
+    "revision_fact": "A dynaset is a live, updatable view of underlying table data, not a static copy.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "79",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000055",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Technology Terms",
+    "subtopic": "Full Forms",
+    "question_hindi": "DDE का पूरा नाम है-",
+    "question_english": "Full form of DDE is-",
+    "options": [
+      {
+        "id": "A",
+        "text": "Disk Data Exchange"
+      },
+      {
+        "id": "B",
+        "text": "Dynamic Data Exchange"
+      },
+      {
+        "id": "C",
+        "text": "Data Direct Exchange"
+      },
+      {
+        "id": "D",
+        "text": "Digital Data Exchange"
+      }
+    ],
+    "correct_answer": "B",
+    "book_answer": "B",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "DDE stands for Dynamic Data Exchange, a Windows inter-process communication mechanism allowing applications to share/exchange live data.",
+    "explanation": "DDE = Dynamic Data Exchange, used for data exchange between Windows applications.",
+    "trap_point": "Similar-sounding distractors (Disk/Digital/Direct) are designed to trip up quick readers.",
+    "memory_trick": "DDE = Dynamic (data keeps updating live between apps).",
+    "revision_fact": "DDE was a precursor to later technologies like OLE and COM for app-to-app communication.",
+    "difficulty": "Medium",
+    "importance": "Normal",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "79",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000056",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "DBMS Basics",
+    "subtopic": "Full Forms",
+    "question_hindi": "DBMS का पूरा नाम है-",
+    "question_english": "Full name of DBMS is-",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data Base Management System"
+      },
+      {
+        "id": "B",
+        "text": "Data Business Management System"
+      },
+      {
+        "id": "C",
+        "text": "Data Base Magnetic System"
+      },
+      {
+        "id": "D",
+        "text": "Data Business Magnetic System"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "DBMS universally stands for Database Management System, software used to create, manage, and manipulate databases.",
+    "explanation": "DBMS = Database Management System.",
+    "trap_point": "Distractors substitute 'Business' or 'Magnetic' for 'Management' to test attentiveness.",
+    "memory_trick": "DBMS = Database + Management + System (nothing to do with 'Business' or 'Magnetic').",
+    "revision_fact": "DBMS acts as an interface between users/applications and the actual database.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "79",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000057",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Administration",
+    "subtopic": "Full Forms",
+    "question_hindi": "DBA का पूरा नाम है-",
+    "question_english": "Full form of DBA is-",
+    "options": [
+      {
+        "id": "A",
+        "text": "Data Base Assembly"
+      },
+      {
+        "id": "B",
+        "text": "Data Business Assembly"
+      },
+      {
+        "id": "C",
+        "text": "Data Base Administrator"
+      },
+      {
+        "id": "D",
+        "text": "Data Business Administrator"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "DBA stands for Database Administrator, the person responsible for managing and maintaining a database system.",
+    "explanation": "DBA = Database Administrator.",
+    "trap_point": "Distractors replace 'Administrator' with 'Assembly' or swap 'Base' with 'Business' — read carefully.",
+    "memory_trick": "DBA = the Database's 'Admin-in-charge'.",
+    "revision_fact": "DBA responsibilities include security, backup, performance tuning, and schema design.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "79",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000058",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Data Hierarchy",
+    "subtopic": "Ascending Order",
+    "question_hindi": "निम्नलिखित में से कौन-सा क्रम डेटा एलिमेंट्स को उनके आकार के आरोही क्रम में दर्शाता है-",
+    "question_english": "Which one of the following shows the data elements in ascending order of their size?",
+    "options": [
+      {
+        "id": "A",
+        "text": "कैरेक्टर, फ़ाइल, रिकॉर्ड, फील्ड, डेटाबेस / Character, File, Record, Field, Database"
+      },
+      {
+        "id": "B",
+        "text": "कैरेक्टर, रिकॉर्ड, फील्ड, फ़ाइल, डेटाबेस / Character, Record, Field, File, Database"
+      },
+      {
+        "id": "C",
+        "text": "कैरेक्टर, फील्ड, रिकॉर्ड, फ़ाइल, डेटाबेस / Character, Field, Record, File, Database"
+      },
+      {
+        "id": "D",
+        "text": "बिट, बाइट, कैरेक्टर, रिकॉर्ड, फील्ड, फ़ाइल, डेटाबेस / Bit, Byte, Character, Record, Field, File, Database"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "The correct ascending data hierarchy is: Bit < Byte < Character < Field < Record < File < Database. Option (c), 'Character, Field, Record, File, Database', follows this correct relative order (starting from Character); option (d) misorders Record before Field, making it internally inconsistent despite including Bit/Byte.",
+    "explanation": "Character → Field → Record → File → Database is the correct ascending order of data elements by size.",
+    "trap_point": "Option (d) looks tempting because it starts with Bit/Byte, but it wrongly places Record before Field, breaking the correct sequence.",
+    "memory_trick": "Data Hierarchy Ladder: Bit-Byte-Character-Field-Record-File-Database.",
+    "revision_fact": "Each level of the data hierarchy is built from one or more units of the level below it.",
+    "difficulty": "Medium",
+    "importance": "Very Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "79",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000059",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "ER Model",
+    "subtopic": "Attributes",
+    "question_hindi": "किसी एंटिटी-रिलेशनशिप डायग्राम में किसी विद्यार्थी का नाम तथा पता क्या माना जाएगा?",
+    "question_english": "What will be considered as the name and address of a student in an entity-relationship diagram?",
+    "options": [
+      {
+        "id": "A",
+        "text": "रिलेशनशिप / Relationship"
+      },
+      {
+        "id": "B",
+        "text": "एंटिटी / Entity"
+      },
+      {
+        "id": "C",
+        "text": "एट्रिब्यूट / Attribute"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त सभी / All of the above"
+      }
+    ],
+    "correct_answer": "C",
+    "book_answer": "C",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "In an E-R diagram, descriptive properties of an entity (like a Student's name and address) are modeled as Attributes of that entity, represented by ellipses.",
+    "explanation": "Name and address of a student are Attributes of the Student entity.",
+    "trap_point": "Do not confuse the 'Student' itself (the Entity) with its descriptive properties (Attributes) like name/address.",
+    "memory_trick": "Entity = the 'thing' (Student); Attribute = its 'properties' (name, address).",
+    "revision_fact": "Attributes are shown as ellipses connected to their entity (rectangle) in an E-R diagram.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "79",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000060",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Relational Model",
+    "subtopic": "Table Structure",
+    "question_hindi": "रिलेशनल डेटाबेस में, एक डेटा स्ट्रक्चर जो किसी विषय के बारे में सभी सूचनाओं को पंक्तियों तथा स्तम्भ के रूप में व्यवस्थित करता है।",
+    "question_english": "In a relational database, a data structure that organizes all the information about a subject in the form of rows and columns.",
+    "options": [
+      {
+        "id": "A",
+        "text": "ब्लॉक / Block"
+      },
+      {
+        "id": "B",
+        "text": "रिकॉर्ड / Record"
+      },
+      {
+        "id": "C",
+        "text": "ट्यूपल / Tuple"
+      },
+      {
+        "id": "D",
+        "text": "सारणी / Table"
+      }
+    ],
+    "correct_answer": "D",
+    "book_answer": "D",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A Table (relation) is the structure in a relational database that organizes all data about a subject into rows (records) and columns (fields).",
+    "explanation": "A Table organizes subject-related data into rows and columns in a relational database.",
+    "trap_point": "Record/Tuple refers to a single row within a table, not the entire row-and-column structure itself.",
+    "memory_trick": "Whole grid of rows & columns = Table (not just one row = Record/Tuple).",
+    "revision_fact": "Table = Relation; Row = Tuple/Record; Column = Attribute/Field.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "79",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000061",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Terminology",
+    "subtopic": "Row Synonym",
+    "question_hindi": "किसी डेटाबेस में पंक्ति का अन्य नाम क्या है?",
+    "question_english": "What is another name for a row in a database?",
+    "options": [
+      {
+        "id": "A",
+        "text": "रिकॉर्ड / Record"
+      },
+      {
+        "id": "B",
+        "text": "फील्ड / Field"
+      },
+      {
+        "id": "C",
+        "text": "रिलेशन / Relation"
+      },
+      {
+        "id": "D",
+        "text": "कॉलम / Column"
+      }
+    ],
+    "correct_answer": "A",
+    "book_answer": "A",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A row in a relational database table is also referred to as a Record (or Tuple in formal relational terminology).",
+    "explanation": "A row is also called a Record.",
+    "trap_point": "Field/Column both refer to a vertical attribute, not a horizontal row — opposite concept.",
+    "memory_trick": "Row = Record (horizontal); Column = Field (vertical).",
+    "revision_fact": "Formal terms: Row=Tuple/Record, Column=Attribute/Field, Table=Relation.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "80",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000062",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Terminology",
+    "subtopic": "Smallest Unit",
+    "question_hindi": "एक डेटाबेस में एक रिकॉर्ड के बारे में सूचना की सबसे छोटी इकाई को क्या कहा जाता है?",
+    "question_english": "The smallest unit of information about a record in a database is called-",
+    "options": [
+      {
+        "id": "A",
+        "text": "सेल / Cell"
+      },
+      {
+        "id": "B",
+        "text": "फील्ड / Field"
+      },
+      {
+        "id": "C",
+        "text": "रिकॉर्ड / Record"
+      },
+      {
+        "id": "D",
+        "text": "क्वेरी / Query"
+      }
+    ],
+    "correct_answer": "B",
+    "book_answer": "B",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Within a record, the smallest labeled unit holding a single piece of information (e.g., a name or age) is called a Field.",
+    "explanation": "The smallest unit of information within a record is called a Field.",
+    "trap_point": "'Cell' is a spreadsheet term, not the standard database terminology for this concept.",
+    "memory_trick": "Smallest labeled unit in a record = Field.",
+    "revision_fact": "Data hierarchy: Field is smaller than Record, which is smaller than a File/Table.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "80",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000063",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Fundamentals",
+    "subtopic": "Components",
+    "question_hindi": "इनमें से कौन-सा डेटाबेस का अवयव नहीं है-",
+    "question_english": "Which of the following is not a component of database-",
+    "options": [
+      {
+        "id": "A",
+        "text": "सारणी / Table"
+      },
+      {
+        "id": "B",
+        "text": "क्वेरी / Query"
+      },
+      {
+        "id": "C",
+        "text": "फॉर्म / Form"
+      },
+      {
+        "id": "D",
+        "text": "ट्यूपल / Tuple"
+      }
+    ],
+    "correct_answer": "D",
+    "book_answer": "D",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "Table, Query, and Form are distinct database/Access objects that can be created and stored independently. A Tuple is simply a conceptual term for a single row within a table, not a separate, independently created database object.",
+    "explanation": "Table, Query, and Form are standalone database objects; Tuple is just a row within a Table, not a separate object.",
+    "trap_point": "Students may think Tuple qualifies as a 'component' since it's a formal database term, but it isn't an independently creatable object like Table/Query/Form.",
+    "memory_trick": "Tuple lives INSIDE a Table — it isn't its own separate object.",
+    "revision_fact": "Access's independently creatable objects: Tables, Queries, Forms, Reports, Macros, Modules.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "80",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000064",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Transactions",
+    "subtopic": "Definition",
+    "question_hindi": "डेटाबेस ट्रांजेक्शन का अर्थ होता है-",
+    "question_english": "Database transaction means-",
+    "options": [
+      {
+        "id": "A",
+        "text": "डाटाबेस से डाटा उपार्जित करना / Acquiring data from database"
+      },
+      {
+        "id": "B",
+        "text": "डाटाबेस में डाटा लिखना / Writing data to the database"
+      },
+      {
+        "id": "C",
+        "text": "डाटाबेस में डाटा पढ़ना / Reading data in database"
+      },
+      {
+        "id": "D",
+        "text": "उपरोक्त सभी / All of the above"
+      }
+    ],
+    "correct_answer": "D",
+    "book_answer": "D",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "A database transaction is a logical unit of work that can consist of one or more operations — reading, writing, or otherwise accessing data — treated as a single all-or-nothing unit.",
+    "explanation": "A transaction can involve reading, writing, or acquiring data, making 'All of the above' the correct broad definition.",
+    "trap_point": "Students sometimes narrow 'transaction' to only mean 'writing data', but read operations within a unit of work also count as part of a transaction.",
+    "memory_trick": "Transaction = Any unit-of-work operation (read/write/acquire), done atomically.",
+    "revision_fact": "Transactions follow the ACID properties: Atomicity, Consistency, Isolation, Durability.",
+    "difficulty": "Medium",
+    "importance": "Important",
+    "question_type": "Concept Based",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "80",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  },
+  {
+    "id": "BCI-000065",
+    "exam_source": "Unknown",
+    "chapter": "Database Concepts",
+    "topic": "Fundamentals",
+    "subtopic": "Rows and Columns Naming",
+    "question_hindi": "डेटाबेस सारणियों से मिलकर बना होता है तथा सारणियाँ पंक्तियों, जिन्हें ___ कहते हैं, तथा स्तम्भ, जिन्हें ___ कहते हैं, से मिलकर बनी होती हैं।",
+    "question_english": "Database is made up of tables and tables are made up of rows, called ___ and columns, called ___.",
+    "options": [
+      {
+        "id": "A",
+        "text": "फील्ड, रिकॉर्ड / Field, Record"
+      },
+      {
+        "id": "B",
+        "text": "रिकॉर्ड, फील्ड / Record, Field"
+      },
+      {
+        "id": "C",
+        "text": "एड्रेस, फील्ड / Address, Field"
+      },
+      {
+        "id": "D",
+        "text": "इनमें से कोई नहीं / None of these"
+      }
+    ],
+    "correct_answer": "B",
+    "book_answer": "B",
+    "answer_key_verified": true,
+    "answer_key_bug": false,
+    "technical_proof": "In a table, each row is called a Record, and each column is called a Field — matching the blank order 'rows called ___ (Record), columns called ___ (Field)'.",
+    "explanation": "Rows are called Records, and Columns are called Fields.",
+    "trap_point": "Careful with option order: (a) reverses Field/Record compared to the question's row-then-column sequence — a classic order trap.",
+    "memory_trick": "Row → Record, Column → Field (in that reading order).",
+    "revision_fact": "Row=Record, Column=Field, Table=collection of Records and Fields.",
+    "difficulty": "Easy",
+    "importance": "Very Important",
+    "question_type": "Direct Fact",
+    "repeat_count": 0,
+    "related_question_ids": [],
+    "high_priority": false,
+    "source_file": "ms_access_6666.pdf",
+    "page_number": "80",
+    "ocr_confidence": "Medium (scanned/OCR text corrected against original book layout)",
+    "review_status": "Verified"
+  }
+]

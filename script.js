@@ -6,32 +6,61 @@
 // ============ TOPIC CONFIG ============
 // Add your JSON filenames here when you add new topics
 const TOPIC_FILES = [
-  { file: 'DBMS_overview of database management.json', name: 'DBMS Overview',        icon: '📖' },
-  { file: 'DBMS_architecture of database system .json',name: 'DBMS Architecture',    icon: '🏛️' },
-  { file: 'DBMS_database design.json',                name: 'Database Design',      icon: '📐' },
-  { file: 'DBMS_manipulating data.json',              name: 'Manipulating Data',     icon: '⚙️' },
-  { file: 'DBMS_Rdbms.json',                          name: 'RDBMS',                icon: '💾' },
-  { file: 'DBMS_no sql technology .js',               name: 'NoSQL Technology',     icon: '🌐' },
-  { file: 'DBMS_MCQ important.json',                 name: 'DBMS Important MCQs',  icon: '⭐' },
+  { file: 'DBMS/DBMS_overview of database management.json', name: 'DBMS Overview',        icon: '📖', category: 'dbms' },
+  { file: 'DBMS/DBMS_architecture of database system .json',name: 'DBMS Architecture',    icon: '🏛️', category: 'dbms' },
+  { file: 'DBMS/DBMS_database design.json',                name: 'Database Design',      icon: '📐', category: 'dbms' },
+  { file: 'DBMS/DBMS_manipulating data.json',              name: 'Manipulating Data',     icon: '⚙️', category: 'dbms' },
+  { file: 'DBMS/DBMS_Rdbms.json',                          name: 'RDBMS',                icon: '💾', category: 'dbms' },
+  { file: 'DBMS/DBMS_no sql technology .js',               name: 'NoSQL Technology',     icon: '🌐', category: 'dbms' },
+  { file: 'DBMS/DBMS_MCQ important.json',                 name: 'DBMS Important MCQs',  icon: '⭐', category: 'dbms' },
 
-  // IT Pathshala Books Topics
-  { file: 'DBMS_IT_Pathshala_Basics of DBMS.json',    name: 'Basics of DBMS (Pathshala)',    icon: '📚' },
-  { file: 'DBMS_IT_Pathshala_Data Models.json',       name: 'Data Models (Pathshala)',       icon: '🗂️' },
-  { file: 'DBMS_IT_Pathshala_Relational Algebra.json',name: 'Relational Algebra (Pathshala)',icon: '🧮' },
-  { file: 'DBMS_IT_Pathshala_RDBMS.json',             name: 'RDBMS Basics (Pathshala)',      icon: '📁' },
-  { file: 'DBMS_IT_Pathshala_Normalization.json',     name: 'Normalization (Pathshala)',     icon: '📋' },
-  { file: 'DBMS_IT_Pathshala_Transaction Concurrency.json', name: 'Transaction & Concurrency (Pathshala)', icon: '🔄' },
-  { file: 'DBMS_IT_Pathshala_NoSQL Data Warehouse.json',name: 'NoSQL & Data Warehouse (Pathshala)', icon: '☁️' },
+  // IT Pathshala DBMS Folder Topics
+  { file: 'IT PATHSHALA DBMS/DBMS_Basics.json',                       name: 'DBMS Basics (IT Pathshala)',                   icon: '📚', category: 'dbms' },
+  { file: 'IT PATHSHALA DBMS/DBMS_Data_Models_ER.json',                name: 'Data Models & ER (IT Pathshala)',              icon: '🗂️', category: 'dbms' },
+  { file: 'IT PATHSHALA DBMS/DBMS_Relational_Algebra_Calculus.json',   name: 'Relational Algebra & Calculus (IT Pathshala)', icon: '🧮', category: 'dbms' },
+  { file: 'IT PATHSHALA DBMS/DBMS_RDBMS.json',                         name: 'RDBMS (IT Pathshala)',                         icon: '📁', category: 'dbms' },
+  { file: 'IT PATHSHALA DBMS/DBMS_Normalization.json',                 name: 'Normalization (IT Pathshala)',                 icon: '📋', category: 'dbms' },
+  { file: 'IT PATHSHALA DBMS/DBMS_Transaction_Concurrency.json',       name: 'Transaction & Concurrency (IT Pathshala)',     icon: '🔄', category: 'dbms' },
+  { file: 'IT PATHSHALA DBMS/DBMS_NoSQL_DataWarehouse_Mining.json',    name: 'NoSQL & Data Warehouse (IT Pathshala)',        icon: '☁️', category: 'dbms' },
+  { file: 'IT PATHSHALA DBMS/MS_Access_Question_Bank.json',            name: 'MS Access Bank (IT Pathshala)',                icon: '📊', category: 'dbms' },
+  { file: 'IT PATHSHALA DBMS/MS_PowerPoint_Question_Bank.json',        name: 'MS PowerPoint Bank (IT Pathshala)',            icon: '📉', category: 'msoffice' },
+  { file: 'IT PATHSHALA DBMS/RSMSSB_BCI_2022_Paper_1.json',            name: 'BCI Paper 1 (2022)',                           icon: '📝', category: 'papers' },
+  { file: 'IT PATHSHALA DBMS/RSMSSB_BCI_2022_Paper_2.json',            name: 'BCI Paper 2 (2022)',                           icon: '📝', category: 'papers' },
+  { file: 'IT PATHSHALA DBMS/RSSB_Forest_Guard_2026.json',             name: 'RSSB Forest Guard (2026)',                     icon: '🌳', category: 'papers' },
 
-  // IT Pathshala DBMS Additional Topics
-  { file: 'IT PATHSHALA DBMS/forester.json',             name: 'RSSB Forest Guard',            icon: '🌳' },
-
-  { file: 'computer.json',          name: 'Computer',          icon: '💻' },
-  { file: 'rajasthan_history.json', name: 'Rajasthan History', icon: '🏰' },
-  { file: 'geography.json',         name: 'Geography',         icon: '🗺️' },
-  { file: 'culture.json',           name: 'Culture',           icon: '🎭' },
-  { file: 'other_topics.json',      name: 'Other Topics',      icon: '📖' },
+  { file: 'computer.json',          name: 'Computer',          icon: '💻', category: 'others' },
+  { file: 'rajasthan_history.json', name: 'Rajasthan History', icon: '🏰', category: 'others' },
+  { file: 'geography.json',         name: 'Geography',         icon: '🗺️', category: 'others' },
+  { file: 'culture.json',           name: 'Culture',           icon: '🎭', category: 'others' },
+  { file: 'other_topics.json',      name: 'Other Topics',      icon: '📖', category: 'others' },
 ];
+
+// Helper to automatically format statement-based questions with newlines
+function formatQuestionText(text) {
+  if (typeof text !== 'string') return text;
+  
+  // Check if this text likely contains a statement/conclusion list that needs formatting
+  const hasStatementList = /\s*[—-]\s*\([Ii1a]\)/.test(text) || 
+                           /(?:Statements|Conclusions|कथन|निष्कर्ष):\s*\([Ii1a]\)/i.test(text);
+                           
+  if (!hasStatementList) return text;
+  
+  let formatted = text;
+  
+  // Handle section headers like Statements/Conclusions or कथन/निष्कर्ष by putting them on newlines
+  formatted = formatted.replace(/\s+(Statements:|Conclusions:|कथन:|निष्कर्ष:)/ig, '\n$1');
+  
+  // Replace dash/em-dash followed by (I) or (i) or (1) or (a) with newline and the indicator
+  formatted = formatted.replace(/\s*[—-]\s*(\([Ii1a]\))/g, '\n$1');
+  
+  // Handle prefix labels followed by the first indicator
+  formatted = formatted.replace(/(Statements:|Conclusions:|कथन:|निष्कर्ष:)\s*(\([Ii1a]\))/ig, '$1\n$2');
+  
+  // Replace spaces around subsequent indicators (II), (III), (IV), (V), (2), (3), (b), (c), etc. with a newline
+  formatted = formatted.replace(/\s+(\((?:II|III|IV|V|ii|iii|iv|v|2|3|4|5|b|c|d|e)\))\s+/g, '\n$1 ');
+  
+  return formatted.trim();
+}
 
 // Helper to normalize question fields from different JSON formats
 function normalizeQuestions(questions) {
@@ -69,13 +98,17 @@ function normalizeQuestions(questions) {
 
     // 1. Standardize question text (merge English and Hindi if available)
     if (!q.question) {
-      const en = q.question_english || q.question_en || '';
-      const hi = q.question_hindi || q.question_hi || '';
+      let en = q.question_english || q.question_en || '';
+      let hi = q.question_hindi || q.question_hi || '';
+      en = formatQuestionText(en);
+      hi = formatQuestionText(hi);
       if (en && hi) {
         q.question = `${en}\n\n${hi}`;
       } else {
         q.question = en || hi || '';
       }
+    } else {
+      q.question = formatQuestionText(q.question);
     }
 
     // 2. Standardize answers
@@ -202,8 +235,17 @@ function toggleNav() {
 
 // ============ TOPIC LOADING ============
 async function loadTopics() {
-  const grid = document.getElementById('topicGrid');
-  grid.innerHTML = '';
+  window.allLoadedTopics = [];
+  const container = document.getElementById('topicsContainer');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const categories = {
+    dbms: { name: '🗄️ DBMS (डेटाबेस मैनेजमेंट)', topics: [] },
+    msoffice: { name: '📊 MS Office (एमएस ऑफिस)', topics: [] },
+    papers: { name: '📝 Previous Papers & Exams (परीक्षा प्रश्न पत्र)', topics: [] },
+    others: { name: '📖 Other Topics (अन्य विषय)', topics: [] }
+  };
 
   for (const topic of TOPIC_FILES) {
     try {
@@ -230,6 +272,40 @@ async function loadTopics() {
       if (!Array.isArray(questions) || questions.length === 0) continue;
       questions = normalizeQuestions(questions);
 
+      window.allLoadedTopics.push({ topic, questions });
+      categories[topic.category || 'others'].topics.push({ topic, questions });
+    } catch (e) {
+      // File doesn't exist or error — skip silently
+    }
+  }
+
+  let totalRendered = 0;
+  for (const catKey in categories) {
+    const cat = categories[catKey];
+    if (cat.topics.length === 0) continue;
+
+    // Create section element
+    const secEl = document.createElement('div');
+    secEl.className = 'category-section';
+    secEl.setAttribute('data-category', catKey);
+    secEl.style.marginBottom = '24px';
+
+    // Label
+    const labelEl = document.createElement('div');
+    labelEl.className = 'section-label';
+    labelEl.style.fontSize = '12px';
+    labelEl.style.borderBottom = '1px solid var(--border)';
+    labelEl.style.paddingBottom = '6px';
+    labelEl.style.marginBottom = '12px';
+    labelEl.style.color = 'var(--saffron)';
+    labelEl.textContent = cat.name;
+    secEl.appendChild(labelEl);
+
+    // Grid for cards
+    const gridEl = document.createElement('div');
+    gridEl.className = 'topic-grid';
+
+    cat.topics.forEach(({ topic, questions }) => {
       const card = document.createElement('div');
       card.className = 'topic-card';
       card.innerHTML = `
@@ -238,22 +314,123 @@ async function loadTopics() {
         <div class="topic-count">${questions.length} questions</div>
       `;
       card.onclick = () => selectTopic(topic, questions, card);
-      grid.appendChild(card);
-    } catch (e) {
-      // File doesn't exist or error — skip silently
-    }
+      gridEl.appendChild(card);
+      totalRendered++;
+    });
+
+    secEl.appendChild(gridEl);
+    container.appendChild(secEl);
   }
 
-  if (grid.children.length === 0) {
-    grid.innerHTML = `<div style="grid-column:1/-1;color:var(--text-muted);font-size:14px;padding:20px 0">
+  if (totalRendered === 0) {
+    container.innerHTML = `<div style="color:var(--text-muted);font-size:14px;padding:20px 0;text-align:center">
       No question files found. Add JSON files to the <code>question-answer/</code> folder.
     </div>`;
   }
 }
 
+function filterHomeCategory(catKey, btn) {
+  // Update active tab button style
+  document.querySelectorAll('.home-filter-btn').forEach(b => b.classList.remove('active'));
+  if (btn) {
+    btn.classList.add('active');
+  } else {
+    const target = document.querySelector(`.home-filter-btn[onclick*="'${catKey}'"]`);
+    if (target) target.classList.add('active');
+  }
+
+  // Filter sections and respect the current search query
+  const query = (document.getElementById('topicSearch')?.value || '').toLowerCase().trim();
+
+  document.querySelectorAll('.category-section').forEach(sec => {
+    const secCat = sec.getAttribute('data-category');
+    const isCatMatch = (catKey === 'all' || secCat === catKey);
+
+    let hasVisibleCard = false;
+    sec.querySelectorAll('.topic-card').forEach(card => {
+      const name = card.querySelector('.topic-name').textContent.toLowerCase();
+      const isSearchMatch = name.includes(query);
+      if (isSearchMatch) {
+        card.style.display = 'flex';
+        if (isCatMatch) hasVisibleCard = true;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (isCatMatch && hasVisibleCard) {
+      sec.style.display = 'block';
+    } else {
+      sec.style.display = 'none';
+    }
+  });
+
+  // Clear selected topic config on category change to avoid confusion
+  clearTopic();
+}
+
+function searchTopics(query) {
+  const q = query.toLowerCase().trim();
+  const activeBtn = document.querySelector('.home-filter-btn.active');
+  const activeCat = activeBtn ? activeBtn.getAttribute('onclick').match(/'([^']+)'/)[1] : 'all';
+
+  document.querySelectorAll('.category-section').forEach(sec => {
+    const secCat = sec.getAttribute('data-category');
+    const isCatMatch = (activeCat === 'all' || secCat === activeCat);
+
+    let hasVisibleCard = false;
+    sec.querySelectorAll('.topic-card').forEach(card => {
+      const name = card.querySelector('.topic-name').textContent.toLowerCase();
+      const isSearchMatch = name.includes(q);
+      if (isSearchMatch) {
+        card.style.display = 'flex';
+        if (isCatMatch) hasVisibleCard = true;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (isCatMatch && hasVisibleCard) {
+      sec.style.display = 'block';
+    } else {
+      sec.style.display = 'none';
+    }
+  });
+}
+
+function startMockTest() {
+  if (!window.allLoadedTopics || window.allLoadedTopics.length === 0) {
+    alert("Please wait a moment while the question files are loading...");
+    return;
+  }
+
+  let combinedQuestions = [];
+  window.allLoadedTopics.forEach(item => {
+    combinedQuestions = combinedQuestions.concat(item.questions);
+  });
+
+  if (combinedQuestions.length === 0) {
+    alert("No questions found to start a mock test.");
+    return;
+  }
+
+  // Create a virtual topic for the mock test
+  const mockTopic = {
+    name: "Full Syllabus Mock Test",
+    file: "mock_test_mixed",
+    icon: "📝"
+  };
+
+  // Select this mock topic in the UI config box
+  selectTopic(mockTopic, combinedQuestions, null);
+
+  // Scroll to config box
+  document.getElementById('configBox').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
 function selectTopic(topic, questions, cardEl) {
   document.querySelectorAll('.topic-card').forEach(c => c.classList.remove('selected'));
-  cardEl.classList.add('selected');
+  if (cardEl) cardEl.classList.add('selected');
 
   state.selectedTopic = topic.name;
   state.selectedFile = topic.file;

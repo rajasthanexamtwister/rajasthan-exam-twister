@@ -1623,3 +1623,47 @@ body {
   .revision-cards { grid-template-columns: 1fr; }
   .result-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* Home screen category filters */
+.home-filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.home-filter-btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.home-filter-btn:hover {
+  border-color: var(--saffron);
+  color: var(--saffron);
+}
+
+.home-filter-btn.active {
+  border-color: var(--saffron);
+  background: var(--saffron);
+  color: #fff;
+}
+
+#topicSearch:focus {
+  border-color: var(--saffron);
+  box-shadow: 0 4px 16px rgba(255, 107, 0, 0.15);
+}
+
+.mock-test-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.25);
+  filter: brightness(1.05);
+}
+

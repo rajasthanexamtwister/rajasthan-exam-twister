@@ -45,10 +45,37 @@
       </div>
 
       <div class="section-label">TOPIC चुनें</div>
-      <div class="topic-grid" id="topicGrid">
-        <div class="topic-skeleton"></div>
-        <div class="topic-skeleton"></div>
-        <div class="topic-skeleton"></div>
+
+      <!-- Search Bar -->
+      <div style="margin-bottom: 16px;">
+        <input type="text" id="topicSearch" placeholder="🔍 Search topics (विषय खोजें)..." oninput="searchTopics(this.value)" style="width:100%; padding:12px 18px; border:2px solid var(--border); border-radius:var(--radius); font-size:14px; outline:none; background:var(--surface); color:var(--text); box-shadow:var(--shadow); transition:var(--transition);">
+      </div>
+      
+      <div class="home-filter-row" id="homeFilterRow">
+        <button class="home-filter-btn active" onclick="filterHomeCategory('all', this)">✨ All</button>
+        <button class="home-filter-btn" onclick="filterHomeCategory('dbms', this)">🗄️ DBMS</button>
+        <button class="home-filter-btn" onclick="filterHomeCategory('msoffice', this)">📊 MS Office</button>
+        <button class="home-filter-btn" onclick="filterHomeCategory('papers', this)">📝 Papers</button>
+        <button class="home-filter-btn" onclick="filterHomeCategory('others', this)">📖 Others</button>
+      </div>
+
+      <!-- Mock Test Banner Card -->
+      <div class="mock-test-banner" onclick="startMockTest()" style="cursor: pointer; background: linear-gradient(135deg, var(--saffron), #d97706); border-radius: var(--radius); padding: 20px; color: #fff; margin-bottom: 24px; position: relative; overflow: hidden; box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: space-between; transition: var(--transition);">
+        <div style="z-index: 2;">
+          <h2 style="font-size: 18px; font-weight: 800; margin-bottom: 6px;">📝 Full Syllabus Mock Test (मिश्रित मॉक टेस्ट)</h2>
+          <p style="font-size: 13px; opacity: 0.9; line-height: 1.4; max-width: 450px;">Simulate the real exam with a random mix of questions from all DBMS, MS Office, and General topics.</p>
+        </div>
+        <div class="mock-btn-badge" style="z-index: 2; background: rgba(255,255,255,0.2); padding: 10px 18px; border-radius: 30px; font-weight: 700; font-size: 13px; border: 1px solid rgba(255,255,255,0.4); text-transform: uppercase; white-space: nowrap;">Start Test ➔</div>
+        <!-- Decorative pattern -->
+        <div style="position: absolute; right: -20px; top: -20px; font-size: 100px; opacity: 0.15; transform: rotate(15deg); font-weight: bold; pointer-events: none; user-select: none;">📊</div>
+      </div>
+
+      <div id="topicsContainer">
+        <div class="topic-grid">
+          <div class="topic-skeleton"></div>
+          <div class="topic-skeleton"></div>
+          <div class="topic-skeleton"></div>
+        </div>
       </div>
 
       <div class="config-box" id="configBox" style="display:none">
@@ -417,6 +444,18 @@
           <div class="note-card-actions">
             <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Mela_Tyohar_Combined.html', 'Mela & Tyohar (Combined)')">👁️ Read Inside</button>
             <a href="Rajasthan_Mela_Tyohar_Combined.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+          </div>
+        </div>
+
+        <!-- Card 9: Rajasthan Aabhushan & Veshbhusha -->
+        <div class="note-card" data-category="gk" data-title="rajasthan ornaments dresses aabhushan veshbhusha master handbook revision">
+          <div class="note-card-badge gk">Rajasthan GK</div>
+          <div class="note-card-icon">👑</div>
+          <div class="note-card-title">Aabhushan & Veshbhusha</div>
+          <div class="note-card-desc">Master Revision Handbook for traditional ornaments (आभूषण) and dresses (वेशभूषा) of Rajasthan.</div>
+          <div class="note-card-actions">
+            <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Aabhushan_Veshbhusha_Master_Handbook.html', 'Aabhushan & Veshbhusha (आभूषण एवं वेशभूषा)')">👁️ Read Inside</button>
+            <a href="Rajasthan_Aabhushan_Veshbhusha_Master_Handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
           </div>
         </div>
       </div>
