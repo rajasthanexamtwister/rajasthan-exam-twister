@@ -29,6 +29,7 @@ const TOPIC_FILES = [
   { file: 'IT PATHSHALA DBMS/RSSB_Forest_Guard_2026.json',             name: 'RSSB Forest Guard (2026)',                     icon: '🌳', category: 'papers' },
 
   { file: 'computer.json',          name: 'Computer',          icon: '💻', category: 'others' },
+  { file: 'system_analysis_design.json', name: 'System Analysis & Design', icon: '📊', category: 'others' },
   { file: 'rajasthan_history.json', name: 'Rajasthan History', icon: '🏰', category: 'others' },
   { file: 'geography.json',         name: 'Geography',         icon: '🗺️', category: 'others' },
   { file: 'culture.json',           name: 'Culture',           icon: '🎭', category: 'others' },
@@ -437,6 +438,21 @@ function selectTopic(topic, questions, cardEl) {
   state.allQuestions = questions;
 
   document.getElementById('selectedTopicLabel').textContent = `${topic.icon} ${topic.name} (${questions.length} Qs)`;
+
+  // Reset custom range values
+  const rStart = document.getElementById('rangeStart');
+  const rEnd = document.getElementById('rangeEnd');
+  const rMaxLabel = document.getElementById('rangeMaxLabel');
+  if (rStart && rEnd) {
+    rStart.value = 1;
+    rStart.max = questions.length;
+    rEnd.value = Math.min(50, questions.length);
+    rEnd.max = questions.length;
+    if (rMaxLabel) {
+      rMaxLabel.textContent = `(1 to ${questions.length})`;
+    }
+  }
+
   document.getElementById('configBox').style.display = 'block';
   document.getElementById('configBox').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
@@ -446,6 +462,7 @@ function clearTopic() {
   state.allQuestions = [];
   document.querySelectorAll('.topic-card').forEach(c => c.classList.remove('selected'));
   document.getElementById('configBox').style.display = 'none';
+  document.getElementById('customRangeRow').style.display = 'none';
 }
 
 // ============ CONFIG BUTTONS ============
@@ -454,7 +471,10 @@ function initConfigButtons() {
   document.getElementById('qCountOptions').addEventListener('click', e => {
     if (!e.target.classList.contains('cfg-btn')) return;
     setActive('qCountOptions', e.target);
-    state.qCount = e.target.dataset.val === 'all' ? 'all' : parseInt(e.target.dataset.val);
+    const val = e.target.dataset.val;
+    state.qCount = (val === 'all' || val === 'range') ? val : parseInt(val);
+    document.getElementById('customRangeRow').style.display =
+      val === 'range' ? 'flex' : 'none';
   });
 
   // Order
@@ -495,11 +515,30 @@ function startTest() {
 
   let pool = [...state.allQuestions];
 
+  // Slice first if custom range is selected
+  if (state.qCount === 'range') {
+    let startVal = parseInt(document.getElementById('rangeStart').value) || 1;
+    let endVal = parseInt(document.getElementById('rangeEnd').value) || pool.length;
+
+    // Boundary validations
+    if (startVal < 1) startVal = 1;
+    if (endVal > pool.length) endVal = pool.length;
+    if (startVal > endVal) {
+      const temp = startVal;
+      startVal = endVal;
+      endVal = temp;
+    }
+
+    pool = pool.slice(startVal - 1, endVal);
+  }
+
   // Shuffle if random
   if (state.order === 'random') pool = shuffle(pool);
 
-  // Limit count
-  if (state.qCount !== 'all') pool = pool.slice(0, Math.min(state.qCount, pool.length));
+  // Limit count for static values
+  if (state.qCount !== 'all' && state.qCount !== 'range') {
+    pool = pool.slice(0, Math.min(state.qCount, pool.length));
+  }
 
   state.questions = pool;
   state.currentIndex = 0;

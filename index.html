@@ -91,7 +91,16 @@
             <button class="cfg-btn" data-val="50">50</button>
             <button class="cfg-btn" data-val="100">100</button>
             <button class="cfg-btn" data-val="all">Full Test</button>
+            <button class="cfg-btn" data-val="range">Custom Range</button>
           </div>
+        </div>
+
+        <div class="custom-range-row" id="customRangeRow" style="display:none; align-items: center; gap: 8px; margin-top: -8px; margin-bottom: 12px; flex-wrap: wrap;">
+          <span style="font-size: 13px; font-weight: 600; color: var(--text-muted);">From Q:</span>
+          <input type="number" id="rangeStart" value="1" min="1" style="width: 75px; padding: 6px 12px; border: 2px solid var(--border); border-radius: 99px; font-family: inherit; font-size: 13px; background: var(--cream); color: var(--text); outline: none;" />
+          <span style="font-size: 13px; color: var(--text-muted); font-weight: 600;">to</span>
+          <input type="number" id="rangeEnd" value="50" min="1" style="width: 75px; padding: 6px 12px; border: 2px solid var(--border); border-radius: 99px; font-family: inherit; font-size: 13px; background: var(--cream); color: var(--text); outline: none;" />
+          <span id="rangeMaxLabel" style="font-size: 12px; color: var(--text-muted); font-weight: 600;"></span>
         </div>
 
         <div class="config-row">
@@ -456,6 +465,42 @@
           <div class="note-card-actions">
             <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Aabhushan_Veshbhusha_Master_Handbook.html', 'Aabhushan & Veshbhusha (आभूषण एवं वेशभूषा)')">👁️ Read Inside</button>
             <a href="Rajasthan_Aabhushan_Veshbhusha_Master_Handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+          </div>
+        </div>
+
+        <!-- Card 10: Rajasthan Hastkala -->
+        <div class="note-card" data-category="gk" data-title="rajasthan handicrafts hastkala thewa pottery painting block print master revision">
+          <div class="note-card-badge gk">Rajasthan GK</div>
+          <div class="note-card-icon">🎨</div>
+          <div class="note-card-title">Rajasthan Hastkala (हस्तकला)</div>
+          <div class="note-card-desc">Master Revision Sheet on traditional handicrafts of Rajasthan, including Blue Pottery, Thewa Art, Usta Art, Miniature Paintings, and textile works.</div>
+          <div class="note-card-actions">
+            <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_hastkala_master_revision.html', 'Rajasthan Hastkala (राजस्थान की हस्तकला)')">👁️ Read Inside</button>
+            <a href="rajasthan_hastkala_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+          </div>
+        </div>
+
+        <!-- Card 11: Rajasthan Folk Dances -->
+        <div class="note-card" data-category="gk" data-title="rajasthan folk dances nritya ghoomar kalbeliya chang chari tribal regional master handbook">
+          <div class="note-card-badge gk">Rajasthan GK</div>
+          <div class="note-card-icon">💃</div>
+          <div class="note-card-title">Folk Dances (लोकनृत्य)</div>
+          <div class="note-card-desc">Comprehensive revision guide for tribal, regional, and professional folk dances of Rajasthan (Ghoomar, Kalbeliya, Chari, Gair, etc.).</div>
+          <div class="note-card-actions">
+            <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_nritya_master_handbook.html', 'Folk Dances (राजस्थान के लोकनृत्य)')">👁️ Read Inside</button>
+            <a href="rajasthan_nritya_master_handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+          </div>
+        </div>
+
+        <!-- Card 12: Rajasthani Shabdavali -->
+        <div class="note-card" data-category="gk" data-title="rajasthani shabdavali dialect vocabulary regional language words agriculture terms dialect translation master revision">
+          <div class="note-card-badge gk">Rajasthan GK</div>
+          <div class="note-card-icon">🗣️</div>
+          <div class="note-card-title">Rajasthani Shabdavali</div>
+          <div class="note-card-desc">Essential list of traditional Rajasthani dialect vocabulary, agriculture terms, domestic items, and dialect meanings for BCI exam revision.</div>
+          <div class="note-card-actions">
+            <button class="note-card-btn read" onclick="openNotesSheet('Rajasthani_Shabdavali_Master_Revision.html', 'Rajasthani Shabdavali (राजस्थानी शब्दावली)')">👁️ Read Inside</button>
+            <a href="Rajasthani_Shabdavali_Master_Revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
           </div>
         </div>
       </div>
