@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>MS PowerPoint / MS Office — Master Revision Handbook</title>
+<style>
+  @page { size: A4; margin: 12mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Noto Sans Devanagari","Mangal","Segoe UI",Arial,sans-serif; font-size: 12.5px; line-height:1.42; color:#111; margin:0; padding:14px; }
+  h1 { font-size:20px; margin:0 0 4px; text-align:center; color:#0b3d91; }
+  h2 { font-size:15px; margin:16px 0 6px; padding:4px 8px; background:#0b3d91; color:#fff; border-radius:3px; page-break-after:avoid; }
+  h3 { font-size:13px; margin:10px 0 4px; color:#0b3d91; border-bottom:1px solid #0b3d91; page-break-after:avoid; }
+  p { margin:3px 0; }
+  table { width:100%; border-collapse:collapse; margin:5px 0 10px; font-size:11.5px; }
+  th,td { border:1px solid #999; padding:3px 6px; text-align:left; vertical-align:top; }
+  th { background:#dbe6ff; }
+  tr:nth-child(even) td { background:#f6f8ff; }
+  ul { margin:3px 0 8px 18px; padding:0; }
+  li { margin:1px 0; }
+  .badge { display:inline-block; padding:0 5px; border-radius:3px; font-size:10.5px; font-weight:bold; color:#fff; margin-left:4px;}
+  .b5{background:#c0392b;} .b4{background:#e67e22;} .b3{background:#27ae60;} .bug{background:#8e44ad;}
+  .trap { background:#fff3cd; border-left:3px solid #e67e22; padding:4px 8px; margin:3px 0; }
+  .memo { background:#eafaf1; border-left:3px solid #27ae60; padding:4px 8px; margin:3px 0; }
+  .bugbox { background:#f5eef8; border-left:3px solid #8e44ad; padding:4px 8px; margin:3px 0; }
+  .cols { display:flex; gap:14px; flex-wrap:wrap; }
+  .col { flex:1; min-width:220px; }
+  .small { font-size:10.5px; color:#444; }
+  .toc { columns:2; font-size:11.5px; margin-bottom:10px; }
+  .pagebreak { page-break-before: always; }
+  code { background:#eee; padding:0 3px; border-radius:2px; }
+</style>
+</head>
+<body>
+
+<h1>MS PowerPoint / MS Office — Master Revision Handbook</h1>
+<p class="small" style="text-align:center;">RSMSSB / RSSB / RPSC / BCI Quiz Prep — संकलित एवं संशोधित — 177+ PPT प्रश्न + Access/DBMS 65 प्रश्न + Word/Excel Quiz 1–17 (कुल 400+ प्रश्नों का सार)</p>
+
+<div class="toc">
+<b>अनुक्रम:</b>
+<ul>
+<li>🚨 मेरी गलतियाँ व Traps</li>
+<li>🎯 कमजोर क्षेत्र (Weak Areas)</li>
+<li>⭐ High-Yield तथ्य (Word/Excel/PPT/Access)</li>
+<li>📊 तुलना तालिकाएँ (Confusion Pairs)</li>
+<li>🧠 Memory Tricks</li>
+<li>⌨️ सभी Keyboard Shortcuts (Consolidated)</li>
+<li>🚨 Answer Key Bugs / विवादित प्रश्न</li>
+<li>📚 Topic-wise Revision — Word, Excel, PowerPoint, Access, DBMS</li>
+<li>⚡ Rapid-Fire One-Liners</li>
+</ul>
+</div>
+
+<h2>🚨 मेरी गलतियाँ व सबसे बड़े Exam Traps</h2>
+<table>
+<tr><th>Trap</th><th>गलत समझ</th><th>सही Concept</th></tr>
+<tr><td>Transition vs Animation</td><td>दोनों को एक समझना</td><td>Transition = पूरी Slide के बीच; Animation = Slide के अंदर Object पर</td></tr>
+<tr><td>Slide Layout कहाँ है</td><td>Design Tab समझना</td><td>Home Tab → Slides Group → Layout</td></tr>
+<tr><td>Macro (PPT) कहाँ है</td><td>Insert/Home समझना</td><td>View Tab (Developer Tab भी) → Macros Group</td></tr>
+<tr><td>ClipArt / WordArt / SmartArt</td><td>तीनों को मिलाना</td><td>ClipArt=Ready Pictures, WordArt=Decorative Text, SmartArt=Diagram/Process</td></tr>
+<tr><td>Print Layout View</td><td>PowerPoint में मानना</td><td>यह केवल Word का View है, PPT में नहीं होता</td></tr>
+<tr><td>F5 vs Shift+F5</td><td>दोनों एक समझना</td><td>F5=शुरुआत से Slide Show; Shift+F5=वर्तमान Slide से</td></tr>
+<tr><td>Ctrl+M vs Ctrl+N</td><td>Ctrl+N से नई Slide समझना</td><td>Ctrl+M=New Slide (PPT में); Ctrl+N=New Presentation/Document</td></tr>
+<tr><td>Font Size Toolbar vs Actual Max</td><td>96 को ही Maximum मानना</td><td>Toolbar Dropdown Max=96; असल Typed Max=4000; Min Typed=1 (Toolbar शुरू=8)</td></tr>
+<tr><td>Character Spacing Range</td><td>Confusion (कुछ किताबों में 100–1000 भी मिलता है)</td><td>Standard सही उत्तर: 0pt – 1000pt</td></tr>
+<tr><td>Handout Slides/Page</td><td>कोई भी संख्या मान लेना</td><td>केवल 1, 2, 3, 4, 6, 9 ही Valid Options हैं</td></tr>
+<tr><td>Speaker Notes vs Handout</td><td>दोनों को Print के लिए एक समझना</td><td>Speaker Notes=Presenter के लिए; Handout=Audience के लिए Printed Copy</td></tr>
+<tr><td>Slide Master vs Handout Master vs Notes Master</td><td>तीनों एक समझना</td><td>Slide Master=Slides; Handout Master=Handout Print; Notes Master=Notes Page Print</td></tr>
+<tr><td>Left Panel Tabs (PPT)</td><td>Notes Tab भी मान लेना</td><td>केवल Slides और Outline होते हैं, Notes Tab नहीं</td></tr>
+<tr><td>Data Item का Storage</td><td>Database में Store मानना</td><td>सही उत्तर: Field (Data Hierarchy: Bit→Byte→Character→Field→Record→File→Database)</td></tr>
+<tr><td>ER Model vs Relational Model जनक</td><td>दोनों Codd को देना</td><td>Codd=Relational Model; ER Model वास्तव में Peter Chen ने दिया (पुस्तक में अक्सर गलत लिखा मिलता है)</td></tr>
+<tr><td>MS Access का Database Type</td><td>All of the above मान लेना</td><td>MS Access विशुद्ध Relational Database है (Network/Hierarchical नहीं)</td></tr>
+</table>
+
+<h2>🎯 कमजोर क्षेत्र (High Priority)</h2>
+<p><span class="badge b5">🔴 Very Weak</span> Excel Advanced Functions (INDEX, VLOOKUP, Solver, Goal Seek, MOD, LCM, ROUND, EXACT, TRIM), PowerPoint Advanced (Slide Master, Rehearse Timings, SmartArt, Animation Painter), ER Model/Keys (DBMS)</p>
+<p><span class="badge b4">🟠 Weak</span> Cell Referencing (Relative/Absolute/Mixed), Character Spacing/Font Size limits, Auto Content Wizard (पुराना PPT 2003 Feature), Access Objects/Views/Tabs</p>
+<p><span class="badge b3">🟢 Strong</span> Basic Word/Excel/PPT Shortcuts, Mail Merge, File Extensions, Chart Types, Slide Show Basics</p>
+
+<h2>⭐ High-Yield तथ्य — PowerPoint (⭐⭐⭐⭐⭐ सर्वाधिक दोहराए गए)</h2>
+<ul>
+<li><b>Slide Master</b> — Background, Logo, Font, Placeholder, Bullet, Layout सब Control करता है; एक बार डाला गया Element हर Slide पर एक ही स्थान पर अपने आप आता है।</li>
+<li><b>Default Orientation</b> — PowerPoint = <b>Landscape</b> (Portrait भी सेट किया जा सकता है, PPT हमेशा Landscape तक सीमित नहीं)।</li>
+<li><b>Views</b> — Normal (Edit), Outline (केवल Text), Slide Sorter (सभी Slides Thumbnail, Rearrange), Notes Page (Speaker Notes), Reading, Slide Show (Full Screen)। <b>Print Layout PPT में नहीं है (वह Word का है)।</b></li>
+<li><b>Template</b> — Predefined Presentation (Font+Layout+Background सब सहित); Theme सिर्फ Color+Font तक सीमित है।</li>
+<li><b>Placeholder</b> — Slide पर Text/Picture/Chart रखने का Container।</li>
+<li><b>Animation Categories</b> — Entrance, Emphasis, Exit, Motion Path। Spin=Rotate; Motion Path=Object को रास्ते पर घुमाना।</li>
+<li><b>Transition Categories</b> — Subtle, Exciting, Dynamic Content।</li>
+<li><b>Handout</b> — Audience के लिए Printed Copy; Slides/Page विकल्प = 1,2,3,4,6,9।</li>
+<li><b>Auto Content Wizard (पुराना PPT)</b> — Start → Presentation Type → Presentation Style → Presentation Options → Finish (Start-Finish के बीच 3 Steps)। Title/Footer Step-3 में तय होते हैं। Style Step में: On-Screen, Web, Black&White Overheads।</li>
+<li><b>Zoom Range</b> — 10% से 400% (Status Bar Slider)।</li>
+<li><b>Font Size</b> — Toolbar Dropdown: 8–96; असल Typed Range: 1–4000।</li>
+<li><b>Character Spacing</b> — 0pt से 1000pt।</li>
+<li><b>Default File Name</b> — Presentation1; Default Extension (2007+) = <code>.pptx</code>; Macro Enabled = <code>.pptm</code>; Slide Show Direct-Open = <code>.ppsx</code>; Template = <code>.potx</code>.</li>
+<li><b>Insert Tab</b> — Picture, ClipArt, Shapes, Audio, Video, Header&Footer/Slide Number (Text Group), Hyperlink, WordArt, SmartArt।</li>
+<li><b>Home Tab</b> — Slide Layout, Clipboard (Cut/Copy/Paste/Format Painter — New Slide यहाँ नहीं है, वह Slides Group में है), Editing Group (Find/Replace/Select), Reset।</li>
+<li><b>Design Tab</b> — Background बदलना, Color Scheme, Themes।</li>
+<li><b>Slide Show Tab</b> — From Beginning, From Current Slide, Present Online, Rehearse Timings, Custom Slide Show, Set Up Slide Show (Loop Continuously Until Esc)।</li>
+<li><b>Quick Access Toolbar</b> — Title Bar पर Save/Undo/Redo (Ribbon से अलग)।</li>
+<li><b>PowerPoint एक Application Software है, GUI आधारित।</b></li>
+</ul>
+
+<h2>📊 तुलना तालिकाएँ (Confusion Pairs)</h2>
+<table>
+<tr><th>टर्म</th><th>अर्थ</th></tr>
+<tr><td>Transition</td><td>पूरी Slide पर लागू, Slide-to-Slide Effect</td></tr>
+<tr><td>Animation</td><td>Slide के अंदर किसी Object/Text पर लागू</td></tr>
+<tr><td>Motion Path</td><td>Object को किसी निश्चित रास्ते (Path) पर घुमाना — Animation का एक प्रकार</td></tr>
+<tr><td>Slide Master</td><td>पूरी Presentation का Global Format (Font/Bg/Logo/Placeholder)</td></tr>
+<tr><td>Design Template</td><td>सभी Slides को एक जैसा Look देना</td></tr>
+<tr><td>Theme</td><td>सिर्फ Colors+Fonts+Effects</td></tr>
+<tr><td>ClipArt</td><td>Ready-to-use Pictures</td></tr>
+<tr><td>WordArt</td><td>सजावटी/Decorative Text</td></tr>
+<tr><td>SmartArt</td><td>Process/Hierarchy/Relationship Diagram</td></tr>
+<tr><td>Speaker Notes</td><td>Presenter के लिए, Audience नहीं देखती</td></tr>
+<tr><td>Handout</td><td>Audience के लिए Printed Copy</td></tr>
+</table>
+
+<h2 class="pagebreak">🧠 Memory Tricks</h2>
+<div class="memo">F5 = Full show From beginning (शुरुआत से)</div>
+<div class="memo">Shift+F5 = Selected/Current Slide से शुरू</div>
+<div class="memo">Ctrl+M = More Slides (नई Slide)</div>
+<div class="memo">Ctrl+D = Duplicate</div>
+<div class="memo">Ctrl+K = linK (Hyperlink)</div>
+<div class="memo">Ctrl+E = cEnter Align</div>
+<div class="memo">Esc = Exit Slide Show (Advance नहीं करता)</div>
+<div class="memo">Justify में Last Line हमेशा Left रहती है</div>
+<div class="memo">Data Hierarchy याद रखने का क्रम: Bit-Byte-Character-Field-Record-File-Database (BBC-FRFD)</div>
+<div class="memo">ER Diagram: Rectangle=Entity, Ellipse=Attribute, Diamond=Relationship</div>
+<div class="memo">Cardinality=Rows(Tuples); Degree=Columns(Attributes)</div>
+
+<h2>⌨️ सभी महत्वपूर्ण Keyboard Shortcuts (Consolidated)</h2>
+<table>
+<tr><th>Shortcut</th><th>PowerPoint</th></tr>
+<tr><td>F5</td><td>Slide Show शुरुआत से</td></tr>
+<tr><td>Shift+F5</td><td>वर्तमान Slide से Show</td></tr>
+<tr><td>Ctrl+M</td><td>New Slide</td></tr>
+<tr><td>Ctrl+D</td><td>Duplicate Slide</td></tr>
+<tr><td>Ctrl+K</td><td>Hyperlink Insert</td></tr>
+<tr><td>Ctrl+E / L / R / J</td><td>Center / Left / Right / Justify Align</td></tr>
+<tr><td>Ctrl+Home / End</td><td>पहली / अंतिम Slide</td></tr>
+<tr><td>Ctrl+S</td><td>Save</td></tr>
+<tr><td>Ctrl+W</td><td>Close Presentation/Document</td></tr>
+<tr><td>Esc</td><td>Slide Show End</td></tr>
+</table>
+<table>
+<tr><th>Shortcut</th><th>Word / Excel (सामान्य)</th></tr>
+<tr><td>Ctrl+O/S/P</td><td>Open / Save / Print</td></tr>
+<tr><td>Ctrl+F / H</td><td>Find / Replace</td></tr>
+<tr><td>Ctrl+X/C/V</td><td>Cut / Copy / Paste</td></tr>
+<tr><td>Ctrl+B/I/U</td><td>Bold / Italic / Underline</td></tr>
+<tr><td>F7</td><td>Spelling & Grammar Check</td></tr>
+<tr><td>F2</td><td>Excel Cell Edit</td></tr>
+<tr><td>F4</td><td>Relative↔Absolute Reference Toggle (Excel)</td></tr>
+<tr><td>F11 / Alt+F1</td><td>Chart (नई Sheet) / Chart (Same Sheet)</td></tr>
+<tr><td>Ctrl+;</td><td>Current Date (Excel)</td></tr>
+<tr><td>Ctrl+Shift+C/V</td><td>Copy/Paste Formatting</td></tr>
+<tr><td>Shift+F3</td><td>Change Case (Word) / Insert Function (Excel)</td></tr>
+<tr><td>Alt+F4</td><td>Application बंद करना (Access सहित)</td></tr>
+</table>
+
+<h2 class="pagebreak">🚨 Answer Key Bugs / विवादित प्रश्न</h2>
+<div class="bugbox"><b>PPT — "Program to create Presentation"</b>: Book Answer=Access (❌ गलत) → सही उत्तर=<b>PowerPoint</b> (Access एक Database Program है)</div>
+<div class="bugbox"><b>PPT — "Change color of entire presentation किस Tab से"</b>: दिए गए Options (File/Home/View/Review) में से कोई सही नहीं — असल उत्तर <b>Design Tab</b> है जो Options में था ही नहीं (Flawed Question)</div>
+<div class="bugbox"><b>PPT — Character Spacing Range</b>: एक जगह Book Answer=100–1000pt, दूसरी जगह 0–1000pt — Standard सही उत्तर <b>0–1000pt</b> मानें</div>
+<div class="bugbox"><b>PPT — "कौनसा Format Add नहीं कर सकते"</b>: Book Answer=.gif (❌ गलत, GIF Supported है) → सही उत्तर=<b>.html</b> (Web Format, Direct Insert नहीं होता)</div>
+<div class="bugbox"><b>DBMS — "Data Item Storage"</b>: Book Answer=Database (❌) → सही उत्तर=<b>Field</b> (Data Hierarchy अनुसार)</div>
+<div class="bugbox"><b>DBMS — "Data Integrity Problem का कारण"</b>: Book Answer=Lack of Availability (❌) → सही उत्तर=<b>Data Duplication/Redundancy</b></div>
+<div class="bugbox"><b>DBMS — "Relational Model में क्या होता है"</b>: Book Answer=Entity (❌) → सही उत्तर=<b>Table</b> (Entity, ER Model का Concept है, Relational Model का नहीं)</div>
+<div class="bugbox"><b>DBMS — "MS Access किस प्रकार का Database"</b>: Book Answer=All of the above (❌) → सही उत्तर=केवल <b>Relational Database</b></div>
+<div class="bugbox"><b>DBMS — "ER Model किसने दिया"</b>: Book Answer=Dr. E.F. Codd (❌, विकल्पों में सही जनक Peter Chen नहीं दिया गया — Question ही Flawed है)। याद रखें: Codd=Relational Model, Chen=ER Model</div>
+
+<h2 class="pagebreak">📚 Topic-wise Revision — MS Access / DBMS High-Yield</h2>
+<ul>
+<li><b>DBMS Advantage</b> — Data Independence, Security, Integrity, Reduced Redundancy, Sharing। <b>Disadvantage:</b> Cost, Complexity।</li>
+<li><b>DDL</b> — Structure (CREATE, ALTER, DROP, TRUNCATE) | <b>DML</b> — Data (SELECT, INSERT, UPDATE, DELETE)</li>
+<li><b>Keys</b> — Primary Key=Unique पहचान; Foreign Key=दो Tables को जोड़ता है; Composite Key=एक से अधिक Field; Weak Entity=अपनी Primary Key नहीं रखता</li>
+<li><b>ER Diagram</b> — Rectangle=Entity, Ellipse=Attribute, Diamond=Relationship</li>
+<li><b>Data Models</b> — Hierarchical=Tree; Network=Graph; Relational=Table</li>
+<li><b>Three-Level Architecture</b> — External → Conceptual (Logical) → Internal (Physical)</li>
+<li><b>Access Objects</b> — Table (Store), Query (View/Filter/Analyse — Dynaset लौटाता है), Form (Data Entry), Report (Print), Macro (Automation)</li>
+<li><b>Access Views</b> — Design View (Structure) और Datasheet View (Data) — दोनों से Table बन सकती है</li>
+<li><b>Access Tabs</b> — Home, Create, External Data (Import/Export), Database Tools (Relationships/Compact-Repair)</li>
+<li><b>Access Facts</b> — Default Extension=<code>.accdb</code> (पुराना <code>.mdb</code>); Default Data Type=Text; Table/Field Name Max Length=64 Characters; Title Bar=Database नाम दिखाता है</li>
+<li><b>Alt+F4</b>=Access बंद करना; <b>Ctrl+W</b>=केवल Object बंद करना</li>
+</ul>
+
+<h2>📚 Topic-wise Revision — MS Word (Quick Recap)</h2>
+<ul>
+<li>Alignment: Ctrl+L/E/R/J; Justify की Last Line Left रहती है</li>
+<li>Mail Merge=एक Letter, अलग-अलग Recipients; Data Source में PowerPoint मान्य नहीं</li>
+<li>F7=Spelling/Grammar; Ctrl+F2=Print Preview; F12=Save As; Ctrl+D=Font Dialog</li>
+<li>Gutter Margin=Binding Side की अतिरिक्त जगह; Indentation=Paragraph शुरुआत की जगह</li>
+<li>Drop Cap=पहला अक्षर बड़ा (Insert Tab)</li>
+<li>Default File Name=Document1; Default Extension=.docx; Default Font (2007+)=Calibri</li>
+<li>Styles=पूरे Document में एक जैसी Formatting; Macro=Automation (Language: VBA)</li>
+</ul>
+
+<h2>📚 Topic-wise Revision — MS Excel (Quick Recap)</h2>
+<ul>
+<li>Cell Reference: Relative(A1)=बदलता है; Absolute($A$1)=Lock; Mixed($A1/A$1)=आधा Lock</li>
+<li>Rows=1,048,576 | Columns=16,384 (2007+); पुराना (2003)=65,536 Rows</li>
+<li>Formula हमेशा <code>=</code> से शुरू होता है</li>
+<li>COUNT=केवल Numbers; COUNTA=Non-empty; COUNTIF=Condition आधारित; SUM=जोड़</li>
+<li>TODAY()=Date; NOW()=Date+Time (दोनों अलग हैं)</li>
+<li>Pivot Table=Summary/Analysis का Tool; Conditional Formatting=Condition पर Highlight</li>
+<li>Freeze Panes=Scroll करने पर Row/Column Fix रखना</li>
+<li>Goal Seek=एक Variable Optimize करना; Solver=Multiple Variable + Constraints के साथ Advanced Optimization</li>
+<li>Default Font (2019)=Calibri 11; Default Extension=.xlsx (पुराना .xls)</li>
+</ul>
+
+<h2>⚡ Rapid-Fire One-Liners (Last Minute Revision)</h2>
+<ul>
+<li>PowerPoint Default Orientation → Landscape</li>
+<li>PowerPoint एक Page → Slide कहलाता है</li>
+<li>Slide Master → Global Format Controller</li>
+<li>Transition → Slide-to-Slide | Animation → Object-Level</li>
+<li>F5 → Show from Start | Shift+F5 → Show from Current</li>
+<li>Ctrl+M → New Slide | Ctrl+D → Duplicate Slide</li>
+<li>Handout → 1,2,3,4,6,9 Slides/Page Print Options</li>
+<li>Zoom Range → 10%–400%</li>
+<li>Font Size → Typed: 1–4000 | Dropdown: 8–96</li>
+<li>Character Spacing → 0–1000pt</li>
+<li>Default PPT File → Presentation1 (.pptx)</li>
+<li>DBMS = Database Management System | RDBMS = Relational DBMS</li>
+<li>DDL = Structure | DML = Data</li>
+<li>Primary Key = Unique | Foreign Key = Table-Table Link</li>
+<li>Access Default Extension = .accdb | Default Data Type = Text</li>
+<li>ER Model = Peter Chen | Relational Model = E.F. Codd</li>
+</ul>
+
+<p class="small" style="text-align:center;margin-top:14px;">— Master Revision Handbook समाप्त — नए Quiz/Paper आने पर इसी File में Merge करें, कभी नई File न बनाएँ —</p>
+
+</body>
+</html>

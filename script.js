@@ -27,6 +27,7 @@ const TOPIC_FILES = [
   { file: 'IT PATHSHALA DBMS/RSMSSB_BCI_2022_Paper_1.json',            name: 'BCI Paper 1 (2022)',                           icon: '📝', category: 'papers' },
   { file: 'IT PATHSHALA DBMS/RSMSSB_BCI_2022_Paper_2.json',            name: 'BCI Paper 2 (2022)',                           icon: '📝', category: 'papers' },
   { file: 'IT PATHSHALA DBMS/RSSB_Forest_Guard_2026.json',             name: 'RSSB Forest Guard (2026)',                     icon: '🌳', category: 'papers' },
+  { file: 'rpsc_2nd_grade.json',                                       name: 'RPSC 2nd Grade GK (2024)',                     icon: '📝', category: 'papers' },
 
   { file: 'computer.json',          name: 'Computer',          icon: '💻', category: 'others' },
   { file: 'system_analysis_design.json', name: 'System Analysis & Design', icon: '📊', category: 'others' },

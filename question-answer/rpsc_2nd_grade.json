@@ -1,0 +1,3325 @@
+[
+    {
+        "id": 1,
+        "page": 1,
+        "question_en": "Identify the river on the basis of the following facts - (A) It originates from Bichameda. (B) Its tributaries are Gomti and Sarni. (C) It makes confluence at Beneshwar.",
+        "question_hi": "निम्नलिखित तथ्यों के आधार पर नदी की पहचान कीजिए - (A) यह बीछामेड़ा से उद्गमित होती है। (B) गोमती तथा सारनी इसकी सहायक नदियाँ हैं। (C) यह बेणेश्वर में संगम बनाती है।",
+        "options": [
+            {
+                "id": 1,
+                "en": "Som",
+                "hi": "सोम"
+            },
+            {
+                "id": 2,
+                "en": "Jakham",
+                "hi": "जाखम"
+            },
+            {
+                "id": 3,
+                "en": "Sabarmati",
+                "hi": "साबरमती"
+            },
+            {
+                "id": 4,
+                "en": "Mahi",
+                "hi": "माही"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "page": 1,
+        "question_en": "The Great Boundary Fault is not seen clearly in which among the following district of Rajasthan?",
+        "question_hi": "महान/विशाल सीमा भ्रंश राजस्थान के निम्नलिखित में से किस जिले में स्पष्टतः दिखाई नहीं देता है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Kota",
+                "hi": "कोटा"
+            },
+            {
+                "id": 2,
+                "en": "Dholpur",
+                "hi": "धौलपुर"
+            },
+            {
+                "id": 3,
+                "en": "Chittorgarh",
+                "hi": "चित्तौड़गढ़"
+            },
+            {
+                "id": 4,
+                "en": "Churu",
+                "hi": "चूरू"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "page": 1,
+        "question_en": "Consider the following statements about \"The Rajasthan Rural Tourism Scheme 2022\" - (A) Scheme effective from March 5, 2022. (B) 7% interest subsidy on loans up to ₹35 Lakhs. (C) Units investing a minimum of ₹1 Crore get 100% SGST reimbursement for a period of 10 years. Which of the above statement(s) is/are correct?",
+        "question_hi": "'राजस्थान ग्रामीण पर्यटन योजना 2022' के संबंध में निम्न कथनों पर विचार कीजिए - (A) योजना 5 मार्च 2022 को लागू की गई। (B) 35 लाख ₹ तक के ऋण पर 7% ब्याज सब्सिडी। (C) न्यूनतम 1 करोड़ ₹ निवेश करने वाली इकाई को 10 वर्ष तक एस.जी.एस.टी. का 100% पुनर्भरण। उपर्युक्त में से कौनसा/से कथन सही है/हैं?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Only (A) and (C)",
+                "hi": "केवल (A) तथा (C)"
+            },
+            {
+                "id": 2,
+                "en": "(A), (B) and (C)",
+                "hi": "(A), (B) तथा (C)"
+            },
+            {
+                "id": 3,
+                "en": "Only (C)",
+                "hi": "केवल (C)"
+            },
+            {
+                "id": 4,
+                "en": "Only (B)",
+                "hi": "केवल (B)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "page": 1,
+        "question_en": "According to the Livestock Census-2019, the district having the second highest number of total cattle in Rajasthan was -",
+        "question_hi": "पशुगणना-2019 के अनुसार, राजस्थान में सर्वाधिक कुल गौवंश वाला जिला था -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Bikaner",
+                "hi": "बीकानेर"
+            },
+            {
+                "id": 2,
+                "en": "Udaipur",
+                "hi": "उदयपुर"
+            },
+            {
+                "id": 3,
+                "en": "Jaipur",
+                "hi": "जयपुर"
+            },
+            {
+                "id": 4,
+                "en": "Jodhpur",
+                "hi": "जोधपुर"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "page": 2,
+        "question_en": "\"Mahi Kanchan\" and \"Mahi Dhaval\" hybrid varieties are associated with -",
+        "question_hi": "''माही कंचन'' एवं ''माही धवल'' संकरित किस्में किससे संबंधित हैं?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Maize",
+                "hi": "मक्का"
+            },
+            {
+                "id": 2,
+                "en": "Jowar",
+                "hi": "ज्वार"
+            },
+            {
+                "id": 3,
+                "en": "Wheat",
+                "hi": "गेहूँ"
+            },
+            {
+                "id": 4,
+                "en": "Barley",
+                "hi": "जौ"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "page": 2,
+        "question_en": "Which of the following districts of Rajasthan is correctly arranged in ascending order as per their annual normal rainfall?",
+        "question_hi": "राजस्थान के निम्नलिखित जिलों में से कौनसा उनके सामान्य वार्षिक वर्षा के आरोही क्रम में सही व्यवस्थित है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Hanumangarh, Jaipur, Baran, Jhalawar",
+                "hi": "हनुमानगढ़, जयपुर, बारां, झालावाड़"
+            },
+            {
+                "id": 2,
+                "en": "Jaipur, Hanumangarh, Baran, Jhalawar",
+                "hi": "जयपुर, हनुमानगढ़, बारां, झालावाड़"
+            },
+            {
+                "id": 3,
+                "en": "Hanumangarh, Jaipur, Jhalawar, Baran",
+                "hi": "हनुमानगढ़, जयपुर, झालावाड़, बारां"
+            },
+            {
+                "id": 4,
+                "en": "Hanumangarh, Baran, Jaipur, Jhalawar",
+                "hi": "हनुमानगढ़, बारां, जयपुर, झालावाड़"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "page": 2,
+        "question_en": "Consider the following pairs - Forest Type (Rajasthan) : Characteristic/Location - (A) Evergreen and Semi-evergreen Forest - Around Mount Abu (B) Dry Teak Forest - Dungarpur, Udaipur (C) Salar Forest - Hilly areas having annual rainfall of 25-50 cm. (D) Bamboo Forest - Banswara, Udaipur, Kota. How many of the above are correct pairs?",
+        "question_hi": "निम्नलिखित युग्मों पर विचार कीजिए - वन प्रकार (राजस्थान): विशेषता/अवस्थिति - (A) सदाबहार और अर्द्ध-सदाबहार वन – माउंट आबू के आसपास (B) शुष्क सागवान वन – डूंगरपुर, उदयपुर (C) सालार वन – 25-50 से.मी. वार्षिक वर्षा वाले पहाड़ी क्षेत्रों में (D) बाँस के वन – बाँसवाड़ा, उदयपुर, कोटा। उपर्युक्त में से कितने युग्म सही हैं?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Only three",
+                "hi": "केवल तीन"
+            },
+            {
+                "id": 2,
+                "en": "All four",
+                "hi": "सभी चार"
+            },
+            {
+                "id": 3,
+                "en": "Only two",
+                "hi": "केवल दो"
+            },
+            {
+                "id": 4,
+                "en": "Only one",
+                "hi": "केवल एक"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "page": 2,
+        "question_en": "In which pair of districts, an Integrated Resource Recovery Park has been developed to promote environmental protection and resource recovery from waste?",
+        "question_hi": "जिलों के किस युग्म में, पर्यावरण संरक्षण और कचरे से संसाधन पुनर्प्राप्ति को बढ़ावा देने के लिए एक एकीकृत संसाधन पुनर्प्राप्ति पार्क विकसित किया गया है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Jaipur and Kota",
+                "hi": "जयपुर तथा कोटा"
+            },
+            {
+                "id": 2,
+                "en": "Dausa and Kota",
+                "hi": "दौसा तथा कोटा"
+            },
+            {
+                "id": 3,
+                "en": "Bundi and Alwar",
+                "hi": "बूंदी तथा अलवर"
+            },
+            {
+                "id": 4,
+                "en": "Udaipur and Bundi",
+                "hi": "उदयपुर तथा बूंदी"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "page": 3,
+        "question_en": "Which of the following is/are designated as Particularly Vulnerable Tribal Group (PVTG) in Rajasthan?",
+        "question_hi": "राजस्थान में निम्नलिखित में से किसे/किन्हें विशेष रूप से कमज़ोर जनजातीय समूह (PVTG) के रूप में नामित किया गया है/हैं?",
+        "options": [
+            {
+                "id": "A",
+                "en": "Bhil",
+                "hi": "भील"
+            },
+            {
+                "id": "B",
+                "en": "Saharya",
+                "hi": "सहरिया"
+            },
+            {
+                "id": "C",
+                "en": "Garasia",
+                "hi": "गरासिया"
+            },
+            {
+                "id": "D",
+                "en": "Damor",
+                "hi": "दमोर"
+            }
+        ],
+        "code_options": [
+            {
+                "id": 1,
+                "en": "Only (B), (C) and (D)",
+                "hi": "केवल (B), (C) और (D)"
+            },
+            {
+                "id": 2,
+                "en": "Only (C)",
+                "hi": "केवल (C)"
+            },
+            {
+                "id": 3,
+                "en": "Only (A) and (C)",
+                "hi": "केवल (A) और (C)"
+            },
+            {
+                "id": 4,
+                "en": "Only (A)",
+                "hi": "केवल (A)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "page": 3,
+        "question_en": "Which of the following is correctly arranged in descending order as per their density of population-2011?",
+        "question_hi": "राजस्थान के निम्नलिखित जिलों में से कौनसा उनके अनुसार जनसंख्या घनत्व-2011 के अनुसार सही अवरोही क्रम में व्यवस्थित है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Ajmer",
+                "hi": "अजमेर"
+            },
+            {
+                "id": 2,
+                "en": "Tonk",
+                "hi": "टोंक"
+            },
+            {
+                "id": 3,
+                "en": "Bhilwara",
+                "hi": "भीलवाड़ा"
+            },
+            {
+                "id": 4,
+                "en": "Bundi",
+                "hi": "बूंदी"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ],
+        "note": "Full option text partially illegible in scan; option order approximate."
+    },
+    {
+        "id": 11,
+        "page": 3,
+        "question_en": "Read the following statements and choose the correct option - (A) Faizal Ali Khan Pathan provided military assistance to the son of Mughal Emperor in the 1857 Revolution. (B) Faizal Ali Khan Pathan was the Kamdar of Dundlod Thikana.",
+        "question_hi": "निम्नलिखित कथनों को पढ़िए एवं सही विकल्प चुनिए - (A) फैज़ल अली खान पठान ने मुगल बादशाह के पुत्र को 1857 की क्रांति में सैनिक सहायता दी। (B) फैज़ल अली खान पठान दूंदलोद ठिकाने के कामदार थे।",
+        "options": [
+            {
+                "id": 1,
+                "en": "Only (A) is correct",
+                "hi": "केवल (A) सही है"
+            },
+            {
+                "id": 2,
+                "en": "Only (B) is correct",
+                "hi": "केवल (B) सही है"
+            },
+            {
+                "id": 3,
+                "en": "Both (A) and (B) are correct",
+                "hi": "(A) और (B) दोनों सही हैं"
+            },
+            {
+                "id": 4,
+                "en": "Both (A) and (B) are incorrect",
+                "hi": "(A) और (B) दोनों सही नहीं हैं"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "page": 4,
+        "question_en": "Dhatki and Thali are the sub-dialects of which of the following dialect?",
+        "question_hi": "ढटकी एवं थाली निम्नलिखित में से किस बोली की उप-बोलियाँ हैं?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Mewati",
+                "hi": "मेवाती"
+            },
+            {
+                "id": 2,
+                "en": "Bagri",
+                "hi": "बागड़ी"
+            },
+            {
+                "id": 3,
+                "en": "Mewari",
+                "hi": "मेवाड़ी"
+            },
+            {
+                "id": 4,
+                "en": "Marwari",
+                "hi": "मारवाड़ी"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "page": 4,
+        "question_en": "The maximum number of silver coins found at Bairath belongs to which of the following rulers?",
+        "question_hi": "बैराठ से प्राप्त सर्वाधिक रजत मुद्राएँ निम्न में से किन शासकों की हैं?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Maurya",
+                "hi": "मौर्य"
+            },
+            {
+                "id": 2,
+                "en": "Gupta",
+                "hi": "गुप्त"
+            },
+            {
+                "id": 3,
+                "en": "Indo-Greek",
+                "hi": "भारतीय-यूनानी"
+            },
+            {
+                "id": 4,
+                "en": "Kushana",
+                "hi": "कुषाण"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "page": 4,
+        "question_en": "How did Mandan utilize the geographical conditions of the Kumbhalgarh Fort to ensure self-reliance?",
+        "question_hi": "मण्डन ने कुंभलगढ़ दुर्ग की भौगोलिक परिस्थितियों का उपयोग आत्मनिर्भरता के लिये किस प्रकार किया था?",
+        "options": [
+            {
+                "id": 1,
+                "en": "He constructed an artificial river for irrigation.",
+                "hi": "उन्होंने सिंचाई हेतु एक कृत्रिम नदी का निर्माण किया।"
+            },
+            {
+                "id": 2,
+                "en": "He constructed underground chambers solely for the storage of grain.",
+                "hi": "उन्होंने केवल अनाज के भण्डारण हेतु भूमिगत कक्षों का निर्माण किया।"
+            },
+            {
+                "id": 3,
+                "en": "He built only tall turrets amidst the hills so that the enemy could not enter.",
+                "hi": "उन्होंने पहाड़ियों के बीच केवल ऊँचे बुर्ज बनाये ताकि दुश्मन न आ सके।"
+            },
+            {
+                "id": 4,
+                "en": "He utilized the uneven character of the land for the construction of reservoirs and rainwater harvesting.",
+                "hi": "उन्होंने भूमि के असमान चरित्र का उपयोग जलाशयों के निर्माण एवं वर्षा जल संचयन के लिये किया।"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "page": 4,
+        "question_en": "Consider the following statements about the famous litterateur Kanhaiyalal Sethia - (A) Influenced by the ideas of Mahatma Gandhi, he worked for the promotion of Khadi and the upliftment of Dalits. (B) Due to his poetry collection 'Vajra Veena', filled with patriotism and nationalism, he was charged with sedition in 1942. (C) He was awarded the Padma Shri in 2004. Which of the statements given above are correct?",
+        "question_hi": "प्रसिद्ध साहित्यकार कन्हैयालाल सेठिया के बारे में निम्नलिखित कथनों पर विचार कीजिए - (A) महात्मा गांधी के विचारों से प्रभावित होकर, खादी प्रचार और दलितोद्धार का कार्य किया। (B) देशप्रेम और राष्ट्रीयता से ओतप्रोत काव्य संग्रह 'वज्र वीणा' के कारण, इन पर 1942 ई. में राजद्रोह का आरोप लगा। (C) 2004 में इन्हें पद्मश्री सम्मान प्राप्त हुआ। उपर्युक्त कथनों में से कौनसे सही हैं?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Only (B) and (C)",
+                "hi": "केवल (B) और (C)"
+            },
+            {
+                "id": 2,
+                "en": "Only (A) and (C)",
+                "hi": "केवल (A) और (C)"
+            },
+            {
+                "id": 3,
+                "en": "(A), (B) and (C)",
+                "hi": "(A), (B) और (C)"
+            },
+            {
+                "id": 4,
+                "en": "Only (A) and (B)",
+                "hi": "केवल (A) और (B)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "page": 5,
+        "question_en": "Who among the following fought the \"Battle of Kansaro ki Pol\" against the Mughals?",
+        "question_hi": "निम्न में से किसने मुगलों के विरुद्ध ''कंसारों की पोल की लड़ाई'' लड़ी थी?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Rao Chandra Sen",
+                "hi": "राव चन्द्रसेन"
+            },
+            {
+                "id": 2,
+                "en": "Maharana Raj Singh",
+                "hi": "महाराणा राज सिंह"
+            },
+            {
+                "id": 3,
+                "en": "Maharana Sanga",
+                "hi": "महाराणा सांगा"
+            },
+            {
+                "id": 4,
+                "en": "Maharana Pratap",
+                "hi": "महाराणा प्रताप"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "page": 5,
+        "question_en": "Study the following statements about Vinay Singh, the ruler of Bundi and choose the correct option - (A) He commissioned the calligraphy and illustrations for the 'Gulistan'. (B) The illustrations for 'Gulistan' were created by Baldev and Gulam Ali.",
+        "question_hi": "बूंदी के शासक विनय सिंह के सम्बन्ध में निम्नांकित कथनों का अध्ययन कीजिए एवं सही विकल्प चुनिए - (A) उन्होंने 'गुलिस्ताँ' का सुलेखन एवं चित्रांकन करवाया था। (B) 'गुलिस्ताँ' के चित्र बलदेव एवं गुलाम अली ने बनाए थे।",
+        "options": [
+            {
+                "id": 1,
+                "en": "Both (A) and (B) are correct",
+                "hi": "(A) और (B) दोनों सही हैं"
+            },
+            {
+                "id": 2,
+                "en": "Only (B) is correct",
+                "hi": "केवल (B) सही है"
+            },
+            {
+                "id": 3,
+                "en": "Both (A) and (B) are incorrect",
+                "hi": "(A) और (B) दोनों सही नहीं हैं"
+            },
+            {
+                "id": 4,
+                "en": "Only (A) is correct",
+                "hi": "केवल (A) सही है"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "page": 5,
+        "question_en": "Which statement regarding the Matsya Union, in the context of unification of Rajasthan, is incorrect?",
+        "question_hi": "राजस्थान के एकीकरण में मत्स्य संघ से सम्बन्धित कौनसा कथन असत्य है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Tej Singh, the ruler of Alwar was appointed the Rajpramukh of Matsya Union.",
+                "hi": "मत्स्य संघ के राजप्रमुख, अलवर के शासक तेज सिंह बनाये गये थे।"
+            },
+            {
+                "id": 2,
+                "en": "In February 1948, the Govt. of India appointed S.N. Sapru as the administrator of Bharatpur State.",
+                "hi": "फरवरी 1948 को, भारत सरकार ने एस.एन. सप्रू को भरतपुर राज्य का प्रशासक नियुक्त किया।"
+            },
+            {
+                "id": 3,
+                "en": "The inauguration of the Matsya Union was opposed by Man Singh, the brother of Maharaja of Bharatpur.",
+                "hi": "मत्स्य संघ के उद्घाटन का विरोध भरतपुर के महाराजा के भाई मान सिंह ने किया था।"
+            },
+            {
+                "id": 4,
+                "en": "The name 'Matsya Union' was adopted on the suggestion of K.M. Munshi.",
+                "hi": "के.एम. मुंशी के सुझाव पर 'मत्स्य संघ' नाम रखा गया था।"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "page": 5,
+        "question_en": "Which one of the following places is associated with Lok Devta Mallinath Ji?",
+        "question_hi": "निम्नांकित में से कौनसा स्थान लोक देवता मल्लिनाथ जी से सम्बन्धित है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Panchota",
+                "hi": "पंचोटा"
+            },
+            {
+                "id": 2,
+                "en": "Bengati",
+                "hi": "बेंगटी"
+            },
+            {
+                "id": 3,
+                "en": "Kharnal",
+                "hi": "खरनाल"
+            },
+            {
+                "id": 4,
+                "en": "Tilwara",
+                "hi": "तिलवाड़ा"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "page": 6,
+        "question_en": "Which of the following statements regarding Manikya Lal Verma is false?",
+        "question_hi": "माणिक्य लाल वर्मा के सम्बन्ध में निम्नांकित में से कौनसा कथन असत्य है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Manikya Lal Verma and Balwant Singh Mehta established Mewar Prajamandal in 1938 AD.",
+                "hi": "माणिक्य लाल वर्मा एवं बलवन्त सिंह मेहता ने 1938 ई. में मेवाड़ प्रजामण्डल की स्थापना की।"
+            },
+            {
+                "id": 2,
+                "en": "Mr. Verma organised the seventh session of the 'All India State's People's Conference' in Udaipur in 1946.",
+                "hi": "श्री वर्मा जी ने 1946 ई. में 'अखिल भारतीय देशी राज्य लोक परिषद' का सातवाँ अधिवेशन उदयपुर में करवाया।"
+            },
+            {
+                "id": 3,
+                "en": "He published a booklet titled 'Mewar Ka Vartman Shasan'.",
+                "hi": "इन्होंने 'मेवाड़ का वर्तमान शासन' नामक पुस्तिका का प्रकाशन किया।"
+            },
+            {
+                "id": 4,
+                "en": "He composed poetic collection 'Garibon ki Awaz'.",
+                "hi": "इन्होंने काव्य संग्रह 'गरीबों की आवाज' का संकलन किया।"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "page": 6,
+        "question_en": "Which among the following facts are correct about Arjun Lal Sethi? (A) Arjun Lal Sethi was accused of planning the conspiracy of throwing the bomb on Governor General Lord Hardinge in 1912. (B) By order of Maharaja of Jaipur, he was sentenced to 5 years' imprisonment. (C) He was kept in Ajmer Jail from 1914 to 1920. (D) After his release, he chose Ajmer his political demesne.",
+        "question_hi": "निम्न में से कौनसे तथ्य अर्जुन लाल सेठी के विषय में सही हैं? (A) अर्जुन लाल सेठी पर 1912 में गवर्नर जनरल लॉर्ड हार्डिंग पर बम फेंकने की योजना बनाने का आरोप लगाया गया। (B) जयपुर के महाराजा के आदेश से उन्हें 5 वर्ष की कैद हुई। (C) 1914 से 1920 के मध्य वे अजमेर जेल में रखे गए। (D) जेल से रिहा होने के पश्चात् उन्होंने अजमेर को अपना राजनैतिक कार्यक्षेत्र बनाया।",
+        "options": [
+            {
+                "id": 1,
+                "en": "Only (C) and (D)",
+                "hi": "केवल (C) तथा (D)"
+            },
+            {
+                "id": 2,
+                "en": "Only (A), (B) and (C)",
+                "hi": "केवल (A), (B) तथा (C)"
+            },
+            {
+                "id": 3,
+                "en": "Only (A) and (B)",
+                "hi": "केवल (A) तथा (B)"
+            },
+            {
+                "id": 4,
+                "en": "Only (A), (B) and (D)",
+                "hi": "केवल (A), (B) तथा (D)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "page": 7,
+        "question_en": "Arrange in chronological order the delegations which were sent under the leadership of various Mughal officers to Maharana Pratap by Akbar and choose the correct code given below - (A) Bhagwant Das (B) Man Singh (C) Todarmal (D) Jalal Khan",
+        "question_hi": "महाराणा प्रताप के पास अकबर द्वारा विभिन्न मुगल अधिकारियों के नेतृत्व में भेजे गए शिष्टमण्डलों को कालक्रमानुसार व्यवस्थित करिए तथा नीचे दिए गए कूट की सहायता से सही विकल्प चुनिए - (A) भगवन्त दास (B) मानसिंह (C) टोडरमल (D) जलाल खाँ",
+        "options": [
+            {
+                "id": 1,
+                "en": "(A), (B), (D), (C)",
+                "hi": "(A), (B), (D), (C)"
+            },
+            {
+                "id": 2,
+                "en": "(B), (A), (D), (C)",
+                "hi": "(B), (A), (D), (C)"
+            },
+            {
+                "id": 3,
+                "en": "(C), (A), (D), (B)",
+                "hi": "(C), (A), (D), (B)"
+            },
+            {
+                "id": 4,
+                "en": "(D), (B), (A), (C)",
+                "hi": "(D), (B), (A), (C)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "page": 7,
+        "question_en": "Which of the following was associated with \"Neemada Bhil Conference\"?",
+        "question_hi": "निम्नांकित में से कौन ''नीमड़ा भील सम्मेलन'' से सम्बन्धित थे?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Nanabhai Khat",
+                "hi": "नानाभाई खाट"
+            },
+            {
+                "id": 2,
+                "en": "Govind Giri",
+                "hi": "गोविन्द गिरि"
+            },
+            {
+                "id": 3,
+                "en": "Motilal Tejawat",
+                "hi": "मोतीलाल तेजावत"
+            },
+            {
+                "id": 4,
+                "en": "Mama Baleshwar Dayal",
+                "hi": "मामा बालेश्वर दयाल"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "page": 7,
+        "question_en": "Which one of the following folk musical instrument groups is not matched?",
+        "question_hi": "निम्नांकित में से कौनसा एक लोक वाद्य यन्त्र समूह सुमेलित नहीं है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Ravanhatta, Jantar, Nishan, Satara",
+                "hi": "रावणहत्था, जन्तर, निशान, सतारा"
+            },
+            {
+                "id": 2,
+                "en": "Pungi, Algoja, Nad, Morchang",
+                "hi": "पुंगी, अलगोजा, नड़, मोरचंग"
+            },
+            {
+                "id": 3,
+                "en": "Manjira, Jhanjh, Thali, Khadtal",
+                "hi": "मंजीरा, झांझ, थाली, खड़ताल"
+            },
+            {
+                "id": 4,
+                "en": "Mradang, Chang, Khanjari, Naubat",
+                "hi": "मृदंग, चंग, खंजरी, नौबत"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "page": 7,
+        "question_en": "Which of the following leader/s was/were associated with Sirohi State Prajamandal? (A) Gokulbhai Bhatt (B) Babu Tekchand Sindhi (C) Saubhagya Mal Sindhi",
+        "question_hi": "निम्नलिखित में से कौनसा/से नेता सिरोही राज्य प्रजामंडल से सम्बन्धित थे? (A) गोकुलभाई भट्ट (B) बाबू टेकचन्द सिन्धी (C) सौभाग्य मल सिन्धी",
+        "options": [
+            {
+                "id": 1,
+                "en": "(A), (B) and (C)",
+                "hi": "(A), (B) और (C)"
+            },
+            {
+                "id": 2,
+                "en": "Only (A)",
+                "hi": "केवल (A)"
+            },
+            {
+                "id": 3,
+                "en": "Only (B) and (C)",
+                "hi": "केवल (B) और (C)"
+            },
+            {
+                "id": 4,
+                "en": "Only (A) and (B)",
+                "hi": "केवल (A) और (B)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "page": 8,
+        "question_en": "Arrange the following rulers of Guhil dynasty of Mewar in chronological order and choose the right answer with the help of code given below - (A) Aparajit (B) Shiladitya (C) Allat (D) Narvahan",
+        "question_hi": "मेवाड़ के गुहिल वंश के निम्नलिखित शासकों को कालक्रमानुसार व्यवस्थित करिए तथा नीचे दिए गए कूट की सहायता से सही उत्तर चुनिए - (A) अपराजित (B) शिलादित्य (C) अल्लट (D) नरवाहन",
+        "options": [
+            {
+                "id": 1,
+                "en": "(B), (C), (A), (D)",
+                "hi": "(B), (C), (A), (D)"
+            },
+            {
+                "id": 2,
+                "en": "(A), (D), (C), (B)",
+                "hi": "(A), (D), (C), (B)"
+            },
+            {
+                "id": 3,
+                "en": "(D), (C), (A), (B)",
+                "hi": "(D), (C), (A), (B)"
+            },
+            {
+                "id": 4,
+                "en": "(B), (A), (C), (D)",
+                "hi": "(B), (A), (C), (D)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "page": 8,
+        "question_en": "Consider the following statements in the context of the strategic and political history of Chittor - (I) Jaitra Singh made Chittor his capital to repel the invasion of the Turks. (II) After conquering Chittor, Alauddin Khilji entrusted its administration to Lakha. (III) Hammir took advantage of the dynastic revolution to capture Chittor and laid the foundation of the Sisodiya dynasty. Which of the above statements are correct?",
+        "question_hi": "चित्तौड़ के राजनैतिक और सामरिक इतिहास के संदर्भ में निम्नांकित कथनों पर विचार कीजिए - (I) जैत्रसिंह ने तुर्कों के आक्रमण को रोकने के लिए चित्तौड़ को अपनी राजधानी बनाया था। (II) अलाउद्दीन खिलजी ने चित्तौड़ पर विजय प्राप्त करने के बाद इसका प्रशासन लाखा को सौंप दिया था। (III) हम्मीर ने वंशवादी क्रांति का लाभ उठाकर चित्तौड़ पर कब्जा किया और सिसोदिया राजवंश की नींव रखी। उपरोक्त में से कौनसे कथन सही हैं?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Only (I) and (II)",
+                "hi": "केवल (I) और (II)"
+            },
+            {
+                "id": 2,
+                "en": "All (I), (II) and (III)",
+                "hi": "(I), (II) और (III) सभी"
+            },
+            {
+                "id": 3,
+                "en": "Only (II) and (III)",
+                "hi": "केवल (II) और (III)"
+            },
+            {
+                "id": 4,
+                "en": "Only (I) and (III)",
+                "hi": "केवल (I) और (III)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "page": 8,
+        "question_en": "Which of the following festivals are celebrated every year in Bhadrapad month? (i) Raksha Bandhan (ii) Badi Teej (iii) Ganesh Chaturthi (iv) Sharad Purnima",
+        "question_hi": "निम्नलिखित में से कौनसे त्यौहारों का प्रतिवर्ष भाद्रपद माह में आयोजन होता है? (i) रक्षाबन्धन (ii) बड़ी तीज (iii) गणेश चतुर्थी (iv) शरद पूर्णिमा",
+        "options": [
+            {
+                "id": 1,
+                "en": "(i), (ii), (iv)",
+                "hi": "(i), (ii), (iv)"
+            },
+            {
+                "id": 2,
+                "en": "(ii), (iii)",
+                "hi": "(ii), (iii)"
+            },
+            {
+                "id": 3,
+                "en": "(i), (iv)",
+                "hi": "(i), (iv)"
+            },
+            {
+                "id": 4,
+                "en": "(i), (ii), (iii)",
+                "hi": "(i), (ii), (iii)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "page": 9,
+        "question_en": "What is 'Karchop' embroidery?",
+        "question_hi": "'करचोप' कढ़ाई किसे कहते हैं?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Gold embroidery done on cushions and canopies in Jaisalmer.",
+                "hi": "जैसलमेर में मसनदों एवं छतरियों पर की जाने वाली सोने की कढ़ाई।"
+            },
+            {
+                "id": 2,
+                "en": "Embroidery done on the red woollen shawl of Jat women of Bikaner.",
+                "hi": "बीकानेर की जाट महिलाओं के लाल ऊनी शॉल पर की गई कढ़ाई।"
+            },
+            {
+                "id": 3,
+                "en": "Fine embroidery done by the Mevas of Alwar.",
+                "hi": "अलवर में मेवों द्वारा की गई महीन कढ़ाई।"
+            },
+            {
+                "id": 4,
+                "en": "Embroidery done on the Ghagra of Jat women in Shekhawati.",
+                "hi": "शेखावाटी में जाट महिलाओं के घाघरे पर की गई कढ़ाई।"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "page": 9,
+        "question_en": "Saint Payahari Swami Ji and Saint Kilha Das Ji were associated with which sect?",
+        "question_hi": "संत पयहारी स्वामी जी व संत कील्ह दास जी किस सम्प्रदाय से सम्बन्धित संत थे?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Nimbark Sect",
+                "hi": "निम्बार्क सम्प्रदाय"
+            },
+            {
+                "id": 2,
+                "en": "Pushtimarg Sect",
+                "hi": "पुष्टिमार्ग सम्प्रदाय"
+            },
+            {
+                "id": 3,
+                "en": "Gaudiya Sect",
+                "hi": "गौड़ीय सम्प्रदाय"
+            },
+            {
+                "id": 4,
+                "en": "Ramanandi Sect",
+                "hi": "रामानन्दी सम्प्रदाय"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "page": 9,
+        "question_en": "What is the motto of the Rajasthan State Legal Services Authority?",
+        "question_hi": "राजस्थान राज्य विधिक सेवा प्राधिकरण का आदर्श वाक्य क्या है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "\"Fair Legal Access for All\"",
+                "hi": "''फेयर लीगल एक्सेस फॉर ऑल''"
+            },
+            {
+                "id": 2,
+                "en": "\"Justice Within Reach for All\"",
+                "hi": "''जस्टिस विदिन रीच फॉर ऑल''"
+            },
+            {
+                "id": 3,
+                "en": "\"Access to Justice for All\"",
+                "hi": "''एक्सेस टू जस्टिस फॉर ऑल''"
+            },
+            {
+                "id": 4,
+                "en": "\"Equitable Legal Access for All\"",
+                "hi": "''इक्विटेबल लीगल एक्सेस फॉर ऑल''"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "page": 9,
+        "question_en": "Which of the following amendment has been made in the Rajasthan Municipalities Act, 2009 by the Rajasthan Municipalities (Amendment) Act, 2026?",
+        "question_hi": "राजस्थान नगरपालिका अधिनियम, 2009 में राजस्थान नगरपालिका (संशोधन) अधिनियम, 2026 के द्वारा निम्नलिखित में से कौनसा परिवर्तन किया गया है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "A person having more than two children shall be disqualified from being a member of municipality.",
+                "hi": "कोई व्यक्ति जिसकी दो से अधिक सन्तानें हैं वह किसी नगरपालिका का सदस्य होने के लिए निरर्हित होगा।"
+            },
+            {
+                "id": 2,
+                "en": "A New Section, 331 is inserted in the Act.",
+                "hi": "अधिनियम में एक नयी धारा 331 अन्तःस्थापित की गई।"
+            },
+            {
+                "id": 3,
+                "en": "Leprosy has been removed from the list of dangerous diseases as defined in the Act.",
+                "hi": "अधिनियम में परिभाषित खतरनाक रोग की सूची में कुष्ठ रोग को बाहर कर दिया गया है।"
+            },
+            {
+                "id": 4,
+                "en": "The Act empowers the state government to remove members of a municipality on specified grounds.",
+                "hi": "अधिनियम राज्य सरकार को निर्दिष्ट आधारों पर नगरपालिका के सदस्यों को हटाने का अधिकार देता है।"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 33,
+        "page": 9,
+        "question_en": "In Rajasthan, office of the Divisional Commissioner was re-established in -",
+        "question_hi": "राजस्थान में, संभागीय आयुक्त पद की पुनः स्थापना कब की गयी थी?",
+        "options": [
+            {
+                "id": 1,
+                "en": "1987",
+                "hi": "1987"
+            },
+            {
+                "id": 2,
+                "en": "1997",
+                "hi": "1997"
+            },
+            {
+                "id": 3,
+                "en": "2009",
+                "hi": "2009"
+            },
+            {
+                "id": 4,
+                "en": "2007",
+                "hi": "2007"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 34,
+        "page": 10,
+        "question_en": "With reference to the Rajasthan Judicial Service Rules, 2010 (as amended upto 02.04.2024), which one of the following statement is not correct?",
+        "question_hi": "राजस्थान न्यायिक सेवा नियम, 2010 (दिनांक 02.04.2024 तक यथा संशोधित) के संदर्भ में, निम्नलिखित में से कौनसा एक कथन सही नहीं है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "The Rajasthan Judicial Service is a state service comprising the cadres of District Judge, Senior Civil Judge and Civil Judge.",
+                "hi": "राजस्थान न्यायिक सेवा एक राज्य सेवा है, जिसमें जिला न्यायाधीश, वरिष्ठ सिविल न्यायाधीश और सिविल न्यायाधीश के कैडर शामिल हैं।"
+            },
+            {
+                "id": 2,
+                "en": "The appointing authority for a District Judge is the Governor of Rajasthan.",
+                "hi": "जिला न्यायाधीश के लिए नियुक्ति प्राधिकारी राजस्थान के राज्यपाल होते हैं।"
+            },
+            {
+                "id": 3,
+                "en": "Recruitment to the posts in the Service of the cadre of Civil Judge is made only by direct recruitment.",
+                "hi": "इस सेवा में सिविल न्यायाधीश के कैडर के पदों पर भर्ती केवल सीधी भर्ती के माध्यम से की जाती है।"
+            },
+            {
+                "id": 4,
+                "en": "Fifty percent of posts in the cadre of District Judge are filled by promotion.",
+                "hi": "जिला न्यायाधीश के कैडर में पचास प्रतिशत पद पदोन्नति द्वारा भरे जाते हैं।"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 35,
+        "page": 10,
+        "question_en": "A member of the Rajasthan Public Service Commission may resign by writing under his hand addressed to whom?",
+        "question_hi": "राजस्थान लोक सेवा आयोग का सदस्य किसको सम्बोधित करते हुए अपने हस्ताक्षर से लिखित में त्यागपत्र दे सकता है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "The President",
+                "hi": "राष्ट्रपति"
+            },
+            {
+                "id": 2,
+                "en": "The Chief Minister",
+                "hi": "मुख्यमंत्री"
+            },
+            {
+                "id": 3,
+                "en": "The Governor",
+                "hi": "राज्यपाल"
+            },
+            {
+                "id": 4,
+                "en": "The Prime Minister",
+                "hi": "प्रधानमंत्री"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 36,
+        "page": 10,
+        "question_en": "According to which Article of the Constitution of India, Legislative Council can be created or abolished in any state?",
+        "question_hi": "भारत के संविधान के किस अनुच्छेद के अन्तर्गत किसी राज्य में विधान परिषद सृजित अथवा उत्सादित की जा सकती है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "159",
+                "hi": "159"
+            },
+            {
+                "id": 2,
+                "en": "179",
+                "hi": "179"
+            },
+            {
+                "id": 3,
+                "en": "169",
+                "hi": "169"
+            },
+            {
+                "id": 4,
+                "en": "189",
+                "hi": "189"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 37,
+        "page": 10,
+        "question_en": "Consider the following statements regarding the Governor of Rajasthan - (I) If the charge of misbehaviour against the Governor of Rajasthan is proved in the Supreme Court, the Parliament of India can remove him from his office. (II) The Governor of Rajasthan appoints the Judges of High Court of Rajasthan. Choose the correct answer with the help of code given below -",
+        "question_hi": "राजस्थान के राज्यपाल के बारे में निम्नलिखित कथनों पर विचार कीजिए - (I) यदि उच्चतम न्यायालय में राजस्थान के राज्यपाल के विरुद्ध कदाचार का आरोप सिद्ध होता है, तो भारत की संसद उन्हें उनके पद से हटा सकती है। (II) राजस्थान उच्च न्यायालय के न्यायाधीशों की नियुक्ति राजस्थान का राज्यपाल करता है। नीचे दिए गए कूट की सहायता से सही उत्तर का चयन कीजिए -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Statement (I) is incorrect but (II) is correct",
+                "hi": "कथन (I) गलत है किंतु (II) सही है"
+            },
+            {
+                "id": 2,
+                "en": "Statement (I) is correct but (II) is incorrect",
+                "hi": "कथन (I) सही है किंतु (II) गलत है"
+            },
+            {
+                "id": 3,
+                "en": "Both statements (I) and (II) are incorrect",
+                "hi": "दोनों कथन (I) तथा (II) गलत हैं"
+            },
+            {
+                "id": 4,
+                "en": "Both statements (I) and (II) are correct",
+                "hi": "दोनों कथन (I) तथा (II) सही हैं"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 38,
+        "page": 11,
+        "question_en": "During the year 2025 (01.01.2025 to 31.12.2025), the highest number of cases of which kind of complaints were registered by the Rajasthan State Commission for Women?",
+        "question_hi": "वर्ष 2025 (01.01.2025 से 31.12.2025 तक) के दौरान, राजस्थान राज्य महिला आयोग द्वारा किस प्रकार की शिकायतों के सर्वाधिक प्रकरण दर्ज किए गए?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Property dispute",
+                "hi": "सम्पत्ति विवाद"
+            },
+            {
+                "id": 2,
+                "en": "Cruelty related to Dowry (Dahej)",
+                "hi": "दहेज से संबंधित क्रूरता"
+            },
+            {
+                "id": 3,
+                "en": "Violence",
+                "hi": "हिंसा"
+            },
+            {
+                "id": 4,
+                "en": "Sexual harassment at workplace",
+                "hi": "कार्यस्थल पर यौन उत्पीड़न"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 39,
+        "page": 11,
+        "question_en": "Which Article of the Constitution of India states that the Chief Minister shall be appointed by the Governor?",
+        "question_hi": "भारत के संविधान के किस अनुच्छेद में कहा गया कि मुख्यमंत्री की नियुक्ति राज्यपाल करेगा?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Article 165",
+                "hi": "अनुच्छेद 165"
+            },
+            {
+                "id": 2,
+                "en": "Article 163(2)",
+                "hi": "अनुच्छेद 163(2)"
+            },
+            {
+                "id": 3,
+                "en": "Article 163(1)",
+                "hi": "अनुच्छेद 163(1)"
+            },
+            {
+                "id": 4,
+                "en": "Article 164",
+                "hi": "अनुच्छेद 164"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 40,
+        "page": 11,
+        "question_en": "In which Article of the Constitution of India is the reservation of seats for Scheduled Castes in every Panchayat mentioned?",
+        "question_hi": "प्रत्येक पंचायत में अनुसूचित जातियों के लिए स्थानों के आरक्षण की बात भारत के संविधान के किस अनुच्छेद में की गई है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Article 243G",
+                "hi": "अनुच्छेद 243छ"
+            },
+            {
+                "id": 2,
+                "en": "Article 243F",
+                "hi": "अनुच्छेद 243च"
+            },
+            {
+                "id": 3,
+                "en": "Article 243H",
+                "hi": "अनुच्छेद 243ज"
+            },
+            {
+                "id": 4,
+                "en": "Article 243D",
+                "hi": "अनुच्छेद 243घ"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 41,
+        "page": 11,
+        "question_en": "Which shooting player from Rajasthan has participated in the ISSF Junior World Cup held in Cairo (Egypt) in April 2026?",
+        "question_hi": "अप्रैल 2026 में काहिरा (इजिप्ट) में आयोजित आई.एस.एस.एफ. जूनियर वर्ल्ड कप में राजस्थान के किस निशानेबाज खिलाड़ी ने भाग लिया?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Khwahish Sharma",
+                "hi": "ख्वाहिश शर्मा"
+            },
+            {
+                "id": 2,
+                "en": "Mona Agarwal",
+                "hi": "मोना अग्रवाल"
+            },
+            {
+                "id": 3,
+                "en": "Barkha Sharma",
+                "hi": "बरखा शर्मा"
+            },
+            {
+                "id": 4,
+                "en": "Tisha Jindal",
+                "hi": "तिशा जिंदल"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 42,
+        "page": 12,
+        "question_en": "In the Rajasthan Budget 2026-27, under the Rajasthan Accredited Journalist Samman Yojana, how much has been provisioned as the honorarium (per month) to the accredited journalists above 60 years of age and the amount payable to the wife of the deceased accredited journalist (per month), respectively?",
+        "question_hi": "राजस्थान बजट 2026-27 में, राजस्थान अधिस्वीकृत पत्रकार सम्मान योजना में 60 वर्ष से अधिक आयु के अधिस्वीकृत पत्रकारों को सम्मान राशि (प्रतिमाह) एवं दिवंगत अधिस्वीकृत पत्रकार की पत्नी को देय राशि (प्रतिमाह) क्रमशः कितनी करने का प्रावधान किया है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "₹22,000 and ₹11,000",
+                "hi": "22,000 ₹ एवं 11,000 ₹"
+            },
+            {
+                "id": 2,
+                "en": "₹17,000 and ₹8,500",
+                "hi": "17,000 ₹ एवं 8,500 ₹"
+            },
+            {
+                "id": 3,
+                "en": "₹18,000 and ₹9,000",
+                "hi": "18,000 ₹ एवं 9,000 ₹"
+            },
+            {
+                "id": 4,
+                "en": "₹16,000 and ₹8,000",
+                "hi": "16,000 ₹ एवं 8,000 ₹"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 43,
+        "page": 12,
+        "question_en": "Consider the following statements and choose the correct option for the All India Inter-University Handball (Men) Championship held in Jaipur in April 2026 - Statement (A): Rajasthan University, Jaipur defeated Jai Narayan Vyas University, Jodhpur by 18-12 in the final to win the title. Statement (B): Har Dayal of Rajasthan University was selected as the Player of the Tournament.",
+        "question_hi": "अप्रैल 2026 में जयपुर में आयोजित अखिल भारतीय अंतर-विश्वविद्यालय हैंडबॉल (पुरुष) प्रतियोगिता के लिए निम्नलिखित कथनों पर विचार कीजिए एवं सही विकल्प चुनिए - कथन (A): प्रतियोगिता के फाइनल में राजस्थान विश्वविद्यालय, जयपुर ने जय नारायण व्यास विश्वविद्यालय, जोधपुर को 18-12 से हराकर प्रतियोगिता का खिताब जीता। कथन (B): राजस्थान विश्वविद्यालय के हर दयाल को प्लेयर ऑफ द टूर्नामेंट चुना गया।",
+        "options": [
+            {
+                "id": 1,
+                "en": "Statement (A) is false and statement (B) is true",
+                "hi": "कथन (A) असत्य है तथा कथन (B) सत्य है"
+            },
+            {
+                "id": 2,
+                "en": "Both statements (A) and (B) are true",
+                "hi": "दोनों कथन (A) तथा (B) सत्य हैं"
+            },
+            {
+                "id": 3,
+                "en": "Statement (A) is true and statement (B) is false",
+                "hi": "कथन (A) सत्य है तथा कथन (B) असत्य है"
+            },
+            {
+                "id": 4,
+                "en": "Both statements (A) and (B) are false",
+                "hi": "दोनों कथन (A) तथा (B) असत्य हैं"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 44,
+        "page": 12,
+        "question_en": "Match the journalists honoured (Column I) at the Devarshi Narad Jayanti and Journalist Samman Awards ceremony organized by the VSK foundation, Jaipur in May 2026 and their respective media category (Column II) and choose the correct option - Column-I: (A) Lakhbir Singh (B) Madan Kalal (C) Ram Gopal Jat. Column-II: (i) Print media (ii) Digital media (iii) Electronic media",
+        "question_hi": "मई 2026 में वी.एस.के. फाउण्डेशन, जयपुर द्वारा आयोजित देवर्षि नारद जयंती एवं पत्रकार सम्मान समारोह में सम्मानित पत्रकारों (कॉलम I) एवं उनकी सम्बंधित मीडिया श्रेणी (कॉलम II) को सुमेलित कर सही विकल्प चुनिए - कॉलम-I: (A) लखबीर सिंह (B) मदन कलाल (C) राम गोपाल जाट। कॉलम-II: (i) प्रिंट मीडिया (ii) डिजिटल मीडिया (iii) इलेक्ट्रॉनिक मीडिया",
+        "options": [
+            {
+                "id": 1,
+                "en": "(A)-(iii), (B)-(i), (C)-(ii)",
+                "hi": "(A)-(iii), (B)-(i), (C)-(ii)"
+            },
+            {
+                "id": 2,
+                "en": "(A)-(ii), (B)-(iii), (C)-(i)",
+                "hi": "(A)-(ii), (B)-(iii), (C)-(i)"
+            },
+            {
+                "id": 3,
+                "en": "(A)-(iii), (B)-(ii), (C)-(i)",
+                "hi": "(A)-(iii), (B)-(ii), (C)-(i)"
+            },
+            {
+                "id": 4,
+                "en": "(A)-(i), (B)-(ii), (C)-(iii)",
+                "hi": "(A)-(i), (B)-(ii), (C)-(iii)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 45,
+        "page": 13,
+        "question_en": "Consider the following statements regarding the Rajasthan State Highway Modernization Project (As per the press note released by the Government of Rajasthan in April 2026) - Statement (A): The World Bank has approved a loan of 225 million dollar for this project. Statement (B): The project aims to upgrade approximately 1200 kilometer of highways in the state. Which of the above statement(s) is/are correct?",
+        "question_hi": "राजस्थान राज्य राजमार्ग आधुनिकीकरण परियोजना के संदर्भ में निम्नलिखित कथनों पर विचार कीजिए (राजस्थान सरकार द्वारा अप्रैल 2026 में जारी प्रेस विज्ञप्ति के अनुसार) - कथन (A): विश्व बैंक ने इस परियोजना के लिए 225 मिलियन डॉलर के ऋण को मंज़ूरी दी है। कथन (B): इस परियोजना का उद्देश्य राज्य के लगभग 1200 किलोमीटर राजमार्गों का उन्नयन करना है। उपरोक्त में से कौनसा/से कथन सही है/हैं?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Both (A) and (B)",
+                "hi": "दोनों (A) तथा (B)"
+            },
+            {
+                "id": 2,
+                "en": "Only (A)",
+                "hi": "केवल (A)"
+            },
+            {
+                "id": 3,
+                "en": "Neither (A) nor (B)",
+                "hi": "न तो (A) ना ही (B)"
+            },
+            {
+                "id": 4,
+                "en": "Only (B)",
+                "hi": "केवल (B)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 46,
+        "page": 13,
+        "question_en": "The 17th meeting of the Rajasthan State Broadband Committee was held on May 13, 2026. Who chaired it?",
+        "question_hi": "13 मई, 2026 को राजस्थान राज्य ब्रॉडबैंड समिति की 17वीं बैठक आयोजित हुई। इसकी अध्यक्षता किसने की थी?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Special Secretary to the Government, Department of Information Technology and Communications",
+                "hi": "विशिष्ट शासन सचिव, सूचना प्रौद्योगिकी एवं संचार विभाग ने"
+            },
+            {
+                "id": 2,
+                "en": "Deputy Director General of the Rajasthan Telecommunications Department",
+                "hi": "राजस्थान दूरसंचार विभाग के उप महानिदेशक ने"
+            },
+            {
+                "id": 3,
+                "en": "Chief Secretary of Rajasthan",
+                "hi": "राजस्थान के मुख्य सचिव ने"
+            },
+            {
+                "id": 4,
+                "en": "Secretary to the Government, Department of Information Technology and Communications",
+                "hi": "शासन सचिव, सूचना प्रौद्योगिकी एवं संचार विभाग ने"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 47,
+        "page": 14,
+        "question_en": "Consider the following statements in the context of the 'Impact Assessment of Deregulation Phase-I' report presented at the Rajasthan's Committee of Secretaries (COS) meeting on May 1st, 2026 and choose the correct option - Statement (A): According to the report, the list of 'White Category' for industries has been expanded from 104 to 677. Statement (B): The CTE/CTO time limit for MSMEs has been reduced from 120 days to just 51 days.",
+        "question_hi": "1 मई, 2026 को राजस्थान के कमेटी ऑफ़ सेक्रेटरीज़ (सी.ओ.एस.) की बैठक में प्रस्तुत 'इम्पैक्ट असेसमेंट ऑफ़ डीरेगुलेशन फेज़-I' रिपोर्ट के सन्दर्भ में निम्न कथनों पर विचार कीजिये एवं सही विकल्प चुनिए - कथन (A): रिपोर्ट के अनुसार, उद्योगों के लिए 'व्हाइट कैटेगरी' की सूची को 104 से बढ़ाकर 677 कर दिया गया है। कथन (B): एम.एस.एम.ई. (MSMEs) के लिए सी.टी.ई./सी.टी.ओ. (CTE/CTO) की समय सीमा को 120 दिनों से घटाकर मात्र 51 दिन कर दिया गया है।",
+        "options": [
+            {
+                "id": 1,
+                "en": "Statement (A) is true and statement (B) is false",
+                "hi": "कथन (A) सत्य है तथा कथन (B) असत्य है"
+            },
+            {
+                "id": 2,
+                "en": "Both statements (A) and (B) are false",
+                "hi": "दोनों कथन (A) तथा (B) असत्य हैं"
+            },
+            {
+                "id": 3,
+                "en": "Both statements (A) and (B) are true",
+                "hi": "दोनों कथन (A) तथा (B) सत्य हैं"
+            },
+            {
+                "id": 4,
+                "en": "Statement (A) is false and statement (B) is true",
+                "hi": "कथन (A) असत्य है तथा कथन (B) सत्य है"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 48,
+        "page": 14,
+        "question_en": "The first hospital in Rajasthan to perform advanced surgery for the rare condition of 'laughing epilepsy' in April 2026 is -",
+        "question_hi": "अप्रैल 2026 में, दुर्लभ 'लाफिंग एपिलेप्सी' के लिए उन्नत सर्जरी करने वाला राजस्थान का पहला अस्पताल है -",
+        "options": [
+            {
+                "id": 1,
+                "en": "J.L.N. Hospital, Ajmer",
+                "hi": "जे.एल.एन. अस्पताल, अजमेर"
+            },
+            {
+                "id": 2,
+                "en": "S.M.S. Hospital, Jaipur",
+                "hi": "एस.एम.एस. अस्पताल, जयपुर"
+            },
+            {
+                "id": 3,
+                "en": "AIIMS, Jodhpur",
+                "hi": "एम्स, जोधपुर"
+            },
+            {
+                "id": 4,
+                "en": "P.B.M. Hospital, Bikaner",
+                "hi": "पी.बी.एम. अस्पताल, बीकानेर"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 49,
+        "page": 14,
+        "question_en": "The Bureau of Indian Standards (BIS), Jaipur Branch Office, has granted the first all-India license for \"Single Row Deep Groove Ball Bearings\" under Indian Standard IS 6455:2025. The licenses have been granted to -",
+        "question_hi": "ब्यूरो ऑफ़ इंडियन स्टैंडर्ड्स (BIS), जयपुर शाखा कार्यालय द्वारा भारतीय मानक IS 6455:2025 के अंतर्गत ''सिंगल रो डीप ग्रूव बॉल बेयरिंग'' के लिए अखिल भारतीय स्तर का प्रथम लाइसेंस प्रदान किया गया। ये लाइसेंस प्रदान किये गये हैं -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Rajasthan Engineering Industries Limited, Pali",
+                "hi": "राजस्थान इंजीनियरिंग इंडस्ट्रीज़ लिमिटेड, पाली को"
+            },
+            {
+                "id": 2,
+                "en": "Indian Engineering Industries Limited, Beawar",
+                "hi": "इंडियन इंजीनियरिंग इंडस्ट्रीज़ लिमिटेड, ब्यावर को"
+            },
+            {
+                "id": 3,
+                "en": "Marudhara Engineering Industries Limited, Ajmer",
+                "hi": "मरुधरा इंजीनियरिंग इंडस्ट्रीज़ लिमिटेड, अजमेर को"
+            },
+            {
+                "id": 4,
+                "en": "National Engineering Industries Limited, Jaipur",
+                "hi": "नेशनल इंजीनियरिंग इंडस्ट्रीज़ लिमिटेड, जयपुर को"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 50,
+        "page": 15,
+        "question_en": "According to the report 'School Education System in India: Temporal Analysis and Policy Roadmap for Quality Enhancement' Published by NITI Aayog in May 2026, what is the approximate share of Rajasthan in the entire country in providing integrated education from class 1 to 12?",
+        "question_hi": "मई 2026 में नीति आयोग द्वारा प्रसारित 'स्कूल एजुकेशन सिस्टम इन इंडिया: टेम्पोरल एनालिसिस एंड पॉलिसी रोडमैप फॉर क्वालिटी एनहांसमेंट' रिपोर्ट के अनुसार कक्षा 1 से 12 तक की एकीकृत शिक्षा उपलब्ध करवाने में संपूर्ण देश की लगभग कितनी हिस्सेदारी राजस्थान की है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "25%",
+                "hi": "25%"
+            },
+            {
+                "id": 2,
+                "en": "30%",
+                "hi": "30%"
+            },
+            {
+                "id": 3,
+                "en": "20%",
+                "hi": "20%"
+            },
+            {
+                "id": 4,
+                "en": "35%",
+                "hi": "35%"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 51,
+        "page": 15,
+        "question_en": "Consider the following areas of various countries - (A) Florida (B) South-Western Australia (C) Central Chile. Which of the above areas receive Westerlies only in winter?",
+        "question_hi": "विभिन्न देशों के निम्नलिखित क्षेत्रों पर विचार कीजिए - (A) फ्लोरिडा (B) दक्षिण-पश्चिमी ऑस्ट्रेलिया (C) मध्य चिली। उपर्युक्त में से किन क्षेत्रों में केवल सर्दियों में ही पछुआ पवनें चलती हैं?",
+        "options": [
+            {
+                "id": 1,
+                "en": "(A), (B) and (C)",
+                "hi": "(A), (B) तथा (C)"
+            },
+            {
+                "id": 2,
+                "en": "Only (A)",
+                "hi": "केवल (A)"
+            },
+            {
+                "id": 3,
+                "en": "Only (B) and (C)",
+                "hi": "केवल (B) तथा (C)"
+            },
+            {
+                "id": 4,
+                "en": "Only (C)",
+                "hi": "केवल (C)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 52,
+        "page": 15,
+        "question_en": "Consider the following crops - (A) Coffee (B) Rubber (C) Cocoa (D) Sugarcane. Which of the above are plantation crops?",
+        "question_hi": "निम्नलिखित फसलों पर विचार कीजिए - (A) कॉफी (B) रबड़ (C) कोको (D) गन्ना। उपर्युक्त में से कौनसी रोपण फसलें हैं?",
+        "options": [
+            {
+                "id": 1,
+                "en": "(A), (B), (C) and (D)",
+                "hi": "(A), (B), (C) और (D)"
+            },
+            {
+                "id": 2,
+                "en": "Only (B) and (C)",
+                "hi": "केवल (B) और (C)"
+            },
+            {
+                "id": 3,
+                "en": "Only (B), (C) and (D)",
+                "hi": "केवल (B), (C) और (D)"
+            },
+            {
+                "id": 4,
+                "en": "Only (A), (B) and (C)",
+                "hi": "केवल (A), (B) और (C)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 53,
+        "page": 15,
+        "question_en": "In the month of September in India, the mean position of Easterly Jet remains around -",
+        "question_hi": "भारत में सितम्बर के महीने में, पूर्वी जेट की सामान्य स्थिति होती है -",
+        "options": [
+            {
+                "id": 1,
+                "en": "22° North latitude",
+                "hi": "22° उत्तरी अक्षांश के आसपास"
+            },
+            {
+                "id": 2,
+                "en": "15° North latitude",
+                "hi": "15° उत्तरी अक्षांश के आसपास"
+            },
+            {
+                "id": 3,
+                "en": "8° North latitude",
+                "hi": "8° उत्तरी अक्षांश के आसपास"
+            },
+            {
+                "id": 4,
+                "en": "30° North latitude",
+                "hi": "30° उत्तरी अक्षांश के आसपास"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 54,
+        "page": 16,
+        "question_en": "The countries having the highest population density among the top ten most populated countries of the world are -",
+        "question_hi": "विश्व के सर्वाधिक जनसंख्या वाले शीर्ष दस देशों में सर्वाधिक जनसंख्या घनत्व वाले देश हैं -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Brazil and Nigeria",
+                "hi": "ब्राज़ील तथा नाइजीरिया"
+            },
+            {
+                "id": 2,
+                "en": "Bangladesh and Pakistan",
+                "hi": "बांग्लादेश तथा पाकिस्तान"
+            },
+            {
+                "id": 3,
+                "en": "Bangladesh and India",
+                "hi": "बांग्लादेश तथा भारत"
+            },
+            {
+                "id": 4,
+                "en": "Brazil and India",
+                "hi": "ब्राज़ील तथा भारत"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 55,
+        "page": 16,
+        "question_en": "Which among the following physical features is NOT located in Africa Continent?",
+        "question_hi": "निम्नलिखित में से कौनसी भौतिक आकृति अफ्रीका महाद्वीप में अवस्थित नहीं है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Cascade Range",
+                "hi": "कास्केड रेंज"
+            },
+            {
+                "id": 2,
+                "en": "Katanga Plateau",
+                "hi": "कटंगा पठार"
+            },
+            {
+                "id": 3,
+                "en": "Bie Plateau",
+                "hi": "बी पठार"
+            },
+            {
+                "id": 4,
+                "en": "Drakensberg Mountain",
+                "hi": "ड्रेकन्सबर्ग पर्वत"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 56,
+        "page": 16,
+        "question_en": "With reference to the Krishna River, consider the following statements - (A) It is the largest east-flowing Peninsular river. (B) It rises near Mahabaleshwar in the Sahyadri. (C) Koyna, Tungabhadra and Bhima are its major tributaries. (D) Largest share of its catchment area lies in Karnataka. Which of the above statements are correct?",
+        "question_hi": "कृष्णा नदी के संदर्भ में, निम्नलिखित कथनों पर विचार कीजिए - (A) यह सबसे बड़ी पूर्व की ओर बहने वाली प्रायद्वीपीय नदी है। (B) इसका उद्गम सह्याद्रि में महाबलेश्वर के निकट होता है। (C) कोयना, तुंगभद्रा और भीमा इसकी प्रमुख सहायक नदियाँ हैं। (D) इसके कुल जलग्रहण क्षेत्र का सर्वाधिक भाग कर्नाटक में स्थित है। उपरोक्त में से कौनसे कथन सत्य हैं?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Only (B), (C) and (D)",
+                "hi": "केवल (B), (C) और (D)"
+            },
+            {
+                "id": 2,
+                "en": "Only (A), (C) and (D)",
+                "hi": "केवल (A), (C) और (D)"
+            },
+            {
+                "id": 3,
+                "en": "Only (A) and (B)",
+                "hi": "केवल (A) और (B)"
+            },
+            {
+                "id": 4,
+                "en": "Only (B) and (C)",
+                "hi": "केवल (B) और (C)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 57,
+        "page": 16,
+        "question_en": "As per the Global Environment Outlook-7 (GEO-7), out of the eight million estimated species of the world, how many are threatened with extinction?",
+        "question_hi": "ग्लोबल एन्वायरनमेंट आउटलुक-7 (GEO-7) के अनुसार, विश्व की कुल अनुमानित आठ मिलियन में से कितनी प्रजातियों के विलुप्त होने का खतरा है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "1.5 million",
+                "hi": "1.5 मिलियन"
+            },
+            {
+                "id": 2,
+                "en": "2 million",
+                "hi": "2 मिलियन"
+            },
+            {
+                "id": 3,
+                "en": "½ million",
+                "hi": "½ मिलियन"
+            },
+            {
+                "id": 4,
+                "en": "1 million",
+                "hi": "1 मिलियन"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 58,
+        "page": 17,
+        "question_en": "Khardung-La pass is located in -",
+        "question_hi": "खारदुंग-ला दर्रा अवस्थित है -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Kailash range",
+                "hi": "कैलाश श्रेणी में"
+            },
+            {
+                "id": 2,
+                "en": "Ladakh range",
+                "hi": "लद्दाख श्रेणी में"
+            },
+            {
+                "id": 3,
+                "en": "Zaskar range",
+                "hi": "जास्कर श्रेणी में"
+            },
+            {
+                "id": 4,
+                "en": "Eastern Himalayas",
+                "hi": "पूर्वी हिमालय में"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 59,
+        "page": 17,
+        "question_en": "Which of the following is NOT one of the three primary objectives of the \"Convention on Biological Diversity (CBD)\"?",
+        "question_hi": "निम्नलिखित में से कौनसा ''जैव विविधता सम्मेलन (CBD)'' के तीन प्राथमिक उद्देश्यों में शामिल नहीं है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Fair and equitable sharing of benefits arising from genetic resources",
+                "hi": "आनुवंशिक संसाधनों से उत्पन्न होने वाले लाभों का निष्पक्ष और समान बंटवारा"
+            },
+            {
+                "id": 2,
+                "en": "Sustainable use of the components of biological diversity",
+                "hi": "जैव विविधता के घटकों का टिकाऊ उपयोग"
+            },
+            {
+                "id": 3,
+                "en": "Conservation of biological diversity",
+                "hi": "जैव विविधता का संरक्षण"
+            },
+            {
+                "id": 4,
+                "en": "Permission to use forest resources by local tribals",
+                "hi": "स्थानीय जनजातियों द्वारा वन संसाधनों के उपयोग की अनुमति"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 60,
+        "page": 17,
+        "question_en": "Which of the following is the most dominant species of Tropical Moist Deciduous Forest?",
+        "question_hi": "निम्नलिखित में से कौनसी एक उष्णकटिबंधीय आर्द्र पर्णपाती वन की सबसे प्रमुख प्रजाति है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Mahogany",
+                "hi": "महोगनी"
+            },
+            {
+                "id": 2,
+                "en": "Sheesham",
+                "hi": "शीशम"
+            },
+            {
+                "id": 3,
+                "en": "Teak",
+                "hi": "सागवान"
+            },
+            {
+                "id": 4,
+                "en": "Jamun",
+                "hi": "जामुन"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 61,
+        "page": 17,
+        "question_en": "Which of the following is not correct regarding PM e-drive scheme?",
+        "question_hi": "पीएम ई-ड्राइव योजना के संबंध में निम्न में से कौनसा कथन सही नहीं है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "It supports funding for charging infrastructure.",
+                "hi": "यह चार्जिंग अवसंरचना के लिए वित्तपोषण का समर्थन करती है।"
+            },
+            {
+                "id": 2,
+                "en": "It provides demand incentives for electric two wheelers and electric three wheelers.",
+                "hi": "यह इलेक्ट्रिक दोपहिया और इलेक्ट्रिक तिपहिया वाहनों के लिए मांग प्रोत्साहन प्रदान करती है।"
+            },
+            {
+                "id": 3,
+                "en": "It does not cover e-trucks and e-ambulances.",
+                "hi": "यह ई-ट्रकों और ई-एंबुलेंसों को कवर नहीं करती है।"
+            },
+            {
+                "id": 4,
+                "en": "PM e-drive scheme was launched in 2024.",
+                "hi": "पीएम ई-ड्राइव योजना वर्ष 2024 में शुरू की गई थी।"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 62,
+        "page": 18,
+        "question_en": "As per the Annual Report 2025-26 of Department of Commerce, Government of India, the top two export commodities in the year 2024-25 were -",
+        "question_hi": "वाणिज्य विभाग भारत सरकार की वार्षिक रिपोर्ट 2025-26 के अनुसार, वर्ष 2024-25 के लिए भारत की शीर्षतम दो निर्यात वस्तुएँ थीं -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Petroleum Products, Pearls and Precious Stones",
+                "hi": "पेट्रोलियम उत्पाद, मोती एवं कीमती पत्थर"
+            },
+            {
+                "id": 2,
+                "en": "Iron and Steel, Gold Jewellery",
+                "hi": "लोहा एवं इस्पात, स्वर्ण आभूषण"
+            },
+            {
+                "id": 3,
+                "en": "Petroleum Products, Telecom Instruments",
+                "hi": "पेट्रोलियम उत्पाद, दूरसंचार (टेलीकॉम) उपकरण"
+            },
+            {
+                "id": 4,
+                "en": "Telecom Instruments, Pearls and Precious Stones",
+                "hi": "दूरसंचार (टेलीकॉम) उपकरण, मोती एवं कीमती पत्थर"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 63,
+        "page": 18,
+        "question_en": "As per Economic Survey 2025-26, what was the rank of India globally in terms of Competitive Industrial Performance in the year 2023?",
+        "question_hi": "आर्थिक सर्वेक्षण 2025-26 के अनुसार, वर्ष 2023 के प्रतिस्पर्धी औद्योगिक प्रदर्शन के सन्दर्भ में विश्व में भारत का स्थान क्या था?",
+        "options": [
+            {
+                "id": 1,
+                "en": "39th",
+                "hi": "39वाँ"
+            },
+            {
+                "id": 2,
+                "en": "40th",
+                "hi": "40वाँ"
+            },
+            {
+                "id": 3,
+                "en": "37th",
+                "hi": "37वाँ"
+            },
+            {
+                "id": 4,
+                "en": "34th",
+                "hi": "34वाँ"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 64,
+        "page": 18,
+        "question_en": "In which of the following budget did the Government of India announce the predetermined principle of keeping the minimum support price at 1.5 times the cost of production?",
+        "question_hi": "भारत सरकार ने निम्न में से किस बजट में न्यूनतम समर्थन मूल्य को उत्पादन की लागत के डेढ़ गुना पर निर्धारित करने के सिद्धान्त की घोषणा की थी?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Union Budget 2022-23",
+                "hi": "संघीय बजट 2022-23"
+            },
+            {
+                "id": 2,
+                "en": "Union Budget 2017-18",
+                "hi": "संघीय बजट 2017-18"
+            },
+            {
+                "id": 3,
+                "en": "Union Budget 2019-20",
+                "hi": "संघीय बजट 2019-20"
+            },
+            {
+                "id": 4,
+                "en": "Union Budget 2018-19",
+                "hi": "संघीय बजट 2018-19"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 65,
+        "page": 18,
+        "question_en": "According to the Economic Survey 2025-26, which of the following statements are correct about the service sector of India? (i) India's service sector contributes more than half of the Gross Value Added. (ii) India is the world's seventh-largest exporter of services. (iii) India's share in global services trade was about 7.5 percent in 2024.",
+        "question_hi": "आर्थिक सर्वेक्षण 2025-26 के अनुसार, भारत के सेवा क्षेत्र के बारे में निम्न में से कौनसे कथन सही हैं? (i) भारत का सेवा क्षेत्र सकल जोड़े गये मूल्य में आधे से अधिक का योगदान देता है। (ii) भारत विश्व का सातवाँ सबसे बड़ा सेवाओं का निर्यातक है। (iii) वर्ष 2024 में विश्व सेवा व्यापार में भारत का हिस्सा करीब 7.5 प्रतिशत था।",
+        "options": [
+            {
+                "id": 1,
+                "en": "All (i), (ii) and (iii) are correct",
+                "hi": "सभी (i), (ii) और (iii) सही हैं"
+            },
+            {
+                "id": 2,
+                "en": "Only (i) and (iii) are correct",
+                "hi": "केवल (i) और (iii) सही हैं"
+            },
+            {
+                "id": 3,
+                "en": "Only (i) and (ii) are correct",
+                "hi": "केवल (i) और (ii) सही हैं"
+            },
+            {
+                "id": 4,
+                "en": "Only (ii) and (iii) are correct",
+                "hi": "केवल (ii) और (iii) सही हैं"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 66,
+        "page": 19,
+        "question_en": "Consider the following statements regarding Article 74 of Indian Constitution - (i) The President shall, in the exercise of his functions, act in accordance with the advice of Council of Ministers. (ii) The advice tendered by the Ministers can be judicially inquired into. (iii) The President may once ask the Council of Ministers to reconsider its advice. Choose the correct answer -",
+        "question_hi": "भारतीय संविधान के अनुच्छेद 74 के सम्बन्ध में निम्नलिखित कथनों पर विचार कीजिए - (i) राष्ट्रपति, अपने कार्यों के निष्पादन में मंत्रिपरिषद की सलाह के अनुसार कार्य करेगा। (ii) मंत्रियों द्वारा दी गई सलाह की न्यायिक जांच की जा सकती है। (iii) राष्ट्रपति एक बार मंत्रिपरिषद से उसकी सलाह पर पुनर्विचार करने के लिए कह सकता है। सही उत्तर चुनिए -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Only (i) and (ii)",
+                "hi": "केवल (i) और (ii)"
+            },
+            {
+                "id": 2,
+                "en": "Only (ii) and (iii)",
+                "hi": "केवल (ii) और (iii)"
+            },
+            {
+                "id": 3,
+                "en": "Only (i) and (iii)",
+                "hi": "केवल (i) और (iii)"
+            },
+            {
+                "id": 4,
+                "en": "(i), (ii) and (iii)",
+                "hi": "(i), (ii) और (iii)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 67,
+        "page": 19,
+        "question_en": "Consider the following (Events-Year) pairs - (i) UN India-Pakistan Observation Mission - 1965 (ii) India and Pakistan signed the agreement not to attack nuclear installations and facilities of each other - 1988 (iii) India sent troops to the Maldives to foil a coup attempt by mercenaries - 1989 (iv) India and Sri Lanka signed the Free Trade Agreement (FTA) - 1997. How many of the above are correctly matched?",
+        "question_hi": "निम्नलिखित (घटनाएँ-वर्ष) युग्मों पर विचार करें - (i) संयुक्त राष्ट्र भारत-पाकिस्तान पर्यवेक्षण मिशन – 1965 (ii) भारत और पाकिस्तान ने एक-दूसरे के परमाणु प्रतिष्ठानों और सुविधाओं पर हमला न करने का समझौता किया – 1988 (iii) भारत ने भाड़े के सैनिकों द्वारा किए गए तख्तापलट के प्रयास को विफल करने के लिए मालदीव में सैनिक भेजे – 1989 (iv) भारत और श्रीलंका ने मुक्त व्यापार समझौते (FTA) पर हस्ताक्षर किए – 1997। उपर्युक्त में से कितने सही सुमेलित हैं?",
+        "options": [
+            {
+                "id": 1,
+                "en": "(i), (ii), (iii) and (iv)",
+                "hi": "(i), (ii), (iii) और (iv)"
+            },
+            {
+                "id": 2,
+                "en": "Only (ii) and (iii)",
+                "hi": "केवल (ii) और (iii)"
+            },
+            {
+                "id": 3,
+                "en": "Only (i) and (ii)",
+                "hi": "केवल (i) और (ii)"
+            },
+            {
+                "id": 4,
+                "en": "Only (iii) and (iv)",
+                "hi": "केवल (iii) और (iv)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 68,
+        "page": 19,
+        "question_en": "According to Section 15 of the Government of India Act, 1935, who advised the Federal Government on any matter related to finance?",
+        "question_hi": "1935 के भारत शासन अधिनियम की धारा 15 के अनुसार, वित्त से जुड़े किसी भी मामले पर संघीय सरकार (फेडरल गवर्नमेंट) को सलाह किसके द्वारा दी जाती थी?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Finance Minister",
+                "hi": "वित्त मंत्री"
+            },
+            {
+                "id": 2,
+                "en": "Governor-General",
+                "hi": "गवर्नर-जनरल"
+            },
+            {
+                "id": 3,
+                "en": "Council of Ministers including the Governor-General",
+                "hi": "गवर्नर-जनरल सहित मंत्रिपरिषद"
+            },
+            {
+                "id": 4,
+                "en": "Financial Advisor",
+                "hi": "वित्तीय सलाहकार"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 69,
+        "page": 20,
+        "question_en": "Which of the following statement is correct regarding the existence of the Constituent Assembly of India, after adopting the Constitution on 26 November 1949?",
+        "question_hi": "26 नवम्बर 1949 को संविधान को अंगीकृत करने के पश्चात्, भारत की संविधान सभा के अस्तित्व के सम्बन्ध में कौनसा कथन सही है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "It continued to function as Federal Executive under the Government of India Act, 1935.",
+                "hi": "वह भारत सरकार अधिनियम, 1935 के अन्तर्गत संघीय कार्यपालिका के रूप में कार्य करती रही।"
+            },
+            {
+                "id": 2,
+                "en": "It functioned as Upper House of Parliament till 1952.",
+                "hi": "वह 1952 तक संसद के उच्च सदन के रूप में कार्य करती रही।"
+            },
+            {
+                "id": 3,
+                "en": "It was immediately dissolved and ceased to exist.",
+                "hi": "वह तुरन्त भंग कर दी गई और उसका अस्तित्व समाप्त हो गया।"
+            },
+            {
+                "id": 4,
+                "en": "It continued as the Provisional Parliament of India until the first elected Parliament was constituted.",
+                "hi": "वह प्रथम निर्वाचित संसद के गठन तक भारत की अस्थायी संसद के रूप में कार्य करती रही।"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 70,
+        "page": 20,
+        "question_en": "Consider the following statements regarding Vice President of India - (I) He is the Ex-officio Chairman of the Council of States. (II) President of India administers him the Oath of Office of the Chairman of the Council of States. Choose the correct answer -",
+        "question_hi": "भारत के उपराष्ट्रपति के संबंध में निम्नलिखित कथनों पर विचार कीजिए - (I) वह राज्यसभा का पदेन सभापति होता है। (II) भारत के राष्ट्रपति द्वारा उसे राज्यसभा के सभापति पद की शपथ दिलाई जाती है। सही उत्तर चुनिए -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Neither (I) nor (II) is correct",
+                "hi": "न तो (I) ना ही (II) सही है"
+            },
+            {
+                "id": 2,
+                "en": "Only (II) is correct",
+                "hi": "केवल (II) सही है"
+            },
+            {
+                "id": 3,
+                "en": "Both (I) and (II) are correct",
+                "hi": "(I) व (II) दोनों सही हैं"
+            },
+            {
+                "id": 4,
+                "en": "Only (I) is correct",
+                "hi": "केवल (I) सही है"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 71,
+        "page": 20,
+        "question_en": "Which of the following statements regarding the impeachment of the President is correct? (i) The charges can be preferred by either House of Parliament. (ii) A 14-day notice must be given before moving the resolution. (iii) The resolution should be passed by absolute majority of the total membership. (iv) The other House investigates the charges. Choose the correct answer -",
+        "question_hi": "राष्ट्रपति के महाभियोग के सम्बंध में निम्नलिखित कथनों में से कौनसा सही है? (i) आरोप संसद के किसी भी सदन द्वारा लगाए जा सकते हैं। (ii) प्रस्ताव प्रस्तुत करने से पूर्व 14 दिन का नोटिस दिया जाना आवश्यक है। (iii) प्रस्ताव को कुल सदस्य संख्या के पूर्ण बहुमत से पारित किया जाना चाहिए। (iv) दूसरा सदन आरोपों की जांच करता है। सही उत्तर चुनिए -",
+        "options": [
+            {
+                "id": 1,
+                "en": "(i), (ii) and (iv)",
+                "hi": "(i), (ii) और (iv)"
+            },
+            {
+                "id": 2,
+                "en": "(ii) and (iv)",
+                "hi": "(ii) और (iv)"
+            },
+            {
+                "id": 3,
+                "en": "(i) and (iii)",
+                "hi": "(i) और (iii)"
+            },
+            {
+                "id": 4,
+                "en": "(i), (ii), (iii) and (iv)",
+                "hi": "(i), (ii), (iii) और (iv)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 72,
+        "page": 21,
+        "question_en": "The power of the Election Commission to appoint an election tribunal for the decision of doubts and disputes arising out of or in connection with elections to Parliament and to the Legislatures of States was omitted by which of the following amendments in the Constitution of India?",
+        "question_hi": "संसद तथा राज्यों की विधानसभाओं के चुनावों से उत्पन्न संदेहों और विवादों के निपटारे के लिए निर्वाचन न्यायाधिकरण की नियुक्ति करने की निर्वाचन आयोग की शक्ति को भारत के संविधान में किये गए निम्नलिखित में से कौनसे संशोधन द्वारा हटा दिया गया था?",
+        "options": [
+            {
+                "id": 1,
+                "en": "17th",
+                "hi": "17वें"
+            },
+            {
+                "id": 2,
+                "en": "20th",
+                "hi": "20वें"
+            },
+            {
+                "id": 3,
+                "en": "19th",
+                "hi": "19वें"
+            },
+            {
+                "id": 4,
+                "en": "18th",
+                "hi": "18वें"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 73,
+        "page": 21,
+        "question_en": "Consider the following statements regarding India's Act East Policy - (i) The Act East Policy focuses on the extended neighbourhood in the Indo-Pacific region. (ii) The core of the Act East Policy is ASEAN. Choose the correct answer -",
+        "question_hi": "भारत की एक्ट ईस्ट नीति के संबंध में निम्नलिखित कथनों पर विचार कीजिए - (i) एक्ट ईस्ट नीति भारत-प्रशांत क्षेत्र में विस्तारित पड़ोस पर केंद्रित है। (ii) एक्ट ईस्ट नीति का केंद्र आसियान है। सही उत्तर का चयन कीजिए -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Only (i) is correct",
+                "hi": "केवल (i) सही है"
+            },
+            {
+                "id": 2,
+                "en": "Both (i) and (ii) are correct",
+                "hi": "दोनों (i) तथा (ii) सही हैं"
+            },
+            {
+                "id": 3,
+                "en": "Only (ii) is correct",
+                "hi": "केवल (ii) सही है"
+            },
+            {
+                "id": 4,
+                "en": "Neither (i) nor (ii) is correct",
+                "hi": "न तो (i) तथा ना ही (ii) सही है"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 74,
+        "page": 21,
+        "question_en": "Consider the following statements regarding the Supreme Court Legal Aid Committee - (i) If a person belongs to the poor section of society, having an annual income of less than ₹5,00,000, he/she is entitled to get free legal aid from the Supreme Court Legal Aid Committee. (ii) The aid includes the cost of preparation of the matter and all applications connected therewith, in addition to providing an advocate for preparing and arguing the case. Which of the statement/s given above is/are correct?",
+        "question_hi": "उच्चतम न्यायालय की कानूनी सहायता समिति के संबंध में निम्नलिखित कथनों पर विचार करें - (i) यदि कोई व्यक्ति समाज के गरीब वर्ग से है, जिसकी वार्षिक आय 5,00,000 ₹ से कम है, तो वह उच्चतम न्यायालय की कानूनी सहायता समिति से मुफ्त कानूनी सहायता पाने का हकदार है। (ii) इस सहायता में मामले की तैयारी और बहस के लिए एक अधिवक्ता उपलब्ध कराने के आलावा, मामले की तैयारी और उससे जुड़े सभी आवेदनों की लागत शामिल है। ऊपर दिए गए कथनों में से कौनसा/से सही है/हैं?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Neither (i) nor (ii)",
+                "hi": "न तो (i) और ना ही (ii)"
+            },
+            {
+                "id": 2,
+                "en": "Only (i)",
+                "hi": "केवल (i)"
+            },
+            {
+                "id": 3,
+                "en": "Both (i) and (ii)",
+                "hi": "दोनों (i) और (ii)"
+            },
+            {
+                "id": 4,
+                "en": "Only (ii)",
+                "hi": "केवल (ii)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 75,
+        "page": 22,
+        "question_en": "Which of the following is not mentioned in Article 46 of the Constitution of India?",
+        "question_hi": "भारत के संविधान के अनुच्छेद 46 में निम्नलिखित में से किसका उल्लेख नहीं किया गया है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Scheduled Castes",
+                "hi": "अनुसूचित जातियों का"
+            },
+            {
+                "id": 2,
+                "en": "Other Weaker Sections",
+                "hi": "अन्य दुर्बल वर्गों का"
+            },
+            {
+                "id": 3,
+                "en": "Scheduled Tribes",
+                "hi": "अनुसूचित जन-जातियों का"
+            },
+            {
+                "id": 4,
+                "en": "Other Backward Classes",
+                "hi": "अन्य पिछड़े वर्गों का"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 76,
+        "page": 22,
+        "question_en": "Which of the following pairs is not correctly matched regarding allocation of seats as on October 15, 1949 in the Constituent Assembly of India?",
+        "question_hi": "भारत की संविधान सभा में 15 अक्टूबर 1949 की स्थिति में सीटों के आवंटन के सम्बन्ध में निम्नलिखित में से कौनसा युग्म सही सुमेलित नहीं है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Hyderabad - 16",
+                "hi": "हैदराबाद – 16"
+            },
+            {
+                "id": 2,
+                "en": "United State of Rajasthan - 12",
+                "hi": "यूनाइटेड स्टेट ऑफ़ राजस्थान – 12"
+            },
+            {
+                "id": 3,
+                "en": "Mysore - 8",
+                "hi": "मैसूर – 8"
+            },
+            {
+                "id": 4,
+                "en": "Bhopal - 1",
+                "hi": "भोपाल – 1"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 77,
+        "page": 22,
+        "question_en": "In 2025, to which country did the Prime Minister of India, Narendra Modi, travel to attend the meeting of the Council of Heads of State of the Shanghai Cooperation Organization?",
+        "question_hi": "सन् 2025 में, भारत के प्रधानमंत्री, नरेन्द्र मोदी, शंघाई सहयोग संगठन के राष्ट्राध्यक्षों की परिषद की बैठक में भाग लेने किस देश में गये थे?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Russia",
+                "hi": "रूस"
+            },
+            {
+                "id": 2,
+                "en": "Kazakhstan",
+                "hi": "कज़ाकिस्तान"
+            },
+            {
+                "id": 3,
+                "en": "Japan",
+                "hi": "जापान"
+            },
+            {
+                "id": 4,
+                "en": "China",
+                "hi": "चीन"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 78,
+        "page": 22,
+        "question_en": "Under Article 7 of the Constitution of India, which category of migrants has been excluded from citizenship of India?",
+        "question_hi": "भारत के संविधान के अनुच्छेद 7 के अन्तर्गत, निम्नलिखित में से किस प्रवासी वर्ग को भारत की नागरिकता से वंचित किया गया है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Persons who migrated to Pakistan after 1 March 1947",
+                "hi": "1 मार्च 1947 के बाद पाकिस्तान चले गए व्यक्तियों को"
+            },
+            {
+                "id": 2,
+                "en": "Persons who migrated to Pakistan after 15 August 1947",
+                "hi": "15 अगस्त 1947 के बाद पाकिस्तान चले गए व्यक्तियों को"
+            },
+            {
+                "id": 3,
+                "en": "Persons who migrated to Pakistan after 18 July 1948",
+                "hi": "18 जुलाई 1948 के बाद पाकिस्तान चले गए व्यक्तियों को"
+            },
+            {
+                "id": 4,
+                "en": "Persons who migrated to Pakistan after 26 November 1949",
+                "hi": "26 नवम्बर 1949 के बाद पाकिस्तान चले गए व्यक्तियों को"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 79,
+        "page": 23,
+        "question_en": "Consider the following statements regarding the life duration of the Parliament - (I) During the period of Emergency, the Parliament cannot extend its own life for a period excluding six months at a time. (II) After the Proclamation of Emergency ceases to operate, extended duration cannot continue beyond a period of one year. Choose the correct statement/s given above -",
+        "question_hi": "संसद के जीवनकाल से सम्बन्धित निम्नलिखित कथनों पर विचार कीजिए - (I) आपातकाल की अवधि के दौरान संसद द्वारा अपने जीवनकाल को एक बार में छह मास से अधिक की अवधि के लिए नहीं बढ़ाया जा सकता। (II) आपातकाल की उद्घोषणा के प्रवृत्त न रहने के पश्चात्, बढ़ी हुई अवधि एक वर्ष के आगे विस्तारित नहीं की जा सकती। उपर्युक्त में से सही कथन/कथनों का चयन कीजिए -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Only (I) is correct",
+                "hi": "केवल (I) सही है"
+            },
+            {
+                "id": 2,
+                "en": "Both (I) and (II) are correct",
+                "hi": "दोनों (I) एवं (II) सही हैं"
+            },
+            {
+                "id": 3,
+                "en": "Only (II) is correct",
+                "hi": "केवल (II) सही है"
+            },
+            {
+                "id": 4,
+                "en": "Neither (I) nor (II) is correct",
+                "hi": "न तो (I) ना ही (II) सही है"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 80,
+        "page": 23,
+        "question_en": "Peruse the following terminologies - (I) Scientific temper (II) Integral humanism (III) Spirit of inquiry and reform (IV) Respect the National Song. Which of the above are mentioned in the Fundamental Duties of every citizen of India?",
+        "question_hi": "निम्नांकित शब्दावलियों का अवलोकन कीजिए - (I) वैज्ञानिक दृष्टिकोण (II) एकात्म मानववाद (III) ज्ञानार्जन और सुधार की भावना (IV) राष्ट्रगीत का आदर। उपर्युक्त में से किनका उल्लेख भारत के प्रत्येक नागरिक के मूल कर्तव्यों में हुआ है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Only (I) and (III)",
+                "hi": "केवल (I) व (III)"
+            },
+            {
+                "id": 2,
+                "en": "Only (II) and (III)",
+                "hi": "केवल (II) व (III)"
+            },
+            {
+                "id": 3,
+                "en": "Only (II) and (IV)",
+                "hi": "केवल (II) व (IV)"
+            },
+            {
+                "id": 4,
+                "en": "Only (I) and (IV)",
+                "hi": "केवल (I) व (IV)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 81,
+        "page": 23,
+        "question_en": "A teacher observed certain conditions in school, out of which few needed intervention to restrict the maladjustment of students. Choose those conditions from the following - (a) Adequate training of teacher (b) Inadequate curriculum (c) Provision of recreational facilities (d) Restrained teacher-pupil relation",
+        "question_hi": "एक शिक्षक ने विद्यालय में कुछ ऐसी स्थितियां देखीं, जिनमें से कुछ में छात्रों के कुसमायोजन को रोकने के लिए हस्तक्षेप की आवश्यकता थी। निम्नलिखित में से उन स्थितियों का चयन कीजिए - (a) शिक्षक का पर्याप्त प्रशिक्षण (b) अपर्याप्त पाठ्यक्रम (c) मनोरंजन सुविधाओं का प्रावधान (d) शिक्षक-छात्र संबंध में संयम",
+        "options": [
+            {
+                "id": 1,
+                "en": "Only (b) and (c)",
+                "hi": "केवल (b) एवं (c)"
+            },
+            {
+                "id": 2,
+                "en": "Only (a) and (d)",
+                "hi": "केवल (a) एवं (d)"
+            },
+            {
+                "id": 3,
+                "en": "Only (a) and (b)",
+                "hi": "केवल (a) एवं (b)"
+            },
+            {
+                "id": 4,
+                "en": "Only (b) and (d)",
+                "hi": "केवल (b) एवं (d)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 82,
+        "page": 24,
+        "question_en": "When a person produces an intended effect on the behaviour and emotions of another person, then this indicates which psycho-social motive?",
+        "question_hi": "जब कोई व्यक्ति किसी दूसरे व्यक्ति के व्यवहार और संवेगों पर इच्छित प्रभाव उत्पन्न करता है, तो यह किस मनो-सामाजिक प्रेरक को इंगित करता है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Need for Affiliation",
+                "hi": "संबद्धता की आवश्यकता"
+            },
+            {
+                "id": 2,
+                "en": "Need for Exploration",
+                "hi": "अन्वेषण की आवश्यकता"
+            },
+            {
+                "id": 3,
+                "en": "Need for Achievement",
+                "hi": "उपलब्धि की आवश्यकता"
+            },
+            {
+                "id": 4,
+                "en": "Need for Power",
+                "hi": "शक्ति की आवश्यकता"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 83,
+        "page": 24,
+        "question_en": "Which of the following statement clearly discriminates the scope of study of Psychology and Educational Psychology?",
+        "question_hi": "निम्नलिखित में से कौनसा कथन मनोविज्ञान और शैक्षिक मनोविज्ञान के अध्ययन क्षेत्र में स्पष्ट अंतर बताता है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "The science of education mainly deals with the problems of teaching-learning.",
+                "hi": "शिक्षा का विज्ञान मुख्य रूप से शिक्षण-अधिगम की समस्याओं से संबंधित है।"
+            },
+            {
+                "id": 2,
+                "en": "Studying the behaviour of learners in relation to their educational environment.",
+                "hi": "शिक्षार्थियों के व्यवहार का उनके शैक्षिक वातावरण के संबंध में अध्ययन करना।"
+            },
+            {
+                "id": 3,
+                "en": "Satisfying learner's educational needs and all round development of their personality.",
+                "hi": "शिक्षार्थियों की शैक्षिक आवश्यकताओं को पूरा करना और उनके व्यक्तित्व का सर्वांगीण विकास करना।"
+            },
+            {
+                "id": 4,
+                "en": "It covers the behaviour of all living organisms related to all their life activities.",
+                "hi": "इसमें सभी जीवित प्राणियों के व्यवहार और उनकी सभी जीवन की गतिविधियों को शामिल किया जाता है।"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 84,
+        "page": 24,
+        "question_en": "There are two statements given below - Statement (A): Learning leads to permanent change in behaviour. Statement (B): The changes that occur due to the process of maturation fall into the category of learned behaviour. Choose the correct option -",
+        "question_hi": "नीचे दो कथन दिए गए हैं - कथन (A): अधिगम व्यवहार में स्थायी परिवर्तन लाता है। कथन (B): परिपक्वता की प्रक्रिया के कारण होने वाले परिवर्तन अधिगमित व्यवहार की श्रेणी में आते हैं। सही कूट का चयन कीजिए -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Both (A) and (B) are true",
+                "hi": "दोनों (A) एवं (B) सत्य हैं"
+            },
+            {
+                "id": 2,
+                "en": "(A) is true but (B) is false",
+                "hi": "(A) सत्य है, किन्तु (B) असत्य है"
+            },
+            {
+                "id": 3,
+                "en": "Both (A) and (B) are false",
+                "hi": "दोनों (A) एवं (B) असत्य हैं"
+            },
+            {
+                "id": 4,
+                "en": "(B) is true but (A) is false",
+                "hi": "(B) सत्य है, किन्तु (A) असत्य है"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 85,
+        "page": 25,
+        "question_en": "The influential Social Learning theory (Albert Bandura) emphasised modelling as a powerful source of development, but later this theory stressed the importance of ............... on social development.",
+        "question_hi": "प्रभावशाली सामाजिक अधिगम सिद्धांत (अल्बर्ट बंडुरा) ने मॉडलिंग को विकास के एक शक्तिशाली स्रोत के रूप में महत्व दिया, लेकिन बाद में इस सिद्धांत ने सामाजिक विकास में ............ के महत्व पर बल दिया।",
+        "options": [
+            {
+                "id": 1,
+                "en": "Imitation",
+                "hi": "अनुकरण"
+            },
+            {
+                "id": 2,
+                "en": "Applied behaviour analysis",
+                "hi": "अनुप्रयुक्त व्यवहार विश्लेषण"
+            },
+            {
+                "id": 3,
+                "en": "Social cognition",
+                "hi": "सामाजिक संज्ञान"
+            },
+            {
+                "id": 4,
+                "en": "Observational learning",
+                "hi": "प्रेक्षणात्मक अधिगम"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 86,
+        "page": 25,
+        "question_en": "As per Maslow's Hierarchy of Needs, if a student feels insecure and as a result he/she has trouble focusing on academic learning, this is an example of?",
+        "question_hi": "मॉस्लो के आवश्यकताओं के पदानुक्रम के अनुसार, यदि कोई विद्यार्थी असुरक्षित महसूस करता है और परिणामस्वरूप उसे अकादमिक अधिगम पर ध्यान केंद्रित करने में कठिनाई होती है, तो यह एक उदाहरण है -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Physical needs",
+                "hi": "शारीरिक आवश्यकताएं"
+            },
+            {
+                "id": 2,
+                "en": "Cognitive needs",
+                "hi": "संज्ञानात्मक आवश्यकताएं"
+            },
+            {
+                "id": 3,
+                "en": "Self-actualisation",
+                "hi": "आत्म-वास्तवीकरण"
+            },
+            {
+                "id": 4,
+                "en": "Safety and belongingness",
+                "hi": "सुरक्षा और अपनापन"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 87,
+        "page": 25,
+        "question_en": "Which of the following statements are correct about stages of creativity, according to Graham Wallas? (a) The stage in which person tries to understand the problem is Preparation stage. (b) The Verification stage is the time out phase where the person does not engage in any activity. (c) In the Incubation stage, the person suddenly gets an insight about the solution of the problem. (d) New ideas and new possibilities emerge in the Inspiration stage.",
+        "question_hi": "ग्राहम वालस के अनुसार, सृजनात्मकता की अवस्थाओं के बारे में निम्नलिखित में से कौनसे कथन सही हैं? (a) वह अवस्था जिसमें व्यक्ति समस्या को समझने का प्रयास करता है, वह तैयारी की अवस्था होती है। (b) सत्यापन अवस्था वह समय समाप्ति चरण है, जिसमें व्यक्ति किसी भी गतिविधि में शामिल नहीं होता। (c) उष्मायन अवस्था में व्यक्ति को अचानक समस्या के समाधान के बारे में अंतर्दृष्टि प्राप्त होती है। (d) प्रेरणा की अवस्था में नवीन विचार और नई संभावनाएं उभरती हैं।",
+        "options": [
+            {
+                "id": 1,
+                "en": "Only (a), (c) and (d)",
+                "hi": "केवल (a), (c) एवं (d)"
+            },
+            {
+                "id": 2,
+                "en": "Only (a), (b) and (d)",
+                "hi": "केवल (a), (b) एवं (d)"
+            },
+            {
+                "id": 3,
+                "en": "Only (b) and (c)",
+                "hi": "केवल (b) एवं (c)"
+            },
+            {
+                "id": 4,
+                "en": "Only (a) and (d)",
+                "hi": "केवल (a) एवं (d)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 88,
+        "page": 26,
+        "question_en": "Which of the following statement is a misfit, as a principle of Classical Conditioning being a simplest form of learning?",
+        "question_hi": "निम्नलिखित में से कौनसा कथन अधिगम के सबसे सरल रूप - शास्त्रीय अनुबंधन के सिद्धांत के तौर पर अनुपयुक्त है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Unconditioned stimulus must come before the conditioned stimulus.",
+                "hi": "अनानुबंधित उद्दीपक, अनुबंधित उद्दीपक से पहले आना चाहिए।"
+            },
+            {
+                "id": 2,
+                "en": "The conditioned stimulus usually stands out from other competing stimuli.",
+                "hi": "अनुबंधित उद्दीपक आमतौर पर अन्य प्रतिस्पर्धी उद्दीपकों से अलग होता है।"
+            },
+            {
+                "id": 3,
+                "en": "The conditioned stimulus and unconditioned stimulus must come very close together.",
+                "hi": "अनुबंधित उद्दीपक और अनानुबंधित उद्दीपक बहुत निकट होने चाहिए।"
+            },
+            {
+                "id": 4,
+                "en": "The neutral stimulus must be paired with the unconditioned stimulus many times before conditioning takes place.",
+                "hi": "अनुबंधन होने से पहले तटस्थ उद्दीपक को अनानुबंधित उद्दीपक के साथ कई बार जोड़ा जाना चाहिए।"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 89,
+        "page": 26,
+        "question_en": "There are two statements given below - Statement (A): The Psycho-analytic theory tells us that a large part of human behaviour is governed by unconscious motives. Statement (B): Direct methods of personality assessment can uncover the unconscious part of our behaviour. Choose the correct code -",
+        "question_hi": "नीचे दो कथन दिए गए हैं - कथन (A): मनोविश्लेषण सिद्धांत हमें बताता है कि मानव व्यवहार का एक बड़ा भाग अवचेतन प्रेरकों द्वारा नियंत्रित होता है। कथन (B): व्यक्तित्व आंकलन की प्रत्यक्ष विधियां हमारे व्यवहार के अवचेतन भाग को उजागर कर सकती हैं। सही कूट का चयन कीजिए -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Both statements (A) and (B) are incorrect",
+                "hi": "(A) और (B) दोनों कथन गलत हैं"
+            },
+            {
+                "id": 2,
+                "en": "(B) is correct but (A) is incorrect",
+                "hi": "(B) सही किन्तु (A) गलत है"
+            },
+            {
+                "id": 3,
+                "en": "(A) is correct but (B) is incorrect",
+                "hi": "(A) सही किन्तु (B) गलत है"
+            },
+            {
+                "id": 4,
+                "en": "Both statements (A) and (B) are correct",
+                "hi": "(A) एवं (B) दोनों कथन सही हैं"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 90,
+        "page": 26,
+        "question_en": "Which of the following are included in comprehension domain under critical thinking skills? (a) Sequencing (b) Applying (c) Concluding (d) Describing (e) Identifying (f) Interpreting",
+        "question_hi": "निम्नलिखित में से कौनसे समालोचनात्मक चिंतन कौशलों के अन्तर्गत अवबोध क्षेत्र में सम्मिलित हैं? (a) क्रमबद्ध करना (b) अनुप्रयोग करना (c) निष्कर्ष निकालना (d) वर्णन करना (e) पहचान करना (f) व्याख्या करना",
+        "options": [
+            {
+                "id": 1,
+                "en": "Only (a), (d) and (f)",
+                "hi": "केवल (a), (d) एवं (f)"
+            },
+            {
+                "id": 2,
+                "en": "Only (b), (c) and (d)",
+                "hi": "केवल (b), (c) एवं (d)"
+            },
+            {
+                "id": 3,
+                "en": "Only (b), (c) and (e)",
+                "hi": "केवल (b), (c) एवं (e)"
+            },
+            {
+                "id": 4,
+                "en": "Only (a), (b), (d) and (e)",
+                "hi": "केवल (a), (b), (d) एवं (e)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 91,
+        "page": 27,
+        "question_en": "With reference to 21st century skills, 4Cs are advocated under learning skills. Which of the following does not denote a meaningful category within 4Cs?",
+        "question_hi": "21वीं सदी के कौशलों के संदर्भ में, अधिगम कौशलों के तहत 4Cs का समर्थन किया जाता है। निम्नलिखित में से कौनसा 4Cs के अंतर्गत सार्थक श्रेणी को नहीं दर्शाता है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Critical Thinking",
+                "hi": "आलोचनात्मक चिंतन"
+            },
+            {
+                "id": 2,
+                "en": "Creativity and innovation",
+                "hi": "सृजनात्मकता और नवाचार"
+            },
+            {
+                "id": 3,
+                "en": "Competition",
+                "hi": "प्रतिस्पर्धा"
+            },
+            {
+                "id": 4,
+                "en": "Communication",
+                "hi": "संप्रेषण"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 92,
+        "page": 27,
+        "question_en": "According to Piaget, which of the following cognitive processes, the children display in the formal operational period, but not in the concrete operational period? (a) Systematic analysis with all possible solutions of the problem (b) Logical approach (c) Multiple classifications (d) Use higher order structure (e) Class inclusion",
+        "question_hi": "पियाजे के अनुसार, निम्नलिखित में से कौनसी संज्ञानात्मक प्रक्रियाएं, बच्चे औपचारिक संक्रियात्मक अवस्था में प्रदर्शित करते हैं, किन्तु मूर्त संक्रियात्मक अवस्था में नहीं? (a) समस्या के सभी संभावित समाधानों के साथ व्यवस्थित विश्लेषण (b) तार्किक दृष्टिकोण (c) एकाधिक वर्गीकरण (d) उच्च क्रम संरचना का उपयोग (e) वर्ग समावेशन",
+        "options": [
+            {
+                "id": 1,
+                "en": "All (a), (b), (c), (d) and (e)",
+                "hi": "सभी (a), (b), (c), (d) एवं (e)"
+            },
+            {
+                "id": 2,
+                "en": "Only (b), (c) and (d)",
+                "hi": "केवल (b), (c) एवं (d)"
+            },
+            {
+                "id": 3,
+                "en": "Only (a), (b), (c) and (d)",
+                "hi": "केवल (a), (b), (c) एवं (d)"
+            },
+            {
+                "id": 4,
+                "en": "Only (a), (b) and (d)",
+                "hi": "केवल (a), (b) एवं (d)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 93,
+        "page": 27,
+        "question_en": "Which one of the following is not an ability, which is comprised in 'Integrative Model' of Emotional Intelligence proposed by Mayer and Salovey?",
+        "question_hi": "निम्नलिखित में से कौनसी क्षमता, मेयर और सेलोवे द्वारा प्रस्तावित संवेगात्मक बुद्धिमत्ता के 'एकीकृत मॉडल' में शामिल नहीं है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Understanding and Analyzing Emotions",
+                "hi": "संवेगों को समझना और उनका विश्लेषण करना"
+            },
+            {
+                "id": 2,
+                "en": "Assessing Emotions in Relations",
+                "hi": "संबंधों में संवेगों का आंकलन करना"
+            },
+            {
+                "id": 3,
+                "en": "Perceiving and Expressing Emotions",
+                "hi": "संवेगों को प्रत्यक्षीकृत करना और अभिव्यक्त करना"
+            },
+            {
+                "id": 4,
+                "en": "Assimilating Emotions in Thoughts",
+                "hi": "विचारों में संवेगों को आत्मसात करना"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 94,
+        "page": 28,
+        "question_en": "Two statements are given below, one labelled as Assertion (A) and the other as Reason (R). (A): Previous experience helps in insight learning. (R): Insight learning does not depend on perception of relationships. Choose the correct answer -",
+        "question_hi": "नीचे दो कथन दिए गए हैं, एक को कथन (A) और दूसरे को कारण (R) के रूप में चिन्हित किया गया है। (A): पूर्व अनुभव, अन्तर्दृष्टि अधिगम में सहायता करता है। (R): अन्तर्दृष्टि अधिगम, संबंधों के प्रत्यक्षीकरण पर निर्भर नहीं है। सही उत्तर चुनें -",
+        "options": [
+            {
+                "id": 1,
+                "en": "(A) is true, (R) is false",
+                "hi": "(A) सत्य है, (R) असत्य है"
+            },
+            {
+                "id": 2,
+                "en": "Both (A) and (R) are true but (R) does not explain (A)",
+                "hi": "(A) और (R) दोनों सत्य हैं लेकिन (R), (A) की व्याख्या नहीं करता है"
+            },
+            {
+                "id": 3,
+                "en": "(A) is false, (R) is true",
+                "hi": "(A) असत्य है, (R) सत्य है"
+            },
+            {
+                "id": 4,
+                "en": "Both (A) and (R) are true and (R) explains (A)",
+                "hi": "(A) और (R) दोनों सत्य हैं तथा (R), (A) की व्याख्या करता है"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 95,
+        "page": 28,
+        "question_en": "Two statements are given below, one labelled as Assertion (A) and the other as Reason (R). Assertion (A): No two individuals are exactly alike. Reason (R): Individual differences exist due to heredity and environment. Choose the correct answer -",
+        "question_hi": "नीचे दो कथन दिए गए हैं, एक को कथन (A) और दूसरे को कारण (R) के रूप में चिन्हित किया गया है। कथन (A): कोई भी दो व्यक्ति बिल्कुल एक जैसे नहीं होते। कारण (R): व्यक्तिगत भिन्नताएं वंशानुक्रम और पर्यावरण के कारण उत्पन्न होती हैं। सही कूट का चयन कीजिए -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Both (A) and (R) are true but (R) does not explain (A)",
+                "hi": "(A) और (R) दोनों सत्य हैं लेकिन (R), (A) की व्याख्या नहीं करता है"
+            },
+            {
+                "id": 2,
+                "en": "Both (A) and (R) are true and (R) explains (A)",
+                "hi": "(A) और (R) दोनों सत्य हैं तथा (R), (A) की व्याख्या करता है"
+            },
+            {
+                "id": 3,
+                "en": "(A) is true, (R) is false",
+                "hi": "(A) सत्य है, (R) असत्य है"
+            },
+            {
+                "id": 4,
+                "en": "(A) is false, (R) is true",
+                "hi": "(A) असत्य है, (R) सत्य है"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 96,
+        "page": 29,
+        "question_en": "According to Sternberg's Triarchic Theory of Intelligence, match the following Types of Intelligence with their Functions - Type of Intelligence: (a) Componential Intelligence (b) Experiential Intelligence (c) Contextual Intelligence. Function: (i) Dealing with environmental demands, encountered on a daily basis (ii) Analysis of information to solve problem (iii) Using past experiences to solve novel problems creatively",
+        "question_hi": "स्टर्नबर्ग के त्रितंत्रीय बुद्धि सिद्धांत के अनुसार, निम्नलिखित बुद्धि के प्रकारों को उनके कार्यों के साथ सुमेलित कीजिए - बुद्धि का प्रकार: (a) घटकीय बुद्धि (b) अनुभवात्मक बुद्धि (c) संदर्भात्मक बुद्धि। कार्य: (i) रोजमर्रा की जिंदगी में सामने आने वाली पर्यावरणीय मांगों से निपटना (ii) समस्या का समाधान करने के लिए सूचनाओं का विश्लेषण करना (iii) पूर्व अनुभवों का उपयोग करके नई समस्याओं को रचनात्मक रूप से हल करना",
+        "options": [
+            {
+                "id": 1,
+                "en": "(a)-(ii), (b)-(iii), (c)-(i)",
+                "hi": "(a)-(ii), (b)-(iii), (c)-(i)"
+            },
+            {
+                "id": 2,
+                "en": "(a)-(iii), (b)-(i), (c)-(ii)",
+                "hi": "(a)-(iii), (b)-(i), (c)-(ii)"
+            },
+            {
+                "id": 3,
+                "en": "(a)-(i), (b)-(ii), (c)-(iii)",
+                "hi": "(a)-(i), (b)-(ii), (c)-(iii)"
+            },
+            {
+                "id": 4,
+                "en": "(a)-(ii), (b)-(i), (c)-(iii)",
+                "hi": "(a)-(ii), (b)-(i), (c)-(iii)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 97,
+        "page": 29,
+        "question_en": "'The developmental pattern has predictable characteristics.' Which of the following principle does not justify this statement?",
+        "question_hi": "'विकासात्मक पैटर्न में पूर्वानुमानित विशेषताएं होती हैं।' निम्नलिखित में से कौनसा सिद्धांत इस कथन को सही सिद्ध नहीं करता है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "Principle of similar developmental patterns",
+                "hi": "समान विकासात्मक पैटर्न का सिद्धांत"
+            },
+            {
+                "id": 2,
+                "en": "Principle of general to specific responses",
+                "hi": "सामान्य से विशिष्ट प्रतिक्रियाओं का सिद्धांत"
+            },
+            {
+                "id": 3,
+                "en": "Principle of uniform developmental rate in different areas",
+                "hi": "विभिन्न क्षेत्रों में एकरूप विकासात्मक दर का सिद्धांत"
+            },
+            {
+                "id": 4,
+                "en": "Principle of developmental continuity",
+                "hi": "विकासात्मक निरंतरता का सिद्धांत"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 98,
+        "page": 29,
+        "question_en": "The differences among students in learning are visible in the class. Which one of the following is not an explanation of these learning differences among students?",
+        "question_hi": "कक्षा में विद्यार्थियों के अधिगम में अंतर स्पष्ट रूप से दिखाई देता है। निम्नलिखित में से कौनसा कथन विद्यार्थियों के अधिगम संबंधी इन अंतरों का स्पष्टीकरण नहीं है?",
+        "options": [
+            {
+                "id": 1,
+                "en": "One method of learning is favourable for some but not for others.",
+                "hi": "अधिगम की एक विधि कुछ विद्यार्थियों के लिए अनुकूल होती है, जबकि अन्य के लिए नहीं।"
+            },
+            {
+                "id": 2,
+                "en": "Learning styles of students are uniform among themselves.",
+                "hi": "विद्यार्थियों की अधिगम शैलियां आपस में समरूप होती हैं।"
+            },
+            {
+                "id": 3,
+                "en": "Some learn more easily, and some find it difficult to learn.",
+                "hi": "कुछ विद्यार्थी अधिक आसानी से सीख जाते हैं, जबकि कुछ को सीखना कठिन लगता है।"
+            },
+            {
+                "id": 4,
+                "en": "Learning environment of the classroom also depends upon the individual nature.",
+                "hi": "कक्षा का अधिगम वातावरण भी विद्यार्थियों की व्यक्तिगत प्रकृति पर निर्भर करता है।"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 99,
+        "page": 30,
+        "question_en": "Match the Defence Mechanisms given in List I with their appropriate Descriptions in List II and choose the correct option - List I: (a) Projection (b) Regression (c) Sublimation (d) Denial. List II: (1) Returning to earlier behaviour (2) Attributing own thoughts to others (3) Channelling impulses socially (4) Refusing reality",
+        "question_hi": "सूची I में दिए गए रक्षा युक्तियों को सूची II में दिए गए उनके उपयुक्त विवरणों से मिलान कीजिए और सही विकल्प चुनिए - सूची I: (a) प्रक्षेपण (b) प्रतिगमन (c) उदात्तीकरण (d) डिनायल। सूची II: (1) पहले के व्यवहार की ओर लौटना (2) अपनी सोच को दूसरों पर आरोपित करना (3) आवेगों को सामाजिक रूप से स्वीकार्य दिशा में मोड़ना (4) वास्तविकता को अस्वीकार करना",
+        "options": [
+            {
+                "id": 1,
+                "en": "(a)-(2), (b)-(3), (c)-(1), (d)-(4)",
+                "hi": "(a)-(2), (b)-(3), (c)-(1), (d)-(4)"
+            },
+            {
+                "id": 2,
+                "en": "(a)-(1), (b)-(2), (c)-(3), (d)-(4)",
+                "hi": "(a)-(1), (b)-(2), (c)-(3), (d)-(4)"
+            },
+            {
+                "id": 3,
+                "en": "(a)-(2), (b)-(1), (c)-(3), (d)-(4)",
+                "hi": "(a)-(2), (b)-(1), (c)-(3), (d)-(4)"
+            },
+            {
+                "id": 4,
+                "en": "(a)-(3), (b)-(1), (c)-(2), (d)-(4)",
+                "hi": "(a)-(3), (b)-(1), (c)-(2), (d)-(4)"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    },
+    {
+        "id": 100,
+        "page": 30,
+        "question_en": "There are two statements given below related to scope of Educational Psychology - (A) Measurement of teacher's aptitude and any innovations introduced in teaching are included in the 'evaluation of learning process'. (B) Under the 'evaluation of learning process', an immediate feedback and knowledge of results enhance the learner's motivation. Choose the correct option -",
+        "question_hi": "शैक्षिक मनोविज्ञान के क्षेत्र से संबंधित नीचे दो कथन दिए गए हैं - (A) शिक्षक की अभिक्षमता एवं शिक्षण में किए गए किन्हीं भी नवाचारों के मापन, 'अधिगम प्रक्रिया के मूल्यांकन' में सम्मिलित किया जाता है। (B) 'अधिगम प्रक्रिया के मूल्यांकन' के अन्तर्गत, तत्काल प्रतिपुष्टि और परिणामों का ज्ञान शिक्षार्थी की प्रेरणा को बढ़ाता है। सही विकल्प का चयन कीजिए -",
+        "options": [
+            {
+                "id": 1,
+                "en": "Statement (A) is false but (B) is true",
+                "hi": "कथन (A) असत्य है, किन्तु (B) सत्य है"
+            },
+            {
+                "id": 2,
+                "en": "Both statements (A) and (B) are true",
+                "hi": "दोनों कथन (A) एवं (B) सत्य हैं"
+            },
+            {
+                "id": 3,
+                "en": "Both statements (A) and (B) are false",
+                "hi": "दोनों कथन (A) एवं (B) असत्य हैं"
+            },
+            {
+                "id": 4,
+                "en": "Statement (A) is true but (B) is false",
+                "hi": "कथन (A) सत्य है, किन्तु (B) असत्य है"
+            },
+            {
+                "id": 5,
+                "en": "Question not attempted",
+                "hi": "अनुत्तरित प्रश्न"
+            }
+        ]
+    }
+]

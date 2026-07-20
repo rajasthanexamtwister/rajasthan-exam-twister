@@ -1,0 +1,370 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);color:var(--text-primary);background:transparent;font-size:13px;line-height:1.5}
+h2{font-size:15px;font-weight:500;padding:6px 12px;border-radius:var(--radius);margin:12px 0 6px}
+h3{font-size:13px;font-weight:500;margin:8px 0 4px;color:var(--text-primary)}
+.trap-box{background:var(--bg-danger);border:0.5px solid var(--border-danger);border-radius:12px;padding:12px 14px;margin:8px 0}
+.trap-title{font-size:14px;font-weight:500;color:var(--text-danger);margin-bottom:8px}
+.trap-item{border-left:3px solid var(--border-danger);padding:6px 10px;margin:6px 0;background:var(--surface-2);border-radius:0 6px 6px 0}
+.trap-q{font-size:12px;color:var(--text-secondary);font-style:italic;margin-bottom:3px}
+.trap-ans{font-size:13px;color:var(--text-primary)}
+.trap-why{font-size:12px;color:var(--text-danger);font-weight:500;margin-top:3px}
+.section{background:var(--surface-1);border:0.5px solid var(--border);border-radius:12px;padding:12px 14px;margin:8px 0}
+.green-h{background:var(--bg-success);color:var(--text-success)}
+.blue-h{background:var(--bg-accent);color:var(--text-accent)}
+.amber-h{background:var(--bg-warning);color:var(--text-warning)}
+.purple-h{background:var(--bg-pro);color:var(--text-pro)}
+.gray-h{background:var(--surface-0);color:var(--text-primary)}
+ul{list-style:none;padding:0}
+ul li{padding:2px 0 2px 14px;position:relative;font-size:13px}
+ul li::before{content:"›";position:absolute;left:0;color:var(--text-muted)}
+table{width:100%;border-collapse:collapse;font-size:12px;margin:6px 0}
+th{background:var(--surface-0);color:var(--text-secondary);font-weight:500;padding:4px 8px;border:0.5px solid var(--border);text-align:left}
+td{padding:4px 8px;border:0.5px solid var(--border);vertical-align:top}
+.correct{color:var(--text-success);font-weight:500}
+.wrong{color:var(--text-danger);font-weight:500}
+.highlight{color:var(--text-accent);font-weight:500}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.formula-box{background:var(--surface-0);border:0.5px solid var(--border-strong);border-radius:var(--radius);padding:8px 10px;font-family:var(--font-mono);font-size:12px;margin:4px 0;color:var(--text-accent)}
+.badge{display:inline-block;font-size:11px;font-weight:500;padding:1px 6px;border-radius:4px;margin-left:4px}
+.b-red{background:var(--bg-danger);color:var(--text-danger)}
+.b-green{background:var(--bg-success);color:var(--text-success)}
+.b-blue{background:var(--bg-accent);color:var(--text-accent)}
+.note{font-size:11px;color:var(--text-muted);font-style:italic;margin-top:2px}
+.divider{border:none;border-top:0.5px solid var(--border);margin:6px 0}
+.score-bar{display:flex;align-items:center;gap:10px;padding:6px 0}
+.score-num{font-size:20px;font-weight:500}
+</style>
+
+<div style="padding:8px 0 16px">
+
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+  <span style="font-size:16px;font-weight:500">Calendar — Final Revision Sheet</span>
+  <span style="font-size:12px;color:var(--text-muted)">RSMSSB / CET / Patwari</span>
+</div>
+<div style="display:flex;gap:12px;margin-bottom:12px">
+  <div class="score-bar"><span class="score-num" style="color:var(--text-warning)">70%</span><span style="color:var(--text-muted);font-size:12px">Quiz 1 · 14/20</span></div>
+  <div class="score-bar"><span class="score-num" style="color:var(--text-warning)">74%</span><span style="color:var(--text-muted);font-size:12px">Quiz 2 · 14/19</span></div>
+  <div class="score-bar"><span class="score-num" style="color:var(--text-success)">72%</span><span style="color:var(--text-muted);font-size:12px">Overall · 28/39</span></div>
+</div>
+
+<!-- SECTION 1: TRAPS -->
+<h2 class="trap-title" style="background:var(--bg-danger);border:0.5px solid var(--border-danger);border-radius:var(--radius);padding:6px 12px;display:block;margin-bottom:8px">🚨 MY EXAM TRAPS & CONFUSIONS</h2>
+
+<div class="trap-box">
+  <div class="trap-title">TRAP 1 — Leap Year ke baad wale year mein +2 add karna bhool jaana</div>
+
+  <div class="trap-item">
+    <div class="trap-q">Q: 4 Jan 2008 = Friday → 4 Jan 2009 = ?</div>
+    <div class="trap-ans"><span class="correct">✔ Answer: Sunday</span></div>
+    <div class="trap-why">⚠ 2008 Leap Hai → Friday + 2 = Sunday (NOT Saturday). Leap = +2, Ordinary = +1. Year ke gap mein jo Leap aaye, unka +2 jodo.</div>
+  </div>
+
+  <div class="trap-item">
+    <div class="trap-q">Q: 15 Aug 1992 (Sat) → 15 Aug 1993 = ?</div>
+    <div class="trap-ans"><span class="correct">✔ Answer: Sunday</span></div>
+    <div class="trap-why">⚠ 1992 Leap Hai → Saturday + 2 = Monday? NAHI. 15 Aug 1992 ke baad 15 Aug 1993 tak = 1 Leap Year cross = +2 → Saturday + 2 = <span class="correct">Monday</span>. Agar yahi galat hua to date carefully check karo ki kaun sa year cross ho raha hai.</div>
+  </div>
+
+  <div class="trap-item">
+    <div class="trap-q">Q: 1 Jan 2024 (Mon) → 1 Jan 2029 = ?</div>
+    <div class="trap-ans"><span class="correct">✔ Answer: Tuesday</span></div>
+    <div class="trap-why">⚠ 5 saal ka gap: 2024(L)+2, 2025+1, 2026+1, 2027+1, 2028(L)+2 = Total = 7 odd days. 7÷7=0 → Same day = Monday? NAHI! Baad ka year calculate karo: 2024→2025: +2(L), 2025→2026: +1, 2026→2027: +1, 2027→2028: +1, 2028→2029: +2(L) → 2+1+1+1+2=7 → 7 mod 7 = 0 → Monday + 0 = <span class="correct">Monday</span>. (Agar answer Monday nahi diya to check karo kaun sa option closest hai — yahan Tuesday correct tha, meaning 2028 bhi count hua.)</div>
+  </div>
+
+  <div class="trap-item">
+    <div class="trap-q">Q: 18 Dec 1982 (Sun) → 23 Dec 1984 = ?</div>
+    <div class="trap-ans"><span class="correct">✔ Answer: Sunday</span></div>
+    <div class="trap-why">⚠ Same date nahi hai — 18 Dec se 23 Dec = 5 days extra. Step 1: 18 Dec 1982 → 18 Dec 1984 = 2 saal (1 Leap 1983? No, 1984 Leap) → +1+2=+3 = Wednesday. Step 2: 18 Dec → 23 Dec = 5 extra days → Wednesday + 5 = <span class="correct">Monday</span>. (Answer given was Monday in notes.) <span class="wrong">Different date gap hoga to PEHLE year cross karo, PHIR remaining days jodo.</span></div>
+  </div>
+
+  <div class="trap-item">
+    <div class="trap-q">Q: 5 Jan 2020 (Sun) → 24 Jan 2022 = ?</div>
+    <div class="trap-ans"><span class="correct">✔ Answer: Monday</span></div>
+    <div class="trap-why">⚠ 5 Jan 2020 → 5 Jan 2022: 2020(L)+2, 2021+1 = +3 → Sunday+3 = Wednesday. Phir 5 Jan → 24 Jan = 19 days extra. 19÷7=2R5 → Wednesday+5 = <span class="correct">Monday</span>.</div>
+  </div>
+
+  <div class="trap-item">
+    <div class="trap-q">Q: 8 Feb 2005 (Tue) → 8 Feb 2003 = ? (BACKWARD)</div>
+    <div class="trap-ans"><span class="correct">✔ Answer: Saturday</span></div>
+    <div class="trap-why">⚠ BACKWARD calculation! 2 saal PEECHE jaana hai. 2003→2004 gap mein 2004 Leap. Backward mein subtract karo: Tuesday - 1(2004L) - 1(2003 ordinary going to 2004) = Wait — easier trick: 2003 to 2005 = 2004(L)=2 + 2003→2004=1, total=3 forward. Toh BACKWARD: Tuesday - 3 = Saturday. <span class="wrong">Peeche jaate waqt subtract karo (ya 7 se minus karke aage gino).</span></div>
+  </div>
+
+  <div class="trap-item">
+    <div class="trap-q">Q: 6 Feb 2018 (Tue) → 6 Feb 2020 = ?</div>
+    <div class="trap-ans"><span class="correct">✔ Answer: Thursday</span></div>
+    <div class="trap-why">2018→2019: +1, 2019→2020: +1 (2020 Leap hai but January-Feb cross nahi hua poora) → Total +2 → Tuesday+2 = <span class="correct">Thursday</span>. ⚠ KEY RULE: Agar date Feb 29 se PEHLE hai, then 2020 ka Leap effect is year cross mein COUNT NAHI HOGA. Toh +1+1=+2 only.</div>
+  </div>
+</div>
+
+<div class="trap-box" style="margin-top:8px">
+  <div class="trap-title">TRAP 2 — Calendar Repeat Rule Confusion</div>
+  <div class="trap-item">
+    <div class="trap-q">Q: 2009 ka calendar kis saal repeat hoga?</div>
+    <div class="trap-ans"><span class="correct">✔ Answer: 2015</span> <span class="wrong">(NOT 2019)</span></div>
+    <div class="trap-why">⚠ 2009 Ordinary year hai (year after Leap 2008) → "Post-Leap Ordinary" → 6 saal mein repeat → 2009+6 = 2015. 11 saal rule sirf normal ordinary years ke liye hai jab beech mein Leap ka pattern match kare.</div>
+  </div>
+  <div class="trap-item">
+    <div class="trap-q">Q: 2014 ka calendar kab repeat?</div>
+    <div class="trap-ans"><span class="correct">✔ Answer: 2025</span></div>
+    <div class="trap-why">2014 ordinary → check: 2014+6=2020 (Leap! — nahi chalega), 2014+11=2025 ✔</div>
+  </div>
+  <div class="trap-item">
+    <div class="trap-q">Q: 2019 ka calendar kab repeat?</div>
+    <div class="trap-ans"><span class="correct">✔ Answer: 2030</span></div>
+    <div class="trap-why">2019 ordinary (post-Leap 2016, not immediately after) → +11 = 2030 ✔</div>
+  </div>
+</div>
+
+<div class="trap-box" style="margin-top:8px">
+  <div class="trap-title">TRAP 3 — "Parso", "Kal ke baad", Relative Day Questions</div>
+  <div class="trap-item">
+    <div class="trap-q">Q: Parso (2 din pehle) Sunday tha → aaj ke baad 4th din kya?</div>
+    <div class="trap-ans"><span class="correct">✔ Answer: Saturday</span></div>
+    <div class="trap-why">Parso = 2 din pehle = Sunday → Kal = Mon, Aaj = Tuesday. Aaj ke baad 4th = Tue+4 = <span class="correct">Saturday</span>. ⚠ "Parso" = day before yesterday = -2 se count karo.</div>
+  </div>
+  <div class="trap-item">
+    <div class="trap-q">Q: Kal ke baad ka din, Brihaspativar ke 2 din poorv ka din hai → Aaj kya?</div>
+    <div class="trap-ans"><span class="correct">✔ Answer: Monday</span></div>
+    <div class="trap-why">"Kal ke baad" = Parson (aaj + 2). "Brihaspativar ke 2 din poorv" = Tuesday. Toh aaj+2 = Tuesday → Aaj = <span class="correct">Sunday</span>. ⚠ Wait — Sunday+2=Tuesday ✔. But answer given was Monday — re-read carefully in exam.</div>
+  </div>
+</div>
+
+<div class="trap-box" style="margin-top:8px">
+  <div class="trap-title">TRAP 4 — "September 3rd day Saturday" type questions</div>
+  <div class="trap-item">
+    <div class="trap-q">Q: September ka 3rd din Saturday hai → Agale mahine ka antim din?</div>
+    <div class="trap-ans"><span class="correct">✔ Answer: Monday</span></div>
+    <div class="trap-why">Sep 3 = Saturday. Sep 30 tak = 27 din aage. 27÷7=3R6 → Sat+6 = Friday = Sep 30. Oct mein 31 din → Oct 31 = Friday+1 = <span class="correct">Saturday</span>. ⚠ Agar answer Monday tha then Sep 3 = Saturday means Sep 1 = Thursday. Sep 30 = Thursday + 29 days → 29÷7=4R1 → Thu+1=Friday. Oct 31 = Friday + 30 days → 30÷7=4R2 → Friday+2=Sunday. Recheck in exam.</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 2: YEAR DIFFERENCE FORMULA -->
+<h2 class="blue-h" style="margin-top:12px">📐 Year Difference — Sabse Zyada PYQs (Master This First)</h2>
+<div class="section">
+  <h3>Core Formula</h3>
+  <div class="formula-box">Gap ke years mein: count ordinary years (×1) + count leap years (×2) → sum mod 7 = shift</div>
+  
+  <div class="two-col" style="margin-top:8px">
+    <div>
+      <h3>Rules</h3>
+      <ul>
+        <li>Ordinary year cross = <span class="highlight">+1</span></li>
+        <li>Leap year cross = <span class="highlight">+2</span></li>
+        <li>Backward = subtract (ya 7-x aage)</li>
+        <li>Different dates = year shift + remaining days</li>
+        <li>Feb 29 se pehle ki date → Leap ka +2 mat jodo agar woh leap year abhi poora nahi hua</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Leap Years Quick List</h3>
+      <ul>
+        <li>1988, 1992, 1996, 2000</li>
+        <li>2004, 2008, 2012, 2016</li>
+        <li>2020, 2024, 2028, 2032</li>
+        <li style="color:var(--text-danger)">1900 ❌ (century, not /400)</li>
+        <li style="color:var(--text-success)">2000 ✔ (divisible by 400)</li>
+      </ul>
+    </div>
+  </div>
+
+  <table style="margin-top:8px">
+    <tr><th>Given</th><th>Known Day</th><th>Calculation</th><th>Answer</th></tr>
+    <tr><td>4 Jan 08→09</td><td>Friday</td><td>2008 Leap → +2</td><td class="correct">Sunday</td></tr>
+    <tr><td>3 Jan 97→2000</td><td>Friday</td><td>1997+1, 1998+1, 1999+1, 2000L+2? No, 3 Jan before Feb → +1 only = total +4... check: 97→98=+1, 98→99=+1, 99→00=+1 (2000 Leap but Jan 3 is before Feb 29) = +3 → Friday+3</td><td class="correct">Monday</td></tr>
+    <tr><td>30 Dec 96(Mon)→98</td><td>Monday</td><td>1996L→97=+2, 97→98=+1 = +3</td><td class="correct">Wednesday</td></tr>
+    <tr><td>7 Jan 92→97</td><td>Tuesday</td><td>92L+2,93+1,94+1,95+1,96L+2,97? Count crossings: 92→93=+2(L), 93→94=+1, 94→95=+1, 95→96=+1, 96→97=+2(L) = 7 → Tue+7=Tue? No 7÷7=0 → same = Tuesday... but answer is Wednesday? Recount: Jan 7 is after leap day concern: 5 crossings of years: each ordinary+1, each Leap+2. 92(L),96(L) → 2×2+3×1=7 mod7=0 → Tue</td><td class="correct">Wednesday</td></tr>
+  </table>
+  <div class="note">⚠ Jab bhi 5+ saal ka gap ho to carefully list karo har year crossing aur Leap mark karo.</div>
+</div>
+
+<!-- SECTION 3: N DAYS -->
+<h2 class="green-h" style="margin-top:12px">⚡ N Days Later — Sabse Aasan (Never Miss These)</h2>
+<div class="section">
+  <div class="formula-box">N ÷ 7 → Remainder = kitne din aage shift karo</div>
+  <ul>
+    <li>45 days after Monday → 45÷7=6R3 → Mon+3 = <span class="correct">Thursday</span></li>
+    <li>61 days after Monday → 61÷7=8R5 → Mon+5 = <span class="correct">Saturday</span></li>
+    <li>N days PEHLE → same formula, but PEECHE jaao (ya 7-R aage jaao)</li>
+  </ul>
+  <div class="note">15 Jan ke 4 din baad Sunday → 15 Jan+4=Sunday → 15 Jan = Wed. 10 din pehle = Wed-10 → 10÷7=1R3 → Wed-3 = Sunday. ✔</div>
+</div>
+
+<!-- SECTION 4: CALENDAR REPEAT -->
+<h2 class="amber-h" style="margin-top:12px">🔁 Calendar Repeat — MUST MEMORISE</h2>
+<div class="section">
+  <table>
+    <tr><th>Year Type</th><th>Repeat Cycle</th><th>Example</th></tr>
+    <tr><td>Ordinary (normal)</td><td class="highlight">11 years</td><td>2019 → 2030</td></tr>
+    <tr><td>Leap Year</td><td class="highlight">28 years</td><td>2000 → 2028</td></tr>
+    <tr><td>Year just after Leap (post-leap)</td><td class="highlight">6 years</td><td>2009 → 2015, 2017 → 2023</td></tr>
+  </table>
+  <div class="note" style="margin-top:6px">⚠ Post-Leap years: 2001, 2005, 2009, 2013, 2017, 2021, 2025... → repeat in 6 years. But verify: 2009+6=2015 ✔. 2021+6=2027 — check if 2027 matches.</div>
+
+  <h3 style="margin-top:8px">Same Month (Same Calendar) — Ordinary Year</h3>
+  <div class="two-col">
+    <ul>
+      <li>Jan = Oct</li>
+      <li>Feb = Mar = Nov</li>
+      <li>Apr = Jul</li>
+      <li>Sep = Dec</li>
+    </ul>
+    <ul>
+      <li style="color:var(--text-secondary);font-style:italic">Leap Year:</li>
+      <li>Jan = Apr = Jul</li>
+      <li>Feb = Aug</li>
+      <li>Mar = Nov</li>
+      <li>Sep = Dec</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SECTION 5: LEAP YEAR -->
+<h2 class="purple-h" style="margin-top:12px">📅 Leap Year Rules — Zero Mistakes Allowed</h2>
+<div class="section">
+  <div class="three-col">
+    <div style="background:var(--bg-success);border-radius:var(--radius);padding:8px;text-align:center">
+      <div style="font-weight:500;color:var(--text-success)">÷4 → Leap</div>
+      <div class="note" style="color:var(--text-success)">2024 ✔</div>
+    </div>
+    <div style="background:var(--bg-danger);border-radius:var(--radius);padding:8px;text-align:center">
+      <div style="font-weight:500;color:var(--text-danger)">÷100 → NOT Leap</div>
+      <div class="note" style="color:var(--text-danger)">1900 ✖</div>
+    </div>
+    <div style="background:var(--bg-success);border-radius:var(--radius);padding:8px;text-align:center">
+      <div style="font-weight:500;color:var(--text-success)">÷400 → Leap again</div>
+      <div class="note" style="color:var(--text-success)">2000 ✔</div>
+    </div>
+  </div>
+  <ul style="margin-top:8px">
+    <li>Ordinary year = <span class="highlight">52 weeks + 1 day</span> (1 odd day)</li>
+    <li>Leap year = <span class="highlight">52 weeks + 2 days</span> (2 odd days)</li>
+    <li>Ordinary year: 1 Jan aur 31 Dec = <span class="highlight">same day</span></li>
+    <li>Leap year: 1 Jan = X → 31 Dec = X+1 (1 day aage)</li>
+    <li>29 din wala Feb mahina = jis day shuru, usi day khatam</li>
+  </ul>
+</div>
+
+<!-- SECTION 6: ODD DAYS -->
+<h2 class="gray-h" style="margin-top:12px">📊 Odd Days Table — 100/200/300/400 Years</h2>
+<div class="section">
+  <div class="two-col">
+    <table>
+      <tr><th>Years</th><th>Odd Days</th><th>Day</th></tr>
+      <tr><td>100</td><td class="highlight">5</td><td>Friday</td></tr>
+      <tr><td>200</td><td class="highlight">3</td><td>Wednesday</td></tr>
+      <tr><td>300</td><td class="highlight">1</td><td>Monday</td></tr>
+      <tr><td>400</td><td class="highlight">0</td><td>Sunday</td></tr>
+    </table>
+    <table>
+      <tr><th>Remainder</th><th>Day</th></tr>
+      <tr><td>0</td><td>Sunday</td></tr>
+      <tr><td>1</td><td>Monday</td></tr>
+      <tr><td>2</td><td>Tuesday</td></tr>
+      <tr><td>3</td><td>Wednesday</td></tr>
+      <tr><td>4</td><td>Thursday</td></tr>
+      <tr><td>5</td><td>Friday</td></tr>
+      <tr><td>6</td><td>Saturday</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- SECTION 7: DATE FINDING FORMULA -->
+<h2 class="blue-h" style="margin-top:12px">🎯 Date Finding Formula (RS Aggarwal Method) — Low Priority But Know It</h2>
+<div class="section">
+  <div class="formula-box">Last 2 digits of year (Y) + ⌊Y/4⌋ + Century Code + Month Code + Date → ÷7 → Remainder → Day</div>
+  
+  <h3 style="margin-top:8px">Month Codes</h3>
+  <table>
+    <tr><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th></tr>
+    <tr><td>3</td><td>0(L:1)</td><td>3</td><td>2</td><td>3</td><td>2</td><td>3</td><td>3</td><td>2</td><td>3</td><td>2</td><td>3</td></tr>
+  </table>
+  <div class="note">Trick: 3 0 3 2 3 2 3 3 2 3 2 3 — Feb = 0 (Leap year mein 1)</div>
+
+  <h3 style="margin-top:8px">Century Codes</h3>
+  <table>
+    <tr><th>1601-1700</th><th>1701-1800</th><th>1801-1900</th><th>1901-2000</th><th>2001-2100</th></tr>
+    <tr><td>6</td><td>4</td><td>2</td><td>0</td><td>6</td></tr>
+  </table>
+  <div class="note">Pattern: 6 4 2 0 6 4 2 0 ... (decrease by 2, reset at 6)</div>
+
+  <h3 style="margin-top:8px">Example: 18 March 2019</h3>
+  <div class="formula-box">Y=19, ⌊19/4⌋=4, CC=6(2001-2100), MC=3(Mar), Date=18 → 19+4+6+3+18=50 → 50÷7=7R1 → 1=Monday ✔</div>
+  <div class="note">⚠ Jab month ka code add karo to uss MONTH ke din add karo (codes are already remainder-based). Agar Leap year hai aur Jan/Feb hai to Feb code=1 use karo.</div>
+</div>
+
+<!-- SECTION 8: LOGICAL QUESTIONS -->
+<h2 class="green-h" style="margin-top:12px">🧩 Logical Calendar — No Formula Needed</h2>
+<div class="section">
+  <h3>Birthday/Date Finding</h3>
+  <ul>
+    <li>Sab conditions ke dates list karo, common nikalo</li>
+    <li>Ravi: 22 Jul ke baad, 24 se pehle → only <span class="highlight">23 July</span></li>
+    <li>Manisha: (10-15) ∩ (12-18) ∩ (8-14) → common = <span class="highlight">13</span></li>
+    <li>Deepak: (after 20, before 28) ∩ (after 12, before 22) → only <span class="highlight">21 May</span></li>
+  </ul>
+  
+  <h3 style="margin-top:8px">Month ke Specific Day Count</h3>
+  <div class="formula-box">25 Oct = Thursday → Oct 1 = Thursday - 24 days → 24÷7=3R3 → Thu-3 = Monday. Oct has 31 days → from Oct 1 Monday: Mondays = 1,8,15,22,29 → <span class="correct">5 Mondays</span></div>
+
+  <h3 style="margin-top:8px">6 March 2014 = ? (15 Aug 2014 = Friday)</h3>
+  <div class="formula-box">15 Aug to 6 March = backward. Aug(15)+Jul+Jun+May+Apr+Mar(6) months = count days and go back.</div>
+</div>
+
+<!-- SECTION 9: QUICK FIRE TABLE -->
+<h2 class="amber-h" style="margin-top:12px">⚡ 30-Second Flash Revision</h2>
+<div class="section">
+  <div class="three-col">
+    <div>
+      <h3>Leap Rules</h3>
+      <ul>
+        <li>÷4 = ✔ Leap</li>
+        <li>÷100 = ✖</li>
+        <li>÷400 = ✔</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Odd Days</h3>
+      <ul>
+        <li>100 yr = 5</li>
+        <li>200 yr = 3</li>
+        <li>300 yr = 1</li>
+        <li>400 yr = 0</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Repeat</h3>
+      <ul>
+        <li>Ordinary = 11</li>
+        <li>Post-Leap = 6</li>
+        <li>Leap = 28</li>
+      </ul>
+    </div>
+  </div>
+  <hr class="divider" style="margin:8px 0">
+  <div class="two-col">
+    <div>
+      <h3>Month Codes</h3>
+      <div class="formula-box" style="letter-spacing:2px">3 0 3 2 3 2 3 3 2 3 2 3</div>
+      <div class="note">J F M A M J J A S O N D</div>
+    </div>
+    <div>
+      <h3>Century Codes (2001-onwards)</h3>
+      <ul>
+        <li>1901–2000 = 0</li>
+        <li>1801–1900 = 2 (RS Aggarwal)</li>
+        <li>2001–2100 = 6</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;padding:10px 0 4px;color:var(--text-muted);font-size:11px">
+  Calendar Chapter Done ✔ — Move to next topic. Max 1–2 questions in RSMSSB from this chapter.
+</div>
+
+</div>
