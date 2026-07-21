@@ -1,543 +1,782 @@
-
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DCCN — मास्टर रिवीज़न हैंडबुक</title>
 <style>
-:root {
-  --font-sans: 'Inter', sans-serif;
-  --color-background-primary: #ffffff;
-  --color-background-secondary: #FFF8F0;
-  --color-border-primary: #1A2744;
-  --color-border-secondary: #E5E9F2;
-  --color-border-tertiary: #E5E9F2;
-  --color-text-primary: #1A2744;
-  --color-text-secondary: #6b7a99;
-  --color-text-tertiary: #a3b1cc;
-  --border-radius-md: 10px;
-  --border-radius-lg: 14px;
-  
-  --color-background-danger: #fee2e2;
-  --color-border-danger: #fca5a5;
-  --color-text-danger: #dc2626;
-
-  --color-background-success: #dcfce7;
-  --color-border-success: #86efac;
-  --color-text-success: #16a34a;
-
-  --color-background-warning: #fef3c7;
-  --color-border-warning: #fde047;
-  --color-text-warning: #d97706;
-
-  --color-background-info: #e0f2fe;
-  --color-border-info: #7dd3fc;
-  --color-text-info: #0369a1;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans)}
-.wrap{padding:8px 0 24px}
-.tabs{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;position:sticky;top:0;background:var(--color-background-primary);padding:8px 0;z-index:10;border-bottom:0.5px solid var(--color-border-tertiary)}
-.tab{padding:5px 11px;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);font-size:11.5px;cursor:pointer;background:var(--color-background-secondary);color:var(--color-text-secondary);white-space:nowrap}
-.tab.on{background:#1A237E;color:#fff;border-color:#1A237E}
-.sec{display:none}.sec.on{display:block}
-.trap{background:#FFF3E0;border-left:3px solid #E65100;padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:8px}
-.trap-title{font-size:12px;font-weight:500;color:#E65100;margin-bottom:3px}
-.trap-body{font-size:12px;color:#4E342E;line-height:1.6}
-.shead{font-size:14px;font-weight:500;color:var(--color-text-primary);margin:12px 0 7px;padding-bottom:5px;border-bottom:0.5px solid var(--color-border-secondary)}
-.defbox{background:var(--color-background-secondary);border-left:3px solid #1565C0;padding:9px 12px;border-radius:0 8px 8px 0;margin-bottom:8px;font-size:12px;color:var(--color-text-primary);line-height:1.6}
-.defbox b{color:#1565C0;font-weight:500}
-.mcq{background:#E8EAF6;border-left:3px solid #3949AB;padding:8px 12px;border-radius:0 8px 8px 0;margin-bottom:8px;font-size:11.5px;color:#1A237E;line-height:1.6}
-table{width:100%;border-collapse:collapse;font-size:11.5px;margin-bottom:10px}
-th{background:#283593;color:#fff;padding:5px 7px;text-align:left;font-weight:500;font-size:11px}
-td{padding:4px 7px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary);vertical-align:top;line-height:1.5}
-tr:nth-child(even) td{background:var(--color-background-secondary)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
-.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:10px 12px}
-.card-title{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:5px}
-ul{padding-left:16px}
-li{font-size:11.5px;color:var(--color-text-primary);line-height:1.7}
-.badge{display:inline-block;padding:1px 7px;border-radius:20px;font-size:10.5px;font-weight:500;margin:1px}
-.b-blue{background:#E3F2FD;color:#0D47A1}
-.b-green{background:#E8F5E9;color:#1B5E20}
-.b-orange{background:#FFF3E0;color:#E65100}
-.b-red{background:#FFEBEE;color:#B71C1C}
-.b-purple{background:#F3E5F5;color:#4A148C}
-.b-teal{background:#E0F7FA;color:#006064}
-.port-row{display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:11.5px}
-.port-num{background:#283593;color:#fff;padding:2px 8px;border-radius:4px;font-size:11px;min-width:40px;text-align:center;font-weight:500}
-.port-name{color:var(--color-text-primary);flex:1}
-.port-use{color:var(--color-text-secondary);font-size:11px}
-.layer-row{display:flex;align-items:center;gap:6px;margin-bottom:4px}
-.layer-num{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:#fff;flex-shrink:0}
-.layer-info{font-size:11.5px;color:var(--color-text-primary);line-height:1.5}
-.note{background:var(--color-background-secondary);border-left:2px solid #00695C;padding:6px 10px;border-radius:0 6px 6px 0;font-size:11px;color:var(--color-text-secondary);margin-bottom:6px;line-height:1.5}
-</style>
-
-<div class="wrap">
-<h2 class="sr-only">DCCN Final Bug-Free Revision Sheet for RSMSSB Computer Instructor Exam</h2>
-
-<div class="tabs" id="tabs">
-  <button class="tab on" onclick="show(0)">Traps</button>
-  <button class="tab" onclick="show(1)">OSI Model</button>
-  <button class="tab" onclick="show(2)">TCP/IP Model</button>
-  <button class="tab" onclick="show(3)">Protocols & Ports</button>
-  <button class="tab" onclick="show(4)">IP Addressing</button>
-  <button class="tab" onclick="show(5)">Network Devices</button>
-  <button class="tab" onclick="show(6)">Transmission Media</button>
-  <button class="tab" onclick="show(7)">Networks & Topology</button>
-  <button class="tab" onclick="show(8)">MCQ Flash</button>
-</div>
-
-<div id="s0" class="sec on">
-  <div class="shead">Exam Traps & Confusions — Rajasthan BCI PYQ based</div>
-
-  <div class="trap">
-    <div class="trap-title">Trap 1 — IPv4 Packet with IHL = 2 (8 bytes)</div>
-    <div class="trap-body">IPv4 header ki minimum length = <b>20 bytes</b> (IHL = 5). Agar IHL = 2 given ho (8 bytes), toh receiver packet ko <b>Reject (Discard)</b> karega. Answer hoga — "receiver rejects the packet" — not "hops = 2".</div>
-  </div>
-
-  <div class="trap">
-    <div class="trap-title">Trap 2 — Checksum ka kaam</div>
-    <div class="trap-body">Checksum sirf <b>Error Detection</b> karta hai — Error Correction NAHI. CRC bhi sirf Detection. ARQ/Hamming Code = Correction. Yeh confusion bahut common hai.</div>
-  </div>
-
-  <div class="trap">
-    <div class="trap-title">Trap 3 — Firewall (Network Layer) = Packet Filter</div>
-    <div class="trap-body">Network Layer Firewall content nahi padhta — sirf <b>IP Address aur Port Number</b> pe packet filter karta hai. Content inspection = Application Layer Firewall (WAF).</div>
-  </div>
-
-  <div class="trap">
-    <div class="trap-title">Trap 4 — MAC vs IP Address confusion</div>
-    <div class="trap-body"><b>MAC Address</b> = 48-bit (6 bytes) hexadecimal — NIC ka Physical/Hardware address. Pehle 3 bytes = OUI (Manufacturer). <b>IP Address</b> = Logical address (IPv4=32-bit, IPv6=128-bit). MAC change nahi hota, IP change ho sakta hai.</div>
-  </div>
-
-  <div class="trap">
-    <div class="trap-title">Trap 5 — WiFi vs WiMAX standard confusion</div>
-    <div class="trap-body"><b>WiFi</b> = IEEE 802.11 = Radio Waves = LAN. <b>WiMAX</b> = IEEE 802.16 = Spectrum = Broadband Wireless (MAN range). Exam mein "IEEE 803.16y" diya tha — yeh GALAT hai, sahi = <b>IEEE 802.16</b>.</div>
-  </div>
-
-  <div class="trap">
-    <div class="trap-title">Trap 6 — HTTP ka Email use nahi hota</div>
-    <div class="trap-body"><b>HTTP = Web pages only</b>. Email send = SMTP (Port 25). Email receive = POP3 (Port 110) ya IMAP (Port 143). HTTP email protocol NAHI hai — yeh answer galat option hai.</div>
-  </div>
-
-  <div class="trap">
-    <div class="trap-title">Trap 7 — Switch kya reduce karta hai?</div>
-    <div class="trap-body">Switch <b>Bandwidth</b> improve karta hai aur <b>Collision</b> bhi reduce karta hai (CSMA/CD se better). Notes mein Ans = (a) Bandwidth, lekin technically "Both (a) and (b)" sahi hota hai. BCI paper mein jo option zyada specific lage woh choose karo.</div>
-  </div>
-
-  <div class="trap">
-    <div class="trap-title">Trap 8 — LAN "Large Area Network" NAHI hai</div>
-    <div class="trap-body">LAN = <b>Local Area Network</b>. Patwar Exam 2025 mein "Large Area Network" option diya tha — yeh GALAT hai. Woh "not a type of network" option tha.</div>
-  </div>
-
-  <div class="trap">
-    <div class="trap-title">Trap 9 — OSI first layer (bottom) = Physical, NOT Application</div>
-    <div class="trap-body">OSI model: <b>Layer 1 = Physical</b> (lowest/first). Layer 7 = Application (topmost). Exam mein "first layer" puchha jata hai — always Physical Layer answer karo.</div>
-  </div>
-
-  <div class="trap">
-    <div class="trap-title">Trap 10 — PING uses ICMP, not TCP/UDP</div>
-    <div class="trap-body">PING = <b>ICMP</b> (Internet Control Message Protocol) Echo Request/Reply. Host alive check karna = PING command. Telnet = remote login, IPConfig = IP settings dekhna.</div>
-  </div>
-
-  <div class="trap">
-    <div class="trap-title">Trap 11 — Router kaunse OSI layer pe?</div>
-    <div class="trap-body">Router = <b>Network Layer (Layer 3)</b> = IP Address based. Switch/Bridge = Layer 2. HUB = Layer 1. Gateway = All 7 Layers. "Switch generally operates in Physical, Data Link and Network" — yeh Bridge ke baare mein galat likha tha notes mein. Switch = strictly Layer 2.</div>
-  </div>
-
-  <div class="trap">
-    <div class="trap-title">Trap 12 — Data Communication component mein Scanner NAHI hai</div>
-    <div class="trap-body">Data Communication ke 5 components: Message, Sender (Source), Medium (Transmission System), Receiver, Protocol. <b>Scanner is NOT a component</b> — Raj Police Telecom 2025 mein yeh trap tha.</div>
-  </div>
-</div>
-
-<div id="s1" class="sec">
-  <div class="shead">OSI Model — Open System Interconnection (ISO, 1984)</div>
-  <div class="defbox"><b>OSI = 7-layer Architecture Model</b> — ISO dwara 1984 mein design kiya. Yeh sirf Reference/Framework hai, actual protocol nahi. Computer ko aapas mein Transmit karne ki prakriya ko 7 layers mein define karta hai.</div>
-
-  <div class="note">Mnemonic: "All People Seem To Need Data Processing" (Layer 7 se 1 tak: Application → Physical)</div>
-
-  <table>
-    <tr><th>Layer No.</th><th>Layer Name</th><th>PDU</th><th>Device</th><th>Key Protocols</th><th>Kaam (1-liner)</th></tr>
-    <tr><td><span class="badge b-red">7</span> Application</td><td>Application Layer</td><td>Message/Data</td><td>Gateway</td><td>HTTP, HTTPS, FTP, SMTP, POP3, IMAP, DNS, Telnet</td><td>User interface — end-user aur N/W ke beech direct interface</td></tr>
-    <tr><td><span class="badge b-orange">6</span> Presentation</td><td>Presentation Layer</td><td>Message</td><td>Gateway</td><td>MPEG, MIDI, SSL, TLS, JPEG</td><td>Encryption/Decryption, Compression, Translation</td></tr>
-    <tr><td><span class="badge b-orange">5</span> Session</td><td>Session Layer</td><td>Message</td><td>Gateway</td><td>SYNCU, Socket, NetBIOS</td><td>Connection Establish, Termination, Dialog Control</td></tr>
-    <tr><td><span class="badge b-purple">4</span> Transport</td><td>Transport Layer</td><td>Segment (TCP) / Datagram (UDP)</td><td>Gateway</td><td>TCP, UDP</td><td>Process-to-process delivery, Segmentation, Flow & Error control</td></tr>
-    <tr><td><span class="badge b-blue">3</span> Network</td><td>Network Layer</td><td>Packet</td><td>Router</td><td>IP, ICMP, BGP, ARP</td><td>Logical Addressing, Routing, Packeting</td></tr>
-    <tr><td><span class="badge b-teal">2</span> Data Link</td><td>Data Link Layer</td><td>Frame</td><td>Switch, Bridge</td><td>SLIP, PPP, HDLC, IEEE 802.3</td><td>Error Detection/Correction, Media Access Control (MAC)</td></tr>
-    <tr><td><span class="badge b-green">1</span> Physical</td><td>Physical Layer</td><td>Bits</td><td>HUB, Repeater, Modem, NIC</td><td>Ethernet, ATM, Frame Relay</td><td>Electrical/Optical signals, Bit stream transmission</td></tr>
-  </table>
-
-  <div class="shead">Physical Layer — Detail (Handwritten Notes se)</div>
-  <div class="grid2">
-    <div class="card">
-      <div class="card-title">Physical Layer ke kaam</div>
-      <ul>
-        <li>Data Encoding</li>
-        <li>Bit Synchronization</li>
-        <li>Bit Rate Control</li>
-        <li>Encoding — Manchester, Differential Manchester</li>
-        <li>Transmission Medium — Wire based, Wireless</li>
-        <li>Line Configuration — Point-to-Point, Broadcast</li>
-        <li>Network Topologies define karna</li>
-        <li>Transmission Modes — Simplex, Half Duplex, Full Duplex</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title">Physical Layer components</div>
-      <ul>
-        <li>Cable, Repeater, HUB, Modem</li>
-        <li>Data Encoding = Digital data ko specific signal mein encode karna jisse Physical media pe transmit kiya ja sake</li>
-        <li>Bit Synchronization = Transmission rate align karna</li>
-        <li>Layer 1 = bits (0s and 1s)</li>
-        <li>Electrical/Optical/Mechanical interface define karta hai</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="shead">OSI Stack kaise kaam karta hai</div>
-  <div class="defbox"><b>Encapsulation (Sender side):</b> Layer 7 se Layer 1 tak — har layer apna Header add karta hai. <b>De-encapsulation (Receiver side):</b> Layer 1 se Layer 7 tak — har layer apna header remove karta hai. Data structure = Stack (LIFO — Last In First Out).</div>
-  <div class="mcq">MCQ: OSI N/w model works on which data structure? → <b>(b) Stack</b> (LIFO). PDU of Network Layer is called? → <b>Packet</b>. First layer of OSI? → <b>Physical (Layer 1)</b>.</div>
-</div>
-
-<div id="s2" class="sec">
-  <div class="shead">TCP/IP Model — DOD Model (Department of Defense)</div>
-  <div class="defbox"><b>TCP/IP = 4-layer model</b> (also called DOD Model). OSI se pehle aaya. Internet ka actual working model. ISO-OSI = theoretical, TCP/IP = practical.</div>
-
-  <table>
-    <tr><th>TCP/IP Layer</th><th>OSI Equivalent Layers</th><th>Protocols</th></tr>
-    <tr><td><b>Application Layer</b></td><td>Layer 7 + 6 + 5 (Application + Presentation + Session)</td><td>HTTP, HTTPS, FTP, SMTP, POP3, IMAP, DNS, Telnet, SNMP, DHCP</td></tr>
-    <tr><td><b>Transport Layer</b></td><td>Layer 4 (Transport)</td><td>TCP, UDP</td></tr>
-    <tr><td><b>Internet Layer</b></td><td>Layer 3 (Network)</td><td>IP, ICMP, ARP, RARP, BGP, OSPF</td></tr>
-    <tr><td><b>Network Access Layer</b> (Link Layer)</td><td>Layer 2 + 1 (Data Link + Physical)</td><td>Ethernet, Wi-Fi, PPP, Frame Relay</td></tr>
-  </table>
-
-  <div class="shead">TCP vs UDP — Most Important Comparison</div>
-  <table>
-    <tr><th>Feature</th><th>TCP</th><th>UDP</th></tr>
-    <tr><td>Full Form</td><td>Transmission Control Protocol</td><td>User Datagram Protocol</td></tr>
-    <tr><td>Type</td><td>Connection-Oriented</td><td>Connectionless</td></tr>
-    <tr><td>Reliability</td><td>Reliable (guaranteed delivery)</td><td>Unreliable (no guarantee)</td></tr>
-    <tr><td>Speed</td><td>Slower</td><td>Faster</td></tr>
-    <tr><td>Error Checking</td><td>Yes — Error detection + correction</td><td>Basic error detection only</td></tr>
-    <tr><td>Header Size</td><td>20-60 bytes</td><td>8 bytes (fixed)</td></tr>
-    <tr><td>PDU Name</td><td>Segment</td><td>Datagram</td></tr>
-    <tr><td>Flow Control</td><td>Yes</td><td>No</td></tr>
-    <tr><td>Use Cases</td><td>HTTP, HTTPS, FTP, SMTP, Email</td><td>Video streaming, Gaming, DNS, DHCP, VoIP</td></tr>
-    <tr><td>3-Way Handshake</td><td>Yes (SYN → SYN-ACK → ACK)</td><td>No</td></tr>
-  </table>
-
-  <div class="mcq">MCQ: TCP/IP model = <b>DOD Model</b> | TCP = reliable, connection-oriented | UDP = fast, connectionless | DHCP uses <b>UDP</b> at Transport Layer | Transport Layer = flow control + error-free delivery ensure karta hai (OSI Layer 4)</div>
-</div>
-
-<div id="s3" class="sec">
-  <div class="shead">Important Port Numbers — Exam Direct Questions</div>
-
-  <div class="port-row"><span class="port-num">20/21</span><span class="port-name">FTP (File Transfer Protocol)</span><span class="port-use">File transfer — Port 21=control, Port 20=data</span></div>
-  <div class="port-row"><span class="port-num">22</span><span class="port-name">SSH (Secure Shell)</span><span class="port-use">Secure remote access</span></div>
-  <div class="port-row"><span class="port-num">23</span><span class="port-name">Telnet</span><span class="port-use">Remote login (unsecure)</span></div>
-  <div class="port-row"><span class="port-num">25</span><span class="port-name">SMTP (Simple Mail Transfer Protocol)</span><span class="port-use">Email SEND karna — Push protocol</span></div>
-  <div class="port-row"><span class="port-num">53</span><span class="port-name">DNS (Domain Name System)</span><span class="port-use">Domain → IP resolution</span></div>
-  <div class="port-row"><span class="port-num">67/68</span><span class="port-name">DHCP</span><span class="port-use">Dynamic IP assignment (UDP)</span></div>
-  <div class="port-row"><span class="port-num">69</span><span class="port-name">TFTP</span><span class="port-use">Trivial File Transfer (UDP — unreliable)</span></div>
-  <div class="port-row"><span class="port-num">80</span><span class="port-name">HTTP (HyperText Transfer Protocol)</span><span class="port-use">Web pages — Unencrypted</span></div>
-  <div class="port-row"><span class="port-num">110</span><span class="port-name">POP3 (Post Office Protocol v3)</span><span class="port-use">Email RECEIVE karna (download)</span></div>
-  <div class="port-row"><span class="port-num">143</span><span class="port-name">IMAP (Internet Message Access Protocol)</span><span class="port-use">Email RECEIVE — server pe store rehti hai</span></div>
-  <div class="port-row"><span class="port-num">443</span><span class="port-name">HTTPS (HTTP Secure)</span><span class="port-use">Web — TLS/SSL encrypted</span></div>
-  <div class="port-row"><span class="port-num">3389</span><span class="port-name">RDP (Remote Desktop Protocol)</span><span class="port-use">Remote desktop access</span></div>
-
-  <div class="shead">Email Protocols — Exam Common</div>
-  <table>
-    <tr><th>Protocol</th><th>Port</th><th>Kaam</th><th>Type</th></tr>
-    <tr><td>SMTP</td><td>25</td><td>Email SEND karna</td><td>Push Protocol</td></tr>
-    <tr><td>POP3</td><td>110</td><td>Email download karna (server se delete)</td><td>Pull Protocol</td></tr>
-    <tr><td>IMAP</td><td>143</td><td>Email access karna (server pe rakho)</td><td>Pull Protocol</td></tr>
-  </table>
-  <div class="mcq">MCQ: Email bhejne ke liye = <b>SMTP</b> | Email receive = <b>POP3 or IMAP</b> | HTTP email protocol NAHI hai | FTP modes = Stream, Block, Compressed | Secure file transfer = <b>SSH (SFTP)</b> ya FTP/SFTP | Web page transfer = <b>HTTP</b></div>
-
-  <div class="shead">Other Important Protocols</div>
-  <div class="defbox"><b>ICMP</b> = Internet Control Message Protocol — PING utility use karta hai. Host alive hai ya nahi check karna.<br><b>ARP</b> = Address Resolution Protocol — IP se MAC address find karna.<br><b>RARP</b> = Reverse ARP — MAC se IP find karna.<br><b>NAT</b> = Network Address Translation — Private IP ko Public IP mein convert karna.<br><b>DNS</b> = Domain Name System — Domain name ko IP address mein convert karna.<br><b>DHCP</b> = Dynamic Host Configuration Protocol — Automatically IP assign karna (UDP use karta hai).</div>
-</div>
-
-<div id="s4" class="sec">
-  <div class="shead">IP Addressing</div>
-
-  <div class="shead" style="font-size:13px;border:none;padding:0;margin-top:6px">IPv4 vs IPv6</div>
-  <table>
-    <tr><th>Feature</th><th>IPv4</th><th>IPv6</th></tr>
-    <tr><td>Address Size</td><td><b>32 bits</b> (4 octets)</td><td><b>128 bits</b></td></tr>
-    <tr><td>Notation</td><td>Dotted Decimal (192.168.1.1)</td><td>Hexadecimal colon (:) separated</td></tr>
-    <tr><td>Header Size</td><td>20-60 bytes (variable)</td><td>40 bytes (fixed)</td></tr>
-    <tr><td>Total Addresses</td><td>2³² ≈ 4.3 billion</td><td>2¹²⁸ (virtually unlimited)</td></tr>
-    <tr><td>Separator</td><td>Dot (.)</td><td>Colon (:)</td></tr>
-    <tr><td>Checksum</td><td>Yes (in header)</td><td>No (removed for efficiency)</td></tr>
-  </table>
-
-  <div class="shead" style="font-size:13px;border:none;padding:0;margin-top:6px">IPv4 Address Classes</div>
-  <table>
-    <tr><th>Class</th><th>First Octet Range</th><th>Default Subnet Mask</th><th>Use</th></tr>
-    <tr><td><span class="badge b-green">A</span></td><td>0 – 127</td><td>255.0.0.0 (/8)</td><td>Large networks</td></tr>
-    <tr><td><span class="badge b-blue">B</span></td><td>128 – 191</td><td>255.255.0.0 (/16)</td><td>Medium networks</td></tr>
-    <tr><td><span class="badge b-orange">C</span></td><td>192 – 223</td><td>255.255.255.0 (/24)</td><td>Small networks</td></tr>
-    <tr><td><span class="badge b-purple">D</span></td><td>224 – 239</td><td>—</td><td>Multicast</td></tr>
-    <tr><td><span class="badge b-red">E</span></td><td>240 – 255</td><td>—</td><td>Experimental/Reserved</td></tr>
-  </table>
-
-  <div class="defbox"><b>Class B starting address = 128.0.0.0</b> | Valid Class B = 130.130.255.20 | 10.x.x.x = Class A | 195.x.x.x = Class C | 229.x.x.x = Class D (Multicast)<br><b>Loopback = 127.0.0.1</b> (ping yourself — host alive test)<br><b>IPv4 IPv6 IP separator = Decimal (dot .) </b></div>
-
-  <div class="shead" style="font-size:13px;border:none;padding:0;margin-top:6px">Subnet Mask</div>
-  <div class="defbox"><b>Subnet Mask</b> = IP address ka Network portion identify karna. 255.255.0.0 = Class B default. 192.168.10.51 ka Network ID = <b>192.168.10</b> (Class C ke hisaab se). <br><b>NAT</b> = Private IP → Public IP mein translate karna. <b>CIDR</b> = Classless Inter-Domain Routing — available IP addresses badhana (address class eliminate karke).</div>
-
-  <div class="mcq">MCQ: IPv4 = <b>32 bits</b> | IPv6 = <b>128 bits</b> | Class B starts from <b>128.0.0.0</b> | Class B valid = <b>130.130.255.20</b> | IPv4 min header = <b>20 bytes</b> | IHL=2 means 8 bytes = INVALID → packet <b>Rejected</b> | Internet pe computer identify karna = <b>IP Address</b></div>
-</div>
-
-<div id="s5" class="sec">
-  <div class="shead">Network Devices — OSI Layer Summary</div>
-  <table>
-    <tr><th>Device</th><th>OSI Layer</th><th>PDU</th><th>Intelligence</th><th>Key Feature</th></tr>
-    <tr><td><b>HUB</b></td><td>Physical (Layer 1)</td><td>Bits</td><td>Dumb — No filtering</td><td>Broadcast to all — Bandwidth loss</td></tr>
-    <tr><td><b>Repeater</b></td><td>Physical (Layer 1)</td><td>Bits</td><td>None</td><td>Signal Regeneration — weak signal amplify karta hai</td></tr>
-    <tr><td><b>NIC</b></td><td>Physical + Data Link (Layer 1+2)</td><td>Bits/Frames</td><td>Medium</td><td>MAC Address (48-bit) — Computer ko N/W se jodhta hai</td></tr>
-    <tr><td><b>Switch</b></td><td>Data Link (Layer 2)</td><td>Frames</td><td>Intelligent — MAC table</td><td>Selective forwarding — Collision reduce karta hai</td></tr>
-    <tr><td><b>Bridge</b></td><td>Data Link (Layer 2)</td><td>Frames</td><td>Moderate</td><td>Multiple LANs ko join karta hai</td></tr>
-    <tr><td><b>Router</b></td><td>Network (Layer 3)</td><td>Packets</td><td>High — Routing table</td><td>IP Address based routing — Inter-network</td></tr>
-    <tr><td><b>Gateway</b></td><td>All 7 Layers</td><td>All</td><td>Highest</td><td>Different protocols ke N/W connect karta hai — Gatekeeper</td></tr>
-    <tr><td><b>Modem</b></td><td>Physical (Layer 1)</td><td>Analog/Digital</td><td>Low</td><td>Digital ↔ Analog conversion — Telephone line + Computer</td></tr>
-  </table>
-
-  <div class="shead">Device Details</div>
-  <div class="grid2">
-    <div class="card">
-      <div class="card-title">NIC (Network Interface Card)</div>
-      <ul>
-        <li>Alias: LAN Card, Ethernet Card, Network Adapter, Connection Card</li>
-        <li>MAC Address = 48 bits (6 bytes) — unique hardware address</li>
-        <li>Pehle 3 bytes = OUI (Manufacturer ID)</li>
-        <li>Physical + Data Link Layer dono pe kaam karta hai</li>
-        <li>Types: Ethernet NIC (1980, Robert Metcalf) | Wireless NIC (Wi-Fi, WAP)</li>
-        <li>Features: I/O Interrupt, Direct Memory Interface, Data Transmission</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title">HUB — Types</div>
-      <ul>
-        <li><b>Passive HUB</b> = Dumb — sirf wiring connector — no feature</li>
-        <li><b>Active HUB</b> = Additional intelligence — signal amplify karta hai</li>
-        <li><b>Intelligent HUB</b> = Advance — Management Software included — N/W problems analyze karta hai</li>
-        <li>HUB = Multiport device — LAN mein sab nodes ko ek point pe jodhta hai</li>
-        <li>HUB data filter nahi karta — broadcast karta hai</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title">Modem (MOdulator-DEModulator)</div>
-      <ul>
-        <li>Modulation = Digital signal → Analog signal (Telephone line ke liye)</li>
-        <li>Demodulation = Analog signal → Digital signal (Receive karte time)</li>
-        <li>Modulation types: AM (Amplitude), FM (Frequency), PM (Phase)</li>
-        <li>Telephone line aur Computer ke beech jodha jaata hai</li>
-        <li>N/W mein Transmitter + Receiver dono ka kaam karta hai</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title">Router — Types</div>
-      <ul>
-        <li>Wireless Router = Wi-Fi provide karta hai (WAP)</li>
-        <li>Core Router = N/W ke andar routing</li>
-        <li>Edge Router = N/W ki boundary pe — low capacity</li>
-        <li>Brouter = Bridge + Router combined</li>
-        <li>Broadband Router = High speed connectivity</li>
-        <li>IP Address use karke best path find karta hai</li>
-        <li>Routing Protocols use karta hai — Datapacks forward karta hai</li>
-      </ul>
-    </div>
-  </div>
-  <div class="mcq">MCQ: "दो भिन्न Protocol को जोड़ना" = <b>Gateway</b> | N/W se N/W data move = <b>Router</b> | Physical layer pe kaam = <b>HUB</b> | LAN mein multiple devices jodne = <b>Switch</b> | Signal weak hone pe improve = <b>Repeater</b> | Ethernet Card = <b>Network Interface Card</b> | MODEM = Telephone line + Computer connect</div>
-</div>
-
-<div id="s6" class="sec">
-  <div class="shead">Transmission Media</div>
-  <div class="defbox"><b>Wired/Guided/Bounded Media</b> — Physical cable se transmit: Twisted Pair, Coaxial, Optical Fiber<br><b>Wireless/Unguided/Unbounded Media</b> — Signal ke through: Radio Waves, Microwave, Infrared</div>
-
-  <div class="shead" style="font-size:13px;border:none;padding:0;margin-top:6px">Wired Media Comparison</div>
-  <table>
-    <tr><th>Media</th><th>Speed</th><th>Distance</th><th>Noise</th><th>Cost</th><th>Use</th></tr>
-    <tr><td><b>UTP (Unshielded Twisted Pair)</b></td><td>Low-Medium</td><td>Short</td><td>High — no shield</td><td>Cheapest</td><td>LAN, Telephone — max 1024 nodes</td></tr>
-    <tr><td><b>STP (Shielded Twisted Pair)</b></td><td>Higher</td><td>Longer</td><td>Low — shielded</td><td>Higher</td><td>High speed LAN — max 270 nodes</td></tr>
-    <tr><td><b>Coaxial Cable</b></td><td>Medium</td><td>Medium</td><td>Very Low (shielded)</td><td>Medium</td><td>Cable TV, Bus topology</td></tr>
-    <tr><td><b>Optical Fiber</b></td><td>Highest (100 Mbps+)</td><td>Very Long</td><td>Minimal</td><td>Highest</td><td>Backbone, Long distance</td></tr>
-  </table>
-
-  <div class="grid2">
-    <div class="card">
-      <div class="card-title">Twisted Pair Cable</div>
-      <ul>
-        <li>2 insulated copper wires twisted together</li>
-        <li>Sabse sasta aur common — short distance</li>
-        <li>UTP: No outer grounding cable needed — max 1024 nodes</li>
-        <li>STP: Outer metallic shield — less noise — max 270 nodes</li>
-        <li>Coaxial se less noise resistant</li>
-        <li>RJ45 connector = 4 pairs (8 wires) — UTP cable</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title">Coaxial Cable</div>
-      <ul>
-        <li>Central copper conductor → Core</li>
-        <li>Dielectric plastic coating pe wrap hota hai</li>
-        <li>Outer conductor (metal shield) = electromagnetic interference kam karta hai</li>
-        <li>Sabse bahari plastic cover = physical damage se protect</li>
-        <li>Radio frequency signal transmit karta hai</li>
-        <li>Types: Thicknet, Thinnet</li>
-        <li>Noise ke liye: <b>Outer Conductor (bahi conductor)</b> responsible hai — coaxial is noise-resistant</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title">Optical Fiber Cable</div>
-      <ul>
-        <li>Total Internal Reflection principle pe kaam karta hai</li>
-        <li>Glass ya plastic se bana hai</li>
-        <li>Core pe glass ki layer chadhana = <b>Cladding</b></li>
-        <li>Sabse fast — highest bandwidth</li>
-        <li>Electromagnetic interference nahi — secure</li>
-        <li>FDDI mein use hota hai (200 km, >100 Mbps)</li>
-      </ul>
-    </div>
-    <div class="card">
-      <div class="card-title">Wireless Media</div>
-      <ul>
-        <li><b>Radio Waves</b> = Sabhi directions mein jaati hain — Radio Link Transmission</li>
-        <li><b>Microwave</b> = Line of sight — long distance</li>
-        <li><b>Infrared</b> = Short range — IrDA port</li>
-        <li><b>Li-Fi</b> = Light se data — visible spectrum use karta hai — Wi-Fi se fast — Wireless NAHI (wired optical)</li>
-        <li>Wi-Fi = Radio Waves | WiMAX = Spectrum</li>
-        <li>Optical Fiber = NOT wireless technology</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="mcq">MCQ: Sabse fast cable = <b>Optical Fiber</b> | Sabse zyada bandwidth = <b>Optical Fiber</b> | Total internal reflection = <b>Optical Fiber</b> | Coaxial noise ke liye = <b>Outer conductor (shielding)</b> | Twisted pair = UTP (no shield) + STP (shielded) | Radio waves = sab directions mein | Media design mein factors = Bandwidth, Interference, Transmission — <b>All of these</b> | Li-Fi = visible light spectrum — Wi-Fi se fast</div>
-</div>
-
-<div id="s7" class="sec">
-  <div class="shead">Networks & Topologies</div>
-
-  <div class="shead" style="font-size:13px;border:none;padding:0;margin-top:6px">Network Types (Geography based)</div>
-  <table>
-    <tr><th>Network</th><th>Full Form</th><th>Range</th><th>Standard</th><th>Key Info</th></tr>
-    <tr><td><span class="badge b-purple">PAN</span></td><td>Personal Area Network</td><td>~10m</td><td>IEEE 802.15</td><td>Bluetooth (Piconet: 8 nodes, max 255) | Thomas Zimmerman (MIT)</td></tr>
-    <tr><td><span class="badge b-blue">LAN</span></td><td>Local Area Network</td><td>0-10 km</td><td>IEEE 802.3 / 802.11</td><td>School, Office, Home | Ethernet (Xerox 1973) | Wi-Fi</td></tr>
-    <tr><td><span class="badge b-teal">CAN</span></td><td>Campus Area Network</td><td>Campus</td><td>—</td><td>LAN < CAN < MAN</td></tr>
-    <tr><td><span class="badge b-orange">MAN</span></td><td>Metropolitan Area Network</td><td>5-100 km</td><td>IEEE 802.6</td><td>City level | Cable TV Network | LAN < MAN < WAN</td></tr>
-    <tr><td><span class="badge b-red">WAN</span></td><td>Wide Area Network</td><td>Countries</td><td>—</td><td>Internet = WAN ka example | No fixed boundary</td></tr>
-  </table>
-
-  <div class="shead" style="font-size:13px;border:none;padding:0;margin-top:6px">Network Topologies — Comparison</div>
-  <table>
-    <tr><th>Topology</th><th>Structure</th><th>Advantage</th><th>Disadvantage</th><th>Example</th></tr>
-    <tr><td><span class="badge b-blue">BUS</span></td><td>Backbone cable + T-Connector + Terminator</td><td>Kam cable, Low cost, CSMA</td><td>Backbone fail → full N/W fail</td><td>Coaxial LAN</td></tr>
-    <tr><td><span class="badge b-green">RING</span></td><td>Circular loop — Point-to-Point</td><td>Fast, Collision kam</td><td>One node fail → N/W fail</td><td>Token Ring</td></tr>
-    <tr><td><span class="badge b-orange">STAR</span></td><td>All nodes → Central HUB/Switch</td><td>Easy detect, Scalable</td><td>HUB fail → N/W fail, Costly</td><td>Ethernet LAN</td></tr>
-    <tr><td><span class="badge b-teal">TREE</span></td><td>BUS + STAR combined — Hierarchical</td><td>Hierarchical data flow</td><td>Hub fail → branch down</td><td>Campus N/W</td></tr>
-    <tr><td><span class="badge b-red">MESH</span></td><td>Every node ↔ every other node</td><td>Most reliable, Secure</td><td>Costly, Complex</td><td>Internet backbone</td></tr>
-    <tr><td><span class="badge b-purple">HYBRID</span></td><td>2+ topologies combined</td><td>Flexible</td><td>Most complex</td><td>Large enterprise</td></tr>
-  </table>
-
-  <div class="defbox"><b>Mesh formula:</b> Total Links = n(n-1)/2 | Ports per device = n-1 | Network mein total ports = n(n-1)<br><b>Bus uses CSMA</b> (Carrier Sense Multiple Access) + Pure Aloha, Slotted Aloha, CDMA, TDMA<br><b>Topology with bidirectional links = MESH</b> | Circular topology = RING | Central HUB = STAR | Single line = BUS<br><b>Sabse kam secure = BUS</b> | Sabse reliable = MESH</div>
-
-  <div class="shead" style="font-size:13px;border:none;padding:0;margin-top:6px">ARPANET History</div>
-  <div class="defbox"><b>World's first computer network = ARPANET</b> (Advanced Research Project Agency Network) — 1969 — by ARPA (Defense Advanced Research Projects Agency = DARPA) — Used by DoD (Department of Defense) USA.</div>
-
-  <div class="mcq">MCQ: Square topology = NOT a topology (Square nahi hota) | Linear = BUS hi hai | LAN mein devices jodne = Switch | LAN range = 0-10 km approx | Mesh links = <b>n(n-1)/2</b> | WAN medium = Telephone lines + Microwave + Satellites — all of these</div>
-</div>
-
-<div id="s8" class="sec">
-  <div class="shead">MCQ Flash — Rajasthan BCI/Patwar/Police/IA Exam PYQs</div>
-  <table>
-    <tr><th>Question</th><th>Answer</th><th>Source Exam</th></tr>
-    <tr><td>World's first computer network?</td><td><b>ARPANET</b></td><td>PYQ</td></tr>
-    <tr><td>ARPANET full form?</td><td><b>Advanced Research Project Agency Network</b></td><td>PYQ Q24</td></tr>
-    <tr><td>DARPA full form?</td><td><b>Defense Advanced Research Projects Agency</b></td><td>Police 2022</td></tr>
-    <tr><td>OSI full form?</td><td><b>Open System Interconnection</b></td><td>Q25, Q120</td></tr>
-    <tr><td>First layer of OSI?</td><td><b>Physical Layer (Layer 1)</b></td><td>PYQ</td></tr>
-    <tr><td>Router OSI layer?</td><td><b>Network Layer (Layer 3)</b></td><td>Q18, Q100</td></tr>
-    <tr><td>Transport layer ensures?</td><td><b>Error-free + flow controlled delivery</b></td><td>Q19, Q99</td></tr>
-    <tr><td>Data ko packets mein divide = OSI kaunsa layer?</td><td><b>Network Layer (Layer 3)</b></td><td>Q20</td></tr>
-    <tr><td>Two different protocols join karna?</td><td><b>Gateway</b></td><td>Q22</td></tr>
-    <tr><td>Dumb terminal kya hai?</td><td><b>Negligible intelligence wala terminal</b></td><td>Q23</td></tr>
-    <tr><td>Highest bandwidth cable?</td><td><b>Optical Fiber Cable</b></td><td>Q26, Q56</td></tr>
-    <tr><td>TCP/IP model = ?</td><td><b>DOD Model (Department of Defense)</b></td><td>Q27</td></tr>
-    <tr><td>IPv6 address size?</td><td><b>128 bits</b></td><td>Q28, Q71, Q128</td></tr>
-    <tr><td>IPv4 address size?</td><td><b>32 bits</b></td><td>Q45, Q64, Q123</td></tr>
-    <tr><td>Class B starting address?</td><td><b>128.0.0.0</b></td><td>Q46</td></tr>
-    <tr><td>Valid Class B address?</td><td><b>130.130.255.20</b></td><td>Q47</td></tr>
-    <tr><td>Email send protocol?</td><td><b>SMTP (Port 25)</b></td><td>Q49, Q62</td></tr>
-    <tr><td>IPv4 IHL=2 (8 bytes) packet?</td><td><b>Receiver rejects the packet</b></td><td>BCI 2022 Q50</td></tr>
-    <tr><td>Web page transfer protocol?</td><td><b>HTTP</b></td><td>Q51</td></tr>
-    <tr><td>FTP transmission modes?</td><td><b>Stream, Block, Compressed</b></td><td>Q53</td></tr>
-    <tr><td>Checksum use?</td><td><b>Error Detection only</b></td><td>Q54</td></tr>
-    <tr><td>Circular topology?</td><td><b>RING</b></td><td>Q55</td></tr>
-    <tr><td>Li-Fi kaunse spectrum?</td><td><b>Visible light spectrum (i & ii correct)</b></td><td>Q58</td></tr>
-    <tr><td>Radio waves = ?</td><td><b>Wireless (betaar) communication</b></td><td>Q59</td></tr>
-    <tr><td>Channel par data send rate?</td><td><b>Baud Rate</b></td><td>Q60</td></tr>
-    <tr><td>FTP = ?</td><td><b>File transfer</b></td><td>Q61</td></tr>
-    <tr><td>Class B default subnet mask?</td><td><b>255.255.0.0</b></td><td>Q63</td></tr>
-    <tr><td>Data exchange possible ways?</td><td><b>Half Duplex, Full Duplex, Simplex</b> (Multiplex = NOT data exchange mode)</td><td>Q65</td></tr>
-    <tr><td>Host alive check = ?</td><td><b>PING (ICMP)</b></td><td>Q66, Q131</td></tr>
-    <tr><td>Mobile phone = kaunsa mode?</td><td><b>Full Duplex</b></td><td>Q67</td></tr>
-    <tr><td>Twisted pair bahari layer?</td><td><b>Jacket</b></td><td>Q68</td></tr>
-    <tr><td>Optical Fiber = kaunsa principle?</td><td><b>Total Internal Reflection</b></td><td>Q78</td></tr>
-    <tr><td>SMTP = Push protocol, Port?</td><td><b>Port 25</b></td><td>Q80</td></tr>
-    <tr><td>FDDI full form?</td><td><b>Fiber Distributed Data Interface</b></td><td>Q81</td></tr>
-    <tr><td>Signal weak hone pe hardware?</td><td><b>Repeater</b></td><td>Q82, Q96</td></tr>
-    <tr><td>Digital signal = ?</td><td><b>Discontinuous (discrete) signal</b></td><td>Q83</td></tr>
-    <tr><td>Internet pe data kis method se?</td><td><b>Packet</b></td><td>Q84</td></tr>
-    <tr><td>LAN mein = WiFi ya Ethernet cable</td><td><b>Ethernet</b></td><td>Q85</td></tr>
-    <tr><td>MAC address = ?</td><td><b>48 bits</b></td><td>Q87</td></tr>
-    <tr><td>Sabse kam secure topology?</td><td><b>BUS</b></td><td>Q88</td></tr>
-    <tr><td>Switch kya karta hai?</td><td>Destination address se packet nikalta hai + selective forward — NOT hub</td><td>Q89</td></tr>
-    <tr><td>Analog signal example?</td><td><b>Smell (गंध)</b> | Digital = Reading (वाचन)</td><td>Q90</td></tr>
-    <tr><td>Modem = Data firstly convert?</td><td><b>Digital → Analog</b> (send karte time)</td><td>Q91</td></tr>
-    <tr><td>Mesh topology wires formula?</td><td><b>n(n-1)/2</b></td><td>Q92</td></tr>
-    <tr><td>Bluetooth = kaunsa network?</td><td><b>PAN (Personal Area Network)</b></td><td>Q93, Q132</td></tr>
-    <tr><td>Coaxial noise resistant kyun?</td><td><b>Outer conductor (shielding)</b></td><td>Q94</td></tr>
-    <tr><td>Analog signal = Continuous, HUB = ?</td><td>Analog=Continuous signal, Repeater=amplify weak signal, Digital=Discrete, HUB=connects multiple devices</td><td>Q95</td></tr>
-    <tr><td>Modem ka primary kaam?</td><td><b>Digital → Analog convert karna for telephone lines</b></td><td>Q97</td></tr>
-    <tr><td>Small single-site network?</td><td><b>LAN</b></td><td>Q98</td></tr>
-    <tr><td>Remote login service?</td><td><b>Telnet</b></td><td>Q101</td></tr>
-    <tr><td>PCs milake kya banate hain?</td><td><b>Network</b></td><td>Q102</td></tr>
-    <tr><td>Ethernet card = ?</td><td><b>Network Interface Card (NIC)</b></td><td>Q103, Q137</td></tr>
-    <tr><td>Computer network type = ?</td><td><b>PAN</b> (Ring/Bus/Star = topology types)</td><td>Q104</td></tr>
-    <tr><td>Router/Switch connect cable?</td><td><b>Ethernet cable</b></td><td>Q105</td></tr>
-    <tr><td>Secure file transfer protocol?</td><td><b>SSH (Secure Shell)</b></td><td>Q106</td></tr>
-    <tr><td>NAT kya karta hai?</td><td><b>Private IP → Public IP translate karna</b></td><td>Q107</td></tr>
-    <tr><td>Email protocol NAHI hai?</td><td><b>HTTP</b> (SMTP, IMAP, POP3 = email protocols)</td><td>Q108</td></tr>
-    <tr><td>Subnet mask purpose?</td><td><b>Network portion identify karna</b></td><td>Q109</td></tr>
-    <tr><td>NOT a network topology?</td><td><b>Square</b> (Bus, Ring, Star = valid)</td><td>Q110</td></tr>
-    <tr><td>IoT wireless connection layer?</td><td><b>Perception Layer</b></td><td>Q111</td></tr>
-    <tr><td>NOT geographic network type?</td><td><b>PAN is geographic</b> — trick: all LAN/MAN/WAN/PAN = geographic</td><td>Q115</td></tr>
-    <tr><td>LAN stands for?</td><td><b>Local Area Network</b></td><td>Q116</td></tr>
-    <tr><td>Ethernet related?</td><td><b>LAN</b></td><td>Q117</td></tr>
-    <tr><td>Bandwidth = ?</td><td><b>Amount of data transferred in given time</b></td><td>Q119</td></tr>
-    <tr><td>Data transfer rate = ?</td><td><b>Bits per second</b> (1 second mein source → destination)</td><td>Q138</td></tr>
-    <tr><td>Data communication component NAHI?</td><td><b>Scanner</b></td><td>Q139, Raj Police 2025</td></tr>
-    <tr><td>Wireless technology nahi?</td><td><b>Twisted Pair</b></td><td>Q141</td></tr>
-    <tr><td>Internet pe computer identify?</td><td><b>IP Address</b></td><td>Q142</td></tr>
-    <tr><td>HTTP vs HTTPS?</td><td>HTTP = Port 80, plaintext | HTTPS = Port 443, TLS/SSL encrypted</td><td>Q144</td></tr>
-    <tr><td>Single line topology?</td><td><b>BUS</b></td><td>Q145</td></tr>
-    <tr><td>LAN "Large Area Network" — correct?</td><td><b>WRONG — LAN = Local Area Network</b></td><td>Patwar 2025</td></tr>
-    <tr><td>Communication system order?</td><td><b>Source → Sender → Channel → Receiver → User</b> (B-A-D-E-C)</td><td>Q135</td></tr>
-    <tr><td>SAN full form?</td><td><b>Storage Area Network</b></td><td>Q75</td></tr>
-    <tr><td>DSL kya karta hai?</td><td>Telephone wire pe internet — <b>Digital Subscriber Line</b></td><td>Q37</td></tr>
-    <tr><td>PAM full form?</td><td><b>Pulse Amplitude Modulation</b></td><td>Q38</td></tr>
-    <tr><td>Multiplexing = ?</td><td>Single line pe multiple calls/signals bhejne ki technique</td><td>Q40</td></tr>
-  </table>
-
-  <button onclick="sendPrompt('Mujhe DCCN ke 15 aur practice MCQs do jo Rajasthan BCI exam mein aaye hain - answers ke saath')" style="margin-top:12px;width:100%;padding:9px;font-size:13px">
-    15 aur practice MCQs generate karo
-  </button>
-</div>
-</div>
-
-<script>
-function show(n){
-  document.querySelectorAll('.sec').forEach((s,i)=>s.classList.toggle('on',i===n));
-  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('on',i===n));
+body{font-family:'Noto Sans Devanagari',sans-serif;font-size:12.5px;color:#1a2744;background:#fff;padding:10px 14px}
+h1{font-size:17px;font-weight:700;color:#1a2744;border-bottom:2.5px solid #1a2744;padding-bottom:5px;margin-bottom:3px}
+h2{font-size:14px;font-weight:700;color:#1a2744;border-bottom:1.5px solid #1a2744;padding-bottom:3px;margin:14px 0 5px}
+h3{font-size:11.5px;font-weight:600;color:#4b5c8a;text-transform:uppercase;letter-spacing:.04em;margin:7px 0 3px}
+table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:8px}
+th{background:#283593;color:#fff;font-weight:600;font-size:11px;text-align:left;padding:5px 7px;border:.5px solid #1a237e}
+td{padding:4px 7px;border:.5px solid #c9d3ea;color:#1a2744;vertical-align:top;line-height:1.45}
+tr:nth-child(even) td{background:#f8f9ff}
+td:first-child{font-weight:500}
+ul{padding-left:13px;margin-bottom:3px}
+li{font-size:12px;line-height:1.55;margin-bottom:1px}
+.sheet{max-width:980px;margin:0 auto}
+.note{font-size:11px;color:#6b7a99;margin-bottom:7px}
+/* TRAP BOX */
+.trap-box{background:#fff8f0;border:1.5px solid #fb923c;border-radius:9px;padding:9px 12px;margin-bottom:12px}
+.trap-title{font-size:13.5px;font-weight:700;color:#c2410c;margin-bottom:6px}
+.trap-sub{font-size:11px;color:#c2410c;opacity:.8;margin-bottom:7px}
+.trap-item{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:5px 0;border-bottom:.5px solid #fed7aa;font-size:12px}
+.trap-item:last-child{border-bottom:none}
+.t-label{font-size:10.5px;color:#9ca3af;margin-bottom:2px;font-weight:500}
+.t-wrong{color:#dc2626;text-decoration:line-through;opacity:.75;font-size:11.5px}
+.t-right{color:#16a34a;font-weight:600;font-size:12px}
+.t-why{font-size:10.5px;color:#6b7a99;margin-top:2px;font-style:italic}
+/* INFO / DIFF BOXES */
+.diff-box{background:#fffbeb;border:.5px solid #fde047;border-radius:7px;padding:7px 10px;margin-bottom:8px}
+.diff-title{font-size:11.5px;font-weight:600;color:#b45309;margin-bottom:5px}
+.info-box{background:#e0f2fe;border:.5px solid #7dd3fc;border-radius:7px;padding:7px 10px;margin-bottom:8px;font-size:12px;color:#0c4a6e;line-height:1.5}
+.info-box strong{color:#0369a1}
+.green-box{background:#f0fdf4;border:.5px solid #86efac;border-radius:7px;padding:7px 10px;margin-bottom:8px;font-size:12px;color:#14532d}
+.green-box strong{color:#15803d}
+/* GRID */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:8px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
+.card{background:#fff;border:.5px solid #c9d3ea;border-radius:7px;padding:7px 9px}
+.card h3{margin-top:0}
+/* BADGES */
+.badge{display:inline-block;font-size:10.5px;font-weight:600;padding:1px 7px;border-radius:12px;margin:1px}
+.b-blue{background:#dbeafe;color:#1d4ed8}
+.b-green{background:#dcfce7;color:#15803d}
+.b-orange{background:#ffedd5;color:#c2410c}
+.b-red{background:#fee2e2;color:#b91c1c}
+.b-purple{background:#f3e8ff;color:#7e22ce}
+.b-teal{background:#ccfbf1;color:#0f766e}
+.b-indigo{background:#e0e7ff;color:#3730a3}
+.hl{background:#dcfce7;color:#16a34a;font-weight:600;padding:1px 4px;border-radius:3px;font-size:11.5px}
+.hl-red{background:#fee2e2;color:#dc2626;font-weight:600;padding:1px 4px;border-radius:3px;font-size:11.5px}
+.hl-blue{background:#dbeafe;color:#1d4ed8;font-weight:600;padding:1px 4px;border-radius:3px;font-size:11px}
+.hl-amber{background:#fef3c7;color:#b45309;font-weight:600;padding:1px 4px;border-radius:3px;font-size:11px}
+/* OSI LAYER ROW */
+.osi-row{display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:.5px solid #c9d3ea;font-size:12px}
+.osi-num{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0}
+/* PORT ROW */
+.port-row{display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:.5px solid #c9d3ea;font-size:12px}
+.port-num{background:#283593;color:#fff;padding:2px 8px;border-radius:4px;font-size:11px;min-width:44px;text-align:center;font-weight:600;flex-shrink:0}
+/* MCQ FLASH */
+.mcq-table td:first-child{color:#1d4ed8;font-size:11.5px;font-weight:400}
+.mcq-table td:nth-child(2){color:#15803d;font-weight:600;font-size:12px}
+/* ALERT */
+.alert-bug{background:#fef2f2;border-left:3px solid #dc2626;padding:4px 8px;font-size:11.5px;margin-bottom:5px;border-radius:0 5px 5px 0}
+/* PRINT BTN */
+.print-btn{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:4px 11px;border:.5px solid #c9d3ea;border-radius:7px;background:transparent;color:#1a2744;cursor:pointer;margin-bottom:10px;font-family:inherit}
+.print-btn:hover{background:#f0f4ff}
+/* DIFF TABLE */
+.diff-table td:nth-child(2){color:#15803d}
+.diff-table td:nth-child(3){color:#dc2626}
+/* RAPID */
+.rapid-card{background:#f0fdf4;border:.5px solid #86efac;border-radius:7px;padding:6px 9px}
+.rapid-card h3{margin-top:0;color:#14532d}
+@media print{
+  .print-btn{display:none}
+  body{padding:5px 8px;font-size:11px}
+  h2{margin-top:8px}
+  .trap-box,.diff-box,.card,.rapid-card{break-inside:avoid}
+  @page{margin:10mm 8mm}
 }
-</script>
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<button class="print-btn" onclick="window.print()">🖨️ प्रिंट करें</button>
+
+<h1>🌐 DCCN — मास्टर रिवीज़न हैंडबुक</h1>
+<p class="note">⚡ Rajasthan BCI/Patwar/Police PYQ आधारित | OSI · TCP/IP · Protocols · IP · Devices · Media · Topologies · 50+ MCQ Flash</p>
+
+<!-- ===== EXAM TRAPS ===== -->
+<div class="trap-box">
+  <div class="trap-title">🚨 मेरी परीक्षा गलतियाँ — सबसे पहले पढ़ो</div>
+  <div class="trap-sub">BCI/Patwar/Police PYQ आधारित confusions — एक बार fix करो</div>
+
+  <div class="trap-item">
+    <div>
+      <div class="t-label">TRAP 1 — IPv4 IHL=2 (8 bytes) Packet</div>
+      <div class="t-wrong">Answer = "hops = 2" / पैकेट forward होता है</div>
+      <div class="t-why">IPv4 minimum header = 20 bytes (IHL=5); IHL=2 means 8 bytes = invalid</div>
+    </div>
+    <div>
+      <div class="t-label">✅ सही</div>
+      <div class="t-right">Receiver पैकेट को <strong>Reject (Discard)</strong> करेगा<br>Min valid header = 20 bytes (IHL=5)</div>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div>
+      <div class="t-label">TRAP 2 — Checksum का काम</div>
+      <div class="t-wrong">Checksum = Error Detection + Correction</div>
+      <div class="t-why">CRC भी सिर्फ detection करता है</div>
+    </div>
+    <div>
+      <div class="t-label">✅ सही</div>
+      <div class="t-right">Checksum = <strong>Error Detection only</strong><br>Correction = ARQ / Hamming Code</div>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div>
+      <div class="t-label">TRAP 3 — Network Layer Firewall क्या पढ़ता है?</div>
+      <div class="t-wrong">Content / Payload inspect करता है</div>
+      <div class="t-why">Content inspection = Application Layer Firewall (WAF)</div>
+    </div>
+    <div>
+      <div class="t-label">✅ सही</div>
+      <div class="t-right">Network Layer Firewall = सिर्फ <strong>IP Address + Port Number</strong> filter करता है</div>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div>
+      <div class="t-label">TRAP 4 — WiFi vs WiMAX Standard</div>
+      <div class="t-wrong">WiMAX = IEEE 803.16y</div>
+      <div class="t-why">"803" नहीं — "802" है; 803 exist नहीं करता</div>
+    </div>
+    <div>
+      <div class="t-label">✅ सही</div>
+      <div class="t-right">WiFi = <strong>IEEE 802.11</strong> (LAN, Radio Waves)<br>WiMAX = <strong>IEEE 802.16</strong> (MAN, Broadband Wireless)</div>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div>
+      <div class="t-label">TRAP 5 — HTTP Email के लिए use होता है?</div>
+      <div class="t-wrong">HTTP = Email protocol</div>
+      <div class="t-why">HTTP केवल Web Pages के लिए है</div>
+    </div>
+    <div>
+      <div class="t-label">✅ सही</div>
+      <div class="t-right">Email Send = <strong>SMTP (Port 25)</strong><br>Email Receive = <strong>POP3 (110)</strong> या <strong>IMAP (143)</strong><br>HTTP email protocol <span class="hl-red">नहीं है</span></div>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div>
+      <div class="t-label">TRAP 6 — OSI की पहली Layer कौन सी?</div>
+      <div class="t-wrong">Application Layer = पहली (सबसे नीचे)</div>
+      <div class="t-why">Layer 1 = नीचे; Layer 7 = ऊपर</div>
+    </div>
+    <div>
+      <div class="t-label">✅ सही</div>
+      <div class="t-right">Layer 1 = <strong>Physical Layer</strong> (सबसे नीचे / पहली)<br>Layer 7 = Application (सबसे ऊपर)</div>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div>
+      <div class="t-label">TRAP 7 — Router कौन सी OSI Layer पर?</div>
+      <div class="t-wrong">Router = Layer 2 (Data Link)</div>
+      <div class="t-why">Layer 2 = Switch/Bridge; Layer 1 = HUB</div>
+    </div>
+    <div>
+      <div class="t-label">✅ सही</div>
+      <div class="t-right">Router = <strong>Layer 3 (Network Layer)</strong> — IP Address based<br>Switch = Layer 2 | HUB = Layer 1 | Gateway = All 7</div>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div>
+      <div class="t-label">TRAP 8 — LAN का full form</div>
+      <div class="t-wrong">LAN = Large Area Network</div>
+      <div class="t-why">Patwar 2025 में "Large Area Network" गलत option था</div>
+    </div>
+    <div>
+      <div class="t-label">✅ सही</div>
+      <div class="t-right">LAN = <strong>Local Area Network</strong><br>"Large Area Network" = कोई network नहीं होता</div>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div>
+      <div class="t-label">TRAP 9 — PING किस protocol का use करता है?</div>
+      <div class="t-wrong">PING = TCP या UDP</div>
+      <div class="t-why">Telnet = remote login; IPConfig = IP settings</div>
+    </div>
+    <div>
+      <div class="t-label">✅ सही</div>
+      <div class="t-right">PING = <strong>ICMP</strong> (Internet Control Message Protocol)<br>Echo Request/Reply — Host alive check</div>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div>
+      <div class="t-label">TRAP 10 — Data Communication के 5 Components में Scanner?</div>
+      <div class="t-wrong">Scanner = Data Communication का component</div>
+      <div class="t-why">Raj Police Telecom 2025 में यह trap था</div>
+    </div>
+    <div>
+      <div class="t-label">✅ सही</div>
+      <div class="t-right">5 Components: Message · Sender · Medium · Receiver · Protocol<br><span class="hl-red">Scanner = नहीं है ❌</span></div>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div>
+      <div class="t-label">TRAP 11 — Switch vs HUB confusion</div>
+      <div class="t-wrong">Switch = HUB की तरह सबको broadcast करता है</div>
+      <div class="t-why">HUB = dumb broadcast; Switch = intelligent selective forward</div>
+    </div>
+    <div>
+      <div class="t-label">✅ सही</div>
+      <div class="t-right">Switch = MAC table देखकर <strong>selective forward</strong> करता है<br>Collision + Bandwidth दोनों improve होते हैं</div>
+    </div>
+  </div>
+
+  <div class="trap-item">
+    <div>
+      <div class="t-label">TRAP 12 — "दो भिन्न Protocol जोड़ना" कौन करता है?</div>
+      <div class="t-wrong">Router / Switch</div>
+      <div class="t-why">Router = same protocol; Switch = same LAN</div>
+    </div>
+    <div>
+      <div class="t-label">✅ सही</div>
+      <div class="t-right"><strong>Gateway</strong> — अलग-अलग protocols के Networks को जोड़ता है<br>सभी 7 OSI Layers पर काम करता है</div>
+    </div>
+  </div>
+
+</div><!-- /trap-box -->
+
+
+<!-- ===== OSI MODEL ===== -->
+<h2>📶 OSI Model — 7 Layer Architecture (ISO, 1984)</h2>
+<div class="info-box">
+  <strong>OSI = Open System Interconnection</strong> — ISO द्वारा 1984 में design किया गया Reference/Framework Model (actual protocol नहीं)।<br>
+  🧠 <strong>Mnemonic (Layer 7→1):</strong> <em>"<strong>A</strong>ll <strong>P</strong>eople <strong>S</strong>eem <strong>T</strong>o <strong>N</strong>eed <strong>D</strong>ata <strong>P</strong>rocessing"</em><br>
+  <strong>Encapsulation</strong> = Sender: Layer 7→1 (हर layer header add करती है) | <strong>De-encapsulation</strong> = Receiver: Layer 1→7 (header remove होता है) | Data Structure = <strong>Stack (LIFO)</strong>
+</div>
+
+<table>
+  <thead>
+    <tr><th>Layer</th><th>नाम</th><th>PDU</th><th>Device</th><th>मुख्य Protocols</th><th>काम (1-liner)</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="badge b-red">7</span></td>
+      <td><strong>Application</strong></td>
+      <td>Message</td>
+      <td>Gateway</td>
+      <td>HTTP, HTTPS, FTP, SMTP, POP3, IMAP, DNS, Telnet, SNMP, DHCP</td>
+      <td>User interface — end-user और Network के बीच direct interface</td>
+    </tr>
+    <tr>
+      <td><span class="badge b-orange">6</span></td>
+      <td><strong>Presentation</strong></td>
+      <td>Message</td>
+      <td>Gateway</td>
+      <td>MPEG, MIDI, SSL, TLS, JPEG, GIF</td>
+      <td>Encryption/Decryption, Compression, Translation (Data format)</td>
+    </tr>
+    <tr>
+      <td><span class="badge b-orange">5</span></td>
+      <td><strong>Session</strong></td>
+      <td>Message</td>
+      <td>Gateway</td>
+      <td>NetBIOS, Socket, SYNCU</td>
+      <td>Connection Establish/Terminate, Dialog Control (Synchronization)</td>
+    </tr>
+    <tr>
+      <td><span class="badge b-purple">4</span></td>
+      <td><strong>Transport</strong></td>
+      <td>Segment (TCP) / Datagram (UDP)</td>
+      <td>Gateway</td>
+      <td>TCP, UDP</td>
+      <td>Process-to-Process delivery, Segmentation, Flow & Error Control</td>
+    </tr>
+    <tr>
+      <td><span class="badge b-blue">3</span></td>
+      <td><strong>Network</strong></td>
+      <td>Packet</td>
+      <td>Router</td>
+      <td>IP, ICMP, ARP, RARP, BGP, OSPF</td>
+      <td>Logical Addressing, Routing, Packeting (IP Address)</td>
+    </tr>
+    <tr>
+      <td><span class="badge b-teal">2</span></td>
+      <td><strong>Data Link</strong></td>
+      <td>Frame</td>
+      <td>Switch, Bridge, NIC</td>
+      <td>SLIP, PPP, HDLC, IEEE 802.3, Ethernet</td>
+      <td>Error Detection/Correction, MAC Address, Framing</td>
+    </tr>
+    <tr>
+      <td><span class="badge b-green">1</span></td>
+      <td><strong>Physical</strong></td>
+      <td>Bits</td>
+      <td>HUB, Repeater, Modem, NIC</td>
+      <td>Ethernet, ATM, Frame Relay</td>
+      <td>Electrical/Optical signals, Bit stream transmission, Cable/Wireless</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="diff-box">
+  <div class="diff-title">⚠️ OSI Layer — Device Quick Map (परीक्षा में सीधा आता है)</div>
+  <table style="margin-bottom:0">
+    <tr><th>Device</th><th>Layer</th><th>PDU</th></tr>
+    <tr><td>HUB, Repeater, Modem</td><td><span class="badge b-green">Layer 1 — Physical</span></td><td>Bits</td></tr>
+    <tr><td>Switch, Bridge, NIC</td><td><span class="badge b-teal">Layer 2 — Data Link</span></td><td>Frame</td></tr>
+    <tr><td>Router</td><td><span class="badge b-blue">Layer 3 — Network</span></td><td>Packet</td></tr>
+    <tr><td>Gateway</td><td><span class="badge b-red">All 7 Layers</span></td><td>सभी</td></tr>
+  </table>
+</div>
+
+<!-- ===== TCP/IP MODEL ===== -->
+<h2>🌐 TCP/IP Model — DOD Model (Department of Defense)</h2>
+<div class="info-box">
+  <strong>TCP/IP = 4-layer model</strong> (DOD Model) — OSI से पहले आया। Internet का actual working model।<br>
+  <strong>ISO-OSI = Theoretical</strong> (Reference Model) | <strong>TCP/IP = Practical</strong> (Internet)
+</div>
+
+<table>
+  <thead>
+    <tr><th>TCP/IP Layer</th><th>OSI Equivalent</th><th>Protocols</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Application Layer</strong></td>
+      <td>Layer 7 + 6 + 5 (Application + Presentation + Session)</td>
+      <td>HTTP, HTTPS, FTP, SMTP, POP3, IMAP, DNS, Telnet, SNMP, DHCP</td>
+    </tr>
+    <tr>
+      <td><strong>Transport Layer</strong></td>
+      <td>Layer 4 (Transport)</td>
+      <td>TCP, UDP</td>
+    </tr>
+    <tr>
+      <td><strong>Internet Layer</strong></td>
+      <td>Layer 3 (Network)</td>
+      <td>IP, ICMP, ARP, RARP, BGP, OSPF, NAT</td>
+    </tr>
+    <tr>
+      <td><strong>Network Access Layer</strong> (Link Layer)</td>
+      <td>Layer 2 + 1 (Data Link + Physical)</td>
+      <td>Ethernet, Wi-Fi (IEEE 802.11), PPP, Frame Relay</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ===== TCP vs UDP ===== -->
+<h2>⭐⭐ TCP vs UDP — सबसे Important Comparison</h2>
+<table class="diff-table">
+  <thead>
+    <tr><th>Feature</th><th>TCP</th><th>UDP</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Full Form</td><td>Transmission Control Protocol</td><td>User Datagram Protocol</td></tr>
+    <tr><td>Connection</td><td><span class="hl">Connection-Oriented</span></td><td><span class="hl-red">Connectionless</span></td></tr>
+    <tr><td>Reliability</td><td>Reliable (guaranteed delivery)</td><td>Unreliable (no guarantee)</td></tr>
+    <tr><td>Speed</td><td>धीमा</td><td>तेज़</td></tr>
+    <tr><td>Error Checking</td><td>हाँ (Detection + Correction)</td><td>Basic Detection only</td></tr>
+    <tr><td>Header Size</td><td>20–60 bytes (variable)</td><td><strong>8 bytes (fixed)</strong></td></tr>
+    <tr><td>PDU Name</td><td>Segment</td><td>Datagram</td></tr>
+    <tr><td>Flow Control</td><td>हाँ</td><td>नहीं</td></tr>
+    <tr><td>3-Way Handshake</td><td>हाँ (SYN → SYN-ACK → ACK)</td><td>नहीं</td></tr>
+    <tr><td>Use Cases</td><td>HTTP, HTTPS, FTP, SMTP, Email</td><td>Video Streaming, Gaming, DNS, DHCP, VoIP, TFTP</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== PROTOCOLS & PORTS ===== -->
+<h2>🔌 Important Port Numbers — परीक्षा में सीधे आते हैं</h2>
+
+<div class="port-row"><span class="port-num">20/21</span><span style="flex:1"><strong>FTP</strong> (File Transfer Protocol)</span><span style="color:#6b7a99;font-size:11px">Port 21=Control, Port 20=Data | TCP</span></div>
+<div class="port-row"><span class="port-num">22</span><span style="flex:1"><strong>SSH</strong> (Secure Shell)</span><span style="color:#6b7a99;font-size:11px">Secure remote access — Encrypted</span></div>
+<div class="port-row"><span class="port-num">23</span><span style="flex:1"><strong>Telnet</strong></span><span style="color:#6b7a99;font-size:11px">Remote login — Unsecure (plaintext)</span></div>
+<div class="port-row"><span class="port-num">25</span><span style="flex:1"><strong>SMTP</strong> (Simple Mail Transfer Protocol)</span><span style="color:#6b7a99;font-size:11px">Email SEND — Push Protocol | TCP</span></div>
+<div class="port-row"><span class="port-num">53</span><span style="flex:1"><strong>DNS</strong> (Domain Name System)</span><span style="color:#6b7a99;font-size:11px">Domain → IP Address resolve करना</span></div>
+<div class="port-row"><span class="port-num">67/68</span><span style="flex:1"><strong>DHCP</strong></span><span style="color:#6b7a99;font-size:11px">Dynamic IP assignment — <strong>UDP</strong> use करता है</span></div>
+<div class="port-row"><span class="port-num">69</span><span style="flex:1"><strong>TFTP</strong> (Trivial FTP)</span><span style="color:#6b7a99;font-size:11px">UDP — unreliable, minimal features</span></div>
+<div class="port-row"><span class="port-num">80</span><span style="flex:1"><strong>HTTP</strong> (HyperText Transfer Protocol)</span><span style="color:#6b7a99;font-size:11px">Web pages — Unencrypted | TCP</span></div>
+<div class="port-row"><span class="port-num">110</span><span style="flex:1"><strong>POP3</strong> (Post Office Protocol v3)</span><span style="color:#6b7a99;font-size:11px">Email RECEIVE — server से delete होती है</span></div>
+<div class="port-row"><span class="port-num">143</span><span style="flex:1"><strong>IMAP</strong> (Internet Message Access Protocol)</span><span style="color:#6b7a99;font-size:11px">Email RECEIVE — server पर stored रहती है</span></div>
+<div class="port-row"><span class="port-num">443</span><span style="flex:1"><strong>HTTPS</strong> (HTTP Secure)</span><span style="color:#6b7a99;font-size:11px">Web — TLS/SSL encrypted | TCP</span></div>
+<div class="port-row"><span class="port-num">3389</span><span style="flex:1"><strong>RDP</strong> (Remote Desktop Protocol)</span><span style="color:#6b7a99;font-size:11px">Remote desktop access — Windows</span></div>
+
+<h3 style="margin-top:10px">Email Protocols — Comparison</h3>
+<table>
+  <tr><th>Protocol</th><th>Port</th><th>काम</th><th>Type</th></tr>
+  <tr><td>SMTP</td><td>25</td><td>Email SEND करना</td><td>Push Protocol</td></tr>
+  <tr><td>POP3</td><td>110</td><td>Email download (server से delete)</td><td>Pull Protocol</td></tr>
+  <tr><td>IMAP</td><td>143</td><td>Email access (server पर रखो)</td><td>Pull Protocol</td></tr>
+</table>
+
+<div class="green-box">
+  <strong>Other Key Protocols (1-liners):</strong><br>
+  <strong>ICMP</strong> = Internet Control Message Protocol — PING use करता है (Host alive check)<br>
+  <strong>ARP</strong> = Address Resolution Protocol — IP → MAC address find करना<br>
+  <strong>RARP</strong> = Reverse ARP — MAC → IP find करना<br>
+  <strong>NAT</strong> = Network Address Translation — Private IP → Public IP convert<br>
+  <strong>DHCP</strong> = Dynamic Host Config Protocol — Automatically IP assign (UDP)<br>
+  <strong>DNS</strong> = Domain Name System — Domain name → IP address convert<br>
+  <strong>FTP Modes</strong> = Stream, Block, Compressed | Secure FTP = SFTP (SSH)
+</div>
+
+
+<!-- ===== IP ADDRESSING ===== -->
+<h2>🔢 IP Addressing</h2>
+
+<h3>IPv4 vs IPv6</h3>
+<table class="diff-table">
+  <tr><th>Feature</th><th>IPv4</th><th>IPv6</th></tr>
+  <tr><td>Address Size</td><td><span class="hl">32 bits</span> (4 octets)</td><td><span class="hl-red">128 bits</span></td></tr>
+  <tr><td>Notation</td><td>Dotted Decimal (192.168.1.1)</td><td>Hexadecimal, Colon (:) से अलग</td></tr>
+  <tr><td>Header Size</td><td>20–60 bytes (variable)</td><td>40 bytes (fixed)</td></tr>
+  <tr><td>Total Addresses</td><td>2³² ≈ 4.3 billion</td><td>2¹²⁸ (virtually unlimited)</td></tr>
+  <tr><td>Checksum</td><td>हाँ (header में)</td><td>नहीं (efficiency के लिए हटाया)</td></tr>
+  <tr><td>Separator</td><td>Dot (.) </td><td>Colon (:)</td></tr>
+</table>
+
+<h3>IPv4 Address Classes ⭐⭐</h3>
+<table>
+  <tr><th>Class</th><th>First Octet Range</th><th>Default Subnet Mask</th><th>उपयोग</th><th>Example</th></tr>
+  <tr><td><span class="badge b-green">A</span></td><td>0 – 127</td><td>255.0.0.0 (/8)</td><td>Large Networks</td><td>10.x.x.x</td></tr>
+  <tr><td><span class="badge b-blue">B</span></td><td>128 – 191</td><td>255.255.0.0 (/16)</td><td>Medium Networks</td><td>130.130.x.x</td></tr>
+  <tr><td><span class="badge b-orange">C</span></td><td>192 – 223</td><td>255.255.255.0 (/24)</td><td>Small Networks</td><td>195.x.x.x</td></tr>
+  <tr><td><span class="badge b-purple">D</span></td><td>224 – 239</td><td>—</td><td>Multicast</td><td>229.x.x.x</td></tr>
+  <tr><td><span class="badge b-red">E</span></td><td>240 – 255</td><td>—</td><td>Experimental / Reserved</td><td>—</td></tr>
+</table>
+
+<div class="diff-box">
+  <div class="diff-title">⭐ IP Address Quick Facts — PYQ Direct</div>
+  <ul style="margin:0">
+    <li>Class B शुरू = <span class="hl">128.0.0.0</span> | Valid Class B = <span class="hl">130.130.255.20</span></li>
+    <li>Loopback = <span class="hl">127.0.0.1</span> (खुद को PING करना — host alive test)</li>
+    <li>IPv4 minimum header = <span class="hl">20 bytes</span> (IHL=5) | IHL=2 (8 bytes) = <span class="hl-red">Invalid → Reject</span></li>
+    <li><strong>MAC Address</strong> = 48-bit (6 bytes) Hexadecimal | NIC का Physical/Hardware address | पहले 3 bytes = OUI (Manufacturer)</li>
+    <li>Internet पर computer identify = <span class="hl">IP Address</span> (Logical address)</li>
+    <li><strong>NAT</strong> = Private IP → Public IP | <strong>CIDR</strong> = Classless Inter-Domain Routing (Address class eliminate)</li>
+    <li><strong>Subnet Mask purpose</strong> = IP address का Network portion identify करना</li>
+  </ul>
+</div>
+
+<!-- ===== NETWORK DEVICES ===== -->
+<h2>🖧 Network Devices — OSI Layer Summary</h2>
+<table>
+  <thead>
+    <tr><th>Device</th><th>OSI Layer</th><th>PDU</th><th>Intelligence</th><th>मुख्य Feature</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>HUB</strong></td><td><span class="badge b-green">Physical — Layer 1</span></td><td>Bits</td><td>Dumb (No filtering)</td><td>सभी को Broadcast — Bandwidth नष्ट</td></tr>
+    <tr><td><strong>Repeater</strong></td><td><span class="badge b-green">Physical — Layer 1</span></td><td>Bits</td><td>None</td><td>Signal Regeneration — weak signal amplify</td></tr>
+    <tr><td><strong>Modem</strong></td><td><span class="badge b-green">Physical — Layer 1</span></td><td>Analog/Digital</td><td>Low</td><td>Digital ↔ Analog conversion (Telephone line)</td></tr>
+    <tr><td><strong>NIC</strong></td><td><span class="badge b-teal">Layer 1+2</span></td><td>Bits/Frames</td><td>Medium</td><td>MAC Address (48-bit) — Computer को Network से जोड़ता है</td></tr>
+    <tr><td><strong>Switch</strong></td><td><span class="badge b-teal">Data Link — Layer 2</span></td><td>Frames</td><td>Intelligent (MAC table)</td><td>Selective forwarding — Collision reduce</td></tr>
+    <tr><td><strong>Bridge</strong></td><td><span class="badge b-teal">Data Link — Layer 2</span></td><td>Frames</td><td>Moderate</td><td>Multiple LANs को join करता है</td></tr>
+    <tr><td><strong>Router</strong></td><td><span class="badge b-blue">Network — Layer 3</span></td><td>Packets</td><td>High (Routing table)</td><td>IP Address based routing — Inter-network</td></tr>
+    <tr><td><strong>Gateway</strong></td><td><span class="badge b-red">All 7 Layers</span></td><td>All</td><td>Highest</td><td>Different protocols के Networks connect करता है</td></tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div class="card">
+    <h3>HUB के प्रकार</h3>
+    <ul>
+      <li><strong>Passive HUB</strong> = केवल wiring connector — कोई feature नहीं</li>
+      <li><strong>Active HUB</strong> = Signal amplify करता है</li>
+      <li><strong>Intelligent HUB</strong> = Management Software — N/W problems analyze</li>
+    </ul>
+    <h3 style="margin-top:6px">Modem (MOdulator-DEModulator)</h3>
+    <ul>
+      <li>Modulation = Digital → Analog (Telephone के लिए)</li>
+      <li>Demodulation = Analog → Digital (receive)</li>
+      <li>Modulation types: AM, FM, PM</li>
+      <li>Send करते समय: <strong>Digital → Analog</strong> पहले</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>NIC (Network Interface Card)</h3>
+    <ul>
+      <li>Alias: LAN Card, Ethernet Card, Network Adapter</li>
+      <li>MAC = 48 bits (6 bytes) — unique hardware address</li>
+      <li>पहले 3 bytes = OUI (Manufacturer ID)</li>
+      <li>Ethernet NIC (1980, Robert Metcalf) | Wireless NIC</li>
+    </ul>
+    <h3 style="margin-top:6px">Router के प्रकार</h3>
+    <ul>
+      <li>Wireless Router = WAP (Wi-Fi)</li>
+      <li>Core Router = Network के अंदर routing</li>
+      <li>Edge Router = Boundary पर — low capacity</li>
+      <li>Brouter = Bridge + Router combined</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== TRANSMISSION MEDIA ===== -->
+<h2>📡 Transmission Media</h2>
+<div class="diff-box">
+  <div class="diff-title">Guided (Wired/Bounded) vs Unguided (Wireless/Unbounded)</div>
+  <table style="margin-bottom:0">
+    <tr><th>Guided Media (Physical cable)</th><th>Unguided Media (Signal)</th></tr>
+    <tr><td>Twisted Pair (UTP/STP), Coaxial Cable, Optical Fiber</td><td>Radio Waves, Microwave, Infrared, Li-Fi</td></tr>
+  </table>
+</div>
+
+<h3>Wired Media Comparison</h3>
+<table>
+  <thead>
+    <tr><th>Media</th><th>Speed</th><th>Noise</th><th>Cost</th><th>Range</th><th>Use</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>UTP</strong> (Unshielded Twisted Pair)</td>
+      <td>Low-Medium</td>
+      <td><span class="hl-red">High (no shield)</span></td>
+      <td>सबसे सस्ता</td>
+      <td>Short</td>
+      <td>LAN, Telephone — max 1024 nodes</td>
+    </tr>
+    <tr>
+      <td><strong>STP</strong> (Shielded Twisted Pair)</td>
+      <td>Higher</td>
+      <td>Low (shielded)</td>
+      <td>Medium</td>
+      <td>Longer</td>
+      <td>High speed LAN — max 270 nodes</td>
+    </tr>
+    <tr>
+      <td><strong>Coaxial Cable</strong></td>
+      <td>Medium</td>
+      <td><span class="hl">Very Low (outer conductor shield)</span></td>
+      <td>Medium</td>
+      <td>Medium</td>
+      <td>Cable TV, Bus topology</td>
+    </tr>
+    <tr>
+      <td><strong>Optical Fiber</strong></td>
+      <td><span class="hl">Highest (100 Mbps+)</span></td>
+      <td>Minimal</td>
+      <td>सबसे महँगा</td>
+      <td>Very Long</td>
+      <td>Backbone, FDDI (200 km, &gt;100 Mbps)</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Optical Fiber — Key Facts</h3>
+    <ul>
+      <li>Principle: <strong>Total Internal Reflection</strong></li>
+      <li>Glass या Plastic से बना</li>
+      <li>Core पर glass की layer = <strong>Cladding</strong></li>
+      <li>सबसे तेज़, सबसे ज़्यादा Bandwidth</li>
+      <li>Electromagnetic interference नहीं = Secure</li>
+      <li>FDDI में use — 200 km, &gt;100 Mbps</li>
+      <li>RJ45 connector = <strong>UTP cable</strong> (4 pairs = 8 wires)</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Wireless Media</h3>
+    <ul>
+      <li><strong>Radio Waves</strong> = सभी directions में — WiFi, Bluetooth</li>
+      <li><strong>Microwave</strong> = Line of sight — Long distance</li>
+      <li><strong>Infrared</strong> = Short range — IrDA port, Remote control</li>
+      <li><strong>Li-Fi</strong> = Visible light spectrum — WiFi से तेज़<br><span class="hl-red">Li-Fi = Optical (wired concept), wireless नहीं</span></li>
+      <li>WiFi = Radio Waves | WiMAX = Spectrum (IEEE 802.16)</li>
+      <li>Optical Fiber = <span class="hl-red">Wireless technology नहीं है</span></li>
+      <li>Coaxial noise resistant क्यों? = <strong>Outer conductor (shielding)</strong></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ===== NETWORK TYPES & TOPOLOGIES ===== -->
+<h2>🗺️ Network Types + Topologies</h2>
+
+<h3>Network Types (Geography आधारित)</h3>
+<table>
+  <tr><th>Network</th><th>Full Form</th><th>Range</th><th>Standard</th><th>Key Info</th></tr>
+  <tr><td><span class="badge b-purple">PAN</span></td><td>Personal Area Network</td><td>~10m</td><td>IEEE 802.15</td><td>Bluetooth (Piconet: 8 nodes, max 255) — Thomas Zimmerman (MIT)</td></tr>
+  <tr><td><span class="badge b-blue">LAN</span></td><td>Local Area Network</td><td>0–10 km</td><td>IEEE 802.3 / 802.11</td><td>School, Office, Home | Ethernet (Xerox 1973) | WiFi</td></tr>
+  <tr><td><span class="badge b-teal">CAN</span></td><td>Campus Area Network</td><td>Campus</td><td>—</td><td>LAN &lt; CAN &lt; MAN</td></tr>
+  <tr><td><span class="badge b-orange">MAN</span></td><td>Metropolitan Area Network</td><td>5–100 km</td><td>IEEE 802.6</td><td>City level | Cable TV Network | LAN &lt; MAN &lt; WAN</td></tr>
+  <tr><td><span class="badge b-red">WAN</span></td><td>Wide Area Network</td><td>Countries</td><td>—</td><td>Internet = WAN का example | कोई fixed boundary नहीं</td></tr>
+  <tr><td><span class="badge b-indigo">SAN</span></td><td>Storage Area Network</td><td>—</td><td>—</td><td>Storage devices को network से connect करना</td></tr>
+</table>
+
+<div class="info-box">
+  <strong>ARPANET</strong> = World's first computer network (1969) — ARPA (DARPA) — DoD USA<br>
+  ARPANET = Advanced Research Project Agency Network | DARPA = Defense Advanced Research Projects Agency
+</div>
+
+<h3>Network Topologies — Comparison ⭐⭐</h3>
+<table>
+  <tr><th>Topology</th><th>Structure</th><th>Advantage</th><th>Disadvantage</th><th>Example</th></tr>
+  <tr><td><span class="badge b-blue">BUS</span></td><td>Backbone cable + T-Connector + Terminator</td><td>कम cable, Low cost</td><td><span class="hl-red">Backbone fail → पूरा N/W fail | कम secure</span></td><td>Coaxial LAN</td></tr>
+  <tr><td><span class="badge b-green">RING</span></td><td>Circular loop — Point-to-Point</td><td>Fast, Collision कम</td><td><span class="hl-red">एक node fail → N/W fail</span></td><td>Token Ring</td></tr>
+  <tr><td><span class="badge b-orange">STAR</span></td><td>सभी nodes → Central HUB/Switch</td><td>Easy detect, Scalable</td><td>HUB fail → N/W fail, Costly</td><td>Ethernet LAN</td></tr>
+  <tr><td><span class="badge b-teal">TREE</span></td><td>BUS + STAR combined — Hierarchical</td><td>Hierarchical data flow</td><td>Hub fail → branch down</td><td>Campus N/W</td></tr>
+  <tr><td><span class="badge b-red">MESH</span></td><td>हर node ↔ हर दूसरा node</td><td><span class="hl">Most reliable + Secure</span></td><td>Costly, Complex</td><td>Internet backbone</td></tr>
+  <tr><td><span class="badge b-purple">HYBRID</span></td><td>2+ topologies combined</td><td>Flexible</td><td>Most complex</td><td>Large enterprise</td></tr>
+</table>
+
+<div class="diff-box">
+  <div class="diff-title">⭐ Topology Key Formulas + Facts</div>
+  <ul style="margin:0">
+    <li><strong>Mesh formula:</strong> Total Links = <span class="hl">n(n-1)/2</span> | Ports per device = n-1 | Total ports = n(n-1)</li>
+    <li>BUS = CSMA/CD use करता है (Carrier Sense Multiple Access)</li>
+    <li>Bidirectional links = <strong>MESH</strong> | Circular = <strong>RING</strong> | Central HUB = <strong>STAR</strong> | Single line = <strong>BUS</strong></li>
+    <li>सबसे कम secure = <span class="hl-red">BUS</span> | सबसे reliable = <span class="hl">MESH</span></li>
+    <li><span class="hl-red">Square topology = valid topology नहीं है</span> (Bus, Ring, Star, Mesh = valid)</li>
+    <li>LAN = IEEE 802.3 (Ethernet) | Bluetooth = PAN | WiMAX = MAN (IEEE 802.16)</li>
+  </ul>
+</div>
+
+<!-- ===== MCQ FLASH ===== -->
+<h2>⚡ MCQ Flash — Rajasthan BCI/Patwar/Police/IA PYQs (50+)</h2>
+<p class="note">⭐ = बार-बार आया है | सभी answers verified</p>
+<table class="mcq-table">
+  <thead>
+    <tr><th>Question</th><th>Answer ✅</th><th>Exam</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>World's first computer network?</td><td>ARPANET</td><td>PYQ</td></tr>
+    <tr><td>ARPANET full form?</td><td>Advanced Research Project Agency Network</td><td>Q24</td></tr>
+    <tr><td>DARPA full form?</td><td>Defense Advanced Research Projects Agency</td><td>Police 2022</td></tr>
+    <tr><td>OSI full form?</td><td>Open System Interconnection</td><td>Q25, Q120</td></tr>
+    <tr><td>OSI की पहली layer (सबसे नीचे)?</td><td>Physical Layer (Layer 1)</td><td>PYQ ⭐</td></tr>
+    <tr><td>Router किस OSI layer पर?</td><td>Network Layer (Layer 3)</td><td>Q18, Q100 ⭐</td></tr>
+    <tr><td>Transport Layer क्या ensure करता है?</td><td>Error-free + flow controlled delivery</td><td>Q19, Q99</td></tr>
+    <tr><td>Data को packets में divide = कौन सी layer?</td><td>Network Layer (Layer 3)</td><td>Q20</td></tr>
+    <tr><td>दो भिन्न Protocol जोड़ना?</td><td>Gateway</td><td>Q22 ⭐</td></tr>
+    <tr><td>Dumb terminal क्या है?</td><td>Negligible intelligence वाला terminal</td><td>Q23</td></tr>
+    <tr><td>Highest bandwidth cable?</td><td>Optical Fiber Cable</td><td>Q26, Q56 ⭐</td></tr>
+    <tr><td>TCP/IP model = ?</td><td>DOD Model (Department of Defense)</td><td>Q27 ⭐</td></tr>
+    <tr><td>IPv6 address size?</td><td>128 bits</td><td>Q28, Q71, Q128 ⭐</td></tr>
+    <tr><td>IPv4 address size?</td><td>32 bits</td><td>Q45, Q64, Q123 ⭐</td></tr>
+    <tr><td>Class B starting address?</td><td>128.0.0.0</td><td>Q46 ⭐</td></tr>
+    <tr><td>Valid Class B address?</td><td>130.130.255.20</td><td>Q47</td></tr>
+    <tr><td>Email send protocol?</td><td>SMTP (Port 25)</td><td>Q49, Q62 ⭐</td></tr>
+    <tr><td>IPv4 IHL=2 (8 bytes) packet?</td><td>Receiver rejects the packet</td><td>BCI 2022 Q50 ⭐</td></tr>
+    <tr><td>Web page transfer protocol?</td><td>HTTP (Port 80)</td><td>Q51</td></tr>
+    <tr><td>FTP transmission modes?</td><td>Stream, Block, Compressed</td><td>Q53</td></tr>
+    <tr><td>Checksum का उपयोग?</td><td>Error Detection only</td><td>Q54 ⭐</td></tr>
+    <tr><td>Circular topology?</td><td>RING</td><td>Q55</td></tr>
+    <tr><td>Li-Fi = कौन सा spectrum?</td><td>Visible light spectrum</td><td>Q58</td></tr>
+    <tr><td>Radio waves = ?</td><td>Wireless (बेतार) communication</td><td>Q59</td></tr>
+    <tr><td>Channel पर data send rate?</td><td>Baud Rate</td><td>Q60</td></tr>
+    <tr><td>FTP का काम?</td><td>File transfer</td><td>Q61</td></tr>
+    <tr><td>Class B default subnet mask?</td><td>255.255.0.0</td><td>Q63 ⭐</td></tr>
+    <tr><td>Data exchange modes?</td><td>Half Duplex, Full Duplex, Simplex (Multiplex = नहीं)</td><td>Q65</td></tr>
+    <tr><td>Host alive check?</td><td>PING (ICMP)</td><td>Q66, Q131 ⭐</td></tr>
+    <tr><td>Mobile phone = कौन सा mode?</td><td>Full Duplex</td><td>Q67</td></tr>
+    <tr><td>Twisted pair बाहरी layer?</td><td>Jacket</td><td>Q68</td></tr>
+    <tr><td>Optical Fiber = कौन सा principle?</td><td>Total Internal Reflection</td><td>Q78 ⭐</td></tr>
+    <tr><td>SMTP = Push protocol, Port?</td><td>Port 25</td><td>Q80</td></tr>
+    <tr><td>FDDI full form?</td><td>Fiber Distributed Data Interface</td><td>Q81</td></tr>
+    <tr><td>Signal weak होने पर hardware?</td><td>Repeater</td><td>Q82, Q96 ⭐</td></tr>
+    <tr><td>Digital signal = ?</td><td>Discontinuous (Discrete) signal</td><td>Q83</td></tr>
+    <tr><td>Internet पर data किस method से?</td><td>Packet switching</td><td>Q84</td></tr>
+    <tr><td>MAC address = ?</td><td>48 bits</td><td>Q87 ⭐</td></tr>
+    <tr><td>सबसे कम secure topology?</td><td>BUS</td><td>Q88</td></tr>
+    <tr><td>Analog signal का example?</td><td>Smell (गंध) | Digital = Reading (वाचन)</td><td>Q90</td></tr>
+    <tr><td>Modem = Data firstly convert?</td><td>Digital → Analog (send करते समय)</td><td>Q91 ⭐</td></tr>
+    <tr><td>Mesh topology wires formula?</td><td>n(n-1)/2</td><td>Q92 ⭐</td></tr>
+    <tr><td>Bluetooth = कौन सा network?</td><td>PAN (Personal Area Network)</td><td>Q93, Q132 ⭐</td></tr>
+    <tr><td>Coaxial noise resistant क्यों?</td><td>Outer conductor (shielding)</td><td>Q94</td></tr>
+    <tr><td>Small single-site network?</td><td>LAN</td><td>Q98</td></tr>
+    <tr><td>Remote login service?</td><td>Telnet</td><td>Q101</td></tr>
+    <tr><td>Ethernet card = ?</td><td>Network Interface Card (NIC)</td><td>Q103, Q137 ⭐</td></tr>
+    <tr><td>Computer network type = ?</td><td>PAN (Ring/Bus/Star = topology types हैं, network नहीं)</td><td>Q104</td></tr>
+    <tr><td>Secure file transfer protocol?</td><td>SSH (Secure Shell) / SFTP</td><td>Q106</td></tr>
+    <tr><td>NAT क्या करता है?</td><td>Private IP → Public IP translate</td><td>Q107</td></tr>
+    <tr><td>Email protocol नहीं है?</td><td>HTTP (SMTP, IMAP, POP3 = email protocols)</td><td>Q108 ⭐</td></tr>
+    <tr><td>Subnet mask का purpose?</td><td>Network portion identify करना</td><td>Q109</td></tr>
+    <tr><td>Valid topology नहीं?</td><td>Square (Bus, Ring, Star, Mesh = valid)</td><td>Q110 ⭐</td></tr>
+    <tr><td>LAN का full form?</td><td>Local Area Network (Large = WRONG)</td><td>Q116, Patwar 2025 ⭐</td></tr>
+    <tr><td>Bandwidth = ?</td><td>दिए गए समय में transfer होने वाला data</td><td>Q119</td></tr>
+    <tr><td>Data transfer rate = ?</td><td>Bits per second</td><td>Q138</td></tr>
+    <tr><td>Data communication component नहीं?</td><td>Scanner</td><td>Q139, Raj Police 2025 ⭐</td></tr>
+    <tr><td>Wireless technology नहीं?</td><td>Twisted Pair Cable</td><td>Q141</td></tr>
+    <tr><td>Internet पर computer identify?</td><td>IP Address</td><td>Q142 ⭐</td></tr>
+    <tr><td>Single line topology?</td><td>BUS</td><td>Q145</td></tr>
+    <tr><td>Communication system order?</td><td>Source → Sender → Channel → Receiver → User</td><td>Q135</td></tr>
+    <tr><td>SAN full form?</td><td>Storage Area Network</td><td>Q75</td></tr>
+    <tr><td>DSL क्या करता है?</td><td>Telephone wire पर internet = Digital Subscriber Line</td><td>Q37</td></tr>
+    <tr><td>PAM full form?</td><td>Pulse Amplitude Modulation</td><td>Q38</td></tr>
+    <tr><td>Multiplexing = ?</td><td>Single line पर multiple signals भेजने की technique</td><td>Q40</td></tr>
+    <tr><td>WiFi standard?</td><td>IEEE 802.11</td><td>PYQ ⭐</td></tr>
+    <tr><td>WiMAX standard?</td><td>IEEE 802.16 (MAN)</td><td>PYQ ⭐</td></tr>
+    <tr><td>OSI Data structure?</td><td>Stack (LIFO)</td><td>PYQ</td></tr>
+    <tr><td>Network Layer PDU?</td><td>Packet</td><td>PYQ ⭐</td></tr>
+    <tr><td>Transport Layer PDU (TCP)?</td><td>Segment</td><td>PYQ ⭐</td></tr>
+  </tbody>
+</table>
+
+<!-- ===== RAPID REVISION ===== -->
+<h2>⚡ Rapid Revision — अंतिम 5 मिनट</h2>
+<div class="grid3">
+  <div class="rapid-card">
+    <h3>OSI Layer → Device</h3>
+    <ul>
+      <li>L1 = HUB, Repeater, Modem</li>
+      <li>L2 = Switch, Bridge, NIC</li>
+      <li>L3 = Router</li>
+      <li>L7 (All) = Gateway</li>
+    </ul>
+  </div>
+  <div class="rapid-card">
+    <h3>Port Numbers</h3>
+    <ul>
+      <li>FTP = 20/21 | SSH = 22</li>
+      <li>Telnet = 23 | SMTP = 25</li>
+      <li>DNS = 53 | DHCP = 67/68</li>
+      <li>HTTP = 80 | POP3 = 110</li>
+      <li>IMAP = 143 | HTTPS = 443</li>
+    </ul>
+  </div>
+  <div class="rapid-card">
+    <h3>IP Classes</h3>
+    <ul>
+      <li>A = 0–127 → /8</li>
+      <li>B = 128–191 → /16</li>
+      <li>C = 192–223 → /24</li>
+      <li>D = 224–239 → Multicast</li>
+      <li>E = 240–255 → Reserved</li>
+    </ul>
+  </div>
+  <div class="rapid-card">
+    <h3>Topology Facts</h3>
+    <ul>
+      <li>Mesh links = n(n-1)/2</li>
+      <li>कम secure = BUS</li>
+      <li>Most reliable = MESH</li>
+      <li>Central HUB = STAR</li>
+      <li>Circular = RING</li>
+    </ul>
+  </div>
+  <div class="rapid-card">
+    <h3>Media Speed Order</h3>
+    <ul>
+      <li>1st = Optical Fiber (fastest)</li>
+      <li>2nd = Coaxial</li>
+      <li>3rd = STP</li>
+      <li>4th = UTP (slowest, cheapest)</li>
+      <li>Optical = Total Internal Reflection</li>
+    </ul>
+  </div>
+  <div class="rapid-card">
+    <h3>Protocol Quick Map</h3>
+    <ul>
+      <li>Email Send = SMTP</li>
+      <li>Email Recv = POP3/IMAP</li>
+      <li>Host check = PING (ICMP)</li>
+      <li>IP→MAC = ARP</li>
+      <li>Gateway = दो Protocols जोड़ना</li>
+    </ul>
+  </div>
+</div>
+
+<p style="font-size:10px;color:#9ca3af;text-align:center;margin-top:14px;border-top:.5px solid #e5e9f2;padding-top:5px">
+  DCCN — मास्टर रिवीज़न हैंडबुक | अंतिम अद्यतन: जुलाई 2026 | Rajasthan BCI/Patwar/Police PYQ आधारित — सभी तथ्य सत्यापित
+</p>
+
+</div><!-- /sheet -->
+</body>
+</html>

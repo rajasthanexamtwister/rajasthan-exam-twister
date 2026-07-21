@@ -1,0 +1,1122 @@
+[
+{
+    "id": 1,
+    "page": 1,
+    "question_en": "Identify the river on the basis of the following facts - (A) It originates from Bichameda. (B) Its tributaries are Gomti and Sarni. (C) It makes confluence at Beneshwar.",
+    "question_hi": "निम्नलिखित तथ्यों के आधार पर नदी की पहचान कीजिए - (A) यह बीछामेड़ा से उद्गमित होती है। (B) गोमती तथा सारनी इसकी सहायक नदियाँ हैं। (C) यह बेणेश्वर में संगम बनाती है।",
+    "options": [
+        {
+            "id": 1,
+            "en": "Som",
+            "hi": "सोम"
+        },
+        {
+            "id": 2,
+            "en": "Jakham",
+            "hi": "जाखम"
+        },
+        {
+            "id": 3,
+            "en": "Sabarmati",
+            "hi": "साबरमती"
+        },
+        {
+            "id": 4,
+            "en": "Mahi",
+            "hi": "माही"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 2,
+    "page": 1,
+    "question_en": "The Great Boundary Fault is not seen clearly in which among the following district of Rajasthan?",
+    "question_hi": "महान/विशाल सीमा भ्रंश राजस्थान के निम्नलिखित में से किस जिले में स्पष्टतः दिखाई नहीं देता है?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Kota",
+            "hi": "कोटा"
+        },
+        {
+            "id": 2,
+            "en": "Dholpur",
+            "hi": "धौलपुर"
+        },
+        {
+            "id": 3,
+            "en": "Chittorgarh",
+            "hi": "चित्तौड़गढ़"
+        },
+        {
+            "id": 4,
+            "en": "Churu",
+            "hi": "चूरू"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 3,
+    "page": 1,
+    "question_en": "Consider the following statements about \"The Rajasthan Rural Tourism Scheme 2022\" - (A) Scheme effective from March 5, 2022. (B) 7% interest subsidy on loans up to ₹35 Lakhs. (C) Units investing a minimum of ₹1 Crore get 100% SGST reimbursement for a period of 10 years. Which of the above statement(s) is/are correct?",
+    "question_hi": "'राजस्थान ग्रामीण पर्यटन योजना 2022' के संबंध में निम्न कथनों पर विचार कीजिए - (A) योजना 5 मार्च 2022 को लागू की गई। (B) 35 लाख ₹ तक के ऋण पर 7% ब्याज सब्सिडी। (C) न्यूनतम 1 करोड़ ₹ निवेश करने वाली इकाई को 10 वर्ष तक एस.जी.एस.टी. का 100% पुनर्भरण। उपर्युक्त में से कौनसा/से कथन सही है/हैं?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Only (A) and (C)",
+            "hi": "केवल (A) तथा (C)"
+        },
+        {
+            "id": 2,
+            "en": "(A), (B) and (C)",
+            "hi": "(A), (B) तथा (C)"
+        },
+        {
+            "id": 3,
+            "en": "Only (C)",
+            "hi": "केवल (C)"
+        },
+        {
+            "id": 4,
+            "en": "Only (B)",
+            "hi": "केवल (B)"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 4,
+    "page": 1,
+    "question_en": "According to the Livestock Census-2019, the district having the second highest number of total cattle in Rajasthan was -",
+    "question_hi": "पशुगणना-2019 के अनुसार, राजस्थान में सर्वाधिक कुल गौवंश वाला जिला था -",
+    "options": [
+        {
+            "id": 1,
+            "en": "Bikaner",
+            "hi": "बीकानेर"
+        },
+        {
+            "id": 2,
+            "en": "Udaipur",
+            "hi": "उदयपुर"
+        },
+        {
+            "id": 3,
+            "en": "Jaipur",
+            "hi": "जयपुर"
+        },
+        {
+            "id": 4,
+            "en": "Jodhpur",
+            "hi": "जोधपुर"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 5,
+    "page": 2,
+    "question_en": "\"Mahi Kanchan\" and \"Mahi Dhaval\" hybrid varieties are associated with -",
+    "question_hi": "''माही कंचन'' एवं ''माही धवल'' संकरित किस्में किससे संबंधित हैं?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Maize",
+            "hi": "मक्का"
+        },
+        {
+            "id": 2,
+            "en": "Jowar",
+            "hi": "ज्वार"
+        },
+        {
+            "id": 3,
+            "en": "Wheat",
+            "hi": "गेहूँ"
+        },
+        {
+            "id": 4,
+            "en": "Barley",
+            "hi": "जौ"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 6,
+    "page": 2,
+    "question_en": "Which of the following districts of Rajasthan is correctly arranged in ascending order as per their annual normal rainfall?",
+    "question_hi": "राजस्थान के निम्नलिखित जिलों में से कौनसा उनके सामान्य वार्षिक वर्षा के आरोही क्रम में सही व्यवस्थित है?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Hanumangarh, Jaipur, Baran, Jhalawar",
+            "hi": "हनुमानगढ़, जयपुर, बारां, झालावाड़"
+        },
+        {
+            "id": 2,
+            "en": "Jaipur, Hanumangarh, Baran, Jhalawar",
+            "hi": "जयपुर, हनुमानगढ़, बारां, झालावाड़"
+        },
+        {
+            "id": 3,
+            "en": "Hanumangarh, Jaipur, Jhalawar, Baran",
+            "hi": "हनुमानगढ़, जयपुर, झालावाड़, बारां"
+        },
+        {
+            "id": 4,
+            "en": "Hanumangarh, Baran, Jaipur, Jhalawar",
+            "hi": "हनुमानगढ़, बारां, जयपुर, झालावाड़"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 7,
+    "page": 2,
+    "question_en": "Consider the following pairs - Forest Type (Rajasthan) : Characteristic/Location - (A) Evergreen and Semi-evergreen Forest - Around Mount Abu (B) Dry Teak Forest - Dungarpur, Udaipur (C) Salar Forest - Hilly areas having annual rainfall of 25-50 cm. (D) Bamboo Forest - Banswara, Udaipur, Kota. How many of the above are correct pairs?",
+    "question_hi": "निम्नलिखित युग्मों पर विचार कीजिए - वन प्रकार (राजस्थान): विशेषता/अवस्थिति - (A) सदाबहार और अर्द्ध-सदाबहार वन – माउंट आबू के आसपास (B) शुष्क सागवान वन – डूंगरपुर, उदयपुर (C) सालार वन – 25-50 से.मी. वार्षिक वर्षा वाले पहाड़ी क्षेत्रों में (D) बाँस के वन – बाँसवाड़ा, उदयपुर, कोटा। उपर्युक्त में से कितने युग्म सही हैं?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Only three",
+            "hi": "केवल तीन"
+        },
+        {
+            "id": 2,
+            "en": "All four",
+            "hi": "सभी चार"
+        },
+        {
+            "id": 3,
+            "en": "Only two",
+            "hi": "केवल दो"
+        },
+        {
+            "id": 4,
+            "en": "Only one",
+            "hi": "केवल एक"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 8,
+    "page": 2,
+    "question_en": "In which pair of districts, an Integrated Resource Recovery Park has been developed to promote environmental protection and resource recovery from waste?",
+    "question_hi": "जिलों के किस युग्म में, पर्यावरण संरक्षण और कचरे से संसाधन पुनर्प्राप्ति को बढ़ावा देने के लिए एक एकीकृत संसाधन पुनर्प्राप्ति पार्क विकसित किया गया है?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Jaipur and Kota",
+            "hi": "जयपुर तथा कोटा"
+        },
+        {
+            "id": 2,
+            "en": "Dausa and Kota",
+            "hi": "दौसा तथा कोटा"
+        },
+        {
+            "id": 3,
+            "en": "Bundi and Alwar",
+            "hi": "बूंदी तथा अलवर"
+        },
+        {
+            "id": 4,
+            "en": "Udaipur and Bundi",
+            "hi": "उदयपुर तथा बूंदी"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 9,
+    "page": 3,
+    "question_en": "Which of the following is/are designated as Particularly Vulnerable Tribal Group (PVTG) in Rajasthan?",
+    "question_hi": "राजस्थान में निम्नलिखित में से किसे/किन्हें विशेष रूप से कमज़ोर जनजातीय समूह (PVTG) के रूप में नामित किया गया है/हैं?",
+    "options": [
+        {
+            "id": "A",
+            "en": "Bhil",
+            "hi": "भील"
+        },
+        {
+            "id": "B",
+            "en": "Saharya",
+            "hi": "सहरिया"
+        },
+        {
+            "id": "C",
+            "en": "Garasia",
+            "hi": "गरासिया"
+        },
+        {
+            "id": "D",
+            "en": "Damor",
+            "hi": "दमोर"
+        }
+    ],
+    "code_options": [
+        {
+            "id": 1,
+            "en": "Only (B), (C) and (D)",
+            "hi": "केवल (B), (C) और (D)"
+        },
+        {
+            "id": 2,
+            "en": "Only (C)",
+            "hi": "केवल (C)"
+        },
+        {
+            "id": 3,
+            "en": "Only (A) and (C)",
+            "hi": "केवल (A) और (C)"
+        },
+        {
+            "id": 4,
+            "en": "Only (A)",
+            "hi": "केवल (A)"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 10,
+    "page": 3,
+    "question_en": "Which of the following is correctly arranged in descending order as per their density of population-2011?",
+    "question_hi": "राजस्थान के निम्नलिखित जिलों में से कौनसा उनके अनुसार जनसंख्या घनत्व-2011 के अनुसार सही अवरोही क्रम में व्यवस्थित है?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Ajmer",
+            "hi": "अजमेर"
+        },
+        {
+            "id": 2,
+            "en": "Tonk",
+            "hi": "टोंक"
+        },
+        {
+            "id": 3,
+            "en": "Bhilwara",
+            "hi": "भीलवाड़ा"
+        },
+        {
+            "id": 4,
+            "en": "Bundi",
+            "hi": "बूंदी"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ],
+    "note": "Full option text partially illegible in scan; option order approximate."
+},
+{
+    "id": 11,
+    "page": 3,
+    "question_en": "Read the following statements and choose the correct option - (A) Faizal Ali Khan Pathan provided military assistance to the son of Mughal Emperor in the 1857 Revolution. (B) Faizal Ali Khan Pathan was the Kamdar of Dundlod Thikana.",
+    "question_hi": "निम्नलिखित कथनों को पढ़िए एवं सही विकल्प चुनिए - (A) फैज़ल अली खान पठान ने मुगल बादशाह के पुत्र को 1857 की क्रांति में सैनिक सहायता दी। (B) फैज़ल अली खान पठान दूंदलोद ठिकाने के कामदार थे।",
+    "options": [
+        {
+            "id": 1,
+            "en": "Only (A) is correct",
+            "hi": "केवल (A) सही है"
+        },
+        {
+            "id": 2,
+            "en": "Only (B) is correct",
+            "hi": "केवल (B) सही है"
+        },
+        {
+            "id": 3,
+            "en": "Both (A) and (B) are correct",
+            "hi": "(A) और (B) दोनों सही हैं"
+        },
+        {
+            "id": 4,
+            "en": "Both (A) and (B) are incorrect",
+            "hi": "(A) और (B) दोनों सही नहीं हैं"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 12,
+    "page": 4,
+    "question_en": "Dhatki and Thali are the sub-dialects of which of the following dialect?",
+    "question_hi": "ढटकी एवं थाली निम्नलिखित में से किस बोली की उप-बोलियाँ हैं?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Mewati",
+            "hi": "मेवाती"
+        },
+        {
+            "id": 2,
+            "en": "Bagri",
+            "hi": "बागड़ी"
+        },
+        {
+            "id": 3,
+            "en": "Mewari",
+            "hi": "मेवाड़ी"
+        },
+        {
+            "id": 4,
+            "en": "Marwari",
+            "hi": "मारवाड़ी"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 13,
+    "page": 4,
+    "question_en": "The maximum number of silver coins found at Bairath belongs to which of the following rulers?",
+    "question_hi": "बैराठ से प्राप्त सर्वाधिक रजत मुद्राएँ निम्न में से किन शासकों की हैं?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Maurya",
+            "hi": "मौर्य"
+        },
+        {
+            "id": 2,
+            "en": "Gupta",
+            "hi": "गुप्त"
+        },
+        {
+            "id": 3,
+            "en": "Indo-Greek",
+            "hi": "भारतीय-यूनानी"
+        },
+        {
+            "id": 4,
+            "en": "Kushana",
+            "hi": "कुषाण"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 14,
+    "page": 4,
+    "question_en": "How did Mandan utilize the geographical conditions of the Kumbhalgarh Fort to ensure self-reliance?",
+    "question_hi": "मण्डन ने कुंभलगढ़ दुर्ग की भौगोलिक परिस्थितियों का उपयोग आत्मनिर्भरता के लिये किस प्रकार किया था?",
+    "options": [
+        {
+            "id": 1,
+            "en": "He constructed an artificial river for irrigation.",
+            "hi": "उन्होंने सिंचाई हेतु एक कृत्रिम नदी का निर्माण किया।"
+        },
+        {
+            "id": 2,
+            "en": "He constructed underground chambers solely for the storage of grain.",
+            "hi": "उन्होंने केवल अनाज के भण्डारण हेतु भूमिगत कक्षों का निर्माण किया।"
+        },
+        {
+            "id": 3,
+            "en": "He built only tall turrets amidst the hills so that the enemy could not enter.",
+            "hi": "उन्होंने पहाड़ियों के बीच केवल ऊँचे बुर्ज बनाये ताकि दुश्मन न आ सके।"
+        },
+        {
+            "id": 4,
+            "en": "He utilized the uneven character of the land for the construction of reservoirs and rainwater harvesting.",
+            "hi": "उन्होंने भूमि के असमान चरित्र का उपयोग जलाशयों के निर्माण एवं वर्षा जल संचयन के लिये किया।"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 15,
+    "page": 4,
+    "question_en": "Consider the following statements about the famous litterateur Kanhaiyalal Sethia - (A) Influenced by the ideas of Mahatma Gandhi, he worked for the promotion of Khadi and the upliftment of Dalits. (B) Due to his poetry collection 'Vajra Veena', filled with patriotism and nationalism, he was charged with sedition in 1942. (C) He was awarded the Padma Shri in 2004. Which of the statements given above are correct?",
+    "question_hi": "प्रसिद्ध साहित्यकार कन्हैयालाल सेठिया के बारे में निम्नलिखित कथनों पर विचार कीजिए - (A) महात्मा गांधी के विचारों से प्रभावित होकर, खादी प्रचार और दलितोद्धार का कार्य किया। (B) देशप्रेम और राष्ट्रीयता से ओतप्रोत काव्य संग्रह 'वज्र वीणा' के कारण, इन पर 1942 ई. में राजद्रोह का आरोप लगा। (C) 2004 में इन्हें पद्मश्री सम्मान प्राप्त हुआ। उपर्युक्त कथनों में से कौनसे सही हैं?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Only (B) and (C)",
+            "hi": "केवल (B) और (C)"
+        },
+        {
+            "id": 2,
+            "en": "Only (A) and (C)",
+            "hi": "केवल (A) और (C)"
+        },
+        {
+            "id": 3,
+            "en": "(A), (B) and (C)",
+            "hi": "(A), (B) और (C)"
+        },
+        {
+            "id": 4,
+            "en": "Only (A) and (B)",
+            "hi": "केवल (A) और (B)"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 16,
+    "page": 5,
+    "question_en": "Who among the following fought the \"Battle of Kansaro ki Pol\" against the Mughals?",
+    "question_hi": "निम्न में से किसने मुगलों के विरुद्ध ''कंसारों की पोल की लड़ाई'' लड़ी थी?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Rao Chandra Sen",
+            "hi": "राव चन्द्रसेन"
+        },
+        {
+            "id": 2,
+            "en": "Maharana Raj Singh",
+            "hi": "महाराणा राज सिंह"
+        },
+        {
+            "id": 3,
+            "en": "Maharana Sanga",
+            "hi": "महाराणा सांगा"
+        },
+        {
+            "id": 4,
+            "en": "Maharana Pratap",
+            "hi": "महाराणा प्रताप"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 17,
+    "page": 5,
+    "question_en": "Study the following statements about Vinay Singh, the ruler of Bundi and choose the correct option - (A) He commissioned the calligraphy and illustrations for the 'Gulistan'. (B) The illustrations for 'Gulistan' were created by Baldev and Gulam Ali.",
+    "question_hi": "बूंदी के शासक विनय सिंह के सम्बन्ध में निम्नांकित कथनों का अध्ययन कीजिए एवं सही विकल्प चुनिए - (A) उन्होंने 'गुलिस्ताँ' का सुलेखन एवं चित्रांकन करवाया था। (B) 'गुलिस्ताँ' के चित्र बलदेव एवं गुलाम अली ने बनाए थे।",
+    "options": [
+        {
+            "id": 1,
+            "en": "Both (A) and (B) are correct",
+            "hi": "(A) और (B) दोनों सही हैं"
+        },
+        {
+            "id": 2,
+            "en": "Only (B) is correct",
+            "hi": "केवल (B) सही है"
+        },
+        {
+            "id": 3,
+            "en": "Both (A) and (B) are incorrect",
+            "hi": "(A) और (B) दोनों सही नहीं हैं"
+        },
+        {
+            "id": 4,
+            "en": "Only (A) is correct",
+            "hi": "केवल (A) सही है"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 18,
+    "page": 5,
+    "question_en": "Which statement regarding the Matsya Union, in the context of unification of Rajasthan, is incorrect?",
+    "question_hi": "राजस्थान के एकीकरण में मत्स्य संघ से सम्बन्धित कौनसा कथन असत्य है?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Tej Singh, the ruler of Alwar was appointed the Rajpramukh of Matsya Union.",
+            "hi": "मत्स्य संघ के राजप्रमुख, अलवर के शासक तेज सिंह बनाये गये थे।"
+        },
+        {
+            "id": 2,
+            "en": "In February 1948, the Govt. of India appointed S.N. Sapru as the administrator of Bharatpur State.",
+            "hi": "फरवरी 1948 को, भारत सरकार ने एस.एन. सप्रू को भरतपुर राज्य का प्रशासक नियुक्त किया।"
+        },
+        {
+            "id": 3,
+            "en": "The inauguration of the Matsya Union was opposed by Man Singh, the brother of Maharaja of Bharatpur.",
+            "hi": "मत्स्य संघ के उद्घाटन का विरोध भरतपुर के महाराजा के भाई मान सिंह ने किया था।"
+        },
+        {
+            "id": 4,
+            "en": "The name 'Matsya Union' was adopted on the suggestion of K.M. Munshi.",
+            "hi": "के.एम. मुंशी के सुझाव पर 'मत्स्य संघ' नाम रखा गया था।"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 19,
+    "page": 5,
+    "question_en": "Which one of the following places is associated with Lok Devta Mallinath Ji?",
+    "question_hi": "निम्नांकित में से कौनसा स्थान लोक देवता मल्लिनाथ जी से सम्बन्धित है?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Panchota",
+            "hi": "पंचोटा"
+        },
+        {
+            "id": 2,
+            "en": "Bengati",
+            "hi": "बेंगटी"
+        },
+        {
+            "id": 3,
+            "en": "Kharnal",
+            "hi": "खरनाल"
+        },
+        {
+            "id": 4,
+            "en": "Tilwara",
+            "hi": "तिलवाड़ा"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 20,
+    "page": 6,
+    "question_en": "Which of the following statements regarding Manikya Lal Verma is false?",
+    "question_hi": "माणिक्य लाल वर्मा के सम्बन्ध में निम्नांकित में से कौनसा कथन असत्य है?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Manikya Lal Verma and Balwant Singh Mehta established Mewar Prajamandal in 1938 AD.",
+            "hi": "माणिक्य लाल वर्मा एवं बलवन्त सिंह मेहता ने 1938 ई. में मेवाड़ प्रजामण्डल की स्थापना की।"
+        },
+        {
+            "id": 2,
+            "en": "Mr. Verma organised the seventh session of the 'All India State's People's Conference' in Udaipur in 1946.",
+            "hi": "श्री वर्मा जी ने 1946 ई. में 'अखिल भारतीय देशी राज्य लोक परिषद' का सातवाँ अधिवेशन उदयपुर में करवाया।"
+        },
+        {
+            "id": 3,
+            "en": "He published a booklet titled 'Mewar Ka Vartman Shasan'.",
+            "hi": "इन्होंने 'मेवाड़ का वर्तमान शासन' नामक पुस्तिका का प्रकाशन किया।"
+        },
+        {
+            "id": 4,
+            "en": "He composed poetic collection 'Garibon ki Awaz'.",
+            "hi": "इन्होंने काव्य संग्रह 'गरीबों की आवाज' का संकलन किया।"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 21,
+    "page": 6,
+    "question_en": "Which among the following facts are correct about Arjun Lal Sethi? (A) Arjun Lal Sethi was accused of planning the conspiracy of throwing the bomb on Governor General Lord Hardinge in 1912. (B) By order of Maharaja of Jaipur, he was sentenced to 5 years' imprisonment. (C) He was kept in Ajmer Jail from 1914 to 1920. (D) After his release, he chose Ajmer his political demesne.",
+    "question_hi": "निम्न में से कौनसे तथ्य अर्जुन लाल सेठी के विषय में सही हैं? (A) अर्जुन लाल सेठी पर 1912 में गवर्नर जनरल लॉर्ड हार्डिंग पर बम फेंकने की योजना बनाने का आरोप लगाया गया। (B) जयपुर के महाराजा के आदेश से उन्हें 5 वर्ष की कैद हुई। (C) 1914 से 1920 के मध्य वे अजमेर जेल में रखे गए। (D) जेल से रिहा होने के पश्चात् उन्होंने अजमेर को अपना राजनैतिक कार्यक्षेत्र बनाया।",
+    "options": [
+        {
+            "id": 1,
+            "en": "Only (C) and (D)",
+            "hi": "केवल (C) तथा (D)"
+        },
+        {
+            "id": 2,
+            "en": "Only (A), (B) and (C)",
+            "hi": "केवल (A), (B) तथा (C)"
+        },
+        {
+            "id": 3,
+            "en": "Only (A) and (B)",
+            "hi": "केवल (A) तथा (B)"
+        },
+        {
+            "id": 4,
+            "en": "Only (A), (B) and (D)",
+            "hi": "केवल (A), (B) तथा (D)"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 22,
+    "page": 7,
+    "question_en": "Arrange in chronological order the delegations which were sent under the leadership of various Mughal officers to Maharana Pratap by Akbar and choose the correct code given below - (A) Bhagwant Das (B) Man Singh (C) Todarmal (D) Jalal Khan",
+    "question_hi": "महाराणा प्रताप के पास अकबर द्वारा विभिन्न मुगल अधिकारियों के नेतृत्व में भेजे गए शिष्टमण्डलों को कालक्रमानुसार व्यवस्थित करिए तथा नीचे दिए गए कूट की सहायता से सही विकल्प चुनिए - (A) भगवन्त दास (B) मानसिंह (C) टोडरमल (D) जलाल खाँ",
+    "options": [
+        {
+            "id": 1,
+            "en": "(A), (B), (D), (C)",
+            "hi": "(A), (B), (D), (C)"
+        },
+        {
+            "id": 2,
+            "en": "(B), (A), (D), (C)",
+            "hi": "(B), (A), (D), (C)"
+        },
+        {
+            "id": 3,
+            "en": "(C), (A), (D), (B)",
+            "hi": "(C), (A), (D), (B)"
+        },
+        {
+            "id": 4,
+            "en": "(D), (B), (A), (C)",
+            "hi": "(D), (B), (A), (C)"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 23,
+    "page": 7,
+    "question_en": "Which of the following was associated with \"Neemada Bhil Conference\"?",
+    "question_hi": "निम्नांकित में से कौन ''नीमड़ा भील सम्मेलन'' से सम्बन्धित थे?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Nanabhai Khat",
+            "hi": "नानाभाई खाट"
+        },
+        {
+            "id": 2,
+            "en": "Govind Giri",
+            "hi": "गोविन्द गिरि"
+        },
+        {
+            "id": 3,
+            "en": "Motilal Tejawat",
+            "hi": "मोतीलाल तेजावत"
+        },
+        {
+            "id": 4,
+            "en": "Mama Baleshwar Dayal",
+            "hi": "मामा बालेश्वर दयाल"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 24,
+    "page": 7,
+    "question_en": "Which one of the following folk musical instrument groups is not matched?",
+    "question_hi": "निम्नांकित में से कौनसा एक लोक वाद्य यन्त्र समूह सुमेलित नहीं है?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Ravanhatta, Jantar, Nishan, Satara",
+            "hi": "रावणहत्था, जन्तर, निशान, सतारा"
+        },
+        {
+            "id": 2,
+            "en": "Pungi, Algoja, Nad, Morchang",
+            "hi": "पुंगी, अलगोजा, नड़, मोरचंग"
+        },
+        {
+            "id": 3,
+            "en": "Manjira, Jhanjh, Thali, Khadtal",
+            "hi": "मंजीरा, झांझ, थाली, खड़ताल"
+        },
+        {
+            "id": 4,
+            "en": "Mradang, Chang, Khanjari, Naubat",
+            "hi": "मृदंग, चंग, खंजरी, नौबत"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 25,
+    "page": 7,
+    "question_en": "Which of the following leader/s was/were associated with Sirohi State Prajamandal? (A) Gokulbhai Bhatt (B) Babu Tekchand Sindhi (C) Saubhagya Mal Sindhi",
+    "question_hi": "निम्नलिखित में से कौनसा/से नेता सिरोही राज्य प्रजामंडल से सम्बन्धित थे? (A) गोकुलभाई भट्ट (B) बाबू टेकचन्द सिन्धी (C) सौभाग्य मल सिन्धी",
+    "options": [
+        {
+            "id": 1,
+            "en": "(A), (B) and (C)",
+            "hi": "(A), (B) और (C)"
+        },
+        {
+            "id": 2,
+            "en": "Only (A)",
+            "hi": "केवल (A)"
+        },
+        {
+            "id": 3,
+            "en": "Only (B) and (C)",
+            "hi": "केवल (B) और (C)"
+        },
+        {
+            "id": 4,
+            "en": "Only (A) and (B)",
+            "hi": "केवल (A) और (B)"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 26,
+    "page": 8,
+    "question_en": "Arrange the following rulers of Guhil dynasty of Mewar in chronological order and choose the right answer with the help of code given below - (A) Aparajit (B) Shiladitya (C) Allat (D) Narvahan",
+    "question_hi": "मेवाड़ के गुहिल वंश के निम्नलिखित शासकों को कालक्रमानुसार व्यवस्थित करिए तथा नीचे दिए गए कूट की सहायता से सही उत्तर चुनिए - (A) अपराजित (B) शिलादित्य (C) अल्लट (D) नरवाहन",
+    "options": [
+        {
+            "id": 1,
+            "en": "(B), (C), (A), (D)",
+            "hi": "(B), (C), (A), (D)"
+        },
+        {
+            "id": 2,
+            "en": "(A), (D), (C), (B)",
+            "hi": "(A), (D), (C), (B)"
+        },
+        {
+            "id": 3,
+            "en": "(D), (C), (A), (B)",
+            "hi": "(D), (C), (A), (B)"
+        },
+        {
+            "id": 4,
+            "en": "(B), (A), (C), (D)",
+            "hi": "(B), (A), (C), (D)"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 27,
+    "page": 8,
+    "question_en": "Consider the following statements in the context of the strategic and political history of Chittor - (I) Jaitra Singh made Chittor his capital to repel the invasion of the Turks. (II) After conquering Chittor, Alauddin Khilji entrusted its administration to Lakha. (III) Hammir took advantage of the dynastic revolution to capture Chittor and laid the foundation of the Sisodiya dynasty. Which of the above statements are correct?",
+    "question_hi": "चित्तौड़ के राजनैतिक और सामरिक इतिहास के संदर्भ में निम्नांकित कथनों पर विचार कीजिए - (I) जैत्रसिंह ने तुर्कों के आक्रमण को रोकने के लिए चित्तौड़ को अपनी राजधानी बनाया था। (II) अलाउद्दीन खिलजी ने चित्तौड़ पर विजय प्राप्त करने के बाद इसका प्रशासन लाखा को सौंप दिया था। (III) हम्मीर ने वंशवादी क्रांति का लाभ उठाकर चित्तौड़ पर कब्जा किया और सिसोदिया राजवंश की नींव रखी। उपरोक्त में से कौनसे कथन सही हैं?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Only (I) and (II)",
+            "hi": "केवल (I) और (II)"
+        },
+        {
+            "id": 2,
+            "en": "All (I), (II) and (III)",
+            "hi": "(I), (II) और (III) सभी"
+        },
+        {
+            "id": 3,
+            "en": "Only (II) and (III)",
+            "hi": "केवल (II) और (III)"
+        },
+        {
+            "id": 4,
+            "en": "Only (I) and (III)",
+            "hi": "केवल (I) और (III)"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 28,
+    "page": 8,
+    "question_en": "Which of the following festivals are celebrated every year in Bhadrapad month? (i) Raksha Bandhan (ii) Badi Teej (iii) Ganesh Chaturthi (iv) Sharad Purnima",
+    "question_hi": "निम्नलिखित में से कौनसे त्यौहारों का प्रतिवर्ष भाद्रपद माह में आयोजन होता है? (i) रक्षाबन्धन (ii) बड़ी तीज (iii) गणेश चतुर्थी (iv) शरद पूर्णिमा",
+    "options": [
+        {
+            "id": 1,
+            "en": "(i), (ii), (iv)",
+            "hi": "(i), (ii), (iv)"
+        },
+        {
+            "id": 2,
+            "en": "(ii), (iii)",
+            "hi": "(ii), (iii)"
+        },
+        {
+            "id": 3,
+            "en": "(i), (iv)",
+            "hi": "(i), (iv)"
+        },
+        {
+            "id": 4,
+            "en": "(i), (ii), (iii)",
+            "hi": "(i), (ii), (iii)"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 29,
+    "page": 9,
+    "question_en": "What is 'Karchop' embroidery?",
+    "question_hi": "'करचोप' कढ़ाई किसे कहते हैं?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Gold embroidery done on cushions and canopies in Jaisalmer.",
+            "hi": "जैसलमेर में मसनदों एवं छतरियों पर की जाने वाली सोने की कढ़ाई।"
+        },
+        {
+            "id": 2,
+            "en": "Embroidery done on the red woollen shawl of Jat women of Bikaner.",
+            "hi": "बीकानेर की जाट महिलाओं के लाल ऊनी शॉल पर की गई कढ़ाई।"
+        },
+        {
+            "id": 3,
+            "en": "Fine embroidery done by the Mevas of Alwar.",
+            "hi": "अलवर में मेवों द्वारा की गई महीन कढ़ाई।"
+        },
+        {
+            "id": 4,
+            "en": "Embroidery done on the Ghagra of Jat women in Shekhawati.",
+            "hi": "शेखावाटी में जाट महिलाओं के घाघरे पर की गई कढ़ाई।"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 30,
+    "page": 9,
+    "question_en": "Saint Payahari Swami Ji and Saint Kilha Das Ji were associated with which sect?",
+    "question_hi": "संत पयहारी स्वामी जी व संत कील्ह दास जी किस सम्प्रदाय से सम्बन्धित संत थे?",
+    "options": [
+        {
+            "id": 1,
+            "en": "Nimbark Sect",
+            "hi": "निम्बार्क सम्प्रदाय"
+        },
+        {
+            "id": 2,
+            "en": "Pushtimarg Sect",
+            "hi": "पुष्टिमार्ग सम्प्रदाय"
+        },
+        {
+            "id": 3,
+            "en": "Gaudiya Sect",
+            "hi": "गौड़ीय सम्प्रदाय"
+        },
+        {
+            "id": 4,
+            "en": "Ramanandi Sect",
+            "hi": "रामानन्दी सम्प्रदाय"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 31,
+    "page": 9,
+    "question_en": "What is the motto of the Rajasthan State Legal Services Authority?",
+    "question_hi": "राजस्थान राज्य विधिक सेवा प्राधिकरण का आदर्श वाक्य क्या है?",
+    "options": [
+        {
+            "id": 1,
+            "en": "\"Fair Legal Access for All\"",
+            "hi": "''फेयर लीगल एक्सेस फॉर ऑल''"
+        },
+        {
+            "id": 2,
+            "en": "\"Justice Within Reach for All\"",
+            "hi": "''जस्टिस विदिन रीच फॉर ऑल''"
+        },
+        {
+            "id": 3,
+            "en": "\"Access to Justice for All\"",
+            "hi": "''एक्सेस टू जस्टिस फॉर ऑल''"
+        },
+        {
+            "id": 4,
+            "en": "\"Equitable Legal Access for All\"",
+            "hi": "''इक्विटेबल लीगल एक्सेस फॉर ऑल''"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 32,
+    "page": 9,
+    "question_en": "Which of the following amendment has been made in the Rajasthan Municipalities Act, 2009 by the Rajasthan Municipalities (Amendment) Act, 2026?",
+    "question_hi": "राजस्थान नगरपालिका अधिनियम, 2009 में राजस्थान नगरपालिका (संशोधन) अधिनियम, 2026 के द्वारा निम्नलिखित में से कौनसा परिवर्तन किया गया है?",
+    "options": [
+        {
+            "id": 1,
+            "en": "A person having more than two children shall be disqualified from being a member of municipality.",
+            "hi": "कोई व्यक्ति जिसकी दो से अधिक सन्तानें हैं वह किसी नगरपालिका का सदस्य होने के लिए निरर्हित होगा।"
+        },
+        {
+            "id": 2,
+            "en": "A New Section, 331 is inserted in the Act.",
+            "hi": "अधिनियम में एक नयी धारा 331 अन्तःस्थापित की गई।"
+        },
+        {
+            "id": 3,
+            "en": "Leprosy has been removed from the list of dangerous diseases as defined in the Act.",
+            "hi": "अधिनियम में परिभाषित खतरनाक रोग की सूची में कुष्ठ रोग को बाहर कर दिया गया है।"
+        },
+        {
+            "id": 4,
+            "en": "The Act empowers the state government to remove members of a municipality on specified grounds.",
+            "hi": "अधिनियम राज्य सरकार को निर्दिष्ट आधारों पर नगरपालिका के सदस्यों को हटाने का अधिकार देता है।"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 33,
+    "page": 9,
+    "question_en": "In Rajasthan, office of the Divisional Commissioner was re-established in -",
+    "question_hi": "राजस्थान में, संभागीय आयुक्त पद की पुनः स्थापना कब की गयी थी?",
+    "options": [
+        {
+            "id": 1,
+            "en": "1987",
+            "hi": "1987"
+        },
+        {
+            "id": 2,
+            "en": "1997",
+            "hi": "1997"
+        },
+        {
+            "id": 3,
+            "en": "2009",
+            "hi": "2009"
+        },
+        {
+            "id": 4,
+            "en": "2007",
+            "hi": "2007"
+        },
+        {
+            "id": 5,
+            "en": "Question not attempted",
+            "hi": "अनुत्तरित प्रश्न"
+        }
+    ]
+},
+{
+    "id": 34,
+    "page": 10,
+    "question_en": "With reference to the Rajasthan Judicial Service Rules, 2010 (as amended upto 02.04.2024), which one of the following statement is not correct?",
+    "question_hi": "राजस्थान न्यायिक सेवा नियम, 2010 (दिनांक 02.04.2024 तक यथा संशोधित) के संदर्भ में, निम्नलिखित में से कौनसा एक कथन सही नहीं है?",
+    "options": [
+        {
+  
+]
