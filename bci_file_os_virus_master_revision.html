@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Master Revision Handbook — File Extension | Operating System | Cyber Security</title>
+<style>
+  @page { size: A4; margin: 14mm; }
+  body { font-family: "Noto Sans Devanagari","Segoe UI",Arial,sans-serif; font-size: 12px; line-height:1.35; color:#111; margin:0; padding:10px; }
+  h1 { font-size:18px; background:#1a2a4a; color:#fff; padding:8px 10px; margin:0 0 10px 0; }
+  h2 { font-size:14px; background:#eef1f8; border-left:5px solid #1a2a4a; padding:4px 8px; margin:16px 0 6px 0; page-break-after:avoid; }
+  h3 { font-size:12.5px; color:#1a2a4a; margin:10px 0 4px 0; border-bottom:1px solid #ccc; page-break-after:avoid; }
+  table { border-collapse:collapse; width:100%; margin:4px 0 10px 0; page-break-inside:avoid; }
+  th,td { border:1px solid #bbb; padding:3px 6px; text-align:left; vertical-align:top; }
+  th { background:#dbe2f5; }
+  tr:nth-child(even){ background:#f7f8fc; }
+  ul,ol { margin:2px 0 8px 18px; padding:0; }
+  li { margin-bottom:1px; }
+  .trap { background:#fff3f3; border-left:4px solid #c0392b; padding:4px 8px; margin-bottom:6px; }
+  .fact { background:#f2fbf3; border-left:4px solid #2e7d32; padding:4px 8px; margin-bottom:6px; }
+  .trick { background:#fff9e6; border-left:4px solid #e0a800; padding:4px 8px; margin-bottom:6px; }
+  .badge { font-weight:bold; }
+  .cols2 { column-count:2; column-gap:20px; }
+  .small { font-size:11px; color:#444; }
+  .toc { columns:2; font-size:11.5px; margin-bottom:10px; }
+  .section { page-break-before:always; }
+  .section:first-of-type{ page-break-before:auto; }
+</style>
+</head>
+<body>
+
+<h1>📘 Master Revision Handbook — File Extension | Operating System | Computer Virus &amp; Cyber Security</h1>
+<p class="small">RSMSSB / BCI / Informatics Assistant / CET / Patwar / Police / 3rd Grade — निरंतर अद्यतन (Continuously Updated) Master Revision Handbook</p>
+
+<div class="toc">
+<b>अनुक्रम:</b>
+<ol>
+<li>🚨 मेरी गलतियाँ / ट्रैप (सभी क्विज़ से)</li>
+<li>🎯 कमजोर क्षेत्र (Weak Areas)</li>
+<li>📚 File Extensions — विषयवार रिवीजन</li>
+<li>📚 Operating System — विषयवार रिवीजन</li>
+<li>📚 Computer Virus / Malware / Cyber Security — विषयवार रिवीजन</li>
+<li>📊 Difference Tables (सभी विषय)</li>
+<li>🧠 Memory Tricks संग्रह</li>
+<li>⭐ PYQ Favourite Topics (Frequency)</li>
+<li>⚡ Last-Minute One-Liners (Deduplicated)</li>
+<li>🎯 Expected Similar Questions</li>
+</ol>
+</div>
+
+<h2>1. 🚨 मेरी गलतियाँ / ट्रैप (Merged — Repeats Removed)</h2>
+
+<div class="trap"><b>Vector नहीं है →</b> JPEG (Raster है)। Vector: AI, SVG, EPS, CDR, WMF, APM, PDF(partial)।</div>
+<div class="trap"><b>Access DB Extension →</b> पुराना <b>.mdb</b>, नया (2007+) <b>.accdb</b>। ("dpf/rdb/xls" ट्रैप में न फंसें)</div>
+<div class="trap"><b>DOS Filename Rule →</b> 8.3 = मुख्य नाम अधिकतम <b>8</b>, Extension अधिकतम <b>3</b> Characters। ("5" या "4" ट्रैप विकल्प गलत)</div>
+<div class="trap"><b>Booting का अर्थ →</b> Computer को Start/Restart करना (न कि Install/Scan/Shutdown)।</div>
+<div class="trap"><b>Delete की गई File →</b> पहले Recycle Bin में जाती है; Shift+Delete = Permanent।</div>
+<div class="trap"><b>Command Interpreter →</b> Shell कहलाता है (Kernel नहीं)।</div>
+<div class="trap"><b>FAT का पूरा नाम →</b> File Allocation Table (Attribute Table नहीं)।</div>
+<div class="trap"><b>Bootstrap →</b> परीक्षा में प्रायः Cold Boot माना जाता है (तकनीकी रूप से यह पूरी booting process को भी कहते हैं — पर उत्तर हेतु Cold Boot याद रखें)।</div>
+<div class="trap"><b>Single User OS →</b> MS-DOS (Windows/Mac/Linux Multi-user support रखते हैं)।</div>
+<div class="trap"><b>Windows 1.0 →</b> 1985 में आया (1990 = Windows 3.0 — ट्रैप)।</div>
+<div class="trap"><b>Windows 64-bit Support →</b> Windows XP (x64 Edition) से शुरू।</div>
+<div class="trap"><b>Windows 7 Default File System →</b> NTFS (EXT = Linux, BSD/UFS = Unix — Windows 7 डिफ़ॉल्ट रूप से नहीं पढ़ता)।</div>
+<div class="trap"><b>File Permission Command (Linux) →</b> chmod (Change Mode); cd=Change Directory, echo=Print।</div>
+<div class="trap"><b>OS Classification में गलत विकल्प →</b> "Time-Batch Processing OS" — यह कोई मान्य Classification नहीं (Batch OS और Time-Sharing OS अलग-अलग असली Types हैं)।</div>
+<div class="trap"><b>RTOS पहचान संकेत →</b> प्रश्न में "Critical Response Time / Deadline / Millisecond" दिखे तो उत्तर = Real-Time OS।</div>
+<div class="trap"><b>Digital Signature क्या नहीं देता →</b> <b>Confidentiality</b> नहीं देता (वह केवल Encryption से मिलती है)। देता है: Integrity, Authentication, Non-repudiation (Trick: <b>AIN</b>)।</div>
+<div class="trap"><b>Recovery Technique नहीं है →</b> "Recovery Management" (असली techniques: Immediate Update, Deferred Update, Two-Phase Commit)।</div>
+<div class="trap"><b>RPO vs RTO →</b> RPO = अधिकतम स्वीकार्य Data Loss (Point); RTO = अधिकतम Recovery Time।</div>
+<div class="trap"><b>Trojan Horse →</b> Self-Replicate <u>नहीं</u> करता (यह Virus/Worm की विशेषता है) — Assertion-Reason प्रश्नों में बार-बार ट्रैप।</div>
+<div class="trap"><b>Malware Definition →</b> User की "पर्याप्त सहमति" से इंस्टॉल होने की बात गलत है — Malware सामान्यतः धोखे/बिना पूरी जानकारी के इंस्टॉल होता है।</div>
+<div class="trap"><b>Full Backup →</b> सबसे अधिक Storage Space लेता है (Incremental सबसे कम, Differential मध्यम)।</div>
+<div class="trap"><b>Independent Malicious Program (Host चाहिए नहीं) →</b> Worm (Trojan को host चाहिए app के रूप में, Virus को host file चाहिए)।</div>
+
+<h2>2. 🎯 कमजोर क्षेत्र (Priority अनुसार)</h2>
+<table>
+<tr><th>क्रम</th><th>टॉपिक</th><th>स्तर</th></tr>
+<tr><td>1</td><td>Virus vs Worm vs Trojan (Self-Replication अंतर)</td><td>🔴 Very Weak</td></tr>
+<tr><td>2</td><td>Digital Signature vs Encryption (Confidentiality Trap)</td><td>🔴 Very Weak</td></tr>
+<tr><td>3</td><td>DOS 8.3 Rule एवं File Naming</td><td>🟠 Weak</td></tr>
+<tr><td>4</td><td>Booting / BIOS / Bootstrap / Cold-Warm Boot</td><td>🟠 Weak</td></tr>
+<tr><td>5</td><td>Vector vs Raster Image Formats</td><td>🟠 Weak</td></tr>
+<tr><td>6</td><td>Backup Types (Full/Incremental/Differential) + RPO/RTO</td><td>🟠 Weak</td></tr>
+<tr><td>7</td><td>Windows Versions / File Systems (NTFS vs FAT32) / GUI vs CLI</td><td>🟡 Moderate</td></tr>
+<tr><td>8</td><td>Linux Commands (chmod, cd, pwd, ls)</td><td>🟡 Moderate</td></tr>
+<tr><td>9</td><td>Malware Examples (WannaCry, Pegasus, Melissa, Code Red, Sub7)</td><td>🟡 Moderate</td></tr>
+<tr><td>10</td><td>MS Access / MS Office Extensions (mdb/accdb)</td><td>🟢 Strong (लगभग सही)</td></tr>
+</table>
+
+<h2 class="section">3. 📚 File Extensions — विषयवार रिवीजन</h2>
+
+<h3>⭐ High-Yield Extension Table</h3>
+<table>
+<tr><th>Software/File</th><th>Extension</th></tr>
+<tr><td>Photoshop</td><td>.psd</td></tr>
+<tr><td>MS Paint</td><td>.bmp</td></tr>
+<tr><td>Notepad</td><td>.txt</td></tr>
+<tr><td>MS Word (97–2003 / 2007+)</td><td>.doc / .docx</td></tr>
+<tr><td>MS Excel</td><td>.xls / .xlsx</td></tr>
+<tr><td>PowerPoint</td><td>.ppt / .pptx</td></tr>
+<tr><td>MS Access (पुराना/नया)</td><td>.mdb / .accdb</td></tr>
+<tr><td>Executable</td><td>.exe</td></tr>
+<tr><td>Disc Image</td><td>.iso</td></tr>
+<tr><td>Rich Text</td><td>.rtf</td></tr>
+<tr><td>WordPerfect Document</td><td>.wpd</td></tr>
+<tr><td>BitTorrent File</td><td>.torrent</td></tr>
+<tr><td>Temporary File</td><td>.tmp</td></tr>
+<tr><td>Windows Cabinet</td><td>.cab</td></tr>
+<tr><td>Compression</td><td>.zip / .rar / .7z</td></tr>
+<tr><td>Vector Image</td><td>.ai / .svg / .eps / .cdr / .wmf / .apm</td></tr>
+<tr><td>Raster/Bitmap Image</td><td>.jpg/.jpeg / .png / .gif / .bmp / .tiff / .raw</td></tr>
+<tr><td>Audio</td><td>.mp3 / .wav / .mid / .aac / .ogg</td></tr>
+<tr><td>Video</td><td>.mp4 / .avi / .mov / .qt / .mkv / .wmv</td></tr>
+</table>
+
+<h3>⚠ Frequently Confused (Trap) Pairs</h3>
+<table>
+<tr><th>Pair</th><th>अंतर</th></tr>
+<tr><td>MP3 vs MP4</td><td>MP3=Audio only, MP4=Video (Audio+Video दोनों)</td></tr>
+<tr><td>BMP vs PNG</td><td>BMP=No Compression बड़ी File; PNG=Compression + Transparency</td></tr>
+<tr><td>MDB vs ACCDB</td><td>MDB=Access पुराना (2003 तक); ACCDB=Access 2007+</td></tr>
+<tr><td>PSD vs PDF</td><td>PSD=Editable Photoshop; PDF=Read-only Document (Vector+Raster दोनों हो सकता है)</td></tr>
+<tr><td>JPEG vs SVG</td><td>JPEG=Raster (Lossy); SVG=Vector (XML आधारित)</td></tr>
+<tr><td>RAR vs WAV</td><td>RAR=Compression; WAV=Audio</td></tr>
+<tr><td>DOC vs DOCX</td><td>DOC=Word 97–2003; DOCX=Word 2007+</td></tr>
+<tr><td>TMP vs TXT</td><td>TMP=अस्थायी सिस्टम डेटा; TXT=Plain Text</td></tr>
+<tr><td>ISO vs ZIP</td><td>ISO=पूरी Disk की Image; ZIP=Compressed Files</td></tr>
+</table>
+
+<h3>🧠 Vector vs Raster (Concept)</h3>
+<table>
+<tr><th>विशेषता</th><th>Vector</th><th>Raster</th></tr>
+<tr><td>आधार</td><td>Mathematical Formula/Points/Lines</td><td>Pixels का Grid</td></tr>
+<tr><td>Resolution</td><td>Independent (Zoom पर Quality नहीं घटती)</td><td>Dependent (Zoom पर Pixelate)</td></tr>
+<tr><td>प्रयोग</td><td>Logo, Icon, CAD, Font</td><td>Photograph, Scan</td></tr>
+<tr><td>File Size</td><td>छोटा</td><td>बड़ा</td></tr>
+<tr><td>Formats</td><td>AI, SVG, EPS, CDR, WMF, APM</td><td>JPG, PNG, GIF, BMP, TIFF</td></tr>
+</table>
+<div class="trick">Memory Trick: Vector = <b>AESCW</b> (AI, EPS, SVG, CDR, WMF) | Raster = <b>JPGBT</b> (JPG, PNG, GIF, BMP, TIFF)</div>
+<div class="fact">Windows Reserved Characters (File Name में प्रयोग नहीं): <b>&lt; &gt; : " / \ | ? *</b></div>
+
+<h2 class="section">4. 📚 Operating System — विषयवार रिवीजन</h2>
+
+<h3>⭐ Core Facts</h3>
+<ul class="cols2">
+<li>पहला Operating System → 1950 (परीक्षा उत्तर अनुसार)</li>
+<li>DOS File Name → अधिकतम 8 Characters (+3 Extension = 8.3 Rule)</li>
+<li>Windows पहली बार → 1985 (Windows 1.0)</li>
+<li>Notepad Extension → .txt</li>
+<li>Command Interpreter → Shell</li>
+<li>FAT → File Allocation Table</li>
+<li>BIOS → Boot Process शुरू करता है, प्रयोगकर्ता OS</li>
+<li>Booting → Computer Start/Restart करना</li>
+<li>Deleted File → पहले Recycle Bin में जाती है</li>
+<li>Linux → Open-Source Operating System</li>
+<li>DSM → Distributed Shared Memory</li>
+<li>Bootstrapping → Cold Boot (परीक्षा उत्तर)</li>
+<li>Single User OS → MS-DOS</li>
+<li>Windows 64-bit Support → Windows XP से</li>
+<li>Client-Server Network OS → Windows 2000</li>
+<li>Taskbar → स्क्रीन के सबसे निचले भाग में</li>
+<li>OS = User व Hardware के बीच Interface (मध्यस्थ)</li>
+<li>Bootstrap Loader का पहला Instruction → BIOS में संग्रहीत</li>
+<li>Batch OS → समान Jobs को Group बनाकर Execute करता है</li>
+<li>Device Driver → OS का वह भाग जो विशिष्ट Hardware से Interact करता है</li>
+<li>Memory Management → हर Memory Allocation का Track रखता है</li>
+<li>CLI → Terminal/Console में Command टाइप कर OS से Interaction</li>
+<li>GUI + Multiuser + Multitasking OS → Red Hat Linux / Windows XP प्रकार</li>
+<li>GUI संचार → Icons के माध्यम से</li>
+</ul>
+
+<h3>🧠 Real-Time OS (RTOS) — Response Time Critical</h3>
+<div class="fact">जिस OS में Response Time सबसे Critical हो → <b>Real-Time OS</b> (न कि Multitasking/Batch/Online)।</div>
+<table>
+<tr><th>Type</th><th>Deadline Miss का परिणाम</th><th>उदाहरण</th></tr>
+<tr><td>Hard RTOS</td><td>System Fail</td><td>Airbag, Missile, Pacemaker, Nuclear Plant</td></tr>
+<tr><td>Soft RTOS</td><td>Performance कम, चलता रहेगा</td><td>Video Streaming, Music Player, Video Call</td></tr>
+</table>
+<table>
+<tr><th>OS Type</th><th>Response Time</th><th>उदाहरण</th></tr>
+<tr><td>RTOS</td><td>बेहद Critical (ms)</td><td>Missile, Airbag, Satellite</td></tr>
+<tr><td>Multitasking</td><td>सामान्य</td><td>Windows, Android</td></tr>
+<tr><td>Batch</td><td>बहुत धीमा</td><td>Payroll, Billing</td></tr>
+<tr><td>Online OS</td><td>Network निर्भर</td><td>ATM, Ticket Booking</td></tr>
+</table>
+
+<h3>🧠 File Systems</h3>
+<table>
+<tr><th>OS</th><th>Default File System</th></tr>
+<tr><td>Windows (XP–11, incl. Windows 7)</td><td>NTFS (FAT32/exFAT भी Support)</td></tr>
+<tr><td>Linux</td><td>EXT/EXT2/EXT3/EXT4</td></tr>
+<tr><td>macOS पुराना/नया</td><td>HFS+ / APFS</td></tr>
+</table>
+<table>
+<tr><th>Feature</th><th>FAT32</th><th>NTFS</th></tr>
+<tr><td>Age</td><td>Old</td><td>New</td></tr>
+<tr><td>Max File Size</td><td>4 GB Limit</td><td>No Practical Limit</td></tr>
+<tr><td>Security/Encryption</td><td>नहीं</td><td>हाँ</td></tr>
+<tr><td>Journaling (Crash Recovery)</td><td>नहीं</td><td>हाँ</td></tr>
+</table>
+<div class="trap">Windows 7 डिफ़ॉल्ट रूप से EXT (Linux) या BSD/UFS को Read नहीं कर सकता — केवल NTFS/FAT32/exFAT।</div>
+
+<h3>🧠 DOS — 8.3 Rule एवं Commands</h3>
+<div class="fact">DOS Filename Rule: मुख्य नाम अधिकतम <b>8</b> Characters + Extension अधिकतम <b>3</b> Characters (उदा. REPORT.TXT)।</div>
+<table>
+<tr><th>Extension</th><th>Meaning</th></tr>
+<tr><td>.COM</td><td>Command File (COMMAND.COM = DOS Shell)</td></tr>
+<tr><td>.EXE</td><td>Executable Program</td></tr>
+<tr><td>.SYS</td><td>System File (IO.SYS, MSDOS.SYS)</td></tr>
+<tr><td>.BAT</td><td>Batch File (Commands की List)</td></tr>
+<tr><td>.DLL</td><td>Dynamic Link Library</td></tr>
+<tr><td>.INI</td><td>Initialization File</td></tr>
+</table>
+<table>
+<tr><th>Internal Commands (हमेशा उपलब्ध)</th><th>External Commands (अलग File से Load)</th></tr>
+<tr><td>DIR, COPY, DEL, CLS, DATE, TIME, VER, VOL</td><td>FORMAT, XCOPY, CHKDSK, TREE, DISKCOPY, ATTRIB</td></tr>
+</table>
+
+<h3>🧠 Linux Commands</h3>
+<table>
+<tr><th>Command</th><th>Full Form / काम</th></tr>
+<tr><td>chmod</td><td>Change Mode — File Permission बदलना (r=4,w=2,x=1; उदा. 777=rwx सबको)</td></tr>
+<tr><td>chown</td><td>Change Owner</td></tr>
+<tr><td>cd</td><td>Change Directory</td></tr>
+<tr><td>pwd</td><td>Present Working Directory</td></tr>
+<tr><td>ls</td><td>List Files</td></tr>
+<tr><td>mkdir / rmdir</td><td>Directory बनाना/हटाना</td></tr>
+<tr><td>cp / mv / rm</td><td>Copy / Move / Delete</td></tr>
+<tr><td>echo</td><td>Text/Message Screen पर Print करना</td></tr>
+<tr><td>clear</td><td>Terminal Screen साफ करना</td></tr>
+</table>
+
+<h3>🧠 OS Classification (सभी Valid Types)</h3>
+<ul class="cols2">
+<li>Batch OS — समान Jobs Group में Execute</li>
+<li>Multiprogramming OS — RAM में कई Programs, CPU हमेशा Busy</li>
+<li>Multitasking OS — एक User, कई Task साथ (Time Sharing)</li>
+<li>Multithreading — एक Program के कई Threads Parallel</li>
+<li>Multiprocessing — कई CPU/Cores</li>
+<li>Time-Sharing OS — कई Users एक CPU Share करते हैं</li>
+<li>Distributed OS — कई Computers मिलकर एक System जैसे</li>
+<li>Network OS — Server-Client Model</li>
+<li>Real-Time OS — Deadline Fixed/Critical</li>
+</ul>
+<div class="trap">"Time-Batch Processing OS" — यह कोई मान्य वर्गीकरण नहीं (Batch OS और Time-Sharing OS को गलत तरीके से जोड़कर Trap बनाया जाता है)।</div>
+
+<h3>🧠 Windows Features</h3>
+<table>
+<tr><th>Feature</th><th>काम</th></tr>
+<tr><td>Virtual Desktop</td><td>एक ही Computer में कई अलग Desktop (Windows+Tab / Task View)</td></tr>
+<tr><td>Customization</td><td>Wallpaper, Theme, Icons, Dark Mode</td></tr>
+<tr><td>Accessibility</td><td>Narrator, Magnifier, On-Screen Keyboard, High Contrast, Speech Recognition</td></tr>
+<tr><td>Networking</td><td>WiFi, Bluetooth, LAN, File/Printer Sharing</td></tr>
+</table>
+
+<h3>🧠 Software Classification</h3>
+<table>
+<tr><th>Category</th><th>उदाहरण</th></tr>
+<tr><td>System Software (OS)</td><td>Windows, Linux, DOS, Android, macOS</td></tr>
+<tr><td>Application Software</td><td>MS Word, Excel, Chrome, Photoshop, VLC</td></tr>
+<tr><td>Utility Software</td><td>Antivirus, Disk Cleanup, Disk Defragmenter, WinZip</td></tr>
+<tr><td>Communication Software</td><td>Zoom, Skype, Teams, WhatsApp</td></tr>
+<tr><td>Language Translators</td><td>Compiler, Interpreter, Assembler (System Software का भाग)</td></tr>
+</table>
+<div class="trap">"Operating System सबसे common कौन सा Software है?" → System Software। (Windows 7 खुद Application Software नहीं है — यह भी एक Trap Option था।)</div>
+
+<h2 class="section">5. 📚 Computer Virus / Malware / Cyber Security — विषयवार रिवीजन</h2>
+
+<h3>🦠 Malware Family (Tree)</h3>
+<p>Malware → Virus (Boot Sector, Macro, Polymorphic, File) | Worm | Trojan Horse | Spyware (Keylogger, Pegasus) | Adware | Ransomware (WannaCry, CryptoLocker) | Rootkit | Bot/Botnet | Logic Bomb</p>
+
+<h3>⭐⭐⭐⭐⭐ Virus vs Worm vs Trojan</h3>
+<table>
+<tr><th></th><th>Virus</th><th>Worm</th><th>Trojan</th></tr>
+<tr><td>Host File चाहिए?</td><td>हाँ</td><td>नहीं</td><td>Fake Software का रूप</td></tr>
+<tr><td>Self-Replicate?</td><td>हाँ</td><td>हाँ (सबसे तेज़)</td><td>नहीं</td></tr>
+<tr><td>User Action चाहिए?</td><td>हाँ</td><td>नहीं (Network से फैलता है)</td><td>हाँ (खुद Install करता है)</td></tr>
+<tr><td>मुख्य काम</td><td>File Infect</td><td>Network भर देना</td><td>Backdoor खोलना</td></tr>
+</table>
+<div class="trick">Trick: Virus=Host File चाहिए | Worm=अकेला Network में चलता है | Trojan=धोखे का Gift Box</div>
+
+<h3>Virus के प्रकार</h3>
+<table>
+<tr><th>प्रकार</th><th>कहाँ रहता है</th><th>विशेष</th></tr>
+<tr><td>Boot Sector Virus</td><td>MBR (Master Boot Record)</td><td>OS Load होने से पहले Active; हमेशा Full Format जरूरी नहीं — Antivirus/Boot-repair से भी ठीक</td></tr>
+<tr><td>Macro Virus</td><td>Office Files (.docm, .xlsm, .pptm)</td><td>Macros Enable करते ही चलता है, VBA भाषा में</td></tr>
+<tr><td>Polymorphic Virus</td><td>Executable Files</td><td>हर Copy में Mutation Engine से अपना Code/Signature बदलता है; Detection हेतु Heuristic Analysis चाहिए</td></tr>
+</table>
+
+<h3>⭐⭐⭐⭐⭐ Digital Signature</h3>
+<div class="fact">देता है: <b>A</b>uthentication, <b>I</b>ntegrity, <b>N</b>on-repudiation (Trick: AIN)। <b>नहीं</b> देता: Confidentiality (वह केवल Encryption से मिलती है)।</div>
+
+<h3>⭐⭐⭐⭐⭐ Backup Types</h3>
+<table>
+<tr><th>Backup</th><th>क्या शामिल</th><th>Storage</th><th>Restore Speed</th></tr>
+<tr><td>Full</td><td>सभी Files</td><td>सबसे अधिक</td><td>सबसे तेज़</td></tr>
+<tr><td>Differential</td><td>पिछले Full Backup के बाद बदली Files</td><td>मध्यम (Size बढ़ता जाता है)</td><td>मध्यम</td></tr>
+<tr><td>Incremental</td><td>पिछले किसी भी Backup (Full/Incremental) के बाद बदली Files</td><td>सबसे कम</td><td>सबसे धीमा (सबको क्रम से Restore करना पड़ता है)</td></tr>
+</table>
+<div class="fact">RPO (Recovery Point Objective) = अधिकतम स्वीकार्य Data Loss। RTO (Recovery Time Objective) = अधिकतम Recovery Time। MTD = Maximum Tolerable Down Time।</div>
+
+<h3>Other Cyber Security Terms</h3>
+<table>
+<tr><th>Term</th><th>अर्थ</th></tr>
+<tr><td>UAC (User Account Control)</td><td>Windows में बिना Admin Permission के System Change रोकता है/Alert देता है</td></tr>
+<tr><td>Audit Trail</td><td>File पर किए गए कार्यों का Recorded History (कौन-कब-क्या बदला)</td></tr>
+<tr><td>Web Beacon / Web Bug</td><td>Website/Email में लगी पारदर्शी 1×1 Pixel Image, User Activity Track करती है (Tracking Pixel/Clear GIF)</td></tr>
+<tr><td>OTP</td><td>One Time Password</td></tr>
+<tr><td>IPR</td><td>Intellectual Property Rights — Data Creator को Legal Right (इसमें Copyright, Trademark, Patent, GI शामिल)</td></tr>
+<tr><td>Botnet</td><td>Robot+Network; संक्रमित Computers = Zombies, नियंत्रक = Botmaster; उपयोग: DDoS, Spam, Mining</td></tr>
+<tr><td>Rootkit</td><td>OS में गहराई से छिपकर Admin Privilege ले लेता है, Detect करना कठिन</td></tr>
+<tr><td>Logic Bomb</td><td>किसी खास Condition/Date/Event पर ही Active होता है</td></tr>
+</table>
+
+<h3>Malware Types (अन्य)</h3>
+<table>
+<tr><th>Type</th><th>काम</th></tr>
+<tr><td>Adware</td><td>Browsing Track कर Advertisement/Popup दिखाता है</td></tr>
+<tr><td>Spyware</td><td>चुपके से जानकारी चुराता है</td></tr>
+<tr><td>Keylogger</td><td>हर Keystroke Record करता है (Password/OTP चोरी हेतु)</td></tr>
+<tr><td>Ransomware</td><td>Files Encrypt कर Bitcoin में फिरौती मांगता है</td></tr>
+<tr><td>Pegasus</td><td>NSO Group (Israel) का Zero-Click Spyware — बिना Click किए फोन में घुसकर Camera/Mic/Chat/Location चुराता है</td></tr>
+</table>
+
+<h3>⭐ Famous Malware (Match the Following — PYQ Pattern)</h3>
+<table>
+<tr><th>Malware</th><th>Type</th></tr>
+<tr><td>Melissa</td><td>Macro Virus</td></tr>
+<tr><td>Code Red</td><td>Worm</td></tr>
+<tr><td>Sub7 (SubSeven)</td><td>Trojan (RAT)</td></tr>
+<tr><td>WannaCry (2017)</td><td>Ransomware — EternalBlue Exploit, SMB Protocol खामी, 150+ देश, 3 लाख+ Systems</td></tr>
+<tr><td>Shlayer</td><td>Trojan Downloader (macOS, Fake Flash Player Update)</td></tr>
+<tr><td>Pegasus</td><td>Spyware (NSO Group)</td></tr>
+</table>
+
+<h3>Firewall Types (Reference)</h3>
+<table>
+<tr><th>Type</th><th>OSI Layer</th><th>विशेषता</th></tr>
+<tr><td>Packet Filter</td><td>Network/Transport (L3/L4)</td><td>तेज़, Stateless, केवल Header चेक</td></tr>
+<tr><td>Stateful Firewall</td><td>—</td><td>पूरे Connection का State Table रखता है</td></tr>
+<tr><td>Proxy/Application Gateway</td><td>Application (L7)</td><td>Deep Packet Inspection, सबसे सुरक्षित पर धीमा</td></tr>
+</table>
+
+<h2 class="section">6. 📊 Difference Tables (Cross-Topic Consolidated)</h2>
+<table>
+<tr><th>Concept 1</th><th>Concept 2</th><th>मुख्य अंतर</th></tr>
+<tr><td>Vector Image</td><td>Raster Image</td><td>Formula vs Pixels; Resolution Independent vs Dependent</td></tr>
+<tr><td>MDB</td><td>ACCDB</td><td>Access पुराना vs नया</td></tr>
+<tr><td>DOC</td><td>DOCX</td><td>Word 97-2003 vs 2007+</td></tr>
+<tr><td>FAT32</td><td>NTFS</td><td>4GB Limit/No Security vs No Limit/Security+Journaling</td></tr>
+<tr><td>Internal Command</td><td>External Command</td><td>हमेशा उपलब्ध vs अलग File से Load</td></tr>
+<tr><td>Hard RTOS</td><td>Soft RTOS</td><td>Deadline Miss=Fail vs Miss=Performance कम</td></tr>
+<tr><td>Digital Signature</td><td>Encryption</td><td>AIN (Auth+Integrity+Non-repudiation) vs Confidentiality</td></tr>
+<tr><td>Virus</td><td>Worm</td><td>Host चाहिए+Self-replicate vs Host नहीं+Self-replicate</td></tr>
+<tr><td>Worm</td><td>Trojan</td><td>Self-replicate vs Self-replicate नहीं (Fake Software)</td></tr>
+<tr><td>Full Backup</td><td>Incremental Backup</td><td>Max Storage/Fast Restore vs Min Storage/Slow Restore</td></tr>
+<tr><td>RPO</td><td>RTO</td><td>Data Loss vs Recovery Time</td></tr>
+<tr><td>Adware</td><td>Spyware</td><td>Ads दिखाना vs जानकारी चुराना</td></tr>
+</table>
+
+<h2 class="section">7. 🧠 Memory Tricks संग्रह</h2>
+<ul class="cols2">
+<li>Photoshop → PSD | Paint → BMP | Notepad → TXT</li>
+<li>DOS = 8.3 Rule (Name.Ext)</li>
+<li>Boot = Start</li>
+<li>User → Shell → Kernel → Hardware</li>
+<li>Vector = AESCW (AI,EPS,SVG,CDR,WMF)</li>
+<li>Raster = JPGBT (JPG,PNG,GIF,BMP,TIFF)</li>
+<li>Windows → NTFS | Linux → EXT4 | macOS पुराना→HFS+, नया→APFS</li>
+<li>Digital Signature = AIN; Encryption = Confidentiality</li>
+<li>Virus=File चाहिए; Worm=अकेला फैलता (Wire); Trojan=Trick(Gift Box)</li>
+<li>Full Backup=Everything; Incremental=Small; Differential=Full से अंतर</li>
+<li>RPO=Point(Data); RTO=Time(Recovery)</li>
+<li>Botnet=Zombie Army</li>
+<li>chmod 7=rwx, 6=rw-, 5=r-x, 4=r-- (4=Read,2=Write,1=Execute)</li>
+</ul>
+
+<h2 class="section">8. ⭐ PYQ Favourite Topics (Frequency)</h2>
+<table>
+<tr><th>Topic</th><th>Importance</th></tr>
+<tr><td>File Extensions (सभी Software)</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td>Vector vs Raster</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td>Booting/BIOS/Bootstrap</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td>GUI vs CLI</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td>DOS 8.3 Rule</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td>Virus vs Worm vs Trojan</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td>Digital Signature vs Encryption</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td>Backup Types + RPO/RTO</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td>Famous Malware Matching (WannaCry, Melissa, Code Red, Sub7)</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td>Windows/Linux File Systems (NTFS/EXT)</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td>OS Classification (Batch/Multitasking/RTOS etc.)</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td>Linux Commands (chmod आदि)</td><td>⭐⭐⭐</td></tr>
+<tr><td>UAC / Audit Trail / Web Beacon / IPR</td><td>⭐⭐⭐⭐</td></tr>
+</table>
+
+<h2 class="section">9. ⚡ Last-Minute One-Liners (Deduplicated)</h2>
+<ul class="cols2">
+<li>Photoshop → .psd | Paint → .bmp | Notepad → .txt</li>
+<li>Access पुराना → .mdb | नया → .accdb</li>
+<li>Word पुराना → .doc | नया → .docx</li>
+<li>Disc Image → .iso | Rich Text → .rtf | Torrent → .torrent</li>
+<li>DOS Filename → 8 Characters + 3 Extension (8.3 Rule)</li>
+<li>पहला OS → 1950 | Windows 1.0 → 1985</li>
+<li>Shell = Command Interpreter | BIOS = Boot Process शुरू करता है</li>
+<li>Booting = Start/Restart | Bootstrap (exam) = Cold Boot</li>
+<li>MS-DOS = Single User OS | Windows XP = पहला 64-bit Support</li>
+<li>Windows Default File System = NTFS | Linux = EXT4</li>
+<li>chmod = Change Mode (Permission) | cd = Change Directory</li>
+<li>RTOS = Response Time सबसे Critical</li>
+<li>Digital Signature = Confidentiality नहीं देता; देता है Auth+Integrity+Non-repudiation</li>
+<li>Encryption = Confidentiality देता है</li>
+<li>Virus = Host चाहिए, Self-Replicate | Worm = Host नहीं, Self-Replicate | Trojan = Self-Replicate नहीं</li>
+<li>Full Backup = अधिकतम Storage | Incremental = न्यूनतम Storage</li>
+<li>RPO = Data Loss सीमा | RTO = Recovery Time सीमा</li>
+<li>UAC = User Account Control</li>
+<li>WannaCry (2017) = Ransomware, EternalBlue, SMB</li>
+<li>Web Beacon/Web Bug = Tracking Pixel (1×1 Transparent Image)</li>
+<li>IPR = Data Creator को Legal Right (Copyright/Trademark/Patent इसके भाग)</li>
+<li>Keylogger = Keystrokes Record | Adware = Ads दिखाता | Spyware = जानकारी चुराता</li>
+</ul>
+
+<h2 class="section">10. 🎯 Expected Similar Questions</h2>
+<ol>
+<li>Word 2007+ / Excel / PowerPoint की Default Extension क्या है?</li>
+<li>Access 2007+ Database Extension क्या है?</li>
+<li>Cold Boot और Warm Boot में अंतर बताइए।</li>
+<li>BIOS और UEFI में अंतर।</li>
+<li>FAT और NTFS में अंतर।</li>
+<li>GUI और CLI की तुलना कीजिए।</li>
+<li>Internal और External DOS Commands में अंतर।</li>
+<li>Hard RTOS और Soft RTOS में अंतर।</li>
+<li>Virus, Worm और Trojan में Self-Replication के आधार पर अंतर स्पष्ट करें।</li>
+<li>Full, Incremental और Differential Backup में अंतर बताइए।</li>
+<li>Digital Signature किन-किन Security Services की गारंटी नहीं देता?</li>
+<li>WannaCry किस प्रकार का Malware था और किस Exploit का उपयोग हुआ?</li>
+<li>chmod 755 का क्या अर्थ है?</li>
+<li>Web Beacon/Web Bug का उपयोग किसलिए किया जाता है?</li>
+<li>IPR के अंतर्गत कौन-कौन से अधिकार आते हैं?</li>
+</ol>
+
+<p class="small">यह Handbook निरंतर अद्यतन (continuously merged) होता रहेगा — नई Quiz जोड़ने पर इसी Document में मर्ज होगा, नया Document नहीं बनेगा।</p>
+
+</body>
+</html>

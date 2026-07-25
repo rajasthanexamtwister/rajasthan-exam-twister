@@ -352,325 +352,471 @@
       <div class="notes-search-row">
         <input type="text" id="notesSearch" placeholder="🔍 Search sheets (e.g. DCCN, Lakes, Mela...)" oninput="filterNotes()" />
         <div class="notes-category-filters">
-          <button class="notes-filter-btn active" onclick="filterCategory('all', this)">All</button>
-          <button class="notes-filter-btn" onclick="filterCategory('cs', this)">💻 Computer Science</button>
-          <button class="notes-filter-btn" onclick="filterCategory('gk', this)">🗺️ Rajasthan GK</button>
+          <button class="notes-filter-btn active" onclick="filterCategory('all', this)">✨ All</button>
+          <button class="notes-filter-btn" onclick="filterCategory('cs', this)">💻 CS</button>
+          <button class="notes-filter-btn" onclick="filterCategory('history', this)">🏰 History</button>
+          <button class="notes-filter-btn" onclick="filterCategory('art-culture', this)">🎨 Art & Culture</button>
+          <button class="notes-filter-btn" onclick="filterCategory('geography-general', this)">🗺️ Geography</button>
+          <button class="notes-filter-btn" onclick="filterCategory('pedagogy-aptitude', this)">🧠 Pedagogy & Aptitude</button>
         </div>
       </div>
 
-      <!-- Notes Grid -->
-      <div class="notes-grid" id="notesGrid">
-        <!-- Card 1: FOC -->
-        <div class="note-card" data-category="cs" data-title="computer fundamentals foc basic hardware software history">
-          <div class="note-card-badge cs">CS</div>
-          <div class="note-card-icon">💻</div>
-          <div class="note-card-title">Computer Fundamentals (FOC)</div>
-          <div class="note-card-desc">High-yield revision notes covering basic concepts, computer history, generations, memory organization, and input/output hardware.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('FOC.html', 'Computer Fundamentals (FOC)')">👁️ Read Inside</button>
-            <a href="FOC.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+      <!-- Notes Grid Container -->
+      <div id="notesContainer">
+        
+        <!-- Section: Computer Science -->
+        <div class="notes-section" data-section-category="cs">
+          <div class="notes-section-header">
+            <span class="notes-section-icon">💻</span>
+            <span class="notes-section-title">Computer Science (कम्प्यूटर विज्ञान)</span>
+          </div>
+          <div class="notes-grid">
+            <!-- Card 1: FOC -->
+            <div class="note-card" data-category="cs" data-title="computer fundamentals foc basic hardware software history">
+              <div class="note-card-badge cs">CS</div>
+              <div class="note-card-icon">💻</div>
+              <div class="note-card-title">Computer Fundamentals (FOC)</div>
+              <div class="note-card-desc">High-yield revision notes covering basic concepts, computer history, generations, memory organization, and input/output hardware.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('FOC.html', 'Computer Fundamentals (FOC)')">👁️ Read Inside</button>
+                <a href="FOC.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 2: DCCN -->
+            <div class="note-card" data-category="cs" data-title="data communication computer networking dccn protocol osi tcp ip address devices topology">
+              <div class="note-card-badge cs">CS</div>
+              <div class="note-card-icon">🌐</div>
+              <div class="note-card-title">Computer Networking (DCCN)</div>
+              <div class="note-card-desc">Bug-free high-yield review sheet focusing on OSI/TCP models, protocols, port numbers, IPv4/IPv6 addressing, subnetting, and devices.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('dccn.html', 'Computer Networking (DCCN)')">👁️ Read Inside</button>
+                <a href="dccn.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 3: BCI CS Master Revision -->
+            <div class="note-card" data-category="cs" data-title="bci master revision handbook computer instructor full revision cs core technical data structures oop network security os">
+              <div class="note-card-badge cs">CS</div>
+              <div class="note-card-icon">📘</div>
+              <div class="note-card-title">BCI CS Master Revision</div>
+              <div class="note-card-desc">Core BCI master handbook (v1.1) with CS technical revision, weak-area consolidation, and exam-focused recall tables.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('question-answer/bci_computer_science_master_revision.html', 'BCI CS Master Revision')">👁️ Read Inside</button>
+                <a href="question-answer/bci_computer_science_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 4: BCI Tech Master Revision -->
+            <div class="note-card" data-category="cs" data-title="bci tech computer science master revision technical number system compiler operating system os network dbms sql java oop cpp c data structures algorithms software engineering">
+              <div class="note-card-badge cs">CS</div>
+              <div class="note-card-icon">💻</div>
+              <div class="note-card-title">BCI Tech Master Revision</div>
+              <div class="note-card-desc">High-yield CS revision notes covering Number System, Compiler, OS, Networks, DBMS, Java, C++, DSA, Software Engineering, and more.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('question-answer/bci_tech_master_revision.html', 'BCI Tech Master Revision')">👁️ Read Inside</button>
+                <a href="question-answer/bci_tech_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 5: MS PowerPoint & Access -->
+            <div class="note-card" data-category="cs" data-title="ms office powerpoint power point access presentation slide keyboard shortcuts database">
+              <div class="note-card-badge cs">CS</div>
+              <div class="note-card-icon">📊</div>
+              <div class="note-card-title">MS PowerPoint & Access</div>
+              <div class="note-card-desc">Consolidated keyboard shortcuts, exam traps, and features of MS PowerPoint and MS Access database.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('question-answer/ms_powerpoint_master_revision.html', 'MS PowerPoint & Access')">👁️ Read Inside</button>
+                <a href="question-answer/ms_powerpoint_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 6: System Analysis & Design (SAD) -->
+            <div class="note-card" data-category="cs" data-title="sad system analysis design software engineering sdlc flow charts charts coupling cohesion">
+              <div class="note-card-badge cs">CS</div>
+              <div class="note-card-icon">⚙️</div>
+              <div class="note-card-title">System Analysis & Design (SAD)</div>
+              <div class="note-card-desc">Master handbook for SAD covering SDLC phases, tools (Data Dictionary, Decision Tree), coupling & cohesion, and design principles.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('question-answer/sad_master_revision.html', 'System Analysis & Design (SAD)')">👁️ Read Inside</button>
+                <a href="question-answer/sad_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 7: File Extension, OS & Cyber Security -->
+            <div class="note-card" data-category="cs" data-title="file extensions operating system cyber security virus malware Trojan ports cryptography">
+              <div class="note-card-badge cs">CS</div>
+              <div class="note-card-icon">🦠</div>
+              <div class="note-card-title">File, OS & Cyber Security</div>
+              <div class="note-card-desc">Revision handbook covering file extensions, operating systems, malware/virus types, and cyber security traps.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('bci_file_os_virus_master_revision.html', 'File, OS & Cyber Security')">👁️ Read Inside</button>
+                <a href="bci_file_os_virus_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 8: Computer Memory & Fundamentals -->
+            <div class="note-card" data-category="cs" data-title="computer memory fundamentals register mar mdr ram rom cache memory hierarchy">
+              <div class="note-card-badge cs">CS</div>
+              <div class="note-card-icon">💾</div>
+              <div class="note-card-title">Memory & Fundamentals</div>
+              <div class="note-card-desc">Key memory concepts, memory hierarchy, RAM/ROM structures, and CPU address/data registers.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('computer_fundamentals_master_revision.html', 'Memory & Fundamentals')">👁️ Read Inside</button>
+                <a href="computer_fundamentals_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 9: BCI Programming Languages -->
+            <div class="note-card" data-category="cs" data-title="programming languages c cpp java oop constructor compiler relational logical abstraction encapsulation">
+              <div class="note-card-badge cs">CS</div>
+              <div class="note-card-icon">☕</div>
+              <div class="note-card-title">Programming Languages (OOP)</div>
+              <div class="note-card-desc">Comprehensive programming handbook covering C, C++, Java, OOP concepts, compilers, interpreters, and memory management.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('bci_programming_master_revision.html', 'Programming Languages (OOP)')">👁️ Read Inside</button>
+                <a href="bci_programming_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Card 2: DCCN -->
-        <div class="note-card" data-category="cs" data-title="data communication computer networking dccn protocol osi tcp ip address devices topology">
-          <div class="note-card-badge cs">CS</div>
-          <div class="note-card-icon">🌐</div>
-          <div class="note-card-title">Computer Networking (DCCN)</div>
-          <div class="note-card-desc">Bug-free high-yield review sheet focusing on OSI/TCP models, protocols, port numbers, IPv4/IPv6 addressing, subnetting, and devices.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('dccn.html', 'Computer Networking (DCCN)')">👁️ Read Inside</button>
-            <a href="dccn.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+        <!-- Section: Rajasthan History -->
+        <div class="notes-section" data-section-category="history">
+          <div class="notes-section-header">
+            <span class="notes-section-icon">🏰</span>
+            <span class="notes-section-title">Rajasthan History (राजस्थान का इतिहास)</span>
+          </div>
+          <div class="notes-grid">
+            <!-- Card 10: Ancient Civilizations -->
+            <div class="note-card" data-category="history" data-title="rajasthan ancient civilizations prachin sabhytaye kalibangan ahar bairath ganeshwar">
+              <div class="note-card-badge history">History</div>
+              <div class="note-card-icon">🏺</div>
+              <div class="note-card-title">Ancient Civilizations (सभ्यताएं)</div>
+              <div class="note-card-desc">Very short notes & exam-oriented traps on Kalibangan, Ahar, Bairath, Ganeshwar, Bagore, Balathal, and other archaeological sites.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('prachin_sabhytaye_very_short_notes.html', 'Ancient Civilizations (प्राचीन सभ्यताएं)')">👁️ Read Inside</button>
+                <a href="prachin_sabhytaye_very_short_notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 11: Rajasthan Integration -->
+            <div class="note-card" data-category="history" data-title="rajasthan integration ekikaran 7 stages dates rulers prime ministers satyanarayan samiti">
+              <div class="note-card-badge history">History</div>
+              <div class="note-card-icon">🗺️</div>
+              <div class="note-card-title">Rajasthan Integration (एकीकरण)</div>
+              <div class="note-card-desc">7 stages of Rajasthan integration, dates, capitals, Rajpramukhs, PMs, and critical exam confusion traps.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_ekikaran_revision_sheet.html', 'Rajasthan Integration (राजस्थान एकीकरण)')">👁️ Read Inside</button>
+                <a href="rajasthan_ekikaran_revision_sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 12: Chauhan Dynasty -->
+            <div class="note-card" data-category="history" data-title="chauhan vansh dynasty history rajasthan kings rulers battle">
+              <div class="note-card-badge history">History</div>
+              <div class="note-card-icon">🛡️</div>
+              <div class="note-card-title">Chauhan Dynasty (चौहान वंश)</div>
+              <div class="note-card-desc">High-yield notes on the history of the Chauhan dynasty in Rajasthan, major rulers, battles, and previous exam questions.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('question-answer/chauhan_vansh_master_revision.html', 'Chauhan Dynasty (चौहान वंश)')">👁️ Read Inside</button>
+                <a href="question-answer/chauhan_vansh_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 13: Mewar Guhil Dynasty -->
+            <div class="note-card" data-category="history" data-title="mewar guhil vansh dynasty history rajasthan sisodia rulers battle">
+              <div class="note-card-badge history">History</div>
+              <div class="note-card-icon">🏰</div>
+              <div class="note-card-title">Mewar Guhil Dynasty (गुहिल वंश)</div>
+              <div class="note-card-desc">Comprehensive revision guide for Mewar's Guhil and Sisodia dynasty, key historical figures, achievements, and war details.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('question-answer/mewar_guhil_vansh_master_handbook.html', 'Mewar Guhil Dynasty (गुहिल वंश)')">👁️ Read Inside</button>
+                <a href="question-answer/mewar_guhil_vansh_master_handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 14: Rajasthan History (Other Dynasties) -->
+            <div class="note-card" data-category="history" data-title="rajasthan other dynasties anya rajvansh jaisalmer bhati karauli jadaun bharatpur jat tonk pindari sakas">
+              <div class="note-card-badge history">History</div>
+              <div class="note-card-icon">🏰</div>
+              <div class="note-card-title">Other Dynasties (जैसलमेर, भरतपुर...)</div>
+              <div class="note-card-desc">Jaisalmer (Bhati), Karauli (Jadaun), Bharatpur (Jat), and Tonk (Pindari) dynasties, with traps and PYQ database.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_anya_rajvansh_master_revision.html', 'Other Dynasties (जैसलमेर, भरतपुर...)')">👁️ Read Inside</button>
+                <a href="rajasthan_anya_rajvansh_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 15: Kachwaha Dynasty -->
+            <div class="note-card" data-category="history" data-title="kachwaha vansh amer dynasty history rulers battles treaties dulharay kokildev jai singh man singh">
+              <div class="note-card-badge history">History</div>
+              <div class="note-card-icon">👑</div>
+              <div class="note-card-title">Kachwaha Dynasty (कछवाहा वंश)</div>
+              <div class="note-card-desc">Complete Amer/Jaipur Kachwaha dynasty timeline, rulers, battles, treaties, and branch lineages.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('kachwaha_vansh_master_revision.html', 'Kachwaha Dynasty (कछवाहा वंश)')">👁️ Read Inside</button>
+                <a href="kachwaha_vansh_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 16: Gurjar Pratihar Dynasty -->
+            <div class="note-card" data-category="history" data-title="gurjar pratihar dynasty mandor jalor kannauj tri partite harishchandra nagbhatt vatsraj mihir bhoj">
+              <div class="note-card-badge history">History</div>
+              <div class="note-card-icon">🏛️</div>
+              <div class="note-card-title">Gurjar Pratihar Dynasty</div>
+              <div class="note-card-desc">Mandor and Jalor-Kannauj branches of Gurjar Pratihar rulers, tri-partite struggle, and exam traps.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('gurjar_pratihar_master_revision.html', 'Gurjar Pratihar Dynasty')">👁️ Read Inside</button>
+                <a href="gurjar_pratihar_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Card 3: Ancient Civilizations -->
-        <div class="note-card" data-category="gk" data-title="rajasthan ancient civilizations prachin sabhytaye kalibangan ahar bairath ganeshwar">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">🏺</div>
-          <div class="note-card-title">Ancient Civilizations (सभ्यताएं)</div>
-          <div class="note-card-desc">Very short notes & exam-oriented traps on Kalibangan, Ahar, Bairath, Ganeshwar, Bagore, Balathal, and other archaeological sites.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('prachin_sabhytaye_very_short_notes.html', 'Ancient Civilizations (प्राचीन सभ्यताएं)')">👁️ Read Inside</button>
-            <a href="prachin_sabhytaye_very_short_notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+        <!-- Section: Rajasthan Art & Culture -->
+        <div class="notes-section" data-section-category="art-culture">
+          <div class="notes-section-header">
+            <span class="notes-section-icon">🎨</span>
+            <span class="notes-section-title">Rajasthan Art & Culture (कला एवं संस्कृति)</span>
+          </div>
+          <div class="notes-grid">
+            <!-- Card 17: Rajasthan Festivals -->
+            <div class="note-card" data-category="art-culture" data-title="rajasthan festivals festival tyohar hindu muslim jain lunar calendar months teej gangaur">
+              <div class="note-card-badge art-culture">Art & Culture</div>
+              <div class="note-card-icon">🗓️</div>
+              <div class="note-card-title">Rajasthan Festivals (त्योहार)</div>
+              <div class="note-card-desc">Detailed calendar of Hindu, Muslim, Jain, and Christian festivals sorted by lunar months, along with previous year questions.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_festival_revision_sheet.html', 'Rajasthan Festivals (त्योहार)')">👁️ Read Inside</button>
+                <a href="rajasthan_festival_revision_sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 18: Rajasthan Fairs Guide -->
+            <div class="note-card" data-category="art-culture" data-title="rajasthan mela fairs guide pushkar karni mata ramdevra tejaji jambheshwar">
+              <div class="note-card-badge art-culture">Art & Culture</div>
+              <div class="note-card-icon">🎪</div>
+              <div class="note-card-title">Rajasthan Fairs Guide (मेले)</div>
+              <div class="note-card-desc">High-yield district-wise and month-wise lists of major fairs (mela), related deities, locations, and historical significance.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Mela_Revision_Guide.html', 'Rajasthan Fairs (राजस्थान के मेले)')">👁️ Read Inside</button>
+                <a href="Rajasthan_Mela_Revision_Guide.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 19: Fairs & Festivals Combined -->
+            <div class="note-card" data-category="art-culture" data-title="rajasthan fairs festivals mela tyohar combined comprehensive list">
+              <div class="note-card-badge art-culture">Art & Culture</div>
+              <div class="note-card-icon">📚</div>
+              <div class="note-card-title">Mela & Tyohar (Combined)</div>
+              <div class="note-card-desc">A comprehensive unified list combining fairs and festivals to avoid overlapping confusion during revisions.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Mela_Tyohar_Combined.html', 'Mela & Tyohar (Combined)')">👁️ Read Inside</button>
+                <a href="Rajasthan_Mela_Tyohar_Combined.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 20: Rajasthan Aabhushan & Veshbhusha -->
+            <div class="note-card" data-category="art-culture" data-title="rajasthan ornaments dresses aabhushan veshbhusha master handbook revision">
+              <div class="note-card-badge art-culture">Art & Culture</div>
+              <div class="note-card-icon">👑</div>
+              <div class="note-card-title">Aabhushan & Veshbhusha</div>
+              <div class="note-card-desc">Master Revision Handbook for traditional ornaments (आभूषण) and dresses (वेशभूषा) of Rajasthan.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Aabhushan_Veshbhusha_Master_Handbook.html', 'Aabhushan & Veshbhusha (आभूषण एवं वेशभूषा)')">👁️ Read Inside</button>
+                <a href="Rajasthan_Aabhushan_Veshbhusha_Master_Handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 21: Rajasthan Hastkala -->
+            <div class="note-card" data-category="art-culture" data-title="rajasthan handicrafts hastkala thewa pottery painting block print master revision">
+              <div class="note-card-badge art-culture">Art & Culture</div>
+              <div class="note-card-icon">🎨</div>
+              <div class="note-card-title">Rajasthan Hastkala (हस्तकला)</div>
+              <div class="note-card-desc">Master Revision Sheet on traditional handicrafts of Rajasthan, including Blue Pottery, Thewa Art, Usta Art, Miniature Paintings, and textile works.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_hastkala_master_revision.html', 'Rajasthan Hastkala (राजस्थान की हस्तकला)')">👁️ Read Inside</button>
+                <a href="rajasthan_hastkala_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 22: Rajasthan Folk Dances -->
+            <div class="note-card" data-category="art-culture" data-title="rajasthan folk dances nritya ghoomar kalbeliya chang chari tribal regional master handbook">
+              <div class="note-card-badge art-culture">Art & Culture</div>
+              <div class="note-card-icon">💃</div>
+              <div class="note-card-title">Folk Dances (लोकनृत्य)</div>
+              <div class="note-card-desc">Comprehensive revision guide for tribal, regional, and professional folk dances of Rajasthan (Ghoomar, Kalbeliya, Chari, Gair, etc.).</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_nritya_master_handbook.html', 'Folk Dances (राजस्थान के लोकनृत्य)')">👁️ Read Inside</button>
+                <a href="rajasthan_nritya_master_handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 23: Rajasthani Shabdavali -->
+            <div class="note-card" data-category="art-culture" data-title="rajasthani shabdavali dialect vocabulary regional language words agriculture terms dialect translation master revision">
+              <div class="note-card-badge art-culture">Art & Culture</div>
+              <div class="note-card-icon">🗣️</div>
+              <div class="note-card-title">Rajasthani Shabdavali</div>
+              <div class="note-card-desc">Essential list of traditional Rajasthani dialect vocabulary, agriculture terms, domestic items, and dialect meanings for BCI exam revision.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('Rajasthani_Shabdavali_Master_Revision.html', 'Rajasthani Shabdavali (राजस्थानी शब्दावली)')">👁️ Read Inside</button>
+                <a href="Rajasthani_Shabdavali_Master_Revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 24: Rajasthan Bhasha Boliyan -->
+            <div class="note-card" data-category="art-culture" data-title="rajasthan bhasha boliyan master revision handbook dialect language">
+              <div class="note-card-badge art-culture">Art & Culture</div>
+              <div class="note-card-icon">🗣️</div>
+              <div class="note-card-title">Rajasthan Bhasha Boliyan</div>
+              <div class="note-card-desc">Master revision handbook for Rajasthan language history, dialect groups, and high-yield exam facts.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Bhasha_Boliyan_Master_Revision_Handbook.html', 'Rajasthan Bhasha Boliyan')">👁️ Read Inside</button>
+                <a href="Rajasthan_Bhasha_Boliyan_Master_Revision_Handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 25: Rajasthan RitiRiwaj -->
+            <div class="note-card" data-category="art-culture" data-title="rajasthan riti riwaj customs traditions master revision handbook">
+              <div class="note-card-badge art-culture">Art & Culture</div>
+              <div class="note-card-icon">🎭</div>
+              <div class="note-card-title">Rajasthan Riti-Riwaj</div>
+              <div class="note-card-desc">Revision handbook covering Rajasthan customs, rituals, social practices, and frequent trap points.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_RitiRiwaj_Master_Revision_Handbook.html', 'Rajasthan Riti-Riwaj')">👁️ Read Inside</button>
+                <a href="Rajasthan_RitiRiwaj_Master_Revision_Handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 26: Rajasthan Chitra Shailiya -->
+            <div class="note-card" data-category="art-culture" data-title="rajasthan chitra shailiya master notes painting art school">
+              <div class="note-card-badge art-culture">Art & Culture</div>
+              <div class="note-card-icon">🎨</div>
+              <div class="note-card-title">Rajasthan Chitra Shailiya</div>
+              <div class="note-card-desc">Master notes on Rajasthan painting styles, artists, schools, and exam-trap comparisons.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Chitra_Shailiya_Master_Notes.html', 'Rajasthan Chitra Shailiya')">👁️ Read Inside</button>
+                <a href="Rajasthan_Chitra_Shailiya_Master_Notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 27: Rajasthani Muhavare -->
+            <div class="note-card" data-category="art-culture" data-title="rajasthani muhavare kahavate lokoktiyan master revision handbook">
+              <div class="note-card-badge art-culture">Art & Culture</div>
+              <div class="note-card-icon">📝</div>
+              <div class="note-card-title">Rajasthani Muhavare</div>
+              <div class="note-card-desc">Master revision handbook for Rajasthani idioms, proverbs, and commonly asked trap meanings for quick exam revision.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('Rajasthani_Muhavare_Master_Revision.html', 'Rajasthani Muhavare (मुहावरे, कहावतें और लोकोक्तियाँ)')">👁️ Read Inside</button>
+                <a href="Rajasthani_Muhavare_Master_Revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 28: Riti Rivaj & Customs -->
+            <div class="note-card" data-category="art-culture" data-title="rajasthan riti rivaj customs traditional culture rituals sanskar">
+              <div class="note-card-badge art-culture">Art & Culture</div>
+              <div class="note-card-icon">🎭</div>
+              <div class="note-card-title">Riti Rivaj & Customs (रीति-रिवाज)</div>
+              <div class="note-card-desc">Traditional customs, rituals, 16 Sanskars, and repeated previous year questions on Rajasthani culture.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('question-answer/rajasthan_riti_rivaj_master_revision.html', 'Riti Rivaj & Customs (रीति-रिवाज)')">👁️ Read Inside</button>
+                <a href="question-answer/rajasthan_riti_rivaj_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Card 4: Rajasthan GK Master Revision -->
-        <div class="note-card" data-category="gk" data-title="rajasthan gk master revision handbook regional programs institutions">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">📘</div>
-          <div class="note-card-title">Rajasthan GK Master Revision</div>
-          <div class="note-card-desc">Unified Rajasthan GK handbook covering traps, institutions, regional development programs, and high-yield exam facts.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('राजस्थान_GK_Master_Revision_Handbook.html', 'Rajasthan GK Master Revision')">👁️ Read Inside</button>
-            <a href="राजस्थान_GK_Master_Revision_Handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+        <!-- Section: Rajasthan Geography & General -->
+        <div class="notes-section" data-section-category="geography-general">
+          <div class="notes-section-header">
+            <span class="notes-section-icon">🗺️</span>
+            <span class="notes-section-title">Rajasthan Geography & General (भूगोल एवं सामान्य ज्ञान)</span>
+          </div>
+          <div class="notes-grid">
+            <!-- Card 29: Rajasthan GK Master Revision -->
+            <div class="note-card" data-category="geography-general" data-title="rajasthan gk master revision handbook regional programs institutions">
+              <div class="note-card-badge geography-general">Geography & Gen</div>
+              <div class="note-card-icon">📘</div>
+              <div class="note-card-title">Rajasthan GK Master Revision</div>
+              <div class="note-card-desc">Unified Rajasthan GK handbook covering traps, institutions, regional development programs, and high-yield exam facts.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('राजस्थान_GK_Master_Revision_Handbook.html', 'Rajasthan GK Master Revision')">👁️ Read Inside</button>
+                <a href="राजस्थान_GK_Master_Revision_Handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 30: BCI GK & Science Revision -->
+            <div class="note-card" data-category="geography-general" data-title="bci gk general science revision non tech rajasthan tribes dialects archaeology mahajanapada census general science space chemistry physics biology">
+              <div class="note-card-badge geography-general">Geography & Gen</div>
+              <div class="note-card-icon">🗺️</div>
+              <div class="note-card-title">BCI GK & Science Revision</div>
+              <div class="note-card-desc">Master handbook (v1.0) for Rajasthan GK, General Science, and Current Affairs (up to batch 7).</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('question-answer/bci_gk_master_revision.html', 'BCI GK & Science Revision')">👁️ Read Inside</button>
+                <a href="question-answer/bci_gk_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 31: Rajasthan Lakes -->
+            <div class="note-card" data-category="geography-general" data-title="rajasthan lakes jheel salt water fresh water sambhar jaisamand rajasmand pachpadra">
+              <div class="note-card-badge geography-general">Geography & Gen</div>
+              <div class="note-card-icon">💧</div>
+              <div class="note-card-title">Rajasthan Lakes (झीलें)</div>
+              <div class="note-card-desc">Complete facts sheet about saltwater and freshwater lakes in Rajasthan, their geographical locations, and economic importance.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_lakes_revision_sheet.html', 'Rajasthan Lakes (राजस्थान की झीलें)')">👁️ Read Inside</button>
+                <a href="rajasthan_lakes_revision_sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 32: Rajasthan Geography Borders & Districts -->
+            <div class="note-card" data-category="geography-general" data-title="rajasthan geography borders districts divisions map international borders inter state borders">
+              <div class="note-card-badge geography-general">Geography & Gen</div>
+              <div class="note-card-icon">🗺️</div>
+              <div class="note-card-title">Geography, Borders & Districts</div>
+              <div class="note-card-desc">In-depth geography revision covering land borders, districts, divisions, and reorganized border lines.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_gk_districts_divisions_master_revision.html', 'Geography, Borders & Districts')">👁️ Read Inside</button>
+                <a href="rajasthan_gk_districts_divisions_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Card 4: Rajasthan Integration -->
-        <div class="note-card" data-category="gk" data-title="rajasthan integration ekikaran 7 stages dates rulers prime ministers satyanarayan samiti">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">🗺️</div>
-          <div class="note-card-title">Rajasthan Integration (एकीकरण)</div>
-          <div class="note-card-desc">7 stages of Rajasthan integration, dates, capitals, Rajpramukhs, PMs, and critical exam confusion traps.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_ekikaran_revision_sheet.html', 'Rajasthan Integration (राजस्थान एकीकरण)')">👁️ Read Inside</button>
-            <a href="rajasthan_ekikaran_revision_sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+        <!-- Section: Pedagogy & General Aptitude -->
+        <div class="notes-section" data-section-category="pedagogy-aptitude">
+          <div class="notes-section-header">
+            <span class="notes-section-icon">🧠</span>
+            <span class="notes-section-title">Pedagogy & General Aptitude (शिक्षाशास्त्र व सामान्य योग्यता)</span>
+          </div>
+          <div class="notes-grid">
+            <!-- Card 33: BCI Pedagogy -->
+            <div class="note-card" data-category="pedagogy-aptitude" data-title="bci pedagogy educational psychology teaching aids assessment techniques classroom management school lecturer REET school management">
+              <div class="note-card-badge pedagogy-aptitude">Pedagogy</div>
+              <div class="note-card-icon">🧠</div>
+              <div class="note-card-title">BCI Pedagogy & School Admin</div>
+              <div class="note-card-desc">Educational psychology, teaching models, assessment techniques, and school lecturer/REET school management notes.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('bci_pedagogy_master_revision.html', 'BCI Pedagogy & School Admin')">👁️ Read Inside</button>
+                <a href="bci_pedagogy_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
+
+            <!-- Card 34: Calendar Revision Sheet -->
+            <div class="note-card" data-category="pedagogy-aptitude" data-title="calendar revision sheet reasoning logic aptitude time date">
+              <div class="note-card-badge pedagogy-aptitude">Aptitude</div>
+              <div class="note-card-icon">🗓️</div>
+              <div class="note-card-title">Calendar Revision Sheet</div>
+              <div class="note-card-desc">High-yield revision guide for Calendar-related reasoning questions, exam tricks, and formulas.</div>
+              <div class="note-card-actions">
+                <button class="note-card-btn read" onclick="openNotesSheet('question-answer/calendar_revision_sheet.html', 'Calendar Revision Sheet')">👁️ Read Inside</button>
+                <a href="question-answer/calendar_revision_sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Card 5: Rajasthan Lakes -->
-        <div class="note-card" data-category="gk" data-title="rajasthan lakes jheel salt water fresh water sambhar jaisamand rajasmand pachpadra">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">💧</div>
-          <div class="note-card-title">Rajasthan Lakes (झीलें)</div>
-          <div class="note-card-desc">Complete facts sheet about saltwater and freshwater lakes in Rajasthan, their geographical locations, and economic importance.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_lakes_revision_sheet.html', 'Rajasthan Lakes (राजस्थान की झीलें)')">👁️ Read Inside</button>
-            <a href="rajasthan_lakes_revision_sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 6: Rajasthan Festivals -->
-        <div class="note-card" data-category="gk" data-title="rajasthan festivals festival tyohar hindu muslim jain lunar calendar months teej gangaur">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">🗓️</div>
-          <div class="note-card-title">Rajasthan Festivals (त्योहार)</div>
-          <div class="note-card-desc">Detailed calendar of Hindu, Muslim, Jain, and Christian festivals sorted by lunar months, along with previous year questions.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_festival_revision_sheet.html', 'Rajasthan Festivals (राजस्थान के त्योहार)')">👁️ Read Inside</button>
-            <a href="rajasthan_festival_revision_sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 7: Rajasthan Fairs Guide -->
-        <div class="note-card" data-category="gk" data-title="rajasthan mela fairs guide pushkar karni mata ramdevra tejaji jambheshwar">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">🎪</div>
-          <div class="note-card-title">Rajasthan Fairs Guide (मेले)</div>
-          <div class="note-card-desc">High-yield district-wise and month-wise lists of major fairs (mela), related deities, locations, and historical significance.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Mela_Revision_Guide.html', 'Rajasthan Fairs (राजस्थान के मेले)')">👁️ Read Inside</button>
-            <a href="Rajasthan_Mela_Revision_Guide.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 8: Fairs & Festivals Combined -->
-        <div class="note-card" data-category="gk" data-title="rajasthan fairs festivals mela tyohar combined comprehensive list">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">📚</div>
-          <div class="note-card-title">Mela & Tyohar (Combined)</div>
-          <div class="note-card-desc">A comprehensive unified list combining fairs and festivals to avoid overlapping confusion during revisions.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Mela_Tyohar_Combined.html', 'Mela & Tyohar (Combined)')">👁️ Read Inside</button>
-            <a href="Rajasthan_Mela_Tyohar_Combined.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 9: Rajasthan Aabhushan & Veshbhusha -->
-        <div class="note-card" data-category="gk" data-title="rajasthan ornaments dresses aabhushan veshbhusha master handbook revision">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">👑</div>
-          <div class="note-card-title">Aabhushan & Veshbhusha</div>
-          <div class="note-card-desc">Master Revision Handbook for traditional ornaments (आभूषण) and dresses (वेशभूषा) of Rajasthan.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Aabhushan_Veshbhusha_Master_Handbook.html', 'Aabhushan & Veshbhusha (आभूषण एवं वेशभूषा)')">👁️ Read Inside</button>
-            <a href="Rajasthan_Aabhushan_Veshbhusha_Master_Handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 10: Rajasthan Hastkala -->
-        <div class="note-card" data-category="gk" data-title="rajasthan handicrafts hastkala thewa pottery painting block print master revision">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">🎨</div>
-          <div class="note-card-title">Rajasthan Hastkala (हस्तकला)</div>
-          <div class="note-card-desc">Master Revision Sheet on traditional handicrafts of Rajasthan, including Blue Pottery, Thewa Art, Usta Art, Miniature Paintings, and textile works.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_hastkala_master_revision.html', 'Rajasthan Hastkala (राजस्थान की हस्तकला)')">👁️ Read Inside</button>
-            <a href="rajasthan_hastkala_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 11: Rajasthan Folk Dances -->
-        <div class="note-card" data-category="gk" data-title="rajasthan folk dances nritya ghoomar kalbeliya chang chari tribal regional master handbook">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">💃</div>
-          <div class="note-card-title">Folk Dances (लोकनृत्य)</div>
-          <div class="note-card-desc">Comprehensive revision guide for tribal, regional, and professional folk dances of Rajasthan (Ghoomar, Kalbeliya, Chari, Gair, etc.).</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('rajasthan_nritya_master_handbook.html', 'Folk Dances (राजस्थान के लोकनृत्य)')">👁️ Read Inside</button>
-            <a href="rajasthan_nritya_master_handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 12: Rajasthani Shabdavali -->
-        <div class="note-card" data-category="gk" data-title="rajasthani shabdavali dialect vocabulary regional language words agriculture terms dialect translation master revision">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">🗣️</div>
-          <div class="note-card-title">Rajasthani Shabdavali</div>
-          <div class="note-card-desc">Essential list of traditional Rajasthani dialect vocabulary, agriculture terms, domestic items, and dialect meanings for BCI exam revision.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('Rajasthani_Shabdavali_Master_Revision.html', 'Rajasthani Shabdavali (राजस्थानी शब्दावली)')">👁️ Read Inside</button>
-            <a href="Rajasthani_Shabdavali_Master_Revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 13: Rajasthan Bhasha Boliyan -->
-        <div class="note-card" data-category="gk" data-title="rajasthan bhasha boliyan master revision handbook dialect language">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">🗣️</div>
-          <div class="note-card-title">Rajasthan Bhasha Boliyan</div>
-          <div class="note-card-desc">Master revision handbook for Rajasthan language history, dialect groups, and high-yield exam facts.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Bhasha_Boliyan_Master_Revision_Handbook.html', 'Rajasthan Bhasha Boliyan')">👁️ Read Inside</button>
-            <a href="Rajasthan_Bhasha_Boliyan_Master_Revision_Handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 14: Rajasthan RitiRiwaj -->
-        <div class="note-card" data-category="gk" data-title="rajasthan riti riwaj customs traditions master revision handbook">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">🎭</div>
-          <div class="note-card-title">Rajasthan Riti-Riwaj</div>
-          <div class="note-card-desc">Revision handbook covering Rajasthan customs, rituals, social practices, and frequent trap points.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_RitiRiwaj_Master_Revision_Handbook.html', 'Rajasthan Riti-Riwaj')">👁️ Read Inside</button>
-            <a href="Rajasthan_RitiRiwaj_Master_Revision_Handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 15: Rajasthan Chitra Shailiya -->
-        <div class="note-card" data-category="gk" data-title="rajasthan chitra shailiya master notes painting art school">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">🎨</div>
-          <div class="note-card-title">Rajasthan Chitra Shailiya</div>
-          <div class="note-card-desc">Master notes on Rajasthan painting styles, artists, schools, and exam-trap comparisons.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('Rajasthan_Chitra_Shailiya_Master_Notes.html', 'Rajasthan Chitra Shailiya')">👁️ Read Inside</button>
-            <a href="Rajasthan_Chitra_Shailiya_Master_Notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 16: BCI Master Revision Handbook -->
-        <div class="note-card" data-category="cs" data-title="bci master revision handbook computer instructor full revision">
-          <div class="note-card-badge cs">CS</div>
-          <div class="note-card-icon">📘</div>
-          <div class="note-card-title">BCI Master Revision Handbook</div>
-          <div class="note-card-desc">Core BCI master handbook with mixed revision, weak-area consolidation, and exam-focused recall tables.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('question-answer/duplicate/BCI_Master_Revision_Handbook (1).html', 'BCI Master Revision Handbook')">👁️ Read Inside</button>
-            <a href="question-answer/duplicate/BCI_Master_Revision_Handbook (1).html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 17: Rajasthani Muhavare -->
-        <div class="note-card" data-category="gk" data-title="rajasthani muhavare kahavate lokoktiyan master revision handbook">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">📝</div>
-          <div class="note-card-title">Rajasthani Muhavare</div>
-          <div class="note-card-desc">Master revision handbook for Rajasthani idioms, proverbs, and commonly asked trap meanings for quick exam revision.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('Rajasthani_Muhavare_Master_Revision.html', 'Rajasthani Muhavare (मुहावरे, कहावतें और लोकोक्तियाँ)')">👁️ Read Inside</button>
-            <a href="Rajasthani_Muhavare_Master_Revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 18: BCI Tech Master Revision -->
-        <div class="note-card" data-category="cs" data-title="bci tech computer science master revision technical number system compiler operating system os network dbms sql java oop cpp c data structures algorithms software engineering">
-          <div class="note-card-badge cs">CS</div>
-          <div class="note-card-icon">💻</div>
-          <div class="note-card-title">BCI Tech Master Revision</div>
-          <div class="note-card-desc">High-yield CS revision notes covering Number System, Compiler, OS, Networks, DBMS, Java, C++, DSA, Software Engineering, and more.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('question-answer/bci_tech_master_revision.html', 'BCI Tech Master Revision')">👁️ Read Inside</button>
-            <a href="question-answer/bci_tech_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 19: BCI GK & Science Revision -->
-        <div class="note-card" data-category="gk" data-title="bci gk general science revision non tech rajasthan tribes forts current affairs chemistry physics biology space">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">🗺️</div>
-          <div class="note-card-title">BCI GK & Science Revision</div>
-          <div class="note-card-desc">Master handbook for Rajasthan GK (Tribes, Forts, Geography, History), General Science (Chemistry, Physics, Biology), and Current Affairs.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('question-answer/bci_gk_master_revision.html', 'BCI GK & Science Revision')">👁️ Read Inside</button>
-            <a href="question-answer/bci_gk_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 20: Calendar Revision Sheet -->
-        <div class="note-card" data-category="gk" data-title="calendar revision sheet reasoning logic aptitude time date">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">🗓️</div>
-          <div class="note-card-title">Calendar Revision Sheet</div>
-          <div class="note-card-desc">High-yield revision guide for Calendar-related reasoning questions, exam tricks, and formulas.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('question-answer/calendar_revision_sheet.html', 'Calendar Revision Sheet')">👁️ Read Inside</button>
-            <a href="question-answer/calendar_revision_sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 21: Chauhan Dynasty -->
-        <div class="note-card" data-category="gk" data-title="chauhan vansh dynasty history rajasthan kings rulers battle">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">🛡️</div>
-          <div class="note-card-title">Chauhan Dynasty (चौहान वंश)</div>
-          <div class="note-card-desc">High-yield notes on the history of the Chauhan dynasty in Rajasthan, major rulers, battles, and previous exam questions.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('question-answer/chauhan_vansh_master_revision.html', 'Chauhan Dynasty (चौहान वंश)')">👁️ Read Inside</button>
-            <a href="question-answer/chauhan_vansh_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 22: Mewar Guhil Dynasty -->
-        <div class="note-card" data-category="gk" data-title="mewar guhil vansh dynasty history rajasthan sisodia rulers battle">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">🏰</div>
-          <div class="note-card-title">Mewar Guhil Dynasty (गुहिल वंश)</div>
-          <div class="note-card-desc">Comprehensive revision guide for Mewar's Guhil and Sisodia dynasty, key historical figures, achievements, and war details.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('question-answer/mewar_guhil_vansh_master_handbook.html', 'Mewar Guhil Dynasty (गुहिल वंश)')">👁️ Read Inside</button>
-            <a href="question-answer/mewar_guhil_vansh_master_handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 23: MS PowerPoint & Access -->
-        <div class="note-card" data-category="cs" data-title="ms office powerpoint power point access presentation slide keyboard shortcuts database">
-          <div class="note-card-badge cs">CS</div>
-          <div class="note-card-icon">📊</div>
-          <div class="note-card-title">MS PowerPoint & Access</div>
-          <div class="note-card-desc">Consolidated keyboard shortcuts, exam traps, and features of MS PowerPoint and MS Access database.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('question-answer/ms_powerpoint_master_revision.html', 'MS PowerPoint & Access')">👁️ Read Inside</button>
-            <a href="question-answer/ms_powerpoint_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 24: Riti Rivaj & Customs -->
-        <div class="note-card" data-category="gk" data-title="rajasthan riti rivaj customs traditional culture rituals sanskar">
-          <div class="note-card-badge gk">Rajasthan GK</div>
-          <div class="note-card-icon">🎭</div>
-          <div class="note-card-title">Riti Rivaj & Customs (रीति-रिवाज)</div>
-          <div class="note-card-desc">Traditional customs, rituals, 16 Sanskars, and repeated previous year questions on Rajasthani culture.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('question-answer/rajasthan_riti_rivaj_master_revision.html', 'Riti Rivaj & Customs (रीति-रिवाज)')">👁️ Read Inside</button>
-            <a href="question-answer/rajasthan_riti_rivaj_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
-
-        <!-- Card 25: System Analysis & Design (SAD) -->
-        <div class="note-card" data-category="cs" data-title="sad system analysis design software engineering sdlc flow charts charts coupling cohesion">
-          <div class="note-card-badge cs">CS</div>
-          <div class="note-card-icon">⚙️</div>
-          <div class="note-card-title">System Analysis & Design (SAD)</div>
-          <div class="note-card-desc">Master handbook for SAD covering SDLC phases, tools (Data Dictionary, Decision Tree), coupling & cohesion, and design principles.</div>
-          <div class="note-card-actions">
-            <button class="note-card-btn read" onclick="openNotesSheet('question-answer/sad_master_revision.html', 'System Analysis & Design (SAD)')">👁️ Read Inside</button>
-            <a href="question-answer/sad_master_revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-          </div>
-        </div>
       </div>
     </div>
 

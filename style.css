@@ -1667,3 +1667,48 @@ body {
   filter: brightness(1.05);
 }
 
+/* ============ TOPIC-WISE SECTION STYLES ============ */
+.notes-section {
+  margin-bottom: 30px;
+}
+
+.notes-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+
+.notes-section-icon {
+  font-size: 22px;
+}
+
+.notes-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.note-card-badge.history {
+  background: #FEE2E2;
+  color: #991B1B;
+}
+
+.note-card-badge.art-culture {
+  background: #F3E8FF;
+  color: #6B21A8;
+}
+
+.note-card-badge.geography-general {
+  background: #ECFDF5;
+  color: #065F46;
+}
+
+.note-card-badge.pedagogy-aptitude {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+

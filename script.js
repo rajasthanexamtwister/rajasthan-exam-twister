@@ -1237,6 +1237,16 @@ function filterNotes() {
       card.style.display = 'none';
     }
   });
+
+  // Toggle visibility of notes-section based on whether they contain visible cards
+  document.querySelectorAll('.notes-section').forEach(section => {
+    const visibleCards = Array.from(section.querySelectorAll('.note-card')).filter(card => card.style.display === 'flex');
+    if (visibleCards.length > 0) {
+      section.style.display = 'block';
+    } else {
+      section.style.display = 'none';
+    }
+  });
 }
 
 // ============ THEME MANAGEMENT ============

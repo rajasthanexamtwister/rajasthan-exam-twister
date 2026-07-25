@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Computer Fundamentals Master Revision Handbook</title>
+<style>
+@page { size: A4; margin: 12mm; }
+body{font-family:"Noto Sans Devanagari","Nirmala UI",Arial,sans-serif;font-size:12.5px;line-height:1.45;color:#1a1a1a;max-width:900px;margin:auto;padding:10px;}
+h1{font-size:20px;background:#1b2a4a;color:#fff;padding:8px 12px;border-radius:6px;margin-top:0;}
+h2{font-size:16px;background:#e8edf7;color:#1b2a4a;padding:5px 10px;border-left:5px solid #1b2a4a;margin-top:22px;}
+h3{font-size:13.5px;color:#1b2a4a;border-bottom:2px solid #cdd8ee;padding-bottom:2px;margin-top:14px;}
+table{border-collapse:collapse;width:100%;margin:6px 0 12px;font-size:12px;}
+th,td{border:1px solid #b9c4dc;padding:4px 6px;text-align:left;vertical-align:top;}
+th{background:#1b2a4a;color:#fff;}
+tr:nth-child(even){background:#f3f6fc;}
+ul{margin:4px 0;padding-left:20px;}
+li{margin:2px 0;}
+.tag{display:inline-block;padding:1px 6px;border-radius:4px;font-size:10.5px;font-weight:bold;margin-right:4px;}
+.must{background:#ffe1e1;color:#a30000;}
+.pyq{background:#fff3cd;color:#7a5600;}
+.pyq2{background:#ffd766;color:#5c3d00;}
+.pyq3{background:#ff9f1c;color:#402700;}
+.confuse{background:#e0d4f7;color:#4b2e83;}
+.trick{background:#d7f5e3;color:#0a5c33;}
+.bug{background:#ffd1d1;color:#9c0000;}
+.weak-vred{background:#ff6b6b;color:#fff;padding:2px 8px;border-radius:4px;font-weight:bold;}
+.weak-or{background:#ff9f43;color:#fff;padding:2px 8px;border-radius:4px;font-weight:bold;}
+.weak-yl{background:#f6d743;color:#5c4b00;padding:2px 8px;border-radius:4px;font-weight:bold;}
+.weak-gr{background:#2ecc71;color:#fff;padding:2px 8px;border-radius:4px;font-weight:bold;}
+.box{background:#f9f9f9;border:1px solid #ddd;border-radius:6px;padding:8px 10px;margin:8px 0;}
+.score{font-size:12px;color:#333;}
+hr{border:none;border-top:2px dashed #b9c4dc;margin:18px 0;}
+.section-topic{background:#0f3d0f;color:#fff;padding:6px 12px;border-radius:6px;margin-top:26px;font-size:17px;}
+</style>
+</head>
+<body>
+
+<h1>💻 Computer Fundamentals — Master Revision Handbook</h1>
+<p class="score"><b>Cover:</b> कंप्यूटर मेमोरी (Quiz 5–7) + कम्प्यूटर एक परिचय (Quiz 6–8) | RSMSSB / RSSB / RPSC / CET / Patwar / VDO / Police / BCI Exams</p>
+
+<div class="section-topic">📦 PART A — कंप्यूटर मेमोरी (Computer Memory)</div>
+
+<h2>🚨 MY EXAM TRAPS & CONFUSIONS (Memory)</h2>
+<table>
+<tr><th>गलत सोच</th><th>सही Concept</th><th>क्यों गलती हुई</th><th>Memory Trick</th></tr>
+<tr><td>Data/Instruction MAR में Store होता है</td><td><b>MDR</b> Data/Instruction रखता है; <b>MAR</b> केवल Address रखता है</td><td>दोनों नाम मिलते-जुलते</td><td>🧠 MAR=Address, MDR=Data (M-D-R → Data Rakhta hai)</td></tr>
+<tr><td>Buffer और RAM को एक समझना</td><td>Buffer = अस्थायी Data Transfer Holding Area; RAM = Main Memory</td><td>दोनों Temporary लगते हैं</td><td>🧠 Buffer = बीच में रोककर रखना</td></tr>
+<tr><td>सबसे छोटी Data Unit = Nibble</td><td>✅ सही उत्तर = <b>Bit</b> (Nibble = 4 Bits)</td><td>Answer Key Error</td><td>🧠 Bit = 1 इकाई सबसे छोटी</td></tr>
+<tr><td>CD-ROM, Magnetic Disk से तेज़ होती है</td><td>❌ गलत — CD-ROM, Magnetic Disk से Slower होती है (Optical vs Magnetic)</td><td>Answer Key में Explanation विरोधाभासी</td><td>🧠 CD-ROM = सस्ता + Low Error, तेज़ नहीं</td></tr>
+<tr><td>1 TB = 1000 GB मानना</td><td>Computer Memory (Binary) में <b>1 TB = 1024 GB</b>; 1000 GB Decimal(SI)/Marketing Standard है</td><td>Exam का Explanation कभी-कभी SI इकाई देता है</td><td>🧠 Binary Exam Standard हमेशा 1024 मानें</td></tr>
+</table>
+
+<h2>🎯 HIGH PRIORITY WEAK AREAS (Memory)</h2>
+<table>
+<tr><th>Priority</th><th>Topic</th></tr>
+<tr><td><span class="weak-vred">🔴 Very Weak</span></td><td>MAR vs MDR, Bit vs Nibble, CD-ROM Trap Questions</td></tr>
+<tr><td><span class="weak-or">🟠 Weak</span></td><td>Memory Unit Conversion (Binary 1024 आधारित), Buffer vs Cache vs RAM</td></tr>
+<tr><td><span class="weak-yl">🟡 Moderate</span></td><td>Primary vs Secondary vs Tertiary Storage, Formatting, Register/Flip-Flop</td></tr>
+<tr><td><span class="weak-gr">🟢 Strong</span></td><td>Cache Memory, RAM vs ROM, Memory Hierarchy (Register→Cache→RAM→SSD→HDD), SRAM vs DRAM</td></tr>
+</table>
+
+<h2>⭐ HIGH-YIELD EXAM FACTS (Memory)</h2>
+<h3>📌 Memory Hierarchy (गति: तेज़ → धीमी) <span class="tag pyq3">⭐⭐⭐ Extremely Repeated (12+ बार)</span></h3>
+<p><b>Registers → Cache → RAM (Main Memory) → SSD → HDD</b><br>🧠 Trick: <i>R C R S H</i></p>
+
+<h3>📊 Difference Tables</h3>
+<table>
+<tr><th>SRAM</th><th>DRAM</th></tr>
+<tr><td>Cache Memory में उपयोग</td><td>Main Memory (RAM) में उपयोग</td></tr>
+<tr><td>Faster, महँगी</td><td>धीमी, सस्ती</td></tr>
+<tr><td>Flip-Flop आधारित</td><td>Capacitor आधारित (Refresh जरूरी)</td></tr>
+</table>
+<p>🧠 Trick: S=Speed=SRAM=Cache | D=Dynamic=DRAM=Main Memory <span class="tag pyq3">⭐⭐⭐ 8+ बार दोहराया</span></p>
+
+<table>
+<tr><th>MAR (Memory Address Register)</th><th>MDR (Memory Data Register)</th></tr>
+<tr><td>Address रखता है</td><td>Data/Instruction रखता है</td></tr>
+</table>
+
+<table>
+<tr><th>Volatile Memory</th><th>Non-Volatile Memory</th></tr>
+<tr><td>RAM (Static/Dynamic)</td><td>ROM, EEPROM, SSD, HDD, CD-ROM, Flash</td></tr>
+</table>
+
+<table>
+<tr><th>Memory Management Technique</th><th>कार्य</th></tr>
+<tr><td>Paging</td><td>Process को Non-Contiguous Memory में Store करना</td></tr>
+<tr><td>Swapping</td><td>RAM ↔ Disk के बीच Data Move करना</td></tr>
+<tr><td>Spooling</td><td>Printer Queue Management</td></tr>
+</table>
+
+<table>
+<tr><th>Floppy Disk</th><th>Hard Disk</th></tr>
+<tr><td>पतली Plastic (Mylar) जैकेट, Iron Oxide Coating</td><td>धातु Platter, Iron Oxide Coating</td></tr>
+<tr><td>Portable, MB क्षमता, 1.44 MB</td><td>Fixed/Internal, GB/TB क्षमता</td></tr>
+</table>
+
+<h3>📌 Memory Unit Conversion (Binary Standard) <span class="tag pyq3">⭐⭐⭐ 11+ बार</span></h3>
+<table>
+<tr><th>इकाई</th><th>बराबर</th></tr>
+<tr><td>1 Byte</td><td>8 Bits</td></tr>
+<tr><td>1 Nibble</td><td>4 Bits</td></tr>
+<tr><td>1 KB</td><td>1024 Bytes</td></tr>
+<tr><td>1 MB</td><td>1024 KB</td></tr>
+<tr><td>1 GB</td><td>1024 MB</td></tr>
+<tr><td>1 TB</td><td>1024 GB</td></tr>
+<tr><td>1 PB</td><td>1024 TB</td></tr>
+<tr><td>1 EB</td><td>1024 PB</td></tr>
+<tr><td>1 ZB</td><td>1024 EB</td></tr>
+<tr><td>1 YB</td><td>1024 ZB</td></tr>
+</table>
+<p>2⁸ = 256 अलग Patterns (8 Bits से) — <span class="tag pyq">⭐ PYQ Favourite</span></p>
+
+<h3>📌 अन्य High-Yield Facts</h3>
+<ul>
+<li>FAT32 की Max Single File Size = <b>4 GB</b> (Partition अलग बात है) <span class="tag pyq">⭐</span></li>
+<li>CPU डेटा चाहिए तो सबसे पहले <b>Cache Memory</b> Check करता है <span class="tag pyq2">⭐⭐</span></li>
+<li>Magnetic Disk Coating = <b>Iron Oxide</b></li>
+<li>Booting Instructions = <b>ROM/BIOS</b> में Store</li>
+<li>Tertiary Storage = Robotic Arm द्वारा Tape/Optical Library Connect करना</li>
+<li>Register = Flip-Flops का Collection</li>
+<li>Formatting = Disk को Tracks + Sectors में व्यवस्थित करना</li>
+<li>SSD = Fastest Secondary Storage, No Moving Parts</li>
+<li>HDD Failure Symptoms = Clicking Sound, Slow Performance, Bad Sectors</li>
+<li>Disk का गोलाकार Data-लेखन भाग = Track; Track के टुकड़े = Sector (≈512 Bytes)</li>
+</ul>
+
+<h2>🚨 Answer Key Bugs / Source Conflicts (Memory)</h2>
+<table>
+<tr><th>प्रश्न</th><th>दी गई Key</th><th>सही उत्तर</th><th>कारण</th></tr>
+<tr><td>सबसे छोटी Data Unit</td><td>Nibble ❌</td><td>Bit ✅</td><td>Nibble = 4 Bits, यह इकाई नहीं</td></tr>
+<tr><td>CD-ROM के लाभ</td><td>"दिए गए सभी" ❌</td><td>केवल सस्ता + कम Error (Faster नहीं)</td><td>Explanation स्वयं कहता है CD-ROM, Magnetic Disk से तेज़ नहीं</td></tr>
+<tr><td>1 TB = ?</td><td>1000 GB (SI दृष्टिकोण)</td><td>Exam Standard: 1024 GB</td><td>Computer Memory Binary आधारित होती है, Marketing/SI नहीं</td></tr>
+</table>
+
+<h2>⚡ Rapid Revision — One-Liners (Memory)</h2>
+<ul>
+<li>MAR = Address | MDR = Data</li>
+<li>Register &gt; Cache &gt; RAM &gt; SSD &gt; HDD</li>
+<li>Buffer = Temporary Holding Area</li>
+<li>Cache = CPU ↔ RAM (SRAM आधारित)</li>
+<li>ROM = Firmware/Non-Volatile | RAM = Volatile/Temporary</li>
+<li>Register = Flip-Flops का समूह</li>
+<li>Tertiary Storage = Robotic Arm</li>
+<li>Formatting = Tracks + Sectors</li>
+<li>Bit = सबसे छोटी Data Unit | Nibble = 4 Bits | Byte = 8 Bits</li>
+<li>FAT32 = Max File 4 GB</li>
+<li>Paging = Non-Contiguous | Swapping = RAM↔Disk | Spooling = Printer Queue</li>
+<li>1 KB=1024B, 1 MB=1024KB, 1 GB=1024MB, 1 TB=1024GB, 1 PB=1024TB</li>
+</ul>
+
+<h2>📈 Topic Frequency (Quiz 1–7, संचयी)</h2>
+<table>
+<tr><th>Topic</th><th>Repeat Count</th></tr>
+<tr><td>Cache Memory</td><td>⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ (12+)</td></tr>
+<tr><td>RAM vs ROM</td><td>11+</td></tr>
+<tr><td>Memory Units/Conversion</td><td>11+</td></tr>
+<tr><td>Primary vs Secondary Memory</td><td>10+</td></tr>
+<tr><td>Memory Hierarchy</td><td>8+</td></tr>
+<tr><td>SRAM vs DRAM</td><td>8+</td></tr>
+<tr><td>HDD/SSD/Floppy/CD</td><td>7+</td></tr>
+<tr><td>BIOS/Boot Process</td><td>4+</td></tr>
+<tr><td>MAR/MDR</td><td>3+</td></tr>
+<tr><td>Virtual Memory/Paging/Swapping</td><td>3+</td></tr>
+<tr><td>FAT32/NTFS/exFAT</td><td>1–2</td></tr>
+</table>
+
+<div class="box"><b>Score Trend (Memory Quiz 5–7):</b> 22/30 → 24/30 → 12/13 (लगातार सुधार)</div>
+
+<hr>
+
+<div class="section-topic">🖥️ PART B — कम्प्यूटर एक परिचय (Computer Introduction/History)</div>
+
+<h2>🚨 MY EXAM TRAPS & CONFUSIONS (Introduction)</h2>
+<table>
+<tr><th>गलत सोच</th><th>सही Concept</th><th>क्यों गलती हुई</th><th>Memory Trick</th></tr>
+<tr><td>ENIAC = पहला Von-Neumann/Stored-Program Computer</td><td>EDVAC = पहला Binary Stored-Program (Von Neumann) Computer; ENIAC = पहला Electronic Computer</td><td>दोनों नाम एक जैसे Era के</td><td>🧠 ENIAC=Electronic First, EDVAC=Von Neumann/Binary</td></tr>
+<tr><td>India का पहला Microprocessor का नाम याद न होना</td><td>SHAKTI (IIT Madras, RISC-V आधारित)</td><td>कम प्रचलित Fact</td><td>🧠 India → SHAKTI</td></tr>
+<tr><td>5th Generation Technology भूलना</td><td>VLSI (4th Gen) → ULSI (5th Gen)</td><td>Generation क्रम याद न रहना</td><td>🧠 Tube→Transistor→IC→VLSI→ULSI</td></tr>
+<tr><td>PARAM और SHAKTI में Confusion</td><td>PARAM = Supercomputer (C-DAC, Pune); SHAKTI = Microprocessor (IIT Madras)</td><td>दोनों Indian Tech</td><td>🧠 PARAM=Super, SHAKTI=Chip</td></tr>
+<tr><td>Notebook/Palmtop की परिभाषा भूलना</td><td>Notebook = Lightweight Laptop (4–10 lb); Palmtop = Pocket Computer</td><td>कम पूछे जाने वाले Terms</td><td>🧠 Notebook छोटा Laptop, Palmtop जेब में</td></tr>
+<tr><td>IBM का पुराना नाम भूलना</td><td>Computing Tabulating Recording Company (CTR), 1924 में IBM बना</td><td>Rare History Fact</td><td>🧠 CTR → IBM (1924)</td></tr>
+<tr><td>Processed Data = Output मान लेना (कुछ Exam Key में)</td><td>मानक Computer Fundamentals में Processed Data = Information; IPO Cycle सन्दर्भ में Output भी स्वीकार्य</td><td>दो Valid Concept का Overlap</td><td>🧠 Data→Process→Information (सामान्यतः); Output = IPO Cycle का अंतिम चरण</td></tr>
+<tr><td>C-DAC स्थापना वर्ष भूलना (1978/1968 से Confuse)</td><td>C-DAC स्थापना = <b>1988</b>; PARAM 8000 Launch = 1991</td><td>वर्ष एक जैसे लगना</td><td>🧠 88→C-DAC, 91→PARAM</td></tr>
+<tr><td>PARAM और SIDDHARTH में Confusion</td><td>PARAM = Supercomputer; SIDDHARTH = भारत का पहला Bilingual (Hindi-English) Computer (1986, C-DAC)</td><td>दोनों C-DAC प्रोजेक्ट</td><td>🧠 SIDDHARTH = भाषा वाला Computer</td></tr>
+</table>
+
+<h2>🎯 HIGH PRIORITY WEAK AREAS (Introduction)</h2>
+<table>
+<tr><th>Priority</th><th>Topic</th></tr>
+<tr><td><span class="weak-vred">🔴 Very Weak</span></td><td>Computer History (ENIAC/EDVAC/EDSAC/UNIVAC, IBM Series, WITCH), Indian Computer GK (SHAKTI, Siddharth, C-DAC, PARAM Timeline)</td></tr>
+<tr><td><span class="weak-or">🟠 Weak</span></td><td>Computer Generations (IBM 7030/360/1401, SSI/MSI/VLSI/ULSI), Computer Categories (Parallel Computing, Optical, Hybrid, Mainframe)</td></tr>
+<tr><td><span class="weak-yl">🟡 Moderate</span></td><td>Conceptual Traps (Information vs Output, Download vs Transfer), Rare Static GK (WITCH, Nepal Computer, Analog Computer India)</td></tr>
+<tr><td><span class="weak-gr">🟢 Strong</span></td><td>CPU/ALU/CU, Computer Characteristics (Speed, Accuracy, Diligence, Versatility), Basic Hardware/Software, Supercomputer Basics (PARAM, FLOPS), Computer Generations (1st–4th मूल क्रम)</td></tr>
+</table>
+
+<h2>⭐ HIGH-YIELD EXAM FACTS (Introduction)</h2>
+
+<h3>📌 Computer Generations <span class="tag pyq3">⭐⭐⭐ Extremely Repeated (10+)</span></h3>
+<table>
+<tr><th>पीढ़ी</th><th>तकनीक</th></tr>
+<tr><td>1st (1940–56)</td><td>Vacuum Tube</td></tr>
+<tr><td>2nd (1956–63)</td><td>Transistor</td></tr>
+<tr><td>3rd (1964–71)</td><td>IC (SSI + MSI)</td></tr>
+<tr><td>4th (1971–वर्तमान)</td><td>VLSI / Microprocessor</td></tr>
+<tr><td>5th</td><td>ULSI</td></tr>
+</table>
+<p>🧠 Trick: Tube-Transistor-IC-VLSI-ULSI</p>
+
+<h3>📊 Difference Tables</h3>
+<table>
+<tr><th>ENIAC</th><th>EDVAC</th></tr>
+<tr><td>पहला Electronic Computer (1945)</td><td>Von Neumann Architecture, Binary Stored-Program Computer</td></tr>
+</table>
+
+<table>
+<tr><th>IBM Model</th><th>Generation</th></tr>
+<tr><td>IBM 7030</td><td>2nd (Transistor)</td></tr>
+<tr><td>IBM 1401</td><td>2nd (Nepal का पहला Computer भी यही)</td></tr>
+<tr><td>IBM System/360</td><td>3rd (IC)</td></tr>
+</table>
+
+<table>
+<tr><th>PARAM</th><th>SHAKTI</th><th>SIDDHARTH</th></tr>
+<tr><td>Supercomputer Series (C-DAC, Pune)</td><td>पहला Indigenous Microprocessor (IIT Madras, RISC-V)</td><td>पहला Bilingual Computer (Hindi+English, C-DAC, 1986)</td></tr>
+</table>
+
+<table>
+<tr><th>Notebook</th><th>Palmtop</th></tr>
+<tr><td>Lightweight Laptop (4–10 lb)</td><td>Pocket Computer</td></tr>
+</table>
+
+<h3>📌 Indian Computer GK <span class="tag pyq2">⭐⭐ Highly Repeated</span></h3>
+<ul>
+<li>भारत का पहला Supercomputer = PARAM 8000 (1991, Pune, C-DAC)</li>
+<li>C-DAC स्थापना = 1988</li>
+<li>भारत का पहला Analog Computer = Samarendra Kumar Mitra (ISI Kolkata, 1953–54, Electronic Analog Computer, 10 variable Linear Equations हल कर सकता था) — ✅ web-verified</li>
+<li>भारत का पहला Bilingual Computer = SIDDHARTH (1986, C-DAC, Bengaluru GPO में स्थापित)</li>
+<li>भारत का पहला Indigenous Microprocessor = SHAKTI (IIT Madras)</li>
+<li>Nepal का पहला Computer = IBM 1401 (Census हेतु)</li>
+</ul>
+
+<h3>📌 History / Inventors <span class="tag pyq3">⭐⭐⭐</span></h3>
+<table>
+<tr><th>व्यक्ति</th><th>योगदान</th></tr>
+<tr><td>Charles Babbage</td><td>Analytical Engine (1837) — Father of Computer</td></tr>
+<tr><td>John von Neumann</td><td>EDVAC / Stored Program Concept</td></tr>
+<tr><td>Blaise Pascal</td><td>Mechanical Calculator</td></tr>
+<tr><td>Herman Hollerith</td><td>Punch Card / Tabulating Machine (1890)</td></tr>
+</table>
+<ul>
+<li>IBM का पुराना नाम = Computing Tabulating Recording Company (CTR); 1924 में नाम बदलकर IBM</li>
+<li>IBM Headquarters = New York, USA</li>
+<li>Abacus का आविष्कार = China में</li>
+<li>Computer Literacy Day = 2 दिसंबर</li>
+</ul>
+
+<h3>📌 Computer Categories</h3>
+<ul>
+<li>कार्यप्रणाली आधार पर: Analog, Digital, Hybrid (कोई "Hydrobrid" नहीं होता ❌)</li>
+<li>Hybrid Computer उपयोग: Radar, Air Traffic Control, Medical Instruments</li>
+<li>आकार आधार पर: Micro, Mini, Mainframe, Super (Optical Computer यह Category नहीं है)</li>
+<li>Parallel Computing = एक Processing Technique है, Computer Category नहीं</li>
+<li>Mainframe/Supercomputer Access = Terminal के माध्यम से</li>
+<li>Supercomputer Speed मापने की इकाई = FLOPS (MIPS पुरानी/बंद इकाई)</li>
+<li>Supercomputer का Traditional Use = Scientific & Engineering Calculations</li>
+</ul>
+
+<h3>📌 Basic Concepts</h3>
+<ul>
+<li>CPU = कंप्यूटर का मस्तिष्क (Brain)</li>
+<li>Processed Data → Information (सामान्य Concept) | IPO Cycle में अंतिम परिणाम → Output <span class="tag confuse">⚠ Frequently Confused</span></li>
+<li>Computer अपनी स्वयं की Intelligence नहीं रखता (Intelligence = शून्य)</li>
+<li>Diligence = बिना थके बार-बार एक ही कार्य करने की क्षमता</li>
+<li>Versatility = विभिन्न प्रकार के कार्य करने की क्षमता</li>
+<li>Storage Capacity = Program/Data संग्रहित करने की क्षमता</li>
+<li>Chips बनाने की सामग्री = Semiconductor</li>
+<li>अचानक Computer बंद होना = Crash</li>
+<li>Computer System = Hardware + Software</li>
+</ul>
+
+<h2>🚨 Answer Key Bugs / Source Conflicts (Introduction)</h2>
+<table>
+<tr><th>प्रश्न</th><th>दी गई Key</th><th>सही/स्वीकार्य उत्तर</th><th>कारण</th></tr>
+<tr><td>पहला Binary Stored-Program (Von Neumann) Computer</td><td>ENIAC (कुछ Initial Key में)</td><td>EDVAC ✅</td><td>ENIAC = पहला Electronic Computer, पर Von Neumann/Binary Stored-Program नहीं</td></tr>
+<tr><td>Processed Data को क्या कहते हैं</td><td>Output</td><td>मानक Fundamentals में Information; IPO Cycle सन्दर्भ में Output भी मान्य</td><td>दोनों Concept Context-dependent सही हो सकते हैं</td></tr>
+<tr><td>Download vs Transfer</td><td>Transfer</td><td>Transfer स्वीकार्य (व्यापक शब्द); Download अधिक सटीक जब Source Internet/Remote हो</td><td>Context पर निर्भर, दोनों Technically सही</td></tr>
+<tr><td>"WITCH Computer कार्यक्रम कब शुरू" = 1980</td><td>1980 (Quiz Key)</td><td>⚠️ Verify Required — Web स्रोतों के अनुसार WITCH (Harwell Dekatron) 1951 में बना, Wolverhampton में 1957–1973 तक Teaching हेतु प्रयुक्त, और 2009–2012 में Restore हुआ। "1980" किसी दस्तावेज़ में समर्थित नहीं मिला</td><td>Quiz स्रोत असत्यापित प्रतीत होता है — याद न करें, बल्कि सही Timeline (1951 निर्माण, 1957 Wolverhampton, 2012 Reboot) याद रखें</td></tr>
+<tr><td>Computer का Full Form</td><td>"Common Operating Machine Particularly Used for Technological and Educational Research"</td><td>⚠️ यह Official Full Form नहीं है — Computer शब्द "Compute" से बना है, कोई आधिकारिक Full Form नहीं</td><td>केवल Exam-Oriented (प्रचलित) उत्तर के रूप में याद रखें, तथ्यात्मक रूप से गलत है</td></tr>
+</table>
+
+<h2>⚡ Rapid Revision — One-Liners (Introduction)</h2>
+<ul>
+<li>CPU = Brain of Computer</li>
+<li>1st Gen = Vacuum Tube | 2nd = Transistor | 3rd = IC | 4th = VLSI | 5th = ULSI</li>
+<li>ENIAC = पहला Electronic Computer | EDVAC = Von Neumann/Binary Stored-Program</li>
+<li>PARAM = Supercomputer (1991, Pune) | C-DAC स्थापना = 1988</li>
+<li>SHAKTI = पहला Indian Microprocessor (IIT Madras)</li>
+<li>SIDDHARTH = पहला Bilingual Computer (1986)</li>
+<li>Samarendra Kumar Mitra = भारत का पहला Analog Computer (1953-54, ISI Kolkata)</li>
+<li>Charles Babbage = Father of Computer, Analytical Engine (1837)</li>
+<li>Herman Hollerith = Punch Card जनक</li>
+<li>IBM पुराना नाम = CTR (1924 में बदला)</li>
+<li>Abacus = China में आविष्कार</li>
+<li>Computer Literacy Day = 2 दिसंबर</li>
+<li>FLOPS = Supercomputer Speed इकाई</li>
+<li>Notebook = हल्का Laptop | Palmtop = Pocket Computer</li>
+<li>Hybrid Computer = Radar/ATC/Medical में उपयोग</li>
+<li>Parallel Computing = Technique, Category नहीं</li>
+<li>Diligence = बिना थके काम | Versatility = अलग-अलग कार्य</li>
+</ul>
+
+<h2>📈 Topic Frequency (Quiz 1–8, संचयी)</h2>
+<table>
+<tr><th>Topic</th><th>Repeat Count</th></tr>
+<tr><td>Computer Generations</td><td>⭐⭐⭐⭐⭐⭐⭐⭐⭐ (10+)</td></tr>
+<tr><td>CPU / ALU / CU</td><td>10+</td></tr>
+<tr><td>Computer History & Inventors</td><td>8+</td></tr>
+<tr><td>Supercomputers</td><td>8+</td></tr>
+<tr><td>Data → Information</td><td>6+</td></tr>
+<tr><td>Memory & Storage</td><td>5+</td></tr>
+<tr><td>Operating System</td><td>5+</td></tr>
+<tr><td>Hardware / Software</td><td>5+</td></tr>
+<tr><td>Indian Computer GK</td><td>5+</td></tr>
+</table>
+
+<div class="box"><b>Score Trend (Introduction Quiz 1–8):</b> 27 → 22 → 21 → 21 → 25 → 20 → 24 → 15/17 (88%) — कुल स्थिर सुधार, History/Indian GK/IBM Series पर अंतिम फोकस चाहिए</div>
+
+<hr>
+
+<h2>🎯 LAST-MINUTE REVISION (दोनों Topics)</h2>
+<ul>
+<li><span class="tag must">🔥 Must Revise</span> MAR vs MDR, Bit vs Nibble, Memory Hierarchy (RCRSH), 1024 आधारित Unit Conversion</li>
+<li><span class="tag must">🔥 Must Revise</span> ENIAC vs EDVAC, PARAM vs SHAKTI vs SIDDHARTH, Computer Generations Timeline, IBM Model→Generation Mapping</li>
+<li><span class="tag confuse">⚠ Confused Pair</span> SRAM(Cache)↔DRAM(RAM), Notebook↔Palmtop, Information↔Output, Download↔Transfer</li>
+<li><span class="tag bug">🚨 Answer Key Bug</span> Nibble नहीं Bit; CD-ROM "सभी लाभ" नहीं; WITCH 1980 असत्यापित; Computer Full Form अनौपचारिक</li>
+</ul>
+
+</body>
+</html>
