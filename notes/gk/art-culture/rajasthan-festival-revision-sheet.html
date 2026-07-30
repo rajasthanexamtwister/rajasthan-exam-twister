@@ -1,0 +1,479 @@
+
+<style>
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #FFF8F0;
+  --color-border-primary: #1A2744;
+  --color-border-secondary: #E5E9F2;
+  --color-border-tertiary: #E5E9F2;
+  --color-text-primary: #1A2744;
+  --color-text-secondary: #6b7a99;
+  --color-text-tertiary: #a3b1cc;
+  --border-radius-md: 10px;
+  --border-radius-lg: 14px;
+  
+  --color-background-danger: #fee2e2;
+  --color-border-danger: #fca5a5;
+  --color-text-danger: #dc2626;
+
+  --color-background-success: #dcfce7;
+  --color-border-success: #86efac;
+  --color-text-success: #16a34a;
+
+  --color-background-warning: #fef3c7;
+  --color-border-warning: #fde047;
+  --color-text-warning: #d97706;
+
+  --color-background-info: #e0f2fe;
+  --color-border-info: #7dd3fc;
+  --color-text-info: #0369a1;
+}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); }
+  .rs { padding: 12px 0 24px; max-width: 680px; }
+  h2 { font-size: 15px; font-weight: 500; padding: 6px 10px; border-radius: var(--border-radius-md); margin: 18px 0 8px; }
+  h3 { font-size: 13px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.04em; margin: 12px 0 6px; }
+  .trap-box { background: #FCEBEB; border: 1px solid #F09595; border-radius: var(--border-radius-lg); padding: 12px 14px; margin-bottom: 8px; }
+  .trap-box .trap-title { font-size: 13px; font-weight: 500; color: #A32D2D; margin-bottom: 4px; }
+  .trap-box .wrong { color: #A32D2D; font-size: 12px; }
+  .trap-box .right { color: #3B6D11; font-size: 12px; font-weight: 500; }
+  .trap-box .logic { color: #444441; font-size: 12px; margin-top: 4px; font-style: italic; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 8px; }
+  th { background: var(--color-background-secondary); color: var(--color-text-secondary); font-weight: 500; text-align: left; padding: 5px 8px; border: 0.5px solid var(--color-border-tertiary); font-size: 11px; }
+  td { padding: 4px 8px; border: 0.5px solid var(--color-border-tertiary); color: var(--color-text-primary); vertical-align: top; line-height: 1.4; }
+  tr:nth-child(even) td { background: var(--color-background-secondary); }
+  .month-head { font-size: 13px; font-weight: 500; color: var(--color-text-primary); background: var(--color-background-info); border-left: 3px solid #378ADD; padding: 4px 8px; margin: 14px 0 4px; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; }
+  .oneliner { font-size: 12px; padding: 2px 0; color: var(--color-text-primary); display: flex; gap: 8px; }
+  .oneliner span:first-child { color: var(--color-text-secondary); min-width: 180px; }
+  .oneliner strong { color: var(--color-text-primary); }
+  .section-card { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 10px 12px; margin-bottom: 10px; background: var(--color-background-primary); }
+  .tag { display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 4px; font-weight: 500; margin-left: 4px; }
+  .tag-red { background: #FCEBEB; color: #A32D2D; }
+  .tag-green { background: #EAF3DE; color: #3B6D11; }
+  .tag-blue { background: #E6F1FB; color: #185FA5; }
+  .tabs { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 12px; }
+  .tab { font-size: 12px; padding: 4px 10px; border: 0.5px solid var(--color-border-secondary); border-radius: 20px; cursor: pointer; background: var(--color-background-primary); color: var(--color-text-secondary); }
+  .tab.active { background: var(--color-background-info); color: var(--color-text-info); border-color: #378ADD; font-weight: 500; }
+  .section { display: none; }
+  .section.active { display: block; }
+  .diff-table td:first-child { font-weight: 500; color: var(--color-text-secondary); font-size: 11px; }
+  .highlight { background: #FAEEDA; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+  @media print {
+    .tabs { display: none; }
+    .section { display: block !important; }
+    .tab { display: none; }
+    h2 { page-break-before: auto; }
+  }
+</style>
+
+<h2 class="sr-only">Rajasthan Festivals High-Yield Revision Sheet for RSMSSB Exam</h2>
+
+<div class="rs">
+  <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+    <div>
+      <div style="font-size:17px; font-weight:500; color:var(--color-text-primary);">मेले एवं त्योहार — Final Revision Sheet</div>
+      <div style="font-size:11px; color:var(--color-text-secondary); margin-top:2px;">Chirag | RSMSSB/RPSC Focus | Based on PYQ Error Log + Personal Notes</div>
+    </div>
+    <button onclick="window.print()" style="font-size:11px; padding:4px 10px;"><i class="ti ti-printer" aria-hidden="true"></i> Print</button>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" onclick="show('traps')">🚨 Exam Traps</div>
+    <div class="tab" onclick="show('months')">📅 Month-wise</div>
+    <div class="tab" onclick="show('diff')">⚡ Diff Tables</div>
+    <div class="tab" onclick="show('place')">📍 Place Map</div>
+    <div class="tab" onclick="show('misc')">🧩 Misc Facts</div>
+    <div class="tab" onclick="show('oneline')">🔥 20 One-Liners</div>
+  </div>
+
+  <div id="traps" class="section active">
+    <h2 style="background:#FCEBEB; color:#791F1F;">🚨 MY EXAM TRAPS & CONFUSIONS</h2>
+    <div style="font-size:11px; color:var(--color-text-secondary); margin-bottom:8px;">Ye woh points hain jo error log me bar-bar wrong hue — inhe sabse pehle yaad karo.</div>
+
+    <div class="trap-box">
+      <div class="trap-title">TRAP 1 — ईलोजी की सवारी का स्थान</div>
+      <div class="wrong">❌ Udaipur / Bhilwara sochte the</div>
+      <div class="right">✅ BYAVAR (ब्यावर) — Part 1 notes mein bhi tha, lekin confuse hua</div>
+      <div class="logic">💡 Trick: ई-लो-जी → ब्या-वर (dono mein 2-2 syllable hain)</div>
+    </div>
+
+    <div class="trap-box">
+      <div class="trap-title">TRAP 2 — गोगा नवमी की तिथि (Most Dangerous Trap)</div>
+      <div class="wrong">❌ चैत्र शुक्ल नवमी — JEN 2022 paper mein yahi galat option tha</div>
+      <div class="right">✅ भाद्रपद कृष्ण नवमी</div>
+      <div class="logic">💡 Logic: Goga Peer = Bhado mahina. "Bhado mein Gogaji" — yaad rakho.</div>
+    </div>
+
+    <div class="trap-box">
+      <div class="trap-title">TRAP 3 — केले के पेड़ की पूजा (Direct Trap)</div>
+      <div class="wrong">❌ मंगलवार — galat option tha jo dikhaya gaya</div>
+      <div class="right">✅ बृहस्पतिवार (गुरुवार)</div>
+      <div class="logic">💡 Trick: GURU ka din = GURUVAAR = Banana tree puja. Vishnu ko banana chadhate hain.</div>
+    </div>
+
+    <div class="trap-box">
+      <div class="trap-title">TRAP 4 — त्योहारों का आगमन vs समापन</div>
+      <div class="wrong">❌ Dono ke liye Gangaur ya Teej sochte the</div>
+      <div class="right">✅ आगमन → श्रावणी तीज &nbsp;&nbsp;|&nbsp;&nbsp; समापन → गणगौर</div>
+      <div class="logic">💡 Simple: Season Shuru = Teej (Shravan) | Season Khatam = Gangaur (Chaitra)</div>
+    </div>
+
+    <div class="trap-box">
+      <div class="trap-title">TRAP 5 — तिल चौथ की तिथि (Options me Karthik bhi hota hai)</div>
+      <div class="wrong">❌ Kartik Krishna Chaturthi — Karwa Chauth se confuse hota hai</div>
+      <div class="right">✅ माघ कृष्ण चतुर्थी (Til Chauth / Sakat Chauth)</div>
+      <div class="logic">💡 Til = Maagh (Makar Sankranti time = til ka mahina). Karwa Chauth = Kartik.</div>
+    </div>
+
+    <div class="trap-box">
+      <div class="trap-title">TRAP 6 — पत्थरमार होली का स्थान</div>
+      <div class="wrong">❌ Bhilwara / Bharatpur sochte the</div>
+      <div class="right">✅ बाड़मेर (Barmer)</div>
+      <div class="logic">💡 Trick: BARmer mein BAR-BAR patthar marte hain. (B→B)</div>
+    </div>
+
+    <div class="trap-box">
+      <div class="trap-title">TRAP 7 — हरतालिका तीज vs बड़ी तीज — Same Maah, Alag Paksha!</div>
+      <div class="wrong">❌ Dono ko Bhadrapad Krishna bol dete hain</div>
+      <div class="right">✅ बड़ी तीज = भाद्रपद कृष्ण तृतीया &nbsp;|&nbsp; हरतालिका = भाद्रपद शुक्ल तृतीया</div>
+      <div class="logic">💡 Hera-taLIKA = LIGHt = Shukla Paksha (ujala). Badi Teej = Krishna (andhere mein)</div>
+    </div>
+
+    <div class="trap-box">
+      <div class="trap-title">TRAP 8 — फूलडोल उत्सव का पंथ</div>
+      <div class="wrong">❌ Vallabh Panth / Pranami Panth se confuse hota tha</div>
+      <div class="right">✅ रामस्नेही पंथ</div>
+      <div class="logic">💡 "Phool + dol" = Phool charhana = Ramsnehi Panth ki puja style</div>
+    </div>
+
+    <div class="trap-box">
+      <div class="trap-title">TRAP 9 — अशोक अष्टमी vs शीतला अष्टमी — Same Chaitra, Alag Paksha!</div>
+      <div class="wrong">❌ Dono ko Chaitra Krishna Ashtami bol dete hain</div>
+      <div class="right">✅ शीतला अष्टमी = चैत्र कृष्ण अष्टमी &nbsp;|&nbsp; अशोक अष्टमी = चैत्र शुक्ल अष्टमी</div>
+      <div class="logic">💡 SHEETla = COLD = Krishna Paksha (thanda andhera). Ashoka = bright king = Shukla.</div>
+    </div>
+
+    <div class="trap-box">
+      <div class="trap-title">TRAP 10 — गणगौर अवधि (Options: 14/15/18/19 din)</div>
+      <div class="wrong">❌ 15 din bol dete hain (Purnima/Paksha se confuse)</div>
+      <div class="right">✅ 18 दिन</div>
+      <div class="logic">💡 Trick: 18 = "अठारह" — Gangaur ke 18 geet bhi hote hain (lore se yaad karo)</div>
+    </div>
+  </div>
+
+  <div id="months" class="section">
+    <h2 style="background:#EAF3DE; color:#27500A;">📅 Month-wise Festivals & Fairs (Notes Compressed)</h2>
+
+    <div class="month-head">चैत्र माह (Chaitra)</div>
+    <table>
+      <tr><th>तिथि</th><th>त्योहार/मेला</th><th>विशेष</th></tr>
+      <tr><td>चै. कृ. 1</td><td>धुलेंडी</td><td>Holi ke baad ka din</td></tr>
+      <tr><td>चै. कृ. 8</td><td>शीतला अष्टमी / बसौड़ा</td><td>Jodhpur — Panchkund mela; Gaidha ka mela; Bijnasani mela</td></tr>
+      <tr class="highlight"><td>चै. शु. 1</td><td>हिंदू नववर्ष / चैत्र नवरात्र</td><td>Saidu-Ajmer ← Navratri (Jaipur)</td></tr>
+      <tr class="highlight"><td>चै. शु. 3</td><td>गणगौर ⭐</td><td>Mukla hua tha Gona hua (Jaipur famous procession)</td></tr>
+      <tr><td>चै. शु. 4</td><td>बिना ईसर की गवर → चै.शु.4</td><td>जैसलमेर में मनाई जाती है</td></tr>
+      <tr class="highlight"><td>चै. शु. 5</td><td>गुलाबी गणगौर</td><td>नाथद्वारा</td></tr>
+      <tr><td>चै. शु. 8</td><td>अशोक अष्टमी</td><td>—</td></tr>
+      <tr><td>चै. शु. 9</td><td>राम नवमी</td><td>—</td></tr>
+      <tr><td>चै. पूर्णिमा</td><td>हनुमान जयंती</td><td>मेले → Ucsana Batkala, Mehsir Dukwaji</td></tr>
+    </table>
+
+    <div class="month-head">वैशाख माह (Vaishakh)</div>
+    <table>
+      <tr><th>तिथि</th><th>त्योहार/मेला</th><th>विशेष</th></tr>
+      <tr><td>वै. कृ. 3</td><td>धींगा गवर</td><td>बेतमार मेला (जोधपुर)</td></tr>
+      <tr class="highlight"><td>वै. शु. 3</td><td>अक्षय तृतीया / आखा तीज</td><td>अबूझ सावा | बीकानेर स्थापना दिवस | पतंगें उड़ाई जाती हैं</td></tr>
+      <tr><td>वै. पूर्णिमा</td><td>बुद्ध पूर्णिमा / पीपल पूर्णिमा</td><td>मेले: बाण गंगा मेला-किराडनगर, मातृकुंडिया-चित्तौड़, नारसी आलमेला-Sirohi, गोतमेश्वर-Arnod, गोमर भागट-झालरापाटन</td></tr>
+    </table>
+
+    <div class="month-head">ज्येष्ठ माह (Jyeshtha)</div>
+    <table>
+      <tr><th>तिथि</th><th>त्योहार/मेला</th><th>विशेष</th></tr>
+      <tr><td>ज्ये. अमावस्या</td><td>शनि जयंती / वट सावित्री व्रत</td><td>वट (बड) की पूजा</td></tr>
+      <tr><td>ज्ये. शु. 10</td><td>गंगा दशमी</td><td>मेला → कामां (Kama)</td></tr>
+      <tr><td>ज्ये. शु. 11</td><td>निर्जला एकादशी</td><td>उदयपुर में पतंगें उड़ते हैं</td></tr>
+    </table>
+
+    <div class="month-head">आषाढ़ माह (Ashadh)</div>
+    <table>
+      <tr><th>तिथि</th><th>त्योहार/मेला</th><th>विशेष</th></tr>
+      <tr><td>आ. शु. 1</td><td>गुप्त नवरात्र</td><td>—</td></tr>
+      <tr><td>आ. शु. 9</td><td>भड़ल्या नवमी</td><td>अबूझ सावा</td></tr>
+      <tr><td>आ. शु. 11</td><td>देवशयनी एकादशी</td><td>विष्णु जी सोते हैं → मांगलिक कार्य बंद</td></tr>
+      <tr class="highlight"><td>आ. पूर्णिमा</td><td>गुरु पूर्णिमा / व्यास पूर्णिमा</td><td>बेद व्यास जी | महर्षि कृष्ण द्वैपायन</td></tr>
+    </table>
+
+    <div class="month-head">श्रावण माह (Shravan)</div>
+    <table>
+      <tr><th>तिथि</th><th>त्योहार/मेला</th><th>विशेष</th></tr>
+      <tr><td>श्रा. कृ. 5</td><td>नाग पंचमी</td><td>वीरपुरी का मेला | Mandore (Jodhpur)</td></tr>
+      <tr><td>श्रा. कृ. 9</td><td>निडरी नवमी</td><td>खनेल की पूजा (cobra worship)</td></tr>
+      <tr><td>श्रा. अमावस्या</td><td>हरियाली अमावस्या</td><td>Phrtenagar mela | Kalyan Mela-Margniyas | Jadui Mela-Anoopgarh</td></tr>
+      <tr class="highlight"><td>श्रा. शु. 3</td><td>छोटी तीज / हरियाली तीज</td><td>तीज माता | Jaipur ki Teej | त्योहारों का आगमन</td></tr>
+      <tr><td>श्रा. शु. 3</td><td>छोटी तीज जयपुर</td><td>Rajgarh | लहरिया | सिंजारा</td></tr>
+      <tr><td>श्रा. पूर्णिमा</td><td>रक्षा बंधन / नारियल पूर्णिमा</td><td>श्रमण की पूजा</td></tr>
+    </table>
+
+    <div class="month-head">भाद्रपद माह (Bhadrapad)</div>
+    <table>
+      <tr><th>तिथि</th><th>त्योहार/मेला</th><th>विशेष</th></tr>
+      <tr class="highlight"><td>भा. कृ. 3</td><td>बड़ी तीज / कजली तीज / सातुड़ी तीज</td><td>बूंदी famous | कणली बीठा का मेला</td></tr>
+      <tr><td>भा. कृ. 6</td><td>हलषट्ठ / ऊब छठ / तलवार जयंती</td><td>हलबाहर → सेवंया | शेखावाटी = चाना छठ</td></tr>
+      <tr><td>भा. कृ. 8</td><td>कृष्ण जन्माष्टमी</td><td>—</td></tr>
+      <tr class="highlight"><td>भा. कृ. 9</td><td>गोगा नवमी</td><td>गोगा राखड़ी | ददरेवा (Hanumangarh)</td></tr>
+      <tr><td>भा. कृ. 12</td><td>बछ बारस</td><td>गाय + बछड़ा पूजा | पुत्र की लंबी आयु</td></tr>
+      <tr><td>भा. अमावस्या</td><td>सती अमावस्या</td><td>→ श्रुक्त</td></tr>
+      <tr><td>भा. शु. 2</td><td>बाबरी बीज</td><td>बाबा रामदेव जी | स्कोना→बारमाड़ का गुरु</td></tr>
+      <tr><td>भा. शु. 4</td><td>गणेश चतुर्थी</td><td>रणेत गणेशमंदिर | 3 = चुंगी तीर्थ (जैसलमेर)</td></tr>
+      <tr><td>भा. शु. 5</td><td>ऋषि पंचमी</td><td>भोजन चाली मेला → कोमा (Koma)</td></tr>
+      <tr><td>भा. शु. 8</td><td>राधाअष्टमी</td><td>सलेमाबाद - निम्बार्क संस्थापन</td></tr>
+      <tr><td>भा. शु. 10</td><td>तेजादशमी</td><td>संपतरी वृक्ष मेला</td></tr>
+      <tr><td>भा. शु. 7</td><td>देव झूलनी / जल झूलनी एकादशी</td><td>भा.शु.8 (Ekadashi)</td></tr>
+      <tr><td>भा. शु. 14</td><td>अनंत चतुर्दशी</td><td>पर्युषण पर्व = भाद्रपद माह (जैन)</td></tr>
+      <tr><td>भा. पूर्णिमा</td><td>श्रावणी शुरुआत</td><td>—</td></tr>
+    </table>
+
+    <div class="month-head">आश्विन माह (Ashwin)</div>
+    <table>
+      <tr><th>तिथि</th><th>त्योहार/मेला</th><th>विशेष</th></tr>
+      <tr><td>आ. कृ.</td><td>श्राद्ध पक्ष / पितृ पक्ष / सांझी पूजन</td><td>केले की झारी | नाथद्वारा</td></tr>
+      <tr><td>आ. शु. 1-9</td><td>शारदीय नवरात्र</td><td>—</td></tr>
+      <tr><td>आ. शु. 4</td><td>दुर्गाष्टमी / नवमी</td><td>—</td></tr>
+      <tr class="highlight"><td>आ. शु. 10</td><td>दशहरा / विजयादशमी</td><td>शस्त्र पूजा | कोटा दशहरा famous | खेजड़ी पूजा | नीलकंठ पक्षी / लीलटांस</td></tr>
+      <tr class="highlight"><td>आ. पूर्णिमा</td><td>शरद पूर्णिमा / रास पूर्णिमा</td><td>चंद्रमा की 16 कलाएं | महोत्सव: मारवाड़ (माड) + मीरा महोत्सव</td></tr>
+    </table>
+
+    <div class="month-head">कार्तिक माह (Kartik)</div>
+    <table>
+      <tr><th>तिथि</th><th>त्योहार/मेला</th><th>विशेष</th></tr>
+      <tr class="highlight"><td>का. कृ. 4</td><td>करवा चौथ</td><td>—</td></tr>
+      <tr><td>का. कृ. 8</td><td>अहोई अष्टमी</td><td>—</td></tr>
+      <tr><td>का. कृ. 13</td><td>धनतेरस</td><td>धन्वंतरि जयंती | राष्ट्रीय आयु. दिवस</td></tr>
+      <tr><td>का. कृ. 14</td><td>चतुर्दशी / छोटी दिवाली</td><td>—</td></tr>
+      <tr><td>का. अमावस्या</td><td>दीपावली</td><td>महावीर निर्वाण | स्वामी दयानंद सरस्वती</td></tr>
+      <tr><td>का. शु. 1</td><td>गोवर्धन पूजा / अन्नकूट</td><td>अन्नकूट महोत्सव | 56 भोग | मीन समुदाय हल</td></tr>
+      <tr><td>का. शु. 2</td><td>भाई दूज / यम द्वितीया</td><td>का. शु. 2</td></tr>
+      <tr><td>का. शु. 4</td><td>गोपाष्टमी</td><td>—</td></tr>
+      <tr><td>का. शु. 9</td><td>आंवला नवमी</td><td>—</td></tr>
+      <tr><td>का. शु. 11</td><td>देवउठनी एकादशी / प्रबोधिनी ग्यारस</td><td>तुलसी विवाह | मांगलिक कार्य शुरू | देव दिवाली | 2 माह</td></tr>
+      <tr><td>का. पूर्णिमा</td><td>सत्यनारायण पूर्णिमा</td><td>देव दिवाली | मेले: पुष्कर, कोतापत (कापिल मुनि), चंद्रभागा (झालरापाटन), रामेश्वर घाट (सवाई माधोपुर)</td></tr>
+    </table>
+
+    <div class="month-head">माघ माह (Maagh)</div>
+    <table>
+      <tr><th>तिथि</th><th>त्योहार/मेला</th><th>विशेष</th></tr>
+      <tr class="highlight"><td>माघ कृ. 4</td><td>तिल चौथ / संकट चौथ / सकट चौथ</td><td>Chauth ka Barwara mela (Sawai Madhopur)</td></tr>
+      <tr><td>माघ कृ. 11</td><td>षट्तिला एकादशी</td><td>—</td></tr>
+      <tr><td>माघ अमावस्या</td><td>मौनी अमावस्या</td><td>कुंभ मेले का शाही स्नान</td></tr>
+      <tr><td>माघ शु. 1-9</td><td>गुप्त नवरात्र</td><td>—</td></tr>
+      <tr><td>माघ शु. 5</td><td>बसंत पंचमी</td><td>→ सरस्वती पूजा</td></tr>
+      <tr><td>माघ पूर्णिमा</td><td>कोलायत धाम</td><td>मेला (बनगांगपुरा) | वागड़ का कुंभ / पुष्कर ल</td></tr>
+    </table>
+
+    <div class="month-head">फाल्गुन माह (Falgun)</div>
+    <table>
+      <tr><th>तिथि</th><th>त्योहार/मेला</th><th>विशेष</th></tr>
+      <tr><td>फा. कृ. 13</td><td>महाशिवरात्रि</td><td>मेला → शिवाड़ (सवाई माधोपुर)</td></tr>
+      <tr><td>फा. शु. 2</td><td>फुलेरा दूज</td><td>—</td></tr>
+      <tr class="highlight"><td>फा. पूर्णिमा</td><td>होली</td><td>अग्नि देवता / हुताशनी पूर्णिमा | संत महात्मा की पूजा | कार्तिक शु. 11 तक = 2 माह</td></tr>
+    </table>
+  </div>
+
+  <div id="diff" class="section">
+    <h2 style="background:#E1F5EE; color:#085041;">⚡ Confusion Difference Tables</h2>
+
+    <h3>चार तीज की तिथियां — सबसे बड़ा confusion area</h3>
+    <table class="diff-table">
+      <tr><th>तीज का नाम</th><th>अन्य नाम</th><th>तिथि</th><th>खास बात</th></tr>
+      <tr><td>आखा तीज</td><td>अक्षय तृतीया</td><td>वैशाख शु. 3</td><td>अबूझ सावा | पतंग</td></tr>
+      <tr class="highlight"><td>छोटी तीज</td><td>हरियाली तीज</td><td>श्रावण शु. 3</td><td>जयपुर | त्योहारों का आगमन</td></tr>
+      <tr class="highlight"><td>बड़ी तीज / कजली</td><td>सातुड़ी / भादवा</td><td>भाद्रपद कृ. 3</td><td>बूंदी famous</td></tr>
+      <tr><td>हरतालिका तीज</td><td>—</td><td>भाद्रपद शु. 3</td><td>Shiva-Parvati puja</td></tr>
+    </table>
+
+    <h3>अष्टमी वाले त्योहार — Paksha trap</h3>
+    <table class="diff-table">
+      <tr><th>त्योहार</th><th>माह</th><th>पक्ष</th><th>तिथि</th></tr>
+      <tr class="highlight"><td>शीतला अष्टमी / बसौड़ा</td><td>चैत्र</td><td>कृष्ण ⬛</td><td>चै. कृ. 8</td></tr>
+      <tr><td>अशोक अष्टमी</td><td>चैत्र</td><td>शुक्ल ⬜</td><td>चै. शु. 8</td></tr>
+      <tr><td>जन्माष्टमी</td><td>भाद्रपद</td><td>कृष्ण ⬛</td><td>भा. कृ. 8</td></tr>
+      <tr><td>राधाअष्टमी</td><td>भाद्रपद</td><td>शुक्ल ⬜</td><td>भा. शु. 8</td></tr>
+      <tr><td>अहोई अष्टमी</td><td>कार्तिक</td><td>कृष्ण ⬛</td><td>का. कृ. 8</td></tr>
+      <tr><td>दुर्गाष्टमी</td><td>आश्विन</td><td>शुक्ल ⬜</td><td>आ. शु. 8</td></tr>
+    </table>
+
+    <h3>गणगौर vs शीतला vs घुड़ला — Chaitra mein teen festival</h3>
+    <table class="diff-table">
+      <tr><th>त्योहार</th><th>तिथि</th><th>पूजा</th><th>खास</th></tr>
+      <tr><td>शीतला अष्टमी</td><td>चै. कृ. 8</td><td>शीतला माता</td><td>ठंडा खाना (बसौड़ा)</td></tr>
+      <tr><td>घुड़ला</td><td>चै. कृ. 8 से चै. शु. 3</td><td>मारवाड़ i-folk</td><td>राव सातल | छिद्रयुक्त घड़ा</td></tr>
+      <tr class="highlight"><td>गणगौर</td><td>चै. शु. 3 (मुख्य)</td><td>ईसर-गौरी</td><td>18 दिन | अंत में गणगौर</td></tr>
+    </table>
+
+    <h3>देवशयनी vs देवउठनी — Uthao-Sulao</h3>
+    <table class="diff-table">
+      <tr><th>नाम</th><th>तिथि</th><th>मतलब</th></tr>
+      <tr><td>देवशयनी एकादशी</td><td>आषाढ़ शु. 11</td><td>विष्णु सोते हैं → मांगलिक बंद</td></tr>
+      <tr class="highlight"><td>देवउठनी एकादशी</td><td>कार्तिक शु. 11</td><td>विष्णु जागते हैं → मांगलिक शुरू | तुलसी विवाह</td></tr>
+    </table>
+
+    <h3>चौथ वाले व्रत — Chauth confusion</h3>
+    <table class="diff-table">
+      <tr><th>व्रत</th><th>महीना</th><th>पक्ष</th><th>उद्देश्य</th></tr>
+      <tr class="highlight"><td>करवा चौथ</td><td>कार्तिक</td><td>कृष्ण 4</td><td>पति की लंबी उम्र</td></tr>
+      <tr class="highlight"><td>तिल चौथ / संकट चौथ</td><td>माघ</td><td>कृष्ण 4</td><td>संतान की रक्षा</td></tr>
+      <tr><td>चतरा चौथ</td><td>भाद्रपद</td><td>शुक्ल 4</td><td>गणेश चतुर्थी (डांग क्षेत्र)</td></tr>
+    </table>
+
+    <h3>जैन धर्म के त्योहार</h3>
+    <table class="diff-table">
+      <tr><th>त्योहार</th><th>विवरण</th></tr>
+      <tr><td>पर्युषण पर्व</td><td>भाद्रपद माह | श्वेताम्बर = 8 दिन | दिगंबर = 10 दिन</td></tr>
+      <tr><td>सुगंध दशमी</td><td>दिगंबर जैन | दशलक्षण महापर्व में</td></tr>
+    </table>
+  </div>
+
+  <div id="place" class="section">
+    <h2 style="background:#EEEDFE; color:#3C3489;">📍 Festival → Location Map</h2>
+
+    <table>
+      <tr><th>त्योहार / उत्सव</th><th>स्थान</th><th>Trick/Note</th></tr>
+      <tr class="highlight"><td>गुलाबी गणगौर</td><td>नाथद्वारा</td><td>चैत्र शु. 5</td></tr>
+      <tr class="highlight"><td>ईलोजी की सवारी</td><td>ब्यावर</td><td>होली पर</td></tr>
+      <tr class="highlight"><td>पत्थरमार होली</td><td>बाड़मेर</td><td>80-90 साल पुरानी परंपरा</td></tr>
+      <tr><td>कजली तीज की सवारी</td><td>बूंदी</td><td>भाद्रपद कृ. 3</td></tr>
+      <tr><td>लट्ठमार होली</td><td>श्रीमहावीरजी (करौली)</td><td>—</td></tr>
+      <tr><td>हिण्डोला महोत्सव</td><td>कोलायत</td><td>—</td></tr>
+      <tr><td>दशहरा महोत्सव</td><td>कोटा (famous)</td><td>राजस्थान में सबसे बड़ा</td></tr>
+      <tr><td>कुंभलगढ़ महोत्सव</td><td>कुंभलगढ़ / चित्तौड़गढ़</td><td>राणा कुंभा के नाम पर</td></tr>
+      <tr><td>पुष्कर मेला</td><td>अजमेर</td><td>कार्तिक पूर्णिमा | नवंबर</td></tr>
+      <tr><td>हाथी महोत्सव</td><td>जयपुर</td><td>मार्च (होली)</td></tr>
+      <tr><td>ऊंट महोत्सव</td><td>बीकानेर</td><td>जनवरी</td></tr>
+      <tr><td>बनेश्वर मेला</td><td>डूंगरपुर</td><td>भीलों का सबसे बड़ा</td></tr>
+      <tr><td>फूलडोल उत्सव</td><td>रामस्नेही पंथ</td><td>शाहपुरा (भीलवाड़ा)</td></tr>
+      <tr><td>बिना ईसर की गवर</td><td>जैसलमेर</td><td>चैत्र शु. 4</td></tr>
+      <tr><td>गोगा नवमी मुख्य मेला</td><td>ददरेवा (हनुमानगढ़)</td><td>भा. कृ. 9</td></tr>
+      <tr><td>निर्जला एकादशी पतंगें</td><td>उदयपुर</td><td>ज्ये. शु. 11</td></tr>
+      <tr><td>जन्माष्टमी</td><td>नाथद्वारा / Nathdwara</td><td>केले की झारी</td></tr>
+      <tr><td>माघ पूर्णिमा मेला</td><td>कोलायत धाम (बीकानेर)</td><td>वागड़ का कुंभ</td></tr>
+    </table>
+
+    <h3>Festivals Calendar Timeline (Jan → Dec)</h3>
+    <table>
+      <tr><th>Month (approx)</th><th>Festival</th></tr>
+      <tr><td>January</td><td>ऊंट महोत्सव बीकानेर</td></tr>
+      <tr><td>March</td><td>हाथी महोत्सव जयपुर | होली</td></tr>
+      <tr><td>March-April</td><td>गणगौर | शीतला अष्टमी</td></tr>
+      <tr><td>April-May</td><td>आखा तीज</td></tr>
+      <tr><td>July-Aug</td><td>छोटी तीज | रक्षाबंधन</td></tr>
+      <tr><td>Aug-Sep</td><td>कजली तीज | गोगा नवमी | जन्माष्टमी</td></tr>
+      <tr><td>October</td><td>दशहरा (कोटा) | शरद पूर्णिमा</td></tr>
+      <tr><td>October-Nov</td><td>दीपावली | देवउठनी</td></tr>
+      <tr><td>November</td><td>पुष्कर मेला (अजमेर)</td></tr>
+    </table>
+  </div>
+
+  <div id="misc" class="section">
+    <h2 style="background:#FAEEDA; color:#633806;">🧩 Misc Facts — Notes se Compressed</h2>
+
+    <h3>वृक्ष पूजा</h3>
+    <table>
+      <tr><th>वृक्ष</th><th>कब पूजा</th></tr>
+      <tr><td>खेजड़ी</td><td>दशहरा (विजयादशमी) + जन्माष्टमी</td></tr>
+      <tr><td>वट (बड)</td><td>ज्येष्ठ अमावस्या</td></tr>
+      <tr><td>पीपल</td><td>ज्येष्ठ पूर्णिमा + हर शनिवार</td></tr>
+      <tr class="highlight"><td>केला</td><td>बृहस्पतिवार (गुरुवार) ← NOT मंगलवार</td></tr>
+    </table>
+
+    <h3>धर्म से जुड़े त्योहार</h3>
+    <table>
+      <tr><th>त्योहार</th><th>धर्म</th><th>विशेष</th></tr>
+      <tr><td>ईद-उल-अजहा / बकरीद</td><td>इस्लाम</td><td>इब्राहिम की कुर्बानी</td></tr>
+      <tr><td>ईस्टर</td><td>ईसाई</td><td>ईसा का पुनर्जीवित होना</td></tr>
+      <tr><td>पर्युषण + सुगंध दशमी</td><td>जैन</td><td>भाद्रपद माह</td></tr>
+      <tr><td>भगोरिया</td><td>भील समाज</td><td>होली से 7 दिन पहले</td></tr>
+      <tr><td>फूलडोल</td><td>रामस्नेही पंथ</td><td>—</td></tr>
+      <tr><td>बुद्ध पूर्णिमा</td><td>बौद्ध</td><td>वैशाख पूर्णिमा</td></tr>
+    </table>
+
+    <h3>तमाशा (Tamasha)</h3>
+    <table>
+      <tr><th>त्योहार</th><th>तमाशा</th></tr>
+      <tr><td>होली</td><td>जोगी जोगन तमाशा</td></tr>
+      <tr><td>होली + 1 दिन</td><td>हीर रांझा तमाशा</td></tr>
+      <tr><td>शीतलाष्टमी</td><td>जूठन मियां तमाशा</td></tr>
+    </table>
+    <div style="font-size:11px; color:var(--color-text-secondary); margin-top:4px;">तमाशा = Jaipur ka lok natya | Shuruaat: Sawai Pratap Singh | Janak: Bansidhar Bhatt (Maharashtra)</div>
+
+    <h3>पूर्णिमाओं के नाम</h3>
+    <table>
+      <tr><th>पूर्णिमा</th><th>अन्य नाम</th><th>महीना</th></tr>
+      <tr class="highlight"><td>शरद पूर्णिमा</td><td>रास पूर्णिमा | कोजागरी</td><td>आश्विन</td></tr>
+      <tr><td>नारियल पूर्णिमा</td><td>सत्य पूर्णिमा</td><td>श्रावण</td></tr>
+      <tr><td>गुरु पूर्णिमा</td><td>व्यास पूर्णिमा</td><td>आषाढ़</td></tr>
+      <tr><td>बुद्ध पूर्णिमा</td><td>पीपल पूर्णिमा</td><td>वैशाख</td></tr>
+      <tr><td>सत्यनारायण पूर्णिमा</td><td>देव दिवाली</td><td>कार्तिक</td></tr>
+    </table>
+
+    <h3>हिंदू कैलेंडर System — Notes से</h3>
+    <div class="section-card">
+      <div class="oneliner"><span>विक्रम संवत् start</span><strong>57 ई.पू. (B.C.)</strong></div>
+      <div class="oneliner"><span>1 वर्ष</span><strong>365 दिन | 12 माह</strong></div>
+      <div class="oneliner"><span>1 माह</span><strong>29/29.5 दिन</strong></div>
+      <div class="oneliner"><span>अधिक माह</span><strong>2 वर्ष 8 माह 12 दिन में</strong></div>
+      <div class="oneliner"><span>शुक्ल पक्ष</span><strong>उजाला पक्ष → पूर्णिमा तक</strong></div>
+      <div class="oneliner"><span>कृष्ण पक्ष</span><strong>अंधेरा पक्ष → अमावस्या तक</strong></div>
+      <div class="oneliner"><span>Pattern</span><strong>माह + पक्ष + तिथि (e.g. मार्गशीर्ष कृष्ण अष्टमी)</strong></div>
+    </div>
+  </div>
+
+  <div id="oneline" class="section">
+    <h2 style="background:#E6F1FB; color:#0C447C;">🔥 30 One-Liners — Last Minute Revision</h2>
+    <div class="section-card">
+      <div class="oneliner"><span>गुलाबी गणगौर</span><strong>नाथद्वारा | चैत्र शु. 5</strong></div>
+      <div class="oneliner"><span>गणगौर (मुख्य)</span><strong>चैत्र शु. 3 | 18 दिन | ईसर-गौरी</strong></div>
+      <div class="oneliner"><span>गणगौर पूजा</span><strong>शिव = ईसर जी | पार्वती = गौरी</strong></div>
+      <div class="oneliner"><span>छोटी तीज</span><strong>श्रावण शु. 3 | जयपुर | आगमन</strong></div>
+      <div class="oneliner"><span>बड़ी / कजली तीज</span><strong>भाद्रपद कृ. 3 | बूंदी famous</strong></div>
+      <div class="oneliner"><span>हरतालिका तीज</span><strong>भाद्रपद शु. 3 | ≠ बड़ी तीज</strong></div>
+      <div class="oneliner"><span>आखा तीज</span><strong>वैशाख शु. 3 | अबूझ सावा</strong></div>
+      <div class="oneliner"><span>शीतला अष्टमी</span><strong>चैत्र कृ. 8 | बसौड़ा</strong></div>
+      <div class="oneliner"><span>अशोक अष्टमी</span><strong>चैत्र शु. 8 ← ≠ शीतला</strong></div>
+      <div class="oneliner"><span>ऊब छठ</span><strong>भाद्रपद शु. 6 | शेखावाटी = चाना छठ</strong></div>
+      <div class="oneliner"><span>गोगा नवमी</span><strong>भाद्रपद कृ. 9 | ददरेवा</strong></div>
+      <div class="oneliner"><span>बछ बारस</span><strong>भाद्रपद कृ. 12 | गाय-बछड़ा</strong></div>
+      <div class="oneliner"><span>करवा चौथ</span><strong>कार्तिक कृ. 4</strong></div>
+      <div class="oneliner"><span>तिल चौथ / संकट चौथ</span><strong>माघ कृ. 4 ← ≠ करवा</strong></div>
+      <div class="oneliner"><span>देवउठनी एकादशी</span><strong>कार्तिक शु. 11 | मांगलिक शुरू</strong></div>
+      <div class="oneliner"><span>देवशयनी एकादशी</span><strong>आषाढ़ शु. 11 | मांगलिक बंद</strong></div>
+      <div class="oneliner"><span>शरद पूर्णिमा</span><strong>आश्विन | रास पूर्णिमा | 16 कलाएं</strong></div>
+      <div class="oneliner"><span>खेजड़ी पूजा</span><strong>दशहरा</strong></div>
+      <div class="oneliner"><span>ईलोजी सवारी</span><strong>ब्यावर | होली</strong></div>
+      <div class="oneliner"><span>पत्थरमार होली</span><strong>बाड़मेर</strong></div>
+      <div class="oneliner"><span>लट्ठमार होली</span><strong>श्रीमहावीरजी (करौली)</strong></div>
+      <div class="oneliner"><span>भगोरिया</span><strong>भील | होली से 7 दिन पहले</strong></div>
+      <div class="oneliner"><span>पर्युषण / सुगंध दशमी</span><strong>जैन | भाद्रपद</strong></div>
+      <div class="oneliner"><span>फूलडोल उत्सव</span><strong>रामस्नेही पंथ</strong></div>
+      <div class="oneliner"><span>हिण्डोला महोत्सव</span><strong>कोलायत</strong></div>
+      <div class="oneliner"><span>कुंभलगढ़ उत्सव</span><strong>राणा कुंभा के नाम पर</strong></div>
+      <div class="oneliner"><span>केला पूजा</span><strong>गुरुवार ← NOT मंगलवार</strong></div>
+      <div class="oneliner"><span>त्योहार आगमन</span><strong>श्रावणी तीज से</strong></div>
+      <div class="oneliner"><span>त्योहार समापन</span><strong>गणगौर से</strong></div>
+      <div class="oneliner"><span>हिंदू नववर्ष</span><strong>चैत्र शु. प्रतिपदा</strong></div>
+    </div>
+    <div style="margin-top:10px; padding:8px 10px; background:#EAF3DE; border-radius:var(--border-radius-md); font-size:12px; color:#27500A;">
+      ✅ Ye 30 one-liners PYQ ke 80%+ questions cover karte hain. Exam se pehle sirf inhe padhna kaafi hai.
+    </div>
+  </div>
+</div>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>

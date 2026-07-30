@@ -1711,4 +1711,38 @@ body {
   color: #92400E;
 }
 
+/* ============ UNIVERSAL SEARCH & HEATMAP STYLES ============ */
+.heatmap-cell.level-0 { background: var(--border); }
+.heatmap-cell.level-1 { background: #c6e48b; }
+.heatmap-cell.level-2 { background: #7bc96f; }
+.heatmap-cell.level-3 { background: #239a3b; }
+.heatmap-cell.level-4 { background: #196127; }
+
+.search-result-card:hover {
+  border-color: var(--saffron) !important;
+  transform: translateY(-1px);
+}
+
+.modal-box input:focus {
+  border-color: var(--saffron) !important;
+}
+
+/* Palette button status colors */
+.palette-btn.current {
+  border-color: var(--saffron) !important;
+  background: var(--saffron-bg) !important;
+  color: var(--saffron) !important;
+}
+
+.palette-btn.answered {
+  background: #10b981 !important;
+  color: #fff !important;
+}
+
+.palette-btn.skipped {
+  background: #f59e0b !important;
+  color: #fff !important;
+}
+
+
 

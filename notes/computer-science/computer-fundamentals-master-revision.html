@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Computer Fundamentals — Unified Master Revision Sheet</title>
+<style>
+  @page{size:A4;margin:12mm}
+  body{font-family:'Noto Sans Devanagari','Nirmala UI',Arial,sans-serif;font-size:12.5px;line-height:1.42;color:#111;max-width:900px;margin:auto;padding:10px}
+  h1{font-size:20px;background:#1b2a4a;color:#fff;padding:8px 12px;border-radius:6px;margin:6px 0}
+  h2{font-size:15px;background:#e8edf7;border-left:5px solid #1b2a4a;padding:5px 8px;margin:16px 0 6px}
+  h3{font-size:13px;color:#1b2a4a;margin:10px 0 4px;border-bottom:1px dashed #aaa}
+  table{width:100%;border-collapse:collapse;margin:6px 0 10px;font-size:11.8px}
+  th,td{border:1px solid #bbb;padding:4px 6px;text-align:left;vertical-align:top}
+  th{background:#1b2a4a;color:#fff}
+  tr:nth-child(even){background:#f4f6fb}
+  ul{margin:4px 0 8px 18px;padding:0}
+  li{margin:2px 0}
+  .flow{background:#fff8e1;border:1px solid #e0c46c;padding:8px 10px;border-radius:6px;font-weight:600}
+  .bug{background:#ffe9e9;border-left:4px solid #c0392b;padding:5px 8px;margin:4px 0}
+  .pyq3{color:#c0392b;font-weight:700}
+  .pyq2{color:#b8860b;font-weight:700}
+  .pyq1{color:#2a6f2a;font-weight:700}
+  .weak-red{color:#c0392b;font-weight:700}
+  .weak-orange{color:#d17b00;font-weight:700}
+  .weak-yellow{color:#8a7a00;font-weight:700}
+  .weak-green{color:#2a6f2a;font-weight:700}
+  code{background:#eee;padding:1px 4px;border-radius:3px}
+  .note{font-size:11px;color:#555}
+</style>
+</head>
+<body>
+
+<h1>💻 Computer Fundamentals — Unified Master Revision Sheet</h1>
+<p class="note">Group: कम्प्यूटर परिचय · Architecture · Memory · I/O Devices · Software · Number System · Abbreviations — सभी अपलोड किए गए Quizzes (RSMSSB/RSSB/BCI/CET/Patwar/Police आदि) से मर्ज किया गया। नया डेटा आने पर यह शीट अपडेट होती रहेगी, नया document नहीं बनेगा।</p>
+
+<h2>🔗 विषय संबंध मानचित्र (How Topics Connect)</h2>
+<p class="flow">कम्प्यूटर परिचय (Hardware+Software concept) → उपयोग करता है → <b>Architecture</b> (CPU=ALU+CU+Registers, Buses, Motherboard) → डेटा रखता है → <b>Memory</b> (Register&gt;Cache&gt;RAM&gt;Secondary) → डेटा अंदर/बाहर आता है → <b>I/O Devices</b> (Input→CPU→Output) → सभी निर्देश चलाता है → <b>Software</b> (System vs Application, Translators) → आंतरिक रूप से represent होता है → <b>Number System</b> (Binary/Octal/Dec/Hex, ASCII/EBCDIC) → इन सबकी शब्दावली संक्षिप्त होती है → <b>Abbreviations</b> (RAM, ROM, CPU, ALU, BIOS, CMOS, USB...)</p>
+
+<h2>🚨 मेरी परीक्षा गलतियाँ / Confusions (सभी Quiz से Merged)</h2>
+<table>
+<tr><th>गलत Concept</th><th>सही Concept</th><th>क्यों गलती हुई / Trick</th></tr>
+<tr><td>ENIAC = Stored Program Computer</td><td><b>EDVAC</b> = पहला Binary Stored-Program (Von Neumann) Computer; ENIAC = पहला Electronic Computer (Stored Program नहीं)</td><td>ENIAC≠EDVAC; "V" for Von Neumann याद रखें</td></tr>
+<tr><td>Smallest Data Unit = Nibble</td><td><b>Bit</b> ही सबसे छोटी इकाई; Nibble=4 Bits</td><td>🚨 कई Answer Key में गलत Nibble दिया मिलता है</td></tr>
+<tr><td>1 TB = 1000 GB</td><td>Computer Memory (Binary) में <b>1 TB = 1024 GB</b>; 1000 GB केवल Marketing/SI मानक</td><td>Exam Standard हमेशा 1024 मानें जब तक प्रश्न SI न कहे</td></tr>
+<tr><td>WIMP में Mouse शामिल</td><td>WIMP = <b>W</b>indows <b>I</b>cons <b>M</b>enus <b>P</b>ointer (Mouse नहीं, Pointer उसका Cursor है)</td><td>Mouse=Hardware, Pointer=on-screen cursor</td></tr>
+<tr><td>UPS = Uninterrupted Power Supply</td><td>Technical सही रूप: <b>Uninterruptible</b> Power Supply (कई किताबों में "Uninterrupted" भी छपा मिलता है — विकल्पों में जो निकट हो वही चुनें)</td><td>-ible ending सही तकनीकी शब्द</td></tr>
+<tr><td>DVD = Digital Video Disc</td><td><b>Digital Versatile Disc</b></td><td>Versatile=बहुउपयोगी, सिर्फ Video नहीं</td></tr>
+<tr><td>MAR/MDR उलट जाना</td><td><b>MAR</b>=Memory <u>Address</u> Register, <b>MDR</b>=Memory <u>Data</u> Register</td><td>A=Address, D=Data (alphabetical)</td></tr>
+<tr><td>SRAM/DRAM उलट जाना</td><td><b>SRAM</b>=Static, तेज़, Cache में, No Refresh, Flip-Flop आधारित। <b>DRAM</b>=Dynamic, सस्ता, Main Memory, Refresh चाहिए, Capacitor आधारित</td><td>S=Speed=SRAM=Cache; D=Dynamic=DRAM=Main Memory</td></tr>
+<tr><td>Binary→Octal में 4-bit group</td><td>Binary→<b>Octal = 3-bit</b> group; Binary→<b>Hex = 4-bit</b> group</td><td>Octal base 8=2³(3 bit); Hex base 16=2⁴(4 bit)</td></tr>
+<tr><td>ASCII = 8 bit / 256 chars</td><td>Standard <b>ASCII-7 = 7 bit = 128</b> chars; Extended ASCII/EBCDIC = 8 bit = 256 chars</td><td>न्यूनतम bits वाला Coding = ASCII-7</td></tr>
+<tr><td>2's Complement of (1000)₂ बदलना</td><td>4-bit में 1000 (=-8) का 2's Complement <b>वही 1000</b> रहता है (Special/Edge Case — +8 represent नहीं हो सकता)</td><td>⚠️ यह Rule का अपवाद है</td></tr>
+<tr><td>Processed Data = Output</td><td>Concept के अनुसार Processed Data = <b>Information</b>; IPO Cycle संदर्भ में ही Output माना जाता है — 🚨 Answer Key भ्रामक</td><td>संदर्भ (context) देखें</td></tr>
+<tr><td>Control Unit डेटा Process करती है</td><td>CU केवल <b>Coordinate/Direct</b> करती है, वास्तविक Processing <b>ALU</b> करता है</td><td>CU=ट्रैफिक पुलिस, ALU=मज़दूर</td></tr>
+<tr><td>CPU का घटक = Monitor/VDU/Mouse</td><td>CPU = केवल <b>ALU+CU+Registers</b>; VDU/Monitor/Mouse Peripheral हैं</td><td>-</td></tr>
+<tr><td>Bootstrap Loader Hard Disk में</td><td>छोटा Bootstrap Loader <b>ROM/BIOS</b> में स्थित होता है</td><td>Boot से पहले चाहिए इसलिए Non-volatile ROM</td></tr>
+<tr><td>OCR/OMR/MICR/Barcode गड़बड़ाना</td><td>OCR=छपे अक्षर पहचान(Editable Text); OMR=पेंसिल मार्क(Answer sheets); MICR=बैंक चेक कोड; Barcode Reader=उत्पाद कोड</td><td>नीचे तुलना तालिका देखें</td></tr>
+</table>
+
+<h2>🎯 Sub-topic अनुसार Weak Areas (Score History पर आधारित)</h2>
+<table>
+<tr><th>Sub-topic</th><th>Status</th><th>Score Trend</th><th>सबसे कमजोर Concepts</th></tr>
+<tr><td>Number System</td><td class="weak-red">🔴 Very Weak</td><td>12/20 → 20/24</td><td>Fraction Conversion, Binary→Hex Grouping, Hex Arithmetic, 2's Complement Edge Cases, IC Classification</td></tr>
+<tr><td>Computer Architecture</td><td class="weak-red">🔴 Very Weak (सुधर रहा)</td><td>11/20→13/20→12/20→15/20→18/21</td><td>CPU Components, Registers (MAR/MDR/PC), Bus Types, Booting (BIOS/CMOS/POST), Processor History</td></tr>
+<tr><td>कम्प्यूटर परिचय (Intro/History)</td><td class="weak-orange">🟠 Weak (Fluctuating)</td><td>27→22→21→21→25→20→24→15/17</td><td>Computer History (ENIAC/EDVAC/EDSAC/UNIVAC), IBM Series (7030/360/1401), Indian Computer GK (SHAKTI, Siddharth, C-DAC), Rare Static Facts</td></tr>
+<tr><td>Computer Abbreviations</td><td class="weak-yellow">🟡 Moderate</td><td>24/30→26/30→24/33</td><td>WIMP components, Networking Protocols (FTP/HDX), Hardware Interfaces (PCI/SATA/HDMI/RFID), UNIX full form doubt</td></tr>
+<tr><td>Computer Memory</td><td class="weak-yellow">🟡 Moderate</td><td>25/30→22/30→24/30→12/13</td><td>Memory Unit Conversion(binary), FAT32 Limit, Paging vs Swapping vs Spooling, ROM types</td></tr>
+<tr><td>Input/Output Devices</td><td class="weak-green">🟢 Strong (लगातार सुधार)</td><td>24/30→29/30→31/37</td><td>Barcode min chars, Refresh Buffer terminology, Ports matching (PS/2,VGA,Parallel,Ethernet), Spooling</td></tr>
+<tr><td>Software</td><td class="weak-yellow">🟡 अभी Quiz नहीं आया (Reference only)</td><td>-</td><td>Compiler vs Interpreter vs Assembler; System vs Application; Software Licenses</td></tr>
+</table>
+
+<h2>📊 महत्वपूर्ण Difference Tables (Cross-Topic)</h2>
+
+<h3>Memory Speed Hierarchy (Architecture + Memory)</h3>
+<table><tr><th>क्रम</th><th>Memory</th><th>विशेषता</th></tr>
+<tr><td>1 (सबसे तेज़)</td><td>CPU Registers</td><td>CPU के अंदर, सबसे महँगी, सबसे कम क्षमता</td></tr>
+<tr><td>2</td><td>Cache (SRAM)</td><td>CPU↔RAM के बीच, L1&gt;L2&gt;L3</td></tr>
+<tr><td>3</td><td>RAM (DRAM)</td><td>Primary, Volatile, Refresh चाहिए</td></tr>
+<tr><td>4</td><td>SSD</td><td>Fastest Secondary</td></tr>
+<tr><td>5 (सबसे धीमी)</td><td>HDD / Magnetic Tape</td><td>Secondary, Permanent</td></tr>
+</table>
+
+<h3>RAM vs ROM</h3>
+<table><tr><th></th><th>RAM</th><th>ROM</th></tr>
+<tr><td>Volatile?</td><td>हाँ (Power off = Data lost)</td><td>नहीं (Non-volatile)</td></tr>
+<tr><td>Read/Write</td><td>दोनों</td><td>केवल Read (PROM/EPROM/EEPROM से Re-program संभव)</td></tr>
+<tr><td>प्रकार</td><td>SRAM, DRAM</td><td>PROM, EPROM(UV से Erase), EEPROM(Electric से Erase)</td></tr>
+<tr><td>उपयोग</td><td>Running Programs</td><td>BIOS/Firmware/Boot Instructions</td></tr>
+</table>
+
+<h3>SRAM vs DRAM</h3>
+<table><tr><th></th><th>SRAM</th><th>DRAM</th></tr>
+<tr><td>आधार</td><td>Flip-Flop</td><td>Capacitor</td></tr>
+<tr><td>Refresh</td><td>ज़रूरत नहीं</td><td>बार-बार Refresh चाहिए</td></tr>
+<tr><td>गति/कीमत</td><td>तेज़, महँगी</td><td>धीमी, सस्ती</td></tr>
+<tr><td>उपयोग</td><td>Cache Memory</td><td>Main Memory (RAM)</td></tr>
+</table>
+
+<h3>Compiler vs Interpreter vs Assembler (Software)</h3>
+<table><tr><th></th><th>Assembler</th><th>Compiler</th><th>Interpreter</th></tr>
+<tr><td>काम</td><td>Assembly→Machine Code</td><td>पूरे High-level Program को एक साथ Machine Code में बदलता है</td><td>एक-एक Line Translate करता है</td></tr>
+<tr><td>Error Handling</td><td>-</td><td>पूरे Program के बाद Error दिखाता है</td><td>तुरंत रुक जाता है</td></tr>
+</table>
+
+<h3>OCR vs OMR vs MICR vs Barcode Reader (I/O)</h3>
+<table><tr><th>Device</th><th>काम</th><th>Example Use</th></tr>
+<tr><td>OCR</td><td>छपे/स्कैन Text को Editable Text में बदलता है</td><td>Document digitization</td></tr>
+<tr><td>OMR</td><td>Pencil/Pen Marks पढ़ता है</td><td>Answer Sheets, Objective Exams</td></tr>
+<tr><td>MICR</td><td>चुंबकीय स्याही से लिखे कोड पढ़ता है</td><td>Bank Cheques (पहले 3 अंक = शहर)</td></tr>
+<tr><td>Barcode Reader</td><td>Laser से Barcode स्कैन करता है (Input Device)</td><td>Billing, POS</td></tr>
+</table>
+
+<h3>Input vs Output Devices — Trap List</h3>
+<table><tr><th>Input (याद रखें)</th><th>Output (याद रखें)</th></tr>
+<tr><td>Keyboard, Mouse, Scanner, Joystick, Light Pen, Digitizer, Trackball, Microphone, Webcam, Barcode Reader, Touch Screen, MICR, OMR, OCR</td><td>Monitor/VDU, Printer, Plotter, Projector, Speaker, Headphone</td></tr>
+<tr><td colspan="2">⚠️ Trap: Paper Tape Reader = पुराना Input+Output दोनों (Modern Exam में सामान्यतः Input)</td></tr>
+</table>
+
+<h2>🧮 Number System — Shortcuts</h2>
+<table>
+<tr><th>Conversion</th><th>Method</th></tr>
+<tr><td>Decimal → Binary/Octal/Hex</td><td>Base से बार-बार भाग दें (÷2 / ÷8 / ÷16), Remainder उल्टे क्रम में लिखें</td></tr>
+<tr><td>Binary → Decimal</td><td>हर बिट × 2^(position), जोड़ें (Powers: 1,2,4,8,16,32...)</td></tr>
+<tr><td>Binary → Octal</td><td>3-bit के Group बनाकर हर Group को Octal digit से बदलें</td></tr>
+<tr><td>Binary → Hex</td><td>4-bit के Group बनाकर हर Group को Hex digit से बदलें</td></tr>
+<tr><td>Fraction: Decimal→Binary</td><td>Fraction भाग को base से गुणा करते रहें, ऊपर से नीचे Integer भाग लिखें</td></tr>
+<tr><td>Fraction: Binary→Decimal</td><td>दशमलव बाद के bit × 2⁻¹,2⁻²,2⁻³... (0.5, 0.25, 0.125, 0.0625)</td></tr>
+<tr><td>2's Complement</td><td>1's Complement (सभी बिट पलटें) + 1</td></tr>
+</table>
+<p class="note">Base याद रखें: Binary=2, Octal=8 (digits 0-7), Decimal=10, Hex=16 (0-9,A-F)। ASCII-7=128 chars, ASCII-8/EBCDIC=256 chars, Unicode=16-bit।</p>
+
+<h2>🧠 Memory Tricks / Mnemonics</h2>
+<ul>
+<li>Memory Speed: <b>R-C-R-S-H</b> = Register→Cache→RAM→SSD→HDD</li>
+<li>MAR/MDR: <b>A</b>ddress-<b>A</b>lphabetically-first-MAR; MDR=<b>D</b>ata</li>
+<li>SRAM=<b>S</b>peed=Cache; DRAM=<b>D</b>ynamic=Main Memory</li>
+<li>Boot Sequence: Power On → <b>POST</b> → <b>BIOS</b> → OS Load</li>
+<li>Instruction Cycle: <b>F</b>etch→<b>D</b>ecode→<b>E</b>xecute (FDE)</li>
+<li>Generations: Vacuum Tube(1st)→Transistor(2nd)→IC(3rd)→VLSI(4th)→ULSI(5th)</li>
+<li>WIMP = Windows, Icons, Menus, Pointer (Mouse नहीं)</li>
+<li>Duplex: Simplex(1-way)→Half-Duplex(दोनों पर बारी-बारी, जैसे Walkie-Talkie)→Full-Duplex(दोनों एक साथ, जैसे Telephone)</li>
+</ul>
+
+<h2>⭐ PYQ Favourite Topics (सभी Sub-topics में सबसे ज़्यादा दोहराए गए)</h2>
+<ul>
+<li class="pyq3">⭐⭐⭐ CPU Components (ALU+CU+Registers), RAM vs ROM, Memory Speed Hierarchy, Input vs Output Device पहचान, Binary↔Decimal/Octal/Hex Conversion, GUI/URL/HTTP Full Forms</li>
+<li class="pyq2">⭐⭐ Computer Generations (Vacuum Tube→ULSI), Printer Types (Impact/Non-Impact), OCR/OMR/MICR, Memory Units (Bit→YB), SRAM vs DRAM, Charles Babbage/Ada Lovelace/Von Neumann</li>
+<li class="pyq1">⭐ Indian Computer History (PARAM, C-DAC, SHAKTI, Siddharth), BIOS/CMOS/POST, ASCII/EBCDIC, Bus Types, IC Classification (SSI/MSI/LSI/VLSI)</li>
+</ul>
+
+<h2>🚨 Answer Key Bugs / Source Conflicts (Consolidated)</h2>
+<div class="bug"><b>Smallest Data Unit</b> — कई Answer Key में "Nibble" दिया गया, सही उत्तर <b>Bit</b> है।</div>
+<div class="bug"><b>1 TB = 1000 GB</b> कहने वाली Explanation Computer Memory के Binary मानक (1024 GB) से टकराती है — Exam में विकल्प देखकर तय करें।</div>
+<div class="bug"><b>Refresh Buffer / Pix Map</b> — Technically Frame Buffer/Refresh Buffer/Pixmap कई किताबों में समान अर्थ में; पुराने RSSB प्रश्नों में अपेक्षित उत्तर <b>Pix Map</b>।</div>
+<div class="bug"><b>Barcode Minimum Characters</b> — Answer Key में 10 दिया जाता है, वास्तविकता में Barcode Standard (UPC/EAN/Code39) पर निर्भर, इसलिए Variable है।</div>
+<div class="bug"><b>Processed Data = Information vs Output</b> — मानक परिभाषा से Information सही, पर IPO Cycle संदर्भ में Output भी स्वीकार्य — Question का Context देखें।</div>
+<div class="bug"><b>53 का 2's Complement</b> — दिए गए विकल्पों में सही 8-bit उत्तर (11001011) उपलब्ध नहीं था — विकल्प जाँचकर उत्तर दें।</div>
+<div class="bug"><b>UNIX Full Form</b> — कोई आधिकारिक Full Form नहीं है (UNICS से व्युत्पन्न); यदि "No Full Form" विकल्प हो तो वही सही मानें।</div>
+
+<h2>📚 Sub-topic-wise Compact Revision (Logical Order)</h2>
+
+<h3>1️⃣ कम्प्यूटर परिचय</h3>
+<ul>
+<li>Computer = Data Input→Store→Process→Output करने वाला Electronic यंत्र; शब्द "Compute" से बना</li>
+<li>Father of Computer = Charles Babbage (Analytical Engine, 1837); First Programmer = Ada Lovelace</li>
+<li>पहला Electronic Computer = <b>ENIAC</b> (1945, Eckert & Mauchly); पहला Stored-Program Binary Computer = <b>EDVAC</b> (Von Neumann concept); पहला Commercial Computer = UNIVAC</li>
+<li>Generations: 1st=Vacuum Tube(ENIAC,UNIVAC) · 2nd=Transistor(IBM 7030) · 3rd=IC(IBM 360) · 4th=Microprocessor/VLSI(IBM-PC,Apple-II) · 5th=ULSI/AI(Desktop,Laptop)</li>
+<li>India: पहला Computer=ISI Kolkata · पहला Supercomputer=<b>PARAM 8000</b>(1991,C-DAC Pune) · C-DAC स्थापना=1988 · पहला Bilingual Computer=<b>Siddharth</b>(1986) · Indian Microprocessor=<b>SHAKTI</b>(IIT Madras) · Silicon Valley of India=Bengaluru</li>
+<li>Classification (Size/Power): Supercomputer(FLOPS में मापी जाती है, Seymour Cray=Father of Supercomputer) &gt; Mainframe &gt; Mini &gt; Micro</li>
+<li>Working Type: Analog(भौतिक राशि) · Digital(Binary 0/1) · Hybrid(दोनों — जैसे ECG, Radar)</li>
+</ul>
+
+<h3>2️⃣ Computer Architecture</h3>
+<ul>
+<li>Architecture concept = John Von Neumann (1970s)</li>
+<li>CPU = ALU + Control Unit + Registers → "Electronic Brain"; IC चिप = Microprocessor</li>
+<li><b>ALU</b>: Arithmetic(+,-,×,÷) + Logical(AND,OR,NOT) + Comparison ops; अधिकतम 1 Output देता है</li>
+<li><b>Control Unit</b>: Data Process नहीं करती, केवल Instructions Interpret व Coordinate करती है — <i>→ see Memory: MAR/MDR</i></li>
+<li>Registers: सबसे तेज़ Memory; PC(Program Counter)=अगले Instruction का Address; MAR/MDR — <i>देखें Memory अनुभाग</i></li>
+<li>Buses: Address Bus(Unidirectional) · Data Bus(Bidirectional) · Control Bus(Unidirectional, clock pulses भी ले जाता है)</li>
+<li>Motherboard घटक: CPU socket, RAM slots, CMOS Battery(BIOS को शक्ति देती है), BIOS Chip, Expansion Slots, SMPS(Switched Mode Power Supply)</li>
+<li>Instruction/Machine Cycle: Fetch→Decode→Execute(→Store); Instruction Cycle &gt; Machine Cycle &gt; Clock Cycle</li>
+<li>Booting: Power On→<b>POST</b>(hardware check)→<b>BIOS</b>(ROM firmware)→OS Load; Bootstrap Loader ROM में रहता है</li>
+<li>Word Size = एक बार में Processor कितने bits Process कर सकता है (आजकल 32/64-bit)</li>
+<li>Multiprocessing(एक साथ कई Program, कई Processor) vs Multiprogramming vs Time-sharing</li>
+<li>पहला Microprocessor = Intel 4004(1971, 2300 Transistors, M.E. Hoff & Federico Faggin)</li>
+<li>DMA(Direct Memory Access) = बड़ा Data तेज़ी से Transfer, CPU को Bypass करके</li>
+</ul>
+
+<h3>3️⃣ Computer Memory</h3>
+<ul>
+<li>Primary Memory: RAM(DRAM/SRAM, Volatile) + ROM(PROM/EPROM/EEPROM, Non-volatile) + Cache</li>
+<li>Cache: CPU↔RAM के बीच, SRAM आधारित, CPU पहले Cache ही Check करता है; L1&gt;L2&gt;L3</li>
+<li>Secondary Memory: Magnetic(HDD,Floppy,Tape) · Optical(CD,DVD,Blu-ray) · Solid State(SSD, Pen Drive, Memory Card)</li>
+<li>MAR=Address रखता है, MDR=Data/Instruction रखता है (CPU↔Memory के बीच)</li>
+<li>Memory Units: 1 Byte=8 Bit, 1 Nibble=4 Bit, 1024 Bytes=1KB, 1024KB=1MB, 1024MB=1GB, 1024GB=1TB, 1024TB=1PB, 1024PB=1EB, 1024EB=1ZB, 1024ZB=1YB</li>
+<li>Virtual Memory = Secondary Memory का हिस्सा जो RAM की तरह उपयोग होता है (जब RAM कम पड़े)</li>
+<li>Paging(Non-contiguous storage) vs Swapping(RAM↔Disk) vs Spooling(Printer Queue, SPOOL=Simultaneous Peripheral Operation On-Line)</li>
+<li>FAT32 = 4GB तक Single File Limit (NTFS/exFAT बड़ी Files के लिए)</li>
+<li>Firmware = ROM में Stored Software जो Hardware चलाता है</li>
+</ul>
+
+<h3>4️⃣ Input/Output Devices</h3>
+<ul>
+<li>Input यूनिट: User Data/Instructions को Binary में बदलती है — Keyboard(101-104 keys, Function Keys F1-F12), Mouse(1963, Douglas Engelbart), Scanner, Joystick, Digitizer, Light Pen, Touch Screen, Trackball, MICR, OMR, OCR, Barcode Reader</li>
+<li>Output यूनिट: Monitor(CRT/LCD/TFT), Printer(Impact: Dot Matrix,Daisy Wheel,Line,Drum — रिबन उपयोग; Non-Impact: Inkjet,Laser,Thermal — रिबन नहीं), Plotter(Flatbed/Drum), Projector, Speaker</li>
+<li>Ports: PS/2(Keyboard+Mouse) · VGA(Monitor) · Parallel(Printer, DB25) · Serial/COM(Modem, RS-232, DB9) · USB(Universal, Plug&Play, 1995 Ajay Bhatt) · Ethernet(LAN) · Firewire(400MB/s, Video devices)</li>
+<li>Display Resolution: 1080p=1920×1080(Full HD); Aspect Ratio=Width:Height(16:9,4:3)</li>
+<li>Graphics: Vector(Mathematical, Zoom पर Quality नहीं घटती) vs Raster(Pixel आधारित)</li>
+<li>3D Printer पहला = Chuck Hull(1984); सबसे उन्नत Printing तकनीक = 3D Printing</li>
+</ul>
+
+<h3>5️⃣ Software</h3>
+<ul>
+<li>System Software: OS(MS-DOS,Windows,Linux,Unix), Device Drivers, Language Translators(Assembler/Compiler/Interpreter — <i>देखें तुलना तालिका ऊपर</i>), Linker, Loader</li>
+<li>Application Software: General(Word,Excel,PowerPoint,DBMS,DTP,Graphics,Multimedia) vs Specific Purpose(Inventory,Payroll,Hotel,Reservation)</li>
+<li>System Utilities: Disk Compression, Defragmenter, Backup, Disk Cleaner, Anti-virus</li>
+<li>Licenses: Open Source(GPL,MIT) · Proprietary · Freeware · Shareware · Commercial · Public Domain · Copyleft</li>
+</ul>
+
+<h3>6️⃣ Number System</h3>
+<ul>
+<li>Base: Binary=2(0,1) · Octal=8(0-7) · Decimal=10(0-9) · Hexadecimal=16(0-9,A-F)</li>
+<li>Digital Computer केवल Binary समझता है (Electronic Switch ON/OFF)</li>
+<li>Conversion Rules — <i>देखें ऊपर 🧮 अनुभाग</i></li>
+<li>Codes: BCD(हर decimal digit=4 bits, IBM) · ASCII-7(128 chars) · ASCII-8/Extended(256) · EBCDIC(IBM,8-bit,256) · Unicode(16-bit, गैर-अंग्रेज़ी भाषाएँ)</li>
+<li>Logic Gates: AND(दोनों True तभी True) · OR(कोई एक True) · NOT(उल्टा) · NAND(AND का उल्टा) · NOR(OR का उल्टा) · XOR(केवल एक True) · XNOR(दोनों समान)</li>
+<li>IC Classification (Gate count): SSI(1-10) · MSI(10-100) · LSI(100-1000) · VLSI(1000+) · ULSI(5th Gen)</li>
+</ul>
+
+<h3>7️⃣ Computer Abbreviations (High-Frequency Full Forms)</h3>
+<table>
+<tr><th>Abbr.</th><th>Full Form</th></tr>
+<tr><td>GUI</td><td>Graphical User Interface</td></tr>
+<tr><td>URL</td><td>Uniform Resource Locator</td></tr>
+<tr><td>HTTP</td><td>Hyper Text Transfer Protocol</td></tr>
+<tr><td>HTML</td><td>Hyper Text Markup Language</td></tr>
+<tr><td>WWW</td><td>World Wide Web</td></tr>
+<tr><td>FTP</td><td>File Transfer Protocol</td></tr>
+<tr><td>ISP</td><td>Internet Service Provider</td></tr>
+<tr><td>TCP/IP</td><td>Transmission Control Protocol / Internet Protocol</td></tr>
+<tr><td>ROM/RAM</td><td>Read Only Memory / Random Access Memory</td></tr>
+<tr><td>EEPROM</td><td>Electrically Erasable Programmable ROM</td></tr>
+<tr><td>CMOS</td><td>Complementary Metal-Oxide Semiconductor</td></tr>
+<tr><td>BIOS</td><td>Basic Input Output System</td></tr>
+<tr><td>ALU</td><td>Arithmetic Logic Unit</td></tr>
+<tr><td>FAT</td><td>File Allocation Table</td></tr>
+<tr><td>NTFS</td><td>New Technology File System</td></tr>
+<tr><td>SATA</td><td>Serial Advanced Technology Attachment</td></tr>
+<tr><td>HDMI</td><td>High Definition Multimedia Interface</td></tr>
+<tr><td>RFID</td><td>Radio Frequency Identification</td></tr>
+<tr><td>MICR</td><td>Magnetic Ink Character Recognition</td></tr>
+<tr><td>PCI</td><td>Peripheral Component Interconnect</td></tr>
+<tr><td>SMPS</td><td>Switched Mode Power Supply</td></tr>
+<tr><td>ENIAC</td><td>Electronic Numerical Integrator And Computer</td></tr>
+<tr><td>UNIVAC</td><td>Universal Automatic Computer</td></tr>
+<tr><td>IBM</td><td>International Business Machines</td></tr>
+</table>
+
+<h2>🎯 Last-Minute Revision (Top 20 One-liners)</h2>
+<ul>
+<li>Father of Computer = Charles Babbage; First Programmer = Ada Lovelace</li>
+<li>First Electronic Computer = ENIAC; First Stored-Program = EDVAC</li>
+<li>CPU = ALU + CU + Registers</li>
+<li>Memory Speed: Register &gt; Cache &gt; RAM &gt; SSD &gt; HDD</li>
+<li>RAM = Volatile+Temporary; ROM = Non-Volatile+Permanent</li>
+<li>SRAM = Cache (fast, no refresh); DRAM = Main Memory (slow, refresh needed)</li>
+<li>1 Byte = 8 Bit; 1 Nibble = 4 Bit; 1024 units for higher conversions</li>
+<li>Binary→Octal = 3-bit group; Binary→Hex = 4-bit group</li>
+<li>OCR=Editable Text; OMR=Answer Sheets; MICR=Bank Cheques</li>
+<li>Input: Keyboard,Mouse,Scanner,Joystick | Output: Monitor,Printer,Plotter,Speaker</li>
+<li>India का पहला Supercomputer = PARAM 8000 (Pune, C-DAC, 1991)</li>
+<li>Boot Sequence = POST → BIOS → OS</li>
+<li>GUI=Graphical User Interface; URL=Uniform Resource Locator; DVD=Digital Versatile Disc</li>
+<li>Generation चिप्स: Vacuum Tube→Transistor→IC→VLSI→ULSI</li>
+<li>WIMP = Windows+Icons+Menus+Pointer</li>
+<li>ASCII-7=128 chars; EBCDIC/Extended ASCII=256 chars</li>
+<li>2's Complement = 1's Complement + 1</li>
+<li>Impact Printer(रिबन: Dot Matrix,Daisy Wheel) vs Non-Impact(Inkjet,Laser)</li>
+<li>Compiler=पूरा Program एक साथ; Interpreter=Line-by-Line</li>
+<li>First Microprocessor = Intel 4004 (1971, 2300 transistors)</li>
+</ul>
+
+<h2>⚡ Rapid Revision (10 Second Scan)</h2>
+<p>CPU=ALU+CU+Reg · RAM=Volatile · ROM=Permanent · Cache=SRAM=Fastest Secondary-to-CPU link · Register&gt;Cache&gt;RAM&gt;SSD&gt;HDD · Binary=Base2 · Octal=3bit-group · Hex=4bit-group · POST→BIOS→OS · ENIAC=Electronic · EDVAC=Stored-Program · PARAM=India · Intel 4004=1st Microprocessor · OCR≠OMR≠MICR · GUI/URL/HTTP full forms सबसे ज़्यादा पूछे जाते हैं।</p>
+
+</body>
+</html>
