@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Group 4 — Networking Master Revision Sheet</title>
+<style>
+  @page { size: A4; margin: 12mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans Devanagari","Segoe UI",Arial,sans-serif;
+    font-size: 11.5px;
+    line-height: 1.38;
+    color: #1a1a1a;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  h1 { font-size: 19px; text-align:center; margin: 4px 0 2px; color:#0b3d91; }
+  .sub { text-align:center; font-size:11px; color:#555; margin-bottom:10px; }
+  h2 {
+    font-size: 14px; background:#0b3d91; color:#fff; padding:4px 8px;
+    margin: 16px 0 6px; border-radius:3px; page-break-after: avoid;
+  }
+  h3 { font-size:12.5px; color:#0b3d91; border-bottom:2px solid #0b3d91; margin:10px 0 4px; padding-bottom:2px; }
+  h4 { font-size:11.5px; color:#a33; margin:6px 0 2px; }
+  p { margin: 3px 0; }
+  ul, ol { margin: 3px 0 6px 18px; padding:0; }
+  li { margin-bottom: 2px; }
+  table { border-collapse: collapse; width:100%; margin: 6px 0 10px; font-size: 10.8px; }
+  th, td { border:1px solid #999; padding: 3px 5px; text-align:left; vertical-align:top; }
+  th { background:#dbe6ff; }
+  tr:nth-child(even) td { background:#f6f8fc; }
+  .badge { display:inline-block; padding:1px 5px; border-radius:3px; font-size:9.5px; color:#fff; margin-right:4px;}
+  .b-fire{background:#c0392b;} .b-star{background:#c98a00;} .b-star2{background:#8a5a00;}
+  .b-warn{background:#8e44ad;} .b-tip{background:#16a085;} .b-mem{background:#2471a3;}
+  .b-exc{background:#616a6b;} .b-bug{background:#b03a2e;} .b-link{background:#117864;}
+  .flow { background:#eef3ff; border:1px dashed #0b3d91; padding:8px; border-radius:5px; font-size:11.5px; text-align:center; }
+  .flow div { margin:2px 0; }
+  .arrow { font-size:13px; color:#0b3d91; }
+  .two-col { columns: 2; column-gap: 16px; }
+  .box { border:1px solid #999; border-radius:4px; padding:6px 8px; margin:6px 0; background:#fafafa; }
+  .weak-red { color:#c0392b; font-weight:bold; }
+  .weak-orange { color:#d68910; font-weight:bold; }
+  .weak-yellow { color:#b7950b; font-weight:bold; }
+  .weak-green { color:#229954; font-weight:bold; }
+  .note { font-size:10.3px; color:#555; }
+  .eng { font-family: Arial, sans-serif; }
+  hr { border:none; border-top:1px solid #ccc; margin:10px 0; }
+  .footer { text-align:center; font-size:10px; color:#777; margin-top:16px; }
+  @media print { h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; } th { -webkit-print-color-adjust: exact; print-color-adjust: exact;} }
+</style>
+</head>
+<body>
+
+<h1>🌐 Group 4 — Networking Master Revision Sheet</h1>
+<div class="sub">अंतरजाल (Internet) • TCP/IP Model • Network &amp; Communication • Network Security &nbsp;|&nbsp; RSMSSB Basic Computer Instructor (BCI) / RSSB / RPSC</div>
+
+<h2>🔗 How These Topics Connect</h2>
+<div class="flow">
+<div><b>Devices</b> (Computer, Modem, NIC)</div>
+<div class="arrow">↓</div>
+<div><b>Network &amp; Communication</b> — Sender→Channel→Receiver, Topologies, Transmission Media, LAN/MAN/WAN/PAN</div>
+<div class="arrow">↓</div>
+<div><b>OSI Model (7 Layer)</b> — theoretical reference</div>
+<div class="arrow">↓</div>
+<div><b>TCP/IP Model (4 Layer)</b> — Application → Transport → Internet → Network Access (वास्तविक Communication इसी पर होता है)</div>
+<div class="arrow">↓</div>
+<div><b>IP Addressing + Routing</b> — IPv4/IPv6, Subnetting, NAT/PAT, CIDR, Router/Gateway</div>
+<div class="arrow">↓</div>
+<div><b>Internet Services</b> — WWW, Browser, Email (SMTP/POP3/IMAP), FTP, DNS, Search Engine</div>
+<div class="arrow">↓</div>
+<div><b>Security Threats</b> — Virus, Worm, Trojan, Phishing, Spoofing, DoS/DDoS</div>
+<div class="arrow">↓</div>
+<div><b>Network Security</b> — Firewall, VPN, Encryption (SSL/TLS→HTTPS), IDS/IPS, Antivirus</div>
+</div>
+<p class="note">💡 तर्क: Communication संभव कराने के लिए Devices जुड़ते हैं → TCP/IP यह तय करता है कि Layer-by-Layer Data कैसे भेजा जाए → Internet इसी TCP/IP का सबसे बड़ा Implementation है → Network Security इस पूरी Communication/Data/User को सुरक्षित रखता है।</p>
+
+<h2>🚨 MY EXAM TRAPS &amp; CONFUSIONS</h2>
+<table>
+<tr><th>❌ Wrong Concept</th><th>✅ Correct Concept</th><th>कारण / Memory Trigger</th></tr>
+<tr><td>Internet Layer उपयोगकर्ता के सबसे निकट है</td><td>Application Layer सबसे निकट है (User → App उपयोग करता है)</td><td>🧠 "User APP Use करता है"</td></tr>
+<tr><td>ARP केवल IP→MAC करता है, कोई उल्टा रूप नहीं</td><td>ARP: IP→MAC; RARP: MAC→IP (पुराना, अब लगभग अप्रचलित)</td><td>🧠 A=Address मिलता है (Find), R=Reverse (उल्टा)</td></tr>
+<tr><td>Router और Gateway एक ही काम करते हैं</td><td>Router → उसी Protocol के Networks को IP से जोड़ता है; Gateway → अलग-अलग Protocol Networks को जोड़ता है</td><td>🧠 Gateway = "Gate" between दो अलग दुनिया</td></tr>
+<tr><td>Chrome एक Search Engine है</td><td>Chrome = Browser; Google = Search Engine</td><td>⚠ बहुत बार पूछा गया, हर Quiz में Trap</td></tr>
+<tr><td>Erwise/Epic को हमेशा भ्रमित करना</td><td>Erwise = पहला GUI Browser (options में); Epic = पहला भारतीय Browser; Mosaic = NCSA का पहला लोकप्रिय GUI Browser; Netscape Navigator = पहला Commercial Browser</td><td>🧠 क्रम: WorldWideWeb → Mosaic (NCSA,1993) → Netscape (1994, Commercial) → Erwise (Early GUI, Europe) → Epic (India)</td></tr>
+<tr><td>Firewall केवल Incoming Traffic Filter करता है</td><td>Firewall Incoming + Outgoing दोनों Traffic Filter करता है (कुछ पुराने PYQ में केवल "Internet से आने वाले" उत्तर दिया गया है — विकल्प-सीमित)</td><td>🧠 Firewall = Monitor + Filter + Control (दोनों दिशा)</td></tr>
+<tr><td>TCP Stateless है</td><td>TCP = Stateful (Connection-Oriented); UDP = Stateless (Connectionless)</td><td>🧠 Stateful=TCP, Stateless=UDP</td></tr>
+<tr><td>Proxy Firewall = Packet Filter जैसा</td><td>Proxy Firewall → Application Layer (L7); Packet Filter → Network/Transport Layer (L3/L4)</td><td>🧠 Proxy=Application, Packet=Network</td></tr>
+<tr><td>Modem भेजते समय पहले Analog बनाता है</td><td>Computer → Digital Data बनाता है → Modem इसे Modulate करके Analog बनाता है (भेजते समय: Digital→Analog)</td><td>🧠 M=Modulation=Digital→Analog (भेजते समय)</td></tr>
+<tr><td>Data Packet में विभाजन Transport Layer में होता है</td><td>PDU क्रम: Bits(Physical)→Frame(Data Link)→<b>Packet(Network)</b>→Segment(Transport)</td><td>🧠 याद रखें: Segment=Transport, Packet=Network</td></tr>
+<tr><td>Creeper एक Worm था, पहला Virus नहीं</td><td>Exam Perspective में Creeper (1971) = पहला Computer Virus माना जाता है (तकनीकी रूप से इसे Worm-like भी कहा जाता है — RSMSSB इसे Virus मानता है)</td><td>🚨 दोनों स्रोतों में भिन्नता, Exam Key प्राथमिकता</td></tr>
+<tr><td>WPA3 हमेशा उत्तर होगा</td><td>पुराने PYQ (2024 तक) में विकल्पों में WPA3 नहीं होता → वहाँ WPA2 सही उत्तर; नए Exam में WPA3 हो तो वही चुनें</td><td>🧠 WEP&lt;WPA&lt;WPA2&lt;WPA3 (सुरक्षा बढ़ते क्रम में)</td></tr>
+<tr><td>FTP हमेशा "Secure File Transfer" का उत्तर होगा</td><td>"Securely" शब्द हो तो SSH/SFTP सही उत्तर; सामान्य File Transfer के लिए FTP</td><td>⚠ Question में "सुरक्षित" शब्द ध्यान से पढ़ें</td></tr>
+<tr><td>URL और URI एक ही चीज़ हैं</td><td>URI = Resource की Identity (पहचान, Superset); URL = Resource का Address/Location (Subset of URI)</td><td>🧠 URI=Identifier, URL=Locator; हर URL एक URI है पर हर URI URL नहीं</td></tr>
+<tr><td>Cookies Browser की Functionality बढ़ाती हैं</td><td>Cookies केवल User Data/Preferences Store करती हैं; Functionality Extensions/Plugins/Add-ons बढ़ाते हैं</td><td>🧠 Cookie=Store, Plugin=Function बढ़ाए</td></tr>
+<tr><td>PAN को Geographic Scope आधारित Network नहीं मानते (कुछ स्रोत)</td><td>Exam Answer Key में PAN को भी "Geographic Scope नहीं" वाले विकल्प में सही माना गया — आधिकारिक Key को प्राथमिकता दें</td><td>⚠ Concept Clarification आवश्यक</td></tr>
+</table>
+
+<h2>🎯 HIGH PRIORITY WEAK AREAS</h2>
+<table>
+<tr><th>क्षेत्र</th><th>Priority</th><th>Note</th></tr>
+<tr><td>Firewall के प्रकार, Layer, OSI Mapping</td><td class="weak-red">🔴 Very Weak</td><td>Network Security में सबसे ज़्यादा दोहराया विषय (10+ बार)</td></tr>
+<tr><td>TCP/IP Layer Mapping एवं Protocol Matching</td><td class="weak-red">🔴 Very Weak</td><td>Layer-wise Protocol भ्रम बना रहता है</td></tr>
+<tr><td>Browser History (Erwise, Mosaic, Netscape, Epic)</td><td class="weak-orange">🟠 Weak</td><td>बार-बार गलत हुआ</td></tr>
+<tr><td>Malware Classification (Virus/Worm/Trojan/Rootkit/Polymorphic)</td><td class="weak-orange">🟠 Weak</td><td>Definitions याद रहती हैं पर Trap Options में गलती होती है</td></tr>
+<tr><td>IP Addressing (Classes, Subnet Mask, NAT/PAT, CIDR)</td><td class="weak-orange">🟠 Weak</td><td>Class B/C Mask, Network ID Calculation कमजोर</td></tr>
+<tr><td>Email Protocols एवं Features (SMTP/POP3/IMAP, BCC/CC, Gmail Limits)</td><td class="weak-yellow">🟡 Moderate</td><td>Basic clear, नए Pattern (Gmail 25MB, Resend) में गलती</td></tr>
+<tr><td>Network Devices (Hub/Switch/Router/Gateway/Repeater/NIC)</td><td class="weak-yellow">🟡 Moderate</td><td>Layer Mapping में सुधार चाहिए</td></tr>
+<tr><td>ARP/RARP, ICMP, Cookies vs Plugins</td><td class="weak-yellow">🟡 Moderate</td><td>Latest PYQ Pattern (2025-26) से नए Concepts</td></tr>
+<tr><td>OSI 7 Layer क्रम एवं Function</td><td class="weak-green">🟢 Strong</td><td>अधिकतर सही, केवल Session/Presentation में हल्की गलती</td></tr>
+<tr><td>IPv4/IPv6 Bit Size, Basic Internet Terms (URL, HTML, HTTP)</td><td class="weak-green">🟢 Strong</td><td>लगातार सही जा रहे हैं</td></tr>
+</table>
+
+<h2>⭐ HIGH-YIELD EXAM FACTS</h2>
+<div class="two-col">
+<ul>
+<li>OSI Model = <b>7 Layers</b>; TCP/IP Model = <b>4 Layers</b> (DOD Model)</li>
+<li>TCP/IP क्रम (नीचे से ऊपर): Network Access → Internet → Transport → Application</li>
+<li>OSI Mnemonic 🧠: <i>Please Do Not Throw Sausage Pizza Away</i> (Physical-DataLink-Network-Transport-Session-Presentation-Application)</li>
+<li>IPv4 = 32 Bit (Dot separated); IPv6 = 128 Bit (Colon separated)</li>
+<li>PDU क्रम: Bits→Frame→Packet→Segment (Physical→DataLink→Network→Transport)</li>
+<li>Router = Network Layer (L3); Switch = Data Link (L2); Hub = Physical (L1)</li>
+<li>FTP = 2 TCP Connections: Port 21 (Control), Port 20 (Data - Active FTP)</li>
+<li>SMTP = Send Mail (Port 25); POP3 = Receive/Download; IMAP = Receive+Sync</li>
+<li>HTTP = Port 80 (Plaintext); HTTPS = Port 443 (SSL/TLS Encrypted)</li>
+<li>DNS = Domain Name System (Domain → IP Address)</li>
+<li>ARP = IP→MAC; RARP (अप्रचलित) = MAC→IP</li>
+<li>DHCP = UDP आधारित, Port 67 (Server)/68 (Client), Auto IP Configuration</li>
+<li>ARPANET = विश्व का पहला Computer Network / Internet का आधार (1969, DARPA)</li>
+<li>WWW आविष्कारक = Tim Berners-Lee (1989); पहली Website = CERN</li>
+<li>प्रथम भारतीय Public ISP = VSNL (1995)</li>
+<li>MAC Address = 48 Bit (6 Bytes / 12 Hex Digits)</li>
+<li>Mesh Topology Cable Formula = n(n−1)/2</li>
+<li>Bluetooth = PAN (Personal Area Network) तकनीक</li>
+<li>Ethernet Card = NIC (Network Interface Card)</li>
+<li>Traditional Ethernet Speed = 10 Mbps</li>
+<li>Base64 Encoding: 24 Bit → चार 6-Bit Blocks → 32 Bit output</li>
+<li>Stateful Packet = TCP; Stateless = UDP</li>
+<li>Class B Default Subnet Mask = 255.255.0.0; Class C = 255.255.255.0</li>
+<li>IPv4 Class D (224–239) = Multicasting हेतु</li>
+<li>RJ45/UTP Cable = 4 Twisted Pairs (8 Wires)</li>
+<li>Optical Fiber = सर्वाधिक Bandwidth/Speed; Coaxial की बाहरी Shielding Noise कम करती है</li>
+<li>Modem = Modulator + Demodulator (Digital↔Analog Converter)</li>
+<li>DDoS = Distributed Denial of Service (Multiple Attackers); DoS = Single Attacker</li>
+<li>IPSec = Internet Protocol Security (VPN में प्रयुक्त)</li>
+<li>Spoofing = Fake Identity; Phishing = Password/Data चोरी; Spamming = Bulk Junk Mail</li>
+<li>Rootkit = Hidden Admin Control; Trojan = Legitimate दिखने वाला Malware; Worm = Self-Replicating (बिना Host)</li>
+<li>NGFW (Next Generation Firewall) = Traditional/Stateful से अधिक Secure (DPI, IPS, App Control शामिल)</li>
+<li>Honeypot = Attackers को आकर्षित करने वाला Decoy System</li>
+<li>Ethical Hacking Phases 🧠 "R S G M C": Reconnaissance→Scanning→Gaining Access→Maintaining Access→Covering Tracks</li>
+</ul>
+</div>
+
+<h2>📊 Difference Tables</h2>
+
+<h3>OSI vs TCP/IP</h3>
+<table><tr><th>OSI Model</th><th>TCP/IP Model</th></tr>
+<tr><td>7 Layers</td><td>4 Layers (DOD Model)</td></tr>
+<tr><td>Theoretical Reference Model</td><td>Practical/Implemented Model (वास्तविक Internet इसी पर)</td></tr>
+<tr><td>Physical, Data Link, Network, Transport, Session, Presentation, Application</td><td>Network Access, Internet, Transport, Application</td></tr>
+</table>
+
+<h3>TCP vs UDP</h3>
+<table><tr><th>TCP</th><th>UDP</th></tr>
+<tr><td>Connection-Oriented (Stateful)</td><td>Connectionless (Stateless)</td></tr>
+<tr><td>Reliable, Error/Flow/Congestion Control</td><td>Fast पर Unreliable</td></tr>
+<tr><td>Reliable Byte-Stream Service देता है</td><td>DHCP इसी पर चलता है</td></tr>
+</table>
+
+<h3>HTTP vs HTTPS 🔗(देखें Network Security → Encryption)</h3>
+<table><tr><th>HTTP</th><th>HTTPS</th></tr>
+<tr><td>Port 80</td><td>Port 443</td></tr>
+<tr><td>Plaintext Data</td><td>SSL/TLS Encrypted Data</td></tr>
+<tr><td>असुरक्षित</td><td>Secure — Web Browser व Server के बीच Secure Communication</td></tr>
+</table>
+
+<h3>IPv4 vs IPv6</h3>
+<table><tr><th>IPv4</th><th>IPv6</th></tr>
+<tr><td>32 Bit</td><td>128 Bit</td></tr>
+<tr><td>Dot Notation (e.g. 192.168.1.1)</td><td>Colon/Hexadecimal Notation (e.g. 2001:0db8::1)</td></tr>
+<tr><td>Address सीमित</td><td>लगभग असीमित Address (2¹²⁸)</td></tr>
+</table>
+
+<h3>Hub vs Switch vs Router vs Gateway</h3>
+<table><tr><th>Device</th><th>OSI Layer</th><th>कार्य</th></tr>
+<tr><td>Hub</td><td>Physical (L1)</td><td>Broadcast — सबको Data भेजता है</td></tr>
+<tr><td>Switch</td><td>Data Link (L2)</td><td>MAC Address देखकर Intelligent Forwarding</td></tr>
+<tr><td>Router</td><td>Network (L3)</td><td>IP Address आधारित Routing (Same Protocol Networks)</td></tr>
+<tr><td>Gateway</td><td>All Layers/Application</td><td>अलग-अलग Protocol वाले Networks को जोड़ता है</td></tr>
+<tr><td>Repeater</td><td>Physical (L1)</td><td>कमज़ोर Signal को Regenerate/Amplify करता है</td></tr>
+</table>
+
+<h3>Firewall Types (Layer-wise) 🔒</h3>
+<table><tr><th>Firewall Type</th><th>OSI Layer</th></tr>
+<tr><td>Packet Filtering Firewall</td><td>Network/Transport (L3/L4)</td></tr>
+<tr><td>Stateful Inspection Firewall</td><td>Network/Transport, Connection State Track करता है</td></tr>
+<tr><td>Proxy / Application Gateway Firewall</td><td>Application (L7) — पूरा Data Filter करता है</td></tr>
+<tr><td>NGFW (Next Gen Firewall)</td><td>Multi-Layer — Application Control + IPS + Threat Intelligence</td></tr>
+</table>
+
+<h3>Virus vs Worm vs Trojan vs Rootkit</h3>
+<table><tr><th>Malware</th><th>विशेषता</th></tr>
+<tr><td>Virus</td><td>Host File चाहिए, User Action से फैलता है</td></tr>
+<tr><td>Worm</td><td>Self-Replicate, Host की ज़रूरत नहीं, User Interaction बिना फैलता है</td></tr>
+<tr><td>Trojan Horse</td><td>Legitimate Software जैसा दिखता है, Hidden Malicious Function</td></tr>
+<tr><td>Rootkit</td><td>OS पर Admin जैसा पूर्ण Control प्राप्त कर लेता है</td></tr>
+<tr><td>Polymorphic Virus</td><td>Signature बदलता रहता है — पहचानना सबसे कठिन</td></tr>
+</table>
+
+<h3>LAN vs MAN vs WAN vs PAN</h3>
+<table><tr><th>Type</th><th>दायरा</th><th>उदाहरण</th></tr>
+<tr><td>PAN</td><td>कुछ मीटर (Personal Devices)</td><td>Bluetooth</td></tr>
+<tr><td>LAN</td><td>छोटा क्षेत्र (Office/Building)</td><td>Ethernet</td></tr>
+<tr><td>MAN</td><td>City/Metropolitan क्षेत्र</td><td>FDDI</td></tr>
+<tr><td>WAN</td><td>बड़ा क्षेत्र (देश/विश्व, LAN+MAN जोड़ता है)</td><td>Internet</td></tr>
+</table>
+
+<h3>Symmetric vs Asymmetric Encryption 🔗(Network Security)</h3>
+<table><tr><th>Symmetric</th><th>Asymmetric</th></tr>
+<tr><td>एक ही Key से Encrypt/Decrypt</td><td>अलग Public/Private Key जोड़ी</td></tr>
+<tr><td>तेज़ पर Key Sharing जोखिम भरी</td><td>धीमा पर अधिक सुरक्षित (जैसे SSL/TLS में उपयोग)</td></tr>
+</table>
+
+<h3>Static vs Dynamic IP</h3>
+<table><tr><th>Static IP</th><th>Dynamic IP</th></tr>
+<tr><td>Fixed, नहीं बदलता</td><td>Automatically बदलता रहता है</td></tr>
+<tr><td>Servers में Common</td><td>Home Users में Common (DHCP से)</td></tr>
+</table>
+
+<h3>Wired vs Wireless Communication</h3>
+<table><tr><th>Wired</th><th>Wireless</th></tr>
+<tr><td>Twisted Pair, Coaxial, Optical Fiber</td><td>WiFi, Bluetooth, WiMAX, Infrared, Satellite</td></tr>
+</table>
+
+<h2>🌐 Protocol &amp; Port Cheat-Sheet</h2>
+<table>
+<tr><th>Protocol</th><th>Port</th><th>Layer/काम</th></tr>
+<tr><td>FTP (Control)</td><td>21</td><td>File Transfer Command</td></tr>
+<tr><td>FTP (Data - Active)</td><td>20</td><td>File Transfer Data</td></tr>
+<tr><td>SSH</td><td>22</td><td>Secure Remote Login/File Transfer</td></tr>
+<tr><td>Telnet</td><td>23</td><td>Remote Login (असुरक्षित)</td></tr>
+<tr><td>SMTP</td><td>25</td><td>Email भेजना (Push Protocol)</td></tr>
+<tr><td>DNS</td><td>53</td><td>Domain→IP Resolution</td></tr>
+<tr><td>DHCP</td><td>67 (Server)/68 (Client)</td><td>Auto IP Assign, UDP आधारित</td></tr>
+<tr><td>HTTP</td><td>80</td><td>Web Browsing (Plaintext)</td></tr>
+<tr><td>POP3</td><td>110</td><td>Email प्राप्त करना (Download)</td></tr>
+<tr><td>IMAP</td><td>143</td><td>Email प्राप्त करना (Sync)</td></tr>
+<tr><td>HTTPS</td><td>443</td><td>Secure Web Browsing (SSL/TLS)</td></tr>
+</table>
+<p class="note">⚠ Verify Required: कुछ Quiz Notes में Port संख्याओं का प्रत्यक्ष Question नहीं था — ऊपर Standard RFC आधारित Port दिए गए हैं; प्रश्न में यदि भिन्न विकल्प मिले तो Official Answer Key प्राथमिकता लें।</p>
+
+<h2>🖧 Network Devices Cheat-Sheet</h2>
+<table>
+<tr><th>Device</th><th>OSI Layer</th><th>One-Liner</th></tr>
+<tr><td>Hub</td><td>Physical</td><td>Broadcast — सभी Ports पर भेजता है</td></tr>
+<tr><td>Switch</td><td>Data Link</td><td>MAC Address आधारित Forwarding</td></tr>
+<tr><td>Bridge</td><td>Data Link</td><td>दो LAN Segments जोड़ता है</td></tr>
+<tr><td>Router</td><td>Network</td><td>IP आधारित Routing (Same Protocol)</td></tr>
+<tr><td>Gateway</td><td>सभी/Application</td><td>अलग-अलग Protocol Networks जोड़ता है</td></tr>
+<tr><td>Repeater</td><td>Physical</td><td>Signal Amplify/Regenerate</td></tr>
+<tr><td>Modem</td><td>—</td><td>Digital↔Analog Convert (Telephone Line हेतु)</td></tr>
+<tr><td>NIC</td><td>Data Link</td><td>Network Interface Card — MAC Address यहीं होता है</td></tr>
+</table>
+
+<h2>🔒 Network Security Cheat-Sheet</h2>
+<table>
+<tr><th>Term</th><th>अर्थ</th></tr>
+<tr><td>Firewall</td><td>Predefined Rules से Incoming/Outgoing Traffic Monitor+Filter+Control</td></tr>
+<tr><td>VPN</td><td>Virtual Private Network — Encrypted Secure Tunnel (IPSec/SSL आधारित)</td></tr>
+<tr><td>IDS</td><td>Intrusion Detection System — केवल Detect करता है</td></tr>
+<tr><td>IPS</td><td>Intrusion Prevention System — Detect + Block करता है</td></tr>
+<tr><td>Antivirus</td><td>Malware Detect+Remove Software (उदाहरण: Trend Micro)</td></tr>
+<tr><td>Encryption</td><td>Plain Text → Cipher Text (सुरक्षा हेतु)</td></tr>
+<tr><td>Decryption</td><td>Cipher Text → Plain Text</td></tr>
+<tr><td>SSL/TLS</td><td>Encryption Protocol जो HTTP को HTTPS बनाता है 🔗</td></tr>
+<tr><td>Honeypot</td><td>Attacker को फंसाने वाला Decoy System</td></tr>
+<tr><td>Evil Twin Attack</td><td>Rogue (Fake) WiFi Access Point</td></tr>
+<tr><td>Hacktivism</td><td>राजनीतिक/सामाजिक उद्देश्य से Hacking</td></tr>
+<tr><td>Phreaking</td><td>पुरानी Free-Call Phone Hacking तकनीक</td></tr>
+<tr><td>WPA2/WPA3</td><td>वर्तमान सबसे सुरक्षित WiFi Security Protocol (WPA3 नवीनतम)</td></tr>
+<tr><td>Cracker</td><td>Black Hat Hacker (Criminal Intent)</td></tr>
+<tr><td>Ethical Hacker</td><td>White Hat — Security Controls Test करता है (Reconnaissance से शुरू)</td></tr>
+</table>
+
+<h2>🧠 Memory Tricks &amp; Mnemonics</h2>
+<ul>
+<li>OSI Layers 🧠 "Please Do Not Throw Sausage Pizza Away" (Physical→App)</li>
+<li>TCP/IP Layers 🧠 "User APP Use करता है" (Application सबसे ऊपर/निकट User)</li>
+<li>Ethical Hacking Phases 🧠 "R S G M C"</li>
+<li>Mesh Formula 🧠 n(n−1)/2</li>
+<li>Proxy Firewall = Application (P for People-facing/App); Packet Filter = Network</li>
+<li>Stateful = TCP (Connection याद रखता है); Stateless = UDP</li>
+<li>Firewall = "Monitor + Filter + Control" — Deleting/Copying/Moving नहीं करता</li>
+<li>Gateway = "Gate" खोलता है अलग Protocol Duniya के बीच</li>
+<li>443 = Secure (HTTPS), 80 = Normal (HTTP)</li>
+<li>WEP &lt; WPA &lt; WPA2 &lt; WPA3 (सुरक्षा बढ़ती क्रम)</li>
+<li>URI = Identifier, URL = Locator ("हर URL एक URI है")</li>
+<li>DoS = एक Attacker, DDoS = कई Attacker (Distributed)</li>
+</ul>
+
+<h2>⭐ PYQ Favourite (⭐⭐⭐ Extremely Important)</h2>
+<ul>
+<li>⭐⭐⭐ Firewall की Definition/Function/Layer — हर Quiz में 3-4 प्रश्न</li>
+<li>⭐⭐⭐ Browser vs Search Engine पहचान (Chrome/Google Trap)</li>
+<li>⭐⭐⭐ SMTP/POP3/IMAP का कार्य एवं अंतर</li>
+<li>⭐⭐⭐ OSI 7 Layer एवं उनका क्रम/कार्य</li>
+<li>⭐⭐ IPv4(32)/IPv6(128) Bit Size</li>
+<li>⭐⭐ Router/Switch/Hub/Gateway की Layer Mapping</li>
+<li>⭐⭐ Virus/Worm/Trojan/Rootkit भेद</li>
+<li>⭐⭐ DNS, URL, HTTP, HTTPS की Full Form एवं कार्य</li>
+<li>⭐ ARPANET का इतिहास एवं Full Form</li>
+<li>⭐ Mesh Topology Formula आधारित Numerical</li>
+<li>⭐ Cross-Topic: HTTPS (Internet + Security दोनों से जुड़ा प्रश्न)</li>
+<li>⭐ Cross-Topic: DHCP (TCP/IP + Network Communication)</li>
+</ul>
+
+<h2>⚠ Frequently Confused Facts</h2>
+<div class="two-col">
+<ul>
+<li>Internet ≠ WWW (WWW एक Service है जो Internet पर चलती है)</li>
+<li>Modem ≠ Router (Modem Signal Convert करता है, Router Route करता है)</li>
+<li>NIC = Ethernet Card = Network Interface Card (तीनों एक ही)</li>
+<li>Cookies ≠ Plugins/Extensions (अलग-अलग कार्य)</li>
+<li>Eavesdropping (Real-time Secret Listening) ≠ Snooping (Unauthorized Data Browsing)</li>
+<li>DDoS ≠ DOS Operating System (केवल Attack का नाम है)</li>
+<li>Bandwidth ≠ Data Transfer Rate (Capacity vs Actual Speed)</li>
+<li>Static IP ≠ Unique IP (अलग Concept)</li>
+</ul>
+</div>
+
+<h2>🚨 Answer Key Bugs / Source Conflicts</h2>
+<table>
+<tr><th>विषय</th><th>Given Answer</th><th>Note</th></tr>
+<tr><td>ARP Explanation ("और इसके उलट")</td><td>ARP</td><td>🚨 भ्रामक — असल में RARP (Reverse ARP) उलटा काम करता है, ARP नहीं</td></tr>
+<tr><td>First Computer Virus</td><td>Creeper</td><td>⚠ कुछ स्रोत इसे Worm-like Program कहते हैं; Exam Key में Creeper ही मानें</td></tr>
+<tr><td>WiFi Hacking Tool</td><td>Aircrack-ng</td><td>⚠ Wireshark सिर्फ Packet Capture करता है, Cracking नहीं</td></tr>
+<tr><td>CIDR का उद्देश्य</td><td>"उपलब्ध IP पतों की संख्या बढ़ाना"</td><td>⚠ तकनीकी रूप से CIDR नए Address नहीं बनाता, Classful सीमा हटाकर Efficient Use करता है — Exam Key फिर भी यही मानती है</td></tr>
+<tr><td>Proxy Application Gateway Firewall कार्य</td><td>"इंट्रानेट यूजर को सुरक्षित एवं Specific Internet"</td><td>⚠ विकल्प आदर्श नहीं, अवधारणा अनुसार निकटतम उत्तर चुना गया</td></tr>
+<tr><td>WAN Assertion-Reason (1000 km + "असंयोजित")</td><td>A सही, R गलत</td><td>वास्तव में WAN, LAN/MAN को Connect करता है, Disconnect नहीं</td></tr>
+</table>
+
+<h2>📚 Sub-topic-wise Revision</h2>
+
+<h3>1️⃣ Network &amp; Communication</h3>
+<ul>
+<li>मूल Communication System (Shannon-Weaver Model) 🧠: Information Source → Sender → Channel → Receiver → Destination</li>
+<li>Simplex (एकदिशीय) / Half Duplex (दोनों दिशा, एक समय में एक — जैसे Walkie-Talkie) / Full Duplex (दोनों दिशा एक साथ — जैसे Mobile Phone)</li>
+<li>Topologies: Bus (Single Backbone, कम Reliable), Star (Central Hub — सबसे Common), Ring, Mesh (n(n−1)/2 Cables), Tree</li>
+<li>Transmission Media: Twisted Pair &lt; Coaxial &lt; Optical Fiber (Bandwidth बढ़ते क्रम में)</li>
+<li>Network Types: PAN(Bluetooth) → LAN(Office) → MAN(City) → WAN(Internet)</li>
+<li>Terminal = Multi-user System में Central Computer से जुड़ने हेतु Device</li>
+<li>🔗 आगे यह Communication ही TCP/IP Layers से होकर गुज़रता है (नीचे देखें)</li>
+</ul>
+
+<h3>2️⃣ TCP/IP Model</h3>
+<ul>
+<li>4 Layers: Application → Transport → Internet → Network Access</li>
+<li>Application Layer Protocols: HTTP, FTP, SMTP, DHCP, RDP, DNS</li>
+<li>Transport Layer: TCP, UDP</li>
+<li>Internet Layer: IP, ICMP, IGMP, ARP</li>
+<li>Network Access Layer: Ethernet, FDDI</li>
+<li>Router Network Layer पर, Firewall Network/Application दोनों Layer पर (प्रकार अनुसार) कार्य करता है</li>
+<li>🔗 यही Model Internet Services (नीचे) को Layer-by-Layer संभव बनाता है</li>
+</ul>
+
+<h3>3️⃣ अंतरजाल (Internet)</h3>
+<ul>
+<li>WWW = Internet पर चलने वाली एक Service (Internet ≠ WWW)</li>
+<li>Browser: Web Pages Access/Display करने वाला Software (Chrome, Firefox, Edge)</li>
+<li>Search Engine: जानकारी खोजने हेतु (Google, Bing) — Spider/Crawler Program से कार्य करता है</li>
+<li>URL = Uniform Resource Locator (Web Address); URI = Resource Identifier (Superset)</li>
+<li>Email Structure: username@domain.com (Header, Body/Message, Signature — Footer अनिवार्य नहीं)</li>
+<li>CC = Visible Copy; BCC = Blind (Hidden) Carbon Copy</li>
+<li>Cloud Storage उदाहरण: Google Drive, OneDrive, Dropbox (इंटरनेट कनेक्टिविटी आवश्यक)</li>
+<li>Gmail Attachment Limit = 25 MB (इससे बड़ा → Google Drive Link में बदल जाता है)</li>
+<li>ISP = Internet Service Provider (Jio, Airtel, BSNL) — User को Access देता है</li>
+<li>🔗 HTTPS (Secure Web) → विस्तार देखें Network Security → Encryption सेक्शन</li>
+</ul>
+
+<h3>4️⃣ Network Security 🔗</h3>
+<ul>
+<li>Firewall = Trusted Private Network को Untrusted External Network से बचाता है</li>
+<li>Malware Types: Virus (Host चाहिए), Worm (Self-Replicate), Trojan (Legitimate जैसा दिखे), Rootkit (Admin Control), Spyware, Ransomware</li>
+<li>Attacks: Spoofing (Fake Identity), Phishing (Data चोरी), Spamming (Bulk Mail), Sniffing (Traffic Capture), Eavesdropping (Real-time Listening), DoS/DDoS (Service रोकना)</li>
+<li>Backup Types: Full (पूरा Data), Incremental (Last Backup के बाद Change), Differential (Last Full Backup के बाद Change)</li>
+<li>Hacker Types: White Hat (Ethical), Black Hat (Cracker/Criminal), Grey Hat (मध्य)</li>
+<li>Encryption: Plain Text → (Encryption) → Cipher Text; SSL/TLS इसी सिद्धांत पर HTTPS बनाता है</li>
+<li>VPN = Virtual Private Network (IPSec/SSL Tunnel के ज़रिए Secure Remote Access)</li>
+</ul>
+
+<h2>🎯 Last-Minute Revision</h2>
+<div class="box">
+<b>याद रखें:</b> OSI=7, TCP/IP=4 | IPv4=32bit, IPv6=128bit | Router=L3, Switch=L2, Hub=L1 | HTTP=80, HTTPS=443 | FTP=21(control)/20(data) | SMTP=Send, POP3/IMAP=Receive | TCP=Stateful/Reliable, UDP=Stateless/Fast | Firewall=Monitor+Filter | VPN=Virtual Private Network | Worm≠Virus (Host चाहिए या नहीं) | ARPANET=पहला Network | WWW=Tim Berners-Lee(1989) | Chrome=Browser, Google=Search Engine
+</div>
+
+<h2>⚡ Rapid Revision (One-Liners)</h2>
+<div class="two-col">
+<ul>
+<li>Internet Layer≠User-निकट → वह Application Layer है</li>
+<li>DNS = Domain Name → IP</li>
+<li>ARP = IP → MAC</li>
+<li>DHCP = Auto IP (UDP, Port 67/68)</li>
+<li>NAT = Private IP → Public IP</li>
+<li>CIDR = Classless Addressing</li>
+<li>MAC Address = 48 Bit</li>
+<li>Bluetooth = PAN</li>
+<li>Mesh = n(n−1)/2 Cables</li>
+<li>Ethernet = 10 Mbps (Traditional)</li>
+<li>NIC = Network Interface Card</li>
+<li>Modem = Digital↔Analog</li>
+<li>Optical Fiber = सर्वाधिक Bandwidth</li>
+<li>WPA2/WPA3 = Secure WiFi</li>
+<li>DDoS = Distributed, DoS = Single</li>
+<li>Spoofing = Fake Identity</li>
+<li>Phishing = Data Theft</li>
+<li>Honeypot = Decoy System</li>
+<li>IDS = Detect, IPS = Detect+Block</li>
+<li>SSH = Secure Remote Login/File Transfer</li>
+<li>Telnet = Remote Login (Port 23, असुरक्षित)</li>
+<li>VSNL = भारत का पहला ISP</li>
+<li>Creeper = पहला Virus (Exam)</li>
+<li>Erwise = पहला GUI Browser; Epic = पहला भारतीय Browser</li>
+</ul>
+</div>
+
+<hr>
+<div class="footer">Group 4 — Networking Master Revision Sheet | Sources: TCP/IP Quiz 1; Internet Quiz 1,6,7,8; Network Security Quiz 1-3; Network &amp; Communication Quiz 1,3,4,5 | RSMSSB BCI Exam Prep | अगला Upload इसी Sheet में Merge होगा</div>
+
+</body>
+</html>
