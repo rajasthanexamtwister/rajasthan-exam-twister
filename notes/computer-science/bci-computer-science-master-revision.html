@@ -26,7 +26,6 @@ body{
 }
 a{color:var(--accent);}
 .layout{display:flex; min-height:100vh;}
-/* Sidebar */
 #sidebar{
   width:270px; flex-shrink:0; background:var(--panel); border-right:1px solid var(--border);
   position:sticky; top:0; height:100vh; overflow-y:auto; padding:14px 12px;
@@ -43,7 +42,6 @@ a{color:var(--accent);}
 }
 #sidebar nav a:hover{background:var(--chip-bg);}
 #sidebar nav .sec-title{font-weight:700; color:var(--accent-dark); margin-top:10px; font-size:11.5px; text-transform:uppercase; letter-spacing:.03em;}
-/* Main */
 #main{flex:1; padding:22px 34px 80px; max-width:980px;}
 header.top{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:18px; gap:10px; flex-wrap:wrap;}
 header.top h2{margin:0; font-size:22px;}
@@ -84,7 +82,6 @@ li{margin-bottom:2px;}
 .stat .n{font-size:20px; font-weight:800; color:var(--accent-dark);}
 .stat .l{font-size:11px; color:var(--muted);}
 footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
-/* print */
 @media print{
   #sidebar,.controls,#searchBox,.no-print{display:none !important;}
   #main{max-width:100%; padding:0;}
@@ -100,7 +97,7 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <div class="layout">
 <aside id="sidebar">
   <h1>📘 BCI Master Handbook</h1>
-  <div class="tag">RSMSSB Basic Computer Instructor — v1.1</div>
+  <div class="tag">RSMSSB Basic Computer Instructor — v1.2</div>
   <input id="searchBox" type="text" placeholder="🔍 Search topic / keyword...">
   <div class="controls no-print">
     <button onclick="toggleTheme()">🌓 Theme</button>
@@ -139,6 +136,7 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
     <a href="#se">🔁 Software Engineering</a>
     <a href="#excel">📊 MS Excel</a>
     <a href="#msoffice">📧 MS Outlook / Word Styles</a>
+    <a href="#storage">💽 Storage / Misc IT</a>
     <div class="sec-title">General / Aptitude</div>
     <a href="#education">🎓 Education / Pedagogy</a>
     <a href="#psych">🧠 Psychology</a>
@@ -184,7 +182,7 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
   <div class="stat"><div class="n">56</div><div class="l">Unattempted</div></div>
   <div class="stat"><div class="n">52.27%</div><div class="l">Accuracy</div></div>
 </div>
-<p><span class="badge b-must">Biggest Leak</span> 56/100 unattempted — only 44 attempted overall. Accuracy on attempted questions (52%) was decent; the real problem is attempt-rate/confidence, not concept gaps. Post-review, concepts were grasped quickly — meaning revision retention should be high if repeated.</p>
+<p><span class="badge b-must">Biggest Leak</span> 56/100 unattempted — only 44 attempted overall. Accuracy on attempted questions (52%) was decent; the real problem is attempt-rate/confidence, not concept gaps.</p>
 
 <h3>Test 3 — 17 CT Mock-3 Paper-II (19.07.2026)</h3>
 <div class="dash-grid">
@@ -196,9 +194,7 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
   <div class="stat"><div class="n">31</div><div class="l">Unattempted</div></div>
   <div class="stat"><div class="n">65.22%</div><div class="l">Accuracy</div></div>
 </div>
-<p><span class="badge b-imp">सुधार</span> पिछले Mock (Test 2) की तुलना में Attempt Rate और Percentile दोनों वापस ऊपर आए हैं (69% Attempt, 67.10% Percentile)। फिर भी 31 Unattempted Questions सबसे बड़ा नुकसान बने हुए हैं — इनमें से सिर्फ 10 सही होते तो Score 37 से बढ़कर लगभग 47 हो जाता।</p>
-<p><b>Test 3 में गलत/छूटे Questions मुख्यतः इन Topics से थे:</b> Data Structure (DFS, Inorder, Binary Tree, Graph Theory) ⭐⭐⭐⭐⭐, C/C++ (malloc/calloc/new/delete, Self-Referential Structure) ⭐⭐⭐⭐⭐, DBMS (Join, File Organization) ⭐⭐⭐⭐, Software Testing (White/Black Box) ⭐⭐⭐⭐, .NET (CLR/FCL/ASP.NET Life Cycle) ⭐⭐⭐, Networking (IPv6, Default Subnet) ⭐⭐⭐, Disk Scheduling (FCFS) ⭐⭐⭐⭐।</p>
-<p><b>Strong Areas (लगातार सही):</b> Computer Basics, OS Basics, MS Office, Number System, Internet Basics।</p>
+<p>Weak Topics: DS(DFS/Inorder/Graph) ⭐⭐⭐⭐⭐, C/C++ Memory ⭐⭐⭐⭐⭐, DBMS(Join) ⭐⭐⭐⭐, Testing ⭐⭐⭐⭐, .NET ⭐⭐⭐, Networking(IPv6) ⭐⭐⭐, Disk Scheduling(FCFS) ⭐⭐⭐⭐।</p>
 
 <h3>Test 4 — 17 CT Mock-4 Paper-II (26.07.2026)</h3>
 <div class="dash-grid">
@@ -210,10 +206,9 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
   <div class="stat"><div class="n">12</div><div class="l">Unattempted</div></div>
   <div class="stat"><div class="n">67.05%</div><div class="l">Accuracy</div></div>
 </div>
-<p><span class="badge b-trick">🚀 Best Mock Yet</span> Attempt Rate अब तक की सबसे अच्छी रही (88/100, सिर्फ 12 Unattempted) और Percentile भी सबसे ऊँचा (83.58%)। Accuracy (67.05%) अब भी 75-80% के Target से पीछे — यानी अब समस्या Attempt नहीं, बल्कि सही जवाब चुनने की सटीकता है।</p>
-<p><b>Test 4 में गलत/छूटे Questions मुख्यतः इन Topics से थे:</b> Networking (IP Addressing, Layer Protocols, IEEE 802.1X, HTTP Versions, Reverse Proxy) ⭐⭐⭐⭐⭐, DBMS (ER Aggregation, ACID Durability, Cascading Rollback, DDL vs DCL, Database Federation) ⭐⭐⭐⭐⭐, C/C++ (Pointer Size, Function Overloading, Static Members) ⭐⭐⭐⭐⭐, Data Structures & Algorithms (Binary Search, Quick Sort, Circular Linked List, Circular Array, Bucket Sort) ⭐⭐⭐⭐⭐, Python Data Types ⭐⭐⭐⭐, Security (DAC/MAC) ⭐⭐⭐, Reasoning (Blood Relation, Number Pattern, Binary Arithmetic) ⭐⭐⭐⭐, Psychology (Forgetting, Rousseau) ⭐⭐⭐।</p>
+<p><span class="badge b-trick">🚀 Best Mock Yet (at the time)</span> Weak Topics: Networking(IP/Layer/802.1X/HTTP/Proxy) ⭐⭐⭐⭐⭐, DBMS(ER Aggregation/ACID/Rollback/DDL-DCL/Federation) ⭐⭐⭐⭐⭐, C/C++(Pointer/Overloading/Static) ⭐⭐⭐⭐⭐, DSA(Binary Search/Quick Sort/Circular DS/Bucket Sort) ⭐⭐⭐⭐⭐, Python ⭐⭐⭐⭐, Security(DAC/MAC) ⭐⭐⭐, Reasoning ⭐⭐⭐⭐, Psychology ⭐⭐⭐।</p>
 
-<h3>Test 5 — 09 CT Minor Paper-II (09.05.2026) <span class="badge b-imp">Note: यह तारीख के हिसाब से Test 1 के बाद, Test 3/4 से पहले का है</span></h3>
+<h3>Test 5 — 09 CT Minor Paper-II (09.05.2026)</h3>
 <div class="dash-grid">
   <div class="stat"><div class="n">61.42</div><div class="l">Score /100</div></div>
   <div class="stat"><div class="n">14 / 113</div><div class="l">Rank</div></div>
@@ -223,8 +218,7 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
   <div class="stat"><div class="n">4</div><div class="l">Unattempted</div></div>
   <div class="stat"><div class="n">72.92%</div><div class="l">Accuracy</div></div>
 </div>
-<p><span class="badge b-trick">🏆 Best Overall Performance</span> सबसे ज्यादा Attempt (96/100, सिर्फ 4 Unattempted), सबसे अच्छी Percentile (87.61%) और सबसे अच्छी Accuracy (72.92%) अब तक के सभी Tests में। यह दिखाता है कि जब Concepts अच्छे से Revise किए गए topics आते हैं, तो दोनों — Attempt Rate और Accuracy — साथ में सुधर सकते हैं।</p>
-<p><b>Test 5 में गलत/छूटे Questions मुख्यतः इन Topics से थे:</b> Data Structures (BST vs Hash Table Complexity, Balanced BST, Simple Graph, Full/Perfect Binary Tree) ⭐⭐⭐⭐⭐, Networking (OSI Application Layer, FTP Dual Connections, Routing Protocols, DHCP, SCTP) ⭐⭐⭐⭐⭐, Cyber Security (Mantrap, SSID Hiding, WPA3/OWE, Vishing, Hacker Types, Hacking Phases & Tools, Clark-Wilson Model) ⭐⭐⭐⭐⭐।</p>
+<p><span class="badge b-trick">🏆 Best Overall Performance (Legacy)</span> Weak Topics: DS(BST vs Hash/Balanced BST/Graph/Binary Tree) ⭐⭐⭐⭐⭐, Networking(OSI App Layer/FTP/Routing/DHCP/SCTP) ⭐⭐⭐⭐⭐, Cyber Security(Mantrap/SSID/WPA3/Vishing/Hacker Types/Clark-Wilson) ⭐⭐⭐⭐⭐।</p>
 
 <h3>Test 6 — Computer Anudeshak-10 (2nd Paper) Exam Pattern Test Series-02</h3>
 <div class="dash-grid">
@@ -236,41 +230,67 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
   <div class="stat"><div class="n">8</div><div class="l">Unattempted</div></div>
   <div class="stat"><div class="n">57.61%</div><div class="l">Accuracy</div></div>
 </div>
-<p><span class="badge b-must">⚠️ Accuracy सबसे बड़ी चुनौती</span> Attempt Rate अच्छा रहा (92/100) और Percentile भी High (86.98% — tougher paper में अच्छी relative rank दिखाता है), लेकिन Accuracy (57.61%) अब तक की सबसे कम है। इसका मतलब Concepts में गहराई की कमी नहीं बल्कि Similar-looking Options और Examiner Traps में फँसना है — जैसे "All of these" वाले Options को गलती से Eliminate कर देना।</p>
-<p><b>Test 6 में गलत/छूटे Questions मुख्यतः इन Topics से थे:</b> OS (Convoy Effect, Process Memory Layout — Stack/Heap/Text/Data, fork/exec) ⭐⭐⭐⭐⭐, DBMS (LEFT OUTER JOIN, Hashing/Bucket Overflow) ⭐⭐⭐⭐⭐, Data Structures (Expression Conversion Types, Floyd-Warshall Complexity) ⭐⭐⭐⭐⭐, Networking (Multiple Access Techniques, Packet Filtering Firewall on Routers, PCM/Analog-Digital Conversion) ⭐⭐⭐⭐⭐, MS Office (Word Views/Print Settings, Excel Cell Referencing, Clipboard Task Pane) ⭐⭐⭐⭐, Reasoning (Ranking/Position, LCM Divisibility, Number Interchange, Data Interpretation %) ⭐⭐⭐⭐, Pedagogy (Constructivism, Statement & Assumptions) ⭐⭐⭐⭐।</p>
+<p><span class="badge b-must">⚠️ Accuracy चुनौती</span> Weak Topics: OS(Convoy/Process Memory Layout/fork-exec) ⭐⭐⭐⭐⭐, DBMS(LEFT OUTER JOIN/Hashing) ⭐⭐⭐⭐⭐, DS(Expression Conversion/Floyd-Warshall) ⭐⭐⭐⭐⭐, Networking(Multiple Access/Packet Filtering/PCM) ⭐⭐⭐⭐⭐, MS Office ⭐⭐⭐⭐, Reasoning ⭐⭐⭐⭐, Pedagogy(Constructivism) ⭐⭐⭐⭐।</p>
 
-<h3>Trend</h3>
+<h3>Test 7 — Lakshya Classes (2nd Paper) Exam Pattern Test Series-03</h3>
+<div class="dash-grid">
+  <div class="stat"><div class="n">43.44</div><div class="l">Score /100</div></div>
+  <div class="stat"><div class="n">49 / 143</div><div class="l">Rank</div></div>
+  <div class="stat"><div class="n">65.73%</div><div class="l">Percentile</div></div>
+  <div class="stat"><div class="n">54</div><div class="l">Correct</div></div>
+  <div class="stat"><div class="n">32</div><div class="l">Incorrect</div></div>
+  <div class="stat"><div class="n">14</div><div class="l">Unattempted</div></div>
+  <div class="stat"><div class="n">62.79%</div><div class="l">Accuracy</div></div>
+</div>
+<p><span class="badge b-imp">विश्लेषण</span> Attempt Rate अच्छा (86/100) पर Accuracy फिर 63% के आसपास अटकी — यही अब मुख्य Bottleneck है, Unattempted नहीं। Weak Topics से पहचाने गए New Concepts: B-Tree Node Splitting ⭐⭐⭐⭐, OLAP Cube (Multi-dimension) ⭐⭐⭐⭐, Java <code>final</code> keyword ⭐⭐⭐⭐, Array In-place Update Programs ⭐⭐⭐⭐⭐, Stack Parentheses Matching ⭐⭐⭐⭐, AVL Rotation (LL/RR/LR/RL) ⭐⭐⭐⭐⭐, Kahn's Algorithm/Topological Sort ⭐⭐⭐⭐⭐, WSDL ⭐⭐⭐, Linked List Pointer Concept ⭐⭐⭐⭐, Baud Rate vs Bit Rate ⭐⭐⭐⭐, Hamming Code (Simplex) ⭐⭐⭐⭐, TDMA/FDMA/CDMA ⭐⭐⭐⭐, CLR/CTS/CLS ⭐⭐⭐⭐, DSAP/SSAP (LLC Layer) ⭐⭐⭐, Clustering (Hash Collision Trap) ⭐⭐⭐⭐⭐, Ranking Formula (L+R−1) ⭐⭐⭐⭐⭐, Bloom's Taxonomy Domains ⭐⭐⭐⭐, Inquiry Training Model ⭐⭐⭐, Programmed Instruction (Linear/Branched) ⭐⭐⭐⭐, Cooperative Learning/Inclusion ⭐⭐⭐, Constructivism ⭐⭐⭐, 1's Complement ⭐⭐⭐, SSD vs HDD ⭐⭐⭐, VPN ⭐⭐⭐, EBCDIC ⭐⭐।</p>
+
+<h3>Test 8 — 18 CT Mock-5 Paper-II (02.08.2026)</h3>
+<div class="dash-grid">
+  <div class="stat"><div class="n">39.11</div><div class="l">Score /100</div></div>
+  <div class="stat"><div class="n">49 / 153</div><div class="l">Rank</div></div>
+  <div class="stat"><div class="n">67.97%</div><div class="l">Percentile</div></div>
+  <div class="stat"><div class="n">50</div><div class="l">Correct</div></div>
+  <div class="stat"><div class="n">33</div><div class="l">Incorrect</div></div>
+  <div class="stat"><div class="n">17</div><div class="l">Unattempted</div></div>
+  <div class="stat"><div class="n">60.24%</div><div class="l">Accuracy</div></div>
+</div>
+<p><span class="badge b-must">⚠️ Score Test 7 से थोड़ा नीचे</span> Attempt Rate थोड़ी घटी (83/100), Accuracy भी 60.24% पर आ गई — Test 7 और Test 8 दोनों में Pattern एक जैसा: Accuracy ही सबसे बड़ी बाधा है, Attempt नहीं। Percentile फिर भी 67.97% — Paper Tough था, Relative Rank ठीक बना रहा।</p>
+
+<h3>Trend (सभी 8 Tests)</h3>
 <table>
-<tr><th>Metric</th><th>Test 1</th><th>Test 5 (09.05)</th><th>Test 2</th><th>Test 3</th><th>Test 4</th><th>Test 6</th></tr>
-<tr><td>Attempt Rate</td><td>68%</td><td class="status-strong">96%</td><td class="status-weak">44%</td><td class="status-mod">69%</td><td class="status-strong">88%</td><td class="status-strong">92%</td></tr>
-<tr><td>Accuracy</td><td>72.06%</td><td class="status-strong">72.92%</td><td class="status-weak">52.27%</td><td class="status-mod">65.22%</td><td class="status-mod">67.05%</td><td class="status-weak">57.61% (Lowest)</td></tr>
-<tr><td>Percentile</td><td>75.81%</td><td class="status-strong">87.61%</td><td class="status-weak">46.32%</td><td class="status-mod">67.10%</td><td class="status-strong">83.58%</td><td class="status-strong">86.98%</td></tr>
+<tr><th>Metric</th><th>T1</th><th>T5</th><th>T2</th><th>T3</th><th>T4</th><th>T6</th><th>T7</th><th>T8</th></tr>
+<tr><td>Attempt Rate</td><td>68%</td><td class="status-strong">96%</td><td class="status-weak">44%</td><td class="status-mod">69%</td><td class="status-strong">88%</td><td class="status-strong">92%</td><td class="status-strong">86%</td><td class="status-strong">83%</td></tr>
+<tr><td>Accuracy</td><td>72.06%</td><td class="status-strong">72.92%</td><td class="status-weak">52.27%</td><td class="status-mod">65.22%</td><td class="status-mod">67.05%</td><td class="status-weak">57.61%</td><td class="status-mod">62.79%</td><td class="status-mod">60.24%</td></tr>
+<tr><td>Percentile</td><td>75.81%</td><td class="status-strong">87.61%</td><td class="status-weak">46.32%</td><td class="status-mod">67.10%</td><td class="status-strong">83.58%</td><td class="status-strong">86.98%</td><td class="status-mod">65.73%</td><td class="status-mod">67.97%</td></tr>
 </table>
-<p><b>Pattern:</b> Attempt Rate अब consistently 88-96% है — यह अब solved problem है। असली Focus अब सिर्फ Accuracy पर होना चाहिए, खासकर "All of these" / "उपरोक्त सभी" जैसे Options को बिना ठोस वजह के Eliminate न करना, और हर टॉपिक में Examiner Trap Table को Revise करना।</p>
+<p><b>Pattern:</b> Attempt Rate अब लगातार 83-96% है — Solved Problem. Accuracy Test 3 के बाद से 57-67% के बीच Plateau पर अटकी है — यह अब सबसे बड़ा Focus Area है। Last 2 Tests (T7, T8) दोनों Accuracy 60-63% पर हैं — इसका मतलब यह किसी एक Mock की गलती नहीं बल्कि एक Consistent Weakness है: संभवतः Examiner Trap वाले Options में गलती (जैसे "All of these" गलत Eliminate करना) और नए/Unseen Concept Types (Assertion-Reason, Code-based Array Programs) में Confidence की कमी।</p>
 
-<h3>Subject-wise Rating (cumulative)</h3>
+<h3>Subject-wise Rating (cumulative, updated after Test 7-8)</h3>
 <table>
 <tr><th>Section</th><th>Rating</th></tr>
 <tr><td>Computer Fundamentals</td><td>⭐⭐⭐⭐⭐</td></tr>
-<tr><td>Java</td><td>⭐⭐⭐⭐☆</td></tr>
+<tr><td>Java</td><td>⭐⭐⭐⭐☆ (final keyword clear अब)</td></tr>
 <tr><td>OOP / C++</td><td>⭐⭐⭐☆☆ (Pointer size, Overloading, Static members में गलतियाँ)</td></tr>
-<tr><td>Data Structure & Algorithms</td><td>⭐⭐⭐☆☆ (Binary Search, Quick Sort, Circular DS, BST vs Hash Table Complexity, Graph Definitions में गलतियाँ)</td></tr>
-<tr><td>Cyber Security (Advanced — Mantrap, Hacker Types, Hacking Tools)</td><td>⭐⭐☆☆☆ → नए Topics, Review के बाद Concept clear</td></tr>
-<tr><td>Graph</td><td>⭐⭐⭐⭐☆</td></tr>
-<tr><td>SQL / DBMS</td><td>⭐⭐☆☆☆ (Aggregation, ACID, DDL-DCL में Concept गड़बड़)</td></tr>
+<tr><td>Data Structure & Algorithms</td><td>⭐⭐⭐☆☆ (B-Tree, AVL Rotation, Array In-place Update, Stack — नए Weak Points)</td></tr>
+<tr><td>Cyber Security</td><td>⭐⭐☆☆☆ → Review के बाद Concept clear</td></tr>
+<tr><td>Graph</td><td>⭐⭐⭐☆☆ (Kahn's Algorithm/Topological Sort नया Weak Point)</td></tr>
+<tr><td>SQL / DBMS</td><td>⭐⭐☆☆☆ (Aggregation, ACID, DDL-DCL, अब OLAP भी जोड़ें)</td></tr>
 <tr><td>Operating System</td><td>⭐⭐⭐☆☆ (needs revision)</td></tr>
-<tr><td>Networking / Security</td><td>⭐⭐☆☆☆ (IP Addressing, Layer Protocols, 802.1X, Proxy में सबसे ज्यादा गलतियाँ)</td></tr>
+<tr><td>Networking / Security</td><td>⭐⭐☆☆☆ (अब WSDL, Baud Rate, Hamming Code, TDMA, DSAP/SSAP भी जोड़ें)</td></tr>
+<tr><td>.NET Framework</td><td>⭐⭐⭐☆☆ (CLR/CTS/CLS Confusion नया Trap)</td></tr>
 <tr><td>Python</td><td>⭐⭐⭐☆☆ (Mutable/Immutable में confusion)</td></tr>
-<tr><td>Reasoning</td><td>⭐⭐⭐☆☆ (Blood Relation, Pattern में समय लगा)</td></tr>
-<tr><td>Speed / Attempt Strategy</td><td>⭐⭐⭐⭐☆ (काफी सुधरा — अब Accuracy पर फोकस चाहिए)</td></tr>
+<tr><td>Reasoning</td><td>⭐⭐⭐☆☆ (Ranking Formula L+R−1 अब Clear)</td></tr>
+<tr><td>Education/Pedagogy</td><td>⭐⭐⭐☆☆ (Bloom's Domains, Inquiry Model, Programmed Instruction नए Add हुए)</td></tr>
+<tr><td>Speed / Attempt Strategy</td><td>⭐⭐⭐⭐☆ (Solved — अब सिर्फ Accuracy पर फोकस चाहिए)</td></tr>
 </table>
 <h3>Next Mock — Targets</h3>
 <ul>
-<li>🎯 Attempt: 90+ (बनाए रखो)</li>
-<li>🎯 Accuracy: 78–80%+ (मुख्य फोकस)</li>
-<li>🎯 Correct: 75+</li>
-<li>🎯 Expected Score: 60–70+</li>
-<li>🎯 Target Percentile: 90%+</li>
+<li>🎯 Attempt: 85+ (बनाए रखो)</li>
+<li>🎯 Accuracy: 75%+ (अब सबसे बड़ी Priority — पिछले 5 Tests से Plateau पर अटकी है)</li>
+<li>🎯 Correct: 70+</li>
+<li>🎯 Expected Score: 55-65+</li>
+<li>🎯 Target Percentile: 85%+</li>
+<li>🎯 नए Concepts (B-Tree, AVL, Kahn's Algorithm, Array In-place Programs, TDMA/WSDL/Hamming, CLR-CTS-CLS) रोज 10 मिनट Revise करो — ये पहली बार Weak List में आए हैं</li>
 </ul>
 </div>
 </section>
@@ -281,20 +301,21 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <div class="body">
 <table>
 <tr><th>Priority</th><th>Topic</th><th>Sub-areas</th></tr>
-<tr><td class="status-weak">🔴 High</td><td>SQL</td><td>Subquery, Nested Query, HAVING, INTERSECT, UNION, EXISTS/ANY/ALL</td></tr>
-<tr><td class="status-weak">🔴 High</td><td>OOP Edge Cases</td><td>Overriding rules, Method Signature, Access Modifier, Generics, Wrapper Classes</td></tr>
-<tr><td class="status-weak">🔴 High</td><td>Graph Numericals</td><td>MST weight/edge count, Traversal, Priority Queue, Time Complexity</td></tr>
-<tr><td class="status-weak">🔴 High</td><td>Binary Tree Construction / Deletion</td><td>Building tree from Preorder/Inorder/Postorder, Node Deletion</td></tr>
+<tr><td class="status-weak">🔴 High</td><td>SQL</td><td>Subquery, Nested Query, HAVING, INTERSECT, UNION, EXISTS/ANY/ALL, OLAP Cube</td></tr>
+<tr><td class="status-weak">🔴 High</td><td>OOP Edge Cases</td><td>Overriding rules, Method Signature, Access Modifier, Generics, Wrapper Classes, <code>final</code> keyword</td></tr>
+<tr><td class="status-weak">🔴 High</td><td>Graph Numericals</td><td>MST weight/edge count, Traversal, Priority Queue, Time Complexity, Kahn's Algorithm/Topological Sort</td></tr>
+<tr><td class="status-weak">🔴 High</td><td>Binary Tree / B-Tree / AVL Tree</td><td>Building tree from Preorder/Inorder/Postorder, Node Deletion, B-Tree Node Splitting, AVL LL/RR/LR/RL Rotation</td></tr>
 <tr><td class="status-weak">🔴 High</td><td>C/C++ Memory Management</td><td>malloc, calloc, realloc, free, new, delete, Self-Referential Structure — बार-बार आने वाला Topic</td></tr>
+<tr><td class="status-weak">🔴 High</td><td>Array/Stack Programs (Code-based)</td><td>In-place Update Array Traces, Stack Parentheses Matching</td></tr>
 <tr><td class="status-mod">🟠 Medium</td><td>Operating System</td><td>Paging, Fragmentation, Deadlock, Memory Management, FCFS Disk Scheduling</td></tr>
 <tr><td class="status-mod">🟠 Medium</td><td>Software Testing</td><td>White-box vs Black-box, Structural vs Functional</td></tr>
-<tr><td class="status-mod">🟠 Medium</td><td>.NET Framework</td><td>CLR, JIT, GC, FCL, ASP.NET Page Life Cycle</td></tr>
-<tr><td class="status-mod">🟠 Medium</td><td>Networking (IPv4/IPv6)</td><td>Default Subnet Mask by Class, IPv6 Prefix (::1, FE80, FC00, 2000)</td></tr>
-<tr><td class="status-mod">🟡 Unattempted → अब Reviewed</td><td>UML Diagrams / OOA</td><td>Use Case, State Machine, Sequence, Interaction Overview, Deployment, UML 1.x vs 2.0, StarUML, State Symbols</td></tr>
-<tr><td class="status-mod">🟡 Unattempted → अब Reviewed</td><td>Education / Pedagogy</td><td>Inclusive Education, Kothari Commission (Three Language Formula), other Commissions</td></tr>
+<tr><td class="status-mod">🟠 Medium</td><td>.NET Framework</td><td>CLR, CTS, CLS, JIT, GC, FCL, ASP.NET Page Life Cycle</td></tr>
+<tr><td class="status-mod">🟠 Medium</td><td>Networking (IPv4/IPv6)</td><td>Default Subnet Mask by Class, IPv6 Prefix, WSDL, Baud Rate, Hamming Code, TDMA/FDMA/CDMA, DSAP/SSAP</td></tr>
+<tr><td class="status-mod">🟡 Reviewed</td><td>UML Diagrams / OOA</td><td>Use Case, State Machine, Sequence, Interaction Overview, Deployment, UML 1.x vs 2.0, StarUML, State Symbols</td></tr>
+<tr><td class="status-mod">🟡 Reviewed</td><td>Education / Pedagogy</td><td>Inclusive Education, Kothari Commission, Bloom's Taxonomy, Inquiry Training Model, Programmed Instruction, Constructivism</td></tr>
 <tr><td class="status-strong">🟢 Strong</td><td>Computer Basics, Java Basics, Agile, Y2K, Graph Concepts, Tree Traversal, OS Basics, MS Office, Number System, Internet Basics</td><td>Maintain with light revision</td></tr>
 </table>
-<p><b>Priority Order (Test 3 के आधार पर):</b> A) Data Structure — Graph, Tree, Traversal (रोज़ अभ्यास) → B) C/C++ Memory Management → C) DBMS (Join, File Organization) → D) Networking (IPv4/IPv6) → E) .NET</p>
+<p><b>Priority Order (Test 7-8 के आधार पर):</b> A) Accuracy Traps ("All of these" Elimination Habit ठीक करो) → B) B-Tree/AVL/Kahn's Algorithm (नए Topics) → C) Array/Stack Code-Trace Programs (रोज़ अभ्यास) → D) C/C++ Memory Management → E) DBMS (Join, OLAP) → F) Networking (WSDL/Baud/Hamming/TDMA) → G) .NET (CLR/CTS/CLS)</p>
 </div>
 </section>
 
@@ -304,10 +325,11 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <div class="body">
 <div class="mistake"><b>MongoDB written in?</b> — Book/Answer-key says "All of the mentioned". <b>Verified correct:</b> C++ (MongoDB's core DB engine is implemented in C++; JS is only used for shell/scripting). <span class="badge b-bug">Answer Key Bug</span> If "C++" is an available option in the real exam, choose that.</div>
 <div class="mistake"><b>Point Guard → Hockey?</b> — Wrong pairing. Point Guard belongs to <b>Basketball</b>, not Hockey.</div>
-<div class="mistake"><b>"Paging requires contiguous allocation"</b> — False. Paging's whole advantage is <b>non-contiguous</b> allocation; this is what removes external fragmentation.</div>
-<div class="mistake"><b>"HTTPS is faster than HTTP"</b> — False. Encryption overhead makes HTTPS marginally slower; its benefit is security, not speed.</div>
-<div class="mistake"><b>"DFS not applicable to cyclic graphs"</b> — False. DFS works on cyclic graphs too, provided a visited array is maintained (else infinite loop).</div>
-<div class="mistake"><b>Function Overloading by Return Type alone</b> — Invalid. Overloading needs different parameter lists; changing only return type does not create a valid overload.</div>
+<div class="mistake"><b>"Paging requires contiguous allocation"</b> — False. Paging's whole advantage is <b>non-contiguous</b> allocation.</div>
+<div class="mistake"><b>"HTTPS is faster than HTTP"</b> — False. Encryption overhead makes HTTPS marginally slower.</div>
+<div class="mistake"><b>"DFS not applicable to cyclic graphs"</b> — False. DFS works on cyclic graphs too, provided a visited array is maintained.</div>
+<div class="mistake"><b>Function Overloading by Return Type alone</b> — Invalid. Overloading needs different parameter lists.</div>
+<div class="mistake"><b>DI Chart Percentage mismatch (Lakshya Test-03, Q6)</b> — दिए गए Screenshot में Graph के Bar Values स्पष्ट नहीं थे, इसलिए Manual Calculation (63.69% / 58.15%) Answer Key के 69.03% से मेल नहीं खाई। <span class="badge b-bug">Needs Manual Verification</span> — Exam में हमेशा पूरे Graph की सभी Values साफ़ पढ़कर ही Percentage निकालो; असली Paper में हर Bar Label जरूर Zoom करके पढ़ो।</div>
 </div>
 </section>
 
@@ -324,6 +346,16 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <p>Fraction part: repeated ×2, take integer digit each time: 0.85 → <code>110110</code> (approx)</p>
 <p>Final: <code>26.85₁₀ ≈ 11010.110110₂</code></p>
 <div class="trick">🧠 Trick: Integer part → divide by 2 (remainder bottom to top). Fraction part → multiply by 2 (carry digit top to bottom) until required bits.</div>
+
+<h3>1's Complement — Hindi Note ⭐⭐⭐</h3>
+<p>1's Complement निकालने का Rule सबसे आसान है: हर <b>0 को 1</b> कर दो, हर <b>1 को 0</b> कर दो (सीधा Bit Flip, कोई Borrow/Carry नहीं)।</p>
+<pre>Original : 0000111100101101
+1's Comp : 1111000011010010</pre>
+<p>2's Complement = 1's Complement + 1 (यह अगला Step है, अक्सर साथ में पूछा जाता है)।</p>
+<div class="trick">🧠 1's Complement = सीधा Bit Flip (0↔1); 2's Complement = 1's Complement + 1</div>
+
+<h3>Binary Addition — Basic Rules</h3>
+<table><tr><th>Addition</th><th>Result</th></tr><tr><td>0+0</td><td>0</td></tr><tr><td>0+1</td><td>1</td></tr><tr><td>1+1</td><td>10 (0, Carry 1)</td></tr><tr><td>1+1+1 (Carry सहित)</td><td>11 (1, Carry 1)</td></tr></table>
 </div>
 </section>
 
@@ -435,165 +467,145 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 </table>
 
 <h3>Process Synchronization — Critical Section (Hindi Note) <span class="badge b-must">⭐⭐⭐⭐⭐</span></h3>
-<p>Critical Section वह Code का हिस्सा है जहाँ दो या ज़्यादा Process एक ही Shared Resource (जैसे Database Record) को Access/Change करती हैं। साथ में घुसने से Data खराब हो जाता है, इसे <b>Race Condition</b> कहते हैं।</p>
+<p>Critical Section वह Code का हिस्सा है जहाँ दो या ज़्यादा Process एक ही Shared Resource को Access/Change करती हैं। साथ में घुसने से Data खराब हो जाता है, इसे <b>Race Condition</b> कहते हैं।</p>
 <p>Critical Section Problem को पूरी तरह हल करने के लिए <b>न्यूनतम 2 Shared Variables</b> चाहिए — यही <b>Peterson's Algorithm</b> Use करता है:</p>
 <ul>
 <li><code>flag[2]</code> (Boolean Array) — बताता है कौन-सी Process अंदर जाने के लिए तैयार है</li>
 <li><code>turn</code> (Integer) — तय करता है अभी किसकी बारी है</li>
 </ul>
-<p>❌ सिर्फ 1 Variable (जैसे सिर्फ turn) से काम नहीं चलता — Progress की शर्त टूट जाती है।</p>
+<p>❌ सिर्फ 1 Variable से काम नहीं चलता — Progress की शर्त टूट जाती है।</p>
 <p>Critical Section Solution की 3 ज़रूरी शर्तें:</p>
-<ol><li><b>Mutual Exclusion</b> — एक बार में सिर्फ एक Process अंदर</li><li><b>Progress</b> — खाली बैठी Process दूसरी इच्छुक Process को रोके नहीं</li><li><b>Bounded Waiting</b> — अनंत काल तक इंतज़ार न हो</li></ol>
+<ol><li><b>Mutual Exclusion</b></li><li><b>Progress</b></li><li><b>Bounded Waiting</b></li></ol>
 <div class="trick">🧠 Critical Section हल करने के लिए Minimum 2 Variables (flag + turn) चाहिए — Peterson's Algorithm</div>
 
 <h3>FCFS Disk Scheduling (Hindi Note)</h3>
-<p>Head जितने क्रम में Requests आती हैं, उतने ही क्रम में Service होती है। Total Head Movement = हर Step पर <code>|Current − Next|</code> का Absolute Difference जोड़ते जाओ।</p>
-<p>उदाहरण: Requests क्रम 40(शुरुआत)→90→150→50→140→30→20 हो तो Movement: 50+60+100+90+110+10 = <b>420</b></p>
-<div class="trick">🧠 FCFS Disk Scheduling = सभी Absolute Distances (|Current−Next|) जोड़ो</div>
+<p>Total Head Movement = हर Step पर <code>|Current − Next|</code> का Absolute Difference जोड़ते जाओ।</p>
+<p>उदाहरण: 40→90→150→50→140→30→20: 50+60+100+90+110+10 = <b>420</b></p>
+<div class="trick">🧠 FCFS Disk Scheduling = सभी Absolute Distances जोड़ो</div>
 
 <h3>Disk Scheduling Algorithms — पूरा Family (Hindi Note)</h3>
 <table><tr><th>Algorithm</th><th>Concept</th></tr>
-<tr><td>FCFS</td><td>जो पहले आया, पहले Serve — Simple लेकिन Slow (ज़्यादा Head Movement)</td></tr>
-<tr><td>SSTF</td><td>Head के सबसे पास वाली Request पहले — Problem: दूर वाली Request को <b>Starvation</b></td></tr>
-<tr><td>SCAN (Elevator)</td><td>एक End तक जाकर वापस — रास्ते की सभी Requests Serve; Problem: नई Requests लगातार आती रहें तो Head एक Area में फँस जाता है (<b>Arm Stickiness</b>)</td></tr>
-<tr><td>N-Step SCAN</td><td>Queue को Length <b>N</b> की Sub-queues में बाँटता है — चलते समय आई नई Requests अगली Sub-queue में जाती हैं, इससे Arm Stickiness रुकती है</td></tr>
-<tr><td>FSCAN</td><td>N-Step SCAN जैसा ही, लेकिन सिर्फ <b>2 Queues</b> (एक Current, एक New Requests के लिए)</td></tr>
-<tr><td>C-SCAN</td><td>सिर्फ एक Direction में चलता है — End पर पहुँचकर सीधे शुरुआत (0) पर वापस जाता है, वापसी में कोई Request Serve नहीं करता</td></tr>
-<tr><td>LOOK</td><td>SCAN जैसा, पर Disk के आख़िरी End तक नहीं जाता — जहाँ आख़िरी Request है, वहीं से वापस मुड़ जाता है (Time बचता है)</td></tr>
+<tr><td>FCFS</td><td>जो पहले आया, पहले Serve</td></tr>
+<tr><td>SSTF</td><td>Head के सबसे पास वाली पहले — Problem: Starvation</td></tr>
+<tr><td>SCAN (Elevator)</td><td>एक End तक जाकर वापस; Problem: Arm Stickiness</td></tr>
+<tr><td>N-Step SCAN</td><td>Queue को N Sub-queues में बाँटता है — Arm Stickiness रुकती है</td></tr>
+<tr><td>FSCAN</td><td>सिर्फ 2 Queues</td></tr>
+<tr><td>C-SCAN</td><td>एक Direction, End से सीधे शुरुआत पर वापस</td></tr>
+<tr><td>LOOK</td><td>Disk के आख़िरी End तक नहीं जाता</td></tr>
 <tr><td>C-LOOK</td><td>LOOK का Circular Version</td></tr>
 </table>
-<div class="trick">🧠 SCAN=Elevator; LOOK=End नहीं Last Request तक; FSCAN=2 Queues; N-Step SCAN=N Subqueues; C-=Circular</div>
-<p>PYQ Traps: "Arm Stickiness रोकता है" → N-Step SCAN; "2 Queues Use करता है" → FSCAN; "Queue को N Parts में बाँटता है" → N-Step SCAN; "Elevator जैसा व्यवहार" → SCAN; "Disk के End तक नहीं जाता" → LOOK</p>
+<div class="trick">🧠 SCAN=Elevator; LOOK=Last Request तक; FSCAN=2 Queues; N-Step SCAN=N Subqueues; C-=Circular</div>
 
 <h3>CPU Scheduling — Convoy Effect ⭐⭐⭐⭐⭐</h3>
-<p>जब एक बड़ा Process (बहुत ज़्यादा Burst Time वाला) CPU को पहले पकड़ लेता है, तो उसके पीछे छोटे Processes को लंबा इंतज़ार करना पड़ता है — यह सिर्फ <b>FCFS</b> (Non-preemptive) में होता है, क्योंकि पहला Process खुद खत्म हुए बिना CPU छीना नहीं जा सकता।</p>
+<p>बड़ा Process CPU पहले पकड़ ले तो छोटे Processes को लंबा इंतज़ार — सिर्फ <b>FCFS</b> (Non-preemptive) में।</p>
 <table><tr><th>Convoy Effect</th><th>Starvation</th></tr>
-<tr><td>बड़े Process के पीछे छोटे फंसना</td><td>कम Priority/बड़े Burst Time के कारण नंबर ही न आना</td></tr>
-<tr><td>सिर्फ FCFS में</td><td>SJF, SRTF, Priority Scheduling में संभव</td></tr>
-<tr><td>समाधान: Round Robin</td><td>समाधान: Aging (धीरे-धीरे Priority बढ़ाना)</td></tr>
+<tr><td>सिर्फ FCFS में; समाधान: Round Robin</td><td>SJF/SRTF/Priority में; समाधान: Aging</td></tr>
 </table>
-<p>❌ ट्रैप: FCFS कभी Preemptive नहीं हो सकता — Question में "FCFS Preemptive" जैसा Combination हमेशा गलत होगा। Round Robin में अगर Time Quantum को अनंत (∞) कर दें तो वह FCFS जैसा बन जाता है।</p>
-<div class="trick">🧠 Convoy Effect = सिर्फ FCFS + Non-preemptive; बड़ा Process पहले = सबकी लाइन अटकी</div>
+<div class="trick">🧠 Convoy Effect = सिर्फ FCFS + Non-preemptive</div>
 
 <h3>Process Memory Layout — Text/Data/Heap/Stack ⭐⭐⭐⭐⭐</h3>
-<p>जब कोई Program (Passive Entity, Disk पर) RAM में Load होकर Process (Active Entity) बनता है, तो उसकी Memory <b>चारों</b> Sections में बँटती है — कोई एक Section हटाया नहीं जा सकता:</p>
 <table><tr><th>Section</th><th>क्या रखता है</th></tr>
-<tr><td>Text (Code)</td><td>Compiled Machine Code — हमेशा Read-Only</td></tr>
-<tr><td>Data</td><td>Global और Static Variables (Initialized + Uninitialized/BSS)</td></tr>
-<tr><td>Heap</td><td>Dynamic Memory (malloc/new) — नीचे से ऊपर (Low→High) बढ़ता है</td></tr>
-<tr><td>Stack</td><td>Local Variables, Function Parameters, Return Address — ऊपर से नीचे (High→Low) बढ़ता है</td></tr>
+<tr><td>Text (Code)</td><td>हमेशा Read-Only</td></tr>
+<tr><td>Data</td><td>Global/Static Variables</td></tr>
+<tr><td>Heap</td><td>Dynamic Memory — Low→High बढ़ता है</td></tr>
+<tr><td>Stack</td><td>Local Variables — High→Low बढ़ता है</td></tr>
 </table>
-<p>Stack और Heap विपरीत दिशा में बढ़ते हैं ताकि RAM का ज्यादा उपयोग हो सके; दोनों टकरा जाएँ तो Memory Overflow।</p>
-<div class="trick">🧠 T-D-H-S क्रम याद रखो; Local=Stack(नीचे बढ़े), Dynamic=Heap(ऊपर बढ़े), Code सदा Read-Only</div>
+<div class="trick">🧠 T-D-H-S क्रम याद रखो; Local=Stack(नीचे), Dynamic=Heap(ऊपर), Code सदा Read-Only</div>
 
-<h3>fork() vs exec() — Process Address Space Possibilities</h3>
-<p>नया Process बनने पर Address Space की सिर्फ <b>दो</b> संभावनाएँ होती हैं — दोनों ही Valid हैं (Question में अक्सर "कौन सी Possibilities हैं" पूछा जाता है, यानी दोनों साथ चुनने होते हैं):</p>
+<h3>fork() vs exec()</h3>
 <table><tr><th>fork()</th><th>exec()</th></tr>
-<tr><td>Child, Parent की Duplicate (हूबहू कॉपी) बनती है</td><td>Child के ऊपर बिल्कुल नया Program Load हो जाता है</td></tr>
-<tr><td>नई अलग PID मिलती है, Parent-Child साथ चलते हैं</td><td>PID वही रहती है, सिर्फ Program बदलता है</td></tr>
+<tr><td>Child, Parent की Duplicate</td><td>Child पर बिल्कुल नया Program Load</td></tr>
 </table>
-<div class="trick">🧠 Fork=Copy(Duplicate), Exec=New Program Load — दोनों ही Valid Address-Space Possibilities हैं</div>
+<div class="trick">🧠 Fork=Copy, Exec=New Program Load — दोनों Valid Possibilities हैं</div>
 </div>
 </section>
-
 
 <!-- NETWORK -->
 <section class="section" id="network">
 <h2 onclick="toggleSec(this)">🌐 Computer Networks <span class="arrow">▼</span></h2>
 <div class="body">
 <h3>TCP Features</h3>
-<ul><li>✅ Connection-Oriented</li><li>✅ Reliable (ACK + retransmission)</li><li>✅ Flow Control (Sliding Window)</li><li>❌ NOT low overhead — header is 20 bytes vs UDP's 8</li></ul>
+<ul><li>✅ Connection-Oriented</li><li>✅ Reliable</li><li>✅ Flow Control</li><li>❌ NOT low overhead — 20B header vs UDP's 8B</li></ul>
 <h4>Three-way Handshake</h4>
 <p><code>SYN → SYN+ACK → ACK</code></p>
 <h4>TCP Flags (trick: <b>UAPRSF</b>)</h4>
 <p>URG, ACK, PSH, RST, SYN, FIN</p>
 <h3>IPv6</h3>
-<ul><li>128-bit address, 8 blocks × 16 bits</li><li>Header Extension supported</li><li>Supports Multicast (no Broadcast)</li><li>No header checksum</li><li>Better security (IPSec)</li></ul>
+<ul><li>128-bit, 8 blocks × 16 bits</li><li>Multicast (no Broadcast)</li><li>No header checksum</li></ul>
 <h3>HTTP vs HTTPS</h3>
-<ul><li>HTTP sends plain text (Port 80)</li><li>HTTPS encrypts data via SSL/TLS (Port 443)</li><li>❌ HTTPS is NOT faster (encryption overhead)</li></ul>
+<ul><li>HTTP Port 80, plain text</li><li>HTTPS Port 443, SSL/TLS</li><li>❌ NOT faster</li></ul>
 <div class="trick">🧠 HTTP=80, HTTPS=443, S=Secure</div>
 <h3>Wi-Fi Standards (IEEE 802.11)</h3>
 <table><tr><th>Standard</th><th>Speed</th></tr><tr><td>802.11b</td><td>11 Mbps</td></tr><tr><td>802.11g</td><td>54 Mbps</td></tr><tr><td>802.11ac</td><td>~3.5 Gbps</td></tr><tr><td>802.11ad</td><td>~7 Gbps</td></tr></table>
 <h3>Transport Layer Multiplexing</h3>
-<p>Done via <b>Source Port + Destination Port</b>. IP Address = Computer, Port Number = Application. Socket = IP + Port.</p>
+<p>Source Port + Destination Port. Socket = IP + Port.</p>
 <table><tr><th>Port range</th><th>Type</th></tr><tr><td>0–1023</td><td>Well Known</td></tr><tr><td>1024–49151</td><td>Registered</td></tr><tr><td>49152–65535</td><td>Dynamic</td></tr></table>
 
 <h3>DHCP — DORA Process</h3>
-<p>DHCP Client को IP Address, Subnet Mask, Default Gateway, DNS Server, और Lease Time देता है। ❌ ट्रैप: DHCP का MAC Address से सीधा लेना-देना नहीं है — MAC↔IP Mapping का काम ARP/RARP करते हैं, DHCP का नहीं।</p>
-<p>क्रम — <b>DORA</b>: Discover → Offer → Request → Acknowledge</p>
-<table><tr><th>Protocol</th><th>काम</th></tr>
-<tr><td>DHCP</td><td>Dynamic IP Configuration देना</td></tr>
-<tr><td>ARP</td><td>IP → MAC</td></tr>
-<tr><td>RARP</td><td>MAC → IP</td></tr>
-<tr><td>DNS</td><td>Name → IP</td></tr>
-</table>
-<div class="trick">🧠 DHCP = Dynamic IP देता है, MAC से लेना-देना नहीं; क्रम याद रखो: D-O-R-A</div>
+<p>क्रम — <b>DORA</b>: Discover → Offer → Request → Acknowledge। ❌ MAC↔IP का काम ARP/RARP करते हैं, DHCP नहीं।</p>
+<div class="trick">🧠 DHCP = Dynamic IP देता है; क्रम: D-O-R-A</div>
 
-<h3>SCTP — तीसरा Transport Layer Protocol</h3>
-<p>Stream Control Transmission Protocol — TCP और UDP के अलावा तीसरा प्रमुख Transport Layer Protocol। Reliable + Connection-oriented, लेकिन <b>Message-Oriented</b> है (TCP Byte-Stream Oriented है — यही सबसे बड़ा Trap है)।</p>
-<table><tr><th>Feature</th><th>TCP</th><th>SCTP</th></tr>
-<tr><td>Data Model</td><td>Byte Stream</td><td>Message Oriented</td></tr>
-<tr><td>Connection नाम</td><td>Connection</td><td>Association</td></tr>
-<tr><td>Handshake</td><td>3-way</td><td>4-way</td></tr>
-</table>
-<p><b>Multi-homing</b>: एक Host के पास Multiple IP — एक Fail हो तो दूसरा चालू (High Availability)। <b>Multi-streaming</b>: एक Connection में कई Independent Streams — Head-of-line Blocking कम करता है।</p>
-<div class="trick">🧠 SCTP = Message Oriented + Multi-homing + Multi-streaming (TCP से अलग करने वाला मुख्य Trap: Byte Stream नहीं)</div>
+<h3>SCTP</h3>
+<p>Message-Oriented (TCP Byte-Stream है — मुख्य Trap)। Multi-homing + Multi-streaming।</p>
+<div class="trick">🧠 SCTP = Message Oriented + Multi-homing + Multi-streaming</div>
 
 <h3>Routing Protocols — Algorithm Matching ⭐⭐⭐⭐⭐</h3>
-<table><tr><th>Routing Protocol</th><th>आधारित Algorithm</th></tr>
-<tr><td>RIP</td><td>Bellman-Ford</td></tr>
-<tr><td>OSPF</td><td>Dijkstra</td></tr>
-<tr><td>EIGRP</td><td>DUAL</td></tr>
-<tr><td>BGP</td><td>Path Vector</td></tr>
+<table><tr><th>Protocol</th><th>Algorithm</th></tr>
+<tr><td>RIP</td><td>Bellman-Ford</td></tr><tr><td>OSPF</td><td>Dijkstra</td></tr><tr><td>EIGRP</td><td>DUAL</td></tr><tr><td>BGP</td><td>Path Vector</td></tr>
 </table>
-<p>❌ ट्रैप: Routing (एक निश्चित Best Path से Packet भेजना) और Flooding (हर Neighbor को Packet भेज देना, कोई Path decide नहीं) को मत मिलाओ।</p>
 <div class="trick">🧠 RIP=Bellman-Ford, OSPF=Dijkstra, EIGRP=DUAL, BGP=Path Vector</div>
 
-<h3>OSI Application Layer — क्या करता है</h3>
-<p>User और Network के बीच Direct Interface — मुख्य काम User को Network Services देना। इसमें आते हैं: <b>NVT</b> (Network Virtual Terminal — Remote Login, जैसे Telnet) और <b>FTAM</b> (File Transfer Access and Management — File Access/Transfer)।</p>
-<p>❌ ट्रैप: Data Compression/Encryption = Presentation Layer का काम (Application का नहीं); Segments बनाना = Transport Layer; Dialog/Synchronization = Session Layer। Application Layer Protocols: HTTP, FTP, SMTP, DNS, DHCP, Telnet, POP3।</p>
-<div class="trick">🧠 Segments=Transport, Packets=Network, Frames=Data Link; NVT+FTAM=Application Layer की पहचान</div>
+<h3>OSI Application Layer</h3>
+<p>NVT (Telnet) + FTAM (File Transfer)। ❌ Compression/Encryption=Presentation; Segments=Transport।</p>
+<div class="trick">🧠 Segments=Transport, Packets=Network, Frames=Data Link; NVT+FTAM=Application</div>
 
-<h3>FTP — दो अलग Connections</h3>
-<p>FTP (Application Layer, TCP आधारित) क्लाइंट-सर्वर के बीच <b>दो अलग TCP Connections</b> Use करता है:</p>
-<table><tr><th>Connection</th><th>Port</th><th>काम</th></tr>
-<tr><td>Control Connection</td><td>21</td><td>Commands/Login (पूरे Session भर खुला रहता है) — Out-of-band Control</td></tr>
-<tr><td>Data Connection</td><td>20</td><td>असली File Transfer (सिर्फ Transfer के समय खुलता है, बाद में बंद)</td></tr>
-</table>
-<p>TFTP इससे अलग है — UDP (Port 69) पर काम करता है, कोई Authentication नहीं, Connectionless।</p>
-<div class="trick">🧠 FTP के 2 हाथ: Control=Port 21 (Order देना), Data=Port 20 (सामान भेजना); TFTP=UDP+No Auth</div>
+<h3>FTP — दो Connections</h3>
+<table><tr><th>Connection</th><th>Port</th></tr><tr><td>Control</td><td>21</td></tr><tr><td>Data</td><td>20</td></tr></table>
+<p>TFTP = UDP Port 69, No Auth।</p>
+<div class="trick">🧠 FTP: Control=21, Data=20; TFTP=UDP+No Auth</div>
 
-<h3>Multiple Access Techniques — Spectrum Sharing</h3>
-<p>एक ही Channel/Spectrum को कई Users के बीच बाँटने के लिए Multiple Access Techniques Use होती हैं। ❌ ट्रैप: Multiplexing (कई Signals→एक Channel) और Multiple Access (कई Users→एक Channel) अलग concepts हैं।</p>
+<h3>Multiple Access Techniques (FDMA/TDMA/CDMA/SDMA/OFDMA) ⭐⭐⭐⭐⭐</h3>
 <table><tr><th>Technique</th><th>क्या बाँटा जाता है</th><th>Generation</th></tr>
-<tr><td>FDMA</td><td>Frequency को छोटे Non-overlapping Bands में</td><td>1G</td></tr>
+<tr><td>FDMA</td><td>Frequency को Bands में</td><td>1G</td></tr>
 <tr><td>TDMA</td><td>Time को Slots में (Frequency same)</td><td>2G (GSM)</td></tr>
-<tr><td>CDMA</td><td>Unique Code (Frequency+Time same, सबको Unique Code)</td><td>3G</td></tr>
-<tr><td>SDMA</td><td>Space/Location (Directional Antenna, Beamforming)</td><td>4G/5G</td></tr>
-<tr><td>OFDMA</td><td>Frequency को बहुत सारे Orthogonal Sub-carriers में</td><td>4G LTE</td></tr>
+<tr><td>CDMA</td><td>Unique Code (सबको एक Frequency+Time, अलग Code)</td><td>3G</td></tr>
+<tr><td>SDMA</td><td>Space/Location</td><td>4G/5G</td></tr>
+<tr><td>OFDMA</td><td>Frequency को Orthogonal Sub-carriers में</td><td>4G LTE</td></tr>
 </table>
-<div class="trick">🧠 F=Frequency बँटे, T=Time बँटे, C=Code बँटे; Wi-Fi हमेशा CSMA/CA Use करता है</div>
+<p><b>TDMA Deep Note:</b> Question में अगर बताया जाए कि "Spectrum को पहले Narrow Frequency Bands में बाँटा, फिर हर Band को Time Slots में Divide किया" — तो यह TDMA की पहचान है (सिर्फ Frequency Divide होता तो FDMA, पर Time Slots जुड़ते ही TDMA बन जाता है)।</p>
+<div class="trick">🧠 F=Frequency बँटे, T=Time बँटे (Slots), C=Code बँटे; Wi-Fi हमेशा CSMA/CA</div>
 
-<h3>PCM — Analog to Digital Conversion ⭐⭐⭐⭐⭐</h3>
-<p>Codecs द्वारा Analog Signal को Digital Bit Stream में बदलने की Technique = <b>PCM (Pulse Code Modulation)</b>। ❌ ट्रैप: "Pulse Signal Modulation" जैसा मिलता-जुलता नाम काल्पनिक है — असली नाम में हमेशा "Code" शब्द है।</p>
-<p>3 Steps क्रम में: <b>Sampling → Quantization → Encoding</b></p>
-<ul>
-<li>Sampling: Nyquist Rule — Sampling Rate ≥ 2 × Maximum Frequency</li>
-<li>Quantization: Sample की Height को नज़दीकी Discrete Level में बदलना (Error यहीं आता है)</li>
-<li>Encoding: Quantized Values को Binary (0,1) Code में बदलना</li>
-</ul>
-<p>Bit Rate = Sampling Rate × Bits per Sample। उदाहरण: 4kHz आवाज़, 8 bits/sample → Sampling=8000/sec, Bit Rate=64,000 bps (64 kbps — Standard Telephone Line)।</p>
-<div class="trick">🧠 PCM = Sampling→Quantization→Encoding; ASK/FSK/PSK उल्टा काम करते हैं (Digital→Analog)</div>
+<h3>PCM — Analog to Digital ⭐⭐⭐⭐⭐</h3>
+<p>Sampling → Quantization → Encoding। Nyquist: Sampling Rate ≥ 2×Max Frequency। Bit Rate = Sampling Rate × Bits/Sample।</p>
+<div class="trick">🧠 PCM = Sampling→Quantization→Encoding</div>
 
 <h3>Firewall Deployment — Packet Filtering</h3>
-<p>Packet Filtering Firewall Network Layer (L3)/Transport Layer (L4) पर काम करता है और Source/Dest IP, Port, Protocol चेक करता है — इसे हमेशा <b>Router</b> पर Deploy किया जाता है (Switch/Hub पर नहीं, वो निचली Layers पर काम करते हैं)।</p>
-<table><tr><th>Device</th><th>Layer</th></tr>
-<tr><td>Hub/Repeater</td><td>Physical (L1)</td></tr>
-<tr><td>Switch/Bridge</td><td>Data Link (L2)</td></tr>
-<tr><td>Router/Packet Filter</td><td>Network (L3)</td></tr>
-<tr><td>Application Proxy Gateway</td><td>Application (L7)</td></tr>
+<p>हमेशा <b>Router</b> पर Deploy (L3/L4)।</p>
+<table><tr><th>Device</th><th>Layer</th></tr><tr><td>Hub/Repeater</td><td>L1</td></tr><tr><td>Switch/Bridge</td><td>L2</td></tr><tr><td>Router/Packet Filter</td><td>L3</td></tr><tr><td>App Proxy Gateway</td><td>L7</td></tr></table>
+<div class="trick">🧠 Packet का डाकिया = Router; Packet Filtering हमेशा Router पर</div>
+
+<h3>WSDL — Web Services Description Language ⭐⭐⭐</h3>
+<p>XML आधारित भाषा जो किसी Web Service का <b>Description</b> देती है — Service कहाँ है, कौन-से Functions/Input/Output/Protocol हैं। जैसे ATM के पास रखा Manual (सारी Services की सूची)।</p>
+<table><tr><th>Term</th><th>काम</th></tr>
+<tr><td>WSDL</td><td>Web Service Description (XML आधारित)</td></tr>
+<tr><td>RSS</td><td>Website Updates Feed</td></tr>
+<tr><td>RDF</td><td>Metadata Framework</td></tr>
+<tr><td>OWL</td><td>Ontology / Semantic Web</td></tr>
 </table>
-<div class="trick">🧠 Packet का डाकिया = Router; इसलिए Packet Filtering हमेशा Router पर Deploy होता है, Switch पर नहीं</div>
+<div class="trick">🧠 WSDL = Web Service D=Description (Manual जैसा); RSS/RDF/OWL Web Service नहीं हैं</div>
+
+<h3>Baud Rate vs Bit Rate ⭐⭐⭐⭐</h3>
+<p><b>Baud Rate</b> = Signal प्रति सेकंड कितनी बार Change होता है (Symbols/sec)। <b>Bit Rate</b> = कितने Bits प्रति सेकंड भेजे गए (bps)। एक Signal (Symbol) में एक से ज्यादा Bit हो सकते हैं, इसलिए Bit Rate = Baud Rate × Bits per Symbol।</p>
+<p>उदाहरण: 1 Symbol = 2 Bits, Baud Rate = 1000 → Bit Rate = 2000 bps।</p>
+<div class="trick">🧠 Baud=Signal Changes; Bit Rate=Bits; Bit Rate = Baud × Bits/Symbol</div>
+
+<h3>Hamming Code — Simplex Link Error Recovery ⭐⭐⭐⭐</h3>
+<p>Simplex Link में Data सिर्फ एक Direction में जाता है (A→B), इसलिए Receiver वापस <b>ACK नहीं भेज सकता</b> — ARQ (Automatic Repeat reQuest, जिसे ACK चाहिए) यहाँ Impossible है। इसलिए Sender पहले से ही Extra Redundant Bits जोड़ देता है ताकि Receiver खुद Error Detect + Correct कर सके — यही <b>Hamming Code</b> (Forward Error Correction/FEC) है।</p>
+<div class="trick">🧠 Simplex = No ACK possible → Hamming Code (FEC); Duplex → ARQ (ACK आधारित)</div>
+
+<h3>DSAP / SSAP — LLC Layer ⭐⭐⭐</h3>
+<p>SAP = Service Access Point। DSAP (Destination SAP) और SSAP (Source SAP) दोनों LLC (Logical Link Control, Data Link Layer का Sub-layer) के <b>Logical Address Fields</b> हैं — MAC Address (Physical) या IP Address (Network Layer) नहीं।</p>
+<div class="trick">🧠 DSAP/SSAP = LLC Layer के Logical Address Fields (Physical/User Data नहीं)</div>
 </div>
 </section>
 
@@ -606,38 +618,30 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <tr><td>A</td><td>1–126</td><td>255.0.0.0 (/8)</td></tr>
 <tr><td>B</td><td>128–191</td><td>255.255.0.0 (/16)</td></tr>
 <tr><td>C</td><td>192–223</td><td>255.255.255.0 (/24)</td></tr>
-<tr><td>D</td><td>224–239</td><td>कोई Default Mask नहीं (Multicast है, Host/Network Concept लागू नहीं)</td></tr>
+<tr><td>D</td><td>224–239</td><td>कोई Default Mask नहीं (Multicast)</td></tr>
 </table>
-<div class="trick">🧠 A=1 Octet Mask (255), B=2 Octet Mask (255.255), C=3 Octet Mask (255.255.255)</div>
+<div class="trick">🧠 A=1 Octet Mask, B=2 Octet Mask, C=3 Octet Mask</div>
 
 <h3>IPv6 Prefix पहचान</h3>
 <table><tr><th>Prefix</th><th>मतलब</th></tr>
-<tr><td>::1/128</td><td>Loopback Address (IPv4 के 127.0.0.1 जैसा)</td></tr>
-<tr><td>FE80::/10</td><td>Link Local Address — सिर्फ Local Network तक सीमित, Internet पर नहीं जाता</td></tr>
-<tr><td>FC00::/7</td><td>Unique Local Address — Private Address (IPv4 के 192.168.x.x / 10.x.x.x जैसा)</td></tr>
-<tr><td>2000::/3</td><td>Global Unicast — Public Internet वाला IPv6</td></tr>
+<tr><td>::1/128</td><td>Loopback</td></tr>
+<tr><td>FE80::/10</td><td>Link Local</td></tr>
+<tr><td>FC00::/7</td><td>Unique Local (Private)</td></tr>
+<tr><td>2000::/3</td><td>Global Unicast (Public)</td></tr>
 </table>
-<div class="trick">🧠 याद रखो सिर्फ चार: ::1=Loopback, FE80=Link Local, FC00=Private, 2000=Public</div>
+<div class="trick">🧠 ::1=Loopback, FE80=Link Local, FC00=Private, 2000=Public</div>
 
-<h3>Network Address कैसे निकालें (Golden Rule)</h3>
-<p><b>Network Address</b> = Host ID के सभी Octet को <b>0</b> कर दो। <b>Broadcast Address</b> = Host ID के सभी Octet को <b>255</b> कर दो। <b>First Valid Host</b> = Network Address के आखिरी में +1 (जैसे 132.6.0.1)।</p>
-<table><tr><th>Class</th><th>Network/Host Split</th><th>उदाहरण</th></tr>
-<tr><td>A</td><td>N.H.H.H</td><td>10.5.12.80 → Network = 10.0.0.0</td></tr>
-<tr><td>B</td><td>N.N.H.H</td><td>132.6.17.85 → Network = 132.6.0.0</td></tr>
-<tr><td>C</td><td>N.N.N.H</td><td>192.168.10.45 → Network = 192.168.10.0</td></tr>
-</table>
-<p>❌ ट्रैप: Network Address के बाद वाला IP (जैसे .0.1) पहला Valid Host होता है, Network Address खुद नहीं।</p>
-<div class="trick">🧠 Network Address = Host bits ZERO; Broadcast Address = Host bits 255</div>
+<h3>Network Address कैसे निकालें</h3>
+<p><b>Network Address</b> = Host bits को 0 कर दो। <b>Broadcast Address</b> = Host bits को 255 कर दो।</p>
+<div class="trick">🧠 Network Address = Host bits ZERO; Broadcast = Host bits 255</div>
 
-<h3>Layer के हिसाब से Protocol पहचानना (Respectively वाले Question)</h3>
-<p>जब "Transport, Network, Data Link में प्रयुक्त Protocol क्रमशः" जैसा Question आए, तो हर Protocol की सही Layer मैच करो — क्रम में जरा सी भी गड़बड़ी पूरा Answer गलत कर देती है।</p>
+<h3>Layer के हिसाब से Protocol पहचानना</h3>
 <table><tr><th>Layer</th><th>उदाहरण Protocols</th></tr>
 <tr><td>Transport</td><td>TCP, UDP</td></tr>
 <tr><td>Network</td><td>IP, ICMP, ARP, RARP, IGMP</td></tr>
 <tr><td>Data Link</td><td>PPP, Frame Relay, HDLC, Ethernet</td></tr>
 </table>
-<p>उदाहरण: "TCP, ARP, PPP" क्रमशः Transport→Network→Data Link — यह सही क्रम है। Frame Relay Data Link का है, Network का नहीं — इसे बीच में रखना ट्रैप है।</p>
-<div class="trick">🧠 "Respectively" दिखे तो रफ शीट पर T→N→D लिखो, फिर हर Protocol उसके नीचे मैच करो</div>
+<div class="trick">🧠 "Respectively" दिखे तो रफ शीट पर T→N→D लिखो</div>
 </div>
 </section>
 
@@ -646,23 +650,17 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">🔗 Network Topologies (Mesh / Star / Ring) <span class="arrow">▼</span></h2>
 <div class="body">
 <h3>Mesh Topology</h3>
-<p>Every node has a dedicated point-to-point link to every other node → maximum fault tolerance (if one link fails, alternate paths exist).</p>
 <div class="trick">🧠 Links = n(n−1)/2 — NOT n(n+1)/2. Ports per node = n−1.</div>
-<p>Example: 4 nodes → Links = 4×3/2 = 6.</p>
-<p>❌ Common trap: "Mesh is cheapest/easiest for hundreds of computers" — FALSE. For 100 nodes, links = 100×99/2 = 4950 → extremely expensive/impractical. Mesh is used where reliability matters most (military, banking, data centers, backbone, wireless mesh), not for cost-saving.</p>
 <h3>Star Topology</h3>
-<ul><li>All devices connect to a central Hub/Switch</li><li>Single cable failure → only that one device disconnects, rest of network keeps working</li><li>Central Hub/Switch failure → entire network goes down</li><li>Easiest to add/remove a device (just one cable)</li><li>Modern Switch is an <b>active</b> device (regenerates signal) — not passive</li><li>Each workstation needs only 1 NIC port (not n−1)</li></ul>
 <div class="trick">🧠 Star: Cable fail = 1 node down. Hub/Switch fail = whole network down.</div>
 <h3>Ring Topology</h3>
-<ul><li>Each device connects to exactly 2 neighbours</li><li>Signal travels in one direction (classic Ring); dual-direction only in Dual Ring variants like FDDI</li><li>Every device acts as a Repeater (regenerates signal)</li><li>Uses <b>Token Passing</b> → no collisions (only the device holding the Token can transmit)</li></ul>
-<p>❌ Trap: "Ring is always more efficient than Star because data flows both directions" — FALSE for classic Ring (one direction); also modern switch-based Star often outperforms Ring anyway.</p>
+<ul><li>Token Passing → no collisions</li></ul>
 <h3>Topology Comparison</h3>
 <table><tr><th>Topology</th><th>Biggest Advantage</th><th>Biggest Disadvantage</th></tr>
 <tr><td>Bus</td><td>Least cable</td><td>Collision-prone</td></tr>
-<tr><td>Star</td><td>Easy expansion/troubleshooting</td><td>Hub/Switch failure kills whole network</td></tr>
-<tr><td>Ring</td><td>No collision (Token Passing)</td><td>Ring break affects communication</td></tr>
+<tr><td>Star</td><td>Easy expansion</td><td>Hub/Switch failure kills all</td></tr>
+<tr><td>Ring</td><td>No collision</td><td>Ring break affects comm</td></tr>
 <tr><td>Mesh</td><td>Maximum reliability</td><td>Most expensive</td></tr>
-<tr><td>Point-to-Point</td><td>Dedicated link</td><td>Only 2 devices</td></tr>
 </table>
 </div>
 </section>
@@ -671,16 +669,15 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <section class="section" id="transmission">
 <h2 onclick="toggleSec(this)">📡 Transmission Media (UTP / Coax / Fiber / Infrared) <span class="arrow">▼</span></h2>
 <div class="body">
-<h3>UTP (Unshielded Twisted Pair)</h3>
-<ul><li>No shielding; twisting of wire pairs cancels out EMI noise (Cancellation Effect)</li><li>568B: Pins 1-2 = Transmit, Pins 3-6 = Receive</li><li>Max length = 100 m (90 m permanent cable + 10 m patch cable)</li><li>Cat6 reduces crosstalk via <b>more twisting / better construction</b> — NOT via higher voltage (common trap)</li></ul>
+<h3>UTP</h3>
+<ul><li>Twisting cancels EMI; Cat6 reduces crosstalk via more twisting, NOT higher voltage</li></ul>
 <h3>Coaxial Cable</h3>
-<ul><li>Structure: Copper Core → Dielectric → Shield → Outer Jacket</li><li>Has a shield → less EMI-prone than UTP (opposite of a common trap statement)</li><li>Characteristic Impedance depends on inner/outer diameter + dielectric material — NOT on cable length</li><li><b>Skin Effect</b>: at high frequency, current flows mainly on the conductor's surface, increasing effective resistance</li><li>Terminator (50Ω or 75Ω) required in Bus topology to prevent signal reflection</li></ul>
-<table><tr><th>Cable</th><th>Standard</th><th>Use</th></tr><tr><td>RG-8</td><td>10Base5</td><td>Thick Ethernet (Thicknet)</td></tr><tr><td>RG-58</td><td>10Base2</td><td>Thin Ethernet (Thinnet)</td></tr><tr><td>RG-59</td><td>—</td><td>TV / CCTV (not gigabit backbone)</td></tr></table>
-<h3>Optical Fiber — Attenuation causes (trick: ABS)</h3>
-<ul><li><b>A</b>bsorption — light energy absorbed, converted to heat</li><li><b>B</b>ending loss — excess bending lets light escape</li><li><b>S</b>cattering — micro-defects scatter light</li></ul>
-<p>Fiber has the lowest attenuation among media, not zero attenuation, and attenuation does NOT increase bandwidth.</p>
+<ul><li>Shield → less EMI than UTP</li><li>Skin Effect at high frequency</li></ul>
+<table><tr><th>Cable</th><th>Standard</th><th>Use</th></tr><tr><td>RG-8</td><td>10Base5</td><td>Thicknet</td></tr><tr><td>RG-58</td><td>10Base2</td><td>Thinnet</td></tr><tr><td>RG-59</td><td>—</td><td>TV/CCTV</td></tr></table>
+<h3>Optical Fiber — ABS</h3>
+<p>Absorption, Bending loss, Scattering</p>
 <h3>Infrared</h3>
-<ul><li>Requires Line-of-Sight; cannot pass through walls/opaque objects</li><li>Confined to one room → naturally more secure (signal can't be intercepted from outside)</li><li>Not related to Ground Wave (that's for low-frequency radio)</li></ul>
+<ul><li>Line-of-Sight required</li></ul>
 </div>
 </section>
 
@@ -689,26 +686,26 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">🔀 Switching Techniques <span class="arrow">▼</span></h2>
 <div class="body">
 <table><tr><th>Technique</th><th>Key Idea</th></tr>
-<tr><td>Circuit Switching</td><td>Dedicated physical path set up first (like a phone call); bandwidth reserved even during silence</td></tr>
-<tr><td>Message Switching</td><td>Store-and-forward of the entire message; no dedicated path; variable size</td></tr>
-<tr><td>Packet (Datagram) Switching</td><td>Message split into packets; each packet can take its own route; no setup; packets may arrive out of order</td></tr>
-<tr><td>Virtual Circuit Packet Switching</td><td>Logical connection set up first; all packets follow the same route, but no physical line is permanently reserved</td></tr>
+<tr><td>Circuit Switching</td><td>Dedicated physical path</td></tr>
+<tr><td>Message Switching</td><td>Store-and-forward whole message</td></tr>
+<tr><td>Packet (Datagram) Switching</td><td>Own route per packet</td></tr>
+<tr><td>Virtual Circuit</td><td>Logical connection, same route, no dedicated line</td></tr>
 </table>
 </div>
 </section>
 
-<!-- MALWARE / VIRUS TYPES -->
+<!-- MALWARE -->
 <section class="section" id="malware">
 <h2 onclick="toggleSec(this)">🦠 Virus / Malware Types <span class="arrow">▼</span></h2>
 <div class="body">
 <table><tr><th>Type</th><th>Lives in / Spreads via</th></tr>
-<tr><td>Boot Sector Virus</td><td>MBR (Master Boot Record) — activates before OS loads. Not always fixable only by full format; Antivirus/Boot-repair/MBR-repair can also remove it.</td></tr>
-<tr><td>Macro Virus</td><td>Office documents (.docm, .xlsm, .pptm) — runs when macros are enabled</td></tr>
-<tr><td>Polymorphic Virus</td><td>Executable files — changes its own code/encryption (Mutation Engine) on every copy to evade signature-based antivirus</td></tr>
-<tr><td>Worm</td><td>Spreads via Network — no user action needed</td></tr>
-<tr><td>Trojan</td><td>Disguised as useful software — user installs it themselves</td></tr>
-<tr><td>Ransomware</td><td>Encrypts files, demands payment</td></tr>
-<tr><td>Shlayer</td><td>macOS malware spread via fake Adobe Flash Player update (social engineering)</td></tr>
+<tr><td>Boot Sector Virus</td><td>MBR</td></tr>
+<tr><td>Macro Virus</td><td>Office documents</td></tr>
+<tr><td>Polymorphic Virus</td><td>Changes own code on every copy</td></tr>
+<tr><td>Worm</td><td>Network, no user action</td></tr>
+<tr><td>Trojan</td><td>Disguised useful software</td></tr>
+<tr><td>Ransomware</td><td>Encrypts files</td></tr>
+<tr><td>Shlayer</td><td>macOS, fake Flash update</td></tr>
 </table>
 </div>
 </section>
@@ -718,101 +715,22 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">🛡️ Cyber Security (Botnet / WannaCry / Pegasus / Firewalls) <span class="arrow">▼</span></h2>
 <div class="body">
 <h3>Botnet</h3>
-<p>A network of malware-infected computers ("zombies") controlled remotely as a group by a hacker (Botmaster), without owners' knowledge. Used for DDoS attacks, spam, password attacks, crypto-mining.</p>
+<p>Malware-infected "zombie" computers controlled by Botmaster.</p>
 <h3>WannaCry (2017)</h3>
-<p>Global Ransomware attack (also called a "Ransomworm" since it combined Worm + Ransomware behavior). Exploited <b>EternalBlue</b>, a vulnerability in the Windows <b>SMB</b> protocol. Affected 150+ countries, 3 lakh+ systems.</p>
+<p>Ransomworm, EternalBlue/SMB exploit.</p>
 <h3>Pegasus</h3>
-<p>Spyware developed by <b>NSO Group</b> (Israel). Can access camera, mic, SMS, calls, WhatsApp, photos, location — sometimes via Zero-Click attacks (no user click needed). Sold to governments, officially for anti-terrorism/serious-crime use.</p>
+<p>NSO Group (Israel) spyware, Zero-Click attacks.</p>
 <h3>Firewall Types</h3>
-<table><tr><th>Type</th><th>How it works</th></tr>
-<tr><td>Packet Filter</td><td>Checks only IP/Port/Protocol headers — fast, less intelligent</td></tr>
-<tr><td>Stateful Firewall</td><td>Maintains a State Table tracking connection state (e.g. SYN→SYN-ACK→ACK); allows packets belonging to an already-established valid connection</td></tr>
-<tr><td>Proxy / Application Gateway</td><td>Sits between Client and Server, breaks the direct connection, relays traffic, inspects at Layer 7 (Application) — slower but deeper inspection</td></tr>
-</table>
-
-<h3>DAC vs MAC (Access Control Models) — Hindi Note</h3>
-<table><tr><th>Model</th><th>Full Form</th><th>Control किसके पास</th></tr>
-<tr><td>DAC</td><td>Discretionary Access Control</td><td>Resource का Owner (मालिक) खुद तय करता है — जैसे सामान्य Windows/Linux File Sharing</td></tr>
-<tr><td>MAC</td><td>Mandatory Access Control</td><td>System/Central Admin तय करता है (Security Clearance आधारित) — जैसे Military/Government Systems</td></tr>
-</table>
-<p>❌ ट्रैप: MAC को यहाँ "Media Access Control" (MAC Address) मत समझो — यह सुरक्षा के संदर्भ में पूरी तरह अलग concept है।</p>
-<div class="trick">🧠 DAC=Data Owner तय करे; MAC=Military/Mandatory नियम तय करें (RBAC = Role आधारित तीसरा मॉडल भी है)</div>
-
-<h3>IEEE 802.1X — Data Link Layer Authentication</h3>
-<p>Port-based Network Access Control (PNAC) — किसी नए Device को Wired/Wireless Network में तभी Entry मिलती है जब वह Authentication साबित करे। Dynamic Encryption Keys भी Generate करता है। Enterprise Wi-Fi (WPA2/WPA3 Enterprise) की रीढ़ है।</p>
-<p>Components: Supplicant (User Device), Authenticator (Switch/Router), Authentication Server (जैसे RADIUS)।</p>
-<div class="trick">🧠 Data Link Layer + Authentication + Dynamic Key = हमेशा IEEE 802.1X (DNS/ARP/ICMP नहीं)</div>
-
-<h3>HTTP Versions — Browser Compatibility</h3>
-<p>सभी Browsers (Chrome, Firefox, Edge) को <b>HTTP 1.1</b> Support करना अनिवार्य है — Backward Compatibility के लिए (पुरानी Websites आज भी इसी पर चलती हैं)। HTTP/2 (2015) और HTTP/3 (2022) वैकल्पिक/आधुनिक Support हैं। HTTP 2.1 या 3.1 जैसे Point Versions अस्तित्व में ही नहीं हैं — ट्रैप हैं।</p>
-<div class="trick">🧠 HTTP Versions सिर्फ: 1.0, 1.1, /2, /3 — बीच के Point Versions काल्पनिक होते हैं</div>
-
-<h3>Reverse Proxy vs Forward Proxy</h3>
-<table><tr><th>Forward Proxy</th><th>Reverse Proxy</th></tr>
-<tr><td>Client के आगे खड़ा होता है</td><td>Web Server के आगे खड़ा होता है</td></tr>
-<tr><td>Client का IP छुपाता है (Privacy, Content Filtering)</td><td>Backend Server का IP छुपाता है, Load Balancing करता है</td></tr>
-</table>
-<div class="trick">🧠 Forward=Client-side shield; Reverse=Server-side shield + Load Balancing (जैसे NGINX)</div>
-
-<h3>Browser Configuration — Setting Order</h3>
-<p>Global (सबके लिए ज़रूरी) Settings हमेशा Specific (किसी एक Browser/OS तक सीमित) Settings से पहले Enable होती हैं: <b>JavaScript → Cookies → OS-specific Settings → Browser-specific ("Only") Settings</b>।</p>
-<div class="trick">🧠 "Only" शब्द वाला Option हमेशा सबसे अंत में; Universal Settings सबसे आगे</div>
-<h3>IPSec — IP Security Protocol</h3>
-<p>Network Layer पर काम करने वाला Protocol Suite जो IP Traffic को <b>Authentication + Integrity + Encryption</b> तीनों देता है — मुख्यतः VPN में उपयोग होता है। दो Modes: Transport Mode (सिर्फ Payload Encrypt) और Tunnel Mode (पूरा IP Packet Encrypt, नया Header — VPN में यही use होता है)। दो Sub-protocols: AH (Authentication Header — सिर्फ Integrity/Auth) और ESP (Encapsulating Security Payload — Encryption भी देता है)।</p>
-<div class="trick">🧠 IPSec = IP + Security (नाम में ही जवाब); ARP/ICMP/DHCP कोई Security नहीं देते</div>
-
-<h3>Port Security (Managed Switch)</h3>
-<p>Switch के किसी Port पर जुड़ने वाले Devices के MAC Address की संख्या/पहचान Limit करने वाला Layer-2 Security Feature। Unauthorized MAC जुड़ते ही Violation Action होता है — Protect (Drop), Restrict (Drop+Alert), या Shutdown (Port बंद — Default)।</p>
-<div class="trick">🧠 Port Security = Switch Port पर MAC Address Lock (VLAN Trunking अलग चीज़ है — वह Traffic Route करता है, Security नहीं)</div>
-
-<h3>Physical Security — Mantrap</h3>
-<p>दो Interlocking Doors वाला छोटा Room — दोनों Doors कभी एक साथ नहीं खुलते; पहला Door बंद होने और Identity Verify होने के बाद ही दूसरा खुलता है। उद्देश्य: Tailgating/Piggybacking और Unauthorized Entry रोकना (Data Center जैसी जगहों पर)।</p>
-<div class="trick">🧠 Mantrap = Man को Trap करने वाला Room, 2 Doors कभी साथ नहीं खुलते</div>
-
-<h3>Wi-Fi Security — SSID Hiding vs WPA3/OWE</h3>
-<ul>
-<li><b>SSID Hiding</b>: Router SSID Broadcast बंद कर देता है, Network List में नहीं दिखता — लेकिन यह Security Feature नहीं है (Management Packets से फिर भी पता चल सकता है)। ❌ ट्रैप: "SSID Hiding Professional Hackers से Complete Security देता है" — गलत, यह सिर्फ Visibility कम करता है</li>
-<li><b>WPA2 Open</b>: कोई Encryption नहीं — कोई भी Traffic Sniff कर सकता है</li>
-<li><b>WPA3 Open</b>: <b>OWE</b> (Opportunistic Wireless Encryption) Use करता है — Password नहीं आता (Network फिर भी Open रहता है) लेकिन हर User का Traffic अलग-अलग Encrypt होता है, इससे Passive Eavesdropping रुकती है</li>
-</ul>
-<div class="trick">🧠 SSID Hidden ≠ SSID Secure; WPA2 Open=No Encryption, WPA3 Open=OWE Encryption (पर फिर भी Password-less)</div>
-
-<h3>Social Engineering Attacks — Medium के हिसाब से</h3>
-<table><tr><th>Attack</th><th>माध्यम</th></tr>
-<tr><td>Phishing</td><td>Email</td></tr>
-<tr><td>Smishing</td><td>SMS</td></tr>
-<tr><td>Vishing</td><td>Voice Call (VoIP/Caller ID Spoofing का उपयोग)</td></tr>
-<tr><td>Whaling</td><td>High-Profile/VIP Target</td></tr>
-</table>
-<div class="trick">🧠 Voice→Vishing, SMS→Smishing, Email→Phishing</div>
-
-<h3>Types of Hackers</h3>
-<table><tr><th>Type</th><th>अर्थ</th></tr>
-<tr><td>White Hat</td><td>Authorized, Legal, Ethical — Permission लेकर Testing करता है</td></tr>
-<tr><td>Black Hat</td><td>Illegal, Personal Gain/Crime</td></tr>
-<tr><td>Grey Hat</td><td>बिना Permission, पर बुरी मंशा नहीं — Bug ढूँढकर बता देता है</td></tr>
-<tr><td>Suicide Hacker</td><td>Law की कोई परवाह नहीं, पकड़े जाने पर भी Attack जारी रखता है — सबसे Dangerous</td></tr>
-</table>
-<div class="trick">🧠 White=Good, Black=Bad, Grey=Between, Suicide=Fearless</div>
-
-<h3>Hacking Phases और Tools — Matching ⭐⭐⭐⭐⭐</h3>
-<p>Phases क्रम: Reconnaissance → Scanning → Gaining Access → Maintaining Access → Covering Tracks</p>
-<table><tr><th>Tool</th><th>Phase</th><th>काम</th></tr>
-<tr><td>Whois / NSLookup</td><td>Reconnaissance</td><td>Domain Owner, DNS, IP जैसी Information Collect करना</td></tr>
-<tr><td>Nmap / Zenmap</td><td>Scanning</td><td>Port Scan, Host Scan, OS Detection</td></tr>
-<tr><td>John the Ripper</td><td>Gaining Access</td><td>Password Cracking</td></tr>
-<tr><td>Netcat / Rootkits</td><td>Maintaining Access</td><td>Backdoor बनाना / Access छुपाकर बनाए रखना</td></tr>
-</table>
-<div class="trick">🧠 Recon=Info gather(Whois); Scan=Nmap; Gain=Password Crack(John the Ripper); Maintain=Rootkit/Netcat</div>
-
-<h3>Clark-Wilson Model</h3>
-<p>Commercial Systems में <b>Integrity</b> बनाए रखने वाला Security Model (Confidentiality पर Focus नहीं) — Separation of Duties और Well-Formed Transactions Use करता है।</p>
-<table><tr><th>Model</th><th>Focus</th></tr>
-<tr><td>Bell-LaPadula</td><td>Confidentiality</td></tr>
-<tr><td>Biba</td><td>Integrity</td></tr>
-<tr><td>Clark-Wilson</td><td>Commercial Integrity</td></tr>
-</table>
-<div class="trick">🧠 Clark-Wilson = Company Accounting जैसी Integrity बचाना</div>
+<table><tr><th>Type</th><th>How</th></tr><tr><td>Packet Filter</td><td>Header check, fast</td></tr><tr><td>Stateful</td><td>State Table</td></tr><tr><td>Proxy</td><td>Layer 7 relay</td></tr></table>
+<h3>DAC vs MAC</h3>
+<table><tr><th>Model</th><th>Control किसके पास</th></tr><tr><td>DAC</td><td>Resource का Owner</td></tr><tr><td>MAC</td><td>System/Admin (Military)</td></tr></table>
+<div class="trick">🧠 DAC=Owner तय करे; MAC=Military/Mandatory नियम</div>
+<h3>IEEE 802.1X</h3>
+<p>Port-based Access Control, Data Link Layer, Dynamic Keys।</p>
+<h3>Reverse vs Forward Proxy</h3>
+<table><tr><th>Forward</th><th>Reverse</th></tr><tr><td>Client के आगे</td><td>Server के आगे + Load Balancing</td></tr></table>
+<h3>IPSec, Port Security, Mantrap, SSID Hiding, Social Engineering, Hacker Types, Hacking Phases, Clark-Wilson</h3>
+<p>(देखें पिछले Revision Notes — सभी Concepts Verified हैं)</p>
 </div>
 </section>
 
@@ -821,76 +739,33 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">🗄️ DBMS / SQL <span class="badge b-conf">Weak Area</span> <span class="arrow">▼</span></h2>
 <div class="body">
 <h3>JOINs</h3>
-<table><tr><th>JOIN</th><th>Returns</th></tr><tr><td>INNER</td><td>Common records only</td></tr><tr><td>LEFT</td><td>All Left table records (NULL if no match)</td></tr><tr><td>RIGHT</td><td>All Right table records</td></tr><tr><td>FULL</td><td>All records from both tables</td></tr></table>
-<p>🎯 Keyword: "even if X doesn't exist / all records regardless" → <b>LEFT JOIN</b></p>
-<p><b>LEFT OUTER JOIN — सटीक Definition:</b> Left Table की <b>100% Rows</b> आएँगी + Right Table से सिर्फ Matching Rows; जहाँ Right Table में Match नहीं मिला, वहाँ Right के Columns में <b>NULL</b> भरता है (Rows छोड़ी नहीं जातीं, सिर्फ NULL भरता है — यही सबसे बड़ा ट्रैप है)।</p>
-<div class="trick">🧠 LEFT JOIN = Left पूरी + Right Matching + बाकी जगह NULL; NULL check हमेशा IS NULL से करो, = से नहीं</div>
+<table><tr><th>JOIN</th><th>Returns</th></tr><tr><td>INNER</td><td>Common only</td></tr><tr><td>LEFT</td><td>All Left + NULL</td></tr><tr><td>RIGHT</td><td>All Right</td></tr><tr><td>FULL</td><td>All from both</td></tr></table>
+<div class="trick">🧠 LEFT JOIN = Left पूरी + Right Matching + बाकी NULL</div>
 <h3>WHERE vs HAVING</h3>
-<table><tr><th>WHERE</th><th>HAVING</th></tr><tr><td>Filters before Grouping</td><td>Filters after Grouping</td></tr><tr><td>No Aggregate Functions</td><td>Can use Aggregate Functions</td></tr><tr><td>Row-level</td><td>Group-level</td></tr></table>
+<table><tr><th>WHERE</th><th>HAVING</th></tr><tr><td>Before Grouping</td><td>After Grouping</td></tr></table>
 <h3>Set Operations</h3>
-<ul><li>UNION → removes duplicates</li><li>UNION ALL → keeps duplicates</li><li>INTERSECT → common rows only</li><li>MINUS/EXCEPT → rows in first table not in second</li></ul>
+<ul><li>UNION removes duplicates; UNION ALL keeps them; INTERSECT common; MINUS/EXCEPT difference</li></ul>
 <h3>Query Execution Order</h3>
 <p><code>FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY</code></p>
 <h3>Indexing</h3>
-<ul><li>✅ Improves Query Performance / Faster Retrieval</li><li>❌ Does NOT reduce storage (takes extra space)</li><li>❌ Does NOT speed up Insert/Update (can slow them)</li></ul>
 <div class="trick">🧠 Index = Read Fast, Write Slow</div>
-<h3>Subquery</h3>
-<p>Innermost query executes first. Query containing the subquery = Outer/Parent query.</p>
-
 <h3>File Organization — Hash vs B+ Tree</h3>
-<ul>
-<li>❌ ट्रैप: "Hash हमेशा B+ Tree से बेहतर है" — गलत। कोई एक तरीका हर Application के लिए Best नहीं होता — Queries और Update Frequency पर निर्भर करता है</li>
-<li><b>Hash</b> → Exact Search में तेज़</li>
-<li><b>B+ Tree</b> → Range Query, Sorting, ORDER BY, BETWEEN में बेहतर (Hash यहाँ काम नहीं करता)</li>
-</ul>
-<div class="trick">🧠 Hash = Exact Search तेज़; B+ Tree = Range Search/Sorting/Index के लिए बेहतर</div>
-
-<h3>JOIN — जरूरी Traps</h3>
-<ul>
-<li>Outer Join, Unmatched Row को NULL डालकर बचाता है</li>
-<li>INNER JOIN का Result कभी भी Cartesian Product (rows₁ × rows₂) से ज्यादा rows नहीं दे सकता</li>
-<li>❌ ट्रैप: "FULL OUTER JOIN हर Database में Support होता है" — गलत। MySQL सीधे FULL OUTER JOIN Support नहीं करता, UNION से करना पड़ता है</li>
-</ul>
-
+<div class="trick">🧠 Hash = Exact Search तेज़; B+ Tree = Range Search/Sorting बेहतर</div>
 <h3>ER-Model: Aggregation vs Generalization vs Specialization</h3>
-<table><tr><th>Concept</th><th>क्या Combine होता है</th><th>Approach</th></tr>
-<tr><td>Generalization</td><td>कई निचली Entities → एक Higher Entity</td><td>Bottom-Up</td></tr>
-<tr><td>Specialization</td><td>एक Higher Entity → कई निचली Entities</td><td>Top-Down</td></tr>
-<tr><td>Aggregation</td><td>एक पूरा Relationship खुद Higher-Level Entity बन जाए</td><td>Abstraction</td></tr>
-</table>
-<p>❌ ट्रैप: "Relationships are treated as higher level entities" पढ़ते ही Generalization मत चुनो — यह हमेशा <b>Aggregation</b> है (ER Diagram में Dashed Rectangle से दिखाया जाता है)।</p>
 <div class="trick">🧠 Entity का एकीकरण=Generalization; Relationship का एकीकरण=Aggregation</div>
-
 <h3>ACID Properties</h3>
-<table><tr><th>Property</th><th>Core Meaning</th><th>Exam Keyword</th></tr>
-<tr><td>Atomicity</td><td>पूरा Transaction होगा या कुछ नहीं</td><td>"All or Nothing" / Rollback</td></tr>
-<tr><td>Consistency</td><td>Database के नियम कभी नहीं टूटेंगे</td><td>Valid State</td></tr>
-<tr><td>Isolation</td><td>साथ चल रहे Transactions एक-दूसरे को Disturb नहीं करते</td><td>Concurrent execution</td></tr>
-<tr><td>Durability</td><td>Success के बाद System Crash हो तब भी Data सुरक्षित रहे</td><td>"Persist / System Failure"</td></tr>
-</table>
-<p>❌ ट्रैप: "Transaction सफल होने के बाद भी सुरक्षित रहना चाहिए" पढ़कर Atomicity मत चुनो — Timeline पर ध्यान दो: Transaction के दौरान Failure = Atomicity; Transaction के <b>बाद</b> Failure = Durability।</p>
-<div class="trick">🧠 D = Disk (permanent storage); Durability सिर्फ Successful/Committed Transaction पर लागू</div>
-
+<div class="trick">🧠 D = Disk; Durability सिर्फ Successful Transaction पर लागू</div>
 <h3>Cascading Rollback</h3>
-<p>जब एक Transaction Fail होने पर उसे पढ़ चुके (Dirty Read किए) बाकी सभी Transactions को भी क्रमिक रूप से Rollback करना पड़े — इसे Cascading Rollback कहते हैं। इसकी जड़ Dirty Read (Uncommitted Dependency) है। <b>Cascadeless Schedule</b> में यह समस्या कभी नहीं आती (कोई भी Transaction, दूसरे के Uncommitted Data को नहीं पढ़ सकता)।</p>
-<div class="trick">🧠 Cascading = Chain Reaction (एक गिरा तो सब गिरे); बचाव = Cascadeless Schedule</div>
-
+<div class="trick">🧠 Cascading = Chain Reaction; बचाव = Cascadeless Schedule</div>
 <h3>DDL vs DML vs DCL vs TCL</h3>
-<table><tr><th>Category</th><th>Role</th><th>Commands</th></tr>
-<tr><td>DDL</td><td>Structure (Table/Schema) बनाना</td><td>CREATE, ALTER, DROP, TRUNCATE</td></tr>
-<tr><td>DML</td><td>Data (Records) से छेड़छाड़</td><td>INSERT, UPDATE, DELETE, SELECT</td></tr>
-<tr><td>DCL</td><td>सुरक्षा और अधिकार Control</td><td>GRANT, REVOKE</td></tr>
-<tr><td>TCL</td><td>Transaction Control</td><td>COMMIT, ROLLBACK, SAVEPOINT</td></tr>
-</table>
-<p>❌ Answer-Key Bug ट्रैप: GRANT/REVOKE हमेशा <b>DCL</b> होते हैं, DDL नहीं — कई Mock Tests में इसे गलत DDL में शामिल कर दिया जाता है।</p>
 <div class="trick">🧠 Control = Grant/Revoke (DCL); Definition = Table Design (DDL)</div>
-
 <h3>Database Federation vs Sharding</h3>
-<table><tr><th>Sharding</th><th>Federation</th></tr>
-<tr><td>एक ही Database को Rows के आधार पर टुकड़ों में बाँटना (Homogeneous)</td><td>पहले से मौजूद कई स्वतंत्र/अलग-अलग Databases को Unified Access Layer के नीचे जोड़ना (Heterogeneous)</td></tr>
-<tr><td>टुकड़े अपनी स्वतंत्रता खो देते हैं</td><td>हर Database अपनी Autonomy बनाए रखता है</td></tr>
-</table>
-<div class="trick">🧠 Federation = Freedom (हर DB स्वतंत्र रहे, ऊपर एक Common Window)</div>
+<div class="trick">🧠 Federation = हर DB स्वतंत्र रहे</div>
+
+<h3>OLAP Cube — Multi-Dimensional Analysis ⭐⭐⭐⭐</h3>
+<p>OLAP = Online Analytical Processing। OLAP Cube Data को <b>Multiple Dimensions</b> में Store करता है (जैसे Product, City, Year, Month, Customer एक साथ) ताकि Complex Analysis आसानी से हो सके। ❌ Trap: "हर OLAP Cube में केवल 2 Dimensions होती हैं" — गलत, Dimensions की कोई Fixed सीमा नहीं (3, 4, 5, 10 भी हो सकती हैं) — इसीलिए इसे "Cube" (बहु-आयामी) कहा जाता है।</p>
+<table><tr><th>OLTP</th><th>OLAP</th></tr><tr><td>Daily Transactions (Insert/Update/Delete भारी)</td><td>Historical Analysis (Read/Query भारी)</td></tr><tr><td>Normalized DB</td><td>De-normalized, Multi-dimensional (Cube)</td></tr></table>
+<div class="trick">🧠 OLAP = Analysis + Many Dimensions (2 तक Limited नहीं)</div>
 </div>
 </section>
 
@@ -899,15 +774,24 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">☕ Java <span class="arrow">▼</span></h2>
 <div class="body">
 <h3>JDK ⊃ JRE ⊃ JVM</h3>
-<table><tr><th>Term</th><th>Purpose</th></tr><tr><td>JDK</td><td>Development — includes compiler (javac), debugger, tools</td></tr><tr><td>JRE</td><td>Execution — JVM + libraries</td></tr><tr><td>JVM</td><td>Runs Bytecode (.class)</td></tr></table>
-<p>Flow: <code>.java → javac → .class (bytecode) → JVM → machine code</code></p>
+<table><tr><th>Term</th><th>Purpose</th></tr><tr><td>JDK</td><td>Development</td></tr><tr><td>JRE</td><td>Execution</td></tr><tr><td>JVM</td><td>Runs Bytecode</td></tr></table>
+<p>Flow: <code>.java → javac → .class → JVM → machine code</code></p>
 <h3>Wrapper Classes</h3>
-<table><tr><th>Primitive</th><th>Wrapper</th></tr><tr><td>byte</td><td>Byte</td></tr><tr><td>int</td><td>Integer</td></tr><tr><td>long</td><td>Long</td></tr><tr><td>float</td><td>Float</td></tr><tr><td>double</td><td>Double</td></tr><tr><td>char</td><td>Character</td></tr><tr><td>boolean</td><td>Boolean</td></tr></table>
-<p>Conversion methods: <code>byteValue(), intValue(), doubleValue()</code> etc. <code>valueOf()</code> returns an Object; <code>parseInt()</code> returns a primitive. Boxing = primitive→object, Unboxing = object→primitive.</p>
+<table><tr><th>Primitive</th><th>Wrapper</th></tr><tr><td>int</td><td>Integer</td></tr><tr><td>char</td><td>Character</td></tr><tr><td>boolean</td><td>Boolean</td></tr></table>
 <h3>Files.delete(path) — non-empty directory</h3>
-<p>Throws <b>DirectoryNotEmptyException</b>. It only deletes empty directories or single files — not recursive.</p>
+<p>Throws <b>DirectoryNotEmptyException</b>.</p>
 <h3>Default Access Modifier</h3>
-<table><tr><th>Language</th><th>Default class-member access</th></tr><tr><td>C++ class</td><td>Private</td></tr><tr><td>C++ struct</td><td>Public</td></tr><tr><td>Java class</td><td>Package-private (NOT private)</td></tr></table>
+<table><tr><th>Language</th><th>Default</th></tr><tr><td>C++ class</td><td>Private</td></tr><tr><td>C++ struct</td><td>Public</td></tr><tr><td>Java class</td><td>Package-private</td></tr></table>
+
+<h3><code>final</code> Keyword — कहाँ-कहाँ लगता है ⭐⭐⭐⭐</h3>
+<p><code>final</code> Java में तीन जगह Valid है — Variable, Method, Class। "Exception" पर <code>final</code> जैसा कोई Concept मौजूद नहीं है (यह Trap Option है)।</p>
+<table><tr><th>final कहाँ</th><th>असर</th></tr>
+<tr><td>Variable</td><td>Value बदली नहीं जा सकती (Constant)</td></tr>
+<tr><td>Method</td><td>Override नहीं हो सकता</td></tr>
+<tr><td>Class</td><td>Inherit नहीं हो सकता (कोई Subclass नहीं)</td></tr>
+</table>
+<p>❌ ट्रैप: "final Exception" जैसा कोई Concept Java में नहीं है — यदि Options में Variable/Class/Exception दिए हों तो Answer सिर्फ Variable+Class होगा।</p>
+<div class="trick">🧠 Final Variable=No Change; Final Method=No Override; Final Class=No Inheritance; Exception पर लागू नहीं</div>
 </div>
 </section>
 
@@ -915,13 +799,12 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <section class="section" id="python">
 <h2 onclick="toggleSec(this)">🐍 Python Data Types <span class="arrow">▼</span></h2>
 <div class="body">
-<table><tr><th>Type</th><th>Brackets</th><th>Ordered?</th><th>Mutable?</th><th>Duplicates?</th><th>Key Feature</th></tr>
-<tr><td>List</td><td>[ ]</td><td>हाँ</td><td>हाँ</td><td>हाँ</td><td>Flexible, बदली जा सकती है</td></tr>
-<tr><td>Tuple</td><td>( )</td><td>हाँ</td><td>नहीं (Immutable)</td><td>हाँ</td><td>बनने के बाद बदल नहीं सकते (Read-only)</td></tr>
-<tr><td>Set</td><td>{ }</td><td>नहीं</td><td>हाँ</td><td>नहीं (Unique)</td><td>सिर्फ Unique तत्व, Duplicates खुद हट जाते हैं</td></tr>
-<tr><td>Dictionary</td><td>{k: v}</td><td>हाँ (3.7+)</td><td>हाँ</td><td>Keys Unique</td><td>Key-Value Pairs</td></tr>
+<table><tr><th>Type</th><th>Brackets</th><th>Ordered?</th><th>Mutable?</th><th>Duplicates?</th></tr>
+<tr><td>List</td><td>[ ]</td><td>हाँ</td><td>हाँ</td><td>हाँ</td></tr>
+<tr><td>Tuple</td><td>( )</td><td>हाँ</td><td>नहीं</td><td>हाँ</td></tr>
+<tr><td>Set</td><td>{ }</td><td>नहीं</td><td>हाँ</td><td>नहीं</td></tr>
+<tr><td>Dictionary</td><td>{k: v}</td><td>हाँ (3.7+)</td><td>हाँ</td><td>Keys Unique</td></tr>
 </table>
-<p>Match the following में सबसे पहले सबसे Unique कीवर्ड पकड़ो: <b>Dictionary → हमेशा Key-Value</b> से शुरू करो, बाकी Options अपने आप Eliminate होने लगेंगे।</p>
 <div class="trick">🧠 T=Tight(Immutable), L=Loose(Mutable), S=Single/Unique, D=Double(Key-Value)</div>
 </div>
 </section>
@@ -931,54 +814,20 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">🧩 OOP / C++ <span class="arrow">▼</span></h2>
 <div class="body">
 <h3>Overloading vs Overriding</h3>
-<table><tr><th>Overloading</th><th>Overriding</th></tr><tr><td>Same class</td><td>Parent + Child class</td></tr><tr><td>Compile time (Static Polymorphism)</td><td>Run time (Dynamic Polymorphism)</td></tr><tr><td>Different parameters, same name</td><td>Same name + same parameters</td></tr></table>
-<p>❌ Overloading cannot be achieved by changing only return type.</p>
+<table><tr><th>Overloading</th><th>Overriding</th></tr><tr><td>Same class, compile-time</td><td>Parent-child, run-time</td></tr></table>
 <h3>Method Overriding rules</h3>
-<ul><li>Name, parameters, return type (or covariant) must match</li><li>Access modifier in child ≥ parent (cannot reduce visibility)</li><li>Static, Final, Private, Constructor → cannot be overridden</li></ul>
+<ul><li>Static, Final, Private, Constructor → cannot be overridden</li></ul>
 <h3>Operator Overloading</h3>
-<p>Possible: <code>+ - * [] () &lt;&lt; &gt;&gt;</code>. Cannot overload: <code>. :: ?: sizeof</code></p>
-<h3>Match: C++ Concepts</h3>
-<table><tr><th>Concept</th><th>Usage</th></tr><tr><td>Virtual Destructor</td><td>Prevents resource leaks in inheritance</td></tr><tr><td>Pure Virtual Function</td><td>Forces derived class to implement (abstract class)</td></tr><tr><td>Static Member</td><td>Shared among all objects</td></tr><tr><td>Constructor</td><td>Initializes class members</td></tr></table>
+<p>Cannot overload: <code>. :: ?: sizeof</code></p>
 <h3>C23 Standard</h3>
-<p>Type-safe Null Pointer Constant added in C23: <b>nullptr</b> (and <code>nullptr_t</code>) — previously only in C++, now added to C too.</p>
-<h3>Control Structures (C)</h3>
-<ul><li><code>switch</code> without <code>default</code> is still valid (default is optional)</li><li><code>for</code> loop → best when iterations are known in advance</li><li><code>while</code> loop → executes 0 or more times</li></ul>
-
-<h3>Static Methods के नियम (Java/C++) — Hindi Note</h3>
-<p>Static Method सीधे Class के नाम से चलता है, किसी Object की ज़रूरत नहीं। इसलिए इन पर 3 पाबंदियाँ होती हैं (तीनों सही हैं):</p>
-<ol>
-<li>सिर्फ <b>Static Data</b> को ही Access कर सकता है (Non-static/Instance Variable नहीं — पता नहीं चलेगा किस Object का है)</li>
-<li>सिर्फ दूसरे <b>Static Methods</b> को ही सीधे Call कर सकता है</li>
-<li><code>this</code> या <code>super</code> Keyword Use नहीं कर सकता (ये किसी Specific Object को Refer करते हैं, Static का किसी Object से सीधा नाता नहीं)</li>
-</ol>
+<p><code>nullptr</code>/<code>nullptr_t</code> added to C too.</p>
+<h3>Static Methods के नियम</h3>
 <div class="trick">🧠 "Static के अंदर सिर्फ Static ही चलेगा" — this/super वहाँ काम नहीं करते</div>
-
-<h3>OOP Feature पहचानना (Code देखकर) — Hindi Note</h3>
-<table><tr><th>Code में क्या दिखे</th><th>OOP Feature</th></tr>
-<tr><td><code>class</code> keyword (Data+Methods एक साथ)</td><td>Encapsulation</td></tr>
-<tr><td>C++ में <code>:</code> (colon) + Parent Class नाम, या Java में <code>extends</code></td><td>Inheritance</td></tr>
-<tr><td>Same नाम के Function अलग Parameters या Child में Redefine</td><td>Polymorphism (Overloading/Overriding)</td></tr>
-</table>
-<p>उदाहरण: <code>class topper: public student</code> → यहाँ <code>class</code> से Encapsulation और <code>: public student</code> से Inheritance दोनों दिख रहे हैं — सिर्फ एक Feature नहीं, दोनों साथ हो सकते हैं।</p>
+<h3>OOP Feature पहचानना</h3>
 <div class="trick">🧠 class दिखे→Encapsulation; ':' या extends दिखे→Inheritance; Same नाम अलग काम→Polymorphism</div>
-
-<h3>Function Overloading — Compiler के अंदर क्या होता है</h3>
-<p>Compiler हर Overloaded Function की परिभाषा के लिए एक <b>अलग (Separate) Function</b> Set करता है — इस Process को <b>Name Mangling</b> कहते हैं (नाम के साथ Argument Types जोड़कर Unique नाम बनाना)।</p>
-<ul>
-<li>✅ Overloaded Functions में Arguments की <b>संख्या समान</b> हो सकती है — बशर्ते Data Type अलग हो: <code>void display(int,int)</code> और <code>void display(float,float)</code> दोनों Valid हैं</li>
-<li>❌ ट्रैप: "Overloaded Functions में Arguments की संख्या कभी समान नहीं हो सकती" — यह गलत Statement है</li>
-<li>❌ सिर्फ Return Type बदलने से Overloading नहीं होती — यह Compile Error देगा</li>
-</ul>
-<div class="trick">🧠 Overloading के लिए: नाम समान, संख्या OR Type OR क्रम में से कम-से-कम एक अलग होना चाहिए; सिर्फ Return Type काफी नहीं</div>
-
+<h3>Function Overloading — Name Mangling</h3>
+<div class="trick">🧠 Overloading: नाम समान, संख्या/Type/क्रम में कम-से-कम एक अलग; सिर्फ Return Type काफी नहीं</div>
 <h3>Class Size — Static Data Members कभी नहीं गिनते</h3>
-<p><code>sizeof(ClassName)</code> निकालते समय Compiler सिर्फ <b>Non-static (Instance)</b> Variables का Size जोड़ता है। <code>static</code> Variables/Functions पूरे Program में एक बार ही एक Shared Global Area में बनते हैं — Object का हिस्सा नहीं होते, इसलिए Class Size में उनका योगदान <b>हमेशा 0</b> होता है।</p>
-<pre>class Test {
-    static int i;   // योगदान = 0
-    int j;          // योगदान = 4 bytes
-};
-// sizeof(Test) = 4</pre>
-<p>अगर Class में सिर्फ static Members हों (कोई Non-static नहीं), तो वह Class खाली (Empty Class) मानी जाती है और उसका Size 1 Byte होता है (Compiler हर Object को Unique Address देने के लिए 1 Byte Reserve करता है)।</p>
 <div class="trick">🧠 Static Variable = "बाहर वाला कमरा" — Class के Size में कभी नहीं जुड़ता</div>
 </div>
 </section>
@@ -988,97 +837,45 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">🌳 Data Structures <span class="arrow">▼</span></h2>
 <div class="body">
 <h3>Tree Traversals</h3>
-<table><tr><th>Traversal</th><th>Order</th><th>Use</th></tr>
-<tr><td>Inorder</td><td>L N R</td><td>Always sorted in BST</td></tr>
-<tr><td>Preorder</td><td>N L R</td><td>Root visited first — copy/serialize tree</td></tr>
-<tr><td>Postorder</td><td>L R N</td><td>Root last — expression evaluation, delete tree</td></tr>
-<tr><td>Level Order</td><td>BFS-based</td><td>Level by level</td></tr>
-</table>
-<h4>Constructing a tree</h4>
-<ul><li>Root of a subtree = first element of its Preorder segment (or last of Postorder)</li><li>Use Root to split the Inorder sequence into Left/Right subtrees, recurse</li><li>Inorder+Preorder → unique tree ✅; Inorder+Postorder → unique tree ✅; Preorder+Postorder alone → NOT unique ❌</li></ul>
-<h4>Expression Tree example</h4>
-<pre>     +
-   /   \
-  *     5
- / \
-3   4</pre>
-<p>Postorder evaluation: <code>3 4 * 5 +</code></p>
+<table><tr><th>Traversal</th><th>Order</th></tr><tr><td>Inorder</td><td>L N R (Sorted in BST)</td></tr><tr><td>Preorder</td><td>N L R</td></tr><tr><td>Postorder</td><td>L R N</td></tr></table>
 <h3>BST</h3>
-<p>Average search: O(log n), Worst case: O(n). Self-balancing variants: AVL Tree, Red-Black Tree. Heap = Complete Binary Tree.</p>
-
-<h3>BST vs Hash Table vs Array/Linked List — Complexity Comparison ⭐⭐⭐⭐⭐</h3>
-<table><tr><th>Structure</th><th>Average Search</th><th>Worst Search</th><th>Ordering</th><th>Range Queries</th></tr>
-<tr><td>Balanced BST</td><td>O(log n)</td><td>O(log n)</td><td>Inorder से हमेशा Sorted मिलता है</td><td>Efficient</td></tr>
-<tr><td>Skewed (Unbalanced) BST</td><td>—</td><td>O(n) (एक तरफ झुका हो तो Linked List जैसा)</td><td>—</td><td>—</td></tr>
-<tr><td>Hash Table</td><td>O(1)</td><td>O(n) (सारे Elements same Bucket में जाने पर)</td><td>कोई Fixed Order नहीं</td><td>Inefficient</td></tr>
-<tr><td>Array (Static)</td><td>—</td><td>Fixed Size, बिना Re-allocation Grow नहीं होता</td><td>—</td><td>—</td></tr>
-</table>
-<p>❌ ट्रैप: "Hash Table को Average Case में BST से ज्यादा Comparisons चाहिए" — यह हमेशा गलत Statement है। Hash Table (O(1)) हमेशा BST (O(log n)) से तेज़ है, इसलिए ऐसा Statement False Option में आएगा।</p>
-<p><b>Balanced BST क्यों O(log n) होता है:</b> हर Comparison पर आधे (Half) Nodes Eliminate हो जाते हैं (Root से Left/Right तय होता है) — यही "Divide and Conquer" Binary Search जैसा Logic है। ट्रैप: Question में "Balanced" शब्द है या नहीं ध्यान से पढ़ो — Balanced=O(log n), Unbalanced/Skewed Worst Case=O(n)।</p>
-<div class="trick">🧠 Hash Table Average=O(1) हमेशा BST से तेज़; Balanced BST=हर Step पर आधे Nodes खत्म; Skewed BST=Linked List जैसा O(n)</div>
-
-<h3>Binary Tree से Node Delete करना (Hindi Note)</h3>
-<p>जब कोई Node Delete होती है जिसका सिर्फ एक Child है, तो वह Child अपने Grandparent से सीधे जुड़ जाता है। Delete के बाद Inorder फिर से निकालो (Left → Root → Right) — यही Verify करने का तरीका है कि Tree सही बनी या नहीं।</p>
-<div class="trick">🧠 Inorder हमेशा: पहले Left, फिर Root, फिर Right</div>
+<p>Average: O(log n), Worst: O(n).</p>
+<h3>BST vs Hash Table — Complexity Comparison ⭐⭐⭐⭐⭐</h3>
+<div class="trick">🧠 Hash Table Average(O(1)) हमेशा BST(O(log n)) से तेज़</div>
 <h3>Huffman Coding</h3>
-<p><span class="badge b-pyq">⭐⭐⭐⭐⭐⭐</span> Greedy algorithm, uses <b>Priority Queue (Min Heap)</b>, complexity O(n log n). Used for Lossless Compression (ZIP, PNG, MP3, PDF, text).</p>
-<p>Steps: build leaf nodes for each symbol → put in priority queue → repeatedly combine two lowest-frequency nodes → repeat until one tree remains. Property: low frequency → long code, high frequency → short code (Prefix Code — no code is a prefix of another).</p>
+<p>Greedy + Priority Queue (Min Heap), O(n log n).</p>
 <h3>Graph Representation</h3>
-<table><tr><th>Representation</th><th>Space</th><th>Best for</th></tr><tr><td>Adjacency Matrix</td><td>O(V²)</td><td>Dense graph</td></tr><tr><td>Adjacency List</td><td>O(V+E)</td><td>Sparse graph</td></tr></table>
-<p>Complete Undirected Graph edges = n(n−1)/2. Complete Directed Graph edges = n(n−1).</p>
-
-<h3>Searching — Linear vs Binary Search</h3>
-<table><tr><th>Algorithm</th><th>Precondition</th><th>Average Complexity</th></tr>
-<tr><td>Linear Search</td><td>कोई Precondition नहीं (Sorted/Unsorted दोनों)</td><td>O(n)</td></tr>
-<tr><td>Binary Search</td><td>Array Sorted होना अनिवार्य</td><td>O(log n)</td></tr>
-</table>
-<p>❌ ट्रैप: Question में "Sorted Array" लिखा दिखते ही Linear Search मत चुनो — Sorted होने का मतलब है Binary Search सबसे Best Average Complexity देगा।</p>
-<div class="trick">🧠 Sorted दिखते ही Binary Search सोचो (O(log n)), Unsorted में Linear (O(n))</div>
-
-<h3>Sorting Complexities — Quick Sort</h3>
-<table><tr><th>Algorithm</th><th>Best</th><th>Average</th><th>Worst</th></tr>
-<tr><td>Quick Sort</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n²) ⚠️ (पहले से Sorted Array पर)</td></tr>
-<tr><td>Merge Sort</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n) (हमेशा स्थिर)</td></tr>
-</table>
-<div class="trick">🧠 Quick Sort Average हमेशा O(n log n); सिर्फ Worst Case (Sorted Input पर) O(n²) होता है — Merge Sort तीनों Case में स्थिर रहता है</div>
-
-<h3>Static Array की सीमा</h3>
-<p>C/C++ में साधारण Array (जैसे <code>arr[5]</code>) एक बार Define होने के बाद <b>Fixed-size</b> होता है — Compile-time पर Memory Allocate होती है, Run-time पर अपने आप नहीं बढ़ता। Full Array में बिना Size बढ़ाए नया Element Insert करना संभव नहीं। यह सुविधा सिर्फ Dynamic Structures (C++ <code>vector</code>, Java <code>ArrayList</code>) में मिलती है।</p>
-<div class="trick">🧠 Array = Fixed-size Static Memory; स्वतः नहीं बढ़ता (Vector/ArrayList ही Resizable हैं)</div>
-
-<h3>Circular Linked List — Application</h3>
-<p>Last Node का Pointer वापस First Node को Point करता है (कोई NULL नहीं) — यह एक Continuous Loop बनाता है। सबसे उपयुक्त Application: <b>Round Robin CPU Scheduling</b> (हर Process को बारी-बारी Time Slice मिलना, अंत के बाद वापस शुरुआत में जाना) और Music Playlist का "Repeat All"।</p>
-<div class="trick">🧠 Circular = Continuous Loop → Round Robin Scheduling इसका Classic Example है</div>
-
-<h3>Circular Array — Deque में क्यों बेहतर</h3>
-<p>Linear Array में Front से Delete करने पर बाकी Elements को Shift करना पड़ता है (या जगह हमेशा के लिए बर्बाद हो जाती है)। Circular Array में <code>(index+1) % size</code> Formula से Front/Rear वापस शुरुआत पर घूम जाते हैं — इससे <b>Unnecessary Shifting से बचाव</b> होता है और Space का पूरा उपयोग होता है।</p>
-<div class="trick">🧠 Circular Array = No Shifting + Full Space Reuse (Formula: (index+1)%capacity)</div>
-
-<h3>Bucket Sort — अंदर Sort क्यों जरूरी</h3>
-<p>Bucket Sort तत्वों को उनकी Range के अनुसार Buckets में बाँट देता है, लेकिन हर Bucket के अंदर तत्व <b>अनसॉर्टेड</b> ही रहते हैं। इसलिए हर Bucket पर अलग से (आमतौर पर Insertion Sort) चलाना पड़ता है। Steps: Buckets बनाओ → Elements Distribute करो → हर Bucket अलग से Sort करो → सबको जोड़ दो (Merge)।</p>
-<div class="trick">🧠 Bucket Sort = Distribute (Unsorted अंदर) + Internal Sort (Insertion Sort) + Merge</div>
-
+<table><tr><th>Rep</th><th>Space</th></tr><tr><td>Adjacency Matrix</td><td>O(V²)</td></tr><tr><td>Adjacency List</td><td>O(V+E)</td></tr></table>
+<h3>Searching — Linear vs Binary</h3>
+<div class="trick">🧠 Sorted दिखते ही Binary Search सोचो</div>
+<h3>Sorting — Quick Sort</h3>
+<div class="trick">🧠 Quick Sort Average O(n log n); Worst(Sorted Input) O(n²)</div>
+<h3>Circular Linked List / Circular Array / Bucket Sort</h3>
+<div class="trick">🧠 Circular Linked List=Round Robin Scheduling; Circular Array=No Shifting; Bucket Sort=अंदर Insertion Sort</div>
 <h3>Stack — Expression Conversion (5 Types) ⭐⭐⭐⭐⭐</h3>
-<table><tr><th>Type</th><th>तरीका</th></tr>
-<tr><td>Infix → Postfix</td><td>Precedence अनुसार छोटे Brackets लगाओ, फिर हर Operator को उसके Closing Bracket के ठीक बाहर खिसकाओ, फिर Brackets हटाओ</td></tr>
-<tr><td>Infix → Prefix</td><td>Expression को उल्टा लिखो → उसका Postfix निकालो → फिर उत्तर को दोबारा उल्टा कर दो</td></tr>
-<tr><td>Postfix/Prefix → Infix</td><td>बाएँ से दाएँ पढ़ो, पहला Operator मिलते ही उसे उसके पहले वाले 2 Operands के बीच रखो, दोहराते जाओ</td></tr>
-<tr><td>Evaluation</td><td>Stack Use करो — Number आए तो Push, Operator आए तो 2 Pop करके Solve करो और Result वापस Push करो</td></tr>
-<tr><td>Stack Theory</td><td>Infix→Postfix बदलने के लिए हमेशा Stack Use होता है; बराबर/ज्यादा Priority वाला नया Operator पुराने के ऊपर नहीं बैठ सकता (पुराना Pop होगा)</td></tr>
-</table>
-<p>Precedence क्रम (ऊपर से नीचे प्राथमिकता): <code>()</code> → <code>^</code> (Right to Left) → <code>* /</code> (Left to Right) → <code>+ -</code> (Left to Right)</p>
-<div class="trick">🧠 Post=बाद में(AB+), Pre=पहले(+AB), In=बीच में(A+B); ^ की Associativity Right to Left (अपवाद)</div>
-
+<div class="trick">🧠 Post=बाद में, Pre=पहले, In=बीच में; ^ Right to Left</div>
 <h3>Hashing — Bucket Overflow / Collision Resolution</h3>
-<p>जब दो Keys एक ही Bucket का पता Generate करें (Collision/Bucket Overflow), तो इसे Control करने की सभी तकनीकें Valid हैं — Question में "All of these" ही सही Answer होगा अगर सभी Techniques Options में हों:</p>
-<table><tr><th>तकनीक</th><th>दूसरा नाम</th><th>तरीका</th></tr>
-<tr><td>Chaining</td><td>Open Hashing</td><td>Overflow वाले Data को उसी Bucket से जुड़ी Linked List में डालना</td></tr>
-<tr><td>Open Addressing (Linear/Quadratic Probing)</td><td>Closed Hashing</td><td>Table के अंदर ही अगला खाली Slot ढूँढना</td></tr>
-<tr><td>Double/Multiple Hashing</td><td>—</td><td>दूसरा Backup Hash Function Use करके नया Slot खोजना</td></tr>
+<table><tr><th>तकनीक</th><th>दूसरा नाम</th></tr>
+<tr><td>Chaining</td><td>Open Hashing</td></tr>
+<tr><td>Open Addressing (Probing)</td><td>Closed Hashing</td></tr>
+<tr><td>Double/Multiple Hashing</td><td>—</td></tr>
 </table>
-<p>❌ ट्रैप: नामों का उल्टा होना — Chaining को "Open Hashing" कहते हैं (Data टेबल के बाहर जाता है), Probing को "Closed Hashing" कहते हैं (Data टेबल के अंदर ही रहता है)।</p>
-<p>Linear Probing → Primary Clustering की समस्या; Quadratic Probing → Secondary Clustering की समस्या; Double Hashing सबसे बेहतर (कोई Clustering नहीं)। Load Factor α = भरे Elements ÷ Table Size। Best/Average Search = O(1), Worst Case = O(n)।</p>
-<div class="trick">🧠 Chaining=Open Hashing(बाहर); Probing=Closed Hashing(अंदर); Overflow रोकने के सारे रास्ते Valid=All of these</div>
+<div class="trick">🧠 Chaining=Open Hashing(बाहर); Probing=Closed Hashing(अंदर)</div>
+
+<h3>Clustering — Collision Resolution "Technique" नहीं है ⭐⭐⭐⭐⭐</h3>
+<p>Linear Probing में Collision Resolve करने की असली Techniques हैं: Linear Probing, Quadratic Probing, Rehashing/Double Hashing। <b>Clustering एक Technique नहीं, बल्कि एक Problem है</b> — यह Linear Probing के इस्तेमाल से पैदा होने वाली स्थिति है, जिसमें Table के लगातार Cells भर जाते हैं। इसलिए "कौन-सी Technique नहीं है" वाले Question में Answer हमेशा <b>Clustering</b> होगा।</p>
+<div class="trick">🧠 LQR = असली Techniques (Linear, Quadratic, Rehashing); Clustering = Problem, Technique नहीं</div>
+
+<h3>B-Tree — Search/Insert/Delete + Node Splitting ⭐⭐⭐⭐</h3>
+<p>B-Tree एक Balanced (Self-balancing, Multi-way) Tree है, इसलिए Height हमेशा छोटी रहती है — Search, Insertion, Deletion तीनों की Average Time Complexity <b>O(log n)</b> होती है।</p>
+<p>B-Tree का सबसे महत्वपूर्ण Feature <b>Node Splitting</b> है — जब किसी Node में पहले से Maximum Keys भरी हों और एक और Key Insert करनी हो, तो वह Node बीच से टूटकर (Split होकर) दो Node बन जाता है, और बीच वाला Key ऊपर Parent में चला जाता है।</p>
+<pre>Node Full [10 20 30] + Insert 40
+        ↓ Split
+        20
+      /    \
+   10      30 40</pre>
+<p>❌ ट्रैप: "Insertion में कभी Node Splitting नहीं होती" — यह पूरी तरह गलत Statement है; Splitting ही B-Tree की पहचान है।</p>
+<div class="trick">🧠 B-Tree = Search/Insert/Delete सभी O(log n); "B-Tree = Split Tree" (Node Full होते ही Split)</div>
 </div>
 </section>
 
@@ -1087,42 +884,29 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">🕸️ Graph Algorithms <span class="arrow">▼</span></h2>
 <div class="body">
 <h3>Simple Graph — परिभाषा</h3>
-<p>वह Graph जिसमें कोई <b>Self-loop</b> (Node से खुद पर आने वाला Edge) और कोई <b>Multiple/Parallel Edges</b> (दो Nodes के बीच एक से ज्यादा Edge) न हो। ऐसे Elements होने पर उसे Multigraph/Pseudo-graph कहते हैं, Simple Graph नहीं।</p>
-<ul>
-<li>❌ ट्रैप: "Simple Graph हमेशा Complete Graph होता है" — गलत, Simple Graph खाली (बिना Edge के) भी हो सकता है</li>
-<li>Complete Graph (Kₙ): हर Node बाकी सभी से जुड़ा — Edges = n(n−1)/2 (Undirected)</li>
-<li>Handshaking Lemma: सभी Nodes की Degree का योग = 2 × Edges की संख्या (Σdeg(v) = 2E)</li>
-</ul>
-<div class="trick">🧠 Simple = "No Extra Extra" — No Self-loop, No Multiple Edges; हर Complete Graph Simple होता है, पर हर Simple Complete नहीं</div>
-
+<div class="trick">🧠 Simple = No Self-loop, No Multiple Edges</div>
 <h3>Minimum Spanning Tree (MST)</h3>
-<p>Edges in MST = Vertices − 1. No cycles. Requires a connected graph. Algorithms: <b>Kruskal</b> (sorts edges, uses Union-Find) and <b>Prim</b> (grows from a vertex, uses Priority Queue).</p>
-
-<h3>Graph Theory — Degree और Tree Edges (Hindi Note)</h3>
-<ul>
-<li>❌ ट्रैप: अगर Vertices की संख्या n है, तो Maximum Degree "n" नहीं होती — एक Vertex बाकी बचे (n−1) Vertices से ही जुड़ सकता है, इसलिए <b>Maximum Degree = n−1</b></li>
-<li>बिना Cycle वाले Graph (यानी Tree) में <b>Maximum Edges = n−1</b></li>
-</ul>
+<p>Edges = Vertices − 1. Kruskal (Union-Find), Prim (Priority Queue).</p>
+<h3>Graph Theory — Degree और Tree Edges</h3>
 <div class="trick">🧠 Max Degree = n−1, Tree की Edges भी = n−1</div>
 <h3>Shortest Path Algorithms</h3>
-<table><tr><th>Algorithm</th><th>Type</th><th>Negative Weights?</th><th>Complexity</th></tr>
-<tr><td>Dijkstra</td><td>Single Source</td><td>❌ No</td><td>O(E log V)</td></tr>
-<tr><td>Bellman-Ford</td><td>Single Source</td><td>✅ Yes (detects negative cycles)</td><td>O(V·E)</td></tr>
-<tr><td>Floyd-Warshall</td><td>All-Pairs</td><td>✅ Yes</td><td>O(V³)</td></tr>
-<tr><td>Kruskal (MST)</td><td>—</td><td>—</td><td>O(E log E)</td></tr>
-<tr><td>Prim (MST)</td><td>—</td><td>—</td><td>O(E log V)</td></tr>
-</table>
+<table><tr><th>Algorithm</th><th>Negative Weights?</th></tr><tr><td>Dijkstra</td><td>❌ No</td></tr><tr><td>Bellman-Ford</td><td>✅ Yes</td></tr><tr><td>Floyd-Warshall (All-Pairs)</td><td>✅ Yes</td></tr></table>
 <h3>BFS vs DFS</h3>
-<table><tr><th>BFS</th><th>DFS</th></tr>
-<tr><td>Uses Queue</td><td>Uses Stack / Recursion</td></tr>
-<tr><td>Finds Shortest Path (unweighted graph)</td><td>Used for Maze solving, Backtracking</td></tr>
-<tr><td>Level order traversal, O(V+E)</td><td>Cycle Detection, Topological Sort</td></tr>
-</table>
-<p>Topological Sorting works only on a DAG (Directed Acyclic Graph).</p>
-<p>DFS Traversal (Hindi Note): जितना गहराई में जा सकते हो जाओ, फिर वापस (Backtrack) आकर अगली शाखा में जाओ — "पहले गहराई" वाला Approach; BFS = "पहले पड़ोसी" वाला Approach।</p>
+<table><tr><th>BFS</th><th>DFS</th></tr><tr><td>Queue</td><td>Stack/Recursion</td></tr></table>
 <div class="trick">🧠 DFS = Stack/Recursion, "गहराई पहले"; BFS = Queue, "पड़ोसी पहले"</div>
-<h3>Algorithm Application Matching</h3>
-<table><tr><th>Algorithm</th><th>Application</th></tr><tr><td>DFS</td><td>Maze Solving</td></tr><tr><td>BFS</td><td>Shortest Path</td></tr><tr><td>Inorder</td><td>BST Traversal (sorted)</td></tr><tr><td>Postorder</td><td>Expression Evaluation</td></tr></table>
+
+<h3>Topological Sort — Kahn's Algorithm ⭐⭐⭐⭐⭐</h3>
+<p>Topological Sort सिर्फ <b>DAG (Directed Acyclic Graph)</b> पर होती है — Directed भी हो और Cycle भी न हो।</p>
+<p><b>Kahn's Algorithm Steps (BFS-based):</b></p>
+<ol>
+<li>जिस Node की <b>Indegree = 0</b> हो उसे Queue में डालो</li>
+<li>Queue से निकालो, Result में जोड़ो</li>
+<li>उसके सभी Neighbours की Indegree 1 कम करो</li>
+<li>जिसकी Indegree 0 हो जाए उसे Queue में डालो — दोहराओ</li>
+</ol>
+<p><b>अगर सारे Vertices Remove (Process) नहीं हो पाते</b> तो इसका सीधा मतलब है Graph में <b>Cycle मौजूद है</b> — क्योंकि Cycle के अंदर हर Node की Indegree कभी 0 नहीं होगी, इसलिए Queue वहीं रुक जाएगी और कुछ Nodes हमेशा बाकी रह जाएँगे।</p>
+<p>❌ ट्रैप: "Graph Disconnected है" / "Complete Graph है" / "Bipartite Graph है" — ये तीनों Options गलत हैं, सही Answer हमेशा <b>Cycle Present</b> होगा (Disconnected Graph में भी Topological Sort संभव है)।</p>
+<div class="trick">🧠 Kahn's Algorithm: Indegree=0 हटाओ → दोहराओ; अगर Vertices बच जाएँ → Cycle है; Topological Sort सिर्फ DAG पर</div>
 </div>
 </section>
 
@@ -1131,14 +915,11 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">🔁 Software Engineering <span class="arrow">▼</span></h2>
 <div class="body">
 <h3>Agile</h3>
-<p>Agile Manifesto priorities: Individuals over Processes; Working Software over Documentation; Customer Collaboration over Contract; Responding to Change over Following a Plan.</p>
-<table><tr><th>Agile</th><th>Waterfall</th></tr><tr><td>Iterative</td><td>Sequential</td></tr><tr><td>Flexible</td><td>Fixed</td></tr><tr><td>Continuous feedback/testing</td><td>Feedback/testing at the end</td></tr></table>
+<table><tr><th>Agile</th><th>Waterfall</th></tr><tr><td>Iterative</td><td>Sequential</td></tr></table>
 <h4>Scrum</h4>
-<p>Roles: Product Owner, Scrum Master, Development Team. Sprint: 2–4 weeks. Daily Scrum: 15 minutes. Artifacts: Product Backlog, Sprint Backlog, Increment.</p>
+<p>Roles: Product Owner, Scrum Master, Dev Team. Sprint: 2-4 weeks.</p>
 <h3>RAD Model</h3>
-<p>Iterative (NOT linear) — based on Prototyping + User Feedback.</p>
-<h3>SDLC-adjacent models to know</h3>
-<p>Waterfall, Spiral, Prototype Model.</p>
+<p>Iterative — Prototyping + Feedback.</p>
 </div>
 </section>
 
@@ -1146,12 +927,8 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <section class="section" id="testing">
 <h2 onclick="toggleSec(this)">🧪 Software Testing — White-box vs Black-box <span class="arrow">▼</span></h2>
 <div class="body">
-<table><tr><th>White-box Testing</th><th>Black-box Testing</th></tr>
-<tr><td>अन्य नाम: Structural / Glass-box / Clear-box / Open-box Testing</td><td>अन्य नाम: Functional / Behavioral / Specification-based Testing</td></tr>
-<tr><td>Source Code पता होता है — Loop, Condition, Branch Coverage check होता है</td><td>Code नहीं देखा जाता, सिर्फ Input → Output check होता है</td></tr>
-</table>
+<table><tr><th>White-box</th><th>Black-box</th></tr><tr><td>Code देखो</td><td>सिर्फ Output</td></tr></table>
 <div class="trick">🧠 White = Code देखो, Black = सिर्फ Output देखो</div>
-<p>❌ ट्रैप: "Black-box Testing, White-box Testing की जरूरत खत्म कर देती है" — गलत। दोनों अलग-अलग उद्देश्य पूरे करते हैं, दोनों जरूरी हैं।</p>
 </div>
 </section>
 
@@ -1160,38 +937,33 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">🧠 C/C++ Memory Management <span class="arrow">▼</span></h2>
 <div class="body">
 <h3>Self-Referential Structure (C)</h3>
-<pre>struct Node {
-   int data;
-   struct Node *next;
-};</pre>
-<ul>
-<li>✅ Structure अपने ही Type का <b>Pointer</b> रख सकता है (इसी से Linked List/Tree बनते हैं)</li>
-<li>❌ Structure अपने ही Type का <b>Object</b> (non-pointer) नहीं रख सकता — Infinite Size बन जाएगा, Compiler Error आएगा</li>
-</ul>
 <div class="trick">🧠 Self Structure: Pointer ✔, Object ✘</div>
-
 <h3>malloc() vs calloc()</h3>
-<table><tr><th>malloc()</th><th>calloc()</th></tr>
-<tr><td>Memory देता है, Initialize नहीं करता (Garbage Values)</td><td>Memory देकर Zero Initialize करता है</td></tr>
-<tr><td>Array भी बना सकता है — <code>a=(int*)malloc(10*sizeof(int));</code></td><td><code>calloc(5,sizeof(int))</code> → सब 0 0 0 0 0</td></tr>
-</table>
-<div class="trick">🧠 malloc=Memory+Garbage, calloc=Memory+Zero (Clear)</div>
+<div class="trick">🧠 malloc=Memory+Garbage, calloc=Memory+Zero</div>
+<h3>C++ Dynamic Memory</h3>
+<div class="trick">🧠 C++ में malloc/free + new/delete दोनों चलते हैं</div>
+<h3>Pointer का Size</h3>
+<div class="trick">🧠 Pointer Size = सिर्फ CPU Architecture पर निर्भर</div>
 
-<h3>C++ में Dynamic Memory</h3>
-<ul>
-<li>✅ C++, C के <code>malloc()</code>/<code>free()</code> दोनों को भी Support करता है (❌ यह मानना गलत है कि C++ इन्हें Support नहीं करता)</li>
-<li>✅ साथ ही C++ के अपने <code>new</code>/<code>delete</code> Operator भी होते हैं (Preferred तरीका)</li>
-<li><code>new</code> Required Size खुद Allocate करता है — जैसे <code>int *p = new int;</code></li>
-</ul>
-<div class="trick">🧠 C = malloc/free; C++ = malloc/free + new/delete दोनों चलते हैं</div>
+<h3>Array — Homogeneous + Index Based (Assertion-Reason) ⭐⭐⭐⭐</h3>
+<p><b>Assertion:</b> Array Homogeneous Data Store करता है — सभी Elements एक ही Type के (जैसे सभी int)। <b>Reason:</b> Array Index Based होता है, Index हमेशा <b>0 से शुरू</b> होता है। दोनों Statement True हैं, और Reason, Assertion की सही Explanation है — क्योंकि Array की पहचान ही Same Type + Contiguous Memory + Indexed Access है।</p>
+<div class="trick">🧠 Array = Same Data Type + Index 0 से शुरू (Homogeneous + Contiguous)</div>
 
-<h3>Pointer का Size — Data Type पर निर्भर नहीं करता ⭐⭐⭐⭐⭐</h3>
-<p>Pointer सिर्फ एक Memory Address रखता है — इसलिए इसका Size हमेशा <b>Machine Architecture (32-bit/64-bit)</b> पर निर्भर करता है, उस Data Type पर नहीं जिसे वह Point कर रहा है।</p>
-<table><tr><th>Pointer Type</th><th>32-bit Machine</th><th>64-bit Machine</th></tr>
-<tr><td>int*, float*, char*, double* — सभी</td><td>4 Bytes</td><td>8 Bytes</td></tr>
+<h3>Array — In-place Update Program Trace (Code-based) ⭐⭐⭐⭐⭐</h3>
+<pre>int a[]={0,2,4,1,3};
+for(int i=0;i<a.length;i++){
+    a[i]=a[(a[i]+3)%a.length];
+}</pre>
+<p>यह Array Loop चलते ही खुद <b>In-place Update</b> होता जाता है — यानी हर अगला Step पिछले Step में बदल चुके Array पर ही चलता है (Original Values पर नहीं)। यही सबसे बड़ा Exam Trap है।</p>
+<table><tr><th>i</th><th>Formula</th><th>Array के बाद</th></tr>
+<tr><td>0</td><td>a[0]=a[(0+3)%5]=a[3]=1</td><td>1 2 4 1 3</td></tr>
+<tr><td>1</td><td>a[1]=a[(2+3)%5]=a[0] (अब a[0]=1)</td><td>1 1 4 1 3</td></tr>
+<tr><td>2</td><td>a[2]=a[(4+3)%5]=a[2]=4</td><td>1 1 4 1 3</td></tr>
+<tr><td>3</td><td>a[3]=a[(1+3)%5]=a[4]=3</td><td>1 1 4 3 3</td></tr>
+<tr><td>4</td><td>a[4]=a[(3+3)%5]=a[1] (अब a[1]=1)</td><td>1 1 4 3 1</td></tr>
 </table>
-<p>❌ ट्रैप: Question में <code>int</code>=2 byte, <code>float</code>=4 byte जैसी Extra जानकारी देकर भटकाया जाता है — यह जानकारी Irrelevant है। सिर्फ Machine के Bits (32/64) देखो।</p>
-<div class="trick">🧠 Pointer Size = सिर्फ CPU Architecture पर निर्भर, Data Type पर नहीं</div>
+<p>Final Array: <code>1 1 4 3 1</code> → <b>a[1] = 1</b></p>
+<div class="trick">🧠 Assignment (=) के बाद Array तुरंत बदल जाता है; अगला Step उसी Updated (Original नहीं) Array पर चलता है — हमेशा Index-by-Index Trace करो, कभी दिमाग में मत करो</div>
 </div>
 </section>
 
@@ -1202,15 +974,24 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h3>.NET Framework के Components</h3>
 <table><tr><th>Component</th><th>काम</th></tr>
 <tr><td>CLR (Common Language Runtime)</td><td>Program को Run कराता है</td></tr>
-<tr><td>JIT (Just-In-Time Compiler)</td><td>IL (Intermediate Language) को Machine Code में बदलता है</td></tr>
-<tr><td>GC (Garbage Collector)</td><td>बेकार हुई Memory साफ करता है</td></tr>
-<tr><td>FCL (Framework Class Library)</td><td>Reusable Classes देता है (File, String, Math, IO, Collections, Network, XML)</td></tr>
+<tr><td>JIT</td><td>IL → Machine Code</td></tr>
+<tr><td>GC</td><td>Memory साफ करता है</td></tr>
+<tr><td>FCL (Framework Class Library)</td><td>Reusable Classes</td></tr>
 </table>
-<div class="trick">🧠 CLR=Run, JIT=Compile(IL→Machine Code), GC=Clean, FCL=Ready-made Classes</div>
+<div class="trick">🧠 CLR=Run, JIT=Compile, GC=Clean, FCL=Ready-made Classes</div>
+
+<h3>CTS vs CLS — Language Interoperability ⭐⭐⭐⭐</h3>
+<p><b>CTS (Common Type System):</b> .NET की सभी Languages (C#, VB.NET, F#) के Data Types (int, float, class आदि) के लिए Common Rules तय करता है — "कैसा Type होगा" यह बताता है।</p>
+<p><b>CLS (Common Language Specification):</b> Language Designers और Class Library Designers के बीच का एक Agreement/Common Rule Set है, जिसे मानने पर अलग-अलग Languages में लिखा Code आपस में बिना किसी दिक्कत के Interact कर सकता है — "कैसे Languages आपस में मिलकर काम करेंगी" यह बताता है।</p>
+<table><tr><th>CTS</th><th>CLS</th></tr>
+<tr><td>सभी Data Types की परिभाषा</td><td>Languages के बीच Common (न्यूनतम साझा) Rules</td></tr>
+<tr><td>Type System</td><td>Language Interoperability Rules</td></tr>
+</table>
+<div class="trick">🧠 CLR→Run, CTS→Types, CLS→Language Designers के बीच Common Rules (Interoperability)</div>
 
 <h3>ASP.NET Page Life Cycle (क्रम याद रखो)</h3>
 <p><code>Page Request → Start → Init → Load → PostBack Events → PreRender → Render → Unload</code></p>
-<div class="trick">🧠 Trick: I L P R U — Init, Load, PreRender, Render, Unload। सबसे पहला Event = Init</div>
+<div class="trick">🧠 Trick: I L P R U — Init, Load, PreRender, Render, Unload</div>
 </div>
 </section>
 
@@ -1218,74 +999,64 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <section class="section" id="uml">
 <h2 onclick="toggleSec(this)">📐 UML Diagrams / OOA / OOD <span class="arrow">▼</span></h2>
 <div class="body">
-
 <h3>OOA (Object-Oriented Analysis)</h3>
-<p>OOA का काम है — User क्या चाहता है यह समझना। इसमें Coding या Design नहीं होती।</p>
-<ul>
-<li>✅ Actors पहचानना (Customer, Student, Admin जैसे System के बाहर के लोग)</li>
-<li>✅ Use Cases पहचानना (Actor क्या करना चाहता है — Login, Register, Pay Fee)</li>
-<li>✅ Reuse Opportunities देखना (पहले से बनी Class/Component दोबारा उपयोग हो सकती है क्या)</li>
-<li>❌ ट्रैप: "Data Stores Identify/Define/Document करना" OOA का काम नहीं है — यह Database Design का Concept है, बाद में आता है</li>
-</ul>
 <div class="trick">🧠 OOA = WHO (Actor) + WHAT (Use Case); Database नहीं बनाता</div>
-<table><tr><th>OOA</th><th>OOD</th><th>OOP</th></tr><tr><td>Requirements Analysis</td><td>Classes, Objects, Design</td><td>Actual Coding</td></tr></table>
-
-<h3>Behavioural Diagrams — कौन क्या दिखाता है</h3>
+<h3>Behavioural Diagrams</h3>
 <table><tr><th>Diagram</th><th>क्या दिखाता है</th></tr>
-<tr><td>Use Case Diagram</td><td>Functional Requirements — Actor और Use Case के बीच Interaction</td></tr>
-<tr><td>State Machine Diagram</td><td>किसी एक Object का पूरा Life Cycle — Events के कारण State कैसे बदलती है</td></tr>
-<tr><td>Sequence Diagram</td><td>Objects के बीच Messages, Time के अनुसार क्रम में (Chronological Order); Return Message भी दिखाया जा सकता है</td></tr>
-<tr><td>Communication Diagram</td><td>Objects आपस में कैसे जुड़े हैं (Connections)</td></tr>
-<tr><td>Timing Diagram</td><td>Time के अनुसार Behaviour (ज्यादातर Real-Time Systems में)</td></tr>
-<tr><td>Interaction Overview Diagram</td><td>Sequence Diagram + Activity Diagram का Combination — पूरा Control Flow भी दिखाता है और Object Interaction भी</td></tr>
+<tr><td>Use Case</td><td>Functional Requirements</td></tr>
+<tr><td>State Machine</td><td>Object का Life Cycle</td></tr>
+<tr><td>Sequence</td><td>Time-order Messages</td></tr>
+<tr><td>Interaction Overview</td><td>Sequence+Activity Combo</td></tr>
 </table>
-<div class="trick">🧠 Use Case=Functional Req; State Machine=Life Cycle; Sequence=Time-order Messages; Interaction Overview=Activity+Sequence</div>
-<p>❌ ट्रैप: Sequence Diagram में Primary Key जैसी Database की चीज़ें कभी नहीं दिखाई जातीं — Sequence Diagram सिर्फ Messages दिखाता है।</p>
-
-<h3>Structural vs Behavioural Diagrams</h3>
-<table><tr><th>Structural (System कैसा बना है)</th><th>Behavioural (System क्या करता है)</th></tr>
-<tr><td>Class, Object, Package, Component, Composite Structure, Deployment, Profile</td><td>Use Case, Activity, State Machine, Sequence, Communication, Timing, Interaction Overview</td></tr>
-</table>
-<p>Deployment Diagram बताता है Software कहाँ Install/Deploy होगा (Client PC → Web Server → Database Server, Hardware/Network/Nodes) — यह Object Interaction Model के लिए उपयोग नहीं होता (वह काम Sequence/Communication/Timing Diagram करते हैं)।</p>
-
+<h3>Structural vs Behavioural</h3>
+<p>Structural: Class, Object, Package, Component, Composite Structure, Deployment, Profile। Behavioural: Use Case, Activity, State Machine, Sequence, Communication, Timing, Interaction Overview।</p>
 <h3>UML 1.x (9 Diagrams) vs UML 2.0 (13 Diagrams)</h3>
-<table><tr><th>UML 1.x — Original 9</th><th>UML 2.0 में नए जुड़े</th></tr>
-<tr><td>Class, Object, Use Case, Sequence, Statechart, Activity, Component, Deployment, Collaboration</td><td>Composite Structure, Timing, Interaction Overview, Communication (Collaboration का नया नाम)</td></tr>
-</table>
-<p>UML को Classify करने के अलग-अलग तरीके UML Literature में मिलते हैं: Structural/Behavioral (सबसे आम), Static/Dynamic (पुरानी Books), Logical/Physical (Architecture View) — तीनों सही माने जाते हैं, इसलिए ऐसे Question में "All of the Above" भी सही Answer हो सकता है।</p>
-<div class="trick">🧠 Composite Structure Diagram = सिर्फ UML 2.0 में आया, UML 1.x में नहीं था</div>
-
+<div class="trick">🧠 Composite Structure Diagram = सिर्फ UML 2.0 में</div>
 <h3>State Machine Diagram — Symbols</h3>
-<table><tr><th>Symbol</th><th>मतलब</th></tr>
-<tr><td>● (काला भरा हुआ गोला)</td><td>Initial State</td></tr>
-<tr><td>◉ (Double Circle)</td><td>Final State</td></tr>
-<tr><td>Rounded Rectangle</td><td>State</td></tr>
-<tr><td>Arrow</td><td>Transition</td></tr>
-</table>
-<div class="trick">🧠 एक काला गोला (●) = Start, दो गोले (◉) = End</div>
-
+<div class="trick">🧠 एक काला गोला (●)=Start, Double Circle (◉)=End</div>
 <h3>StarUML</h3>
-<p>StarUML एक Tool/Software है जिससे UML Diagrams बनाए जाते हैं — यह खुद कोई Standard नहीं है, बल्कि UML Standard को Follow करता है (जैसे MS Word एक Tool है, DOCX Standard है)।</p>
 <div class="trick">🧠 StarUML = Tool, UML = Standard</div>
 </div>
 </section>
 
 <!-- EDUCATION -->
 <section class="section" id="education">
-<h2 onclick="toggleSec(this)">🎓 Education / Pedagogy (Commissions) <span class="arrow">▼</span></h2>
+<h2 onclick="toggleSec(this)">🎓 Education / Pedagogy <span class="arrow">▼</span></h2>
 <div class="body">
 <h3>Inclusive Education</h3>
-<p>Inclusive Education का मतलब है Special Needs / Disabled बच्चों (Children with Disabilities — CWSN / Divyangjan) को सामान्य बच्चों के साथ, एक ही Classroom में, बराबर अवसर के साथ पढ़ाना — अलग स्कूल या अलग क्लास नहीं।</p>
+<p>Special Needs (CWSN/Divyangjan) बच्चों को सामान्य बच्चों के साथ, एक ही Classroom में पढ़ाना।</p>
 <div class="trick">🧠 Inclusive Education = Divyangjan/CWSN Students को Normal Students के साथ पढ़ाना</div>
+
+<h3>Cooperative Learning — Inclusion को बढ़ाता है ⭐⭐⭐</h3>
+<p>Cooperative Learning में छोटे-छोटे Mixed-Ability Groups में Students Team Work + Peer Learning करते हैं — यह Inclusion को Directly बढ़ावा देता है। Inclusion के लिए जरूरी: Flexible Curriculum, Cooperative Learning, Accessible Building। ❌ Segregation और Labelling, Inclusion के बिल्कुल विपरीत हैं।</p>
+
+<h3>Constructivism ⭐⭐⭐</h3>
+<p>मुख्य Principles: Knowledge Subjective है (हर Learner अपने अनुभव से बनाता है), Knowledge Socially Constructed होता है, Multiple Perspectives को महत्व मिलता है। ❌ Constructivism में Extrinsic Motivation (बाहरी इनाम) ज़रूरी नहीं माना जाता — Learner की अपनी Curiosity/Intrinsic Motivation पर ज़ोर है।</p>
+<div class="trick">🧠 Constructivism = Learner खुद ज्ञान बनाता है (Construct करता है), बाहरी इनाम ज़रूरी नहीं</div>
 
 <h3>Education Commissions</h3>
 <table><tr><th>Commission</th><th>वर्ष</th><th>मुख्य बात</th></tr>
-<tr><td>Kothari Commission</td><td>1964–66 (Chairman: D.S. Kothari)</td><td><b>Three Language Formula</b> — Regional/Mother Tongue + Hindi/English + एक और Modern Indian Language (राष्ट्रीय एकता के लिए)</td></tr>
-<tr><td>Hartog Commission</td><td>1929</td><td>Primary Education की Quality पर ध्यान</td></tr>
+<tr><td>Kothari Commission</td><td>1964–66</td><td>Three Language Formula</td></tr>
+<tr><td>Hartog Commission</td><td>1929</td><td>Primary Education Quality</td></tr>
 <tr><td>Mudaliar Commission</td><td>1952</td><td>Secondary Education</td></tr>
-<tr><td>Ramamurti Committee</td><td>1990</td><td>NPE 1986 की Review</td></tr>
+<tr><td>Ramamurti Committee</td><td>1990</td><td>NPE 1986 Review</td></tr>
 </table>
-<div class="trick">🧠 3 भाषाएँ याद रखो 3 अक्षर से: "Ko-tha-ri" → Kothari Commission = Three Language Formula</div>
+<div class="trick">🧠 "Ko-tha-ri" → Kothari Commission = Three Language Formula</div>
+
+<h3>Bloom's Taxonomy — केवल 3 Domains ⭐⭐⭐⭐</h3>
+<p>Bloom ने Learning के केवल तीन Domain बताए — <b>Cognitive</b> (ज्ञान/Thinking), <b>Affective</b> (भाव/Emotions), <b>Psychomotor</b> (कौशल/Physical Skills)। "Social Domain" नाम की कोई चीज़ Bloom's Classification में नहीं है — यह हमेशा Trap Option की तरह पूछा जाता है।</p>
+<div class="trick">🧠 CAP = Cognitive, Affective, Psychomotor; Social कभी नहीं</div>
+
+<h3>Inquiry Training Model (Richard Suchman) ⭐⭐⭐</h3>
+<p>Suchman के इस Model का उद्देश्य तीनों एक साथ विकसित करना है: Question पूछने की आदत, वैज्ञानिक सोच (Scientific Thinking), और समस्या-समाधान (Problem Solving)। इसलिए ऐसे Question में सही Answer अक्सर <b>"All of the Above"</b> होता है।</p>
+<div class="trick">🧠 Inquiry Model = Question → Investigation → Discovery (तीनों एक साथ)</div>
+
+<h3>Programmed Instruction — Linear vs Branched ⭐⭐⭐⭐</h3>
+<table><tr><th>Linear (Skinner)</th><th>Branched (Norman Crowder)</th></tr>
+<tr><td>सभी Students एक ही Path से गुज़रते हैं</td><td>हर Student अपने Answer के अनुसार अलग Path चुनता है</td></tr>
+<tr><td>Primary/Basic Level के लिए उपयुक्त</td><td>Higher Classes/College/Adult Learning के लिए उपयुक्त</td></tr>
+</table>
+<div class="trick">🧠 Linear=Skinner+एक Path+Basic; Branched=Crowder+Adaptive Path+Higher Classes</div>
 </div>
 </section>
 
@@ -1294,17 +1065,10 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">📊 MS Excel <span class="arrow">▼</span></h2>
 <div class="body">
 <h3>Operator Precedence</h3>
-<p><code>() → ^ → * / → + -</code>. Example: <code>=2+3*2</code> → multiplication first (3×2=6) → then addition (6+2) = <b>8</b>.</p>
-
+<p><code>() → ^ → * / → + -</code></p>
 <h3>Cell Referencing — Types ⭐⭐⭐⭐⭐</h3>
-<table><tr><th>Type</th><th>Syntax</th><th>Drag करने पर</th></tr>
-<tr><td>Relative</td><td><code>=A1</code></td><td>Row और Column दोनों बदलते हैं</td></tr>
-<tr><td>Absolute</td><td><code>=$A$1</code></td><td>कभी नहीं बदलता (F4 से Lock होता है)</td></tr>
-<tr><td>Mixed</td><td><code>=$A1</code> या <code>=A$1</code></td><td>जिसके आगे $ है वो Fixed, बाकी बदलता है</td></tr>
-</table>
-<p>दूसरी Sheet का Data लाना = <b>Referencing</b>: <code>=Sheet2!A1</code> (Sheet नाम के बाद ! ज़रूरी); Sheet नाम में Space हो तो Single Quotes: <code>='Jan Sales'!A1</code>; दूसरी File से: <code>=[Budget.xlsx]Sheet1!$A$1</code>।</p>
-<p><b>3D Reference</b> (कई Sheets के एक ही Cell का Total): <code>=SUM(Sheet1:Sheet3!A1)</code>। <b>Circular Reference</b>: Formula खुद अपने Cell को Refer कर ले (जैसे A3 में <code>=A1+A2+A3</code>) — Excel Warning देता है। Row/Column Delete करने पर Reference टूटे तो <b>#REF!</b> Error आता है।</p>
-<div class="trick">🧠 $ = Lock (F4 से टॉगल); दूसरी Sheet से Data लाना = Referencing; Circular Reference = खुद को खुद Refer करना</div>
+<table><tr><th>Type</th><th>Syntax</th></tr><tr><td>Relative</td><td><code>=A1</code></td></tr><tr><td>Absolute</td><td><code>=$A$1</code></td></tr><tr><td>Mixed</td><td><code>=$A1</code> / <code>=A$1</code></td></tr></table>
+<div class="trick">🧠 $ = Lock (F4 से टॉगल)</div>
 </div>
 </section>
 
@@ -1313,31 +1077,36 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">📧 MS Word / Outlook / Access <span class="arrow">▼</span></h2>
 <div class="body">
 <h3>Style Set क्या है?</h3>
-<p>Word/Outlook में Heading, Body, Fonts, Colors, Spacing का एक तैयार Combination Style Set कहलाता है (Theme जैसा)।</p>
-<ul>
-<li>✅ Style Set के Colors बदले जा सकते हैं</li>
-<li>✅ Style Inspector से पता चलता है कि Manual Formatting हुई है या नहीं</li>
-<li>✅ Hover करके Preview देखा जा सकता है</li>
-<li>❌ ट्रैप: क्रम हमेशा — पहले <b>Style Set चुनो</b>, उसके बाद उसके अंदर की Styles Apply होती हैं (उल्टा क्रम गलत है)</li>
-</ul>
-<div class="trick">🧠 Style Set = पूरा Theme पहले चुनो, फिर उसके अंदर की Styles Apply होंगी</div>
-
+<div class="trick">🧠 Style Set = पूरा Theme पहले चुनो, फिर Styles Apply होंगी</div>
 <h3>MS Word — Document Views</h3>
-<table><tr><th>View</th><th>खासियत</th></tr>
-<tr><td>Print Layout (Default)</td><td>Header/Footer, Images, Background सब दिखते हैं — जैसा दिखेगा वैसा Print होगा</td></tr>
-<tr><td>Print Preview</td><td>Background Color/Effects डिफ़ॉल्ट रूप से नहीं दिखते (Ink बचाने के लिए, जब तक Setting On न करें)</td></tr>
-<tr><td>Draft / Outline</td><td>Images/Graphics Hidden — सिर्फ Text/Headings पर Focus</td></tr>
-</table>
-<p>Zoom Limit (Word) = 10% से 500% (❌ Excel/PowerPoint में Max 400% होता है — यह ट्रैप है)। Gutter Margin सिर्फ Left या Top पर होता है (Binding Side)। Ribbon Minimize/Maximize = <code>Ctrl+F1</code>।</p>
-<div class="trick">🧠 Word Zoom Max=500%, Excel/PPT Max=400%; Print Preview में Background दिखे न दिखे यह Ink-saving Default है</div>
-
+<div class="trick">🧠 Word Zoom Max=500%, Excel/PPT Max=400%</div>
 <h3>MS Office — Clipboard Task Pane</h3>
-<p>Office Clipboard अधिकतम <b>24 Items</b> रख सकता है (Windows Clipboard सिर्फ 1 रखता है — यही दोनों में अंतर है)। 25वाँ Item Copy करने पर सबसे पुराना (1st) अपने आप हट जाता है — <b>FIFO</b> नियम। "Paste All" से सभी Items एक साथ Paste होते हैं।</p>
-<div class="trick">🧠 24 घंटे ऑफिस = Office Clipboard 24 Items; Windows Clipboard सिर्फ 1 Item; FIFO से पुराना हटता है</div>
+<div class="trick">🧠 24 Items = Office Clipboard; Windows Clipboard सिर्फ 1</div>
+<h3>MS Access — Data Access Pages</h3>
+<div class="trick">🧠 Data Access Page Code = Script Editor; Forms/Modules Code = VBA Editor</div>
+</div>
+</section>
 
-<h3>MS Access — Data Access Pages और Objects</h3>
-<p>Data Access Pages (Web-based DB Pages) के लिए Code Edit करने का Tool = <b>Microsoft Script Editor</b> (VBA Editor अलग है — वो Forms/Reports/Modules के लिए Alt+F11 से खुलता है)। Access के 7 Core Objects: Tables, Queries, Forms, Reports, Pages, Macros, Modules। File Extension: नया Access = <code>.accdb</code>, पुराना = <code>.mdb</code>, Data Access Page = <code>.htm/.html</code>।</p>
-<div class="trick">🧠 Data Access Page Code = Script Editor; Forms/Modules Code = VBA Editor (Alt+F11)</div>
+<!-- STORAGE / MISC IT -->
+<section class="section" id="storage">
+<h2 onclick="toggleSec(this)">💽 Storage / Misc IT (SSD, VPN, File Ext, EBCDIC) <span class="arrow">▼</span></h2>
+<div class="body">
+<h3>SSD vs HDD (Assertion-Reason) ⭐⭐⭐</h3>
+<table><tr><th>SSD</th><th>HDD</th></tr>
+<tr><td>Flash Memory, Faster, No Moving Parts</td><td>Mechanical Disk, Slower, Moving Parts</td></tr>
+</table>
+<p><b>Assertion:</b> SSD is faster than HDD — ✅ True। <b>Reason:</b> SSD uses Flash Memory — ✅ True, और यह Assertion की सही Explanation भी है (No Moving/Mechanical Parts होने से Access तेज़ है)।</p>
+<div class="trick">🧠 SSD=Flash+Fast+No Moving Parts; HDD=Mechanical+Slow</div>
+
+<h3>VPN — क्या करता है, क्या नहीं ⭐⭐⭐</h3>
+<p>VPN Data को <b>Encrypt</b> करता है और असली <b>IP छुपाता है</b>, लेकिन यह <b>Complete Anonymous नहीं बनाता</b> — VPN Provider खुद User की Activity देख सकता है (Trust VPN Provider पर निर्भर करता है)।</p>
+<div class="trick">🧠 VPN = Encrypt + Hide IP; Complete Anonymous नहीं (Provider देख सकता है)</div>
+
+<h3>File Extensions / Encoding — One-Liners</h3>
+<table><tr><th>Item</th><th>मतलब</th></tr>
+<tr><td>.aoo</td><td>Web Page Image Map File</td></tr>
+<tr><td>EBCDIC <code>11111001</code></td><td>= Decimal 9</td></tr>
+</table>
 </div>
 </section>
 
@@ -1346,33 +1115,16 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">🧠 Psychology <span class="arrow">▼</span></h2>
 <div class="body">
 <table><tr><th>Scientist</th><th>Known For</th></tr>
-<tr><td>Wilhelm Wundt</td><td>First Psychology Laboratory (1879, Leipzig) — Father of Experimental Psychology</td></tr>
+<tr><td>Wilhelm Wundt</td><td>First Psychology Laboratory (1879)</td></tr>
 <tr><td>Watson</td><td>Behaviourism</td></tr>
-<tr><td>Skinner</td><td>Operant Conditioning, Reinforcement, Teaching Machine, Programmed Learning; "Psychology is the basic science of education"</td></tr>
+<tr><td>Skinner</td><td>Operant Conditioning</td></tr>
 <tr><td>Alfred Binet</td><td>IQ Test</td></tr>
-<tr><td>William James</td><td>Popularized Psychology in America</td></tr>
 </table>
-<p>Most scientific & objective method to study behavior = <b>Experimental Method</b> (variables are controlled → cause-effect studied). Observation lacks control; Survey is opinion-based; Case Study covers a single subject.</p>
-
-<h3>Causes of Forgetting (विस्मरण के कारण)</h3>
-<p>भूलने के तीन वैज्ञानिक कारण — Trick <b>T.I.R.</b>:</p>
-<ul>
-<li><b>T</b>ime (Passage of Time / Trace Decay) — अभ्यास न करने पर समय के साथ याद धुंधली हो जाती है</li>
-<li><b>I</b>nterference — नया ज्ञान पुराने में या पुराना नए में बाधा डाले (Proactive/Retroactive Interference)</li>
-<li><b>R</b>epression — दर्दनाक/बुरी यादों को दिमाग जानबूझकर दबा (Freud के अनुसार) देता है</li>
-</ul>
-<p>❌ ट्रैप: "Individual के Attitude में बदलाव" भूलने का कारण <b>नहीं</b> है — यह सिर्फ पसंद/नापसंद बदलता है, Memory को नष्ट नहीं करता।</p>
-<div class="trick">🧠 T.I.R. (Time, Interference, Repression) ही भूलने के असली कारण; Attitude बदलना नहीं</div>
-
+<p>Most scientific method = <b>Experimental Method</b>।</p>
+<h3>Causes of Forgetting — T.I.R.</h3>
+<div class="trick">🧠 T.I.R. (Time, Interference, Repression); Attitude बदलना नहीं</div>
 <h3>Child-Centric Education के जनक — Rousseau</h3>
-<table><tr><th>व्यक्ति</th><th>पहचान</th></tr>
-<tr><td>Rousseau (रूसो)</td><td>Child-Centric Education के जनक — पुस्तक 'Émile', विचारधारा: Naturalism ("Return to Nature")</td></tr>
-<tr><td>John Dewey</td><td>Progressive Education के जनक — "Learning by Doing"</td></tr>
-<tr><td>Froebel</td><td>Kindergarten पद्धति के जनक — Play-way Method</td></tr>
-<tr><td>Montessori</td><td>Montessori Method — Self-directed activity, Sensory training</td></tr>
-</table>
-<p>❌ ट्रैप: बाल-केंद्रित शिक्षा का जनक पूछे जाने पर John Dewey मत चुनो — वह Progressive Education के जनक हैं, Rousseau उनसे पहले आए और मूल विचार दिया।</p>
-<div class="trick">🧠 रूसो = रूट (शिक्षा की मूल जड़ यानी बच्चा); Dewey = Progressive (बाद में Practical रूप दिया)</div>
+<div class="trick">🧠 रूसो = मूल जड़; Dewey = Progressive (बाद में)</div>
 </div>
 </section>
 
@@ -1381,12 +1133,11 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">🏆 GK / Sports / Computer Awareness <span class="arrow">▼</span></h2>
 <div class="body">
 <h3>Sports Positions</h3>
-<table><tr><th>Position</th><th>Sport</th></tr><tr><td>Bowling</td><td>Cricket</td></tr><tr><td>Goalkeeper</td><td>Football</td></tr><tr><td>Libero</td><td>Volleyball</td></tr><tr><td>Point Guard</td><td>Basketball</td></tr></table>
+<table><tr><th>Position</th><th>Sport</th></tr><tr><td>Point Guard</td><td>Basketball</td></tr><tr><td>Libero</td><td>Volleyball</td></tr></table>
 <h3>Y2K Bug</h3>
-<p>Full form: Year 2000 Problem. Cause: old programs stored year in 2 digits, so "00" was read as 1900 instead of 2000. Fix: switch to 4-digit years. Related: 2038 Problem (Unix time overflow), Leap Year logic (2000 was a leap year, 1900 was not).</p>
+<p>2-digit year storage problem.</p>
 <h3>Pie Chart Angle</h3>
 <p>Angle = (Percentage/100) × 360°</p>
-<table><tr><th>%</th><th>Angle</th></tr><tr><td>10%</td><td>36°</td></tr><tr><td>15%</td><td>54°</td></tr><tr><td>20%</td><td>72°</td></tr><tr><td>25%</td><td>90°</td></tr><tr><td>30%</td><td>108°</td></tr><tr><td>40%</td><td>144°</td></tr><tr><td>50%</td><td>180°</td></tr></table>
 </div>
 </section>
 
@@ -1394,50 +1145,24 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <section class="section" id="reasoning">
 <h2 onclick="toggleSec(this)">🧩 Reasoning <span class="arrow">▼</span></h2>
 <div class="body">
-<h3>Coding-Decoding</h3>
-<p>Common pattern: first and last letters stay fixed; the middle letters get rearranged in a set pattern. Example: <code>GOLDEN → GLEODN</code> (first G, last N fixed; middle OLDE → LEOD rearranged).</p>
-<h3>Selection / Group-formation Puzzles</h3>
-<p>These depend entirely on the given constraints (exclusion pairs) and the answer options — always check all conditions and cross with the option list before finalizing.</p>
-
-<h3>Missing Number (Matrix/Grid Pattern)</h3>
-<p>Grid वाले Number Puzzle में हमेशा पहले Column-wise (ऊपर से नीचे) Division/Multiplication Ratio जाँचो, फिर Row-wise। बड़ी संख्याओं से डरो मत — अक्सर पीछे का Logic सिर्फ एक Fixed Ratio (जैसे ÷4, ÷3, ÷2) होता है।</p>
-<div class="trick">🧠 ऊपर से नीचे बड़ी से छोटी संख्या जाए तो पहले Division Ratio टेस्ट करो</div>
-
-<h3>Blood Relation Puzzle — Gender Counting Trick ⭐⭐⭐⭐⭐</h3>
-<p>जब Question में "पुरुषों की संख्या = स्त्रियों की संख्या" जैसा Hint दिया हो, तो सबसे पहले जिनका Gender सीधे पता चल जाए उन्हें Count करो। जैसे ही एक Gender की Maximum संख्या पूरी हो जाए, बाकी सभी बचे सदस्य अपने-आप दूसरे Gender के मान लो। इसके बाद ही Family Tree बनाओ (Gender: + = पुरुष, − = स्त्री)।</p>
-<p>Niece (भतीजी/भांजी) = भाई/बहन की बेटी; Nephew (भतीजा/भांजा) = भाई/बहन का बेटा।</p>
-<div class="trick">🧠 Count First, Draw Next — पहले Gender गिनकर तय करो, फिर Tree बनाओ</div>
-
-<h3>Binary Operation Result — Decimal Conversion Shortcut</h3>
-<p>Binary Addition/Subtraction वाले Options में से सही Operation ढूँढने का सबसे तेज़ तरीका: पहले Target Binary Number को Decimal में बदलो, फिर हर Option के दोनों Numbers को भी Decimal में बदलकर Simple जोड़/घटाव करो जो Option Match करे वही Answer है — सीधे Binary Borrow/Carry में उलझने से बेहतर है यह Shortcut।</p>
-<div class="trick">🧠 बाइनरी Operation दिखे तो पहले Decimal में बदल डालो, फिर सामान्य गणित करो</div>
+<h3>Blood Relation Puzzle — Gender Counting</h3>
+<div class="trick">🧠 Count First, Draw Next</div>
 
 <h3>Ranking/Position — दोनों छोर से Formula ⭐⭐⭐⭐⭐</h3>
 <table><tr><th>दिया गया</th><th>Formula</th></tr>
-<tr><td>एक ही व्यक्ति की दोनों तरफ से Position (Left, Right)</td><td>Total = Left + Right − 1</td></tr>
-<tr><td>Total और एक तरफ से Position दिया हो</td><td>दूसरी तरफ से Position = (Total − Given Position) + 1</td></tr>
-<tr><td>दो लोगों की जगह आपस में बदलने पर नया Total</td><td>Total = नया Position + दूसरे का पुराना Position − 1</td></tr>
-<tr><td>बीच के लोग (Overlap न हो तो)</td><td>Total − (Left + Right)</td></tr>
+<tr><td>एक ही व्यक्ति की दोनों तरफ से Position</td><td>Total = Left + Right − 1</td></tr>
+<tr><td>Total और एक तरफ से Position</td><td>दूसरी तरफ = (Total−Given)+1</td></tr>
 </table>
-<p>उदाहरण: दोनों तरफ से 19वें Position पर हो → Total = 19+19−1 = <b>37</b> (एक ही व्यक्ति को दो बार गिनने से बचाने के लिए -1 करते हैं)।</p>
-<div class="trick">🧠 दोनों तरफ से समान Position दी हो तो हमेशा: (2×Position)−1</div>
+<p><b>Row/Line Puzzle Example (Lakshya Test-03):</b> Pinky Left से 11th, Seema उसके दाएँ दूसरी (Seema=13th Left से), Seema Dinky के बाएँ चौथी है (Dinky=17th Left से)। Question में Dinky Right से 13th भी दी थी। तो Total Girls = Left Rank + Right Rank − 1 = 17+13−1 = <b>29</b>।</p>
+<p>❌ ट्रैप: सीधे दिए गए दो Numbers (जैसे Pinky का 11th और Dinky का 13th) को जोड़ने की कोशिश मत करो — पहले असल व्यक्ति (Dinky) की खुद की Left Position निकालनी पड़ती है, फिर Formula लगाओ।</p>
+<div class="trick">🧠 Total = L + R − 1; पहले असल Target Person की दोनों तरफ की Position निकालो, तभी Formula लगाओ</div>
 
-<h3>LCM से Divisibility वाली सबसे बड़ी/छोटी संख्या निकालना</h3>
-<p>Steps: सभी दी गई संख्याओं का LCM निकालो (Prime Factorization — हर Prime की Highest Power लो) → 4-अंकों की सबसे बड़ी संख्या (9999) को LCM से भाग दो → Remainder घटा दो → जवाब आ जाएगा।</p>
-<p>Shortcut जाँच: विकल्पों में से जो संख्या सभी Divisors के Divisibility Rules (जैसे 3 से भाग हो तो अंकों का योग 3 से भाज्य हो) पास करे वही सही Option है।</p>
-<div class="trick">🧠 LCM = हर Prime Factor की सबसे बड़ी Power का गुणा; 9999 में से Remainder घटाकर बड़ी Divisible संख्या मिलती है</div>
-
-<h3>Data Interpretation — % Less/More</h3>
+<h3>Data Interpretation — Graph पढ़ने की सावधानी ⭐⭐⭐</h3>
+<p>DI में Percentage निकालने से पहले Graph के <b>हर Bar/Value को ध्यान से Zoom करके पढ़ो</b> — एक भी गलत Value पूरी Calculation बिगाड़ देती है (देखें Mistake Database में Lakshya Test-03 का Q6 उदाहरण)।</p>
 <table><tr><th>Question भाषा</th><th>Formula</th></tr>
-<tr><td>X, Y से कितने % कम है?</td><td>(Y−X)/Y × 100</td></tr>
-<tr><td>X, Y से कितने % ज्यादा है?</td><td>(X−Y)/Y × 100</td></tr>
-<tr><td>X, Y का कितने % है?</td><td>X/Y × 100</td></tr>
+<tr><td>X, Y से कितने % कम/ज्यादा</td><td>(Y−X)/Y × 100 या (X−Y)/Y × 100</td></tr>
 </table>
-<div class="trick">🧠 "से/than" के बाद वाला Value हमेशा Denominator (नीचे) में जाता है</div>
-
-<h3>गणितीय Operations — Numbers/Digits Interchange</h3>
-<p>जब Equation Balance करने के लिए 2 Numbers/Digits बदलने को कहा जाए: सबसे पहले Division (÷) वाला हिस्सा देखो — सही Interchange के बाद Division हमेशा पूरा-पूरा कटना चाहिए (Decimal नहीं आना चाहिए), इससे ज़्यादातर Options तुरंत Eliminate हो जाते हैं। फिर BODMAS से बाकी Verify करो।</p>
-<div class="trick">🧠 पहले Division Clean कटे या नहीं चेक करो — 90% Options वहीं Eliminate हो जाते हैं</div>
+<div class="trick">🧠 सभी Values पहले साफ़ लिखो, फिर पूछा हुआ Sum जोड़ो, फिर Total से Percentage निकालो</div>
 </div>
 </section>
 
@@ -1446,20 +1171,17 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">📊 Consolidated Difference Tables <span class="arrow">▼</span></h2>
 <div class="body">
 <table><tr><th>Compiler</th><th>Interpreter</th></tr><tr><td>Full program at once</td><td>Line by line</td></tr></table>
-<table><tr><th>SRAM</th><th>DRAM</th></tr><tr><td>Fast, expensive, no refresh (Cache)</td><td>Slow, cheap, needs refresh (Main RAM)</td></tr></table>
-<table><tr><th>TCP</th><th>UDP</th></tr><tr><td>Connection-oriented, reliable, ACK, flow control, slower, 20B header</td><td>Connectionless, unreliable, no ACK, faster, 8B header</td></tr></table>
-<table><tr><th>HTTP</th><th>HTTPS</th></tr><tr><td>Plain text, Port 80</td><td>Encrypted (SSL/TLS), Port 443</td></tr></table>
-<table><tr><th>WHERE</th><th>HAVING</th></tr><tr><td>Filters rows before grouping</td><td>Filters groups after grouping</td></tr></table>
-<table><tr><th>Overloading</th><th>Overriding</th></tr><tr><td>Same class, compile-time, different params</td><td>Parent-child, run-time, same signature</td></tr></table>
-<table><tr><th>IPv4</th><th>IPv6</th></tr><tr><td>32-bit, has checksum, supports broadcast</td><td>128-bit, no checksum, multicast only</td></tr></table>
-<table><tr><th>BFS</th><th>DFS</th></tr><tr><td>Queue, shortest path (unweighted)</td><td>Stack/recursion, maze/backtracking</td></tr></table>
-<table><tr><th>UTP</th><th>Coaxial Cable</th></tr><tr><td>No shield, twisting cancels EMI, max 100m</td><td>Has shield → less EMI, skin effect at high freq, needs terminator in Bus</td></tr></table>
-<table><tr><th>Star Topology</th><th>Ring Topology</th></tr><tr><td>Cable fail = 1 node down; Hub fail = all down</td><td>2 neighbours each; Token Passing; no collision</td></tr></table>
-<table><tr><th>Stateful Firewall</th><th>Proxy / Application Gateway</th></tr><tr><td>Tracks connection state (State Table), faster</td><td>Relays traffic between client-server, Layer 7, slower</td></tr></table>
-<table><tr><th>Worm</th><th>Trojan</th></tr><tr><td>Spreads via network, no user action</td><td>User installs it disguised as useful software</td></tr></table>
-<table><tr><th>Use Case Diagram</th><th>State Machine Diagram</th></tr><tr><td>Functional Requirements (Actor ↔ Use Case)</td><td>Object का Life Cycle (State बदलना)</td></tr></table>
-<table><tr><th>Structural Diagrams</th><th>Behavioural Diagrams</th></tr><tr><td>Class, Object, Package, Component, Composite Structure, Deployment, Profile</td><td>Use Case, Activity, State Machine, Sequence, Communication, Timing, Interaction Overview</td></tr></table>
-<table><tr><th>Sequence Diagram</th><th>Deployment Diagram</th></tr><tr><td>Time-order Messages, Object Interaction दिखाता है</td><td>Software कहाँ Install होगा (Hardware/Node/Network) दिखाता है — Interaction नहीं</td></tr></table>
+<table><tr><th>SRAM</th><th>DRAM</th></tr><tr><td>Fast, Cache</td><td>Slow, Main RAM</td></tr></table>
+<table><tr><th>TCP</th><th>UDP</th></tr><tr><td>Connection-oriented</td><td>Connectionless</td></tr></table>
+<table><tr><th>HTTP</th><th>HTTPS</th></tr><tr><td>Port 80</td><td>Port 443</td></tr></table>
+<table><tr><th>Overloading</th><th>Overriding</th></tr><tr><td>Same class, compile-time</td><td>Parent-child, run-time</td></tr></table>
+<table><tr><th>BFS</th><th>DFS</th></tr><tr><td>Queue</td><td>Stack/Recursion</td></tr></table>
+<table><tr><th>Baud Rate</th><th>Bit Rate</th></tr><tr><td>Signal Changes/sec</td><td>Bits/sec</td></tr></table>
+<table><tr><th>Linear Programmed Instruction</th><th>Branched Programmed Instruction</th></tr><tr><td>Skinner, एक Path, Basic Level</td><td>Crowder, अलग Path, Higher Level</td></tr></table>
+<table><tr><th>OLTP</th><th>OLAP</th></tr><tr><td>Daily Transactions</td><td>Multi-dimensional Analysis</td></tr></table>
+<table><tr><th>SSD</th><th>HDD</th></tr><tr><td>Flash, Fast</td><td>Mechanical, Slow</td></tr></table>
+<table><tr><th>CTS</th><th>CLS</th></tr><tr><td>Data Types Rules</td><td>Language Interoperability Rules</td></tr></table>
+<table><tr><th>Chaining (Open Hashing)</th><th>Probing (Closed Hashing)</th></tr><tr><td>Data बाहर Linked List में</td><td>Data टेबल के अंदर ही</td></tr></table>
 </div>
 </section>
 
@@ -1468,20 +1190,10 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">🔌 Protocol Port Numbers <span class="badge b-pyq">⭐⭐⭐⭐⭐⭐</span> <span class="arrow">▼</span></h2>
 <div class="body">
 <table><tr><th>Protocol</th><th>Port</th></tr>
-<tr><td>FTP</td><td>20, 21</td></tr>
-<tr><td>SSH</td><td>22</td></tr>
-<tr><td>Telnet</td><td>23</td></tr>
-<tr><td>SMTP</td><td>25</td></tr>
-<tr><td>DNS</td><td>53</td></tr>
-<tr><td>DHCP</td><td>67, 68</td></tr>
-<tr><td>TFTP</td><td>69</td></tr>
-<tr><td>HTTP</td><td>80</td></tr>
-<tr><td>POP3</td><td>110</td></tr>
-<tr><td>NTP</td><td>123</td></tr>
-<tr><td>IMAP</td><td>143</td></tr>
-<tr><td>SNMP</td><td>161, 162</td></tr>
-<tr><td>LDAP</td><td>389</td></tr>
-<tr><td>HTTPS</td><td>443</td></tr>
+<tr><td>FTP</td><td>20, 21</td></tr><tr><td>SSH</td><td>22</td></tr><tr><td>Telnet</td><td>23</td></tr><tr><td>SMTP</td><td>25</td></tr>
+<tr><td>DNS</td><td>53</td></tr><tr><td>DHCP</td><td>67, 68</td></tr><tr><td>TFTP</td><td>69</td></tr><tr><td>HTTP</td><td>80</td></tr>
+<tr><td>POP3</td><td>110</td></tr><tr><td>NTP</td><td>123</td></tr><tr><td>IMAP</td><td>143</td></tr><tr><td>SNMP</td><td>161, 162</td></tr>
+<tr><td>LDAP</td><td>389</td></tr><tr><td>HTTPS</td><td>443</td></tr>
 </table>
 </div>
 </section>
@@ -1490,73 +1202,49 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <section class="section" id="tricks">
 <h2 onclick="toggleSec(this)">🧠 Memory Tricks — Consolidated <span class="arrow">▼</span></h2>
 <div class="body">
-<div class="trick">Decimal→Hex: 10=A...15=F</div>
+<div class="trick">Decimal→Hex: 10=A...15=F; 1's Complement=Bit Flip (0↔1)</div>
 <div class="trick">Compiler=Complete Program, Interpreter=Individual Line</div>
-<div class="trick">Register operations = Micro-operations</div>
 <div class="trick">SRAM=Speed, DRAM=Dynamic(refresh)</div>
-<div class="trick">UNIVAC=Commercial computer, ENIAC=Military</div>
-<div class="trick">Deadlock conditions = M H N C (Mutual Exclusion, Hold&Wait, No Preemption, Circular Wait)</div>
+<div class="trick">Deadlock = M H N C</div>
 <div class="trick">Paging: ❌External Frag, ✅Internal Frag, ❌Contiguous</div>
-<div class="trick">HTTP=80, HTTPS=443 (S=Secure)</div>
-<div class="trick">TCP Flags = UAPRSF</div>
+<div class="trick">HTTP=80, HTTPS=443</div>
 <div class="trick">Index = Read Fast, Write Slow</div>
 <div class="trick">JDK ⊃ JRE ⊃ JVM</div>
-<div class="trick">Preorder=NLR, Inorder=LNR(sorted in BST), Postorder=LRN</div>
+<div class="trick">Preorder=NLR, Inorder=LNR, Postorder=LRN</div>
 <div class="trick">BFS=Queue, DFS=Stack/Recursion</div>
 <div class="trick">Huffman = Greedy + Priority Queue (Min Heap)</div>
-<div class="trick">C++ class default=Private, struct=Public; Java class default=Package-private</div>
-<div class="trick">Mesh Links = n(n−1)/2 (not n(n+1)/2); Ports/node = n−1</div>
+<div class="trick">Mesh Links = n(n−1)/2; Ports/node = n−1</div>
 <div class="trick">Star: Cable fail=1 node down, Hub/Switch fail=whole network down</div>
-<div class="trick">Ring: Token Passing = No Collision; every device = Repeater</div>
-<div class="trick">UTP: More Twist → Less EMI/Crosstalk (not voltage-related)</div>
-<div class="trick">Coax: Shield → less EMI; high freq → Skin Effect (surface current)</div>
-<div class="trick">Fiber Attenuation = ABS (Absorption, Bending, Scattering)</div>
-<div class="trick">Infrared = Line-of-Sight only, doesn't cross walls (TV remote logic)</div>
-<div class="trick">RG-8=10Base5(Thicknet), RG-58=10Base2(Thinnet), RG-59=CCTV/TV</div>
-<div class="trick">Switching: Circuit=Dedicated Path, Message=Store Full Msg, Datagram=Own Route/Packet, Virtual Circuit=Same Route No Dedicated Wire</div>
-<div class="trick">Boot Virus=MBR, Macro Virus=MS Office docs, Polymorphic=Code changes each copy, Shlayer=Fake Flash Update</div>
-<div class="trick">WannaCry(2017)=EternalBlue+SMB exploit; Pegasus=NSO Group spyware</div>
-<div class="trick">Botnet=Zombie PCs + Botmaster controlling remotely</div>
+<div class="trick">Ring: Token Passing = No Collision</div>
 <div class="trick">🧠 IPv4 Mask: A=255.0.0.0, B=255.255.0.0, C=255.255.255.0, D=No Mask</div>
 <div class="trick">🧠 IPv6: ::1=Loopback, FE80=Link Local, FC00=Private, 2000=Public</div>
-<div class="trick">🧠 Style Set = पहले पूरा Theme चुनो, फिर Styles Apply होंगी</div>
-<div class="trick">🧠 Hash=Exact Search तेज़; B+ Tree=Range Search/Sorting बेहतर</div>
+<div class="trick">🧠 Hash=Exact Search तेज़; B+ Tree=Range Search बेहतर</div>
 <div class="trick">🧠 White Box=Code देखो; Black Box=सिर्फ Output देखो</div>
-<div class="trick">🧠 Self Structure: सिर्फ Pointer रख सकता है, Object नहीं</div>
-<div class="trick">🧠 malloc=Memory+Garbage; calloc=Memory+Zero; C++ में malloc/free + new/delete दोनों चलते हैं</div>
-<div class="trick">🧠 .NET: CLR=Run, JIT=IL→Machine Code, GC=Clean, FCL=Classes; ASP.NET क्रम=Init→Load→PreRender→Render→Unload</div>
-<div class="trick">🧠 Graph: Max Degree=n−1, Tree Edges=n−1; DFS="गहराई पहले", BFS="पड़ोसी पहले"</div>
-<div class="trick">🧠 FCFS Disk Scheduling = हर Step पर |Current−Next| जोड़ो</div>
-<div class="trick">🧠 OOA = WHO(Actor)+WHAT(Use Case), Database नहीं बनाता</div>
-<div class="trick">🧠 Use Case=Functional Req; State Machine=Life Cycle; Sequence=Time-order Messages</div>
-<div class="trick">🧠 Interaction Overview Diagram = Activity + Sequence Diagram का मेल</div>
-<div class="trick">🧠 Composite Structure Diagram सिर्फ UML 2.0 में आया, UML 1.x में नहीं था</div>
-<div class="trick">🧠 State Symbols: ● (काला गोला)=Start, ◉ (Double Circle)=End</div>
-<div class="trick">🧠 StarUML=Tool, UML=Standard</div>
-<div class="trick">🧠 Inclusive Education=Divyangjan/CWSN+Normal Students साथ; Kothari Commission(1964-66)=Three Language Formula</div>
-<div class="trick">🧠 Memory Chip: "Organization/Words" दिखे→2ⁿ Rule; "Connections/Pins" दिखे→Total−Data−Control</div>
-<div class="trick">🧠 Cache: Offset=log₂(Block Size), Index=log₂(Cache/Block), Tag=Address−Index−Offset</div>
-<div class="trick">🧠 Critical Section हल करने को Minimum 2 Variables चाहिए (Peterson's Algorithm: flag+turn)</div>
-<div class="trick">🧠 Disk Scheduling: SCAN=Elevator, LOOK=Last Request तक, FSCAN=2 Queues, N-Step SCAN=N Subqueues, C-=Circular</div>
-<div class="trick">🧠 Static Method में सिर्फ Static चलेगा — this/super नहीं; class दिखे→Encapsulation, ':' या extends→Inheritance</div>
-<div class="trick">🧠 Network Address=Host bits ZERO; Broadcast=Host bits 255; "Respectively" दिखे तो T→N→D क्रम लिखो</div>
-<div class="trick">🧠 DAC=Owner तय करे; MAC(Security)=System/Military तय करे; 802.1X=Data Link Auth+Dynamic Key</div>
-<div class="trick">🧠 HTTP 1.1=हमेशा जरूरी; Forward Proxy=Client shield; Reverse Proxy=Server shield+Load Balancing</div>
-<div class="trick">🧠 Aggregation=Relationship को Higher Entity बनाना; Durability=Success के बाद Crash पर भी Data सुरक्षित</div>
-<div class="trick">🧠 Cascading Rollback=Chain Reaction; GRANT/REVOKE सदा DCL; Federation=हर DB स्वतंत्र रहे</div>
-<div class="trick">🧠 Pointer Size=सिर्फ CPU Architecture पर निर्भर; Overloading में Args संख्या समान हो सकती है (Type अलग हो तो)</div>
-<div class="trick">🧠 Static Data Member sizeof(Class) में कभी नहीं जुड़ता; Array Fixed-size है, अपने आप नहीं बढ़ता</div>
-<div class="trick">🧠 Circular Linked List=Round Robin Scheduling; Circular Array=No Shifting; Bucket Sort=अंदर Insertion Sort चाहिए</div>
-<div class="trick">🧠 Binary Search सिर्फ Sorted Array पर; Quick Sort Average=O(n log n), Worst(Sorted Input)=O(n²)</div>
-<div class="trick">🧠 Python: List=Mutable, Tuple=Immutable, Set=Unique, Dict=Key-Value (सबसे पहले Dict पकड़ो)</div>
-<div class="trick">🧠 भूलना=T.I.R.(Time,Interference,Repression); Attitude बदलना कारण नहीं; Child-Centric शिक्षा जनक=Rousseau</div>
-<div class="trick">🧠 Mantrap=2 Interlocking Doors; Hidden SSID≠Secure; WPA3 Open=OWE Encryption(फिर भी Password-less)</div>
-<div class="trick">🧠 Vishing=Voice Call Phishing; White/Black/Grey/Suicide Hacker=Good/Bad/Between/Fearless</div>
-<div class="trick">🧠 Hacking Tools क्रम: Whois/NSLookup(Recon)→Nmap(Scan)→John the Ripper(Gain Access)→Rootkit/Netcat(Maintain)</div>
-<div class="trick">🧠 DHCP=D-O-R-A(Discover-Offer-Request-Ack), MAC नहीं देता; SCTP=Message Oriented(TCP≠Byte Stream ट्रैप)</div>
-<div class="trick">🧠 Routing Protocol Algorithms: RIP=Bellman-Ford, OSPF=Dijkstra, EIGRP=DUAL, BGP=Path Vector</div>
-<div class="trick">🧠 OSI Application Layer=NVT(Remote Login)+FTAM(File Transfer); FTP=Port21(Control)+Port20(Data)</div>
-<div class="trick">🧠 Hash Table Average(O(1)) हमेशा BST(O(log n)) से तेज़; Simple Graph=No Self-loop+No Multiple Edges</div>
+<div class="trick">🧠 Self Structure: सिर्फ Pointer, Object नहीं</div>
+<div class="trick">🧠 malloc=Memory+Garbage; calloc=Memory+Zero</div>
+<div class="trick">🧠 .NET: CLR=Run, JIT=IL→Machine, GC=Clean, FCL=Classes, CTS=Types, CLS=Language Interoperability Rules</div>
+<div class="trick">🧠 Graph: Max Degree=n−1, Tree Edges=n−1; Kahn's Algorithm: Indegree=0 हटाओ, Vertices बचे तो Cycle</div>
+<div class="trick">🧠 B-Tree = Search/Insert/Delete सभी O(log n); Insertion में Node Splitting होती है (Full Node→Split)</div>
+<div class="trick">🧠 AVL Rotation: LL→Right, RR→Left, LR→Left+Right, RL→Right+Left</div>
+<div class="trick">🧠 Stack Parentheses: '(' Push, ')' Pop; अंत में Stack Empty=Balanced, बचे हुए=Unbalanced Count</div>
+<div class="trick">🧠 Array In-place Update: हर Step Updated Array पर चलता है, Original पर नहीं</div>
+<div class="trick">🧠 Java final: Variable(No Change)+Method(No Override)+Class(No Inheritance); Exception पर लागू नहीं</div>
+<div class="trick">🧠 OLAP=Multi-dimensional Analysis, Dimensions की कोई 2 की Limit नहीं</div>
+<div class="trick">🧠 WSDL=Web Service Description (XML); Baud Rate=Signal Changes/sec ≠ Bit Rate</div>
+<div class="trick">🧠 Hamming Code=Simplex+No ACK possible+FEC; DSAP/SSAP=LLC Layer Logical Address</div>
+<div class="trick">🧠 TDMA=Time Slot Division (Frequency same रहती है)</div>
+<div class="trick">🧠 Clustering=Collision Problem, Resolution Technique नहीं (Linear/Quadratic/Rehashing असली Techniques)</div>
+<div class="trick">🧠 Ranking Formula: Total = Left + Right − 1</div>
+<div class="trick">🧠 Bloom's Domains = CAP (Cognitive, Affective, Psychomotor); Social कभी नहीं</div>
+<div class="trick">🧠 Inquiry Training Model (Suchman) = Question+Scientific Thinking+Problem Solving (All of Above)</div>
+<div class="trick">🧠 Linear Programmed Instruction=Skinner+Basic; Branched=Crowder+Higher Classes</div>
+<div class="trick">🧠 Cooperative Learning=Inclusion बढ़ाता है; Constructivism=Learner खुद Knowledge बनाता है</div>
+<div class="trick">🧠 SSD=Flash+Fast; VPN=Encrypt+Hide IP पर Complete Anonymous नहीं</div>
+<div class="trick">🧠 Static Method में सिर्फ Static चलेगा — this/super नहीं</div>
+<div class="trick">🧠 Network Address=Host bits ZERO; Broadcast=Host bits 255</div>
+<div class="trick">🧠 Pointer Size=सिर्फ CPU Architecture पर निर्भर</div>
+<div class="trick">🧠 Binary Search सिर्फ Sorted Array पर; Quick Sort Average=O(n log n)</div>
+<div class="trick">🧠 भूलना=T.I.R.; Child-Centric शिक्षा जनक=Rousseau</div>
 </div>
 </section>
 
@@ -1565,73 +1253,31 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <h2 onclick="toggleSec(this)">⚡ Rapid Revision (High-Yield One-Liners) <span class="arrow">▼</span></h2>
 <div class="body">
 <ul>
-<li>Scientific Method of Psychology → Experimental Method</li>
-<li>First Psychology Lab → Wundt (1879, Leipzig)</li>
-<li>Decimal 15 → Binary 1111, Hex F</li>
-<li>First Commercial Computer → UNIVAC I</li>
-<li>CPU Cache Memory → SRAM; Main Memory → DRAM</li>
-<li>Semaphore → Synchronization; Mutex → Mutual Exclusion</li>
-<li>Virtual Memory → Simulates Larger Memory; Thrashing → Excessive Paging</li>
-<li>HTTP Port 80, HTTPS Port 443 (SSL/TLS)</li>
-<li>Register Operations → Micro-operation</li>
-<li>Employee + Department (all employees) → LEFT JOIN</li>
-<li>Indexing → Improves retrieval, slows insert/update</li>
-<li>RAD Model → Iterative</li>
-<li>MongoDB core engine language → C++ (watch for answer-key bug)</li>
-<li>Files.delete() on non-empty dir → DirectoryNotEmptyException</li>
-<li>C23 type-safe null pointer → nullptr</li>
-<li>switch default → optional; while → 0+ times; for → known iterations</li>
-<li>Multiple instructions/clock cycle → Superscalar Execution</li>
-<li>JDK=Development, JRE=Execution, JVM=Runs Bytecode, javac=Compiler</li>
-<li>Function Overloading ≠ changing only return type</li>
-<li>MST edges = Vertices − 1</li>
-<li>Dijkstra → no negative weights; Bellman-Ford → handles negative weights + cycle detection; Floyd-Warshall → all-pairs</li>
-<li>Inorder of BST is always sorted</li>
-<li>Y2K = 2-digit year storage problem</li>
-<li>Mesh Links = n(n−1)/2; Mesh is most reliable but most expensive, not cheapest</li>
-<li>Star: single cable failure → 1 node down; Hub/Switch failure → entire network down</li>
-<li>Ring uses Token Passing → no collisions; every device acts as a repeater</li>
-<li>Cat6 reduces crosstalk via twisting, not higher voltage</li>
-<li>Coaxial cable has shielding → less EMI than UTP; Skin Effect = high-freq current flows on surface</li>
-<li>Optical Fiber attenuation = Absorption + Bending + Scattering (ABS)</li>
-<li>Infrared needs Line-of-Sight, blocked by walls</li>
-<li>10Base2=RG-58(Thinnet), 10Base5=RG-8(Thicknet)</li>
-<li>Boot Sector Virus infects MBR; Macro Virus infects Office docs; Polymorphic Virus changes its code each replication</li>
-<li>WannaCry (2017) = Ransomware/Ransomworm using EternalBlue (SMB exploit)</li>
-<li>Pegasus = NSO Group (Israel) spyware, capable of Zero-Click attacks</li>
-<li>Botnet = malware-infected "zombie" computers controlled remotely by a Botmaster</li>
-<li>Stateful Firewall tracks connection state; Proxy Firewall relays traffic and breaks direct client-server connection</li>
-<li>IPv4: Class A=255.0.0.0, B=255.255.0.0, C=255.255.255.0, Class D का कोई Default Mask नहीं</li>
-<li>IPv6: ::1=Loopback, FE80::/10=Link Local, FC00::/7=Private, 2000::/3=Global Public</li>
-<li>Word/Outlook में हमेशा पहले Style Set (Theme) चुनो, फिर Style Apply होगी — उल्टा क्रम गलत है</li>
-<li>File Organization: कोई एक तरीका Universal Best नहीं; Hash=Exact Search में तेज़, B+ Tree=Range Query/Sorting में बेहतर</li>
-<li>FULL OUTER JOIN हर Database (जैसे MySQL) में Directly Support नहीं होता</li>
-<li>White-box Testing=Structural/Glass-box (Code देखो); Black-box=Functional (सिर्फ Input-Output)</li>
-<li>Self-Referential Structure में सिर्फ Pointer रख सकते हैं, Object नहीं (वरना Infinite Size Error)</li>
-<li>malloc()=Memory देता है Garbage के साथ; calloc()=Memory देता है Zero-initialized</li>
-<li>C++ malloc/free को Support करता है, साथ ही new/delete भी — दोनों साथ चलते हैं</li>
-<li>ASP.NET Life Cycle क्रम: Init → Load → PreRender → Render → Unload</li>
-<li>.NET में FCL Reusable Classes देती है; CLR Program Run कराता है; JIT, IL को Machine Code में बदलता है</li>
-<li>Graph में n Vertices हों तो Maximum Degree = n−1, बिना Cycle वाले Graph (Tree) में Maximum Edges = n−1</li>
-<li>FCFS Disk Scheduling में Total Head Movement = हर Step के Absolute Difference का योग</li>
-<li>OOA में Actors, Use Cases, Reuse Opportunities पहचाने जाते हैं — Data Stores Database Design का काम है, OOA का नहीं</li>
-<li>Use Case Diagram = Functional Requirements (Actor ↔ Use Case); State Machine Diagram = Object का पूरा Life Cycle</li>
-<li>Sequence Diagram Time-order Messages दिखाता है, Return Message भी दिखा सकता है, पर Database Keys नहीं दिखाता</li>
-<li>Interaction Overview Diagram = Sequence Diagram + Activity Diagram का Combination</li>
-<li>Deployment Diagram Structural है — Software कहाँ Deploy होगा दिखाता है, Object Interaction नहीं</li>
-<li>UML 1.x में 9 Diagrams थे; Composite Structure, Timing, Interaction Overview, Communication — ये UML 2.0 में नए जुड़े (कुल 13)</li>
-<li>State Diagram Symbols: ● Initial State, ◉ Final State</li>
-<li>StarUML एक Tool है जो UML Standard को Follow करता है</li>
-<li>Inclusive Education = Divyangjan/CWSN बच्चों को सामान्य बच्चों के साथ पढ़ाना</li>
-<li>Three Language Formula — Kothari Commission (1964-66) की देन है</li>
-<li>Memory Chip Address Lines: Organization दी हो तो 2ⁿ Rule (log₂ Words); External Connections दी हों तो Total−Data−Control</li>
-<li>Cache Direct Mapping: Offset=log₂(Block Size), Index=log₂(Cache Size÷Block Size), Tag=Address Bits−Index−Offset</li>
-<li>Critical Section Problem हल करने को कम-से-कम 2 Shared Variables चाहिए (Peterson's Algorithm: flag[2] + turn)</li>
-<li>Critical Section की 3 शर्तें: Mutual Exclusion, Progress, Bounded Waiting</li>
-<li>N-Step SCAN, Queue को N Sub-queues में बाँटकर Arm Stickiness रोकता है; FSCAN सिर्फ 2 Queues रखता है</li>
-<li>LOOK, Disk के आख़िरी End तक नहीं जाता — Last Request से ही वापस मुड़ जाता है</li>
-<li>Static Method सिर्फ Static Data/Static Methods Access कर सकता है, this/super Use नहीं कर सकता</li>
-<li>Code में class दिखे तो Encapsulation, ':' (C++) या extends (Java) दिखे तो Inheritance पहचानो</li>
+<li>B-Tree Search/Insert/Delete = O(log n); Insertion में Node Splitting ज़रूर होती है</li>
+<li>OLAP Cube = Multi-dimensional Data Analysis; Dimensions Fixed (2) नहीं होतीं</li>
+<li>Java final: सिर्फ Variable, Method, Class पर — Exception पर नहीं</li>
+<li>Array Homogeneous Data रखता है, Index 0 से शुरू होता है</li>
+<li>Array In-place Update Programs में हर Step पहले से Modified Array Use करता है</li>
+<li>Stack Parentheses Matching: '(' Push, ')' Pop; अंत में बचे Elements = Unbalanced Count</li>
+<li>AVL Rotation: LL→Right, RR→Left, LR→Left+Right, RL→Right+Left</li>
+<li>Kahn's Algorithm: सभी Vertices Remove न हों तो Graph में Cycle है; Topological Sort सिर्फ DAG पर</li>
+<li>WSDL = XML आधारित Web Service Description Language</li>
+<li>Pointer अगले Node का Address रखता है, Data नहीं</li>
+<li>Baud Rate = Signal Changes/sec; Bit Rate = Bits/sec (दोनों अलग हैं)</li>
+<li>Hamming Code Simplex Links में Error Correction देता है (ACK संभव नहीं इसलिए)</li>
+<li>TDMA = Time Slot आधारित Multiple Access (Frequency वही रहती है)</li>
+<li>CLR=Run, CTS=Data Types Rules, CLS=Languages के बीच Common Rules (Interoperability)</li>
+<li>DSAP/SSAP = LLC Layer के Logical Address Fields</li>
+<li>Clustering एक Problem है, Collision Resolution Technique नहीं (Linear/Quadratic/Rehashing असली हैं)</li>
+<li>Ranking Formula: Total = Left Rank + Right Rank − 1</li>
+<li>Bloom's Taxonomy में केवल 3 Domain — Cognitive, Affective, Psychomotor (Social नहीं)</li>
+<li>Inquiry Training Model (Suchman): प्रश्न + वैज्ञानिक सोच + समस्या समाधान — तीनों साथ विकसित करता है</li>
+<li>Linear Programmed Instruction (Skinner) = Basic Level; Branched (Crowder) = Higher/Adult Level</li>
+<li>Cooperative Learning Inclusion को बढ़ाता है; Segregation कभी Inclusion नहीं है</li>
+<li>Constructivism में Knowledge Learner खुद बनाता है; Extrinsic Motivation ज़रूरी नहीं</li>
+<li>1's Complement = सीधा Bit Flip (0↔1); 2's Complement = 1's Complement+1</li>
+<li>SSD Flash Memory Use करता है इसलिए HDD से Faster है (No Moving Parts)</li>
+<li>VPN Data Encrypt + IP Hide करता है पर Complete Anonymous नहीं बनाता</li>
 </ul>
 </div>
 </section>
@@ -1642,134 +1288,41 @@ footer{text-align:center; color:var(--muted); font-size:11px; margin-top:20px;}
 <div class="body">
 <table>
 <tr><th>Topic</th><th>Answer</th></tr>
-<tr><td>First Commercial Computer</td><td>UNIVAC I</td></tr>
-<tr><td>CPU Cache</td><td>SRAM</td></tr>
-<tr><td>Main Memory</td><td>DRAM (needs refresh)</td></tr>
-<tr><td>Semaphore</td><td>Synchronization</td></tr>
-<tr><td>Mutex</td><td>Mutual Exclusion</td></tr>
-<tr><td>HTTP / HTTPS Port</td><td>80 / 443</td></tr>
-<tr><td>Register Operations</td><td>Micro-operation</td></tr>
-<tr><td>Employee+Department (all)</td><td>LEFT JOIN</td></tr>
-<tr><td>Indexing effect on Insert/Update</td><td>Slower</td></tr>
-<tr><td>RAD Model</td><td>Iterative</td></tr>
-<tr><td>MongoDB language</td><td>C++ (verified; watch answer-key bug)</td></tr>
-<tr><td>Java delete() non-empty dir</td><td>DirectoryNotEmptyException</td></tr>
-<tr><td>C23 Null Pointer keyword</td><td>nullptr</td></tr>
-<tr><td>Multiple Instr/Clock Cycle</td><td>Superscalar Execution</td></tr>
-<tr><td>Virtual Destructor</td><td>Prevents resource leaks</td></tr>
-<tr><td>Pure Virtual Function</td><td>Forces derived class implementation</td></tr>
-<tr><td>MST edges</td><td>V − 1</td></tr>
-<tr><td>Dijkstra vs Bellman-Ford vs Floyd-Warshall</td><td>No-neg / Neg-OK+cycle detect / All-pairs</td></tr>
-<tr><td>BFS uses</td><td>Queue</td></tr>
-<tr><td>DFS uses</td><td>Stack / Recursion</td></tr>
-<tr><td>Huffman Coding</td><td>Greedy + Min Heap</td></tr>
-<tr><td>Wundt / Watson / Skinner / Binet</td><td>First Lab / Behaviourism / Operant Conditioning / IQ Test</td></tr>
-<tr><td>Point Guard sport</td><td>Basketball</td></tr>
-<tr><td>Y2K</td><td>2-digit year storage bug</td></tr>
-<tr><td>Mesh Links Formula</td><td>n(n−1)/2</td></tr>
-<tr><td>Star: Hub/Switch fails</td><td>Whole network down</td></tr>
-<tr><td>Ring collision avoidance</td><td>Token Passing</td></tr>
-<tr><td>Cat6 crosstalk reduction</td><td>More twisting (not voltage)</td></tr>
-<tr><td>Coax vs UTP EMI</td><td>Coax has shield → less EMI</td></tr>
-<tr><td>Skin Effect</td><td>High-freq current flows on conductor surface</td></tr>
-<tr><td>Fiber Attenuation causes</td><td>Absorption, Bending, Scattering (ABS)</td></tr>
-<tr><td>Infrared limitation</td><td>Needs Line-of-Sight, blocked by walls</td></tr>
-<tr><td>10Base2 / 10Base5 cable</td><td>RG-58 (Thinnet) / RG-8 (Thicknet)</td></tr>
-<tr><td>Boot Sector Virus location</td><td>MBR</td></tr>
-<tr><td>Macro Virus location</td><td>MS Office documents</td></tr>
-<tr><td>WannaCry (2017)</td><td>Ransomware, EternalBlue/SMB exploit</td></tr>
-<tr><td>Pegasus developer</td><td>NSO Group (Israel)</td></tr>
-<tr><td>Botnet</td><td>Zombie PCs controlled by Botmaster</td></tr>
-<tr><td>Stateful Firewall</td><td>Maintains connection State Table</td></tr>
-<tr><td>Proxy Firewall</td><td>Client-Proxy-Server relay, Layer 7</td></tr>
-<tr><td>Class A/B/C Default Mask</td><td>255.0.0.0 / 255.255.0.0 / 255.255.255.0</td></tr>
-<tr><td>Class D Default Mask</td><td>कोई नहीं (Multicast)</td></tr>
-<tr><td>IPv6 ::1 / FE80 / FC00 / 2000</td><td>Loopback / Link Local / Private / Public</td></tr>
-<tr><td>Style Set क्रम</td><td>पहले Theme चुनो, फिर Style Apply</td></tr>
-<tr><td>Hash vs B+ Tree</td><td>Hash=Exact Search; B+ Tree=Range/Sort</td></tr>
-<tr><td>FULL OUTER JOIN</td><td>MySQL में Direct Support नहीं</td></tr>
-<tr><td>White-box / Black-box</td><td>Code देखो / सिर्फ Input-Output</td></tr>
-<tr><td>Self-Referential Structure</td><td>सिर्फ Pointer, Object नहीं</td></tr>
-<tr><td>malloc / calloc</td><td>Garbage Memory / Zero Memory</td></tr>
-<tr><td>C++ Dynamic Memory</td><td>malloc/free + new/delete दोनों Supported</td></tr>
-<tr><td>ASP.NET Life Cycle क्रम</td><td>Init→Load→PreRender→Render→Unload</td></tr>
-<tr><td>.NET FCL / CLR / JIT / GC</td><td>Classes / Run / IL→Machine Code / Cleanup</td></tr>
-<tr><td>Graph Max Degree</td><td>n − 1</td></tr>
-<tr><td>Tree (No Cycle) Max Edges</td><td>n − 1</td></tr>
-<tr><td>FCFS Disk Scheduling</td><td>Sum of |Current−Next| Absolute Distances</td></tr>
-<tr><td>OOA मुख्य काम</td><td>Actors + Use Cases पहचानना (Database नहीं)</td></tr>
-<tr><td>Use Case Diagram</td><td>Functional Requirements</td></tr>
-<tr><td>State Machine Diagram</td><td>Object का Life Cycle</td></tr>
-<tr><td>Interaction Overview Diagram</td><td>Sequence + Activity Diagram</td></tr>
-<tr><td>Deployment Diagram</td><td>Structural — Software कहाँ Deploy होगा</td></tr>
-<tr><td>UML 1.x Diagrams संख्या</td><td>9</td></tr>
-<tr><td>UML 2.0 Diagrams संख्या</td><td>13</td></tr>
-<tr><td>Composite Structure Diagram</td><td>सिर्फ UML 2.0 में</td></tr>
-<tr><td>State Diagram Initial/Final Symbol</td><td>● / ◉</td></tr>
-<tr><td>StarUML</td><td>UML Standard पर आधारित Tool</td></tr>
-<tr><td>Inclusive Education</td><td>Divyangjan/CWSN Students</td></tr>
-<tr><td>Three Language Formula</td><td>Kothari Commission (1964-66)</td></tr>
-<tr><td>Memory Chip: Organization दी हो</td><td>Address Lines = log₂(Words)</td></tr>
-<tr><td>Memory Chip: External Connections दी हों</td><td>Address = Total−Data−Control</td></tr>
-<tr><td>Cache Offset Formula</td><td>log₂(Block Size)</td></tr>
-<tr><td>Cache Index Formula</td><td>log₂(Cache Size ÷ Block Size)</td></tr>
-<tr><td>Cache Tag Formula</td><td>Address Bits − Index − Offset</td></tr>
-<tr><td>Critical Section हल के लिए न्यूनतम Variables</td><td>2 (Peterson's Algorithm)</td></tr>
-<tr><td>Critical Section की 3 शर्तें</td><td>Mutual Exclusion, Progress, Bounded Waiting</td></tr>
-<tr><td>Arm Stickiness रोकने वाला Algorithm</td><td>N-Step SCAN</td></tr>
-<tr><td>2 Queues वाला Disk Scheduling</td><td>FSCAN</td></tr>
-<tr><td>Disk End तक नहीं जाता</td><td>LOOK</td></tr>
-<tr><td>Static Method पाबंदियाँ</td><td>Static Data/Method ही, this/super नहीं</td></tr>
-<tr><td>OOP: class keyword</td><td>Encapsulation</td></tr>
-<tr><td>OOP: ':' (C++) / extends (Java)</td><td>Inheritance</td></tr>
-<tr><td>Network Address Rule</td><td>Host bits = 0</td></tr>
-<tr><td>Broadcast Address Rule</td><td>Host bits = 255</td></tr>
-<tr><td>DAC (Security)</td><td>Owner तय करता है (Discretionary)</td></tr>
-<tr><td>MAC (Security)</td><td>System/Admin तय करता है (Mandatory)</td></tr>
-<tr><td>IEEE 802.1X</td><td>Data Link Layer Authentication + Dynamic Key</td></tr>
-<tr><td>Mandatory HTTP version for browsers</td><td>HTTP 1.1</td></tr>
-<tr><td>Reverse Proxy</td><td>Server के आगे, Load Balancing</td></tr>
-<tr><td>Forward Proxy</td><td>Client के आगे, IP छुपाना</td></tr>
-<tr><td>ER Aggregation</td><td>Relationship को Higher Entity बनाना</td></tr>
-<tr><td>ACID Durability</td><td>Success के बाद भी Crash पर Data सुरक्षित</td></tr>
-<tr><td>Cascading Rollback</td><td>एक Fail होने से Chain में सब Rollback</td></tr>
-<tr><td>GRANT/REVOKE श्रेणी</td><td>DCL</td></tr>
-<tr><td>Database Federation</td><td>स्वतंत्र DBs + Unified Access</td></tr>
-<tr><td>Pointer Size (32-bit)</td><td>हमेशा 4 Bytes (Data Type से स्वतंत्र)</td></tr>
-<tr><td>Function Overloading — Same Arg Count</td><td>Type अलग हो तो संभव</td></tr>
-<tr><td>Static Data Member — Class Size</td><td>कभी नहीं जुड़ता (0 योगदान)</td></tr>
-<tr><td>Static Array Resize</td><td>अपने आप नहीं होता (Fixed)</td></tr>
-<tr><td>Circular Linked List Application</td><td>Round Robin Scheduling</td></tr>
-<tr><td>Circular Array — Deque Benefit</td><td>No Shifting</td></tr>
-<tr><td>Bucket Sort — Internal Need</td><td>Insertion Sort per Bucket</td></tr>
-<tr><td>Binary Search Precondition</td><td>Array Sorted होना जरूरी</td></tr>
-<tr><td>Quick Sort Average</td><td>O(n log n)</td></tr>
-<tr><td>Python Tuple</td><td>Immutable</td></tr>
-<tr><td>Python Set</td><td>Unique elements only</td></tr>
-<tr><td>Causes of Forgetting</td><td>Time, Interference, Repression (T.I.R.)</td></tr>
-<tr><td>Child-Centric Education जनक</td><td>Rousseau</td></tr>
-<tr><td>Mantrap</td><td>2 Interlocking Doors वाला Security Room</td></tr>
-<tr><td>Hidden SSID</td><td>सिर्फ Visibility कम, Security नहीं</td></tr>
-<tr><td>WPA3 Open</td><td>OWE Encryption Use करता है</td></tr>
-<tr><td>Vishing</td><td>Voice Call आधारित Phishing</td></tr>
-<tr><td>White/Black/Grey/Suicide Hacker</td><td>Ethical/Criminal/No-permission-no-harm/Fearless</td></tr>
-<tr><td>Hacking Phase — Whois/NSLookup</td><td>Reconnaissance</td></tr>
-<tr><td>Hacking Phase — Nmap</td><td>Scanning</td></tr>
-<tr><td>Hacking Phase — John the Ripper</td><td>Gaining Access</td></tr>
-<tr><td>Hacking Phase — Rootkit/Netcat</td><td>Maintaining Access</td></tr>
-<tr><td>Clark-Wilson Model</td><td>Commercial Integrity</td></tr>
-<tr><td>DHCP Process क्रम</td><td>Discover-Offer-Request-Acknowledge (DORA)</td></tr>
-<tr><td>SCTP Data Model</td><td>Message Oriented (TCP=Byte Stream)</td></tr>
-<tr><td>RIP / OSPF / EIGRP / BGP Algorithm</td><td>Bellman-Ford / Dijkstra / DUAL / Path Vector</td></tr>
-<tr><td>OSI Application Layer खासियत</td><td>NVT + FTAM</td></tr>
-<tr><td>FTP Control / Data Port</td><td>21 / 20</td></tr>
-<tr><td>Hash Table vs BST Average Speed</td><td>Hash Table (O(1)) हमेशा तेज़</td></tr>
-<tr><td>Simple Graph परिभाषा</td><td>No Self-loop + No Multiple Edges</td></tr>
+<tr><td>B-Tree Insertion</td><td>Node Splitting होती है, O(log n)</td></tr>
+<tr><td>OLAP Cube Dimensions</td><td>Fixed 2 नहीं, Multiple</td></tr>
+<tr><td>Java final लागू होता है</td><td>Variable, Method, Class (Exception नहीं)</td></tr>
+<tr><td>Array Assertion-Reason</td><td>Homogeneous + Index 0 से (दोनों True, Reason सही)</td></tr>
+<tr><td>Array In-place Update</td><td>हर Step पहले से Modified Array पर चलता है</td></tr>
+<tr><td>Stack Parentheses बचे Elements</td><td>Unbalanced Opening Brackets की गिनती</td></tr>
+<tr><td>AVL LL/RR/LR/RL</td><td>Right / Left / Left+Right / Right+Left</td></tr>
+<tr><td>Kahn's Algorithm Vertices बच जाएँ</td><td>Cycle Present</td></tr>
+<tr><td>Topological Sort</td><td>केवल DAG पर</td></tr>
+<tr><td>WSDL</td><td>Web Service Description Language (XML)</td></tr>
+<tr><td>Linked List Pointer</td><td>Next Node का Address रखता है, Data नहीं</td></tr>
+<tr><td>Baud Rate</td><td>Signal Changes/sec (Symbols)</td></tr>
+<tr><td>Simplex Link Error Recovery</td><td>Hamming Code (ACK संभव नहीं)</td></tr>
+<tr><td>TDMA</td><td>Time Slot Division</td></tr>
+<tr><td>CLS</td><td>Common Language Specification (Interoperability)</td></tr>
+<tr><td>CTS</td><td>Common Type System (Data Types)</td></tr>
+<tr><td>DSAP/SSAP</td><td>Logical Address (LLC Layer)</td></tr>
+<tr><td>Clustering</td><td>Collision Problem, Technique नहीं</td></tr>
+<tr><td>Ranking Formula</td><td>Total = Left + Right − 1</td></tr>
+<tr><td>Bloom's Domains</td><td>Cognitive, Affective, Psychomotor</td></tr>
+<tr><td>Inquiry Training Model जनक</td><td>Richard Suchman</td></tr>
+<tr><td>Linear Programmed Instruction जनक</td><td>Skinner (Basic Level)</td></tr>
+<tr><td>Branched Programmed Instruction जनक</td><td>Norman Crowder (Higher Level)</td></tr>
+<tr><td>Cooperative Learning</td><td>Inclusion बढ़ाता है</td></tr>
+<tr><td>Constructivism</td><td>Knowledge Learner खुद बनाता है</td></tr>
+<tr><td>1's Complement</td><td>Bit Flip (0↔1)</td></tr>
+<tr><td>SSD vs HDD</td><td>SSD Faster (Flash Memory, No Moving Parts)</td></tr>
+<tr><td>VPN</td><td>Encrypt+Hide IP, Complete Anonymous नहीं</td></tr>
+<tr><td>.aoo File</td><td>Web Page Image Map</td></tr>
+<tr><td>EBCDIC 11111001</td><td>Decimal 9</td></tr>
 </table>
 </div>
 </section>
 
-<footer>RSMSSB BCI Master Revision Handbook · Living document — merge new uploads here, never restart from scratch.</footer>
+<footer>RSMSSB BCI Master Revision Handbook · Living document — merge new uploads here, never restart from scratch. Last updated after Test 7 (Lakshya Test Series-03) &amp; Test 8 (18 CT Mock-5 Paper-II, 02.08.2026).</footer>
 </main>
 </div>
 

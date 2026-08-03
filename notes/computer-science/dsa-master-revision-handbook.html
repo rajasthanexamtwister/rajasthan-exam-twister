@@ -1,462 +1,315 @@
-
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Group 3 — Programming Revision Sheet</title>
 <style>
+@page { size: A4; margin: 12mm; }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans);font-size:13px;color:var(--text-primary);background:transparent;line-height:1.5}
-.hb{max-width:100%;padding:8px 12px}
-h1{font-size:17px;font-weight:500;color:var(--text-primary);border-bottom:2px solid var(--border-accent);padding-bottom:6px;margin-bottom:10px}
-h2{font-size:13px;font-weight:500;padding:5px 10px;border-radius:6px;margin:12px 0 6px;display:flex;align-items:center;gap:6px}
-h3{font-size:12px;font-weight:500;color:var(--text-secondary);margin:8px 0 4px;border-left:3px solid var(--border-accent);padding-left:6px}
-.sec{margin-bottom:14px}
-table{width:100%;border-collapse:collapse;font-size:12px;margin:4px 0}
-th{background:var(--surface-1);padding:4px 6px;border:0.5px solid var(--border-strong);font-weight:500;text-align:left}
-td{padding:3px 6px;border:0.5px solid var(--border);vertical-align:top}
-tr:nth-child(even){background:var(--surface-1)}
-ul,ol{padding-left:16px}
-li{margin:2px 0;font-size:12px}
-.badge{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11px;font-weight:500;margin:1px 2px}
-.b-red{background:var(--bg-danger);color:var(--text-danger)}
-.b-grn{background:var(--bg-success);color:var(--text-success)}
-.b-amb{background:var(--bg-warning);color:var(--text-warning)}
-.b-blu{background:var(--bg-accent);color:var(--text-accent)}
-.b-pro{background:var(--bg-pro);color:var(--text-pro)}
-.trap{background:var(--bg-danger);border-left:3px solid var(--border-danger);border-radius:0 6px 6px 0;padding:5px 8px;margin:4px 0;font-size:12px}
-.tip{background:var(--bg-success);border-left:3px solid var(--border-success);border-radius:0 6px 6px 0;padding:5px 8px;margin:4px 0;font-size:12px}
-.warn{background:var(--bg-warning);border-left:3px solid var(--border-warning);border-radius:0 6px 6px 0;padding:5px 8px;margin:4px 0;font-size:12px}
-.info{background:var(--bg-accent);border-left:3px solid var(--border-accent);border-radius:0 6px 6px 0;padding:5px 8px;margin:4px 0;font-size:12px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
-.card{background:var(--surface-1);border:0.5px solid var(--border);border-radius:8px;padding:6px 10px;font-size:12px}
-.mono{font-family:var(--font-mono);background:var(--surface-1);padding:1px 4px;border-radius:3px;font-size:11px}
-.hdr-trap{background:var(--bg-danger);color:var(--text-danger)}
-.hdr-weak{background:var(--bg-warning);color:var(--text-warning)}
-.hdr-fact{background:var(--bg-accent);color:var(--text-accent)}
-.hdr-mem{background:var(--bg-pro);color:var(--text-pro)}
-.hdr-pyq{background:var(--bg-success);color:var(--text-success)}
-.hdr-top{background:var(--surface-1);color:var(--text-primary);border:0.5px solid var(--border-strong)}
-.divider{border:none;border-top:0.5px solid var(--border);margin:10px 0}
-code{font-family:var(--font-mono);font-size:11px;background:var(--surface-1);padding:1px 4px;border-radius:3px}
-.formula{background:var(--surface-1);border:0.5px solid var(--border-strong);border-radius:6px;padding:6px 10px;font-family:var(--font-mono);font-size:12px;margin:4px 0}
-.tag{font-size:10px;background:var(--surface-1);border:0.5px solid var(--border);border-radius:4px;padding:1px 5px;margin:1px}
+body{font-family:'Noto Sans Devanagari','Segoe UI',Arial,sans-serif;font-size:12.5px;color:#1a1a1a;line-height:1.45;padding:14px;max-width:900px;margin:auto}
+h1{font-size:19px;border-bottom:3px solid #333;padding-bottom:6px;margin-bottom:8px}
+h2{font-size:15px;background:#eef2f7;border-left:4px solid #2b6cb0;padding:5px 10px;margin:16px 0 6px;border-radius:3px}
+h3{font-size:13px;color:#2b6cb0;margin:10px 0 4px;border-left:3px solid #90cdf4;padding-left:6px}
+table{width:100%;border-collapse:collapse;font-size:11.5px;margin:5px 0}
+th{background:#e2e8f0;padding:4px 6px;border:1px solid #aaa;text-align:left}
+td{padding:3px 6px;border:1px solid #ccc;vertical-align:top}
+tr:nth-child(even){background:#f7f9fc}
+.trap{background:#fdecea;border-left:3px solid #e53e3e;border-radius:0 5px 5px 0;padding:5px 9px;margin:4px 0}
+.tip{background:#eafaf1;border-left:3px solid #38a169;border-radius:0 5px 5px 0;padding:5px 9px;margin:4px 0}
+.warn{background:#fff8e1;border-left:3px solid #d69e2e;border-radius:0 5px 5px 0;padding:5px 9px;margin:4px 0}
+.link{background:#eef2ff;border-left:3px solid #667eea;border-radius:0 5px 5px 0;padding:5px 9px;margin:4px 0;font-size:11.5px}
+.bug{background:#fbe9e7;border-left:3px solid #d84315;border-radius:0 5px 5px 0;padding:5px 9px;margin:4px 0}
+.badge{display:inline-block;padding:1px 6px;border-radius:9px;font-size:10.5px;font-weight:600;margin:1px}
+.b-red{background:#fed7d7;color:#9b2c2c}.b-amb{background:#feebc8;color:#9c4221}.b-grn{background:#c6f6d5;color:#276749}.b-blu{background:#bee3f8;color:#2c5282}
+ul,ol{padding-left:18px;margin:3px 0}
+li{margin:2px 0}
+.flow{background:#f0f4ff;border:1px dashed #667eea;border-radius:6px;padding:8px 10px;font-size:12px;margin:6px 0}
+.mono{font-family:monospace;background:#eee;padding:1px 4px;border-radius:3px}
+.divider{border:none;border-top:1px solid #ddd;margin:12px 0}
+.small{font-size:10.5px;color:#666}
 </style>
+</head>
+<body>
 
-<div class="hb">
-<h1>📚 DSA मास्टर रिवीजन हैंडबुक — BCA/RPSC/IA परीक्षा</h1>
-<div style="font-size:11px;color:var(--text-muted);margin-bottom:12px">Sources: Handwritten Notes (28/07/26) · Suraku Academy MCQ Bank · Rajasthan PYQ Bank · IA Exam 2018/2023 · BCI 2022</div>
+<h1>📘 Group 3 — Programming Revision Sheet (प्रोग्रामिंग भाषा + DSA + IDE)</h1>
+<div class="small">Sources: DSA Handbook (28/07/26) · DSA Quiz-1 · IDE Quiz-1 · प्रोग्रामिंग भाषा Quiz 1,4,5,6 · Chat Discussions — RSMSSB BCI Exam Focus</div>
 
-<!-- SECTION 1: EXAM TRAPS -->
-<div class="sec">
-<h2 class="hdr-trap">🚨 परीक्षा में होने वाली गलतियाँ (EXAM TRAPS)</h2>
-
-<div class="trap"><strong>Trap 1:</strong> Stack = LIFO (Last In First Out) ✅ | Queue = FIFO (First In First Out) ✅<br>❌ गलती: FIFO/LIFO को stack/queue में उल्टा लिखना — PYQ में बार-बार आता है!</div>
-
-<div class="trap"><strong>Trap 2:</strong> DFS uses <strong>Stack</strong> · BFS uses <strong>Queue</strong><br>❌ गलती: DFS में Queue सोचना — याद रखो: DFS = Depth = Stack (नीचे जाता है)</div>
-
-<div class="trap"><strong>Trap 3:</strong> BST का Inorder = Sorted Ascending ✅<br>❌ गलती: Preorder को sorted समझना — केवल Inorder sorted होता है BST में</div>
-
-<div class="trap"><strong>Trap 4:</strong> AVL Tree का Balance Factor = –1, 0, या +1 ✅<br>❌ ≥2 या ≤–2 होने पर Unbalanced → Rotation लगाओ</div>
-
-<div class="trap"><strong>Trap 5:</strong> Full Binary Tree में n leaf nodes → total nodes = <strong>2n–1</strong><br>❌ गलती: 2n या n+1 लिखना</div>
-
-<div class="trap"><strong>Trap 6:</strong> Spanning Tree edges = <strong>V–1</strong> (V = vertices)<br>❌ गलती: V edges लिखना</div>
-
-<div class="trap"><strong>Trap 7:</strong> Push = Stack में add करना · Pop = Stack से remove करना<br>❌ गलती: Push/Pop को उल्टा सोचना</div>
-
-<div class="trap"><strong>Trap 8:</strong> Binary Search → Array sorted होना जरूरी! Unsorted array पर binary search नहीं होती।<br>❌ गलती: unsorted array पर binary search apply करना</div>
-
-<div class="trap"><strong>Trap 9:</strong> Max-Heap में root = maximum · Min-Heap में root = minimum<br>❌ Heap को BST समझना — Heap में left/right का BST जैसा order नहीं होता</div>
-
-<div class="trap"><strong>Trap 10 (PYQ BCI 2022):</strong> Stack SIZE=11, top=-1 → max top = <strong>10</strong> (index 0–10)<br>❌ गलती: 11 या 9 लिखना</div>
+<h2>🔗 How These Topics Connect (Group Map)</h2>
+<div class="flow">
+<strong>प्रोग्रामिंग भाषा</strong> (Machine → Assembly → High-Level; Compiler/Interpreter/Assembler से Translate होती है)
+→ इन्हीं भाषाओं में <strong>Data Structures & Algorithms</strong> Implement होते हैं (Array, Stack, Queue, Tree, Graph, Sorting, Searching)
+→ यह पूरा Code (भाषा + DSA Logic) लिखा, Compile, Run और Debug होता है <strong>IDE</strong> के अंदर (Text Editor + Compiler/Interpreter + Debugger + Build Tool)।<br><br>
+🔗 उदाहरण Cross-Link: "Compiler भाषा को Machine Code में बदलता है" (Prog. Lang) ⟷ "IDE का Build Feature Compiler का ही उपयोग करता है" (IDE) ⟷ "Stack, Recursion व Infix→Postfix Convert करने में उपयोग होती है" (DSA) — यही तीनों Concept मिलाकर Exam में Combined MCQ बनते हैं।
 </div>
 
-<!-- SECTION 2: WEAK AREAS -->
-<div class="sec">
-<h2 class="hdr-weak">🎯 कमजोर टॉपिक्स (PRIORITY ORDER)</h2>
-<table>
-<tr><th>Priority</th><th>Topic</th><th>Level</th><th>Focus Point</th></tr>
-<tr><td>1</td><td>Tree Traversals + PYQ Questions</td><td><span class="badge b-red">🔴 बहुत कमजोर</span></td><td>Pre/In/Post order का output निकालना</td></tr>
-<tr><td>2</td><td>Postfix/Prefix Conversion</td><td><span class="badge b-red">🔴 बहुत कमजोर</span></td><td>Stack algorithm + operator precedence</td></tr>
-<tr><td>3</td><td>AVL Tree Rotations</td><td><span class="badge b-amb">🟠 कमजोर</span></td><td>LL/RR/LR/RL rotation पहचानना</td></tr>
-<tr><td>4</td><td>Heap Operations</td><td><span class="badge b-amb">🟠 कमजोर</span></td><td>Max/Min heap बनाना, heapify</td></tr>
-<tr><td>5</td><td>Graph Algorithms (BFS/DFS)</td><td><span class="badge b-amb">🟠 कमजोर</span></td><td>Traversal order, data structure used</td></tr>
-<tr><td>6</td><td>Time Complexity Rankings</td><td><span class="badge b-amb">🟠 कमजोर</span></td><td>Best/Worst case याद रखना</td></tr>
-<tr><td>7</td><td>Array Address Calculation</td><td><span class="badge b-grn">🟡 ठीक</span></td><td>Row-major / Column-major formula</td></tr>
-<tr><td>8</td><td>Linked List Operations</td><td><span class="badge b-grn">🟢 ठीक</span></td><td>Insert/Delete complexity</td></tr>
+<h2>🚨 मेरी Exam Traps & Confusions (Highest Priority)</h2>
+
+<div class="trap"><strong>Trap 1 — Stack vs Queue:</strong> Stack = LIFO/FILO (दोनों नाम सही, समान अर्थ) · Queue = FIFO<br>🧠 Push=Insert, Pop=Delete (Stack) · Enqueue(Rear)=Insert, Dequeue(Front)=Delete (Queue)</div>
+
+<div class="trap"><strong>Trap 2 — DFS vs BFS:</strong> DFS→Stack (गहराई) · BFS→Queue (Level by level)<br>🧠 "Deep=Stack, Broad=Queue"</div>
+
+<div class="trap"><strong>Trap 3 — BST Traversal:</strong> केवल <strong>Inorder</strong> = Sorted Ascending; Preorder/Postorder Sorted नहीं होते</div>
+
+<div class="trap"><strong>Trap 4 — Compiler vs Interpreter vs Assembler (सबसे ज़्यादा दोहराया गया — 12+ बार):</strong>
+<table><tr><th>Translator</th><th>Input→Output</th><th>तरीका</th></tr>
+<tr><td>Compiler</td><td>High-Level → Machine Code</td><td>पूरा Program एक साथ</td></tr>
+<tr><td>Interpreter</td><td>High-Level → Direct Execute (बिना पूरा Machine Code बनाए)</td><td>Line by Line</td></tr>
+<tr><td>Assembler</td><td>Assembly → Machine Code</td><td>एक साथ</td></tr>
 </table>
-</div>
+🔗 यह IDE के "Build" Feature से जुड़ा है — Build = Source Code को Executable/Deployable Form में बदलना (Compiler इसी में उपयोग होता है)।</div>
 
-<!-- SECTION 3: DATA STRUCTURES OVERVIEW -->
-<div class="sec">
-<h2 class="hdr-fact">⭐ डेटा संरचना — मुख्य तथ्य (HIGH YIELD)</h2>
+<div class="trap"><strong>Trap 5 — AVL Balance Factor:</strong> Valid = –1,0,+1 · ≥2 या ≤–2 → Rotation (LL/RR/LR/RL)</div>
 
-<h3>Linear vs Non-Linear</h3>
+<div class="trap"><strong>Trap 6 — Full Binary Tree:</strong> n leaves → Total Nodes = 2n–1 (2n या n+1 नहीं)</div>
+
+<div class="trap"><strong>Trap 7 — Spanning Tree Edges = V–1</strong> (V edges नहीं)</div>
+
+<div class="trap"><strong>Trap 8 — Binary Search:</strong> केवल Sorted Array पर चलती है; Unsorted पर पहले Sort करना ज़रूरी</div>
+
+<div class="trap"><strong>Trap 9 — Max-Heap vs Min-Heap vs BST:</strong> Heap केवल Complete Binary Tree की Parent≥/≤Children Property रखता है; BST जैसा Left<Parent<Right Order नहीं होता</div>
+
+<div class="trap"><strong>Trap 10 — Stack Overflow Index (PYQ BCI 2022):</strong> SIZE=11, top=-1 → Max valid top = <strong>10</strong> (Index 0–10)</div>
+
+<div class="trap"><strong>Trap 11 — i++ का अर्थ:</strong> <span class="mono">i++ = i = i + 1;</span> (RSMSSB LDC 2018 — 2 बार पूछा गया)</div>
+
+<div class="trap"><strong>Trap 12 — = vs ==:</strong> <span class="mono">=</span> Assignment है, <span class="mono">==</span> Comparison है। तीन Variable बराबर जाँचना: <span class="mono">age1==age2 && age2==age3</span></div>
+
+<div class="trap"><strong>Trap 13 — Internal vs External Sorting (Coaching Material में Confusion):</strong> मानक Theory में Merge Sort भी Internal हो सकता है (यदि पूरा Data RAM में हो), पर पुराने Objective GK Pattern में इसे प्रायः External Sort माना गया है — प्रश्न के Context अनुसार उत्तर दें। ⚠️ Verify Required (Source-dependent)</div>
+
+<div class="trap"><strong>Trap 14 — Slowest Sorting Algorithm:</strong> Bubble और Selection दोनों Worst=O(n²), पर "Slowest Practical" पूछने पर Exam Answer प्रायः <strong>Bubble Sort</strong> होता है</div>
+
+<div class="trap"><strong>Trap 15 — Java 016 Octal Trap:</strong> Java में 0 से शुरू Number = Octal माना जाता है → 016(Octal) = 1×8+6 = <strong>14</strong>(Decimal)</div>
+
+<div class="trap"><strong>Trap 16 — String Array Default Value:</strong> Java में Object/Reference Array के खाली Elements का Default = <span class="mono">null</span> (Primitive का 0 नहीं)</div>
+
+<div class="trap"><strong>Trap 17 — C++ Class Default Access:</strong> Class Members Default = <strong>Private</strong> · Struct Members Default = <strong>Public</strong></div>
+
+<div class="trap"><strong>Trap 18 — C में class नहीं होता</strong> (यह C++ का Data Type है, C Procedural है)</div>
+
+<div class="trap"><strong>Trap 19 — Logical vs Relational Operators:</strong> Logical = <span class="mono">&& || !</span> · Relational = <span class="mono">&gt; &lt; ==</span> — एक Quiz में इन्हें गलत Classify किया गया था (देखें 🚨 Answer Key Doubts)</div>
+
+<h2>🎯 High Priority Weak Areas (Sub-topic-wise)</h2>
 <table>
-<tr><th>Linear (रैखिक)</th><th>Non-Linear (अरैखिक)</th></tr>
-<tr><td>Array, Stack, Queue, Linked List</td><td>Tree, Graph</td></tr>
-<tr><td>एक के बाद एक element</td><td>Hierarchical/Network structure</td></tr>
-<tr><td>Sequential access</td><td>Random/complex access</td></tr>
-</table>
-
-<h3>मुख्य Operations</h3>
-<div class="info">Insertion · Deletion · Traversal · Searching · Sorting · Merging</div>
-
-<div class="grid2" style="margin-top:6px">
-<div class="card">
-<strong>⭐⭐ Array</strong><br>
-• Random access: O(1)<br>
-• Insert/Delete beginning: O(n)<br>
-• Best for: Random access, cache-friendly<br>
-• 2D = Matrix Array = Table Array<br>
-• Base address = Lower Bound address<br>
-• Indexed structure → linear array
-</div>
-<div class="card">
-<strong>⭐⭐ Linked List</strong><br>
-• Dynamic memory allocation<br>
-• Insert at beginning: O(1)<br>
-• Search: O(n) worst case<br>
-• Circular LL: NULL नहीं होता next में<br>
-• Self-referential structure कहलाती है<br>
-• 3 fields: doubly linked node में
-</div>
-</div>
-</div>
-
-<!-- SECTION 4: STACK -->
-<div class="sec">
-<h2 class="hdr-fact">⭐⭐⭐ STACK — परीक्षा का सबसे पसंदीदा टॉपिक</h2>
-<div class="grid2">
-<div>
-<div class="tip"><strong>Key Facts:</strong><br>
-• LIFO = Last In First Out<br>
-• Push = add · Pop = remove<br>
-• Uses: Stack ही Recursion implement करता है<br>
-• Infix→Postfix/Prefix: Stack use होती है<br>
-• Undo feature: Stack<br>
-• Parenthesis matching: Stack<br>
-• DFS: Stack
-</div>
-</div>
-<div>
-<div class="warn"><strong>⚠ Overflow/Underflow:</strong><br>
-SIZE=11, top=-1<br>
-Max valid top = <strong>10</strong> (0 to 10)<br>
-Overflow: top = SIZE-1<br>
-Underflow: top = -1 (empty)</div>
-</div>
-</div>
-
-<h3>⭐⭐ Infix → Postfix Conversion Rules</h3>
-<div class="formula">
-Precedence: ^ (highest) > * / > + - (lowest)<br>
-1. Operand → direct output<br>
-2. ( → push on stack<br>
-3. ) → pop until ( found<br>
-4. Operator → pop higher/equal precedence then push<br>
-5. End → pop all remaining
-</div>
-
-<table>
-<tr><th>Expression</th><th>Postfix</th><th>Prefix</th></tr>
-<tr><td>A+B*C</td><td>ABC*+</td><td>+A*BC</td></tr>
-<tr><td>(A+B)*C-D/E</td><td>AB+C*DE/-</td><td>-*+ABCD/E ⚠verify</td></tr>
-<tr><td>a+b*c+(d*e)</td><td>abc*+de*+</td><td>—</td></tr>
-<tr><td>(a+(b/c)*(d^e)-f)</td><td>—</td><td>-+a*/bc^def</td></tr>
-<tr><td>A-B-D*E/F+B*C</td><td>AB-DE*F/-BC*+</td><td>—</td></tr>
+<tr><th>Sub-topic</th><th>Level</th><th>Focus Point</th></tr>
+<tr><td>Tree Traversals (Pre/In/Post + PYQ)</td><td><span class="badge b-red">🔴 बहुत कमजोर</span></td><td>Output निकालना, Diagram से Traversal</td></tr>
+<tr><td>Postfix/Prefix Conversion</td><td><span class="badge b-red">🔴 बहुत कमजोर</span></td><td>Stack Algorithm + Precedence</td></tr>
+<tr><td>OOP Concepts (Encapsulation/Inheritance/Polymorphism/Abstraction)</td><td><span class="badge b-red">🔴 बहुत कमजोर</span></td><td>15+ बार पूछा गया, बार-बार गलती</td></tr>
+<tr><td>Compiler/Interpreter/Assembler</td><td><span class="badge b-amb">🟠 कमजोर</span></td><td>12+ बार पूछा गया</td></tr>
+<tr><td>Java (JVM/Bytecode/Scanner/File/Constructor)</td><td><span class="badge b-amb">🟠 कमजोर</span></td><td>Syntax व Compilation Flow</td></tr>
+<tr><td>C Programming Basics (Pointers, const, Data Types)</td><td><span class="badge b-amb">🟠 कमजोर</span></td><td>* और & का उपयोग, Keywords</td></tr>
+<tr><td>AVL Rotations / Heap Operations</td><td><span class="badge b-amb">🟠 कमजोर</span></td><td>Rotation Type पहचानना</td></tr>
+<tr><td>Graph Algorithms (BFS/DFS/MST)</td><td><span class="badge b-amb">🟠 कमजोर</span></td><td>Data Structure Used, Algorithm Names</td></tr>
+<tr><td>Sorting Time Complexity + Pass-1 Dry Run</td><td><span class="badge b-amb">🟠 कमजोर</span></td><td>Best/Worst Case, Pass-wise Output</td></tr>
+<tr><td>IDE Features (Code Outline/Folding/Completion/Build)</td><td><span class="badge b-amb">🟠 कमजोर</span></td><td>Feature Names न मिलाएं</td></tr>
+<tr><td>Array Address Formula</td><td><span class="badge b-grn">🟡 ठीक</span></td><td>Row-major/Column-major</td></tr>
+<tr><td>Linked List Operations</td><td><span class="badge b-grn">🟢 ठीक</span></td><td>Insert/Delete Complexity</td></tr>
 </table>
 
-<div class="tip"><strong>🧠 Memory Trick — Postfix evaluation:</strong> Time Complexity = O(n) · Stack से evaluate करो: operand push, operator आए तो 2 pop करो, calculate करो, result push करो</div>
+<hr class="divider">
+<h2>⭐ High-Yield Exam Facts — Sub-topic-wise (Logical Order)</h2>
 
-<div class="info"><strong>PYQ IA 2023:</strong> Prefix <code>+,-,*,3,2,/,8,4,1</code> = <strong>5</strong></div>
-</div>
-
-<!-- SECTION 5: QUEUE -->
-<div class="sec">
-<h2 class="hdr-fact">⭐⭐ QUEUE</h2>
-<div class="grid3">
-<div class="card"><strong>Queue</strong><br>FIFO · Front से delete · Rear से insert · Applications: BFS, scheduling, async transfer</div>
-<div class="card"><strong>Circular Queue</strong><br>Ring buffer · Overflow: (REAR+1)%N == FRONT · Empty: FRONT==REAR==-1</div>
-<div class="card"><strong>Deque</strong><br>Both ends insert/delete · Double-ended queue · Linear data structure</div>
-</div>
-<div class="warn" style="margin-top:6px"><strong>⚠ Confused:</strong> Simple Queue overflow: REAR == N-1 · Circular Queue overflow: (REAR+1)%N == FRONT<br>Queue types: Ordinary, Circular, Priority (Single-ended = NOT a type ⭐PYQ)</div>
-<div class="info" style="margin-top:4px"><strong>PYQ:</strong> Queue implement करने के लिए minimum 2 stacks चाहिए · Stack implement करने के लिए 2 queues</div>
-</div>
-
-<!-- SECTION 6: TREES -->
-<div class="sec">
-<h2 class="hdr-fact">⭐⭐⭐ TREE — सबसे ज्यादा PYQ यहाँ से</h2>
-
-<h3>Tree Traversals — एक बार में याद करें</h3>
+<h3>1️⃣ प्रोग्रामिंग भाषा (Programming Languages)</h3>
 <table>
-<tr><th>Traversal</th><th>Order</th><th>Full Form</th><th>Key Fact</th></tr>
-<tr><td><strong>Inorder</strong></td><td>Left → Node → Right (LNR)</td><td>—</td><td>BST में Inorder = Sorted Ascending ⭐⭐⭐</td></tr>
-<tr><td><strong>Preorder</strong></td><td>Node → Left → Right (NLR)</td><td>—</td><td>Node पहले मिलता है</td></tr>
-<tr><td><strong>Postorder</strong></td><td>Left → Right → Node (LRN)</td><td>—</td><td>Node सबसे अंत में</td></tr>
-<tr><td><strong>Level Order</strong></td><td>Level by level</td><td>BFS</td><td>Queue use होती है · DFS नहीं ⭐</td></tr>
+<tr><th>Concept</th><th>Fact</th></tr>
+<tr><td>भाषाओं के प्रकार</td><td>Machine → Assembly → High-Level (Machine Independent)</td></tr>
+<tr><td>Generations</td><td>1GL=Machine · 2GL=Assembly · 3GL=C/Java/COBOL · 4GL=Query(SQL) · 5GL=Prolog(Logic)</td></tr>
+<tr><td>Compiler/Interpreter/Assembler</td><td>🔗 देखें ऊपर Trap 4</td></tr>
+<tr><td>FORTRAN</td><td>= Formula Translation; पहली High-Level Language(1957, John Backus, IBM); Scientific उपयोग</td></tr>
+<tr><td>COBOL</td><td>Business/Commercial उपयोग; Structured Language</td></tr>
+<tr><td>Pascal</td><td>Structured Language, Teaching-oriented</td></tr>
+<tr><td>C Language</td><td>Dennis Ritchie ने बनाई (Bell Labs, 1972); High-Level पर कुछ Low-Level Features के साथ (Middle-Level भी कहा जाता है)</td></tr>
+<tr><td>Prolog</td><td>Non-Procedural / Logic Programming Language; AI के लिए उपयुक्त</td></tr>
+<tr><td>Python</td><td>High-Level Language, आसान Syntax</td></tr>
+<tr><td>Java</td><td>High-Level; Web/Multimedia के लिए लोकप्रिय; Applet Java में बनते थे</td></tr>
+<tr><td>HTML</td><td>Hyper Text Markup Language (Web Pages)</td></tr>
+<tr><td>XML</td><td>Extensible Markup Language; XML Version Declaration से शुरू होना चाहिए, फिर Root Element</td></tr>
+<tr><td>Instruction Structure</td><td>Opcode(क्या करना है) + Operand(किस Data पर)</td></tr>
+<tr><td>Reserved Words</td><td>Meaning पहले से Fixed — जैसे if, while, int</td></tr>
+<tr><td>Identifier</td><td>Variable/Function/Array सभी के नाम Identifier कहलाते हैं</td></tr>
+<tr><td>ASCII</td><td>7 Data Bits + 1 Parity(Error-check) Bit = 8 Bit; 2⁸=256 Patterns</td></tr>
+<tr><td>BCD</td><td>Binary Coded Decimal</td></tr>
+<tr><td>Compiler Phases</td><td>Lexical Analysis → Syntax Analysis(Parsing) → Semantic Analysis → Code Generation</td></tr>
+<tr><td>Error Types</td><td>गलत Syntax → Compile-Time Error · गलत Logic → Run-Time/Logical Error</td></tr>
+<tr><td>Debugging</td><td>Program की Errors ढूँढना व ठीक करना</td></tr>
 </table>
 
-<div class="warn"><strong>⚠ Important:</strong> Level Order Traversal = BFS = DFS पर आधारित नहीं है — यह Queue-based है!</div>
-
-<h3>Handwritten Notes से Example Tree (Pre/In/Post)</h3>
-<div class="formula">
-Tree: Root=30, Left=10(5,15), Right=40(35,45)<br>
-Inorder:  5, 10, 15, 30, 35, 40, 45  ← Sorted! ✅<br>
-Preorder: 30, 10, 5, 15, 40, 35, 45<br>
-Postorder: 5, 15, 10, 35, 45, 40, 30<br>
-<br>
-Tree: A(B(D,E),C(F)) → Pre: A,B,D,E,C,F · In: D,B,E,A,F,C · Post: D,E,B,F,C,A
-</div>
-
-<div class="info"><strong>Notes से PYQ:</strong> Pre=8,3,1,6,10,19 · In=1,3,6,8,10,19 · Post=1,6,3,19,10,8</div>
-
-<h3>BST (Binary Search Tree)</h3>
-<div class="grid2">
-<div class="card">
-<strong>BST Rules:</strong><br>
-• Left child < Parent<br>
-• Right child > Parent<br>
-• Inorder → Ascending order<br>
-• Delete root → successor = inorder successor (immediate right subtree का leftmost) या predecessor
-</div>
-<div class="card">
-<strong>BST Operations Time:</strong><br>
-• Best/Avg: O(log n)<br>
-• Worst (skewed): O(n)<br>
-• Skewed tree: सभी एक तरफ right child<br>
-• n nodes से कितने BST? = Catalan number
-</div>
-</div>
-
-<div class="tip"><strong>🧠 Catalan Number:</strong> n distinct keys से BST की संख्या = C(2n,n)/(n+1)<br>n=4 → 14 · n=6 → 132</div>
-
-<h3>⭐ AVL Tree</h3>
+<h3>2️⃣ OOP Concepts (C++/Java में — भाषाओं का हिस्सा)</h3>
 <table>
-<tr><th>Concept</th><th>Value</th></tr>
-<tr><td>Balance Factor</td><td>Height(Left) – Height(Right)</td></tr>
-<tr><td>Valid BF values</td><td>–1, 0, +1</td></tr>
-<tr><td>Unbalanced</td><td>BF ≥ 2 या ≤ –2 → Rotation करो</td></tr>
-<tr><td>Rotation types</td><td>LL, RR, LR, RL</td></tr>
-<tr><td>AVL def</td><td>Left & Right subtree height difference ≤ 1</td></tr>
+<tr><th>Concept</th><th>Meaning</th></tr>
+<tr><td>Class</td><td>Object बनाने का Blueprint</td></tr>
+<tr><td>Object</td><td>Class का Instance</td></tr>
+<tr><td>Encapsulation</td><td>Data + Methods को एक Class में Bind करना</td></tr>
+<tr><td>Abstraction</td><td>केवल आवश्यक Information दिखाना, Implementation छिपाना</td></tr>
+<tr><td>Inheritance</td><td>एक Class दूसरी की Properties लेती है (Code Reusability)</td></tr>
+<tr><td>Polymorphism</td><td>एक Interface, अलग-अलग Implementation (Same Name, Different Behaviour)</td></tr>
+<tr><td>Constructor</td><td>Class के नाम जैसा नाम, No Return Type, Public Section में</td></tr>
+<tr><td>Friend Function</td><td>Class के बाहर पर Private Members Access कर सकता है</td></tr>
+<tr><td>Private Member Access</td><td>केवल उस Class का Member Function ही Access कर सकता है (Object सीधे नहीं)</td></tr>
+<tr><td>Private Inheritance</td><td>Base Class के Public Members भी Derived Class में Private बन जाते हैं</td></tr>
+<tr><td>C++ Default Access</td><td>Class=Private · Struct=Public</td></tr>
+<tr><td>Function Overloading</td><td>Compile-Time Polymorphism</td></tr>
 </table>
 
-<h3>⭐⭐ Heap</h3>
-<table>
-<tr><th>Max Heap</th><th>Min Heap</th></tr>
-<tr><td>Root = Maximum element</td><td>Root = Minimum element</td></tr>
-<tr><td>Parent ≥ Children</td><td>Parent ≤ Children</td></tr>
-<tr><td>BFS order: 10,8,5,1,3</td><td>BFS order: 1,2,3</td></tr>
-</table>
-<div class="warn"><strong>⚠ Heap vs BST:</strong> Heap complete binary tree है · BST में strict left/right ordering · Priority Queue implement करने के लिए Heap best है</div>
-<div class="info"><strong>Notes से:</strong> Array [10,8,5,1,2] → Max Heap → BFS = 10,8,7,1,2,5,3 (7,3 add करने पर)</div>
-</div>
+<h3>3️⃣ Data Structures & Algorithms</h3>
+<h4 style="font-size:12px;margin-top:6px">Linear vs Non-Linear</h4>
+<table><tr><th>Linear</th><th>Non-Linear</th></tr>
+<tr><td>Array, Stack, Queue, Linked List</td><td>Tree, Graph</td></tr></table>
 
-<!-- SECTION 7: GRAPH -->
-<div class="sec">
-<h2 class="hdr-fact">⭐⭐ GRAPH</h2>
-<div class="grid2">
-<div class="card">
-<strong>Key Facts:</strong><br>
-• Vertices + Edges<br>
-• Tree = Connected Graph (cycle नहीं)<br>
-• Simple Graph: No self-loop, No parallel edge<br>
-• Undirected n-vertex max edges = n(n-1)/2<br>
-• Complete graph edges = n(n-1)/2<br>
-• Isolated vertex degree = 0<br>
-• Sum of degrees = 2e (e = edges)<br>
-• Odd degree vertices = Always Even number
-</div>
-<div class="card">
-<strong>Traversal:</strong><br>
-• BFS → Queue → Level order → Shortest path<br>
-• DFS → Stack → Depth first<br>
-• DFS types: Inorder, Preorder, Postorder<br>
-• Spanning Tree edges = V–1<br>
-• MST Algorithms: Kruskal's + Prim's (Greedy)<br>
-• Shortest Path: Dijkstra's (single source)<br>
-• All pairs: Floyd-Warshall (Dynamic Programming)
-</div>
-</div>
-</div>
-
-<!-- SECTION 8: SORTING -->
-<div class="sec">
-<h2 class="hdr-fact">⭐⭐⭐ SORTING — Time Complexity Quick Reference</h2>
-<table>
-<tr><th>Algorithm</th><th>Best</th><th>Average</th><th>Worst</th><th>Type</th><th>Notes</th></tr>
-<tr><td><strong>Bubble Sort</strong></td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td><td>Comparison</td><td>Slowest ⚠</td></tr>
-<tr><td><strong>Selection Sort</strong></td><td>O(n²)</td><td>O(n²)</td><td>O(n²)</td><td>Comparison</td><td>Always O(n²)</td></tr>
-<tr><td><strong>Insertion Sort</strong></td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td><td>Comparison</td><td>Best for nearly sorted</td></tr>
-<tr><td><strong>Quick Sort</strong></td><td>O(n log n)</td><td>O(n log n)</td><td>O(n²)</td><td>Divide & Conquer</td><td>Pivot equal split = best</td></tr>
-<tr><td><strong>Merge Sort</strong></td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td>Divide & Conquer</td><td>Always O(n log n) ⭐</td></tr>
-<tr><td><strong>Heap Sort</strong></td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td>Comparison</td><td>Uses heap</td></tr>
-</table>
-<div class="tip"><strong>🧠 Trick — Ascending order:</strong> O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n²) &lt; O(2ⁿ)</div>
-<div class="warn"><strong>⚠ Worst case O(n log n) वाले:</strong> Merge Sort + Heap Sort (Quick Sort का worst O(n²) है!)</div>
-<div class="info"><strong>PYQ:</strong> Selection sort always identifies: smallest unsorted → swap with first unsorted → repeat</div>
-</div>
-
-<!-- SECTION 9: SEARCHING -->
-<div class="sec">
-<h2 class="hdr-fact">⭐⭐ SEARCHING</h2>
-<table>
-<tr><th>Algorithm</th><th>Best</th><th>Worst</th><th>Condition</th><th>Order</th></tr>
-<tr><td>Linear Search</td><td>O(1)</td><td>O(n)</td><td>Any array</td><td>O(n)</td></tr>
-<tr><td>Binary Search</td><td>O(1)</td><td>O(log n)</td><td>Sorted array ✅</td><td>O(log n)</td></tr>
-</table>
-<div class="info">Average comparisons Linear Search = (n+1)/2 · Binary Search max comparisons for 10 lakh = <strong>20</strong></div>
-<div class="warn">⚠ Binary Search = Faster · Binary Search केवल Sorted array पर · Both true (PYQ BCI 2022)</div>
-</div>
-
-<!-- SECTION 10: ARRAY ADDRESS -->
-<div class="sec">
-<h2 class="hdr-fact">⭐ Array Address Formula (PYQ में आता है)</h2>
-<div class="formula">
-Row-Major (C, C++, Java):
-Address(A[i][j]) = Base + [(i - LB_row) × columns + (j - LB_col)] × size
-
-Column-Major (Fortran, MATLAB, R):
-Address(A[i][j]) = Base + [(j - LB_col) × rows + (i - LB_row)] × size
-</div>
-<div class="info"><strong>PYQ:</strong> A[20][10], Base=100, size=4, Row-major → A[11][5] = 100 + [11×10 + 5] × 4 = 100 + 115×4 = <strong>560</strong></div>
-<div class="warn">⚠ C language → Row-major · Fortran, R, MATLAB → Column-major</div>
-</div>
-
-<!-- SECTION 11: DIFFERENCE TABLES -->
-<div class="sec">
-<h2 class="hdr-fact">📊 Confusion Tables — एक बार देखो, हमेशा याद रहे</h2>
-
-<h3>Stack vs Queue</h3>
-<table>
-<tr><th>Feature</th><th>Stack</th><th>Queue</th></tr>
-<tr><td>Principle</td><td>LIFO</td><td>FIFO</td></tr>
-<tr><td>Add operation</td><td>Push</td><td>Enqueue (Rear)</td></tr>
-<tr><td>Remove operation</td><td>Pop</td><td>Dequeue (Front)</td></tr>
-<tr><td>Used in</td><td>DFS, Recursion, Infix→Postfix, Undo</td><td>BFS, Scheduling, Level order</td></tr>
-<tr><td>Real example</td><td>Plates का ढेर</td><td>किराने की दुकान की लाइन</td></tr>
-</table>
-
-<h3>DFS vs BFS</h3>
-<table>
-<tr><th>Feature</th><th>DFS</th><th>BFS</th></tr>
-<tr><td>Data Structure</td><td>Stack</td><td>Queue</td></tr>
-<tr><td>Full Name</td><td>Depth First Search</td><td>Breadth First Search / Level Order</td></tr>
-<tr><td>Tree Traversals</td><td>Inorder, Preorder, Postorder</td><td>Level Order</td></tr>
-<tr><td>Goes</td><td>गहराई में (depth)</td><td>चौड़ाई में (level by level)</td></tr>
-</table>
-
-<h3>Max Heap vs Min Heap</h3>
-<table>
-<tr><th>Feature</th><th>Max Heap</th><th>Min Heap</th></tr>
-<tr><td>Root</td><td>Maximum</td><td>Minimum</td></tr>
-<tr><td>Property</td><td>Parent ≥ Children</td><td>Parent ≤ Children</td></tr>
-<tr><td>Example</td><td>10(8,7)(1,2)(3,3)</td><td>1(2,3)</td></tr>
-</table>
-
-<h3>Singly vs Doubly vs Circular Linked List</h3>
-<table>
-<tr><th>Type</th><th>NULL field</th><th>Direction</th><th>Fields/node</th></tr>
-<tr><td>Singly</td><td>Last node का next=NULL</td><td>One way</td><td>2 (data + next)</td></tr>
-<tr><td>Doubly</td><td>First prev=NULL, Last next=NULL</td><td>Both ways</td><td>3 (prev+data+next)</td></tr>
-<tr><td>Circular</td><td>NULL नहीं होता!</td><td>Circular</td><td>2 या 3</td></tr>
-</table>
-</div>
-
-<!-- SECTION 12: MEMORY TRICKS -->
-<div class="sec">
-<h2 class="hdr-mem">🧠 Memory Tricks & Mnemonics</h2>
+<h4 style="font-size:12px;margin-top:6px">Stack ⭐⭐⭐ (सबसे पसंदीदा Topic)</h4>
 <ul>
-<li><strong>LIFO/FIFO:</strong> <span class="badge b-red">Stack = LILO (Last plate first use)</span> · <span class="badge b-grn">Queue = FIFO (Bus queue)</span></li>
-<li><strong>DFS vs BFS:</strong> <span class="badge b-amb">DFS = Deep = Stack S</span> · <span class="badge b-blu">BFS = Broad = Queue Q</span></li>
-<li><strong>Tree Traversal:</strong> <span class="badge b-pro">In = LNR · Pre = NLR · Post = LRN</span> → "In pre post → Node की position"</li>
-<li><strong>Complexity order:</strong> <span class="badge b-grn">1 &lt; log n &lt; n &lt; n log n &lt; n² &lt; 2ⁿ</span></li>
-<li><strong>BST Inorder = Sorted:</strong> "BST का Inorder = Ascending Result (AIR)" → BIA</li>
-<li><strong>Heap:</strong> MAX = Maximum at top (Mountain peak) · MIN = Minimum at top (Mine = underground = small)</li>
-<li><strong>Spanning Tree:</strong> "n vertices → n–1 edges" → "एक कम किनारे"</li>
-<li><strong>AVL Balance:</strong> "–1, 0, 1 valid · 2 से Rotation आती" → AVL = Always Valid Levels (–1,0,1)</li>
-<li><strong>Merge Sort worst = O(n log n):</strong> "Merge हमेशा Smart" · Quick Sort worst = O(n²): "Quick कभी-कभी गड़बड़"</li>
-<li><strong>Row-major countries:</strong> C/C++/Java → Row wale Real programmers · Fortran/MATLAB/R → Column wale Formula wale</li>
+<li>LIFO/FILO · Push=Add · Pop=Remove</li>
+<li>Uses: Recursion, Infix→Postfix/Prefix Conversion, Undo, Parenthesis Matching, DFS 🔗(Prog. भाषा में Recursion भी इसी से Implement होती है)</li>
+<li>Overflow: top=SIZE-1 · Underflow: top=-1</li>
 </ul>
-</div>
+<div class="tip"><strong>Infix→Postfix Rule:</strong> Precedence ^ &gt; */ &gt; +− । Operand→direct output; (→push; )→pop till(; Operator→pop higher/equal precedence फिर push; अंत में सब pop करो।</div>
+<table><tr><th>Expression</th><th>Postfix</th></tr><tr><td>A+B*C</td><td>ABC*+</td></tr><tr><td>a+b*c+(d*e)</td><td>abc*+de*+</td></tr></table>
 
-<!-- SECTION 13: PYQ FAVORITES -->
-<div class="sec">
-<h2 class="hdr-pyq">⭐⭐⭐ PYQ Favourite Topics (IA/BCI/CET/RPSC)</h2>
-<table>
-<tr><th>Rank</th><th>Topic</th><th>Exams</th><th>Type</th></tr>
-<tr><td>1</td><td>Stack — LIFO, Push/Pop, Applications</td><td>IA, BCI, CET, RPSC</td><td>Direct MCQ</td></tr>
-<tr><td>2</td><td>Queue — FIFO, Types, Circular</td><td>IA, BCI</td><td>Conceptual</td></tr>
-<tr><td>3</td><td>Infix→Postfix/Prefix Conversion</td><td>BCI 2022, IA 2023</td><td>Numerical</td></tr>
-<tr><td>4</td><td>Tree Traversal Output</td><td>BCI, IA</td><td>Numerical/Identify</td></tr>
-<tr><td>5</td><td>BST Operations (Delete, Insert)</td><td>BCI 2022</td><td>Diagram-based</td></tr>
-<tr><td>6</td><td>Sorting Time Complexity</td><td>All exams</td><td>Match/MCQ</td></tr>
-<tr><td>7</td><td>Binary Search Conditions</td><td>IA, BCI</td><td>Statement-based</td></tr>
-<tr><td>8</td><td>DFS/BFS Data Structure Used</td><td>All exams</td><td>MCQ</td></tr>
-<tr><td>9</td><td>Graph — Spanning Tree, Algorithms</td><td>RPSC, IA</td><td>Match/MCQ</td></tr>
-<tr><td>10</td><td>Array — Random Access, Address</td><td>All exams</td><td>Formula/MCQ</td></tr>
+<h4 style="font-size:12px;margin-top:6px">Queue</h4>
+<table><tr><th>Type</th><th>Fact</th></tr>
+<tr><td>Simple Queue</td><td>FIFO · Front से Delete, Rear से Insert · Overflow: REAR==N-1</td></tr>
+<tr><td>Circular Queue</td><td>Overflow: (REAR+1)%N==FRONT · Empty: FRONT==REAR==-1</td></tr>
+<tr><td>Deque</td><td>दोनों ends पर Insert/Delete</td></tr>
 </table>
-</div>
+<div class="warn">Queue के प्रकार: Ordinary, Circular, Priority — Single-ended कोई Type नहीं है (⭐PYQ Trap)। Queue बनाने के लिए Minimum 2 Stack चाहिए और Stack बनाने के लिए 2 Queue।</div>
 
-<!-- SECTION 14: ALGORITHM CONCEPTS -->
-<div class="sec">
-<h2 class="hdr-fact">⭐ Algorithm Concepts (IA/BCI PYQ से)</h2>
+<h4 style="font-size:12px;margin-top:6px">Tree ⭐⭐⭐ (सबसे ज़्यादा PYQ)</h4>
 <table>
-<tr><th>Concept</th><th>Key Fact</th></tr>
-<tr><td>Algorithm</td><td>Step-by-step process · Finite · Unambiguous · Well-defined · Ordered (Unordered = NOT a property ⭐PYQ IA 2018)</td></tr>
-<tr><td>Flowchart</td><td>Algorithm का graphical representation · Input/Output = Parallelogram ⭐PYQ IA 2023</td></tr>
-<tr><td>Selection Sort</td><td>Set A=0 → smallest unsorted → swap → A+1 (PYQ identify algorithm)</td></tr>
-<tr><td>Recursion</td><td>fact(N) if N=0 return 1 else N*fact(N-1) = Recursion example</td></tr>
-<tr><td>FIFO</td><td>First In First Out = Queue · Process scheduling में use</td></tr>
-<tr><td>Binary Search</td><td>Assumes sorted · Parallelogram = Input/Output in flowchart</td></tr>
-<tr><td>ADT</td><td>Abstract Data Type = केवल defined operations उपयोग होती हैं</td></tr>
-<tr><td>Big-O</td><td>Upper bound = Worst case complexity</td></tr>
-<tr><td>Omega (Ω)</td><td>Lower bound = Best case complexity</td></tr>
-<tr><td>Theta (Θ)</td><td>Tight bound = Average case</td></tr>
+<tr><th>Traversal</th><th>Order</th><th>Key Fact</th></tr>
+<tr><td>Inorder</td><td>Left→Node→Right</td><td>BST में Sorted Ascending</td></tr>
+<tr><td>Preorder</td><td>Node→Left→Right</td><td>Node पहले</td></tr>
+<tr><td>Postorder</td><td>Left→Right→Node</td><td>Node अंत में</td></tr>
+<tr><td>Level Order</td><td>Level by level</td><td>= BFS, Queue-based, DFS नहीं</td></tr>
 </table>
-</div>
+<div class="tip">BST: Left&lt;Parent&lt;Right · Best/Avg=O(log n), Worst(skewed)=O(n) · n keys से Possible BST संख्या = Catalan Number C(2n,n)/(n+1)</div>
+<div class="tip">AVL: Balance Factor=Height(L)−Height(R) · Valid=−1,0,+1 · Rotations: LL/RR/LR/RL</div>
+<div class="tip">Heap: Max-Heap Root=Max, Parent≥Children · Min-Heap Root=Min, Parent≤Children · Priority Queue के लिए Heap Best</div>
 
-<!-- SECTION 15: HASHING -->
-<div class="sec">
-<h2 class="hdr-fact">⭐ Hashing</h2>
-<div class="grid2">
-<div class="card">
-<strong>Key Facts:</strong><br>
-• Search: O(1) average<br>
-• Hash function: same hash for different keys possible (Collision) ⭐<br>
-• Load Factor = n/m (n=elements, m=slots)<br>
-• Collision resolve: Linear Probing, Chaining<br>
-• Chaining: Deletion आसान ✅
-</div>
-<div class="card">
-<strong>PYQ Example:</strong><br>
-H(K) = K mod 10<br>
-Insert: 40,27,19,48,7 (in order)<br>
-40→0, 27→7, 19→9, 48→8, 7→? (7 already taken) → Linear probe → 8 taken → <strong>slot 1</strong>
-</div>
-</div>
-</div>
-
-<!-- SECTION 16: QUICK REVISION -->
-<div class="sec">
-<h2 class="hdr-weak">⚡ Last-Minute Quick Revision</h2>
+<h4 style="font-size:12px;margin-top:6px">Graph</h4>
 <ul>
-<li>Array = Random access O(1) · Best for matrix representation</li>
-<li>Stack = LIFO · Push/Pop · Recursion · DFS · Infix conversion</li>
-<li>Queue = FIFO · Enqueue rear, Dequeue front · BFS · Scheduling</li>
-<li>Linked List = Dynamic · O(1) insert at beginning · O(n) search</li>
-<li>Binary Search = Sorted array जरूरी · O(log n)</li>
-<li>BST Inorder = Sorted · Delete root → inorder successor/predecessor</li>
-<li>AVL = Height balanced · BF = –1,0,+1 · ≥2 → rotation</li>
-<li>Heap = Priority Queue · Max/Min root · Complete binary tree</li>
-<li>DFS = Stack · BFS = Queue · Spanning Tree = V–1 edges</li>
-<li>Kruskal/Prim = MST = Greedy · Dijkstra = Shortest path · Floyd-Warshall = All pairs DP</li>
-<li>Merge Sort = Always O(n log n) · Quick Sort worst = O(n²) · Selection Sort always O(n²)</li>
-<li>Full BT: n leaves → 2n–1 total nodes · Degree of node = subtree count</li>
-<li>Circular Linked List: NULL नहीं होता · Deque = both ends insert/delete</li>
-<li>Non-homogeneous data = Array store नहीं कर सकती · Records कर सकती हैं</li>
-<li>Level Order traversal = NOT DFS based = BFS = Queue</li>
+<li>Tree = Connected Graph बिना Cycle · Spanning Tree Edges=V−1</li>
+<li>DFS→Stack · BFS→Queue(Shortest path in unweighted)</li>
+<li>MST: Kruskal's + Prim's (Greedy) · Shortest Path: Dijkstra's(single source) · All-pairs: Floyd-Warshall(DP)</li>
+<li>Undirected max edges = n(n−1)/2 · Sum of degrees = 2×edges · Odd-degree vertices हमेशा Even संख्या में होते हैं</li>
 </ul>
+
+<h4 style="font-size:12px;margin-top:6px">Sorting — Time Complexity</h4>
+<table>
+<tr><th>Algorithm</th><th>Best</th><th>Avg</th><th>Worst</th><th>Note</th></tr>
+<tr><td>Bubble</td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td><td>सबसे Slow माना जाता है</td></tr>
+<tr><td>Selection</td><td>O(n²)</td><td>O(n²)</td><td>O(n²)</td><td>हमेशा O(n²), Pass में सिर्फ 1 Swap</td></tr>
+<tr><td>Insertion</td><td>O(n)</td><td>O(n²)</td><td>O(n²)</td><td>Nearly-sorted के लिए Best</td></tr>
+<tr><td>Quick</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n²)</td><td>Divide&Conquer, Worst=O(n²) ⚠</td></tr>
+<tr><td>Merge</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td>हमेशा O(n log n) ⭐, Divide&Conquer</td></tr>
+<tr><td>Heap</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td>Heap Data Structure उपयोग</td></tr>
+</table>
+<div class="tip">Pass-1 Shortcut: Bubble→सबसे बड़ा Number अंत में जाता है (Adjacent Swap) · Selection→सबसे छोटा Number शुरुआत में जाता है (सिर्फ 1 Swap) · Insertion→पहले 2 Elements आपस में Sort होते हैं</div>
+
+<h4 style="font-size:12px;margin-top:6px">Searching</h4>
+<table><tr><th>Algo</th><th>Condition</th><th>Complexity</th></tr>
+<tr><td>Linear Search</td><td>Sorted/Unsorted दोनों</td><td>O(n)</td></tr>
+<tr><td>Binary Search</td><td>Sorted Array अनिवार्य</td><td>O(log n)</td></tr></table>
+
+<h4 style="font-size:12px;margin-top:6px">Array Address Formula</h4>
+<div class="tip">Row-major: Base+[(i−LB_row)×cols+(j−LB_col)]×size · Column-major: Base+[(j−LB_col)×rows+(i−LB_row)]×size<br>C/C++/Java→Row-major · Fortran/MATLAB/R→Column-major</div>
+
+<h4 style="font-size:12px;margin-top:6px">Array Traversal (Algorithm PYQ)</h4>
+<div class="tip"><span class="mono">Repeat for K=LB to UB: Apply PROCESS to LA[K]</span> = <strong>Traversal</strong> (हर Element को exactly एक बार Visit करना, O(n)) — Searching नहीं (Target नहीं ढूँढ रहा), Sorting नहीं (कोई Swap नहीं)</div>
+
+<h4 style="font-size:12px;margin-top:6px">Hashing</h4>
+<div class="tip">Search=O(1) average · Collision Resolution: Linear Probing, Chaining(Deletion आसान) · Load Factor=n/m</div>
+
+<h3>4️⃣ IDE (Integrated Development Environment)</h3>
+<table>
+<tr><th>Concept</th><th>Fact</th></tr>
+<tr><td>Full Form</td><td>Integrated Development Environment</td></tr>
+<tr><td>मुख्य Components</td><td>Text Editor + Compiler/Interpreter 🔗(भाषा अनुभाग देखें) + Debugger + Build Tool + Project Explorer</td></tr>
+<tr><td>Code Outline</td><td>Class/File के Methods व Functions की List दिखाता है</td></tr>
+<tr><td>Code Folding</td><td>Code Hide/Show करना</td></tr>
+<tr><td>Code Completion</td><td>Typing के दौरान Statement Suggest/Complete करता है (पूरा Program नहीं लिखता)</td></tr>
+<tr><td>Build Feature</td><td>Source Code को Executable/Deployable Form में बदलना — 🔗Compiler का उपयोग करता है</td></tr>
+<tr><td>Code Navigator</td><td>Codebase में Navigate करने में मदद करता है</td></tr>
+<tr><td>Project Explorer Toolbar Buttons</td><td>View Code, View Object, Toggle Folders (View Element नहीं है)</td></tr>
+<tr><td>Web-based IDE Example</td><td>(Official Key अनुसार) Visual Studio Code — ⚠️ वास्तव में यह मुख्यतः Desktop Editor है, Exam Key से उत्तर दें</td></tr>
+<tr><td>Android Development IDE</td><td>Android Studio</td></tr>
+<tr><td>iOS Development IDE</td><td>Xcode</td></tr>
+<tr><td>NetBeans</td><td>Drag & Drop GUI Builder — उदाहरण: Radio-Button (Java Code Editor भी है)</td></tr>
+<tr><td>IDE नहीं है जो Tool</td><td>Sound Editor (IDE Programming के लिए है, Audio Editing के लिए नहीं)</td></tr>
+<tr><td>IDE का लाभ</td><td>Time Saving (Development आसान व तेज़)</td></tr>
+<tr><td>GUI Features</td><td>WYSIWYG, Dialog Box, Icons — Extensive Keystrokes GUI Feature नहीं है</td></tr>
+<tr><td>Java Code Editor नहीं</td><td>MS Word (यह Word Processor है)</td></tr>
+</table>
+
+<hr class="divider">
+<h2>📌 One-Line Revision</h2>
+<ul>
+<li>Compiler=पूरा Program एक साथ Convert · Interpreter=Line by Line · Assembler=Assembly→Machine</li>
+<li>Stack=LIFO(Push/Pop) · Queue=FIFO(Enqueue/Dequeue)</li>
+<li>DFS=Stack · BFS=Queue=Level Order</li>
+<li>BST Inorder=Sorted · AVL BF=−1,0,+1</li>
+<li>Full Binary Tree: n leaves→2n−1 nodes · Spanning Tree: V−1 edges</li>
+<li>Binary Search केवल Sorted Array पर, O(log n)</li>
+<li>Merge/Heap Sort हमेशा O(n log n); Quick Sort Worst=O(n²)</li>
+<li>IDE=Editor+Compiler/Interpreter+Debugger+Build; Build=Executable बनाना (Run नहीं)</li>
+<li>OOP 4 Pillars: Encapsulation, Inheritance, Polymorphism, Abstraction</li>
+</ul>
+
+<h2>🧮 Algorithm Complexity Cheat-Sheet</h2>
+<div class="tip">Complexity Order (Ascending): O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n²) &lt; O(2ⁿ)<br>Big-O=Upper/Worst bound · Omega(Ω)=Lower/Best bound · Theta(Θ)=Tight/Average bound</div>
+
+<h2>🧠 Memory Tricks & Mnemonics</h2>
+<ul>
+<li>Stack=LIFO="Last plate first use" · Queue=FIFO="Bus line"</li>
+<li>DFS="Deep→Stack" · BFS="Broad→Queue"</li>
+<li>Traversal: In=LNR, Pre=NLR, Post=LRN</li>
+<li>AVL="Always Valid Levels (−1,0,1); 2 से Rotation आती है"</li>
+<li>Merge Sort worst=O(n log n)="Merge हमेशा Smart" · Quick Sort worst=O(n²)="Quick कभी-कभी गड़बड़"</li>
+<li>Row-major="Row wale Real programmers(C/C++/Java)" · Column-major="Column wale Formula wale(Fortran/MATLAB/R)"</li>
+<li>Bubble="Big goes Back" · Selection="Smallest to Start" · Insertion="Index 1 से तुलना शुरू"</li>
+<li>IDE="I Do Everything" (एक ही जगह Code, Compile, Debug)</li>
+<li>Connection-chain Trick: "भाषा लिखो(Prog Lang) → Structure बनाओ(DSA) → IDE में चलाओ"</li>
+</ul>
+
+<h2>⭐ PYQ Favourite Topics (सबसे अधिक दोहराए गए)</h2>
+<table>
+<tr><th>Rank</th><th>Topic</th><th>Level</th></tr>
+<tr><td>1</td><td>OOP Concepts</td><td>⭐⭐⭐ (15+ बार)</td></tr>
+<tr><td>2</td><td>Compiler/Interpreter/Assembler</td><td>⭐⭐⭐ (12+ बार)</td></tr>
+<tr><td>3</td><td>Java (JVM/Bytecode/Scanner/File)</td><td>⭐⭐⭐ (12+ बार)</td></tr>
+<tr><td>4</td><td>Stack — LIFO, Push/Pop, Applications</td><td>⭐⭐⭐</td></tr>
+<tr><td>5</td><td>C Programming Basics</td><td>⭐⭐ (10+ बार)</td></tr>
+<tr><td>6</td><td>Tree Traversal Output</td><td>⭐⭐</td></tr>
+<tr><td>7</td><td>Infix→Postfix/Prefix Conversion</td><td>⭐⭐</td></tr>
+<tr><td>8</td><td>Sorting Time Complexity + Pass Dry-run</td><td>⭐⭐</td></tr>
+<tr><td>9</td><td>HTML/XML</td><td>⭐⭐ (8+ बार)</td></tr>
+<tr><td>10</td><td>Programming Language Classification (1GL–5GL)</td><td>⭐⭐</td></tr>
+<tr><td>11</td><td>DFS/BFS Data Structure Used</td><td>⭐</td></tr>
+<tr><td>12</td><td>IDE Features (Build, Code Outline, Completion)</td><td>⭐</td></tr>
+</table>
+
+<h2>🚨 Answer Key Doubts / Source Conflicts</h2>
+<div class="bug"><strong>1. Logical Operators Question (Prog. Quiz 6):</strong> दी गई Answer Key <span class="mono">&gt;,&lt;,=</span> को Logical Operator बताती है — यह वास्तव में <strong>Relational Operators</strong> हैं। Logical Operators होते हैं <span class="mono">&& || !</span>। ➡️ Answer Key Doubt।</div>
+<div class="bug"><strong>2. C में User Defined Function Keyword (Quiz 5):</strong> दी गई Answer "define" संदिग्ध है — C में User Defined Function के लिए कोई Fixed Keyword नहीं होता; यह केवल <span class="mono">#define</span> (Macro) से Confuse हुआ लगता है। ➡️ Faulty Question।</div>
+<div class="bug"><strong>3. Dynamic Web Pages Software (Quiz 5):</strong> दी गई Answer "Ruby" — प्रश्न "Software" पूछता है जबकि Ruby एक Language है, न कि Software। ➡️ प्रश्न अस्पष्ट/Faulty।</div>
+<div class="bug"><strong>4. OOP Blueprint Question (Quiz 4):</strong> Options में सही उत्तर "Class" नहीं दिया गया था (Options: Inheritance/Polymorphism/Encapsulation/Abstraction)। ➡️ Faulty Question।</div>
+<div class="bug"><strong>5. Internal vs External Sorting (Merge Sort):</strong> ⚠️ SYLLABUS CHECK NEEDED — मानक Theory अनुसार RAM में Sort होने पर Merge Sort Internal भी हो सकती है, पर पुराने Objective GK Pattern में इसे External माना गया। Context देखकर उत्तर दें।</div>
+
+<h2>🎯 Last-Minute Revision</h2>
+<ul>
+<li>Compiler=Whole Program · Interpreter=Line-by-Line · Assembler=Assembly→Machine</li>
+<li>Stack=LIFO(DFS,Recursion,Infix-conv,Undo) · Queue=FIFO(BFS,Scheduling)</li>
+<li>BST Inorder=Sorted · Full BT: 2n−1 · Spanning Tree: V−1</li>
+<li>Binary Search=Sorted+O(log n) · Merge/Heap=Always O(n log n) · Quick Worst=O(n²)</li>
+<li>OOP=Encapsulation+Inheritance+Polymorphism+Abstraction · Class=Blueprint, Object=Instance</li>
+<li>IDE=Editor+Compiler+Debugger+Build; Build≠Run</li>
+<li>Java: 0-prefix Number=Octal · Reference Array Default=null · Class Default Access(C++)=Private</li>
+</ul>
+
+<h2>⚡ Rapid Revision (एक नज़र में)</h2>
+<div class="link">प्रोग्रामिंग भाषा (Compiled/Interpreted) → DSA(इन्हीं भाषाओं में Implement) → IDE(इन सबको लिखना/Run/Debug करना) — तीनों को हमेशा एक Chain में याद रखें, Exam में अक्सर तीनों को मिलाकर एक ही MCQ पूछा जाता है।</div>
+
+<div style="font-size:10px;color:#888;text-align:center;margin-top:14px;padding-top:6px;border-top:1px solid #ddd">
+Group 3 Revision Sheet v1.0 · Sources merged: DSA Handbook + DSA/IDE/Prog.Lang Quizzes (Quiz 1,4,5,6) · अगली Update में नई सामग्री यहीं Merge होगी।
 </div>
 
-<div style="font-size:10px;color:var(--text-muted);text-align:center;margin-top:10px;padding-top:6px;border-top:0.5px solid var(--border)">
-DSA Master Handbook v1.0 · Sources: Handwritten Notes 28/07/26 + Suraku Academy + IA/BCI PYQs · Next update: Add new material to merge
-</div>
-</div>
+</body>
+</html>
