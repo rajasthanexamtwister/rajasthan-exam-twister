@@ -1,268 +1,261 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Computer (FOC) — मास्टर रिवीज़न हैंडबुक</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Noto Sans Devanagari',sans-serif;font-size:12.5px;color:#1a2744;background:#fff;padding:10px 14px}
-h1{font-size:17px;font-weight:700;color:#1a2744;border-bottom:2.5px solid #1a2744;padding-bottom:5px;margin-bottom:3px}
-h2{font-size:14px;font-weight:700;color:#1a2744;border-bottom:1.5px solid #1a2744;padding-bottom:3px;margin:14px 0 5px}
-h3{font-size:11.5px;font-weight:600;color:#4b5c8a;text-transform:uppercase;letter-spacing:.04em;margin:7px 0 3px}
-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:8px}
-th{background:#f0f4ff;font-weight:600;font-size:11px;text-align:left;padding:4px 6px;color:#4b5c8a;border:.5px solid #c9d3ea}
-td{padding:4px 6px;border:.5px solid #c9d3ea;color:#1a2744;vertical-align:top;line-height:1.4}
-tr:nth-child(even) td{background:#fafbff}
-td:first-child{font-weight:500}
-ul{padding-left:13px;margin-bottom:3px}
-li{font-size:12px;line-height:1.55;margin-bottom:1px}
-.sheet{max-width:980px;margin:0 auto}
-.note{font-size:11px;color:#6b7a99;margin-bottom:8px}
-/* TRAP BOX */
-.trap-box{background:#fff1f1;border:1.5px solid #fca5a5;border-radius:9px;padding:9px 12px;margin-bottom:12px}
-.trap-title{font-size:13.5px;font-weight:700;color:#dc2626;margin-bottom:6px}
-.trap-sub{font-size:11px;color:#dc2626;opacity:.8;margin-bottom:7px}
-.trap-item{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:5px 0;border-bottom:.5px solid #fca5a5;font-size:12px}
-.trap-item:last-child{border-bottom:none}
-.t-label{font-size:10.5px;color:#9ca3af;margin-bottom:2px;font-weight:500}
-.t-wrong{color:#dc2626;text-decoration:line-through;opacity:.75;font-size:11.5px}
-.t-right{color:#16a34a;font-weight:600;font-size:12px}
-.t-why{font-size:10.5px;color:#6b7a99;margin-top:2px;font-style:italic}
-/* DIFF / INFO BOX */
-.diff-box{background:#fffbeb;border:.5px solid #fde047;border-radius:7px;padding:7px 10px;margin-bottom:8px}
-.diff-title{font-size:11.5px;font-weight:600;color:#b45309;margin-bottom:5px}
-.info-box{background:#e0f2fe;border:.5px solid #7dd3fc;border-radius:7px;padding:7px 10px;margin-bottom:8px;font-size:12px;color:#0c4a6e}
-.info-box strong{color:#0369a1}
-/* GRID */
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:8px}
-.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
-.card{background:#fff;border:.5px solid #c9d3ea;border-radius:7px;padding:7px 9px}
-.card h3{margin-top:0}
-/* BADGES */
-.badge{display:inline-block;font-size:10px;font-weight:600;padding:1px 5px;border-radius:4px;margin-left:2px;vertical-align:middle}
-.b-red{background:#fee2e2;color:#dc2626}
-.b-green{background:#dcfce7;color:#16a34a}
-.b-amber{background:#fef3c7;color:#b45309}
-.b-blue{background:#e0f2fe;color:#0369a1}
-.hl{background:#dcfce7;color:#16a34a;font-weight:600;padding:1px 4px;border-radius:3px;font-size:11.5px}
-.hl-red{background:#fee2e2;color:#dc2626;font-weight:600;padding:1px 4px;border-radius:3px;font-size:11.5px}
-.hl-blue{background:#e0f2fe;color:#0369a1;font-weight:600;padding:1px 4px;border-radius:3px;font-size:11px}
-/* ALERT */
-.alert-bug{background:#fef2f2;border-left:3px solid #dc2626;padding:4px 8px;font-size:11.5px;margin-bottom:5px;border-radius:0 5px 5px 0}
-/* PRINT BTN */
-.print-btn{display:inline-flex;align-items:center;gap:5px;font-size:12px;padding:4px 11px;border:.5px solid #c9d3ea;border-radius:7px;background:transparent;color:#1a2744;cursor:pointer;margin-bottom:10px;font-family:inherit}
-.print-btn:hover{background:#f0f4ff}
-/* DIFF TABLE colour columns */
-.diff-table td:nth-child(2){color:#16a34a}
-.diff-table td:nth-child(3){color:#dc2626}
-/* FULLFORM GRID */
-.ff-card{background:#fafbff;border:.5px solid #c9d3ea;border-radius:6px;padding:5px 8px;font-size:12px}
-.ff-card .ff-abbr{font-size:10.5px;color:#6b7a99;font-weight:600}
-.ff-card .ff-full{font-size:12px;color:#1a2744;font-weight:500;margin-top:1px}
-/* RAPID */
-.rapid-card{background:#fffbeb;border:.5px solid #fde047;border-radius:7px;padding:6px 9px}
-.rapid-card h3{margin-top:0;color:#92400e}
-@media print{
-  .print-btn{display:none}
-  body{padding:5px 8px;font-size:11px}
-  h2{margin-top:8px}
-  .trap-box,.diff-box,.card,.rapid-card{break-inside:avoid}
-  @page{margin:10mm 8mm}
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Computer (FOC) — मास्टर रिवीज़न हैंडबुक</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 10mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Noto Sans Devanagari", "Segoe UI", Arial, sans-serif;
+      font-size: 10.5px;
+      line-height: 1.35;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 8px;
+    }
+
+    h1 {
+      font-size: 16px;
+      margin: 0 0 2px;
+      text-align: center;
+    }
+
+    .sub {
+      text-align: center;
+      font-size: 10px;
+      color: #444;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 12.5px;
+      background: #1f2d3d;
+      color: #fff;
+      padding: 3px 6px;
+      margin: 10px 0 4px;
+      border-radius: 3px;
+    }
+
+    h3 {
+      font-size: 11px;
+      color: #1f2d3d;
+      border-bottom: 1.5px solid #1f2d3d;
+      margin: 8px 0 3px;
+      padding-bottom: 1px;
+    }
+
+    h4 {
+      font-size: 10.5px;
+      color: #8a2be2;
+      margin: 6px 0 2px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 3px 0 8px;
+      font-size: 9.8px;
+    }
+
+    th,
+    td {
+      border: 1px solid #bbb;
+      padding: 2.5px 4px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #e8edf3;
+    }
+
+    tr:nth-child(even) td {
+      background: #f7f9fb;
+    }
+
+    .trap {
+      border: 1px solid #e0a0a0;
+      background: #fff5f5;
+      border-radius: 4px;
+      padding: 4px 6px;
+      margin-bottom: 4px;
+      break-inside: avoid;
+    }
+
+    .trap b.tt {
+      color: #c0392b;
+    }
+
+    .ok {
+      color: #1e7d32;
+      font-weight: bold;
+    }
+
+    .wrong {
+      color: #b71c1c;
+      text-decoration: line-through;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 9px;
+      padding: 1px 4px;
+      border-radius: 3px;
+      background: #ffe6a7;
+      margin-right: 3px;
+    }
+
+    .corr {
+      background: #fff3cd;
+      border: 1px solid #e0c068;
+      padding: 3px 5px;
+      border-radius: 3px;
+      margin: 3px 0;
+      font-size: 9.8px;
+    }
+
+    ul {
+      margin: 2px 0 6px 16px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 1px;
+    }
+
+    .cols2 {
+      display: flex;
+      gap: 8px;
+    }
+
+    .cols2>div {
+      flex: 1;
+    }
+
+    .foot {
+      text-align: center;
+      font-size: 9px;
+      color: #666;
+      margin-top: 14px;
+      border-top: 1px solid #ccc;
+      padding-top: 4px;
+    }
+
+    .noprint {
+      text-align: center;
+      margin: 6px 0;
+    }
+
+    @media print {
+      .noprint {
+        display: none;
+      }
+
+      body {
+        font-size: 10px;
+      }
+    }
+
+    .trick {
+      background: #eef7ff;
+      border-left: 3px solid #1f77b4;
+      padding: 3px 6px;
+      margin: 2px 0;
+      font-size: 9.8px;
+    }
+  </style>
 </head>
+
 <body>
-<div class="sheet">
 
-<button class="print-btn" onclick="window.print()">🖨️ प्रिंट करें</button>
+  <div class="noprint"><button onclick="window.print()">🖨️ प्रिंट करें</button></div>
 
-<h1>💻 Computer (FOC) — मास्टर रिवीज़न हैंडबुक</h1>
-<p class="note">⚡ Error Log + Notes से तैयार | सभी Traps · Software · Hardware · Memory · Internet · India History</p>
+  <h1>Computer (FOC) — मास्टर रिवीज़न हैंडबुक</h1>
+  <div class="sub">⚡ Error Log + Notes + CPU Organization/Storage/Motherboard Notes से तैयार | सभी Traps · Software ·
+    Hardware · CPU · Memory · Storage · Motherboard · Internet · India History</div>
 
-<!-- ===== EXAM TRAPS ===== -->
-<div class="trap-box">
-  <div class="trap-title">🚨 मेरी परीक्षा गलतियाँ — सबसे पहले पढ़ो</div>
-  <div class="trap-sub">हर गलती एक बार confirm करो — फिर आगे बढ़ो</div>
-
-  <div class="trap-item">
+  <h2>🚨 मेरी परीक्षा गलतियाँ — सबसे पहले पढ़ो (हर गलती एक बार confirm करो, फिर आगे बढ़ो)</h2>
+  <div class="cols2">
     <div>
-      <div class="t-label">TRAP 1 — Volatile Memory</div>
-      <div class="t-wrong">ROM, HDD, SSD = Volatile</div>
-      <div class="t-why">बिजली जाने पर ये data रखते हैं</div>
+      <div class="trap"><b class="tt">TRAP 1 — Volatile Memory:</b> <span class="wrong">ROM, HDD, SSD =
+          Volatile</span><br><span class="ok">✅ RAM = Volatile</span> (बिजली गई → डेटा गया)। ROM/HDD/SSD = Non-Volatile।
+      </div>
+      <div class="trap"><b class="tt">TRAP 2 — Memory Units:</b> <span class="wrong">1024 Bytes = 1 GB</span><br><span
+          class="ok">✅ 1024 Bytes = 1 KB</span>। Chain: Bit→Nibble(4b)→Byte(8b)→KB→MB→GB→TB→PB→EB→ZB→YB→BB→GBB</div>
+      <div class="trap"><b class="tt">TRAP 3 — App vs System Software:</b> <span class="wrong">Word, Excel, Photoshop =
+          System Software</span><br><span class="ok">✅ ये Application Software हैं।</span> System = OS, Driver,
+        Compiler।</div>
+      <div class="trap"><b class="tt">TRAP 4 — DTP:</b> <span class="wrong">DTP (PageMaker) = System
+          Software</span><br><span class="ok">✅ DTP/Database = Application Software</span>। System = OS, Driver,
+        Utility, Translator।</div>
+      <div class="trap"><b class="tt">TRAP 5 — Impact vs Non-Impact:</b> <span class="wrong">Laser Printer =
+          Impact</span><br><span class="ok">✅ Laser = Non-Impact</span>। Impact = Dot Matrix, Daisy Wheel, Drum, Chain।
+      </div>
+      <div class="trap"><b class="tt">TRAP 6 — Plotter:</b> <span class="wrong">Plotter = Input Device</span><br><span
+          class="ok">✅ Plotter = Output Device</span> — CAD, Maps, Engineering diagrams।</div>
+      <div class="trap"><b class="tt">TRAP 7 — Browser vs Email:</b> <span class="wrong">Gmail = Web
+          Browser</span><br><span class="ok">✅ Gmail = Email Service</span>। Browser = Chrome, Firefox, Safari, Edge,
+        Opera। KompoZer = HTML Editor।</div>
+      <div class="trap"><b class="tt">TRAP 8 — Booting क्रम:</b> <span class="wrong">पहले OS load होता
+          है</span><br><span class="ok">✅ क्रम: BIOS → POST → OS Load</span>। BIOS = ROM का हिस्सा।</div>
+      <div class="trap"><b class="tt">TRAP 9 — ICT vs IT:</b> <span class="wrong">IT = ICT का बड़ा
+          version</span><br><span class="ok">✅ ICT बड़ा है, IT उसका subset है</span> (ICT = IT + Communication Tech)।
+      </div>
+      <div class="trap"><b class="tt">TRAP 10 — OS vs Antivirus:</b> <span class="wrong">Fedora, Linux =
+          Antivirus</span><br><span class="ok">✅ ये Operating Systems हैं।</span> Antivirus = Avast, Norton, Kaspersky,
+        McAfee।</div>
     </div>
     <div>
-      <div class="t-label">✅ सही</div>
-      <div class="t-right">RAM = Volatile (बिजली गई → data गया)<br>ROM/HDD/SSD = Non-Volatile</div>
+      <div class="trap"><b class="tt">TRAP 11 — Open Source नहीं:</b> <span class="wrong">Adobe Photoshop = Open
+          Source</span><br><span class="ok">✅ Adobe = Proprietary</span>। Open Source = Linux, Firefox, LibreOffice,
+        GIMP, WordPress।</div>
+      <div class="trap"><b class="tt">TRAP 12 — GUI:</b> <span class="wrong">GUI में Graphs use होते हैं</span><br><span
+          class="ok">✅ GUI = Icons, Menus, Colors — Graphs नहीं</span>। MS-DOS = CUI (Command Line), GUI नहीं।</div>
+      <div class="trap"><b class="tt">TRAP 13 — Cylinders:</b> <span class="wrong">10 surface × 5 track = 50
+          cylinders</span><br><span class="ok">✅ Cylinder = प्रति-सरफेस Track की संख्या</span> → 5 Cylinders (गुणा नहीं
+        करना)।</div>
+      <div class="trap"><b class="tt">TRAP 14 — सबसे छोटी Unit:</b> <span class="wrong">Nibble/Byte = सबसे छोटी
+          unit</span><br><span class="ok">✅ Bit (0/1) = सबसे छोटी unit</span>। Bit→Nibble(4)→Byte(8)।</div>
+      <div class="trap"><b class="tt">TRAP 15 — ROM Volatility (NEW):</b> <span class="wrong">Primary Memory हमेशा
+          Volatile होती है</span><br><span class="ok">✅ ROM Primary होकर भी Non-Volatile है</span> — यह सबसे बड़ा अपवाद
+        (Exception) है।</div>
+      <div class="trap"><b class="tt">TRAP 16 — Virtual Memory (NEW):</b> <span class="wrong">Virtual Memory सबसे तेज़
+          Memory है</span><br><span class="ok">✅ Virtual Memory = Hard Disk का हिस्सा, इसलिए सबसे धीमी (Worst) मेमोरी
+          स्तर है।</span></div>
+      <div class="trap"><b class="tt">TRAP 17 — Scanner/Plotter (NEW):</b> <span class="wrong">Scanner दोनों
+          Input+Output है</span><br><span class="ok">✅ Scanner = शुद्ध Input</span>, Plotter = शुद्ध Output। दोनों I/O
+        नहीं हैं।</div>
+      <div class="trap"><b class="tt">TRAP 18 — DVD Capacity (NEW):</b> <span class="wrong">DVD हमेशा 4.7GB ही होती
+          है</span><br><span class="ok">✅ Single Layer=4.7GB, Dual Layer=8.5GB, Double-side Single Layer≈9.4GB</span> —
+        layer/side अनुसार अलग-अलग।</div>
+      <div class="trap"><b class="tt">TRAP 19 — SRAM Density (NEW):</b> <span class="wrong">SRAM महंगी/तेज़ है तो
+          Density भी ज्यादा होगी</span><br><span class="ok">✅ SRAM की Density कम है</span> (6 transistor/cell जगह घेरते
+        हैं); DRAM की Density ज्यादा (1 capacitor/cell)।</div>
+      <div class="trap"><b class="tt">TRAP 20 — Register vs Cache (NEW):</b> <span class="wrong">Cache CPU के सबसे अंदर
+          है</span><br><span class="ok">✅ Register सबसे अंदर (CPU का भाग)</span>; Cache CPU व RAM के बीच बफर है।</div>
     </div>
   </div>
 
-  <div class="trap-item">
-    <div>
-      <div class="t-label">TRAP 2 — Memory Units</div>
-      <div class="t-wrong">1024 Bytes = 1 GB</div>
-      <div class="t-why">बहुत common गलती — GB बहुत बड़ा unit है</div>
-    </div>
-    <div>
-      <div class="t-label">✅ सही</div>
-      <div class="t-right">1024 Bytes = <strong>1 KB</strong><br>Chain: Bit→Nibble(4b)→Byte(8b)→KB→MB→GB→TB</div>
-    </div>
-  </div>
+  <div class="corr">🚨 <b>Correction Flag —</b> "Rangaswami Narasingham" ≠ सही नाम। सही नाम: <b>Rangaswami
+      Narasimhan</b> (Father of Indian Computing, TIFRAC विकास)। दोनों नोट्स में स्पेलिंग भिन्न मिली — प्रामाणिक नाम याद
+    रखें: <b>Narasimhan</b>।</div>
 
-  <div class="trap-item">
-    <div>
-      <div class="t-label">TRAP 3 — Application vs System Software</div>
-      <div class="t-wrong">Word, Excel, Photoshop = System Software</div>
-      <div class="t-why">System Software = OS, Driver, Compiler</div>
-    </div>
-    <div>
-      <div class="t-label">✅ सही</div>
-      <div class="t-right">Word Processing, Spreadsheet, Photo Editing = <strong>Application Software</strong></div>
-    </div>
-  </div>
-
-  <div class="trap-item">
-    <div>
-      <div class="t-label">TRAP 4 — System Software में क्या नहीं?</div>
-      <div class="t-wrong">DTP (PageMaker, Corel) = System Software</div>
-      <div class="t-why">DTP user के लिए है, OS नहीं</div>
-    </div>
-    <div>
-      <div class="t-label">✅ सही</div>
-      <div class="t-right">DTP / Database = <strong>Application Software</strong><br>System = OS, Driver, Utility, Language Translator</div>
-    </div>
-  </div>
-
-  <div class="trap-item">
-    <div>
-      <div class="t-label">TRAP 5 — Impact vs Non-Impact Printer</div>
-      <div class="t-wrong">Laser Printer = Impact</div>
-      <div class="t-why">Laser में paper को छूता नहीं — toner use होता है</div>
-    </div>
-    <div>
-      <div class="t-label">✅ सही</div>
-      <div class="t-right">Laser = <strong>Non-Impact</strong><br>Impact = Dot Matrix, Daisy Wheel, Drum, Chain</div>
-    </div>
-  </div>
-
-  <div class="trap-item">
-    <div>
-      <div class="t-label">TRAP 6 — Plotter Input या Output?</div>
-      <div class="t-wrong">Plotter = Input Device</div>
-      <div class="t-why">Plotter pen से lines draw करता है — produce करता है</div>
-    </div>
-    <div>
-      <div class="t-label">✅ सही</div>
-      <div class="t-right">Plotter = <strong>Output Device</strong><br>Large CAD drawings, Maps, Engineering diagrams</div>
-    </div>
-  </div>
-
-  <div class="trap-item">
-    <div>
-      <div class="t-label">TRAP 7 — Browser vs Email</div>
-      <div class="t-wrong">Gmail = Web Browser</div>
-      <div class="t-why">Gmail browser के अंदर चलता है, खुद browser नहीं है</div>
-    </div>
-    <div>
-      <div class="t-label">✅ सही</div>
-      <div class="t-right">Gmail = Email Service<br>Browser = Chrome, Firefox, Safari, Edge, Opera<br><span class="hl-red">KompoZer = HTML Editor (Browser नहीं)</span></div>
-    </div>
-  </div>
-
-  <div class="trap-item">
-    <div>
-      <div class="t-label">TRAP 8 — Booting Sequence</div>
-      <div class="t-wrong">Computer ON होने पर पहले OS load होता है</div>
-      <div class="t-why">BIOS ROM में store रहता है, OS से पहले चलता है</div>
-    </div>
-    <div>
-      <div class="t-label">✅ सही</div>
-      <div class="t-right">क्रम: <strong>BIOS → POST → OS Load</strong><br>BIOS = ROM का हिस्सा है</div>
-    </div>
-  </div>
-
-  <div class="trap-item">
-    <div>
-      <div class="t-label">TRAP 9 — ICT vs IT</div>
-      <div class="t-wrong">IT = ICT का बड़ा version / ICT = IT का subset</div>
-    </div>
-    <div>
-      <div class="t-label">✅ सही</div>
-      <div class="t-right"><strong>ICT बड़ा है</strong> → IT उसका subset है<br>ICT = IT + Communication Technology</div>
-    </div>
-  </div>
-
-  <div class="trap-item">
-    <div>
-      <div class="t-label">TRAP 10 — OS vs Antivirus</div>
-      <div class="t-wrong">Fedora, Linux = Antivirus</div>
-      <div class="t-why">Linux एक OS है, virus से directly protect नहीं करता</div>
-    </div>
-    <div>
-      <div class="t-label">✅ सही</div>
-      <div class="t-right">Fedora, Linux = <strong>Operating System</strong><br>Antivirus = Avast, Norton, Kaspersky, McAfee, AVG, NOD32</div>
-    </div>
-  </div>
-
-  <div class="trap-item">
-    <div>
-      <div class="t-label">TRAP 11 — Open Source नहीं है</div>
-      <div class="t-wrong">Adobe Photoshop = Open Source</div>
-      <div class="t-why">Adobe = Proprietary / Paid software</div>
-    </div>
-    <div>
-      <div class="t-label">✅ सही</div>
-      <div class="t-right">Open Source = Linux, Firefox, LibreOffice, Ubuntu, WordPress, GIMP<br><span class="hl-red">Adobe Photoshop = Proprietary ❌</span></div>
-    </div>
-  </div>
-
-  <div class="trap-item">
-    <div>
-      <div class="t-label">TRAP 12 — GUI में क्या use नहीं होता?</div>
-      <div class="t-wrong">GUI में सब कुछ होता है</div>
-      <div class="t-why">GUI = Icons, Menus, Colors — Graphs नहीं</div>
-    </div>
-    <div>
-      <div class="t-label">✅ सही</div>
-      <div class="t-right">GUI में <strong>Graphs use नहीं होते</strong><br>MS-DOS = GUI नहीं, CUI (Command Line) है</div>
-    </div>
-  </div>
-
-  <div class="trap-item">
-    <div>
-      <div class="t-label">TRAP 13 — Hard Disk Cylinders</div>
-      <div class="t-wrong">10 surfaces × 5 tracks = 50 cylinders</div>
-      <div class="t-why">Cylinder = same track number सभी surfaces पर</div>
-    </div>
-    <div>
-      <div class="t-label">✅ सही</div>
-      <div class="t-right">10 surfaces, 5 tracks प्रति surface = <strong>5 Cylinders</strong><br>(Cylinder count = Tracks per surface)</div>
-    </div>
-  </div>
-
-  <div class="trap-item">
-    <div>
-      <div class="t-label">TRAP 14 — Computer की सबसे छोटी unit</div>
-      <div class="t-wrong">Nibble / Byte = सबसे छोटी unit</div>
-      <div class="t-why">Nibble=4bits, Byte=8bits — दोनों Bit से बड़े हैं</div>
-    </div>
-    <div>
-      <div class="t-label">✅ सही</div>
-      <div class="t-right"><strong>Bit (0 या 1)</strong> = सबसे छोटी unit<br>Bit → Nibble(4) → Byte(8)</div>
-    </div>
-  </div>
-
-</div><!-- /trap-box -->
-
-
-<!-- ===== SOFTWARE CLASSIFICATION ===== -->
-<h2>🗂️ Software वर्गीकरण — Complete Chart</h2>
-<table>
-  <thead>
-    <tr><th>श्रेणी</th><th>उदाहरण ✅</th><th>इसमें नहीं है ❌</th></tr>
-  </thead>
-  <tbody>
+  <h2>🗂️ Software वर्गीकरण — Complete Chart</h2>
+  <table>
+    <tr>
+      <th>श्रेणी</th>
+      <th>उदाहरण ✅</th>
+      <th>इसमें नहीं है ❌</th>
+    </tr>
     <tr>
       <td>System Software</td>
       <td>Windows, Linux, Unix, Android, iOS, Device Driver, Compiler, Assembler, Interpreter, Utility</td>
@@ -274,463 +267,1847 @@ li{font-size:12px;line-height:1.55;margin-bottom:1px}
       <td>OS, Device Driver, Compiler</td>
     </tr>
     <tr>
-      <td>Utility Software <span class="badge b-blue">System का हिस्सा</span></td>
-      <td>Antivirus, Disk Defragmenter, Disk Cleanup, CCleaner, WinZip, WinRAR, Backup Tool</td>
+      <td>Utility (System का भाग)</td>
+      <td>Antivirus, Disk Defragmenter, Disk Cleanup, CCleaner, WinZip/RAR, Backup Tool</td>
       <td>MS Word, OS, Photoshop</td>
     </tr>
     <tr>
       <td>Open Source</td>
       <td>Linux, Ubuntu, Firefox, LibreOffice, WordPress, GIMP, OpenOffice, VLC, Python</td>
-      <td>Adobe Photoshop, MS Windows, MS Office <span class="badge b-red">Proprietary</span></td>
+      <td>Adobe Photoshop, MS Windows/Office (Proprietary)</td>
     </tr>
     <tr>
       <td>Language Translator</td>
-      <td>Compiler (पूरा program एक बार), Assembler (Assembly→Machine), Interpreter (line-by-line)</td>
+      <td>Compiler (पूरा एक बार), Assembler (Assembly→Machine), Interpreter (line-by-line)</td>
       <td>—</td>
     </tr>
-  </tbody>
-</table>
-
-<div class="diff-box">
-  <div class="diff-title">⚠️ Compiler vs Interpreter — Confusion</div>
-  <table class="diff-table" style="margin-bottom:0">
-    <tr><th>Feature</th><th>Compiler</th><th>Interpreter</th></tr>
-    <tr><td>काम करने का तरीका</td><td>पूरा program एक साथ translate</td><td>Line-by-line translate + execute</td></tr>
-    <tr><td>Error</td><td>सभी errors एक साथ बताता है</td><td>पहली error पर रुक जाता है</td></tr>
-    <tr><td>Speed</td><td>तेज़ (execution time)</td><td>धीमा</td></tr>
-    <tr><td>Example</td><td>C, C++, Java</td><td>Python, JavaScript, BASIC</td></tr>
   </table>
-</div>
 
-<!-- ===== INPUT / OUTPUT ===== -->
-<h2>🖱️ Input vs Output Devices</h2>
-<div class="grid2">
-  <div>
-    <h3>Input Devices ✅</h3>
-    <table>
-      <tr><td>Keyboard</td><td>Text input</td></tr>
-      <tr><td>Mouse</td><td>Pointing device</td></tr>
-      <tr><td>Scanner</td><td>Hardcopy → Softcopy</td></tr>
-      <tr><td>OCR</td><td>Printed text → editable</td></tr>
-      <tr><td>OMR</td><td>MCQ answer sheet check</td></tr>
-      <tr><td>MICR</td><td>Bank cheque reading</td></tr>
-      <tr><td>Barcode Reader</td><td>Product scan (UPC)</td></tr>
-      <tr><td>Joystick</td><td>Games / Robot control</td></tr>
-      <tr><td>Light Pen</td><td>Screen drawing (CRT)</td></tr>
-      <tr><td>Trackball</td><td>Mouse alternative</td></tr>
-      <tr><td>Microphone</td><td>Voice input</td></tr>
-      <tr><td>Webcam</td><td>Video / Image input</td></tr>
-    </table>
+  <h3>⚠️ Compiler vs Interpreter</h3>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Compiler</th>
+      <th>Interpreter</th>
+    </tr>
+    <tr>
+      <td>तरीका</td>
+      <td>पूरा program एक साथ translate</td>
+      <td>Line-by-line translate+execute</td>
+    </tr>
+    <tr>
+      <td>Error</td>
+      <td>सभी errors एक साथ</td>
+      <td>पहली error पर रुकता है</td>
+    </tr>
+    <tr>
+      <td>Speed (Execution)</td>
+      <td>तेज़</td>
+      <td>धीमा</td>
+    </tr>
+    <tr>
+      <td>Object Code</td>
+      <td>बनाता है (.obj)</td>
+      <td>नहीं बनाता</td>
+    </tr>
+    <tr>
+      <td>Example</td>
+      <td>C, C++, Java(Bytecode तक)</td>
+      <td>Python, JavaScript, BASIC</td>
+    </tr>
+  </table>
+  <div class="trick">🧠 Java = Hybrid: पहले Compiler से Bytecode (.class) बनता है, फिर JVM का Interpreter उसे चलाता है।
   </div>
-  <div>
-    <h3>Output Devices ✅</h3>
-    <table>
-      <tr><td>Monitor / VDU</td><td>Soft copy display</td></tr>
-      <tr><td>Printer</td><td>Hard copy</td></tr>
-      <tr><td>Plotter</td><td>CAD / Large drawings</td></tr>
-      <tr><td>Speaker</td><td>Audio output</td></tr>
-      <tr><td>Projector</td><td>Large screen display</td></tr>
-    </table>
-    <div class="diff-box" style="margin-top:6px">
-      <div class="diff-title">⚠️ Both I/O (दोनों)</div>
-      <ul style="margin:0">
-        <li><span class="hl">Touch Screen</span> = Input + Output दोनों</li>
-        <li><span class="hl">Modem</span> = Input + Output दोनों</li>
-        <li><span class="hl-red">Scanner = Input (Output नहीं)</span></li>
-        <li><span class="hl-red">Plotter = Output (Input नहीं)</span></li>
-      </ul>
+
+  <h2>🕰️ Computer का इतिहास — Timeline (NEW)</h2>
+  <table>
+    <tr>
+      <th>काल/वर्ष</th>
+      <th>Device/व्यक्ति</th>
+      <th>विवरण</th>
+    </tr>
+    <tr>
+      <td>3000 BC</td>
+      <td>Abacus</td>
+      <td>पहला गणना उपकरण। China में विकसित; Japan में 'Soroban'</td>
+    </tr>
+    <tr>
+      <td>1614</td>
+      <td>John Napier</td>
+      <td>Napier's Bones — गुणा-भाग के लिए छड़ें</td>
+    </tr>
+    <tr>
+      <td>1642</td>
+      <td>Blaise Pascal</td>
+      <td>Pascaline — पहली Mechanical Calculating Machine</td>
+    </tr>
+    <tr>
+      <td>1835-37</td>
+      <td>Charles Babbage</td>
+      <td>Analytical Engine — 'Father of Computer'</td>
+    </tr>
+    <tr>
+      <td>1842</td>
+      <td>Ada Lovelace</td>
+      <td>पहला Algorithm/Programmer — 'Mother of Computer'</td>
+    </tr>
+    <tr>
+      <td>1854</td>
+      <td>George Boole</td>
+      <td>Boolean Logic — Binary (0,1) का आधार — AND/OR/NOT</td>
+    </tr>
+    <tr>
+      <td>1884-89</td>
+      <td>Herman Hollerith</td>
+      <td>Punch Card — 1890 US Census में उपयोग</td>
+    </tr>
+    <tr>
+      <td>1944</td>
+      <td>Howard Aiken</td>
+      <td>Harvard Mark-1 — पहला सफल सामान्य-प्रयोजन Digital Computer</td>
+    </tr>
+    <tr>
+      <td>1945</td>
+      <td>John Von Neumann</td>
+      <td>Stored Program Concept — EDVAC; आधुनिक CPU का आधार</td>
+    </tr>
+    <tr>
+      <td>1946</td>
+      <td>Eckert & Mauchly</td>
+      <td>ENIAC — पहला Fully Electronic Computer, 18000 Vacuum Tubes</td>
+    </tr>
+    <tr>
+      <td>1951</td>
+      <td>UNIVAC-I</td>
+      <td>पहला Commercial Computer — 1952 election result predict</td>
+    </tr>
+  </table>
+  <div class="trick">🧠 क्रम याद रखें: Abacus→Napier→Pascal→Boole→Babbage→Hollerith→Aiken→Von Neumann→ENIAC→UNIVAC</div>
+
+  <h3>📦 Types of Computers (NEW)</h3>
+  <div class="cols2">
+    <div>
+      <table>
+        <tr>
+          <th>आकार आधार</th>
+          <th>विशेषता</th>
+        </tr>
+        <tr>
+          <td>Micro Computer</td>
+          <td>सबसे छोटा — Desktop, Laptop, Tablet</td>
+        </tr>
+        <tr>
+          <td>Mini Computer</td>
+          <td>Micro से शक्तिशाली — मध्यम कंपनियाँ</td>
+        </tr>
+        <tr>
+          <td>Mainframe</td>
+          <td>बड़ी कंपनियाँ — Banking, Census</td>
+        </tr>
+        <tr>
+          <td>Super Computer</td>
+          <td>सबसे तेज़ — PARAM, CRAY, Scientific work</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <th>अनुप्रयोग आधार</th>
+          <th>विशेषता</th>
+        </tr>
+        <tr>
+          <td>Analog</td>
+          <td>Physical measurement (temp/pressure) — Speedometer, Thermometer</td>
+        </tr>
+        <tr>
+          <td>Digital</td>
+          <td>Binary (0,1) आधारित — हमारे PC</td>
+        </tr>
+        <tr>
+          <td>Hybrid</td>
+          <td>Analog+Digital — Petrol pump machine, Hospital ICU</td>
+        </tr>
+      </table>
     </div>
   </div>
-</div>
 
-<!-- ===== PRINTERS ===== -->
-<h2>🖨️ Printer प्रकार — पूरी तुलना</h2>
-<p class="note">⭐ Impact vs Non-Impact — सबसे ज़्यादा परीक्षा में आता है</p>
-<table>
-  <thead>
-    <tr><th>Printer</th><th>प्रकार</th><th>Speed Unit</th><th>विशेषता</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Dot Matrix</td><td><span class="badge b-red">Impact</span></td><td>CPS</td><td>Pin + Ribbon use, Serial printer, सस्ता</td></tr>
-    <tr><td>Daisy Wheel</td><td><span class="badge b-red">Impact</span></td><td>CPS</td><td>केवल Text, Graphics नहीं</td></tr>
-    <tr><td>Drum Printer</td><td><span class="badge b-red">Impact</span></td><td>LPM</td><td>Line Printer, drum पर character</td></tr>
-    <tr><td>Chain Printer</td><td><span class="badge b-red">Impact</span></td><td>LPM</td><td>Steel chain, Line printer</td></tr>
-    <tr><td>Inkjet</td><td><span class="badge b-green">Non-Impact</span></td><td>PPM</td><td>Nozzle spray, CMYK cartridge, color printing</td></tr>
-    <tr><td>Laser</td><td><span class="badge b-green">Non-Impact</span></td><td>PPM</td><td>Toner use, सबसे तेज़, बेहतरीन quality, Page printer</td></tr>
-    <tr><td>Thermal</td><td><span class="badge b-green">Non-Impact</span></td><td>PPM</td><td>ATM receipts, heat-sensitive paper</td></tr>
-    <tr><td>Plotter</td><td><span class="badge b-blue">Output</span></td><td>—</td><td>Pen से lines draw करता है, Maps/CAD/Engineering</td></tr>
-  </tbody>
-</table>
-<div class="info-box">
-  <strong>Print Quality = DPI</strong> (Dots Per Inch) &nbsp;|&nbsp;
-  <strong>Speed = PPM</strong> (Pages/Min) या LPM (Lines/Min) या CPS (Chars/Sec)
-</div>
-
-<!-- ===== MEMORY HIERARCHY ===== -->
-<h2>🧠 Memory पदानुक्रम — Speed & Classification</h2>
-
-<div class="info-box" style="margin-bottom:6px">
-  <strong>Speed (तेज़ → धीमा):</strong> Register → Cache → RAM → SSD → HDD → Magnetic Tape<br>
-  <strong>Size (छोटा → बड़ा):</strong> Register → Cache → RAM → HDD<br>
-  <strong>Unit Chain:</strong> Bit → Nibble(4b) → Byte(8b) → KB(1024B) → MB → GB → TB → PB → EB → ZB → YB
-</div>
-
-<table>
-  <thead>
-    <tr><th>Memory</th><th>प्रकार</th><th>Volatile?</th><th>मुख्य तथ्य</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Register</td><td>Primary</td><td><span class="hl-red">हाँ</span></td><td>सबसे तेज़, CPU के अंदर, Flip-Flops से बना</td></tr>
-    <tr><td>Cache (L1/L2/L3)</td><td>Primary</td><td><span class="hl-red">हाँ</span></td><td>CPU + RAM के बीच buffer, SRAM से बना</td></tr>
-    <tr><td>RAM</td><td>Primary</td><td><span class="hl-red">हाँ</span></td><td>Working memory, DRAM (Capacitor-based)</td></tr>
-    <tr><td>ROM</td><td>Primary</td><td><span class="hl">नहीं</span></td><td>BIOS store करता है, Read Only, Non-Volatile</td></tr>
-    <tr><td>HDD</td><td>Secondary</td><td><span class="hl">नहीं</span></td><td>Aluminium + Iron Oxide platter, RPM से speed</td></tr>
-    <tr><td>SSD</td><td>Secondary</td><td><span class="hl">नहीं</span></td><td>Flash Memory, HDD से तेज़, कोई moving part नहीं</td></tr>
-    <tr><td>CD-R</td><td>Secondary</td><td><span class="hl">नहीं</span></td><td>Write Once Read Many (WORM)</td></tr>
-    <tr><td>DVD</td><td>Secondary</td><td><span class="hl">नहीं</span></td><td>4.7 GB (single layer), 8.5 GB (dual layer)</td></tr>
-    <tr><td>Magnetic Tape</td><td>Secondary</td><td><span class="hl">नहीं</span></td><td>Sequential access, सबसे धीमा, Backup के लिए</td></tr>
-  </tbody>
-</table>
-
-<div class="diff-box">
-  <div class="diff-title">⚠️ DRAM vs SRAM — Confusion Table</div>
-  <table class="diff-table" style="margin-bottom:0">
-    <tr><th>Feature</th><th>DRAM (Dynamic RAM)</th><th>SRAM (Static RAM)</th></tr>
-    <tr><td>Refresh</td><td>ज़रूरी (capacitor charge खोता है)</td><td>ज़रूरी नहीं</td></tr>
-    <tr><td>बना है</td><td>Capacitors से</td><td>Flip-Flops (transistors) से</td></tr>
-    <tr><td>Speed</td><td>धीमा</td><td>तेज़</td></tr>
-    <tr><td>Cost</td><td>सस्ता</td><td>महँगा</td></tr>
-    <tr><td>Use</td><td>Main RAM (Primary)</td><td>Cache Memory</td></tr>
-  </table>
-</div>
-
-
-<!-- ===== GENERATIONS ===== -->
-<h2>🕰️ Computer Generations — Matching Table</h2>
-<table>
-  <thead>
-    <tr><th>पीढ़ी</th><th>वर्ष</th><th>Technology</th><th>उदाहरण</th><th>विशेषता</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>1st</td><td>1940–1956</td><td>Vacuum Tube</td><td>ENIAC, UNIVAC, EDVAC</td><td>बहुत बड़े, गर्म, धीमे</td></tr>
-    <tr><td>2nd</td><td>1956–1963</td><td>Transistor</td><td>IBM 1401, IBM 7030</td><td>छोटे, कम बिजली, Assembly language</td></tr>
-    <tr><td>3rd</td><td>1964–1971</td><td>IC (SSI / MSI)</td><td>IBM System/360</td><td>High-level language, Keyboard+Monitor</td></tr>
-    <tr><td>4th</td><td>1971–वर्तमान</td><td>VLSI / Microprocessor</td><td>PC, Laptop, Intel 4004</td><td>Personal Computer का युग</td></tr>
-    <tr><td>5th</td><td>वर्तमान</td><td>ULSI + AI</td><td>PARAM, Deep Blue, i-Series</td><td>Artificial Intelligence, Parallel Processing</td></tr>
-  </tbody>
-</table>
-<div class="info-box">
-  🧠 <strong>ट्रिक:</strong> <strong>V</strong>acuum → <strong>T</strong>ransistor → <strong>I</strong>C → <strong>V</strong>LSI → <strong>U</strong>LSI &nbsp;=&nbsp; <strong>"VT IV U"</strong>
-</div>
-
-<!-- ===== IMPORTANT PEOPLE ===== -->
-<h2>🧑‍💼 महत्वपूर्ण व्यक्ति एवं आविष्कार</h2>
-<table>
-  <thead>
-    <tr><th>व्यक्ति</th><th>आविष्कार / योगदान</th><th>मुख्य तथ्य</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Charles Babbage</td><td>Analytical Engine</td><td><span class="hl">Father of Computer</span> (1837)</td></tr>
-    <tr><td>Blaise Pascal</td><td>Pascaline (1642)</td><td>पहला Mechanical Calculator</td></tr>
-    <tr><td>John Von Neumann</td><td>EDVAC</td><td>Stored Program Concept — आधुनिक CPU का आधार</td></tr>
-    <tr><td>Herman Hollerith</td><td>Punch Card / Tabulating Machine</td><td>1890 US Census में use</td></tr>
-    <tr><td>Douglas Engelbart</td><td>Mouse (1964)</td><td>Father of Mouse</td></tr>
-    <tr><td>Jack Kilby + Robert Noyce</td><td>Integrated Circuit (IC)</td><td>3rd Generation का आधार</td></tr>
-    <tr><td>Ada Lovelace</td><td>पहला Algorithm / Program</td><td><span class="hl">Mother of Computer / First Programmer</span></td></tr>
-    <tr><td>Alan Turing</td><td>Turing Machine concept</td><td>Father of Computer Science</td></tr>
-    <tr><td>Samarendra Kumar Mitra</td><td>भारत का पहला Analog Computer</td><td>1953–54</td></tr>
-    <tr><td>Rangaswami Narasimhan</td><td>TIFRAC का विकास</td><td><span class="hl">Father of Indian Computing</span></td></tr>
-  </tbody>
-</table>
-
-<!-- ===== KEYBOARD ===== -->
-<h2>⌨️ Keyboard Shortcuts + Key Types</h2>
-<div class="grid2">
+  <h2>🖥️ CPU Organization (NEW — पूरी तरह नया सेक्शन)</h2>
+  <h3>Von Neumann Architecture</h3>
+  <ul>
+    <li>जनक: <b>John Von Neumann (1945)</b> — 'Father of Computer Architecture / Stored Program Concept'</li>
+    <li>Model: SISD (Single Instruction, Single Data)</li>
+    <li>Flow: Input → Main Memory (RAM) → CPU (ALU+CU+MU) → Output</li>
+    <li>Program = Instructions + Data दोनों Memory में ही store होते हैं</li>
+    <li>CPU Cycle: <b>Fetch → Decode → Execute → Store</b></li>
+  </ul>
   <table>
-    <thead><tr><th>Shortcut</th><th>काम</th></tr></thead>
-    <tbody>
-      <tr><td>Ctrl+C</td><td>Copy</td></tr>
-      <tr><td>Ctrl+X</td><td>Cut</td></tr>
-      <tr><td>Ctrl+V</td><td>Paste</td></tr>
-      <tr><td>Ctrl+Z</td><td>Undo</td></tr>
-      <tr><td>Ctrl+Y</td><td>Redo</td></tr>
-      <tr><td>Ctrl+P</td><td>Print</td></tr>
-      <tr><td>Ctrl+S</td><td>Save</td></tr>
-      <tr><td>Ctrl+A</td><td>Select All</td></tr>
-      <tr><td>Ctrl+F</td><td>Find</td></tr>
-      <tr><td>Ctrl+E</td><td>Center Align</td></tr>
-      <tr><td>Ctrl+I</td><td>Italic</td></tr>
-      <tr><td>Ctrl+B</td><td>Bold</td></tr>
-    </tbody>
+    <tr>
+      <th>Component</th>
+      <th>Full Form</th>
+      <th>कार्य</th>
+    </tr>
+    <tr>
+      <td>ALU</td>
+      <td>Arithmetic Logic Unit</td>
+      <td>+,−,×,/,% (Arithmetic); &lt;,&gt;,= (Comparison); NOT/AND/OR/XOR (Logic)</td>
+    </tr>
+    <tr>
+      <td>CU</td>
+      <td>Control Unit</td>
+      <td>Computer का "Nerve System/Brain" — Fetch/Decode/Coordinate</td>
+    </tr>
+    <tr>
+      <td>MU</td>
+      <td>Memory Unit</td>
+      <td>Registers का समूह (PCR, MAR, MBR आदि)</td>
+    </tr>
+  </table>
+  <h4>Registers (⭐ बहुत Important)</h4>
+  <div class="trick">🧠 Register = CPU की सबसे तेज़ Storage। Volatile। Flip-Flops से बना। सबसे छोटी Memory।</div>
+  <table>
+    <tr>
+      <th>Register</th>
+      <th>Full Form</th>
+      <th>काम</th>
+    </tr>
+    <tr>
+      <td>PCR</td>
+      <td>Program Counter Register</td>
+      <td>अगली Instruction का Address hold करता है</td>
+    </tr>
+    <tr>
+      <td>MAR</td>
+      <td>Memory Address Register</td>
+      <td>Active Memory का Address (Binary में) hold करता है</td>
+    </tr>
+    <tr>
+      <td>MBR/MDR</td>
+      <td>Memory Buffer/Data Register</td>
+      <td>Active Data hold करता है; CPU-Memory के बीच transfer</td>
+    </tr>
+    <tr>
+      <td>IR</td>
+      <td>Instruction Register</td>
+      <td>Current instruction hold करता है</td>
+    </tr>
+    <tr>
+      <td>AR</td>
+      <td>Accumulator Register</td>
+      <td>ALU का Result hold करता है</td>
+    </tr>
+  </table>
+  <h4>Flip-Flop व Circuits</h4>
+  <ul>
+    <li>Flip-Flop = Sequential Circuit, 1 Bit data hold करता है, Bistable Device</li>
+    <li><b>8 Flip-Flops = 1 Byte</b> (8-bit register)</li>
+  </ul>
+  <table>
+    <tr>
+      <th>Circuit Type</th>
+      <th>Output निर्भर करता है</th>
+      <th>Example</th>
+    </tr>
+    <tr>
+      <td>Combinational</td>
+      <td>केवल Present Input पर</td>
+      <td>Adder</td>
+    </tr>
+    <tr>
+      <td>Sequential</td>
+      <td>Past Output + Present Input दोनों</td>
+      <td>Memory, Flip-Flop</td>
+    </tr>
+  </table>
+  <h4>Word Length & CPU Cores</h4>
+  <ul>
+    <li>Word Length = एक instruction में Processor जितने Bits पर काम करे (जैसे 32-bit, 64-bit)</li>
+    <li>Core = ALU + CU + Register का समूह</li>
+  </ul>
+  <table>
+    <tr>
+      <th>Core Type</th>
+      <th>Cores</th>
+      <th>Use</th>
+    </tr>
+    <tr>
+      <td>Unicore</td>
+      <td>1</td>
+      <td>Single task</td>
+    </tr>
+    <tr>
+      <td>Dual Core</td>
+      <td>2</td>
+      <td>Everyday tasks</td>
+    </tr>
+    <tr>
+      <td>Quad Core</td>
+      <td>4</td>
+      <td>Gaming/Multitasking</td>
+    </tr>
+    <tr>
+      <td>Hexa Core</td>
+      <td>6</td>
+      <td>High performance</td>
+    </tr>
+    <tr>
+      <td>Octa Core</td>
+      <td>8</td>
+      <td>Mobile processors</td>
+    </tr>
+  </table>
+
+  <h3>Microprocessor — History व Indian Processors (NEW)</h3>
+  <div class="trick">⭐⭐ World का पहला Microprocessor: <b>Intel 4004</b> (1971, Inventor: Ted Hoff, 4-bit, 2300
+    transistors)</div>
+  <table>
+    <tr>
+      <th>Indian Processor</th>
+      <th>Developer</th>
+      <th>विवरण</th>
+    </tr>
+    <tr>
+      <td>SHAKTI</td>
+      <td>IIT Madras (RISE Group)</td>
+      <td>2018 — पहला indigenous microprocessor</td>
+    </tr>
+    <tr>
+      <td>AJIT</td>
+      <td>IIT Bombay</td>
+      <td>भारतीय processor</td>
+    </tr>
+    <tr>
+      <td>VIKRAM-32</td>
+      <td>ISRO</td>
+      <td>Space applications</td>
+    </tr>
+    <tr>
+      <td>DHRUV (64-bit)</td>
+      <td>C-DAC (Pune)</td>
+      <td>—</td>
+    </tr>
+  </table>
+  <div class="trick">🧠 Moore's Law: हर 2 साल में Transistor की संख्या दोगुनी, कीमत आधी।</div>
+  <table>
+    <tr>
+      <th>Company</th>
+      <th>Full Form</th>
+      <th>स्थापना</th>
+      <th>Products</th>
+    </tr>
+    <tr>
+      <td>Intel</td>
+      <td>Integrated Electronics</td>
+      <td>1968 (Gordon Moore + Robert Noyce)</td>
+      <td>Celeron, Pentium, i3–i9</td>
+    </tr>
+    <tr>
+      <td>AMD</td>
+      <td>Advanced Micro Devices</td>
+      <td>1969</td>
+      <td>Ryzen</td>
+    </tr>
+    <tr>
+      <td>Qualcomm</td>
+      <td>Quality Communication</td>
+      <td>1985</td>
+      <td>Snapdragon (mobile)</td>
+    </tr>
+  </table>
+
+  <h2>🖱️ Input Devices — Complete (existing + NEW विस्तार)</h2>
+  <div class="cols2">
+    <div>
+      <table>
+        <tr>
+          <th>General Input</th>
+          <th>काम</th>
+        </tr>
+        <tr>
+          <td>Keyboard</td>
+          <td>Text input</td>
+        </tr>
+        <tr>
+          <td>Mouse</td>
+          <td>Pointing device</td>
+        </tr>
+        <tr>
+          <td>Scanner</td>
+          <td>Hardcopy→Softcopy</td>
+        </tr>
+        <tr>
+          <td>OCR</td>
+          <td>Printed/handwritten text→editable</td>
+        </tr>
+        <tr>
+          <td>OMR</td>
+          <td>MCQ answer sheet check</td>
+        </tr>
+        <tr>
+          <td>MICR</td>
+          <td>Bank cheque reading</td>
+        </tr>
+        <tr>
+          <td>BCR/Barcode</td>
+          <td>Product scan (UPC 12-digit)</td>
+        </tr>
+        <tr>
+          <td>Microphone</td>
+          <td>Voice input</td>
+        </tr>
+        <tr>
+          <td>Webcam</td>
+          <td>Video/Image input</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <th>Pointing/अन्य (NEW विस्तार)</th>
+          <th>विवरण</th>
+        </tr>
+        <tr>
+          <td>Trackball</td>
+          <td>Mouse का उल्टा — Ball को उंगली से घुमाते हैं (CAD/CAM में)</td>
+        </tr>
+        <tr>
+          <td>Touch Pad</td>
+          <td>Laptop में, Finger Pressure sense करता है (iTrackPad भी कहते हैं)</td>
+        </tr>
+        <tr>
+          <td>Trackpoint</td>
+          <td>सबसे छोटा Input Device</td>
+        </tr>
+        <tr>
+          <td>Joystick</td>
+          <td>Games/Robot control — 360° घूम सकता है</td>
+        </tr>
+        <tr>
+          <td>Light Pen</td>
+          <td>CRT स्क्रीन पर ड्राइंग; Photo-sensing diode, Electro-Optical Device</td>
+        </tr>
+        <tr>
+          <td>Stylus</td>
+          <td>Tablet/Phone screen input</td>
+        </tr>
+        <tr>
+          <td>Digitizer</td>
+          <td>हस्तलिखित Data को Computer Code में बदलता है</td>
+        </tr>
+        <tr>
+          <td>RFID Scanner</td>
+          <td>Radio Frequency Identification</td>
+        </tr>
+        <tr>
+          <td>MIDI</td>
+          <td>Musical Instrument Digital Interface</td>
+        </tr>
+        <tr>
+          <td>Bio Scanner</td>
+          <td>Fingerprint/Retina/Face — Biometric</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="trap"><b>⚠️ Both I/O (दोनों):</b> Touch Screen, Modem, Fax/Photocopy Machine — इनपुट+आउटपुट दोनों। जबकि
+    Scanner=केवल Input, Plotter=केवल Output।</div>
+
+  <h4>Keyboard — विस्तार (NEW जोड़)</h4>
+  <ul>
+    <li>Father of Keyboard: <b>Christopher Latham Sholes (1868)</b> — QWERTY layout भी इन्हीं का</li>
+    <li>Connect: PS/2, USB, Wireless | ASCII = 8-bit binary कोड में convert</li>
+    <li>Standard Keyboard: 104 Keys | Numpad: कुल 17 keys</li>
+  </ul>
+  <table>
+    <tr>
+      <th>Layout</th>
+      <th>विवरण</th>
+    </tr>
+    <tr>
+      <td>QWERTY</td>
+      <td>सबसे popular, default (Sholes द्वारा)</td>
+    </tr>
+    <tr>
+      <td>QWERTZ</td>
+      <td>German layout</td>
+    </tr>
+    <tr>
+      <td>DVORAK</td>
+      <td>Typing efficiency हेतु</td>
+    </tr>
+    <tr>
+      <td>AZERTY</td>
+      <td>French layout</td>
+    </tr>
+  </table>
+  <div class="trick">🧠 Function Keys विशेष: F1=Help, F2=Rename, F3=Search, F4=Redo, F5=Refresh, F6=Address Bar,
+    F7=Spelling, F8=Selection, F11=Full Screen, F12=Save As</div>
+
+  <h4>Mouse (NEW विस्तार)</h4>
+  <ul>
+    <li>Inventor: <b>Douglas Engelbart (1964)</b> — Father of Mouse</li>
+    <li>Types: Mechanical (Rubber ball — पहला), Optical (LED/Laser), Wireless (Radio/IR)</li>
+  </ul>
+
+  <h2>🖨️ Output Devices — Monitor, Projector, Printer (existing + NEW)</h2>
+  <h3>Monitor — Pixel, Resolution, PPI (NEW)</h3>
+  <ul>
+    <li>जनक: Karl Ferdinand Braun | अन्य नाम: VDU/VDT | Size = Diagonal में मापी जाती है</li>
+    <li><b>Pixel (PEL)</b>: स्क्रीन की सबसे छोटी इकाई, RGB के 3 dots से बना, 1 Pixel=24 Bit, कुल रंग=16.7 Million</li>
+    <li><b>Resolution</b>=Width×Height (4K=3840×2160, 8K=7680×4320) — Resolution↑ → Quality↑</li>
+    <li><b>PPI</b>=Pixel Per Inch — जितना ज्यादा उतनी क्वालिटी अच्छी</li>
+    <li><b>Dot Pitch</b>= दो pixels के बीच दूरी (mm) — Dot Pitch↑ → Quality↓ (उल्टा संबंध)</li>
+  </ul>
+  <table>
+    <tr>
+      <th>Technology</th>
+      <th>Full Form</th>
+      <th>विशेषता</th>
+    </tr>
+    <tr>
+      <td>CRT</td>
+      <td>Cathode Ray Tube</td>
+      <td>Electron Gun→Phosphor screen, Magnetic Deflection Coil</td>
+    </tr>
+    <tr>
+      <td>LCD</td>
+      <td>Liquid Crystal Display</td>
+      <td>दो शीशों के बीच Liquid Crystal — Laptop में</td>
+    </tr>
+    <tr>
+      <td>LED</td>
+      <td>Light Emitting Diode</td>
+      <td>Flat Panel, ज्यादा brightness, कम power</td>
+    </tr>
+    <tr>
+      <td>TFT</td>
+      <td>Thin Film Transistor</td>
+      <td>LCD का रूप, हल्का-पतला</td>
+    </tr>
+    <tr>
+      <td>Plasma</td>
+      <td>Plasma Monitor</td>
+      <td>Neon/Xenon gas — Electrode से glow</td>
+    </tr>
+  </table>
+  <h4>Projector Types (NEW)</h4>
+  <ul>
+    <li>HDMI=19 Pin (Audio+Video) | VGA=15 Pin (Visual Graphic Array)</li>
+    <li>Types: CRT, LCD, LED, OHP (Over Head), DLP (Digital Light Processing)</li>
+  </ul>
+
+  <h3>Printer प्रकार — पूरी तुलना</h3>
+  <table>
+    <tr>
+      <th>Printer</th>
+      <th>प्रकार</th>
+      <th>Speed Unit</th>
+      <th>विशेषता</th>
+    </tr>
+    <tr>
+      <td>Dot Matrix (DMP)</td>
+      <td>Impact</td>
+      <td>CPS</td>
+      <td>Pin+Ribbon, Serial printer — Railway ticket/Passbook में आज भी</td>
+    </tr>
+    <tr>
+      <td>Daisy Wheel (DWP)</td>
+      <td>Impact</td>
+      <td>CPS</td>
+      <td>केवल Text, Graphics नहीं</td>
+    </tr>
+    <tr>
+      <td>Drum Printer</td>
+      <td>Impact</td>
+      <td>LPM</td>
+      <td>Line Printer, drum पर character</td>
+    </tr>
+    <tr>
+      <td>Chain Printer</td>
+      <td>Impact</td>
+      <td>LPM</td>
+      <td>Steel chain, Line printer</td>
+    </tr>
+    <tr>
+      <td>Inkjet</td>
+      <td>Non-Impact</td>
+      <td>PPM</td>
+      <td>Liquid Ink cartridge, CMYK (Cyan-Magenta-Yellow-Key)</td>
+    </tr>
+    <tr>
+      <td>Laser</td>
+      <td>Non-Impact</td>
+      <td>PPM</td>
+      <td>Dry Toner, सबसे तेज़ व बेहतरीन Quality, Page printer</td>
+    </tr>
+    <tr>
+      <td>Thermal</td>
+      <td>Non-Impact</td>
+      <td>PPM</td>
+      <td>ATM receipt/Bus ticket, Heat-sensitive (Thermochromic) paper</td>
+    </tr>
+    <tr>
+      <td>Plotter</td>
+      <td>Output</td>
+      <td>—</td>
+      <td>Pen से lines — Maps/CAD/Engineering, Flat Bed+Drum types</td>
+    </tr>
+    <tr>
+      <td>3D Printer (NEW)</td>
+      <td>—</td>
+      <td>—</td>
+      <td>Additive Technology — 3D object print</td>
+    </tr>
+    <tr>
+      <td>UV Printer (NEW)</td>
+      <td>—</td>
+      <td>—</td>
+      <td>Confidential data printing</td>
+    </tr>
+  </table>
+  <div class="trick">🧠 Print Quality=DPI (Dots Per Inch) | Speed=PPM/LPM/CPS | Printer Buffer = SPOOLER (NEW)</div>
+  <div class="trick">🧠 Inkjet Methods (NEW): Thermal Inkjet (Bubble) = heat→bubble→spray; Piezoelectric Inkjet =
+    pressure से spray</div>
+
+  <h2>🧠 Memory — Hierarchy, Types, ROM वर्गीकरण</h2>
+  <h3>Speed व Classification पदानुक्रम</h3>
+  <ul>
+    <li>Speed (तेज़→धीमा): Register→Cache→RAM→SSD→HDD→Magnetic Tape</li>
+    <li>पदानुक्रम में ऊपर से नीचे: Speed↓, Storage Capacity↑, Access Time↑, Cost/Bit↓ (NEW स्पष्टीकरण)</li>
+    <li>Unit Chain: Bit→Nibble(4b)→Byte(8b)→KB(1024B)→MB→GB→TB→PB→EB→ZB→YB→<b>BB(Bronto)→GBB(Geop) (NEW ऊपर की
+        units)</b></li>
+  </ul>
+  <table>
+    <tr>
+      <th>Memory</th>
+      <th>प्रकार</th>
+      <th>Volatile?</th>
+      <th>मुख्य तथ्य</th>
+    </tr>
+    <tr>
+      <td>Register</td>
+      <td>Primary</td>
+      <td>हाँ</td>
+      <td>सबसे तेज़, CPU के अंदर, Flip-Flops से बना</td>
+    </tr>
+    <tr>
+      <td>Cache (L1/L2/L3)</td>
+      <td>Primary</td>
+      <td>हाँ</td>
+      <td>CPU+RAM के बीच buffer, SRAM से बना, Locality of Reference सिद्धांत (NEW)</td>
+    </tr>
+    <tr>
+      <td>RAM</td>
+      <td>Primary</td>
+      <td>हाँ</td>
+      <td>Working memory, DRAM (Capacitor-based)</td>
+    </tr>
+    <tr>
+      <td>ROM</td>
+      <td>Primary</td>
+      <td>नहीं</td>
+      <td>BIOS store, Read Only, Non-Volatile</td>
+    </tr>
+    <tr>
+      <td>Virtual Memory (NEW)</td>
+      <td>—</td>
+      <td>—</td>
+      <td>Hard Disk का भाग जो RAM जैसे इस्तेमाल; सबसे Worst/धीमी memory-level, Page के रूप में data</td>
+    </tr>
+    <tr>
+      <td>HDD</td>
+      <td>Secondary</td>
+      <td>नहीं</td>
+      <td>Aluminium+Iron Oxide platter, RPM से speed</td>
+    </tr>
+    <tr>
+      <td>SSD</td>
+      <td>Secondary</td>
+      <td>नहीं</td>
+      <td>Flash Memory, HDD से तेज़, No moving part</td>
+    </tr>
+    <tr>
+      <td>CD-R</td>
+      <td>Secondary</td>
+      <td>नहीं</td>
+      <td>WORM (Write Once Read Many)</td>
+    </tr>
+    <tr>
+      <td>DVD</td>
+      <td>Secondary</td>
+      <td>नहीं</td>
+      <td>4.7GB(single)/8.5GB(dual layer)</td>
+    </tr>
+    <tr>
+      <td>Magnetic Tape</td>
+      <td>Secondary</td>
+      <td>नहीं</td>
+      <td>Sequential access, सबसे धीमा, Backup हेतु</td>
+    </tr>
+  </table>
+
+  <h3>⚠️ DRAM vs SRAM</h3>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>DRAM</th>
+      <th>SRAM</th>
+    </tr>
+    <tr>
+      <td>Refresh</td>
+      <td>ज़रूरी (capacitor leak)</td>
+      <td>ज़रूरी नहीं</td>
+    </tr>
+    <tr>
+      <td>बना है</td>
+      <td>Transistor+Capacitor</td>
+      <td>Flip-Flops (Transistors)</td>
+    </tr>
+    <tr>
+      <td>Speed</td>
+      <td>धीमा</td>
+      <td>तेज़</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>सस्ता</td>
+      <td>महँगा</td>
+    </tr>
+    <tr>
+      <td>Density (NEW)</td>
+      <td>High (ज्यादा)</td>
+      <td>Low (कम)</td>
+    </tr>
+    <tr>
+      <td>Use</td>
+      <td>Main RAM</td>
+      <td>Cache Memory</td>
+    </tr>
+  </table>
+  <div class="trick">🧠 DRAM प्रकार (NEW): SDR DRAM(Basic) → DDR(Double Data Rate):
+    DDR1→DDR2→DDR3→DDR4→DDR5(latest,2600-2800MHz)। SD-RAM=Clock-synced; AD-RAM=Clock-independent।</div>
+
+  <h3>ROM के प्रकार (NEW — पूरी तरह नई टेबल)</h3>
+  <table>
+    <tr>
+      <th>ROM Type</th>
+      <th>Full Form</th>
+      <th>विवरण</th>
+    </tr>
+    <tr>
+      <td>PROM</td>
+      <td>Programmable ROM</td>
+      <td>Blank होती है, User एक बार Data Store कर सकता है, हटा नहीं सकता</td>
+    </tr>
+    <tr>
+      <td>EPROM</td>
+      <td>Erasable Programmable ROM</td>
+      <td>UV Ray से पूरा Data Erase (आंशिक नहीं)</td>
+    </tr>
+    <tr>
+      <td>EEPROM</td>
+      <td>Electrically Erasable Prog. ROM</td>
+      <td>Electric Pulse से Block-level Erase</td>
+    </tr>
+    <tr>
+      <td>EAROM</td>
+      <td>Electrically Alterable ROM</td>
+      <td>एक-एक Bit Change कर सकते हैं</td>
+    </tr>
+    <tr>
+      <td>OTPROM</td>
+      <td>One Time Programmable ROM</td>
+      <td>EPROM का Industrial नाम</td>
+    </tr>
+    <tr>
+      <td>MROM</td>
+      <td>Masked ROM</td>
+      <td>Toys में अधिक उपयोग</td>
+    </tr>
+    <tr>
+      <td>CROM</td>
+      <td>Control ROM</td>
+      <td>CU के लिए Micro-instructions</td>
+    </tr>
+  </table>
+  <div class="trick">🧠 Booting: BIOS(ROM में)→POST(Power on Self Test)→Bootstrap Loader→OS Load। Cold Booting=Power
+    button से; Warm Booting=Restart (Ctrl+Alt+Del)</div>
+
+  <h2>💾 Secondary Storage — विस्तृत (NEW सेक्शन)</h2>
+  <h3>Magnetic Tape</h3>
+  <ul>
+    <li>Sequential Access का सबसे बड़ा उदाहरण, सबसे धीमी memory</li>
+    <li>Material: Plastic Ribbon पर Iron Oxide (Fe₂O₃) coating, Backup हेतु प्रयोग</li>
+  </ul>
+  <h3>Floppy Disk</h3>
+  <ul>
+    <li>Inventor: Alan Shugart (IBM) | Material: Mylar Plastic + Iron Oxide coating</li>
+  </ul>
+  <table>
+    <tr>
+      <th>Size</th>
+      <th>Capacity</th>
+      <th>Note</th>
+    </tr>
+    <tr>
+      <td>8 Inch</td>
+      <td>100 KB</td>
+      <td>Mini Floppy (पुरानी)</td>
+    </tr>
+    <tr>
+      <td>5.25 Inch</td>
+      <td>360 KB</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>3.5 Inch</td>
+      <td>1.44 MB</td>
+      <td>Micro Floppy — सबसे प्रचलित</td>
+    </tr>
+  </table>
+  <h3>Hard Disk Drive (HDD) — Parts</h3>
+  <ul>
+    <li>Father of Hard Disk: <b>Ray Johnson (IBM)</b> | पहली HDD: RAMAC (5MB)</li>
+    <li>Speed Unit: RPM (Revolution Per Minute)</li>
+    <li>Structure क्रम (Hierarchy): <b>Byte → Sector → Cluster → Track → Platter</b></li>
+    <li>Sector = सबसे छोटी unit, आमतौर पर 512 Bytes/Sector</li>
+    <li>MBR (Master Boot Record) = पहला Sector, Bootable data store</li>
+    <li>Formula: Storage = Data/Sector × No. of Sector × Recording Surface × Track</li>
+  </ul>
+  <h3>Optical Disk — CD/DVD/Blu-Ray</h3>
+  <ul>
+    <li>Inventor: James Russel | Material: Polycarbonate Plastic + Aluminium Layer (Iron Oxide नहीं)</li>
+    <li>Data = Pits & Lands के रूप में; Laser Light से Read/Write</li>
+  </ul>
+  <table>
+    <tr>
+      <th>प्रकार</th>
+      <th>Capacity</th>
+      <th>विशेषता</th>
+    </tr>
+    <tr>
+      <td>CD</td>
+      <td>650–700 MB</td>
+      <td>Single layer</td>
+    </tr>
+    <tr>
+      <td>DVD Single Layer</td>
+      <td>4.7 GB</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>DVD Dual Layer</td>
+      <td>8.5 GB</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>Blu-Ray (BRD)</td>
+      <td>25 GB(single)/50 GB(dual)</td>
+      <td>Blue Laser Light</td>
+    </tr>
   </table>
   <table>
-    <thead><tr><th>Shortcut</th><th>काम</th></tr></thead>
-    <tbody>
-      <tr><td>Alt+F4</td><td>Window बंद करो</td></tr>
-      <tr><td>Alt+Tab</td><td>Program switch</td></tr>
-      <tr><td>Win+R</td><td>Run command</td></tr>
-      <tr><td>Win+D</td><td>Desktop दिखाओ</td></tr>
-      <tr><td>Win+E</td><td>File Explorer</td></tr>
-      <tr><td>Win+Shift+S</td><td>Snipping Tool (Screenshot)</td></tr>
-      <tr><td>Shift+Del</td><td>Permanent Delete (Recycle Bin bypass)</td></tr>
-      <tr><td>Ctrl+F2</td><td>Print Preview</td></tr>
-      <tr><td>F1</td><td>Help</td></tr>
-      <tr><td>F5</td><td>Refresh</td></tr>
-      <tr><td>Ctrl+Home</td><td>Document की शुरुआत में जाओ</td></tr>
-      <tr><td>Ctrl+End</td><td>Document के अंत में जाओ</td></tr>
-    </tbody>
+    <tr>
+      <th>CD Type</th>
+      <th>विवरण</th>
+    </tr>
+    <tr>
+      <td>CD-ROM</td>
+      <td>पहले से Data Store, User केवल Access कर सकता है</td>
+    </tr>
+    <tr>
+      <td>CD-R</td>
+      <td>Blank, User एक बार Write कर सकता है (WORM)</td>
+    </tr>
+    <tr>
+      <td>CD-RW</td>
+      <td>बार-बार Delete/Write कर सकते हैं</td>
+    </tr>
   </table>
-</div>
+  <div class="trick">🧠 Burning=CD पर Data लिखना; Ripping=CD से Data access करना</div>
+  <h3>Flash Memory</h3>
+  <ul>
+    <li>Non-Volatile, Electric Pulse से Erase | दो प्रकार: NAND व NOR Flash</li>
+    <li>Pen Drive Inventor: Ajay Bhatt (USB) | SSD = Flash-based, HDD से तेज़, Durable, कोई moving part नहीं</li>
+  </ul>
 
-<h3>Key Types — Exam Trap</h3>
-<table>
-  <tr><th>Key प्रकार</th><th>उदाहरण</th><th>विशेषता</th></tr>
-  <tr><td>Modifier Keys</td><td>Ctrl, Shift, Alt</td><td>अकेले काम नहीं करते — दूसरी key के साथ</td></tr>
-  <tr><td>Toggle Keys</td><td>Caps Lock, Num Lock, Scroll Lock</td><td>ON/OFF switch की तरह</td></tr>
-  <tr><td>Function Keys</td><td>F1–F12</td><td>कुल 12 keys</td></tr>
-  <tr><td>Navigation Keys</td><td>Arrow keys, Page Up/Down, Home, End</td><td>Cursor move करना</td></tr>
-  <tr><td>Special Keys</td><td>Ctrl, Shift, Del, Insert, Esc</td><td>विशिष्ट कार्य</td></tr>
-</table>
-
-<!-- ===== OS & INTERNET ===== -->
-<h2>🌐 OS & Internet — Quick Facts</h2>
-<div class="grid2">
-  <div>
-    <h3>OS के प्रकार</h3>
-    <table>
-      <tr><td>Desktop OS</td><td>Windows, Mac OS, Linux, Ubuntu</td></tr>
-      <tr><td>Mobile OS</td><td>Android, iOS, Symbian, KaiOS</td></tr>
-      <tr><td>Server OS</td><td>Windows Server, Linux Server</td></tr>
-      <tr><td>RTOS</td><td>Real-Time OS (Embedded systems)</td></tr>
-      <tr><td>Network OS</td><td>Novell NetWare</td></tr>
-    </table>
-    <div class="alert-bug" style="margin-top:5px">❌ OS नहीं हैं: BIOS, Apache, Firefox, Oracle, Pentium</div>
-  </div>
-  <div>
-    <h3>Web Browsers</h3>
-    <table>
-      <tr><td>Chrome</td><td>Google</td></tr>
-      <tr><td>Firefox</td><td>Mozilla</td></tr>
-      <tr><td>Safari</td><td>Apple</td></tr>
-      <tr><td>Edge</td><td>Microsoft (पहले Internet Explorer)</td></tr>
-      <tr><td>Opera</td><td>Opera Software</td></tr>
-    </table>
-    <div class="alert-bug" style="margin-top:5px">❌ Browser नहीं: Gmail, KompoZer (HTML editor), MS Office 365</div>
-  </div>
-</div>
-
-<div class="diff-box">
-  <div class="diff-title">⚠️ Computer Characteristics — 1-Line Defs</div>
-  <table style="margin-bottom:0">
-    <tr><td>Speed</td><td>Microsecond में calculations — अत्यंत तेज़</td></tr>
-    <tr><td>Accuracy</td><td>गलत input → गलत output (GIGO); सही input → सही output</td></tr>
-    <tr><td>Diligence</td><td>बिना थके बार-बार एक ही काम</td></tr>
-    <tr><td>Versatility</td><td>अलग-अलग काम एक साथ</td></tr>
-    <tr><td>Automation</td><td>Program load करो, human intervention नहीं चाहिए</td></tr>
-    <tr><td>Reliability</td><td>बार-बार same result</td></tr>
-    <tr><td>No IQ (कमज़ोरी)</td><td>खुद सोचने की कोई क्षमता नहीं</td></tr>
+  <h2>🔌 Motherboard, Ports, Slots, BUS, Power (NEW — पूरी तरह नया सेक्शन)</h2>
+  <ul>
+    <li>Motherboard = सभी Peripheral Devices को जोड़ने वाला Main Board | अन्य नाम: Main Board/Logic Board/PCB</li>
+    <li>3 मुख्य भाग: <b>PORT</b> (external device connect) · <b>SLOT</b> (internal cards) · <b>BUS</b> (data path)</li>
+  </ul>
+  <h3>Ports</h3>
+  <table>
+    <tr>
+      <th>Port</th>
+      <th>Full Form/Pins</th>
+      <th>काम</th>
+    </tr>
+    <tr>
+      <td>PS/2</td>
+      <td>Personal System/2, 6-Pin</td>
+      <td>Keyboard(Purple)/Mouse(Green) — पुराना, IBM developed</td>
+    </tr>
+    <tr>
+      <td>USB</td>
+      <td>Universal Serial Bus</td>
+      <td>Type A/B/C, Mini, Micro — सबसे लोकप्रिय: USB-C</td>
+    </tr>
+    <tr>
+      <td>VGA</td>
+      <td>Visual Graphic Array, 15-Pin</td>
+      <td>Monitor को जोड़ना; SVGA=Super VGA</td>
+    </tr>
+    <tr>
+      <td>HDMI</td>
+      <td>High Definition Multimedia Interface, 19-Pin</td>
+      <td>Audio+Video दोनों</td>
+    </tr>
+    <tr>
+      <td>Serial Port</td>
+      <td>9-Pin</td>
+      <td>Serial data transfer</td>
+    </tr>
+    <tr>
+      <td>RJ-45</td>
+      <td>Registrar Jack-45</td>
+      <td>Ethernet/LAN/Internet Port</td>
+    </tr>
+    <tr>
+      <td>IDE</td>
+      <td>Integrated Device Electronics</td>
+      <td>PATA (Parallel) व SATA (Serial) दो types</td>
+    </tr>
+    <tr>
+      <td>SCSI</td>
+      <td>Small Computer System Interface</td>
+      <td>—</td>
+    </tr>
   </table>
-</div>
-
-<!-- ===== VIRUS / SECURITY ===== -->
-<h2>🦠 Virus / Malware / Security</h2>
-<table>
-  <thead>
-    <tr><th>Term</th><th>अर्थ / उदाहरण</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Virus</td><td>Software है, file attach होकर spread होता है — <span class="hl">Creeper = पहला Virus</span></td></tr>
-    <tr><td>Worm</td><td>Self-replicate करता है, network से फैलता है — Morris Worm example</td></tr>
-    <tr><td>Spyware</td><td>User activity track करता है बिना जानकारी के — <span class="hl">Pegasus = Spyware</span></td></tr>
-    <tr><td>Trojan Horse</td><td>Legitimate software दिखकर harm करता है</td></tr>
-    <tr><td>Ransomware</td><td>Files encrypt करके पैसे माँगता है — WannaCry example</td></tr>
-    <tr><td>Adware</td><td>Unwanted ads दिखाता है</td></tr>
-    <tr><td>Phishing</td><td>Fake website/email से password चुराना</td></tr>
-    <tr><td>Software Piracy</td><td>Software की illegal copy/distribution</td></tr>
-    <tr><td>Debugging</td><td>Program की errors ढूँढना और ठीक करना</td></tr>
-    <tr><td>Firewall</td><td>Network traffic को filter करता है — security barrier</td></tr>
-    <tr><td>Antivirus</td><td>Avast, Norton, Kaspersky, McAfee, AVG, NOD32, Quick Heal</td></tr>
-  </tbody>
-</table>
-
-
-<!-- ===== FULL FORMS ===== -->
-<h2>📋 महत्वपूर्ण Full Forms</h2>
-<div class="grid3">
-  <div class="ff-card"><div class="ff-abbr">VIRUS</div><div class="ff-full">Vital Information Resources Under Siege</div></div>
-  <div class="ff-card"><div class="ff-abbr">BIOS</div><div class="ff-full">Basic Input/Output System</div></div>
-  <div class="ff-card"><div class="ff-abbr">GUI</div><div class="ff-full">Graphical User Interface</div></div>
-  <div class="ff-card"><div class="ff-abbr">OCR</div><div class="ff-full">Optical Character Recognition</div></div>
-  <div class="ff-card"><div class="ff-abbr">OMR</div><div class="ff-full">Optical Mark Reader</div></div>
-  <div class="ff-card"><div class="ff-abbr">MICR</div><div class="ff-full">Magnetic Ink Character Recognition</div></div>
-  <div class="ff-card"><div class="ff-abbr">RAM</div><div class="ff-full">Random Access Memory</div></div>
-  <div class="ff-card"><div class="ff-abbr">ROM</div><div class="ff-full">Read Only Memory</div></div>
-  <div class="ff-card"><div class="ff-abbr">EEPROM</div><div class="ff-full">Electrically Erasable Programmable ROM</div></div>
-  <div class="ff-card"><div class="ff-abbr">VDU</div><div class="ff-full">Visual Display Unit (Monitor)</div></div>
-  <div class="ff-card"><div class="ff-abbr">USB</div><div class="ff-full">Universal Serial Bus</div></div>
-  <div class="ff-card"><div class="ff-abbr">HDMI</div><div class="ff-full">High Definition Multimedia Interface</div></div>
-  <div class="ff-card"><div class="ff-abbr">PDF</div><div class="ff-full">Portable Document Format</div></div>
-  <div class="ff-card"><div class="ff-abbr">DTP</div><div class="ff-full">Desktop Publishing</div></div>
-  <div class="ff-card"><div class="ff-abbr">WYSIWYG</div><div class="ff-full">What You See Is What You Get</div></div>
-  <div class="ff-card"><div class="ff-abbr">UPC</div><div class="ff-full">Universal Product Code (12 digits)</div></div>
-  <div class="ff-card"><div class="ff-abbr">FLOPS</div><div class="ff-full">Floating Point Operations Per Second</div></div>
-  <div class="ff-card"><div class="ff-abbr">NAS</div><div class="ff-full">Network Attached Storage</div></div>
-  <div class="ff-card"><div class="ff-abbr">ICT</div><div class="ff-full">Information & Communication Technology</div></div>
-  <div class="ff-card"><div class="ff-abbr">CPU</div><div class="ff-full">Central Processing Unit</div></div>
-  <div class="ff-card"><div class="ff-abbr">ALU</div><div class="ff-full">Arithmetic Logic Unit</div></div>
-  <div class="ff-card"><div class="ff-abbr">CU</div><div class="ff-full">Control Unit</div></div>
-  <div class="ff-card"><div class="ff-abbr">WORM</div><div class="ff-full">Write Once Read Many</div></div>
-  <div class="ff-card"><div class="ff-abbr">VLSI</div><div class="ff-full">Very Large Scale Integration</div></div>
-</div>
-
-<!-- ===== INDIA COMPUTER HISTORY ===== -->
-<h2>🇮🇳 भारत में Computer का इतिहास — 1-Liners</h2>
-<table>
-  <tr><td>भारत का पहला Computer</td><td><span class="hl">HEC-2M</span> — ISI Kolkata (1955)</td></tr>
-  <tr><td>पहला Indigenous Computer</td><td><span class="hl">TIFRAC</span> — Tata Institute of Fundamental Research (1961)</td></tr>
-  <tr><td>पहला Indian Micro Computer</td><td><span class="hl">सिद्धार्थ (Siddharth)</span> — ECIL Hyderabad (1978)</td></tr>
-  <tr><td>पहला Supercomputer</td><td><span class="hl">PARAM 8000</span> — C-DAC Pune (1991)</td></tr>
-  <tr><td>C-DAC स्थापना</td><td>1988, Pune</td></tr>
-  <tr><td>पहला Indian Microprocessor</td><td><span class="hl">SHAKTI</span> — IIT Madras (2018)</td></tr>
-  <tr><td>पहला Bilingual Computer (हिंदी+English)</td><td>सिद्धार्थ (Siddharth)</td></tr>
-  <tr><td>पहला Analog Computer (India)</td><td>Samarendra Kumar Mitra (1953–54)</td></tr>
-  <tr><td>Father of Indian Computing</td><td>Rangaswami Narasimhan</td></tr>
-  <tr><td>IBM का उपनाम</td><td>"Big Blue" | HQ = New York</td></tr>
-  <tr><td>IBM का पुराना नाम</td><td>Computing Tabulating Recording Company → IBM (1924)</td></tr>
-  <tr><td>World का पहला Laptop</td><td>Epson HX-20 (1981)</td></tr>
-  <tr><td>Nepal का पहला Computer</td><td>IBM 1401 (2nd Gen, 1971 Census में)</td></tr>
-  <tr><td>Supercomputer speed unit</td><td>FLOPS (Floating Point Operations Per Second)</td></tr>
-  <tr><td>पहला Electronic Computer</td><td>ENIAC (1945) — USA, University of Pennsylvania</td></tr>
-  <tr><td>पहला Commercial Computer</td><td>UNIVAC-I (1951)</td></tr>
-</table>
-
-<!-- ===== MEMORY UNITS ===== -->
-<h2>🔢 Memory Unit Conversion — Formula Sheet</h2>
-<div class="info-box">
-  <strong>Chain:</strong> 8 Bits = 1 Byte &nbsp;→&nbsp; ×1024 हर step पर<br>
-  Byte → KB → MB → GB → TB → PB → EB → ZB → YB<br><br>
-  <strong>Powers of 2:</strong>&nbsp;
-  2¹⁰ = 1 KB &nbsp;|&nbsp; 2²⁰ = 1 MB &nbsp;|&nbsp; 2³⁰ = 1 GB &nbsp;|&nbsp; 2⁴⁰ = 1 TB &nbsp;|&nbsp; 2⁵⁰ = 1 PB
-</div>
-<table>
-  <tr><th>Unit</th><th>बराबर</th><th>Exam Trick</th></tr>
-  <tr><td>1 Nibble</td><td>4 Bits</td><td>आधा Byte</td></tr>
-  <tr><td>1 Byte</td><td>8 Bits</td><td>एक Character = 1 Byte</td></tr>
-  <tr><td>1 KB (Kilobyte)</td><td>1024 Bytes</td><td>छोटी text file</td></tr>
-  <tr><td>1 MB (Megabyte)</td><td>1024 KB</td><td>एक गाना ≈ 3–5 MB</td></tr>
-  <tr><td>1 GB (Gigabyte)</td><td>1024 MB</td><td>Movie ≈ 1–2 GB</td></tr>
-  <tr><td>1 TB (Terabyte)</td><td>1024 GB</td><td>Hard disk size</td></tr>
-  <tr><td>1 PB (Petabyte)</td><td>1024 TB</td><td>Big Data</td></tr>
-  <tr><td>1 EB (Exabyte)</td><td>1024 PB</td><td>Internet data/day</td></tr>
-  <tr><td>1 ZB (Zettabyte)</td><td>1024 EB</td><td>—</td></tr>
-  <tr><td>1 YB (Yottabyte)</td><td>1024 ZB</td><td>सबसे बड़ा standard unit</td></tr>
-</table>
-
-<!-- ===== DIFF TABLES ===== -->
-<h2>📊 Difference Tables — अक्सर Confused होने वाले Pairs</h2>
-
-<div class="diff-box">
-  <div class="diff-title">⚠️ OCR vs OMR vs MICR vs Barcode vs QR</div>
-  <table style="margin-bottom:0">
-    <tr><th>Device</th><th>Full Form</th><th>उपयोग</th></tr>
-    <tr><td>OCR</td><td>Optical Character Recognition</td><td>Printed/handwritten text → editable digital text</td></tr>
-    <tr><td>OMR</td><td>Optical Mark Reader</td><td>MCQ answer sheets, bubble check</td></tr>
-    <tr><td>MICR</td><td>Magnetic Ink Character Recognition</td><td>Bank cheque reading (magnetic ink)</td></tr>
-    <tr><td>Barcode</td><td>UPC = 12 digits + black bars</td><td>दुकान में product scanning</td></tr>
-    <tr><td>QR Code</td><td>Quick Response Code</td><td>Online payment, छोटे squares का grid</td></tr>
+  <h3>Slots व Sockets</h3>
+  <table>
+    <tr>
+      <th>Slot</th>
+      <th>विवरण</th>
+    </tr>
+    <tr>
+      <td>CPU Slot</td>
+      <td>CPU को Motherboard से जोड़ता है</td>
+    </tr>
+    <tr>
+      <td>RAM Slot — SIMM</td>
+      <td>Single Inline Memory Module</td>
+    </tr>
+    <tr>
+      <td>RAM Slot — DIMM</td>
+      <td>Dual Inline Memory Module — SIMM से तेज़, Modern PCs में</td>
+    </tr>
+    <tr>
+      <td>AGP</td>
+      <td>Accelerated Graphics Port — GPU जोड़ने हेतु</td>
+    </tr>
+    <tr>
+      <td>PCI</td>
+      <td>Peripheral Component Interconnect — TV/Radio Tuner हेतु</td>
+    </tr>
   </table>
-</div>
-
-<div class="diff-box">
-  <div class="diff-title">⚠️ Primary vs Secondary Memory</div>
-  <table class="diff-table" style="margin-bottom:0">
-    <tr><th>Feature</th><th>Primary Memory</th><th>Secondary Memory</th></tr>
-    <tr><td>Volatile</td><td>हाँ (RAM के लिए)</td><td>नहीं (HDD, SSD, CD)</td></tr>
-    <tr><td>Speed</td><td>तेज़</td><td>धीमा</td></tr>
-    <tr><td>Access</td><td>CPU directly access करता है</td><td>OS के through access</td></tr>
-    <tr><td>Examples</td><td>RAM, ROM, Cache, Register</td><td>HDD, SSD, CD, DVD, Pen Drive</td></tr>
+  <h3>BUS के प्रकार</h3>
+  <table>
+    <tr>
+      <th>BUS</th>
+      <th>काम</th>
+    </tr>
+    <tr>
+      <td>Address Bus</td>
+      <td>Memory Address भेजता है — Unidirectional (एक दिशा)</td>
+    </tr>
+    <tr>
+      <td>Control Bus</td>
+      <td>READ/WRITE जैसे Control Signals</td>
+    </tr>
+    <tr>
+      <td>Data Bus</td>
+      <td>Actual Data — Bidirectional (दोनों दिशा)</td>
+    </tr>
   </table>
-</div>
-
-<div class="diff-box">
-  <div class="diff-title">⚠️ Hardware vs Software</div>
-  <table class="diff-table" style="margin-bottom:0">
-    <tr><th>Feature</th><th>Hardware</th><th>Software</th></tr>
-    <tr><td>परिभाषा</td><td>Physical components (छू सकते हो)</td><td>Programs/Instructions (छू नहीं सकते)</td></tr>
-    <tr><td>उदाहरण</td><td>CPU, RAM, HDD, Monitor, Keyboard</td><td>Windows, MS Word, Chrome, Antivirus</td></tr>
-    <tr><td>Virus</td><td>Hardware को virus नहीं होता</td><td>Software को virus होता है</td></tr>
+  <h3>Power Components</h3>
+  <table>
+    <tr>
+      <th>Component</th>
+      <th>Full Form</th>
+      <th>विवरण</th>
+    </tr>
+    <tr>
+      <td>UPS</td>
+      <td>Uninterruptible Power Supply</td>
+      <td>Power कटने पर Backup चलाता है</td>
+    </tr>
+    <tr>
+      <td>SMPS</td>
+      <td>Switched Mode Power Supply</td>
+      <td>AC→DC Convert करता है</td>
+    </tr>
+    <tr>
+      <td>CMOS</td>
+      <td>Complementary Metal Oxide Semiconductor</td>
+      <td>Shutdown पर Date/Time Store — 3V Battery से चलता है</td>
+    </tr>
   </table>
-</div>
 
-<!-- ===== RAPID REVISION ===== -->
-<h2>⚡ Rapid Revision — अंतिम 5 मिनट</h2>
-<div class="grid3">
-  <div class="rapid-card">
-    <h3>Memory Speed क्रम</h3>
-    <ul>
-      <li>Register (fastest)</li>
-      <li>Cache (L1→L2→L3)</li>
-      <li>RAM</li>
-      <li>SSD</li>
-      <li>HDD</li>
-      <li>Magnetic Tape (slowest)</li>
-    </ul>
-  </div>
-  <div class="rapid-card">
-    <h3>Printer Impact / Non</h3>
-    <ul>
-      <li><strong>Impact:</strong> Dot Matrix, Daisy Wheel, Drum, Chain</li>
-      <li><strong>Non-Impact:</strong> Laser, Inkjet, Thermal</li>
-      <li>Quality = DPI</li>
-      <li>Speed = PPM / LPM / CPS</li>
-    </ul>
-  </div>
-  <div class="rapid-card">
-    <h3>Generations ट्रिक</h3>
-    <ul>
-      <li>1st = Vacuum Tube (ENIAC)</li>
-      <li>2nd = Transistor (IBM 1401)</li>
-      <li>3rd = IC (IBM 360)</li>
-      <li>4th = VLSI/Microprocessor (PC)</li>
-      <li>5th = ULSI + AI (PARAM)</li>
-    </ul>
-  </div>
-  <div class="rapid-card">
-    <h3>India Firsts</h3>
-    <ul>
-      <li>1st Computer → HEC-2M (1955)</li>
-      <li>1st Indigenous → TIFRAC (1961)</li>
-      <li>1st Micro → Siddharth (1978)</li>
-      <li>1st Super → PARAM 8000 (1991)</li>
-      <li>1st Microprocessor → SHAKTI (2018)</li>
-    </ul>
-  </div>
-  <div class="rapid-card">
-    <h3>Software Categories</h3>
-    <ul>
-      <li>System → OS, Driver, Compiler</li>
-      <li>Application → Word, Excel, Chrome</li>
-      <li>Utility → Antivirus, WinZip</li>
-      <li>Open Source → Linux, Firefox</li>
-      <li>Proprietary → Adobe, Windows</li>
-    </ul>
-  </div>
-  <div class="rapid-card">
-    <h3>Virus Types</h3>
-    <ul>
-      <li>Virus → file attach (Creeper)</li>
-      <li>Worm → self-replicate</li>
-      <li>Trojan → fake legitimate</li>
-      <li>Spyware → track (Pegasus)</li>
-      <li>Ransomware → encrypt + money</li>
-    </ul>
-  </div>
-</div>
+  <h2>⌨️ Keyboard Shortcuts + Key Types</h2>
+  <table>
+    <tr>
+      <th>Shortcut</th>
+      <th>काम</th>
+      <th>Shortcut</th>
+      <th>काम</th>
+    </tr>
+    <tr>
+      <td>Ctrl+C</td>
+      <td>Copy</td>
+      <td>Alt+F4</td>
+      <td>Window बंद</td>
+    </tr>
+    <tr>
+      <td>Ctrl+X</td>
+      <td>Cut</td>
+      <td>Alt+Tab</td>
+      <td>Program switch</td>
+    </tr>
+    <tr>
+      <td>Ctrl+V</td>
+      <td>Paste</td>
+      <td>Win+R</td>
+      <td>Run command</td>
+    </tr>
+    <tr>
+      <td>Ctrl+Z</td>
+      <td>Undo</td>
+      <td>Win+D</td>
+      <td>Desktop दिखाओ</td>
+    </tr>
+    <tr>
+      <td>Ctrl+Y</td>
+      <td>Redo</td>
+      <td>Win+E</td>
+      <td>File Explorer</td>
+    </tr>
+    <tr>
+      <td>Ctrl+P</td>
+      <td>Print</td>
+      <td>Win+Shift+S</td>
+      <td>Snipping Tool</td>
+    </tr>
+    <tr>
+      <td>Ctrl+S</td>
+      <td>Save</td>
+      <td>Shift+Del</td>
+      <td>Permanent Delete</td>
+    </tr>
+    <tr>
+      <td>Ctrl+A</td>
+      <td>Select All</td>
+      <td>Ctrl+F2</td>
+      <td>Print Preview</td>
+    </tr>
+    <tr>
+      <td>Ctrl+F</td>
+      <td>Find</td>
+      <td>F1/F5</td>
+      <td>Help/Refresh</td>
+    </tr>
+    <tr>
+      <td>Ctrl+B/I/E</td>
+      <td>Bold/Italic/Center</td>
+      <td>Ctrl+Home/End</td>
+      <td>शुरुआत/अंत में जाओ</td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <th>Key प्रकार</th>
+      <th>उदाहरण</th>
+      <th>विशेषता</th>
+    </tr>
+    <tr>
+      <td>Modifier Keys</td>
+      <td>Ctrl, Shift, Alt</td>
+      <td>अकेले काम नहीं करतीं</td>
+    </tr>
+    <tr>
+      <td>Toggle Keys</td>
+      <td>Caps Lock, Num Lock, Scroll Lock</td>
+      <td>ON/OFF की तरह</td>
+    </tr>
+    <tr>
+      <td>Function Keys</td>
+      <td>F1–F12</td>
+      <td>कुल 12 keys</td>
+    </tr>
+    <tr>
+      <td>Navigation Keys</td>
+      <td>Arrow, Page Up/Down, Home, End</td>
+      <td>Cursor move</td>
+    </tr>
+  </table>
 
-<p style="font-size:10px;color:#9ca3af;text-align:center;margin-top:14px;border-top:.5px solid #e5e9f2;padding-top:5px">
-  Computer (FOC) — मास्टर रिवीज़न हैंडबुक | अंतिम अद्यतन: जुलाई 2026 | Error Log + Notes से तैयार
-</p>
+  <h2>🌐 OS, Internet व Computer Characteristics</h2>
+  <div class="cols2">
+    <div>
+      <table>
+        <tr>
+          <th>OS प्रकार</th>
+          <th>उदाहरण</th>
+        </tr>
+        <tr>
+          <td>Desktop OS</td>
+          <td>Windows, Mac OS, Linux, Ubuntu</td>
+        </tr>
+        <tr>
+          <td>Mobile OS</td>
+          <td>Android, iOS, Symbian, KaiOS</td>
+        </tr>
+        <tr>
+          <td>Server OS</td>
+          <td>Windows Server, Linux Server</td>
+        </tr>
+        <tr>
+          <td>RTOS</td>
+          <td>Real-Time OS (Embedded)</td>
+        </tr>
+      </table>
+      <div class="trap">❌ OS नहीं हैं: BIOS, Apache, Firefox, Oracle, Pentium</div>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <th>विशेषता</th>
+          <th>व्याख्या</th>
+        </tr>
+        <tr>
+          <td>Speed</td>
+          <td>Microsecond से भी कम में calculations</td>
+        </tr>
+        <tr>
+          <td>Accuracy</td>
+          <td>GIGO — गलत Input→गलत Output</td>
+        </tr>
+        <tr>
+          <td>Diligence</td>
+          <td>बिना थके बार-बार काम</td>
+        </tr>
+        <tr>
+          <td>Versatility</td>
+          <td>अलग-अलग काम एक साथ</td>
+        </tr>
+        <tr>
+          <td>No IQ</td>
+          <td>खुद सोचने की क्षमता नहीं (Limitation)</td>
+        </tr>
+      </table>
+    </div>
+  </div>
 
-</div><!-- /sheet -->
+  <h2>🦠 Virus / Malware / Security</h2>
+  <table>
+    <tr>
+      <th>Term</th>
+      <th>अर्थ/उदाहरण</th>
+    </tr>
+    <tr>
+      <td>Virus</td>
+      <td>File attach होकर फैलता है — Creeper=पहला Virus</td>
+    </tr>
+    <tr>
+      <td>Worm</td>
+      <td>Self-replicate, network से फैलता है — Morris Worm</td>
+    </tr>
+    <tr>
+      <td>Spyware</td>
+      <td>बिना जानकारी Activity track — Pegasus</td>
+    </tr>
+    <tr>
+      <td>Trojan Horse</td>
+      <td>Legitimate दिखकर harm करता है</td>
+    </tr>
+    <tr>
+      <td>Ransomware</td>
+      <td>Files encrypt कर पैसे मांगता है — WannaCry</td>
+    </tr>
+    <tr>
+      <td>Phishing</td>
+      <td>Fake site/email से password चोरी</td>
+    </tr>
+    <tr>
+      <td>Firewall</td>
+      <td>Network traffic filter करता है</td>
+    </tr>
+  </table>
+
+  <h2>📋 Full Forms — Complete List (existing + NEW जुड़े)</h2>
+  <table>
+    <tr>
+      <th>Term</th>
+      <th>Full Form</th>
+      <th>Term</th>
+      <th>Full Form</th>
+    </tr>
+    <tr>
+      <td>VIRUS</td>
+      <td>Vital Info. Resources Under Siege</td>
+      <td>BIOS</td>
+      <td>Basic Input/Output System</td>
+    </tr>
+    <tr>
+      <td>GUI</td>
+      <td>Graphical User Interface</td>
+      <td>OCR</td>
+      <td>Optical Character Recognition</td>
+    </tr>
+    <tr>
+      <td>OMR</td>
+      <td>Optical Mark Reader/Recognition</td>
+      <td>MICR</td>
+      <td>Magnetic Ink Char. Recognition</td>
+    </tr>
+    <tr>
+      <td>RAM</td>
+      <td>Random Access Memory</td>
+      <td>ROM</td>
+      <td>Read Only Memory</td>
+    </tr>
+    <tr>
+      <td>VDU</td>
+      <td>Visual Display Unit</td>
+      <td>USB</td>
+      <td>Universal Serial Bus</td>
+    </tr>
+    <tr>
+      <td>HDMI</td>
+      <td>High Definition Multimedia Interface</td>
+      <td>DTP</td>
+      <td>Desktop Publishing</td>
+    </tr>
+    <tr>
+      <td>WYSIWYG</td>
+      <td>What You See Is What You Get</td>
+      <td>UPC</td>
+      <td>Universal Product Code</td>
+    </tr>
+    <tr>
+      <td>FLOPS</td>
+      <td>Floating Point Ops Per Second</td>
+      <td>ICT</td>
+      <td>Info & Communication Tech</td>
+    </tr>
+    <tr>
+      <td>CPU</td>
+      <td>Central Processing Unit</td>
+      <td>ALU</td>
+      <td>Arithmetic Logic Unit</td>
+    </tr>
+    <tr>
+      <td>CU (NEW)</td>
+      <td>Control Unit</td>
+      <td>MU (NEW)</td>
+      <td>Memory Unit</td>
+    </tr>
+    <tr>
+      <td>PCR (NEW)</td>
+      <td>Program Counter Register</td>
+      <td>MAR (NEW)</td>
+      <td>Memory Address Register</td>
+    </tr>
+    <tr>
+      <td>MBR/MDR (NEW)</td>
+      <td>Memory Buffer/Data Register</td>
+      <td>IR (NEW)</td>
+      <td>Instruction Register</td>
+    </tr>
+    <tr>
+      <td>POST (NEW)</td>
+      <td>Power On Self Test</td>
+      <td>NVRAM (NEW)</td>
+      <td>Non-Volatile RAM</td>
+    </tr>
+    <tr>
+      <td>SIMM (NEW)</td>
+      <td>Single Inline Memory Module</td>
+      <td>DIMM (NEW)</td>
+      <td>Dual Inline Memory Module</td>
+    </tr>
+    <tr>
+      <td>AGP (NEW)</td>
+      <td>Accelerated Graphics Port</td>
+      <td>PCI (NEW)</td>
+      <td>Peripheral Component Interconnect</td>
+    </tr>
+    <tr>
+      <td>SCSI (NEW)</td>
+      <td>Small Computer System Interface</td>
+      <td>RJ-45 (NEW)</td>
+      <td>Registrar Jack-45</td>
+    </tr>
+    <tr>
+      <td>PATA/SATA (NEW)</td>
+      <td>Parallel/Serial ATA</td>
+      <td>SMPS (NEW)</td>
+      <td>Switched Mode Power Supply</td>
+    </tr>
+    <tr>
+      <td>CMOS (NEW)</td>
+      <td>Complementary Metal Oxide Semiconductor</td>
+      <td>UPS (NEW)</td>
+      <td>Uninterruptible Power Supply</td>
+    </tr>
+    <tr>
+      <td>PCB (NEW)</td>
+      <td>Printed Circuit Board</td>
+      <td>DPI</td>
+      <td>Dots Per Inch</td>
+    </tr>
+    <tr>
+      <td>RPM (NEW)</td>
+      <td>Revolution Per Minute</td>
+      <td>WORM</td>
+      <td>Write Once Read Many</td>
+    </tr>
+    <tr>
+      <td>VLSI/ULSI (NEW)</td>
+      <td>Very/Ultra Large Scale Integration</td>
+      <td>NAS</td>
+      <td>Network Attached Storage</td>
+    </tr>
+  </table>
+
+  <h2>🇮🇳 भारत में Computer का इतिहास</h2>
+  <table>
+    <tr>
+      <th>तथ्य</th>
+      <th>विवरण</th>
+    </tr>
+    <tr>
+      <td>भारत का पहला Computer</td>
+      <td>HEC-2M — ISI Kolkata (1955), Britain से 20 लाख में खरीदा</td>
+    </tr>
+    <tr>
+      <td>पहला Indigenous Computer</td>
+      <td>TIFRAC — TIFR (1961)</td>
+    </tr>
+    <tr>
+      <td>पहला Indian Micro Computer</td>
+      <td>Siddharth — ECIL Hyderabad (1978)</td>
+    </tr>
+    <tr>
+      <td>पहला Supercomputer</td>
+      <td>PARAM 8000 — C-DAC Pune (1991)</td>
+    </tr>
+    <tr>
+      <td>पहला Indian Microprocessor</td>
+      <td>SHAKTI — IIT Madras (2018)</td>
+    </tr>
+    <tr>
+      <td>Father of Indian Computing</td>
+      <td><b>Rangaswami Narasimhan</b> (सही स्पेलिंग)</td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <th>जनक (Father of...)</th>
+      <th>व्यक्ति</th>
+    </tr>
+    <tr>
+      <td>Computer</td>
+      <td>Charles Babbage</td>
+    </tr>
+    <tr>
+      <td>Modern Computer/Computer Architecture (NEW)</td>
+      <td>John Von Neumann (1945)</td>
+    </tr>
+    <tr>
+      <td>Mother of Computer/1st Programmer</td>
+      <td>Ada Lovelace</td>
+    </tr>
+    <tr>
+      <td>Mouse</td>
+      <td>Douglas Engelbart</td>
+    </tr>
+    <tr>
+      <td>PC (NEW)</td>
+      <td>Edward Robert Hennecy</td>
+    </tr>
+    <tr>
+      <td>Laptop (NEW)</td>
+      <td>Adam Osborne</td>
+    </tr>
+    <tr>
+      <td>Hard Disk (NEW)</td>
+      <td>Ray Johnson (IBM)</td>
+    </tr>
+    <tr>
+      <td>Keyboard (NEW)</td>
+      <td>Christopher Latham Sholes (1868)</td>
+    </tr>
+    <tr>
+      <td>IC (Integrated Circuit)</td>
+      <td>Jack Kilby + Robert Noyce</td>
+    </tr>
+  </table>
+
+  <h2>🔢 Memory Unit Conversion — Formula Sheet</h2>
+  <table>
+    <tr>
+      <th>Unit</th>
+      <th>बराबर</th>
+    </tr>
+    <tr>
+      <td>1 Nibble</td>
+      <td>4 Bits (आधा Byte)</td>
+    </tr>
+    <tr>
+      <td>1 Byte</td>
+      <td>8 Bits (2³) = 1 Character</td>
+    </tr>
+    <tr>
+      <td>1 KB</td>
+      <td>1024 Bytes (2¹⁰)</td>
+    </tr>
+    <tr>
+      <td>1 MB</td>
+      <td>1024 KB (2²⁰)</td>
+    </tr>
+    <tr>
+      <td>1 GB</td>
+      <td>1024 MB (2³⁰)</td>
+    </tr>
+    <tr>
+      <td>1 TB</td>
+      <td>1024 GB (2⁴⁰)</td>
+    </tr>
+    <tr>
+      <td>1 PB</td>
+      <td>1024 TB (2⁵⁰)</td>
+    </tr>
+    <tr>
+      <td>1 EB / 1 ZB / 1 YB</td>
+      <td>क्रमशः 1024×पिछली इकाई</td>
+    </tr>
+    <tr>
+      <td>1 BB (Brontobyte) / 1 GBB (Geopbyte) (NEW)</td>
+      <td>1024 YB = 1 BB; 1024 BB = 1 GBB</td>
+    </tr>
+  </table>
+
+  <h2>📊 Difference Tables (existing + NEW)</h2>
+  <h3>⚠️ OCR vs OMR vs MICR vs Barcode vs QR</h3>
+  <table>
+    <tr>
+      <th>Device</th>
+      <th>Full Form</th>
+      <th>उपयोग</th>
+    </tr>
+    <tr>
+      <td>OCR</td>
+      <td>Optical Character Recognition</td>
+      <td>Printed/handwritten text→editable</td>
+    </tr>
+    <tr>
+      <td>OMR</td>
+      <td>Optical Mark Reader</td>
+      <td>MCQ answer sheets</td>
+    </tr>
+    <tr>
+      <td>MICR</td>
+      <td>Magnetic Ink Char. Recognition</td>
+      <td>Bank cheque (Iron Oxide magnetic ink)</td>
+    </tr>
+    <tr>
+      <td>Barcode</td>
+      <td>UPC=12 digit + bars</td>
+      <td>Product scanning (1D)</td>
+    </tr>
+    <tr>
+      <td>QR Code</td>
+      <td>Quick Response Code</td>
+      <td>Payment (2D — Denso Wave, Japan)</td>
+    </tr>
+  </table>
+  <h3>⚠️ Primary vs Secondary Memory</h3>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Primary</th>
+      <th>Secondary</th>
+    </tr>
+    <tr>
+      <td>Volatile</td>
+      <td>हाँ (RAM हेतु; ROM अपवाद)</td>
+      <td>नहीं</td>
+    </tr>
+    <tr>
+      <td>Speed</td>
+      <td>तेज़</td>
+      <td>धीमा</td>
+    </tr>
+    <tr>
+      <td>Access</td>
+      <td>CPU directly</td>
+      <td>OS के through</td>
+    </tr>
+    <tr>
+      <td>Examples</td>
+      <td>RAM, ROM, Cache, Register</td>
+      <td>HDD, SSD, CD, DVD, Pen Drive</td>
+    </tr>
+  </table>
+  <h3>⚠️ HDD vs SSD (NEW)</h3>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>HDD</th>
+      <th>SSD</th>
+    </tr>
+    <tr>
+      <td>तकनीक</td>
+      <td>Magnetic Platter, Mechanical Head</td>
+      <td>Semiconductor Flash Memory</td>
+    </tr>
+    <tr>
+      <td>Moving Parts</td>
+      <td>हाँ (Platter घूमता है)</td>
+      <td>नहीं</td>
+    </tr>
+    <tr>
+      <td>Speed</td>
+      <td>धीमी</td>
+      <td>तेज़, Shock-resistant</td>
+    </tr>
+    <tr>
+      <td>कीमत</td>
+      <td>सस्ता</td>
+      <td>महँगा</td>
+    </tr>
+  </table>
+  <h3>⚠️ Hardware vs Software</h3>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Hardware</th>
+      <th>Software</th>
+    </tr>
+    <tr>
+      <td>परिभाषा</td>
+      <td>Physical (छू सकते हैं)</td>
+      <td>Programs (छू नहीं सकते)</td>
+    </tr>
+    <tr>
+      <td>उदाहरण</td>
+      <td>CPU, RAM, HDD, Monitor</td>
+      <td>Windows, MS Word, Chrome</td>
+    </tr>
+    <tr>
+      <td>Virus</td>
+      <td>नहीं होता</td>
+      <td>होता है</td>
+    </tr>
+  </table>
+
+  <h2>🧮 Cache Mapping व Memory Chip — Numericals (NEW सेक्शन)</h2>
+  <h3>Cache Memory — Direct Mapping Numerical ⭐⭐⭐⭐⭐</h3>
+  <div class="trick">CPU का दिया Address तीन हिस्सों में टूटता है: <b>| Tag | Index | Offset |</b></div>
+  <table>
+    <tr>
+      <th>Field</th>
+      <th>काम</th>
+      <th>Formula</th>
+    </tr>
+    <tr>
+      <td>Offset</td>
+      <td>Block के अंदर कौन-सा Byte चाहिए</td>
+      <td>log₂(Block Size)</td>
+    </tr>
+    <tr>
+      <td>Index</td>
+      <td>Cache की कौन-सी Line देखनी है</td>
+      <td>log₂(Cache Size ÷ Block Size)</td>
+    </tr>
+    <tr>
+      <td>Tag</td>
+      <td>पहचान — उस Line में RAM का कौन-सा Block रखा है</td>
+      <td>Total Address Bits − Index − Offset</td>
+    </tr>
+  </table>
+  <div class="corr">📝 <b>उदाहरण:</b> 32-bit Address, 32 KB Direct Mapped Cache, Block Size = 32 Bytes<br>
+    Offset = log₂(32) = 5 | Cache Lines = 32KB÷32B = 1024 = 2¹⁰ → Index = 10 | Tag = 32−10−5 = 17<br>
+    ✅ <b>Answer: Index = 10, Tag = 17</b></div>
+  <div class="trick">🧠 Tag=Identity(कौन-सा Block), Index=Location(कौन-सी Line), Offset=Byte(Block के अंदर)। Block Size
+    दुगुना→Offset+1; Cache Size दुगुना→Index+1; Address Size बढ़े→Tag बढ़ेगा।<br>
+    🧠 T-I-O Trick: "चाचा(Tag)-घर(Index)-कमरा(Offset)"</div>
+  <div class="trap"><b>⚠️ KB/MB Conversion Trap:</b> Cache Size प्रायः KB/MB में, Block Size Bytes में दिया जाता है —
+    पहले सबको Bytes में बदलें (32KB=32×1024 Bytes)। ⚠️ Associative Mapping में Index नहीं होता (केवल Tag+Offset); Fully
+    Associative में Tag सबसे ज़्यादा होता है।</div>
+
+  <h3>Memory Chip — Address Lines Numerical ⭐⭐⭐⭐⭐</h3>
+  <ul>
+    <li>Memory Chip में 3 प्रकार की Lines: <b>Address Lines</b> (Location चुनना), <b>Data Lines</b> (Data भेजना),
+      <b>Control Lines</b> (CS, RD, WR)</li>
+  </ul>
+  <table>
+    <tr>
+      <th>Question में क्या दिया है</th>
+      <th>Formula</th>
+    </tr>
+    <tr>
+      <td>Memory Organization (जैसे 4M×8, 1M×16)</td>
+      <td>Address Lines = log₂(Total Words)</td>
+    </tr>
+    <tr>
+      <td>Total External Connections (Pins)</td>
+      <td>Address Lines = Total Connections − Data Lines − Control/Power Lines</td>
+    </tr>
+  </table>
+  <div class="corr">📝 <b>Type-1:</b> 4M-bit Chip, Data Lines=8 → कुल Bits=4×2²⁰=2²² → Words=2²²÷2³=2¹⁹ → Address
+    Lines=19<br>
+    📝 <b>Type-2:</b> External Connections=19, Data Lines=8, Control/Power=2 → Address Lines=19−8−2=9</div>
+  <div class="trick">🧠 "Organization/Words" दिखे → 2ⁿ Rule; "External Connections/Pins" दिखे → Total−Data−Control</div>
+  <div class="trap"><b>❌ ट्रैप:</b> दोनों Question Types में अलग Formula चाहिए — Language ध्यान से पढ़ो वरना जवाब उल्टा
+    आएगा।</div>
+
+  <h3>Superscalar vs Pipelining (NEW)</h3>
+  <table>
+    <tr>
+      <th>Feature</th>
+      <th>Pipelining</th>
+      <th>Superscalar Execution</th>
+    </tr>
+    <tr>
+      <td>मूल अवधारणा</td>
+      <td>एक Instruction के अलग Stages Overlap होते हैं</td>
+      <td>एक साइकिल में एक से ज़्यादा Instructions पूरी तरह Execute</td>
+    </tr>
+    <tr>
+      <td>Hardware</td>
+      <td>Single Instruction Unit, अलग Stages</td>
+      <td>Multiple Execution Units (कई ALUs)</td>
+    </tr>
+    <tr>
+      <td>IPC</td>
+      <td>आदर्श स्थिति में IPC=1</td>
+      <td>IPC&gt;1 हो सकता है</td>
+    </tr>
+  </table>
+  <div class="trick">🧠 Superscalar = सुपरमैन (एक साइकिल में कई काम पूरे); Pipeline = असेंबली लाइन (काम overlap, पर
+    एक-एक कर पूरा)</div>
+  <ul>
+    <li><b>Micro-operations (NEW):</b> Register पर होने वाले basic operations — 4 प्रकार: Register Transfer, Arithmetic,
+      Logic, <b>Shift</b> (bits को left/right खिसकाना = गुणा/भाग)</li>
+  </ul>
+
+  <h3>🕰️ History Facts — जोड़ (NEW)</h3>
+  <table>
+    <tr>
+      <th>Computer</th>
+      <th>पहचान</th>
+    </tr>
+    <tr>
+      <td><b>Z3</b></td>
+      <td>विश्व का पहला Programmable Computer</td>
+    </tr>
+    <tr>
+      <td>ENIAC</td>
+      <td>पहला General-Purpose Electronic Digital Computer (सैन्य उपयोग)</td>
+    </tr>
+    <tr>
+      <td>UNIVAC I</td>
+      <td>पहला Commercial Computer</td>
+    </tr>
+  </table>
+  <div class="trap"><b>⚠️ Confusion:</b> ENIAC(General-Purpose) व UNIVAC I(Commercial) के बीच छात्र उलझ जाते हैं — दोनों
+    अलग "पहला" हैं, आपस में स्वैप न करें।</div>
+
+  <h2>🔢 Number System, Complements & Binary Arithmetic (NEW सेक्शन — BCI का सबसे favourite topic ⭐⭐⭐⭐⭐)</h2>
+  <h3>Decimal → Binary → Hex</h3>
+  <div class="trick">उदाहरण: Decimal 15 → Binary 1111 → Hex F</div>
+  <table>
+    <tr>
+      <th>Decimal</th>
+      <th>Hex</th>
+      <th>Decimal</th>
+      <th>Hex</th>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>A</td>
+      <td>13</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>B</td>
+      <td>14</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>C</td>
+      <td>15</td>
+      <td>F</td>
+    </tr>
+  </table>
+  <h3>Decimal Fraction → Binary (उदाहरण: 26.85)</h3>
+  <ul>
+    <li><b>Integer भाग:</b> बार-बार ÷2 करें, Remainder नीचे से ऊपर पढ़ें → 26 → 11010</li>
+    <li><b>Fraction भाग:</b> बार-बार ×2 करें, हर बार Integer digit लें → 0.85 → 110110 (लगभग)</li>
+    <li>Final: 26.85₁₀ ≈ 11010.110110₂</li>
+  </ul>
+  <div class="trick">🧠 Integer भाग → ÷2 (Remainder नीचे से ऊपर)। Fraction भाग → ×2 (Carry digit ऊपर से नीचे) जब तक
+    ज़रूरी bits न मिलें।</div>
+
+  <h3>1's Complement व 2's Complement</h3>
+  <ul>
+    <li><b>1's Complement:</b> हर 0 को 1, हर 1 को 0 (सीधा Bit Flip, कोई Borrow/Carry नहीं)</li>
+  </ul>
+  <table>
+    <tr>
+      <th>Original</th>
+      <td>0000111100101101</td>
+    </tr>
+    <tr>
+      <th>1's Complement</th>
+      <td>1111000011010010</td>
+    </tr>
+  </table>
+  <div class="trick">🧠 1's Complement = सीधा Bit Flip (0↔1); <b>2's Complement = 1's Complement + 1</b> (अगला Step,
+    अक्सर साथ पूछा जाता है)</div>
+
+  <h3>Binary Addition — Basic Rules</h3>
+  <table>
+    <tr>
+      <th>Addition</th>
+      <th>Result</th>
+    </tr>
+    <tr>
+      <td>0+0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>0+1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>1+1</td>
+      <td>10 (0, Carry 1)</td>
+    </tr>
+    <tr>
+      <td>1+1+1 (Carry सहित)</td>
+      <td>11 (1, Carry 1)</td>
+    </tr>
+  </table>
+
+  <h2>🔐 Networking व Misc — VPN, EBCDIC, File Extensions (NEW सेक्शन)</h2>
+  <h3>SSD vs HDD — Assertion-Reason रूप ⭐⭐⭐</h3>
+  <table>
+    <tr>
+      <th>SSD</th>
+      <th>HDD</th>
+    </tr>
+    <tr>
+      <td>Flash Memory, Faster, No Moving Parts</td>
+      <td>Mechanical Disk, Slower, Moving Parts</td>
+    </tr>
+  </table>
+  <div class="corr"><b>Assertion:</b> SSD is faster than HDD — ✅ True। <b>Reason:</b> SSD uses Flash Memory — ✅ True, और
+    यह Assertion की सही Explanation भी है (No Moving/Mechanical Parts से Access तेज़)।</div>
+  <div class="trick">🧠 SSD = Flash+Fast+No Moving Parts; HDD = Mechanical+Slow</div>
+
+  <h3>VPN — क्या करता है, क्या नहीं ⭐⭐⭐</h3>
+  <ul>
+    <li>VPN Data को <b>Encrypt</b> करता है और असली IP छुपाता है</li>
+    <li><b>⚠️ बड़ा ट्रैप:</b> VPN Complete Anonymous नहीं बनाता — <b>VPN Provider खुद User की Activity देख सकता है</b>
+      (Trust VPN Provider पर निर्भर)</li>
+  </ul>
+  <div class="trick">🧠 VPN = Encrypt + Hide IP; Complete Anonymous नहीं (Provider देख सकता है) — "टनल तो है, पर अंदर
+    कैमरा (Provider) लगा है"</div>
+  <table>
+    <tr>
+      <th>Parameter</th>
+      <th>VPN</th>
+      <th>Proxy Server</th>
+    </tr>
+    <tr>
+      <td>Encryption</td>
+      <td>पूरे System का Data Encrypt करता है</td>
+      <td>Encrypt नहीं करता, केवल IP बदलता है</td>
+    </tr>
+    <tr>
+      <td>Scope</td>
+      <td>OS स्तर पर (सभी Apps/Browser)</td>
+      <td>केवल विशिष्ट App/Browser स्तर पर</td>
+    </tr>
+    <tr>
+      <td>Security</td>
+      <td>अत्यधिक सुरक्षित</td>
+      <td>कम सुरक्षित</td>
+    </tr>
+  </table>
+
+  <h3>File Extensions / Encoding — One-Liners (NEW)</h3>
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>मतलब</th>
+    </tr>
+    <tr>
+      <td>.aoo</td>
+      <td>Web Page Image Map File</td>
+    </tr>
+    <tr>
+      <td>EBCDIC</td>
+      <td>Extended Binary Coded Decimal Interchange Code — IBM का 8-bit Character Encoding</td>
+    </tr>
+    <tr>
+      <td>EBCDIC 11111001</td>
+      <td>= Decimal 9</td>
+    </tr>
+  </table>
+  <div class="trap"><b>⚠️ Trap:</b> EBCDIC हमेशा <b>8-bit</b> होता है (ASCII मुख्यतः 7-bit standard) — दोनों को मिलाएं
+    नहीं। .aoo को "Audio" न समझें — यह Image Map File है।</div>
+
+  <h2>⚡ Rapid Revision — अंतिम 5 मिनट</h2>
+  <div class="cols2">
+    <div>
+      <b>Memory Speed क्रम:</b> Register→Cache→RAM→SSD→HDD→Tape<br>
+      <b>Printer:</b> Impact=DMP,DWP,Drum,Chain | Non-Impact=Laser,Inkjet,Thermal | Quality=DPI, Speed=PPM/LPM/CPS<br>
+      <b>Generations ट्रिक:</b> 1st=Vacuum(ENIAC) → 2nd=Transistor(IBM1401) → 3rd=IC(IBM360) →
+      4th=VLSI/Microprocessor(PC) → 5th=ULSI+AI(PARAM)<br>
+      <b>India Firsts:</b> Computer→HEC-2M(1955) | Indigenous→TIFRAC(1961) | Micro→Siddharth(1978) |
+      Super→PARAM8000(1991) | Microprocessor→SHAKTI(2018)<br>
+      <b>Software:</b> System=OS/Driver/Compiler | Application=Word/Excel/Chrome | Utility=Antivirus/WinZip | Open
+      Source=Linux/Firefox | Proprietary=Adobe/Windows
+    </div>
+    <div>
+      <b>CPU (NEW):</b> ALU=गणना+तुलना | CU=Nerve System | Registers: PCR(अगली
+      instruction)→MAR(address)→MBR(data)→IR(current instr)→AR(result)<br>
+      <b>Flip-Flop (NEW):</b> 8 Flip-Flop=1 Byte; Combinational=केवल present input, Sequential=past+present<br>
+      <b>ROM Types (NEW):</b> PROM(1 बार लिख सकते) → EPROM(UV से erase) → EEPROM(Electric से erase)<br>
+      <b>Storage Capacity (NEW):</b> CD=650-700MB | DVD-SL=4.7GB | DVD-DL=8.5GB | BRD=25/50GB | Floppy(3.5")=1.44MB<br>
+      <b>Motherboard (NEW):</b> Ports=PS/2,USB,VGA,HDMI,RJ-45,IDE | Slots=SIMM/DIMM,AGP,PCI |
+      BUS=Address(1-way),Control,Data(2-way) | Power=UPS,SMPS,CMOS<br>
+      <b>Cache Numerical (NEW):</b> Address=Tag+Index+Offset | Offset=log₂(BlockSize) | Index=log₂(CacheSize÷BlockSize)
+      | Tag=Total−Index−Offset<br>
+      <b>Memory Chip (NEW):</b> Organization दिखे→Address Lines=log₂(Words) | Pins दिखे→Address=Total−Data−Control<br>
+      <b>History (NEW):</b> Z3=पहला Programmable | ENIAC=पहला General-Purpose Digital | UNIVAC I=पहला Commercial<br>
+      <b>Number System (NEW):</b> Integer÷2(remainder नीचे-ऊपर) | Fraction×2(carry ऊपर-नीचे) | 1's Comp=Bit Flip | 2's
+      Comp=1's Comp+1<br>
+      <b>Misc (NEW):</b> SSD=Flash+No Moving Parts(तेज़) | VPN=Encrypt+HideIP पर Provider देख सकता है(Anonymous नहीं) |
+      EBCDIC=8-bit(IBM)
+    </div>
+  </div>
+
+  <div class="foot">Computer (FOC) — मास्टर रिवीज़न हैंडबुक | Error Log + Notes + CPU/Storage/Motherboard + Cache/Number
+    System/Networking Notes से मर्ज किया गया | अंतिम अद्यतन: अगस्त 2026</div>
+
 </body>
+
 </html>
