@@ -1,604 +1,2332 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajasthan Mela + Tyohar - Combined Revision</title>
+    <title>राजस्थान लोक संस्कृति, मेले एवं त्योहार — मास्टर रिवीजन हैंडबुक</title>
     <style>
-:root {
-  --font-sans: 'Inter', sans-serif;
-  --color-background-primary: #ffffff;
-  --color-background-secondary: #FFF8F0;
-  --color-border-primary: #1A2744;
-  --color-border-secondary: #E5E9F2;
-  --color-border-tertiary: #E5E9F2;
-  --color-text-primary: #1A2744;
-  --color-text-secondary: #6b7a99;
-  --color-text-tertiary: #a3b1cc;
-  --border-radius-md: 10px;
-  --border-radius-lg: 14px;
-  
-  --color-background-danger: #fee2e2;
-  --color-border-danger: #fca5a5;
-  --color-text-danger: #dc2626;
-
-  --color-background-success: #dcfce7;
-  --color-border-success: #86efac;
-  --color-text-success: #16a34a;
-
-  --color-background-warning: #fef3c7;
-  --color-border-warning: #fde047;
-  --color-text-warning: #d97706;
-
-  --color-background-info: #e0f2fe;
-  --color-border-info: #7dd3fc;
-  --color-text-info: #0369a1;
-}
+         :root {
+            --font-sans: 'Inter', 'Noto Sans Devanagari', sans-serif;
+            --bg: #ffffff;
+            --bg2: #FFF8F0;
+            --border: #1A2744;
+            --border2: #E5E9F2;
+            --text: #1A2744;
+            --text2: #6b7a99;
+            --text3: #a3b1cc;
+            --r-md: 10px;
+            --r-lg: 14px;
+            --danger-bg: #fee2e2;
+            --danger-b: #fca5a5;
+            --danger-t: #dc2626;
+            --success-bg: #dcfce7;
+            --success-b: #86efac;
+            --success-t: #16a34a;
+            --warn-bg: #fef3c7;
+            --warn-b: #fde047;
+            --warn-t: #d97706;
+            --info-bg: #e0f2fe;
+            --info-b: #7dd3fc;
+            --info-t: #0369a1;
+            --purple-bg: #EEEDFE;
+            --purple-t: #3C3489;
+        }
+        
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
-            line-height: 1.4;
+            font-family: var(--font-sans);
+            background: #f2f4fa;
+            padding: 14px;
+            color: var(--text);
         }
-        .container {
-            max-width: 1100px;
+        
+        .wrap {
+            max-width: 900px;
             margin: 0 auto;
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            background: var(--bg);
+            border-radius: var(--r-lg);
+            padding: 16px 18px 28px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
         }
-        h1 {
-            color: #c41e3a;
-            text-align: center;
-            margin-bottom: 8px;
-            font-size: 26px;
-        }
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 25px;
-            font-weight: 500;
-            font-size: 14px;
-        }
-        h2 {
-            color: white;
-            background: linear-gradient(90deg, #c41e3a, #ff6b6b);
-            padding: 10px 15px;
-            margin-top: 20px;
+        
+        .masthead {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
             margin-bottom: 12px;
-            border-radius: 5px;
-            font-size: 17px;
         }
+        
+        .masthead h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--border);
+        }
+        
+        .masthead .sub {
+            font-size: 11px;
+            color: var(--text2);
+            margin-top: 3px;
+        }
+        
+        .masthead button {
+            font-size: 11px;
+            padding: 5px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--border2);
+            background: #fff;
+            cursor: pointer;
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 5;
+            padding: 6px 0;
+        }
+        
+        .tab {
+            font-size: 11.5px;
+            padding: 5px 10px;
+            border: 1px solid var(--border2);
+            border-radius: 20px;
+            cursor: pointer;
+            background: #fff;
+            color: var(--text2);
+            white-space: nowrap;
+        }
+        
+        .tab.active {
+            background: var(--info-bg);
+            color: var(--info-t);
+            border-color: #378ADD;
+            font-weight: 600;
+        }
+        
+        .section {
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        h2.stitle {
+            font-size: 15px;
+            font-weight: 700;
+            padding: 7px 10px;
+            border-radius: var(--r-md);
+            margin: 4px 0 10px;
+        }
+        
         h3 {
-            color: #1565c0;
-            margin-top: 12px;
-            margin-bottom: 8px;
-            font-size: 13px;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--text2);
+            text-transform: uppercase;
+            letter-spacing: .03em;
+            margin: 14px 0 6px;
+            border-left: 3px solid var(--info-t);
+            padding-left: 6px;
         }
-        .trap-box {
-            background: #ffebee;
-            border-left: 5px solid #d32f2f;
-            padding: 10px;
-            margin-bottom: 8px;
-            border-radius: 4px;
-            font-size: 12px;
-        }
-        .trap-title {
-            color: #d32f2f;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .correct {
-            color: #2e7d32;
-            font-weight: bold;
-        }
-        .wrong {
-            color: #d32f2f;
-        }
+        
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 12px;
-            font-size: 11px;
-        }
-        thead {
-            background: #c41e3a;
-            color: white;
-            font-weight: bold;
-        }
-        th, td {
-            padding: 6px 8px;
-            text-align: left;
-            border: 1px solid #ddd;
-        }
-        tbody tr:nth-child(odd) {
-            background: #f9f9f9;
-        }
-        tbody tr:hover {
-            background: #f0f0f0;
-        }
-        .type-badge {
-            display: inline-block;
-            padding: 2px 6px;
-            background: #e3f2fd;
-            color: #1565c0;
-            border-radius: 3px;
-            font-size: 9px;
-            font-weight: bold;
-            margin-right: 4px;
-        }
-        .mela-badge {
-            background: #fff3e0;
-            color: #ff6f00;
-        }
-        .tyohar-badge {
-            background: #f3e5f5;
-            color: #9c27b0;
-        }
-        .pasu-badge {
-            background: #efebe9;
-            color: #5d4e37;
-        }
-        .important {
-            background: #e3f2fd;
-            padding: 10px;
-            border-left: 4px solid #1565c0;
-            margin: 10px 0;
-            border-radius: 4px;
-            font-size: 12px;
-        }
-        .section-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            font-size: 11.5px;
             margin-bottom: 10px;
         }
-        .grid-item {
-            background: #f5f5f5;
-            padding: 8px;
-            border-left: 3px solid #1565c0;
-            border-radius: 3px;
+        
+        th {
+            background: var(--bg2);
+            color: var(--text2);
+            font-weight: 700;
+            text-align: left;
+            padding: 5px 7px;
+            border: 0.5px solid var(--border2);
+            font-size: 10.5px;
+        }
+        
+        td {
+            padding: 4px 7px;
+            border: 0.5px solid var(--border2);
+            vertical-align: top;
+            line-height: 1.4;
+        }
+        
+        tr:nth-child(even) td {
+            background: var(--bg2);
+        }
+        
+        .highlight td {
+            background: #FAEEDA !important;
+        }
+        
+        .month-head {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--text);
+            background: var(--info-bg);
+            border-left: 3px solid #378ADD;
+            padding: 4px 8px;
+            margin: 12px 0 4px;
+            border-radius: 0 var(--r-md) var(--r-md) 0;
+        }
+        
+        .trap-box {
+            background: #FCEBEB;
+            border: 1px solid #F09595;
+            border-radius: var(--r-lg);
+            padding: 10px 12px;
+            margin-bottom: 7px;
+            font-size: 12px;
+        }
+        
+        .trap-title {
+            font-weight: 700;
+            color: #A32D2D;
+            margin-bottom: 3px;
+            font-size: 12.5px;
+        }
+        
+        .trap-box .wrong {
+            color: #A32D2D;
+        }
+        
+        .trap-box .right {
+            color: #3B6D11;
+            font-weight: 600;
+        }
+        
+        .trap-box .logic {
+            color: #555;
+            margin-top: 3px;
+            font-style: italic;
             font-size: 11px;
         }
-        .weak-area {
-            background: #ffe0b2;
-            padding: 8px;
-            margin-bottom: 6px;
-            border-radius: 3px;
-            font-size: 11px;
-            border-left: 3px solid #ff6f00;
+        
+        .weak-box {
+            padding: 9px 11px;
+            margin-bottom: 7px;
+            border-radius: var(--r-md);
+            font-size: 12px;
+            border-left: 4px solid;
         }
-        .success-box {
-            background: #e8f5e9;
-            padding: 12px;
+        
+        .weak-vhigh {
+            background: #FCEBEB;
+            border-color: #A32D2D;
+        }
+        
+        .weak-high {
+            background: #FDEFE0;
+            border-color: #d97706;
+        }
+        
+        .weak-mod {
+            background: #FFFBEA;
+            border-color: #eab308;
+        }
+        
+        .weak-low {
+            background: #EAF3DE;
+            border-color: #3B6D11;
+        }
+        
+        .tag {
+            display: inline-block;
+            font-size: 9.5px;
+            padding: 1px 6px;
             border-radius: 4px;
-            margin-top: 10px;
-            font-size: 11px;
+            font-weight: 700;
+            margin-left: 4px;
         }
-        .step {
-            display: flex;
-            margin-bottom: 6px;
+        
+        .tag-star1 {
+            background: #FFF3D6;
+            color: #a5690a;
         }
-        .step-num {
-            background: #2e7d32;
-            color: white;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
+        
+        .tag-star2 {
+            background: #FFE3B0;
+            color: #8a4b00;
+        }
+        
+        .tag-star3 {
+            background: #FFD1D1;
+            color: #a32d2d;
+        }
+        
+        .tag-verify {
+            background: #E0F2FE;
+            color: #0369A1;
+        }
+        
+        .tag-conflict {
+            background: #FCEBEB;
+            color: #A32D2D;
+        }
+        
+        .oneliner {
+            font-size: 12px;
+            padding: 3px 0;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 8px;
+            gap: 8px;
+            border-bottom: 1px dashed var(--border2);
+        }
+        
+        .oneliner span:first-child {
+            color: var(--text2);
+            min-width: 190px;
             flex-shrink: 0;
+        }
+        
+        .oneliner strong {
+            color: var(--text);
+        }
+        
+        .section-card {
+            border: 0.5px solid var(--border2);
+            border-radius: var(--r-lg);
+            padding: 10px 12px;
+            margin-bottom: 10px;
+            background: var(--bg);
+        }
+        
+        .note {
             font-size: 11px;
+            color: var(--text2);
+            margin-bottom: 8px;
         }
-        .header-bar {
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            color: white;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            text-align: center;
+        
+        .conflict-box {
+            background: #FCEBEB;
+            border: 1px solid #F09595;
+            border-radius: var(--r-lg);
+            padding: 10px 12px;
+            margin-bottom: 9px;
+            font-size: 12px;
         }
-        .footer {
-            text-align: center;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #ddd;
-            color: #999;
-            font-size: 10px;
+        
+        .conflict-box .ctitle {
+            font-weight: 700;
+            color: #A32D2D;
+            margin-bottom: 4px;
         }
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 12px;
+        
+        .conflict-box .resolved {
+            color: #3B6D11;
+            font-weight: 600;
+            margin-top: 4px;
         }
-        .col-item {
-            background: #f9f9f9;
-            padding: 10px;
-            border-radius: 4px;
-            font-size: 11px;
+        
+        @media print {
+            .tabs {
+                display: none;
+            }
+            .section {
+                display: block !important;
+            }
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .wrap {
+                box-shadow: none;
+                padding: 0;
+            }
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="header-bar">
-            <h1>🎪 RAJASTHAN MELA + TYOHAR 🎭</h1>
-            <p class="subtitle">Complete Combined Revision | Error-Based Study Material</p>
-        </div>
-
-        <!-- SECTION 1: EXAM TRAPS -->
-        <h2>🚨 MY EXAM TRAPS (CRITICAL FIXES)</h2>
-        
-        <div class="trap-box">
-            <div class="trap-title">❌ Beneshwar Location</div>
-            <span class="wrong">My Error: Banswara</span> → <span class="correct">Correct: Dungarpur (Navatapur)</span>
-            <div style="font-size: 10px; color: #666; margin-top: 3px;">Why? Triveni Sangam (Som + Mahi + Jakham rivers)</div>
-        </div>
-
-        <div class="trap-box">
-            <div class="trap-title">❌ Kapil Muni Mela</div>
-            <span class="wrong">My Error: Kota</span> → <span class="correct">Correct: Kolayat (Bikaner)</span>
-            <div style="font-size: 10px; color: #666; margin-top: 3px;">Why? Kapilayatan = Kapil Rishi ka naam</div>
-        </div>
-
-        <div class="trap-box">
-            <div class="trap-title">❌ Pabuji Mela</div>
-            <span class="wrong">My Error: Parbatsar</span> → <span class="correct">Correct: Kolumund (Phaloudi)</span>
-            <div style="font-size: 10px; color: #666; margin-top: 3px;">Why? Pabuji Rathod ka janam sthal</div>
-        </div>
-
-        <div class="trap-box">
-            <div class="trap-title">❌ Mallinath Mela</div>
-            <span class="wrong">My Error: Nagaur</span> → <span class="correct">Correct: Tilarad (Balotra)</span>
-            <div style="font-size: 10px; color: #666; margin-top: 3px;">Why? Luni River ke kinare, Marwar ka mela</div>
-        </div>
-
-        <div class="trap-box">
-            <div class="trap-title">❌ Baldeva Pasu Mela</div>
-            <span class="wrong">My Error: Manasur</span> → <span class="correct">Correct: Meda City (Nagaur)</span>
-            <div style="font-size: 10px; color: #666; margin-top: 3px;">Why? Exact location = Meda City in Nagaur</div>
-        </div>
-
-        <!-- SECTION 2: MASTER TABLE -->
-        <h2>🎪 COMPLETE MELA + TYOHAR MASTER TABLE</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>District</th>
-                    <th>Exact Location</th>
-                    <th>Month/Tithi</th>
-                    <th>Special Feature</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Beneshwar</strong></td>
-                    <td><span class="type-badge mela-badge">Mela</span></td>
-                    <td>Dungarpur</td>
-                    <td>Navatapur</td>
-                    <td>Magh Poornima</td>
-                    <td>Aadivasi Kumhh</td>
-                </tr>
-                <tr>
-                    <td><strong>Pushkar</strong></td>
-                    <td><span class="type-badge mela-badge">Mela</span></td>
-                    <td>Ajmer</td>
-                    <td>Pushkar</td>
-                    <td>Kartik Poornima</td>
-                    <td>Tirth Raj, Unt Mela</td>
-                </tr>
-                <tr>
-                    <td><strong>Chandrabahag</strong></td>
-                    <td><span class="type-badge pasu-badge">Pasu</span></td>
-                    <td>Jhalrapatan</td>
-                    <td>Jhalrapatan</td>
-                    <td>Kartik Poornima</td>
-                    <td>Maalvi cattle, Dip dan</td>
-                </tr>
-                <tr>
-                    <td><strong>Seetabadi</strong></td>
-                    <td><span class="type-badge mela-badge">Mela</span></td>
-                    <td>Barauu</td>
-                    <td>Kelarad (45km)</td>
-                    <td>Jyetha Amavasya</td>
-                    <td>Seharia Kumhh</td>
-                </tr>
-                <tr>
-                    <td><strong>Kailladevi</strong></td>
-                    <td><span class="type-badge mela-badge">Mela</span></td>
-                    <td>Karauli</td>
-                    <td>Karauli</td>
-                    <td>Chaitra Shukla</td>
-                    <td>Langaruya Dance</td>
-                </tr>
-                <tr>
-                    <td><strong>Tejaji Pasu</strong></td>
-                    <td><span class="type-badge pasu-badge">Pasu</span></td>
-                    <td>Nagaur</td>
-                    <td>Parbatsar</td>
-                    <td>Bhadra 10</td>
-                    <td>5 months duration</td>
-                </tr>
-                <tr>
-                    <td><strong>Mallinath Pasu</strong></td>
-                    <td><span class="type-badge pasu-badge">Pasu</span></td>
-                    <td>Balotra</td>
-                    <td>Tilarad</td>
-                    <td>Chaitra</td>
-                    <td>Luni River</td>
-                </tr>
-                <tr>
-                    <td><strong>Kapil Muni</strong></td>
-                    <td><span class="type-badge mela-badge">Mela</span></td>
-                    <td>Bikaner</td>
-                    <td>Kolayat</td>
-                    <td>Kartik Poornima</td>
-                    <td>Kapilayatan</td>
-                </tr>
-                <tr>
-                    <td><strong>Khattu Shyam</strong></td>
-                    <td><span class="type-badge mela-badge">Mela</span></td>
-                    <td>Sikar</td>
-                    <td>Khattu</td>
-                    <td>Phalgoon 11</td>
-                    <td>Shyam Dev</td>
-                </tr>
-                <tr>
-                    <td><strong>Khejri Shahid</strong></td>
-                    <td><span class="type-badge mela-badge">Mela</span></td>
-                    <td>Jodhpur</td>
-                    <td>Jodhpur</td>
-                    <td>Bhadra 10</td>
-                    <td>Amrita Devi</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- SECTION 3: TYOHAR TABLE -->
-        <h2>🎭 TYOHAR/FESTIVAL SECTION</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Tyohar/Festival Name</th>
-                    <th>District</th>
-                    <th>Month/Time</th>
-                    <th>Special Feature</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Unt Utsav</strong></td>
-                    <td>Bikaner</td>
-                    <td>January</td>
-                    <td>Camel festival, unt ka mela</td>
-                </tr>
-                <tr>
-                    <td><strong>Maru Utsav</strong></td>
-                    <td>Jaisalmer</td>
-                    <td>Feb-March</td>
-                    <td>Thaar culture, folk music & dance</td>
-                </tr>
-                <tr>
-                    <td><strong>Pattang Utsav</strong></td>
-                    <td>Jaipur</td>
-                    <td>Makar Sankranti</td>
-                    <td>Kite flying festival</td>
-                </tr>
-                <tr>
-                    <td><strong>Hathi Utsav</strong></td>
-                    <td>Jaipur</td>
-                    <td>-</td>
-                    <td>Elephant procession</td>
-                </tr>
-                <tr>
-                    <td><strong>Mewad Utsav</strong></td>
-                    <td>Udaipur</td>
-                    <td>March-April</td>
-                    <td>Lake Palace, cultural events</td>
-                </tr>
-                <tr>
-                    <td><strong>Thar Mahtsav</strong></td>
-                    <td>Barmer</td>
-                    <td>-</td>
-                    <td>Desert culture, folk events</td>
-                </tr>
-                <tr>
-                    <td><strong>Grisham Utsav</strong></td>
-                    <td>Mount Abu</td>
-                    <td>May-June</td>
-                    <td>Summer festival</td>
-                </tr>
-                <tr>
-                    <td><strong>Matsya Utsav</strong></td>
-                    <td>Alwar</td>
-                    <td>-</td>
-                    <td>Fish festival</td>
-                </tr>
-                <tr>
-                    <td><strong>RIFF</strong></td>
-                    <td>Jodhpur</td>
-                    <td>Oct-Nov</td>
-                    <td>International Folk Festival @ Mehrangarh</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- SECTION 4: MONTH WISE -->
-        <h2>📅 MELEE ORGANIZED BY MAHINA (Month)</h2>
-        <div class="two-col">
-            <div class="col-item">
-                <strong>Chaitra:</strong> Jinn Mata, Kailladevi, Pabuji, Mallinath
+    <div class="wrap">
+        <div class="masthead">
+            <div>
+                <h1>🏜️ राजस्थान की लोक संस्कृति, मेले एवं त्योहार — मास्टर रिवीजन हैंडबुक</h1>
+                <div class="sub">RSMSSB / RPSC | सभी अपलोड सामग्री (त्योहार शीट्स + मेला शीट्स + Raw नोट्स + सांस्कृतिक स्थल) को एकीकृत किया गया | निरंतर अपडेट योग्य</div>
             </div>
-            <div class="col-item">
-                <strong>Kartik:</strong> Pushkar, Kapil Muni, Chandrabahag
+            <button onclick="window.print()">🖨️ Print</button>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" onclick="show('traps',event)">🚨 गलतियाँ</div>
+            <div class="tab" onclick="show('weak',event)">🎯 कमजोर विषय</div>
+            <div class="tab" onclick="show('months',event)">📅 माह-वार</div>
+            <div class="tab" onclick="show('diff',event)">📊 तुलना सारणी</div>
+            <div class="tab" onclick="show('pashu',event)">🐄 पशु मेले</div>
+            <div class="tab" onclick="show('lokmela',event)">🎪 लोक मेले</div>
+            <div class="tab" onclick="show('venues',event)">🏛 सांस्कृतिक स्थल/उत्सव</div>
+            <div class="tab" onclick="show('religion',event)">🕌 अन्य धर्म</div>
+            <div class="tab" onclick="show('customs',event)">🎎 रीति-रिवाज</div>
+            <div class="tab" onclick="show('conflict',event)">⚠ स्रोत टकराव</div>
+            <div class="tab" onclick="show('oneline',event)">🔥 वन-लाइनर</div>
+        </div>
+
+        <!-- ===================== TRAPS ===================== -->
+        <div id="traps" class="section active">
+            <h2 class="stitle" style="background:#FCEBEB;color:#791F1F;">🚨 मेरी परीक्षा की गलतियाँ (Error Log आधारित)</h2>
+            <div class="note">पुराने error log से bar-bar galat hue points — inhe pehle yaad karo. <span class="tag tag-star3">⭐⭐⭐ सबसे ज्यादा दोहराई गई गलतियाँ ऊपर हैं</span></div>
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — ईलोजी की सवारी<span class="tag tag-star2">⭐⭐</span></div>
+                <div class="wrong">❌ उदयपुर / भीलवाड़ा</div>
+                <div class="right">✅ ब्यावर (अजमेर) — होली पर बादशाह मेला/सवारी</div>
+                <div class="logic">💡 ई-लो-जी → ब्या-वर (Part 1 notes में भी था, फिर भी confuse हुआ)</div>
             </div>
-            <div class="col-item">
-                <strong>Magh:</strong> Beneshwar, Gaita Shyam
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — गोगा नवमी की तिथि (Most Dangerous)<span class="tag tag-star3">⭐⭐⭐</span></div>
+                <div class="wrong">❌ चैत्र शुक्ल नवमी</div>
+                <div class="right">✅ भाद्रपद कृष्ण नवमी (ददरेवा, हनुमानगढ़ में विशाल मेला)</div>
+                <div class="logic">💡 "भादो में गोगाजी" — याद रखो</div>
             </div>
-            <div class="col-item">
-                <strong>Phalgoon:</strong> Khattu Shyam (11), Bharthri
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — केले के पेड़ की पूजा</div>
+                <div class="wrong">❌ मंगलवार</div>
+                <div class="right">✅ बृहस्पतिवार (गुरुवार) — गुरु का दिन, विष्णु को केला चढ़ता है</div>
             </div>
-            <div class="col-item">
-                <strong>Bhadra:</strong> Tejaji (10), Bharthri (8), Khejri Shahid (10)
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — त्योहारों का आगमन vs समापन</div>
+                <div class="wrong">❌ दोनों के लिए गणगौर/तीज को लेकर confuse</div>
+                <div class="right">✅ आगमन → श्रावणी/हरियाली तीज (श्रावण शु.3) | समापन → गणगौर (चैत्र शु.3)</div>
             </div>
-            <div class="col-item">
-                <strong>Shravan:</strong> Diggi Kalyan, Ramdev
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — तिल चौथ / संकट चौथ की तिथि</div>
+                <div class="wrong">❌ कार्तिक कृष्ण चतुर्थी (करवा चौथ से confuse)</div>
+                <div class="right">✅ माघ कृष्ण चतुर्थी — करवा चौथ = कार्तिक कृ.4, तिल/संकट चौथ = माघ कृ.4</div>
+            </div>
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — पत्थरमार होली का स्थान<span class="tag tag-star2">⭐⭐</span></div>
+                <div class="wrong">❌ भीलवाड़ा / भरतपुर</div>
+                <div class="right">✅ बाड़मेर (80-90 साल पुरानी परंपरा)</div>
+                <div class="logic">💡 BARmer में BAR-BAR पत्थर मारते हैं</div>
+            </div>
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — हरतालिका तीज vs बड़ी तीज (एक ही माह, अलग पक्ष)</div>
+                <div class="right">✅ बड़ी/कजली/सातुड़ी तीज = भाद्रपद कृष्ण तृतीया (बूंदी famous) | हरतालिका तीज = भाद्रपद शुक्ल तृतीया</div>
+                <div class="logic">💡 हरताLIKA = LIGHT = शुक्ल पक्ष; बड़ी तीज = कृष्ण पक्ष (अंधेरा)</div>
+            </div>
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — फूलडोल उत्सव का पंथ व स्थान</div>
+                <div class="wrong">❌ वल्लभ पंथ / प्रणामी पंथ</div>
+                <div class="right">✅ रामस्नेही पंथ — शाहपुरा (भीलवाड़ा), चैत्र कृष्ण एकम से पंचमी तक</div>
+            </div>
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — अशोक अष्टमी vs शीतला अष्टमी (एक ही माह, अलग पक्ष)</div>
+                <div class="right">✅ शीतला अष्टमी = चैत्र कृष्ण अष्टमी (बसौड़ा, चाकसू-जयपुर मेला) | अशोक अष्टमी = चैत्र शुक्ल अष्टमी</div>
+                <div class="logic">💡 SHEETla = COLD = कृष्ण पक्ष; अशोक = उजला राजा = शुक्ल पक्ष</div>
+            </div>
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — गणगौर अवधि</div>
+                <div class="wrong">❌ 15 दिन</div>
+                <div class="right">✅ 18 दिन (होली की राख/धुलेंडी से शुरू होकर चैत्र शु.3 तक ~18 दिन चलती है)</div>
+            </div>
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — बेणेश्वर धाम की स्थिति<span class="tag tag-star2">⭐⭐</span></div>
+                <div class="wrong">❌ बांसवाड़ा</div>
+                <div class="right">✅ डूंगरपुर — सोम, माही व जाखम नदियों के त्रिवेणी संगम पर, माघ पूर्णिमा, "बागड़ का पुष्कर / आदिवासियों का कुम्भ"</div>
+            </div>
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — कपिल मुनि मेला<span class="tag tag-star2">⭐⭐</span></div>
+                <div class="wrong">❌ कोटा</div>
+                <div class="right">✅ कोलायत (बीकानेर) — कार्तिक पूर्णिमा, मुख्य आकर्षण "कोलायत झील पर दीपदान"</div>
+            </div>
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — मल्लीनाथ पशु मेला — जिला व स्थान</div>
+                <div class="wrong">❌ नागौर / केवल "बाड़मेर" (पुराना)</div>
+                <div class="right">✅ तिलवाड़ा (पचपदरा तहसील) — अब बालोतरा ज़िले में (2023 पुनर्गठन से पहले बाड़मेर ज़िला); लूनी नदी तट; चैत्र कृष्ण ग्यारस से चैत्र शुक्ल ग्यारस तक</div>
+                <div class="logic">💡 वेब-सत्यापित: 2023 में बालोतरा नया ज़िला बना, तिलवाड़ा अब उसी में आता है — दोनों उत्तर संभव, exam वर्ष के अनुसार जांचें</div>
+            </div>
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — सीताबाड़ी मेला की दूरी</div>
+                <div class="wrong">❌ केलवाड़ा से 45 किमी दूर</div>
+                <div class="right">✅ सीताबाड़ी स्थान केलवाड़ा गांव से मात्र 1-2 किमी दूर है (बारां ज़िला, शाहबाद तहसील) — ज्येष्ठ अमावस्या, सहरिया जनजाति का कुम्भ, हाडौती का सबसे बड़ा मेला</div>
+                <div class="logic">💡 45 किमी वाला आंकड़ा बारां शहर से केलवाड़ा की दूरी है, ना कि केलवाड़ा से सीताबाड़ी की — वेब-सत्यापित</div>
+            </div>
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — तेजादशमी vs वृक्ष (खेजड़ली) मेला — दोनों भाद्र शु.10</div>
+                <div class="right">✅ तेजाजी पशु मेला = परबतसर (नागौर) | खेजड़ली वृक्ष मेला (भारत का एकमात्र) = खेजड़ली (जोधपुर), अमृता देवी स्मृति — दोनों अलग मेले, एक ही तिथि पर confuse मत करो</div>
+            </div>
+
+            <div class="trap-box">
+                <div class="trap-title">TRAP — पाबूजी का मेला</div>
+                <div class="wrong">❌ परबतसर</div>
+                <div class="right">⚠ Verify Required — कुछ नोट्स "कोलूमंड (फलोदी)" बताते हैं, पर यह स्रोत दस्तावेज़ों में सत्यापित नहीं मिला। परबतसर = तेजाजी मेला confirmed है, पाबूजी मेला अलग विषय है — परीक्षा से पहले आधिकारिक स्रोत से पुष्टि करें</div>
             </div>
         </div>
 
-        <!-- SECTION 5: QUICK MATCHING -->
-        <h2>⚡ QUICK MATCHING REFERENCE</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>MELA → LOCATION</th>
-                    <th>UTSAV → LOCATION</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Beneshwar</strong> → Dungarpur</td>
-                    <td><strong>Unt Utsav</strong> → Bikaner</td>
-                </tr>
-                <tr>
-                    <td><strong>Pushkar</strong> → Ajmer</td>
-                    <td><strong>Maru Utsav</strong> → Jaisalmer</td>
-                </tr>
-                <tr>
-                    <td><strong>Chandrabahag</strong> → Jhalrapatan</td>
-                    <td><strong>Pattang Utsav</strong> → Jaipur</td>
-                </tr>
-                <tr>
-                    <td><strong>Seetabadi</strong> → Barauu</td>
-                    <td><strong>Mewad Utsav</strong> → Udaipur</td>
-                </tr>
-                <tr>
-                    <td><strong>Kailladevi</strong> → Karauli</td>
-                    <td><strong>Thar Mahtsav</strong> → Barmer</td>
-                </tr>
-                <tr>
-                    <td><strong>Tejaji</strong> → Nagaur</td>
-                    <td><strong>Grisham Utsav</strong> → Mount Abu</td>
-                </tr>
-                <tr>
-                    <td><strong>Mallinath</strong> → Balotra</td>
-                    <td><strong>RIFF</strong> → Jodhpur</td>
-                </tr>
-                <tr>
-                    <td><strong>Kapil Muni</strong> → Bikaner</td>
-                    <td><strong>Matsya Utsav</strong> → Alwar</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- SECTION 6: SPECIAL FEATURES -->
-        <h2>✨ SPECIAL FEATURES & NAMES</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Special Name/Feature</th>
-                    <th>Mela/Festival</th>
-                    <th>Location</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Aadivasi ka Kumbh</strong></td>
-                    <td>Beneshwar</td>
-                    <td>Dungarpur</td>
-                </tr>
-                <tr>
-                    <td><strong>Seharia ka Kumbh</strong></td>
-                    <td>Seetabadi</td>
-                    <td>Barauu (Kelarad)</td>
-                </tr>
-                <tr>
-                    <td><strong>Langaruya Dance</strong></td>
-                    <td>Kailladevi</td>
-                    <td>Karauli</td>
-                </tr>
-                <tr>
-                    <td><strong>Tirth Raj</strong></td>
-                    <td>Pushkar</td>
-                    <td>Ajmer</td>
-                </tr>
-                <tr>
-                    <td><strong>Rat Temple (Karni Mata)</strong></td>
-                    <td>Karni Mata Mela</td>
-                    <td>Deshnok (Bikaner)</td>
-                </tr>
-                <tr>
-                    <td><strong>International Folk Festival</strong></td>
-                    <td>RIFF</td>
-                    <td>Jodhpur (Mehrangarh)</td>
-                </tr>
-                <tr>
-                    <td><strong>Tree Protection Symbol</strong></td>
-                    <td>Khejri Shahid</td>
-                    <td>Jodhpur (Amrita Devi)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- SECTION 7: WEAK AREAS -->
-        <h2>🎯 YOUR WEAK AREAS (FINAL FOCUS)</h2>
-        <div class="weak-area">
-            <strong>❌ Location Confusion:</strong> Dungarpur ≠ Banswara | Bikaner ≠ Nagaur | Barauu ≠ Jhalravad | Kelarad is 45km from Barauu
-        </div>
-        <div class="weak-area">
-            <strong>❌ Pasu Mela vs Dharmik:</strong> Chandrabahag, Tejaji, Mallinath = LIVESTOCK FAIRS | Kailladevi, Pushkar, Seetabadi = MIXED/PILGRIMAGE
-        </div>
-        <div class="weak-area">
-            <strong>❌ Exact Locations:</strong> Tilarad (not Nagaur), Jhalrapatan (not Barauu), Kelarad (45km away), Kolayat (not Kota), Kolumund (not Parbatsar)
-        </div>
-        <div class="weak-area">
-            <strong>❌ Month/Tithi Confusion:</strong> Kartik = Pushkar, Beneshwar, Kapil, Chandrabahag | Chaitra = Jinn, Kailladevi, Pabuji, Mallinath | Bhadra = Tejaji, Bharthri, Khejri
-        </div>
-        <div class="weak-area">
-            <strong>❌ Special Names:</strong> Aadivasi Kumhh=Beneshwar | Seharia Kumhh=Seetabadi | Langaruya=Kailladevi | Tirth Raj=Pushkar | Rat Temple=Karni Mata
+        <!-- ===================== WEAK AREAS ===================== -->
+        <div id="weak" class="section">
+            <h2 class="stitle" style="background:#FDEFE0;color:#7a3d00;">🎯 उच्च प्राथमिकता वाले कमजोर विषय</h2>
+            <div class="weak-box weak-vhigh"><strong>🔴 अति कमजोर:</strong> मेलों के "सटीक स्थान + जिला" का मिलान (Beneshwar≠Banswara, Bikaner≠Nagaur, Kolayat≠Kota, Kolumund≠Parbatsar) — हर बार गलती दोहराई गई है।</div>
+            <div class="weak-box weak-vhigh"><strong>🔴 अति कमजोर:</strong> तिथियों में पक्ष (शुक्ल/कृष्ण) की पहचान — विशेषकर अष्टमी व तीज वाले त्योहार जहाँ एक ही माह में दो अलग त्योहार हैं।</div>
+            <div class="weak-box weak-high"><strong>🟠 कमजोर:</strong> पशु मेला बनाम धार्मिक/लोक मेला का वर्गीकरण — चन्द्रभागा, तेजाजी, मल्लीनाथ, बलदेव, रामदेव, गोमती सागर, गोगामेड़ी, बहरोड़, सेवडिया, शिवरात्री, जसवंत = मुख्यतः पशु मेले।</div>
+            <div class="weak-box weak-high"><strong>🟠 कमजोर:</strong> विशेष नाम मिलान — आदिवासियों का कुम्भ (बेणेश्वर), भीलों का कुम्भ (घोटिया अम्बा), मीणा जनजाति का कुम्भ (भूरिया बाबा/गौतमेश्वर), कंजर जनजाति का कुम्भ (चौथ माता), गरासिया जनजाति का कुम्भ (गौर मेला-सिरोही), सहरिया जनजाति
+                का कुम्भ (सीताबाड़ी)।</div>
+            <div class="weak-box weak-mod"><strong>🟡 मध्यम:</strong> महीना-तिथि रूपांतरण (हिन्दी माह ↔ अंग्रेजी माह) व अधिक मास की गणना (2 वर्ष 8 माह 12 दिन में)।</div>
+            <div class="weak-box weak-mod"><strong>🟡 मध्यम:</strong> गैर-हिन्दू त्योहार (जैन/सिख/ईसाई/मुस्लिम/सिंधी) की तिथियाँ व संस्थापक/प्रवर्तक नाम।</div>
+            <div class="weak-box weak-low"><strong>🟢 मजबूत:</strong> प्रमुख अकादमियों व सांस्कृतिक संस्थानों की स्थापना तिथियाँ (jaise jaipur kathak kendra 1978, RSD 1957 आदि) — यह क्षेत्र अच्छी तरह याद है।</div>
+            <div class="weak-box weak-low"><strong>🟢 मजबूत:</strong> प्रमुख उत्सव-स्थान मिलान (ऊंट-बीकानेर, हाथी-जयपुर, मरू-जैसलमेर, मेवाड़-उदयपुर) — high recall।</div>
         </div>
 
-        <!-- SECTION 8: EXAM STRATEGY -->
-        <h2>✅ EXAM STRATEGY (5 CRITICAL STEPS)</h2>
-        <div class="success-box">
-            <div class="step">
-                <div class="step-num">1</div>
-                <div><strong>LOCATION CHECK:</strong> District → Exact Location → Verify both match (Your main weakness area)</div>
+        <!-- ===================== MONTHS ===================== -->
+        <div id="months" class="section">
+            <h2 class="stitle" style="background:#EAF3DE;color:#27500A;">📅 माह-वार त्योहार, व्रत एवं मेले (पूर्ण एकीकृत सूची)</h2>
+            <div class="note">महीना क्रम: चैत्र → वैशाख → ज्येष्ठ → आषाढ़ → श्रावण → भाद्रपद → आश्विन → कार्तिक → मार्गशीर्ष → पौष → माघ → फाल्गुन | अंग्रेजी समतुल्य: चैत्र=मार्च-अप्रैल ... फाल्गुन=फरवरी-मार्च</div>
+
+            <div class="month-head">चैत्र माह (मार्च-अप्रैल)</div>
+            <table>
+                <tr>
+                    <th>तिथि</th>
+                    <th>त्योहार/व्रत</th>
+                    <th>जुड़ा मेला/स्थान</th>
+                </tr>
+                <tr>
+                    <td>चै.कृ.1</td>
+                    <td>धुलेंडी (रंगों का पर्व)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>चै.कृ.8</td>
+                    <td>शीतला अष्टमी/बसौड़ा <span class="tag tag-star3">⭐⭐⭐</span></td>
+                    <td>चाकसू (जयपुर) शीतला माता मेला; घुड़ला पर्व (मारवाड़) चै.कृ.8 से चै.शु.3; पंचकुंड-जोधपुर; बिजासणी/गैंडा मेला</td>
+                </tr>
+                <tr>
+                    <td>चै.कृ.8</td>
+                    <td>ऋषभदेव जी का मेला (धूलेव-उदयपुर)</td>
+                    <td>केसरियाजी/आदिनाथ/धूलेवजी/कालाजी नाम</td>
+                </tr>
+                <tr>
+                    <td>चै.कृ.9</td>
+                    <td>ऋषभ देव जयंती (जैन)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>चै.अमावस्या</td>
+                    <td>घोटिया अम्बा मेला (बांसवाड़ा)</td>
+                    <td>"भीलों का कुम्भ"</td>
+                </tr>
+                <tr class="highlight">
+                    <td>चै.शु.1</td>
+                    <td>हिन्दू नववर्ष/वर्ष प्रतिपदा/चैत्र (बसंतीय) नवरात्र प्रारंभ</td>
+                    <td>विक्रमादित्य मेला</td>
+                </tr>
+                <tr>
+                    <td>चै.शु.1</td>
+                    <td>चेटीचण्ड (झूलेलाल जयंती - सिंधी)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>चै.शु.1</td>
+                    <td>खेतला जी का मेला (पाली)</td>
+                    <td>—</td>
+                </tr>
+                <tr class="highlight">
+                    <td>चै.शु.3</td>
+                    <td>गणगौर (मुख्य) ⭐ — शिव-पार्वती पर्व, 18 दिन</td>
+                    <td>जयपुर famous; 1 दिन पूर्व सिंजारा</td>
+                </tr>
+                <tr>
+                    <td>चै.शु.3</td>
+                    <td>गणगौर मेला (जयपुर)</td>
+                    <td>ईसर-गौरी पूजा</td>
+                </tr>
+                <tr>
+                    <td>चै.शु.4</td>
+                    <td>बिना ईसर की गवर</td>
+                    <td>जैसलमेर famous (सवारी चै.शु.4 को निकलती है)</td>
+                </tr>
+                <tr class="highlight">
+                    <td>चै.शु.5</td>
+                    <td>गुलाबी गणगौर</td>
+                    <td>नाथद्वारा</td>
+                </tr>
+                <tr>
+                    <td>चै.शु.8</td>
+                    <td>अशोक अष्टमी / दुर्गाष्टमी (नवरात्र समाप्त)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>चै.शु.9</td>
+                    <td>राम नवमी</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>चै.शु.13</td>
+                    <td>महावीर जयंती (जैन)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>चै.शु.13 – वै.कृ.2</td>
+                    <td>श्री महावीर जी का मेला (चांदनपुर-करौली)</td>
+                    <td>जैन धर्म का सबसे बड़ा मेला; जिनेन्द्ररथ यात्रा; लट्ठमार होली भी यहीं जुड़ी</td>
+                </tr>
+                <tr class="highlight">
+                    <td>चै.पूर्णिमा</td>
+                    <td>हनुमान जयंती</td>
+                    <td>बीजासणी माता मेला (लालसोट-दौसा) भी चै.पूर्णिमा को</td>
+                </tr>
+            </table>
+
+            <div class="month-head">वैशाख माह (अप्रैल-मई)</div>
+            <table>
+                <tr>
+                    <th>तिथि</th>
+                    <th>त्योहार/व्रत</th>
+                    <th>जुड़ा मेला/स्थान</th>
+                </tr>
+                <tr>
+                    <td>वै.कृ.3</td>
+                    <td>धींगा गवर (गणगौर)</td>
+                    <td>बेंतमार/बैंतमार मेला — जोधपुर</td>
+                </tr>
+                <tr class="highlight">
+                    <td>वै.शु.3</td>
+                    <td>अक्षय तृतीया / आखा तीज <span class="tag tag-star2">⭐⭐</span></td>
+                    <td>अबूझ सावा; बीकानेर स्थापना दिवस; सर्वाधिक बाल-विवाह; पतंगबाजी</td>
+                </tr>
+                <tr>
+                    <td>वै.पूर्णिमा</td>
+                    <td>बुद्ध पूर्णिमा / पीपल पूर्णिमा</td>
+                    <td>बाणगंगा मेला-किराड़नगर; मातृकुंडिया-चित्तौड़ ("राजस्थान का हरिद्वार"); नारसी आलमेला-सिरोही (गौर मेला — "गरासिया जनजाति का कुम्भ"); गौतमेश्वर/भूरिया बाबा मेला-अरनोद-प्रतापगढ़ ("मीणा जनजाति का कुम्भ"); गोमती सागर पशु मेला-झालरापाटन</td>
+                </tr>
+            </table>
+
+            <div class="month-head">ज्येष्ठ माह (मई-जून)</div>
+            <table>
+                <tr>
+                    <th>तिथि</th>
+                    <th>त्योहार/व्रत</th>
+                    <th>जुड़ा मेला/स्थान</th>
+                </tr>
+                <tr class="highlight">
+                    <td>ज्ये.अमावस्या</td>
+                    <td>वट सावित्री व्रत ("बड़मावस") / शनि जयंती</td>
+                    <td>वट (बड़) वृक्ष पूजा</td>
+                </tr>
+                <tr class="highlight">
+                    <td>ज्ये.अमावस्या</td>
+                    <td>सीताबाड़ी मेला (केलवाड़ा-बारां) <span class="tag tag-star3">⭐⭐⭐</span></td>
+                    <td>"सहरिया जनजाति का कुम्भ"; हाडौती अंचल का सबसे बड़ा मेला</td>
+                </tr>
+                <tr>
+                    <td>ज्ये.शु.10</td>
+                    <td>गंगा दशमी</td>
+                    <td>मेला — कामां (भरतपुर)</td>
+                </tr>
+                <tr>
+                    <td>ज्ये.शु.11</td>
+                    <td>निर्जला एकादशी (घड़िया ग्यारस)</td>
+                    <td>उदयपुर में पतंगबाजी; मीठे पानी की छबीलें</td>
+                </tr>
+            </table>
+
+            <div class="month-head">आषाढ़ माह (जून-जुलाई)</div>
+            <table>
+                <tr>
+                    <th>तिथि</th>
+                    <th>त्योहार/व्रत</th>
+                    <th>जुड़ा मेला/स्थान</th>
+                </tr>
+                <tr>
+                    <td>आ.शु.1</td>
+                    <td>गुप्त नवरात्र</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>आ.शु.9</td>
+                    <td>भड़ल्या/भड़ली नवमी</td>
+                    <td>अबूझ सावा (अंतिम शादी मुहूर्त)</td>
+                </tr>
+                <tr>
+                    <td>आ.शु.11</td>
+                    <td>देवशयनी एकादशी</td>
+                    <td>विष्णु शयन → मांगलिक कार्य बंद</td>
+                </tr>
+                <tr class="highlight">
+                    <td>आ.पूर्णिमा</td>
+                    <td>गुरु पूर्णिमा / व्यास पूर्णिमा</td>
+                    <td>महर्षि कृष्ण द्वैपायन (वेद व्यास)</td>
+                </tr>
+            </table>
+
+            <div class="month-head">श्रावण माह (जुलाई-अगस्त)</div>
+            <table>
+                <tr>
+                    <th>तिथि</th>
+                    <th>त्योहार/व्रत</th>
+                    <th>जुड़ा मेला/स्थान</th>
+                </tr>
+                <tr>
+                    <td>श्रा.कृ.5</td>
+                    <td>नाग पंचमी</td>
+                    <td>वीरपुरी का मेला — मंडोर (जोधपुर)</td>
+                </tr>
+                <tr>
+                    <td>श्रा.कृ.6</td>
+                    <td>ऊब छठ / हलषष्ठी</td>
+                    <td>बिहारियों का मुख्य पर्व; शेखावाटी में "चाना छठ"</td>
+                </tr>
+                <tr>
+                    <td>श्रा.कृ.9</td>
+                    <td>निडरी नवमी</td>
+                    <td>खनेल पूजा</td>
+                </tr>
+                <tr>
+                    <td>श्रा.कृ.13</td>
+                    <td>शिवरात्रि</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>श्रा.अमावस्या</td>
+                    <td>हरियाली अमावस्या / बुढ़ाजोहड़ मेला (डाबला-श्रीगंगानगर)</td>
+                    <td>कल्पवृक्ष मेला — मांगलियावास (अजमेर); डिग्गी कल्याण जी मेला (टोंक)</td>
+                </tr>
+                <tr class="highlight">
+                    <td>श्रा.शु.3</td>
+                    <td>छोटी तीज / हरियाली तीज / श्रावणी तीज <span class="tag tag-star2">⭐⭐</span></td>
+                    <td>जयपुर famous सवारी; सिंजारा; लहरिया — यहीं से "त्योहारों का आगमन" माना जाता है</td>
+                </tr>
+                <tr>
+                    <td>श्रा.शु.5</td>
+                    <td>लोटियों का मेला (मंडोर-जोधपुर)</td>
+                    <td>—</td>
+                </tr>
+                <tr class="highlight">
+                    <td>श्रा.पूर्णिमा</td>
+                    <td>रक्षाबंधन / नारियल पूर्णिमा</td>
+                    <td>गोगामेड़ी मेला (नोहर-हनुमानगढ़) प्रारंभ यहीं से (भाद्र.शु.पूर्णिमा तक चलता है)</td>
+                </tr>
+                <tr>
+                    <td>श्रा.पूर्णिमा – भा.अमावस्या</td>
+                    <td>तेजाजी पशु मेला (परबतसर-नागौर) चालू</td>
+                    <td>राज्य सरकार को सर्वाधिक आय देने वाला मेला</td>
+                </tr>
+            </table>
+
+            <div class="month-head">भाद्रपद माह (अगस्त-सितंबर)</div>
+            <table>
+                <tr>
+                    <th>तिथि</th>
+                    <th>त्योहार/व्रत</th>
+                    <th>जुड़ा मेला/स्थान</th>
+                </tr>
+                <tr class="highlight">
+                    <td>भा.कृ.3</td>
+                    <td>बड़ी/कजली/सातुड़ी/भादुड़ी तीज <span class="tag tag-star2">⭐⭐</span></td>
+                    <td>बूंदी famous — कजली तीज मेला</td>
+                </tr>
+                <tr>
+                    <td>भा.कृ.6</td>
+                    <td>हलषष्ठी/ऊब छठ (सांझा भ्रम — कुछ स्रोत श्रा.कृ.6 भी बताते हैं, ⚠ verify)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>भा.कृ.7</td>
+                    <td>थदड़ी/बड़ी सातम (सिंधी धर्म)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>भा.कृ.8</td>
+                    <td>कृष्ण जन्माष्टमी</td>
+                    <td>पूर्वी क्षेत्र में लोकप्रिय; जाम्भोजी जन्मदिवस; नाथद्वारा — केले की झारी</td>
+                </tr>
+                <tr>
+                    <td>भा.कृ.8</td>
+                    <td>नरहड़ के पीर का उर्स (हजरत शक्कर बाबा — "बांगड़ का धणी")</td>
+                    <td>चिड़ावा (झुंझुनूं)</td>
+                </tr>
+                <tr class="highlight">
+                    <td>भा.कृ.9</td>
+                    <td>गोगा नवमी <span class="tag tag-star3">⭐⭐⭐</span></td>
+                    <td>गोगामेड़ी मेला — नोहर/ददरेवा (हनुमानगढ़); राज्य का सबसे लम्बी अवधि तक चलने वाला पशु मेला</td>
+                </tr>
+                <tr>
+                    <td>भा.कृ.12</td>
+                    <td>बछ बारस</td>
+                    <td>गाय-बछड़ा पूजा — पुत्र की लंबी आयु हेतु</td>
+                </tr>
+                <tr>
+                    <td>भा.अमावस्या</td>
+                    <td>राणी सती का मेला (झुंझुनूं) — सती प्रथा निवारण अधि.1987 से 1988 में रोक</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>भा.शु.2</td>
+                    <td>रामदेव जयंती / मेला प्रारंभ; भोजनथाली परिक्रमा मेला (कामां-भरतपुर)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>भा.शु.3</td>
+                    <td>रोट तीज (जैन)</td>
+                    <td>खीर व मीठी रोटी</td>
+                </tr>
+                <tr>
+                    <td>भा.शु.4</td>
+                    <td>गणेश चतुर्थी</td>
+                    <td>त्रिनेत्र गणेश मेला — रणथम्भौर (सवाई माधोपुर); महाराष्ट्र में बाल गंगाधर तिलक द्वारा शुरुआत</td>
+                </tr>
+                <tr>
+                    <td>भा.शु.5</td>
+                    <td>ऋषि पंचमी</td>
+                    <td>भोजन थाली मेला — कामां</td>
+                </tr>
+                <tr>
+                    <td>भा.शु.6-11 (~8 दिन)</td>
+                    <td>पर्युषण पर्व (जैन, श्वेतांबर)</td>
+                    <td>दिगंबर = 10 दिन (दशलक्षण पर्व)</td>
+                </tr>
+                <tr>
+                    <td>भा.शु.8</td>
+                    <td>राधा अष्टमी</td>
+                    <td>सलेमाबाद (अजमेर) — निम्बार्क सम्प्रदाय मेला</td>
+                </tr>
+                <tr>
+                    <td>भा.शु.8</td>
+                    <td>भर्तृहरि का मेला (अलवर)</td>
+                    <td>नाथ सम्प्रदाय; मत्स्य क्षेत्र का सबसे बड़ा मेला; "कनफटे नाथों की तीर्थ स्थली"</td>
+                </tr>
+                <tr class="highlight">
+                    <td>भा.शु.10</td>
+                    <td>तेजादशमी (तेजाजी पशु मेला — परबतसर)</td>
+                    <td>अजमेर क्षेत्र में लोकप्रिय</td>
+                </tr>
+                <tr class="highlight">
+                    <td>भा.शु.10</td>
+                    <td>वृक्ष मेला (खेजड़ली-जोधपुर)</td>
+                    <td>भारत का एकमात्र वृक्ष मेला; अमृता देवी स्मृति; "खेजड़ी दिवस"</td>
+                </tr>
+                <tr>
+                    <td>भा.शु.11</td>
+                    <td>देव झूलनी / जल झूलनी एकादशी</td>
+                    <td>डोल मेला-बारां ("श्री जी का मेला"); सांवलिया जी मेला-मंडफिया</td>
+                </tr>
+                <tr>
+                    <td>भा.शु.14</td>
+                    <td>अनंत चतुर्दशी</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>भा.पूर्णिमा</td>
+                    <td>श्राद्ध पक्ष/पितृ पक्ष प्रारंभ (भा.पूर्णिमा – आ.अमावस्या)</td>
+                    <td>गोगामेड़ी मेला यहीं समाप्त</td>
+                </tr>
+            </table>
+
+            <div class="month-head">आश्विन माह (सितंबर-अक्टूबर)</div>
+            <table>
+                <tr>
+                    <th>तिथि</th>
+                    <th>त्योहार/व्रत</th>
+                    <th>जुड़ा मेला/स्थान</th>
+                </tr>
+                <tr>
+                    <td>आ.कृ.</td>
+                    <td>श्राद्ध पक्ष / पितृ पक्ष / सांझी पूजन</td>
+                    <td>केले की झारी — नाथद्वारा</td>
+                </tr>
+                <tr>
+                    <td>आ.शु.1-9</td>
+                    <td>शारदीय/केसूला नवरात्र</td>
+                    <td>जीण माता मेला-रेवासा (सीकर); करणी माता मेला-देशनोक (बीकानेर)</td>
+                </tr>
+                <tr>
+                    <td>आ.शु.5</td>
+                    <td>मंचकुंड तीर्थ मेला (धौलपुर)</td>
+                    <td>"तीर्थों का भांजा"</td>
+                </tr>
+                <tr>
+                    <td>आ.शु.8</td>
+                    <td>दुर्गाष्टमी</td>
+                    <td>बंगाल व बागड़ (राजस्थान) में मेले</td>
+                </tr>
+                <tr class="highlight">
+                    <td>आ.शु.10</td>
+                    <td>दशहरा / विजयादशमी</td>
+                    <td>शस्त्र पूजा; खेजड़ी पूजा; कोटा दशहरा famous (शुरुआत माधोसिंह हाड़ा ने की)</td>
+                </tr>
+                <tr class="highlight">
+                    <td>आ.पूर्णिमा</td>
+                    <td>शरद पूर्णिमा / रास पूर्णिमा / कोजागरी</td>
+                    <td>चंद्रमा की 16 कलाएं; मेवाड़ में मीरा महोत्सव; सालासर (चूरू) मेला; मानगढ़ धाम मेला (बांसवाड़ा — गोविंद गिरी स्मृति)</td>
+                </tr>
+            </table>
+
+            <div class="month-head">कार्तिक माह (अक्टूबर-नवंबर)</div>
+            <table>
+                <tr>
+                    <th>तिथि</th>
+                    <th>त्योहार/व्रत</th>
+                    <th>जुड़ा मेला/स्थान</th>
+                </tr>
+                <tr class="highlight">
+                    <td>का.कृ.4</td>
+                    <td>करवा चौथ</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>का.कृ.8</td>
+                    <td>अहोई अष्टमी</td>
+                    <td>स्याऊं माता पूजा</td>
+                </tr>
+                <tr>
+                    <td>का.कृ.11</td>
+                    <td>तुलसी एकादशी</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>का.कृ.13</td>
+                    <td>धनतेरस</td>
+                    <td>धन्वंतरि जयंती / राष्ट्रीय आयुर्वेद दिवस</td>
+                </tr>
+                <tr>
+                    <td>का.कृ.14</td>
+                    <td>रूप चतुर्दशी / छोटी दिवाली</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>का.अमावस्या</td>
+                    <td>दीपावली (लक्ष्मी पूजन)</td>
+                    <td>महावीर निर्वाण; स्वामी दयानंद सरस्वती स्मृति</td>
+                </tr>
+                <tr>
+                    <td>का.शु.1</td>
+                    <td>गोवर्धन पूजा / अन्नकूट</td>
+                    <td>अन्नकूट महोत्सव — नाथद्वारा (राजसमंद)</td>
+                </tr>
+                <tr>
+                    <td>का.शु.2</td>
+                    <td>भाई दूज / यम द्वितीया</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>का.शु.4</td>
+                    <td>गोपाष्टमी</td>
+                    <td>गाय पूजा</td>
+                </tr>
+                <tr>
+                    <td>का.शु.9</td>
+                    <td>आंवला/अक्षय नवमी</td>
+                    <td>आंवला वृक्ष पूजा</td>
+                </tr>
+                <tr class="highlight">
+                    <td>का.शु.11</td>
+                    <td>देवउठनी एकादशी / प्रबोधिनी ग्यारस</td>
+                    <td>तुलसी विवाह; मांगलिक कार्य शुरू</td>
+                </tr>
+                <tr class="highlight">
+                    <td>का.पूर्णिमा</td>
+                    <td>महापर्व — देव दिवाली / सत्यनारायण पूर्णिमा / गुरु नानक जयंती</td>
+                    <td>पुष्कर मेला (अजमेर) ⭐⭐⭐; कपिल मुनि मेला-कोलायत (बीकानेर) ⭐⭐; चन्द्रभागा मेला-झालरापाटन (झालावाड़); साहवा का मेला (चूरू — सिख धर्म का सबसे बड़ा मेला); चंद्रभागा/गोमती सागर पशु मेला भी साथ</td>
+                </tr>
+            </table>
+
+            <div class="month-head">माघ माह (जनवरी-फरवरी)</div>
+            <table>
+                <tr>
+                    <th>तिथि</th>
+                    <th>त्योहार/व्रत</th>
+                    <th>जुड़ा मेला/स्थान</th>
+                </tr>
+                <tr>
+                    <td>14 जनवरी</td>
+                    <td>मकर संक्रांति (2008 में अपवाद: 15 जनवरी)</td>
+                    <td>पतंग महोत्सव — जयपुर</td>
+                </tr>
+                <tr class="highlight">
+                    <td>माघ कृ.4</td>
+                    <td>तिल चौथ / संकट चौथ / सकट चौथ</td>
+                    <td>चौथ का बरवाड़ा मेला (सवाई माधोपुर) — "कंजर जनजाति का कुम्भ"</td>
+                </tr>
+                <tr>
+                    <td>माघ कृ.11</td>
+                    <td>षट्तिला एकादशी</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>माघ अमावस्या</td>
+                    <td>मौनी अमावस्या</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>माघ शु.1-9</td>
+                    <td>गुप्त नवरात्र</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>माघ शु.5</td>
+                    <td>बसंत पंचमी</td>
+                    <td>भरतपुर में कृष्ण-राधा लीला; कामदेव-रति पूजा</td>
+                </tr>
+                <tr>
+                    <td>माघ शु.10</td>
+                    <td>रामदेव मेला</td>
+                    <td>—</td>
+                </tr>
+                <tr class="highlight">
+                    <td>माघ पूर्णिमा</td>
+                    <td>बेणेश्वर धाम मेला (डूंगरपुर) <span class="tag tag-star3">⭐⭐⭐</span></td>
+                    <td>वागड़ का कुम्भ/पुष्कर; आदिवासियों का कुम्भ; प्राचीन शिवलिंग; संत मावजी को यहीं ज्ञान प्राप्ति हुई</td>
+                </tr>
+                <tr>
+                    <td>माघ माह</td>
+                    <td>मरू महोत्सव</td>
+                    <td>जैसलमेर</td>
+                </tr>
+            </table>
+
+            <div class="month-head">फाल्गुन माह (फरवरी-मार्च)</div>
+            <table>
+                <tr>
+                    <th>तिथि</th>
+                    <th>त्योहार/व्रत</th>
+                    <th>जुड़ा मेला/स्थान</th>
+                </tr>
+                <tr>
+                    <td>फा.कृ.13</td>
+                    <td>महाशिवरात्रि</td>
+                    <td>शिवाड़ (सवाई माधोपुर) — घुष्मेश्वर महादेव मंदिर की शिवरात्रि प्रमुख; करौली में शिवरात्री पशु मेला</td>
+                </tr>
+                <tr>
+                    <td>फा.शु.2</td>
+                    <td>फुलेरा/फलरिया दूज</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>फा.शु.7</td>
+                    <td>चन्द्रप्रभु का मेला (तिजारा-अलवर, जैन)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>फा.शु.11</td>
+                    <td>खाटू श्याम मेला (सीकर)</td>
+                    <td>⚠ Verify Required — raw source में तिथि नहीं मिली</td>
+                </tr>
+                <tr class="highlight">
+                    <td>फा.पूर्णिमा</td>
+                    <td>होलिका दहन / होली</td>
+                    <td>अग्नि देवता पूजा; धुलण्डी अगले दिन (चै.कृ.1); लट्ठमार होली-चांदनपुर(करौली); कोड़ामार होली-भीनाय(अजमेर); पत्थरमार होली-बाड़मेर; ईलोजी सवारी-ब्यावर; फूल डोल मेला इसी दिन; रंगीन फव्वारों का मेला-डीग(भरतपुर) फा.पूर्णिमा को; हाथी उत्सव-जयपुर</td>
+                </tr>
+            </table>
+            <div class="note">📌 अतिरिक्त: गलता तीर्थ मेला (जयपुर) — मार्गशीर्ष एकम् कृष्ण पक्ष (रामानुज सम्प्रदाय की प्रधान पीठ)। रामदेव पशु मेला (मानासर-नागौर) — मार्गशीर्ष माह।</div>
+        </div>
+
+        <!-- ===================== DIFF TABLES ===================== -->
+        <div id="diff" class="section">
+            <h2 class="stitle" style="background:#E1F5EE;color:#085041;">📊 Confusion Difference Tables</h2>
+
+            <h3>चार तीज — सबसे बड़ा confusion area</h3>
+            <table>
+                <tr>
+                    <th>तीज</th>
+                    <th>अन्य नाम</th>
+                    <th>तिथि</th>
+                    <th>खास बात</th>
+                </tr>
+                <tr>
+                    <td>आखा तीज</td>
+                    <td>अक्षय तृतीया</td>
+                    <td>वैशाख शु.3</td>
+                    <td>अबूझ सावा | पतंग | बाल विवाह सर्वाधिक</td>
+                </tr>
+                <tr class="highlight">
+                    <td>छोटी तीज</td>
+                    <td>हरियाली/श्रावणी तीज</td>
+                    <td>श्रावण शु.3</td>
+                    <td>जयपुर | त्योहारों का आगमन</td>
+                </tr>
+                <tr class="highlight">
+                    <td>बड़ी/कजली तीज</td>
+                    <td>सातुड़ी/भादुड़ी</td>
+                    <td>भाद्रपद कृ.3</td>
+                    <td>बूंदी famous</td>
+                </tr>
+                <tr>
+                    <td>हरतालिका तीज</td>
+                    <td>—</td>
+                    <td>भाद्रपद शु.3</td>
+                    <td>शिव-पार्वती पूजा; ≠ बड़ी तीज</td>
+                </tr>
+            </table>
+
+            <h3>अष्टमी वाले त्योहार — पक्ष का Trap</h3>
+            <table>
+                <tr>
+                    <th>त्योहार</th>
+                    <th>माह</th>
+                    <th>पक्ष</th>
+                    <th>तिथि</th>
+                </tr>
+                <tr class="highlight">
+                    <td>शीतला अष्टमी/बसौड़ा</td>
+                    <td>चैत्र</td>
+                    <td>कृष्ण ⬛</td>
+                    <td>चै.कृ.8</td>
+                </tr>
+                <tr>
+                    <td>अशोक अष्टमी</td>
+                    <td>चैत्र</td>
+                    <td>शुक्ल ⬜</td>
+                    <td>चै.शु.8</td>
+                </tr>
+                <tr>
+                    <td>जन्माष्टमी</td>
+                    <td>भाद्रपद</td>
+                    <td>कृष्ण ⬛</td>
+                    <td>भा.कृ.8</td>
+                </tr>
+                <tr>
+                    <td>राधाअष्टमी</td>
+                    <td>भाद्रपद</td>
+                    <td>शुक्ल ⬜</td>
+                    <td>भा.शु.8</td>
+                </tr>
+                <tr>
+                    <td>अहोई अष्टमी</td>
+                    <td>कार्तिक</td>
+                    <td>कृष्ण ⬛</td>
+                    <td>का.कृ.8</td>
+                </tr>
+                <tr>
+                    <td>दुर्गाष्टमी</td>
+                    <td>आश्विन</td>
+                    <td>शुक्ल ⬜</td>
+                    <td>आ.शु.8</td>
+                </tr>
+            </table>
+
+            <h3>देवशयनी vs देवउठनी — उठाओ-सुलाओ</h3>
+            <table>
+                <tr>
+                    <th>नाम</th>
+                    <th>तिथि</th>
+                    <th>अर्थ</th>
+                </tr>
+                <tr>
+                    <td>देवशयनी एकादशी</td>
+                    <td>आषाढ़ शु.11</td>
+                    <td>विष्णु सोते हैं → मांगलिक बंद</td>
+                </tr>
+                <tr class="highlight">
+                    <td>देवउठनी एकादशी</td>
+                    <td>कार्तिक शु.11</td>
+                    <td>विष्णु जागते हैं → मांगलिक शुरू | तुलसी विवाह</td>
+                </tr>
+            </table>
+
+            <h3>चौथ वाले व्रत</h3>
+            <table>
+                <tr>
+                    <th>व्रत</th>
+                    <th>माह</th>
+                    <th>पक्ष</th>
+                    <th>उद्देश्य</th>
+                </tr>
+                <tr class="highlight">
+                    <td>करवा चौथ</td>
+                    <td>कार्तिक</td>
+                    <td>कृष्ण 4</td>
+                    <td>पति की लंबी उम्र</td>
+                </tr>
+                <tr class="highlight">
+                    <td>तिल/संकट चौथ</td>
+                    <td>माघ</td>
+                    <td>कृष्ण 4</td>
+                    <td>संतान की रक्षा</td>
+                </tr>
+            </table>
+
+            <h3>पशु मेला vs धार्मिक/लोक मेला (मुख्य confusion)</h3>
+            <table>
+                <tr>
+                    <th>पशु मेला (मुख्यतः)</th>
+                    <th>मिश्रित (धार्मिक+पशु)</th>
+                    <th>शुद्ध धार्मिक/लोक</th>
+                </tr>
+                <tr>
+                    <td>बलदेव, तेजाजी, रामदेव, गोमती सागर, गोगामेड़ी, बहरोड़, सेवडिया, शिवरात्री, जसवंत, मल्लीनाथ</td>
+                    <td>पुष्कर, चंद्रभागा, कपिल मुनि</td>
+                    <td>बेणेश्वर, सीताबाड़ी, कैलादेवी, घोटिया अम्बा, फूलडोल, गणगौर</td>
+                </tr>
+            </table>
+
+            <h3>जनजातीय "कुम्भ" — विशेष नाम Matching</h3>
+            <table>
+                <tr>
+                    <th>विशेष नाम</th>
+                    <th>मेला</th>
+                    <th>स्थान</th>
+                </tr>
+                <tr class="highlight">
+                    <td>आदिवासियों का कुम्भ / बागड़ का पुष्कर</td>
+                    <td>बेणेश्वर धाम मेला</td>
+                    <td>डूंगरपुर</td>
+                </tr>
+                <tr>
+                    <td>भीलों का कुम्भ</td>
+                    <td>घोटिया अम्बा मेला</td>
+                    <td>बांसवाड़ा</td>
+                </tr>
+                <tr>
+                    <td>मीणा जनजाति का कुम्भ</td>
+                    <td>भूरिया बाबा/गौतमेश्वर मेला</td>
+                    <td>अरनोद (प्रतापगढ़)</td>
+                </tr>
+                <tr>
+                    <td>गरासिया जनजाति का कुम्भ</td>
+                    <td>गौर का मेला</td>
+                    <td>सिरोही</td>
+                </tr>
+                <tr class="highlight">
+                    <td>सहरिया जनजाति का कुम्भ</td>
+                    <td>सीताबाड़ी मेला</td>
+                    <td>केलवाड़ा (बारां)</td>
+                </tr>
+                <tr>
+                    <td>कंजर जनजाति का कुम्भ</td>
+                    <td>चौथ माता मेला</td>
+                    <td>चौथ का बरवाड़ा (सवाई माधोपुर)</td>
+                </tr>
+                <tr>
+                    <td>तीर्थों का मामा / राजस्थान का सबसे रंगीन मेला</td>
+                    <td>पुष्कर मेला</td>
+                    <td>अजमेर</td>
+                </tr>
+                <tr>
+                    <td>तीर्थों का भांजा</td>
+                    <td>मंचकुंड तीर्थ मेला</td>
+                    <td>धौलपुर</td>
+                </tr>
+                <tr>
+                    <td>जंगल प्रदेश का सबसे बड़ा मेला</td>
+                    <td>कपिल मुनि मेला</td>
+                    <td>कोलायत (बीकानेर)</td>
+                </tr>
+                <tr>
+                    <td>मेरवाड़ा का सबसे बड़ा मेला</td>
+                    <td>पुष्कर मेला</td>
+                    <td>अजमेर</td>
+                </tr>
+                <tr>
+                    <td>हाडौती अंचल का सबसे बड़ा मेला</td>
+                    <td>सीताबाड़ी मेला</td>
+                    <td>बारां</td>
+                </tr>
+                <tr>
+                    <td>हाडौती का सबसे बड़ा पशु मेला</td>
+                    <td>गोमती सागर पशु मेला</td>
+                    <td>झालरापाटन (झालावाड़)</td>
+                </tr>
+                <tr>
+                    <td>मत्स्य क्षेत्र का सबसे बड़ा मेला</td>
+                    <td>भर्तृहरि का मेला</td>
+                    <td>अलवर</td>
+                </tr>
+                <tr>
+                    <td>जैन धर्म का सबसे बड़ा मेला</td>
+                    <td>श्री महावीर जी का मेला</td>
+                    <td>चांदनपुर (करौली)</td>
+                </tr>
+                <tr>
+                    <td>सिख धर्म का सबसे बड़ा मेला</td>
+                    <td>साहवा का मेला</td>
+                    <td>चूरू</td>
+                </tr>
+                <tr>
+                    <td>साम्प्रदायिक सद्भावना का सबसे बड़ा मेला</td>
+                    <td>रामदेव मेला (तेरहताली नृत्य)</td>
+                    <td>रामदेवरा/रूणिचा (जैसलमेर)</td>
+                </tr>
+                <tr>
+                    <td>भारत का एकमात्र वृक्ष मेला</td>
+                    <td>वृक्ष मेला (अमृता देवी)</td>
+                    <td>खेजड़ली (जोधपुर)</td>
+                </tr>
+                <tr>
+                    <td>राज्य की सबसे बड़ी दुग्ध डेयरी क्षेत्र</td>
+                    <td>सेवडिया पशु मेला</td>
+                    <td>रानीवाड़ा (जालौर)</td>
+                </tr>
+                <tr>
+                    <td>सबसे लम्बी अवधि तक चलने वाला पशु मेला</td>
+                    <td>गोगामेड़ी पशु मेला</td>
+                    <td>नोहर (हनुमानगढ़)</td>
+                </tr>
+                <tr>
+                    <td>राज्य सरकार को सर्वाधिक आय देने वाला मेला</td>
+                    <td>तेजाजी पशु मेला</td>
+                    <td>परबतसर (नागौर)</td>
+                </tr>
+            </table>
+
+            <h3>जैन धर्म के त्योहार</h3>
+            <table>
+                <tr>
+                    <th>त्योहार</th>
+                    <th>विवरण</th>
+                </tr>
+                <tr>
+                    <td>पर्युषण पर्व</td>
+                    <td>भाद्रपद माह | श्वेतांबर = 8 दिन | दिगंबर = 10 दिन ("पर्युषण" = तीर्थंकरों की सेवा)</td>
+                </tr>
+                <tr>
+                    <td>दशलक्षण पर्व</td>
+                    <td>चैत्र, भाद्र व माघ माह की शुक्ल पंचमी से पूर्णिमा तक</td>
+                </tr>
+                <tr>
+                    <td>रोट तीज</td>
+                    <td>भाद्र शुक्ल तृतीया — खीर व मीठी रोटी</td>
+                </tr>
+                <tr>
+                    <td>महावीर जयंती</td>
+                    <td>चैत्र शुक्ल त्रयोदशी</td>
+                </tr>
+                <tr>
+                    <td>ऋषभ देव जयंती</td>
+                    <td>चैत्र कृष्ण नवमी</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- ===================== PASHU MELA ===================== -->
+        <div id="pashu" class="section">
+            <h2 class="stitle" style="background:#EFEBE9;color:#4E342E;">🐄 राज्य के पशु मेले (Complete Table)</h2>
+            <table>
+                <tr>
+                    <th>मेला</th>
+                    <th>स्थान (जिला)</th>
+                    <th>समय</th>
+                    <th>नस्ल/विशेषता</th>
+                </tr>
+                <tr>
+                    <td>श्रीबलदेव पशु मेला</td>
+                    <td>मेड़ता सिटी (नागौर)</td>
+                    <td>चैत्र शुक्ल पक्ष</td>
+                    <td>नागौरी नस्ल</td>
+                </tr>
+                <tr class="highlight">
+                    <td>श्री वीर तेजाजी पशु मेला ⭐⭐</td>
+                    <td>परबतसर (नागौर)</td>
+                    <td>श्रावण पूर्णिमा – भाद्रपद अमावस्या</td>
+                    <td>राज्य सरकार को सर्वाधिक आय</td>
+                </tr>
+                <tr>
+                    <td>रामदेव पशु मेला</td>
+                    <td>मानासर (नागौर)</td>
+                    <td>मार्गशीर्ष</td>
+                    <td>नागौरी बैलों की सर्वाधिक बिक्री</td>
+                </tr>
+                <tr>
+                    <td>गोमती सागर पशु मेला</td>
+                    <td>झालरापाटन (झालावाड़)</td>
+                    <td>वैशाख</td>
+                    <td>मालवी नस्ल; हाडौती का सबसे बड़ा पशु मेला</td>
+                </tr>
+                <tr>
+                    <td>चन्द्रभागा पशु मेला</td>
+                    <td>झालरापाटन (झालावाड़)</td>
+                    <td>कार्तिक (पूर्णिमा)</td>
+                    <td>मालवी नस्ल; दीपदान भी होता है</td>
+                </tr>
+                <tr>
+                    <td>पुष्कर पशु मेला</td>
+                    <td>पुष्कर (अजमेर)</td>
+                    <td>कार्तिक पूर्णिमा</td>
+                    <td>गिर नस्ल; मुख्य पुष्कर मेले के साथ</td>
+                </tr>
+                <tr class="highlight">
+                    <td>गोगामेड़ी पशु मेला ⭐⭐</td>
+                    <td>नोहर (हनुमानगढ़)</td>
+                    <td>भाद्रपद (श्रावण पूर्णिमा-भाद्र पूर्णिमा)</td>
+                    <td>हरियाणवी नस्ल; सबसे लम्बी अवधि</td>
+                </tr>
+                <tr>
+                    <td>शिवरात्री पशु मेला</td>
+                    <td>करौली</td>
+                    <td>फाल्गुन</td>
+                    <td>हरियाणवी नस्ल</td>
+                </tr>
+                <tr>
+                    <td>जसवंत प्रदर्शनी एवं पशु मेला</td>
+                    <td>—</td>
+                    <td>आश्विन</td>
+                    <td>हरियाणवी नस्ल</td>
+                </tr>
+                <tr class="highlight">
+                    <td>श्री मल्लीनाथ पशु मेला ⭐⭐⭐</td>
+                    <td>तिलवाड़ा, पचपदरा तहसील (बालोतरा जिला, पूर्व बाड़मेर)</td>
+                    <td>चैत्र कृष्ण 11 – चैत्र शुक्ल 11</td>
+                    <td>लूनी नदी तट; थारपारकर/काठियावाड़ी नस्ल; देशी माह अनुसार वर्ष का पहला पशु मेला; ~650-700 वर्ष पुराना</td>
+                </tr>
+                <tr>
+                    <td>बहरोड़ पशु मेला</td>
+                    <td>बहरोड़ (अलवर)</td>
+                    <td>—</td>
+                    <td>मुर्रा भैंस व्यापार</td>
+                </tr>
+                <tr>
+                    <td>बाबा रघुनाथ पुरी पशु मेला</td>
+                    <td>सांचौर (जालौर)</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>सेवडिया पशु मेला</td>
+                    <td>रानीवाड़ा (जालौर)</td>
+                    <td>—</td>
+                    <td>राज्य की सबसे बड़ी दुग्ध डेयरी क्षेत्र</td>
+                </tr>
+            </table>
+            <div class="note">🎯 Trick: नागौर जिला सबसे ज्यादा पशु मेलों का घर है — बलदेव (मेड़ता), तेजाजी (परबतसर), रामदेव (मानासर) — तीनों नागौर में!</div>
+        </div>
+
+        <!-- ===================== LOK MELA ===================== -->
+        <div id="lokmela" class="section">
+            <h2 class="stitle" style="background:#E6F1FB;color:#0C447C;">🎪 राजस्थान के प्रमुख लोक/धार्मिक मेले (जिलावार)</h2>
+            <table>
+                <tr>
+                    <th>मेला</th>
+                    <th>स्थान (जिला)</th>
+                    <th>तिथि</th>
+                    <th>विशेष</th>
+                </tr>
+                <tr class="highlight">
+                    <td>बेणेश्वर धाम मेला</td>
+                    <td>डूंगरपुर</td>
+                    <td>माघ पूर्णिमा</td>
+                    <td>सोम-माही-जाखम त्रिवेणी; आदिवासियों का कुम्भ; संत मावजी</td>
+                </tr>
+                <tr>
+                    <td>घोटिया अम्बा मेला</td>
+                    <td>बांसवाड़ा</td>
+                    <td>चैत्र अमावस्या</td>
+                    <td>भीलों का कुम्भ</td>
+                </tr>
+                <tr>
+                    <td>भूरिया बाबा/गौतमेश्वर मेला</td>
+                    <td>अरनोद (प्रतापगढ़)</td>
+                    <td>वैशाख पूर्णिमा</td>
+                    <td>मीणा जनजाति का कुम्भ</td>
+                </tr>
+                <tr>
+                    <td>चौथ माता का मेला</td>
+                    <td>चौथ का बरवाड़ा (सवाई माधोपुर)</td>
+                    <td>माघ कृष्ण चतुर्थी</td>
+                    <td>कंजर जनजाति का कुम्भ</td>
+                </tr>
+                <tr>
+                    <td>गौर का मेला</td>
+                    <td>सिरोही</td>
+                    <td>वैशाख पूर्णिमा</td>
+                    <td>गरासिया जनजाति का कुम्भ (नारसी आलमेला)</td>
+                </tr>
+                <tr class="highlight">
+                    <td>सीताबाड़ी का मेला</td>
+                    <td>केलवाड़ा (बारां)</td>
+                    <td>ज्येष्ठ अमावस्या</td>
+                    <td>सहरिया जनजाति का कुम्भ; हाडौती का सबसे बड़ा मेला; लव-कुश जन्मस्थान मान्यता</td>
+                </tr>
+                <tr class="highlight">
+                    <td>पुष्कर मेला ⭐⭐⭐</td>
+                    <td>अजमेर</td>
+                    <td>कार्तिक पूर्णिमा</td>
+                    <td>तीर्थों का मामा; अंतर्राष्ट्रीय स्तर; सबसे रंगीन मेला; गिर नस्ल पशु मेला साथ</td>
+                </tr>
+                <tr class="highlight">
+                    <td>कपिल मुनि का मेला</td>
+                    <td>कोलायत (बीकानेर)</td>
+                    <td>कार्तिक पूर्णिमा</td>
+                    <td>कोलायत झील पर दीपदान; जंगल प्रदेश का सबसे बड़ा मेला</td>
+                </tr>
+                <tr>
+                    <td>साहवा का मेला</td>
+                    <td>चूरू</td>
+                    <td>कार्तिक पूर्णिमा</td>
+                    <td>सिख धर्म का सबसे बड़ा मेला</td>
+                </tr>
+                <tr>
+                    <td>चन्द्रभागा मेला</td>
+                    <td>झालरापाटन (झालावाड़)</td>
+                    <td>कार्तिक पूर्णिमा</td>
+                    <td>झालरापाटन = "घंटियों का शहर"; साथ में पशु मेला (मालवी नस्ल)</td>
+                </tr>
+                <tr>
+                    <td>भर्तृहरि का मेला</td>
+                    <td>अलवर</td>
+                    <td>भाद्र शुक्ल अष्टमी</td>
+                    <td>नाथ सम्प्रदाय तपोभूमि; मत्स्य क्षेत्र का सबसे बड़ा मेला</td>
+                </tr>
+                <tr>
+                    <td>रामदेव मेला</td>
+                    <td>रामदेवरा/रूणिचा (पोकरण-जैसलमेर)</td>
+                    <td>—</td>
+                    <td>तेरहताली नृत्य (कामड़ सम्प्रदाय); उत्पत्ति-पादरला(पाली); साम्प्रदायिक सद्भावना का सबसे बड़ा मेला</td>
+                </tr>
+                <tr>
+                    <td>बीजासणी माता का मेला</td>
+                    <td>लालसोट (दौसा)</td>
+                    <td>चैत्र पूर्णिमा</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>कजली तीज का मेला</td>
+                    <td>बूंदी</td>
+                    <td>भाद्र कृष्ण तृतीया</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>मंचकुंड तीर्थ मेला</td>
+                    <td>धौलपुर</td>
+                    <td>आश्विन शुक्ल पंचमी</td>
+                    <td>तीर्थों का भांजा</td>
+                </tr>
+                <tr>
+                    <td>वीरपुरी का मेला</td>
+                    <td>मंडोर (जोधपुर)</td>
+                    <td>श्रावण कृष्ण पंचमी (नागपंचमी)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>लोटियों का मेला</td>
+                    <td>मंडोर (जोधपुर)</td>
+                    <td>श्रावण शुक्ल पंचमी</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>डोल मेला</td>
+                    <td>बारां</td>
+                    <td>भाद्र शुक्ल एकादशी</td>
+                    <td>"श्री जी का मेला"</td>
+                </tr>
+                <tr>
+                    <td>फूल डोल मेला</td>
+                    <td>शाहपुरा (भीलवाड़ा)</td>
+                    <td>चैत्र कृष्ण 1 – कृष्ण 5</td>
+                    <td>रामस्नेही पंथ की पीठ</td>
+                </tr>
+                <tr>
+                    <td>अन्नकूट मेला</td>
+                    <td>नाथद्वारा (राजसमंद)</td>
+                    <td>कार्तिक शुक्ल एकम्</td>
+                    <td>गोवर्धन मेला भी कहलाता है</td>
+                </tr>
+                <tr>
+                    <td>भोजनथाली परिक्रमा मेला</td>
+                    <td>कामां (भरतपुर)</td>
+                    <td>भाद्र शुक्ल द्वितीया</td>
+                    <td>—</td>
+                </tr>
+                <tr class="highlight">
+                    <td>श्री महावीर जी का मेला</td>
+                    <td>चांदनपुर (करौली)</td>
+                    <td>चैत्र शुक्ल त्रयोदशी – वैशाख कृष्ण द्वितीया</td>
+                    <td>जैन धर्म का सबसे बड़ा मेला; जिनेन्द्ररथ यात्रा; लट्ठमार होली से जुड़ा</td>
+                </tr>
+                <tr>
+                    <td>ऋषभदेव जी (केसरियाजी) का मेला</td>
+                    <td>धूलेव (उदयपुर)</td>
+                    <td>चैत्र कृष्ण अष्टमी (शीतलाष्टमी)</td>
+                    <td>आदिनाथ/धूलेवजी/कालाजी नाम</td>
+                </tr>
+                <tr>
+                    <td>चन्द्रप्रभु का मेला</td>
+                    <td>तिजारा (अलवर)</td>
+                    <td>फाल्गुन शुक्ल सप्तमी</td>
+                    <td>जैन धर्म मेला</td>
+                </tr>
+                <tr>
+                    <td>बाड़ा पद्मपुरा का मेला</td>
+                    <td>जयपुर</td>
+                    <td>—</td>
+                    <td>जैन धर्म मेला</td>
+                </tr>
+                <tr>
+                    <td>रंगीन फव्वारों का मेला</td>
+                    <td>डीग (भरतपुर)</td>
+                    <td>फाल्गुन पूर्णिमा</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>डाडा पम्पाराम का मेला</td>
+                    <td>विजयनगर (श्रीगंगानगर)</td>
+                    <td>फाल्गुन</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>बुढ़ाजोहड़ का मेला</td>
+                    <td>डाबला-रायसिंहनगर (श्रीगंगानगर)</td>
+                    <td>श्रावण अमावस्या</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>वृक्ष मेला</td>
+                    <td>खेजड़ली (जोधपुर)</td>
+                    <td>भाद्र शुक्ल दशमी</td>
+                    <td>भारत का एकमात्र वृक्ष मेला; अमृता देवी</td>
+                </tr>
+                <tr>
+                    <td>डिग्गी कल्याण जी का मेला</td>
+                    <td>टोंक</td>
+                    <td>श्रावण अमावस्या व वैशाख</td>
+                    <td>कल्याण जी = विष्णु अवतार</td>
+                </tr>
+                <tr>
+                    <td>गलता तीर्थ का मेला</td>
+                    <td>जयपुर</td>
+                    <td>मार्गशीर्ष एकम् (कृष्ण पक्ष)</td>
+                    <td>रामानुज सम्प्रदाय की प्रधान पीठ</td>
+                </tr>
+                <tr>
+                    <td>माता कुंडालिनी (मातृकुंडिया) का मेला</td>
+                    <td>चित्तौड़गढ़ (राश्मि स्थान)</td>
+                    <td>—</td>
+                    <td>"राजस्थान का हरिद्वार"</td>
+                </tr>
+                <tr class="highlight">
+                    <td>गणगौर मेला</td>
+                    <td>जयपुर</td>
+                    <td>चैत्र शुक्ल तृतीया</td>
+                    <td>बिना ईसर की गवर — जैसलमेर (चै.शु.4 सवारी)</td>
+                </tr>
+                <tr>
+                    <td>राणी सती का मेला</td>
+                    <td>झुंझुनूं</td>
+                    <td>भाद्रपद अमावस्या</td>
+                    <td>सती प्रथा निवारण अधि.1987 से 1988 में रोक</td>
+                </tr>
+                <tr>
+                    <td>त्रिनेत्र गणेश मेला</td>
+                    <td>रणथम्भौर (सवाई माधोपुर)</td>
+                    <td>भाद्र शुक्ल चतुर्थी</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>चुंधी तीर्थ का मेला</td>
+                    <td>जैसलमेर</td>
+                    <td>—</td>
+                    <td>गणेश जी से संबंधित; हेरम्भ गणपति मंदिर-बीकानेर (शेर पर सवार गणेश)</td>
+                </tr>
+                <tr>
+                    <td>मानगढ़ धाम का मेला</td>
+                    <td>बांसवाड़ा</td>
+                    <td>आश्विन पूर्णिमा</td>
+                    <td>गोविंद गिरी स्मृति</td>
+                </tr>
+                <tr>
+                    <td>खेतला जी का मेला</td>
+                    <td>पाली</td>
+                    <td>चैत्र कृष्ण एकम्</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>गोगा जी का मेला</td>
+                    <td>गोगामेड़ी (नोहर-हनुमानगढ़)</td>
+                    <td>भाद्र कृष्ण नवमी</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>तेजाजी का मेला (धार्मिक पक्ष)</td>
+                    <td>परबतसर (नागौर)</td>
+                    <td>भाद्र शुक्ल दशमी</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>करणी माता का मेला</td>
+                    <td>देशनोक (बीकानेर)</td>
+                    <td>नवरात्रों के दौरान (2 बार/वर्ष)</td>
+                    <td>"रैट टेम्पल"</td>
+                </tr>
+                <tr>
+                    <td>शीतला माता का मेला</td>
+                    <td>चाकसू (जयपुर)</td>
+                    <td>चैत्र कृष्ण अष्टमी</td>
+                    <td>शीतलाष्टमी</td>
+                </tr>
+                <tr>
+                    <td>जीण माता का मेला</td>
+                    <td>रेवासा (सीकर)</td>
+                    <td>नवरात्रों के दौरान</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>कैलादेवी का मेला (लक्खी मेला)<span class="tag tag-verify">वेब-सत्यापित</span></td>
+                    <td>करौली</td>
+                    <td>चैत्र शुक्ल अष्टमी</td>
+                    <td>त्रिकूट पर्वत घाटी; काली सिंध नदी पास; लंगुरिया नृत्य</td>
+                </tr>
+            </table>
+
+            <h3>उत्सव/महोत्सव (शहर अनुसार)</h3>
+            <table>
+                <tr>
+                    <th>महोत्सव</th>
+                    <th>स्थान</th>
+                    <th>समय</th>
+                </tr>
+                <tr>
+                    <td>थार महोत्सव</td>
+                    <td>बाड़मेर</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>मरू महोत्सव</td>
+                    <td>जैसलमेर</td>
+                    <td>माघ माह / फरवरी-मार्च</td>
+                </tr>
+                <tr>
+                    <td>हाथी महोत्सव</td>
+                    <td>जयपुर</td>
+                    <td>होली के आसपास (मार्च)</td>
+                </tr>
+                <tr>
+                    <td>मेवाड़ महोत्सव</td>
+                    <td>उदयपुर</td>
+                    <td>मार्च-अप्रैल</td>
+                </tr>
+                <tr>
+                    <td>बृज महोत्सव</td>
+                    <td>भरतपुर</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>मारवाड़ महोत्सव</td>
+                    <td>जोधपुर</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>बूंदी महोत्सव</td>
+                    <td>बूंदी</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>ऊंट महोत्सव</td>
+                    <td>बीकानेर</td>
+                    <td>जनवरी</td>
+                </tr>
+                <tr>
+                    <td>मीरा महोत्सव</td>
+                    <td>चित्तौड़गढ़</td>
+                    <td>आश्विन/शरद पूर्णिमा</td>
+                </tr>
+                <tr>
+                    <td>पतंग महोत्सव</td>
+                    <td>जयपुर</td>
+                    <td>मकर संक्रांति</td>
+                </tr>
+                <tr>
+                    <td>गुब्बारा महोत्सव</td>
+                    <td>बाड़मेर</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>ग्रीष्म व शरद महोत्सव</td>
+                    <td>माउंट आबू (सिरोही)</td>
+                    <td>मई-जून व सर्दी</td>
+                </tr>
+                <tr>
+                    <td>RIFF (राजस्थान इंटरनेशनल फोक फेस्टिवल)</td>
+                    <td>जोधपुर (मेहरानगढ़)</td>
+                    <td>अक्टूबर-नवंबर</td>
+                </tr>
+                <tr>
+                    <td>मत्स्य उत्सव</td>
+                    <td>अलवर</td>
+                    <td>⚠ Verify Required</td>
+                </tr>
+                <tr>
+                    <td>कुंभलगढ़ महोत्सव</td>
+                    <td>कुंभलगढ़/चित्तौड़गढ़</td>
+                    <td>राणा कुंभा के नाम पर</td>
+                </tr>
+                <tr>
+                    <td>हिण्डोला महोत्सव</td>
+                    <td>कोलायत</td>
+                    <td>—</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- ===================== VENUES ===================== -->
+        <div id="venues" class="section">
+            <h2 class="stitle" style="background:#EEEDFE;color:#3C3489;">🏛 प्रमुख सांस्कृतिक संस्थान एवं कार्यक्रम स्थल</h2>
+            <table>
+                <tr>
+                    <th>संस्थान</th>
+                    <th>केंद्र</th>
+                    <th>स्थापना</th>
+                    <th>विशेष</th>
+                </tr>
+                <tr>
+                    <td>राजस्थान स्कूल ऑफ आर्ट्स एंड क्राफ्ट्स</td>
+                    <td>जयपुर</td>
+                    <td>1866 (मूल नाम "मदरसा-ए-हुनरी" 1857, सवाई रामसिंह-II)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>विद्या भवन संस्थान</td>
+                    <td>उदयपुर</td>
+                    <td>1931</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>राजस्थान पुरातत्व एवं संग्रहालय विभाग</td>
+                    <td>जयपुर</td>
+                    <td>1950</td>
+                    <td>पत्रिका: 'द रिसर्चर'</td>
+                </tr>
+                <tr>
+                    <td>राजस्थान संगीत संस्थान</td>
+                    <td>जयपुर</td>
+                    <td>1950</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>राजस्थान प्राच्यविद्या प्रतिष्ठान</td>
+                    <td>जोधपुर</td>
+                    <td>1955 (1950 में संस्कृत विभाग के रूप में शुरू)</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>राजस्थान राज्य अभिलेखागार</td>
+                    <td>बीकानेर</td>
+                    <td>1955 (जयपुर में), 1960 में बीकानेर स्थानांतरित</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>राजस्थान संगीत नाटक अकादमी</td>
+                    <td>जोधपुर</td>
+                    <td>1957</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>राजस्थान ललित कला अकादमी</td>
+                    <td>जयपुर</td>
+                    <td>1957</td>
+                    <td>—</td>
+                </tr>
+                <tr class="highlight">
+                    <td>राजस्थान साहित्य अकादमी</td>
+                    <td>उदयपुर</td>
+                    <td>23 जनवरी 1958</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>रूपायन संस्थान</td>
+                    <td>बोरूंदा (जोधपुर)</td>
+                    <td>1960</td>
+                    <td>संस्थापक: कोमल कोठारी; घुड़ला लोकनृत्य को प्रोत्साहन; पद्मश्री/पद्मभूषण/राजस्थान रत्न</td>
+                </tr>
+                <tr>
+                    <td>रवीन्द्र मंच (रवीन्द्र रंगमंच)</td>
+                    <td>जयपुर</td>
+                    <td>15 अगस्त 1963</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>राजस्थान हिन्दी ग्रंथ अकादमी</td>
+                    <td>जयपुर</td>
+                    <td>15 जुलाई 1969</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>जयपुर कत्थक केंद्र</td>
+                    <td>जयपुर</td>
+                    <td>1978</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>अरबी फारसी शोध संस्थान</td>
+                    <td>टोंक</td>
+                    <td>दिसंबर 1978</td>
+                    <td>औरंगजेब की 'आलमगिरी कुरान', शाहजहां की 'क़ुराने कमाल'</td>
+                </tr>
+                <tr>
+                    <td>राजस्थान उर्दू अकादमी</td>
+                    <td>जयपुर</td>
+                    <td>1979</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>राजस्थान सिंधी अकादमी</td>
+                    <td>जयपुर</td>
+                    <td>1979</td>
+                    <td>पत्रिका: 'रिहाण'</td>
+                </tr>
+                <tr>
+                    <td>राजस्थान संस्कृत अकादमी</td>
+                    <td>जयपुर</td>
+                    <td>1980/1981</td>
+                    <td>सर्वोच्च पुरस्कार: 'माघ पुरस्कार'; पत्रिका: 'स्वरमंगला'</td>
+                </tr>
+                <tr>
+                    <td>राजस्थानी भाषा साहित्य एवं संस्कृति अकादमी</td>
+                    <td>बीकानेर</td>
+                    <td>25 जनवरी 1983</td>
+                    <td>पत्रिका: 'जागती जोत'</td>
+                </tr>
+                <tr>
+                    <td>राजस्थान ब्रजभाषा अकादमी</td>
+                    <td>जयपुर</td>
+                    <td>19 जनवरी 1986</td>
+                    <td>पत्रिका: 'ब्रज शतदल'</td>
+                </tr>
+                <tr>
+                    <td>पश्चिम क्षेत्र सांस्कृतिक केंद्र</td>
+                    <td>उदयपुर (बागौर हवेली)</td>
+                    <td>1986</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>पारसी रंग मंच / राम प्रकाश थियेटर</td>
+                    <td>जयपुर</td>
+                    <td>1878</td>
+                    <td>रामसिंह द्वितीय द्वारा स्थापित</td>
+                </tr>
+                <tr>
+                    <td>भवानी नाट्यशाला</td>
+                    <td>झालावाड़</td>
+                    <td>1921</td>
+                    <td>महाराजा भवानी सिंह; ऑपेरा शैली</td>
+                </tr>
+                <tr>
+                    <td>जवाहर कला केंद्र</td>
+                    <td>जयपुर</td>
+                    <td>1993</td>
+                    <td>सर्वाधिक सांस्कृतिक गतिविधियों का आयोजक</td>
+                </tr>
+                <tr>
+                    <td>भारतीय लोक कला मंडल</td>
+                    <td>उदयपुर</td>
+                    <td>1952</td>
+                    <td>संस्थापक: पद्मश्री देवीलाल सामर; कठपुतली खेल हेतु प्रसिद्ध; पुस्तक: 'राजस्थान का लोक संगीत'</td>
+                </tr>
+                <tr>
+                    <td>मारवाड़ नाटक संस्थान/मारवाड़ लोक कला मंडल</td>
+                    <td>जोधपुर</td>
+                    <td>1897</td>
+                    <td>संस्थापक: लक्ष्मणदास डांगी</td>
+                </tr>
+                <tr>
+                    <td>मरूधर लोक कला मंडल</td>
+                    <td>जोधपुर</td>
+                    <td>—</td>
+                    <td>संस्थापक: गणपत लाल डांगी ("गीगले का बापू")</td>
+                </tr>
+                <tr>
+                    <td>पं. झाबरमल शर्मा शोध संस्थान</td>
+                    <td>जयपुर</td>
+                    <td>2000</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>सद्दीक खां मांगणियार लोक कला परिषद (लोकरंग)</td>
+                    <td>जयपुर</td>
+                    <td>2002</td>
+                    <td>सद्दीक खां — खड़ताल वादक</td>
+                </tr>
+                <tr>
+                    <td>राजस्थान फाउंडेशन</td>
+                    <td>जयपुर</td>
+                    <td>23 मार्च 2001</td>
+                    <td>अनिवासी राजस्थानी समुदाय हेतु</td>
+                </tr>
+            </table>
+            <div class="note">📍 अन्य: जैसलमेर संग्रहालय (राज्य का सबसे प्राचीन); जनजाति संग्रहालय-उदयपुर; एल्बर्ट हॉल म्यूजियम-जयपुर; सार्दुल म्यूजियम-बीकानेर; जिनभद्रसूरी ज्ञान भंडार-जैसलमेर; पोथीखाना-जयपुर; मगरा लोक कला मंडल-अजमेर; राजस्थानी शोध संस्थान-जोधपुर; राजस्व
+                मंडल-अजमेर।</div>
+        </div>
+
+        <!-- ===================== OTHER RELIGIONS ===================== -->
+        <div id="religion" class="section">
+            <h2 class="stitle" style="background:#FAEEDA;color:#633806;">🕌 अन्य धर्मों के त्योहार, उर्स एवं दरगाहें</h2>
+
+            <h3>मुस्लिम त्योहार</h3>
+            <table>
+                <tr>
+                    <th>त्योहार</th>
+                    <th>विवरण</th>
+                </tr>
+                <tr>
+                    <td>मुहर्रम</td>
+                    <td>हिजरी सन् का प्रथम महीना; इमाम हुसैन की शहादत; "ताशा" वाद्य के साथ ताजिये; कर्बला मैदान में दफनाना</td>
+                </tr>
+                <tr>
+                    <td>ईद-उल-मिलादुन्नबी (बारावफात)</td>
+                    <td>हजरत मुहम्मद साहब का जन्मदिवस (जन्म मक्का में)</td>
+                </tr>
+                <tr>
+                    <td>ईद-उल-फितर (मीठी ईद)</td>
+                    <td>रमजान के रोजों के बाद; सेवईयां</td>
+                </tr>
+                <tr>
+                    <td>ईद-उल-जुहा (बकरीद)</td>
+                    <td>कुर्बानी का त्योहार; इब्राहिम की कुर्बानी</td>
+                </tr>
+                <tr>
+                    <td>शब-ए-कद्र, शब-ए-बारात, चेहलुम</td>
+                    <td>अन्य मुस्लिम त्योहार</td>
+                </tr>
+            </table>
+
+            <h3>प्रमुख उर्स</h3>
+            <table>
+                <tr>
+                    <th>उर्स</th>
+                    <th>स्थान</th>
+                    <th>विवरण</th>
+                </tr>
+                <tr class="highlight">
+                    <td>गरीब नवाज़ का उर्स ⭐⭐⭐</td>
+                    <td>अजमेर</td>
+                    <td>ख्वाजा मुइनुद्दीन चिश्ती की याद में; रज्जब 1-6; राजस्थान का सबसे बड़ा उर्स</td>
+                </tr>
+                <tr>
+                    <td>तारकीन का उर्स</td>
+                    <td>नागौर</td>
+                    <td>संत हमीदुद्दीन नागौरी; दूसरा सबसे बड़ा उर्स</td>
+                </tr>
+                <tr>
+                    <td>गलियाकोट का उर्स</td>
+                    <td>गलियाकोट (डूंगरपुर)</td>
+                    <td>पीर फखरुद्दीन; बोहरा सम्प्रदाय की पीठ यहीं है</td>
+                </tr>
+                <tr>
+                    <td>नरहड़ के पीर का उर्स</td>
+                    <td>चिड़ावा (झुंझुनूं)</td>
+                    <td>हजरत शक्कर बाबा ("बांगड़ का धणी"); भाद्र कृष्ण अष्टमी (जन्माष्टमी) को</td>
+                </tr>
+            </table>
+            <div class="note">🕌 अन्य स्थल: प्रहरी मीनार/एक मीनार मस्जिद, गमता गाजी की मजार, गुलाम कलंदर व गुलाम खां का मकबरा, भूरे खां की मजार — सभी जोधपुर; नेहरू खां की मजार-कोटा; अलाउद्दीन खिलजी की मजार-जालौर; अकबर का मकबरा-आमेर(जयपुर); जामा मस्जिद-भरतपुर; ऊषा मस्जिद-बयाना(भरतपुर);
+                शेरखां की मजार-हनुमानगढ़; खुदा बक्ष बाबा की दरगाह-पाली; मीरान साहब/सैयद खां की दरगाह-अजमेर; पीर ढुलेशाह की दरगाह-पाली; कमरुद्दीन शाह की दरगाह-झुंझुनूं; घोड़े की मजार-अजमेर।</div>
+
+            <h3>सिख धर्म के त्योहार</h3>
+            <table>
+                <tr>
+                    <th>त्योहार</th>
+                    <th>तिथि</th>
+                    <th>विवरण</th>
+                </tr>
+                <tr>
+                    <td>वैशाखी</td>
+                    <td>13 अप्रैल</td>
+                    <td>13 अप्रैल 1699 — आनंदपुर साहिब (रोपड़, पंजाब) में गुरु गोविंद सिंह द्वारा खालसा पंथ स्थापना</td>
+                </tr>
+                <tr>
+                    <td>लोहड़ी</td>
+                    <td>13 जनवरी</td>
+                    <td>—</td>
+                </tr>
+                <tr class="highlight">
+                    <td>गुरु नानक जयंती</td>
+                    <td>कार्तिक पूर्णिमा</td>
+                    <td>गुरु नानक देव जी का जन्म 1469 ई. तलवंडी (पंजाब)</td>
+                </tr>
+                <tr>
+                    <td>गुरु गोविंद सिंह जयंती</td>
+                    <td>पौष शुक्ल सप्तमी</td>
+                    <td>—</td>
+                </tr>
+            </table>
+
+            <h3>ईसाई धर्म के पर्व</h3>
+            <table>
+                <tr>
+                    <th>पर्व</th>
+                    <th>तिथि</th>
+                    <th>विवरण</th>
+                </tr>
+                <tr>
+                    <td>क्रिसमस डे</td>
+                    <td>25 दिसंबर</td>
+                    <td>ईसा मसीह का जन्मदिन (जन्म येरूशेलम/बेथलेहम)</td>
+                </tr>
+                <tr>
+                    <td>गुड फ्राइडे</td>
+                    <td>अप्रैल माह</td>
+                    <td>ईसा मसीह को सूली पर चढ़ाया गया</td>
+                </tr>
+                <tr>
+                    <td>ईस्टर</td>
+                    <td>गुड फ्राइडे के अगले रविवार</td>
+                    <td>ईसा मसीह का पुनर्जन्म/पुनर्जीवित होना</td>
+                </tr>
+            </table>
+            <div class="note">ईसाई धर्म की दो शाखाएं: 1. प्रोटेस्टेंट 2. रोमन कैथोलिक</div>
+
+            <h3>सिंधी समुदाय के त्योहार</h3>
+            <table>
+                <tr>
+                    <th>त्योहार</th>
+                    <th>तिथि</th>
+                    <th>विवरण</th>
+                </tr>
+                <tr>
+                    <td>थदड़ी/बड़ी साक (सातम)</td>
+                    <td>चैत्र कृष्ण सप्तमी</td>
+                    <td>—</td>
+                </tr>
+                <tr class="highlight">
+                    <td>चेटीचंड</td>
+                    <td>चैत्र शुक्ल एकम्</td>
+                    <td>झूलेलाल जयंती के रूप में मनाया</td>
+                </tr>
+                <tr>
+                    <td>चालीसा महोत्सव</td>
+                    <td>16 जुलाई – 24 अगस्त (40 दिन)</td>
+                    <td>—</td>
+                </tr>
+            </table>
+
+            <h3>जैन धर्म — संस्थापक व परंपरा</h3>
+            <div class="note">ऋषभदेव जी/आदिनाथ/केसरियाजी/कालाजी = जैन धर्म के संस्थापक; जन्म 540 ई.पू. वैशाली ग्राम (कुण्ड ग्राम)। दो शाखाएं: श्वेतांबर व दिगंबर। 24 तीर्थंकर — 1ला ऋषभदेव जी, 8वें चन्द्रप्रभु जी, 22वें नेमीनाथ जी, 23वें पार्श्वनाथ जी, 24वें महावीर स्वामी।</div>
+        </div>
+
+        <!-- ===================== CUSTOMS ===================== -->
+        <div id="customs" class="section">
+            <h2 class="stitle" style="background:#DCFCE7;color:#166534;">🎎 रीति-रिवाज एवं संस्कार</h2>
+
+            <h3>16 संस्कार (जीवन-चक्र क्रम)</h3>
+            <div class="section-card">
+                <div class="oneliner"><span>गर्भाधान</span><strong>गर्भ धारण संस्कार</strong></div>
+                <div class="oneliner"><span>पुंसवन</span><strong>पुत्र प्राप्ति हेतु</strong></div>
+                <div class="oneliner"><span>सीमन्तोन्नयन</span><strong>माता व गर्भस्थ शिशु रक्षा हेतु</strong></div>
+                <div class="oneliner"><span>जातकर्म → नामकरण</span><strong>जन्म पश्चात संस्कार</strong></div>
+                <div class="oneliner"><span>निष्क्रमण</span><strong>शिशु को पहली बार घर से बाहर लाना</strong></div>
+                <div class="oneliner"><span>अन्नप्राशन</span><strong>पहली बार अन्न खिलाना</strong></div>
+                <div class="oneliner"><span>जड़ुला/चूड़ाकर्म</span><strong>2-3 वर्ष बाद प्रथम बार केश उतारना</strong></div>
+                <div class="oneliner"><span>कर्णभेदन → विद्यारंभ</span><strong>—</strong></div>
+                <div class="oneliner"><span>उपनयन संस्कार</span><strong>गुरु के पास भेजा जाना</strong></div>
+                <div class="oneliner"><span>वेदारंभ</span><strong>वेद अध्ययन प्रारंभ</strong></div>
+                <div class="oneliner"><span>गोदान</span><strong>ब्रह्मचर्य आश्रम प्रवेश</strong></div>
+                <div class="oneliner"><span>समावर्तन</span><strong>शिक्षा समाप्ति पर</strong></div>
+                <div class="oneliner"><span>विवाह</span><strong>गृहस्थ आश्रम प्रवेश</strong></div>
+                <div class="oneliner"><span>अंतिम संस्कार</span><strong>अंत्येष्टि</strong></div>
             </div>
-            <div class="step">
-                <div class="step-num">2</div>
-                <div><strong>MONTH CHECK:</strong> Verify Tithi (Poornima/Amavasya/Shukla/Krishna) with month-wise table</div>
-            </div>
-            <div class="step">
-                <div class="step-num">3</div>
-                <div><strong>SPECIAL NAME:</strong> If Q has quotes/alternative names → Check "Aadivasi Kumhh", "Seharia Kumhh", "Langaruya", "Tirth Raj"</div>
-            </div>
-            <div class="step">
-                <div class="step-num">4</div>
-                <div><strong>PASU vs FESTIVAL:</strong> If Q asks "animal fair" or "livestock fair" → Check if that's main feature</div>
-            </div>
-            <div class="step">
-                <div class="step-num">5</div>
-                <div><strong>TRAP AVOIDANCE:</strong> See Banswara → Think Dungarpur | See Kota → Think Kolayat (Bikaner) | See Parbatsar → Think Kolumund</div>
+
+            <h3>विवाह संस्कार क्रम</h3>
+            <div class="note">सगाई → टीका → लग्नपत्रिका → गणेश पूजन/हलदायत पूजा (बाण बैठाना) → पीठी (आचारियां द्वारा) → बिंदोरी/बंदोली → सामेला/मधुपर्क → ढुकाव → तोरण मारना → पहरावणी/रंगबरी (दहेज) → बरी पड़ला → मुकलावा/गैणा → बढ़ार → कांकण डोरडा (बंदोली के दिन) → मांडा
+                झांकणा → कोथला (छुछक) → जान चढ़ना/निकासी → सास द्वारा दही देना → मंडप (चंवरी) छाना → पाणिग्रहण/हथलेवा जोड़ना → जेवनवार (कंवारी जान का जीमण → परणी जान का जीमण → बड़ी जान का जीमण → मुकलानी) → गृहप्रवेश/नांगल ("बारणा राकना"; वधू के साथ आया
+                भाई = ओलन्दा/ओलन्दी) → रात जगा → रोड़ी पूजन → बत्तीसी नूतना/भात नूतना → मायरा/भात भरना।</div>
+
+            <h3>मृत्यु से संबंधित संस्कार</h3>
+            <div class="note">बैकुंठी (अर्थी) → बखेर (खील, पतासा, रुई, मूंगफली, रु.पैसे, अनाज) → आधेठा (अर्थी दिशा परिवर्तन) → अंत्येष्टि → लौपा/लांपा (मृतक जलाने वाली आग) → मुखाग्नि → कपाल क्रिया → सांतरवाड़ा (12 दिन तक सांत्वना रस्म) → फूल चुनना (अंत्येष्टि के 3 दिन
+                बाद) → मोसर/ओसर/नुक्ता (12वें दिन मृत्यु भोज) → पगड़ी रस्म।</div>
+
+            <h3>प्रमुख प्रचलित प्रथाएं (सामाजिक कुरीतियां व उन्मूलन)</h3>
+            <table>
+                <tr>
+                    <th>प्रथा</th>
+                    <th>विवरण</th>
+                    <th>रोक/उन्मूलन</th>
+                </tr>
+                <tr>
+                    <td>कन्या वध प्रथा</td>
+                    <td>राजपूतों में — बालिका जन्म पर अफीम/गला दबाकर हत्या</td>
+                    <td>पॉलिटिकल एजेंट विल क्विंसन के प्रयास — कोटा 1833, बूंदी 1834 (लॉर्ड विलियम बैंटिक काल)</td>
+                </tr>
+                <tr>
+                    <td>दास प्रथा</td>
+                    <td>युद्धबंदियों को दास बनाना; विवाह में गोला/गोली भेंट देना</td>
+                    <td>हाड़ौती क्षेत्र में 1832 में पहली रोक</td>
+                </tr>
+                <tr>
+                    <td>मानव व्यापार प्रथा</td>
+                    <td>कोटा में मानव क्रय-विक्रय पर शुल्क "चैगान"</td>
+                    <td>जयपुर रियासत में 1847 में पहली रोक</td>
+                </tr>
+                <tr>
+                    <td>विधवा विवाह निषेध</td>
+                    <td>—</td>
+                    <td>ईश्वरचंद विद्यासागर के प्रयास — विधवा पुनर्विवाह अधिनियम 1856 (लॉर्ड डलहौजी)</td>
+                </tr>
+                <tr>
+                    <td>दहेज प्रथा</td>
+                    <td>—</td>
+                    <td>दहेज प्रथा निरोधक कानून 1961</td>
+                </tr>
+                <tr>
+                    <td>बेगार प्रथा</td>
+                    <td>जागीरदारों द्वारा बिना मजदूरी काम कराना</td>
+                    <td>1961 में रोक</td>
+                </tr>
+                <tr>
+                    <td>बंधुआ मजदूर/सागड़ी/हाली प्रथा</td>
+                    <td>कर्ज के बदले नौकर बनाना</td>
+                    <td>—</td>
+                </tr>
+            </table>
+
+            <h3>प्रशासनिक/सामंती शब्दावली (एक-पंक्ति)</h3>
+            <div class="section-card">
+                <div class="oneliner"><span>हरावल</span><strong>सेना की अग्रिम पंक्ति</strong></div>
+                <div class="oneliner"><span>ताजीम</span><strong>दरबार में खड़े होकर राजा द्वारा सम्मान</strong></div>
+                <div class="oneliner"><span>मिसल</span><strong>दरबार में पंक्तिबद्ध बैठना</strong></div>
+                <div class="oneliner"><span>तलवार बंधाई</span><strong>उत्तराधिकारी घोषणा रस्म</strong></div>
+                <div class="oneliner"><span>खालसा भूमि</span><strong>सीधे राजा के नियंत्रण में</strong></div>
+                <div class="oneliner"><span>जागीर भूमि</span><strong>जागीरदार के नियंत्रण में</strong></div>
+                <div class="oneliner"><span>लाटा</span><strong>फसल कटाई पश्चात तौल कर लिया कर</strong></div>
+                <div class="oneliner"><span>कुंडा</span><strong>खड़ी फसल की अनुमानित उपज पर कर</strong></div>
+                <div class="oneliner"><span>कामठा लाग</span><strong>दुर्ग निर्माण के समय लिया कर</strong></div>
+                <div class="oneliner"><span>खिचड़ी लाग</span><strong>युद्ध के समय सैनिक भोजन हेतु कर</strong></div>
+                <div class="oneliner"><span>कीणा</span><strong>सब्जी/सामान हेतु दिया जाने वाला अनाज</strong></div>
+                <div class="oneliner"><span>प्रिवीपर्स</span><strong>शासकों को गुजारा भत्ता</strong></div>
+                <div class="oneliner"><span>करब</span><strong>राजा द्वारा सामंत को कंधे से छाती तक हाथ रखने का सम्मान</strong></div>
+                <div class="oneliner"><span>बिगोड़ी</span><strong>नकद वसूला जाने वाला भूमि कर</strong></div>
+                <div class="oneliner"><span>सिगोटी</span><strong>पशु विक्रय पर कर</strong></div>
+                <div class="oneliner"><span>जाजम</span><strong>भूमि विक्रय पर कर</strong></div>
+                <div class="oneliner"><span>जकात</span><strong>सीमा शुल्क (बीकानेर क्षेत्र)</strong></div>
+                <div class="oneliner"><span>डाग</span><strong>सीमा शुल्क</strong></div>
             </div>
         </div>
 
-        <div class="footer">
-            <p>📚 Complete Revision Sheet | Rajasthan GK: Mela + Tyohar Combined</p>
-            <p>Generated from Your Error Log + Personal Study Notes | Ready for Final Exam</p>
+        <!-- ===================== CONFLICTS ===================== -->
+        <div id="conflict" class="section">
+            <h2 class="stitle" style="background:#FCEBEB;color:#791F1F;">⚠ स्रोत टकराव / असत्यापित तथ्य (Source Conflicts Detected)</h2>
+            <div class="note">नियम के अनुसार: जब भी अपलोड की गई तीन शीट्स (त्योहार शीट, मेला शीट, संयुक्त शीट) व raw नोट्स आपस में टकराए, तो blindly merge न करके यहाँ फ्लैग किया गया है। वेब-सत्यापन जहाँ संभव था, किया गया है।</div>
+
+            <div class="conflict-box">
+                <div class="ctitle">🚨 सीताबाड़ी मेले की दूरी</div>
+                पुरानी अंग्रेज़ी मेला शीट में लिखा था: "Kelarad (45km away)" — यानी सीताबाड़ी, केलवाड़ा से 45 किमी दूर है।
+                <div class="resolved">✅ हल: वेब स्रोतों के अनुसार सीताबाड़ी स्थान केलवाड़ा गांव से मात्र 1-2 किमी दूर है। 45 किमी का आंकड़ा वास्तव में बारां शहर से केलवाड़ा गांव की दूरी है, जिसे गलती से मेले की दूरी समझ लिया गया।</div>
+            </div>
+
+            <div class="conflict-box">
+                <div class="ctitle">🚨 मल्लीनाथ पशु मेला — जिला</div>
+                Raw नोट्स (doc4): "बाड़मेर"। अंग्रेज़ी मेला शीट: "Tilarad (Balotra)"।
+                <div class="resolved">✅ हल: स्थान तिलवाड़ा (Tilarad नहीं) है, पचपदरा तहसील में। 2023 में बालोतरा नया जिला बना — पुराने स्रोत बाड़मेर बताते हैं, नए स्रोत बालोतरा बताते हैं। परीक्षा वर्ष के अनुसार दोनों संभावित उत्तर याद रखें (⚠ यदि प्रश्न हाल का बना है तो "बालोतरा"
+                    चुनें)।</div>
+            </div>
+
+            <div class="conflict-box">
+                <div class="ctitle">⚠ पाबूजी का मेला — स्थान असत्यापित</div>
+                अंग्रेज़ी मेला शीट में स्थान "Kolumund (Phaloudi)" व गलती "Parbatsar" बताई गई थी, परंतु किसी भी raw स्रोत दस्तावेज़ में पाबूजी मेले का उल्लेख ही नहीं मिला।
+                <div class="resolved">⚠ मार्क: Verify Required — परबतसर पक्का तेजाजी मेले से जुड़ा है (raw नोट्स से पुष्ट)। पाबूजी मेले की जानकारी आधिकारिक स्रोत/कोचिंग नोट्स से दोबारा जांचें।</div>
+            </div>
+
+            <div class="conflict-box">
+                <div class="ctitle">⚠ कैलादेवी मेला — तिथि सुधार</div>
+                अंग्रेज़ी मेला शीट में तिथि सिर्फ "Chaitra Shukla" (बिना तिथि नंबर) दी गई थी।
+                <div class="resolved">✅ हल (वेब-सत्यापित): चैत्र शुक्ल अष्टमी — करौली, त्रिकूट पर्वत की घाटी में, काली सिंध नदी किनारे; इसे "लक्खी मेला" भी कहते हैं।</div>
+            </div>
+
+            <div class="conflict-box">
+                <div class="ctitle">⚠ खाटू श्याम मेला — तिथि असत्यापित</div>
+                अंग्रेज़ी मेला शीट में "Phalgoon Shukla 11" बताई गई थी, परंतु raw स्रोत दस्तावेज़ों में यह तिथि नहीं मिली।
+                <div class="resolved">⚠ मार्क: Verify Required — परीक्षा से पहले आधिकारिक/कोचिंग स्रोत से पुष्टि करें।</div>
+            </div>
+
+            <div class="conflict-box">
+                <div class="ctitle">⚠ हलषष्ठी/ऊब छठ — तिथि में मामूली अंतर</div>
+                एक स्रोत (त्योहार शीट-1) श्रावण कृष्ण षष्ठी बताता है; दूसरा स्रोत (raw त्योहार नोट्स) भाद्रपद कृष्ण षष्ठी बताता है।
+                <div class="resolved">⚠ मार्क: दोनों संभावनाएं नोट कर ली गई हैं (माह-वार टेबल में भाद्रपद अनुभाग में) — आधिकारिक पंचांग से एक बार पुष्टि करें, क्षेत्रीय भिन्नता भी संभव है।</div>
+            </div>
+
+            <div class="conflict-box">
+                <div class="ctitle">📌 गणगौर अवधि — 18 दिन की गणना</div>
+                Trap नोट में "18 दिन" तथ्य के रूप में दिया गया था परंतु स्पष्ट प्रारंभ/अंत तिथि raw स्रोत में नहीं मिली (सामान्यतः धुलेंडी/चैत्र कृष्ण 1 से चैत्र शुक्ल 3 तक गिनने पर लगभग 15-16 दिन बनते हैं, 18 का आंकड़ा स्थानीय परंपरा/मौखिक स्मृति ट्रिक के रूप में लिया
+                गया है)।
+                <div class="resolved">⚠ मार्क: स्मृति ट्रिक के रूप में रखा गया है (18 दिन के 18 गीत), परन्तु परीक्षा में सटीक संख्या वाले प्रश्न पर आधिकारिक स्रोत से पुष्टि अवश्य करें।</div>
+            </div>
         </div>
+
+        <!-- ===================== ONE-LINERS ===================== -->
+        <div id="oneline" class="section">
+            <h2 class="stitle" style="background:#E6F1FB;color:#0C447C;">🔥 रैपिड रिवीजन — 50+ वन-लाइनर्स</h2>
+            <div class="section-card">
+                <div class="oneliner"><span>गणगौर (मुख्य)</span><strong>चैत्र शु.3 | 18 दिन | ईसर-गौरी | जयपुर famous</strong></div>
+                <div class="oneliner"><span>गुलाबी गणगौर</span><strong>नाथद्वारा | चैत्र शु.5</strong></div>
+                <div class="oneliner"><span>बिना ईसर की गवर</span><strong>जैसलमेर | चैत्र शु.4 सवारी</strong></div>
+                <div class="oneliner"><span>शीतला अष्टमी</span><strong>चैत्र कृ.8 | बसौड़ा | चाकसू मेला</strong></div>
+                <div class="oneliner"><span>अशोक अष्टमी</span><strong>चैत्र शु.8 ← ≠ शीतला</strong></div>
+                <div class="oneliner"><span>छोटी/हरियाली तीज</span><strong>श्रावण शु.3 | जयपुर | त्योहारों का आगमन</strong></div>
+                <div class="oneliner"><span>बड़ी/कजली तीज</span><strong>भाद्रपद कृ.3 | बूंदी famous</strong></div>
+                <div class="oneliner"><span>हरतालिका तीज</span><strong>भाद्रपद शु.3 | ≠ बड़ी तीज</strong></div>
+                <div class="oneliner"><span>आखा तीज</span><strong>वैशाख शु.3 | अबूझ सावा | बीकानेर स्थापना दिवस</strong></div>
+                <div class="oneliner"><span>गोगा नवमी</span><strong>भाद्रपद कृ.9 | ददरेवा/गोगामेड़ी (हनुमानगढ़)</strong></div>
+                <div class="oneliner"><span>करवा चौथ</span><strong>कार्तिक कृ.4</strong></div>
+                <div class="oneliner"><span>तिल/संकट चौथ</span><strong>माघ कृ.4 ← ≠ करवा चौथ</strong></div>
+                <div class="oneliner"><span>देवउठनी एकादशी</span><strong>कार्तिक शु.11 | मांगलिक शुरू | तुलसी विवाह</strong></div>
+                <div class="oneliner"><span>देवशयनी एकादशी</span><strong>आषाढ़ शु.11 | मांगलिक बंद</strong></div>
+                <div class="oneliner"><span>शरद पूर्णिमा</span><strong>आश्विन | रास पूर्णिमा | 16 कलाएं | मीरा महोत्सव-चित्तौड़गढ़</strong></div>
+                <div class="oneliner"><span>खेजड़ी पूजा</span><strong>दशहरा (आ.शु.10)</strong></div>
+                <div class="oneliner"><span>ईलोजी सवारी</span><strong>ब्यावर | होली</strong></div>
+                <div class="oneliner"><span>पत्थरमार होली</span><strong>बाड़मेर</strong></div>
+                <div class="oneliner"><span>लट्ठमार होली</span><strong>चांदनपुर (करौली)</strong></div>
+                <div class="oneliner"><span>कोड़ामार होली</span><strong>भीनाय (अजमेर)</strong></div>
+                <div class="oneliner"><span>केला पूजा</span><strong>गुरुवार ← NOT मंगलवार</strong></div>
+                <div class="oneliner"><span>पर्युषण / रोट तीज</span><strong>जैन | भाद्रपद माह</strong></div>
+                <div class="oneliner"><span>फूलडोल उत्सव</span><strong>रामस्नेही पंथ | शाहपुरा (भीलवाड़ा)</strong></div>
+                <div class="oneliner"><span>बेणेश्वर धाम मेला</span><strong>डूंगरपुर | माघ पूर्णिमा | आदिवासियों का कुम्भ</strong></div>
+                <div class="oneliner"><span>कपिल मुनि मेला</span><strong>कोलायत (बीकानेर) | कार्तिक पूर्णिमा</strong></div>
+                <div class="oneliner"><span>पुष्कर मेला</span><strong>अजमेर | कार्तिक पूर्णिमा | तीर्थों का मामा</strong></div>
+                <div class="oneliner"><span>सीताबाड़ी मेला</span><strong>केलवाड़ा-बारां | ज्येष्ठ अमावस्या | सहरिया कुम्भ</strong></div>
+                <div class="oneliner"><span>घोटिया अम्बा मेला</span><strong>बांसवाड़ा | चैत्र अमावस्या | भीलों का कुम्भ</strong></div>
+                <div class="oneliner"><span>मल्लीनाथ पशु मेला</span><strong>तिलवाड़ा (बालोतरा/बाड़मेर) | लूनी नदी</strong></div>
+                <div class="oneliner"><span>तेजाजी पशु मेला</span><strong>परबतसर (नागौर) | सर्वाधिक आय</strong></div>
+                <div class="oneliner"><span>गोगामेड़ी पशु मेला</span><strong>नोहर (हनुमानगढ़) | सबसे लम्बी अवधि</strong></div>
+                <div class="oneliner"><span>वृक्ष मेला</span><strong>खेजड़ली (जोधपुर) | भारत का एकमात्र | अमृता देवी</strong></div>
+                <div class="oneliner"><span>रामदेव मेला</span><strong>रामदेवरा (जैसलमेर) | तेरहताली नृत्य</strong></div>
+                <div class="oneliner"><span>भर्तृहरि मेला</span><strong>अलवर | मत्स्य क्षेत्र का सबसे बड़ा</strong></div>
+                <div class="oneliner"><span>गरीब नवाज़ उर्स</span><strong>अजमेर | रज्जब 1-6 | सबसे बड़ा उर्स</strong></div>
+                <div class="oneliner"><span>तारकीन उर्स</span><strong>नागौर | दूसरा सबसे बड़ा</strong></div>
+                <div class="oneliner"><span>ऊंट उत्सव</span><strong>बीकानेर | जनवरी</strong></div>
+                <div class="oneliner"><span>मरू महोत्सव</span><strong>जैसलमेर | माघ</strong></div>
+                <div class="oneliner"><span>RIFF</span><strong>जोधपुर (मेहरानगढ़) | अक्टूबर-नवंबर</strong></div>
+                <div class="oneliner"><span>त्योहार आगमन</span><strong>श्रावणी तीज से</strong></div>
+                <div class="oneliner"><span>त्योहार समापन</span><strong>गणगौर से</strong></div>
+                <div class="oneliner"><span>हिंदू नववर्ष</span><strong>चैत्र शु. प्रतिपदा</strong></div>
+                <div class="oneliner"><span>विक्रम संवत् प्रारंभ</span><strong>57 ई.पू.</strong></div>
+                <div class="oneliner"><span>अधिक मास</span><strong>2 वर्ष 8 माह 12 दिन में एक बार</strong></div>
+                <div class="oneliner"><span>राजस्थान साहित्य अकादमी</span><strong>उदयपुर | 23 जनवरी 1958</strong></div>
+                <div class="oneliner"><span>रूपायन संस्थान</span><strong>बोरूंदा (जोधपुर) | 1960 | कोमल कोठारी</strong></div>
+                <div class="oneliner"><span>जवाहर कला केंद्र</span><strong>जयपुर | 1993</strong></div>
+                <div class="oneliner"><span>भारतीय लोक कला मंडल</span><strong>उदयपुर | 1952 | देवीलाल सामर</strong></div>
+                <div class="oneliner"><span>ऋषभदेव जी (केसरियाजी)</span><strong>धूलेव-उदयपुर | चैत्र कृ.8 (शीतलाष्टमी)</strong></div>
+                <div class="oneliner"><span>महावीर जी मेला</span><strong>चांदनपुर-करौली | जैन का सबसे बड़ा मेला</strong></div>
+                <div class="oneliner"><span>साहवा मेला</span><strong>चूरू | सिख धर्म का सबसे बड़ा मेला</strong></div>
+                <div class="oneliner"><span>कैलादेवी मेला (लक्खी मेला)</span><strong>करौली | चैत्र शु.8</strong></div>
+            </div>
+            <div style="margin-top:10px; padding:8px 10px; background:#EAF3DE; border-radius:var(--r-md); font-size:12px; color:#27500A;">
+                ✅ इन 50+ वन-लाइनर्स में सभी अपलोड शीट्स के PYQ-favourite तथ्य समाहित हैं। नई सामग्री अपलोड होने पर यह हैंडबुक स्वतः विस्तारित होगी — कभी नई अलग शीट नहीं बनेगी।
+            </div>
+        </div>
+
     </div>
+
+    <script>
+        function show(id, ev) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            if (ev && ev.target) ev.target.classList.add('active');
+        }
+    </script>
 </body>
+
 </html>
