@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSMSSB कंप्यूटर अनुदेशक (Basic Computer Instructor) — व्यक्तिगत अभ्यास पत्र</title>
+<style>
+  :root { --ink:#1a1a1a; --muted:#555; --line:#ddd; --accent:#0b5cab; --bgtag:#eef4fb; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans Devanagari","Nirmala UI","Segoe UI",Arial,sans-serif;
+    color: var(--ink); max-width: 840px; margin: 0 auto;
+    padding: 24px 18px 60px; line-height: 1.6; font-size: 17px; background:#fff;
+  }
+  header { text-align:center; border-bottom: 3px solid var(--ink); padding-bottom: 14px; margin-bottom: 18px; }
+  header h1 { font-size: 1.4rem; margin: 0 0 6px; }
+  header p { margin: 2px 0; color: var(--muted); font-size: 0.95rem; }
+  .meta-bar { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:0.92rem; color:var(--muted); margin-bottom: 10px; border-bottom:1px solid var(--line); padding-bottom:10px; }
+  .section-title { font-size:1.1rem; font-weight:bold; margin: 26px 0 12px; background: var(--bgtag); padding:8px 12px; border-left:5px solid var(--accent); }
+  .qblock { padding: 14px 0; border-bottom: 1px dashed var(--line); break-inside: avoid; }
+  .qhead { font-size:0.82rem; color:var(--muted); margin-bottom:4px; }
+  .qnum { font-weight:bold; color:var(--ink); font-size:1rem; }
+  .qtopic { font-style: italic; }
+  .qtext { font-size:1.08rem; margin: 4px 0 10px; }
+  .opts { display:grid; grid-template-columns: 1fr 1fr; gap:6px 16px; }
+  .opt { display:flex; align-items:center; gap:8px; padding:4px 2px; cursor:pointer; }
+  .opt input { transform: scale(1.1); flex-shrink:0; }
+  .optletter { font-weight:bold; color:var(--accent); min-width:16px; }
+  .answerkey { margin-top: 40px; border-top: 3px solid var(--ink); padding-top: 16px; }
+  .answerkey h2 { font-size:1.25rem; margin-bottom: 14px; }
+  .akgrid { display:grid; grid-template-columns: repeat(5, 1fr); gap:6px 10px; font-size:0.92rem; }
+  .akitem { padding:2px 0; }
+  .akq { font-weight:bold; margin-right:3px; }
+  .instructions { background:#fffbea; border:1px solid #f0dca0; padding:10px 14px; border-radius:4px; font-size:0.92rem; color:#5a4a10; margin-bottom: 18px; }
+  @media (max-width: 560px) {
+    body { font-size:16px; padding:16px 10px 40px; }
+    .opts { grid-template-columns: 1fr; }
+    .akgrid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media print {
+    body { font-size: 12.5pt; max-width: 100%; padding: 0 8mm; }
+    .qblock { break-inside: avoid; padding: 8px 0; }
+    .answerkey { break-before: page; }
+  }
+  @page { size: A4; margin: 14mm 12mm; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>RSMSSB बेसिक कंप्यूटर अनुदेशक (BCI) — व्यक्तिगत (Personalized) अभ्यास पत्र</h1>
+  <p>पेपर-I : रीजनिंग एवं गणित | आपकी Mistake Notebook के विश्लेषण पर आधारित</p>
+</header>
+
+<div class="meta-bar">
+  <span><strong>कुल प्रश्न:</strong> 25</span>
+  <span><strong>रीजनिंग:</strong> 19</span>
+  <span><strong>गणित:</strong> 6</span>
+  <span><strong>समय:</strong> 25 मिनट</span>
+</div>
+
+<div class="instructions">
+  प्रत्येक प्रश्न 1 अंक का है। यह सेट विशेष रूप से आपकी बार-बार गलत/स्किप हुई टॉपिक्स — कोडिंग-डिकोडिंग, नंबर एनालॉजी, डायरेक्शन सेंस (135° ट्रैप), कैलेंडर, ब्लड रिलेशन, ऑड वन आउट (Prime Factor), इनइक्वलिटीज़, रेशियो, मिक्सचर, एज प्रॉब्लम व क्वाड्रैटिक रेसिप्रोकल रूट्स — पर केंद्रित है। किसी भी प्रश्न को केवल बड़ी संख्या/भिन्न देखकर स्किप न करें, पहले 10 सेकंड शॉर्टकट खोजने में लगाएँ।
+</div>
+
+<div class="section-title">भाग A — रीजनिंग (प्रश्न 1–19)</div>
+
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 1.</span> <span class="qtopic">[कोडिंग-डिकोडिंग]</span></div>
+      <div class="qtext">एक निश्चित कोड में प्रत्येक अक्षर को उसकी वर्णमाला स्थिति के अंकों के योग (digit sum) से दर्शाया जाता है, जैसे Z(26) → 2+6 = 8। शब्द &#x27;CAT&#x27; का कोड क्या होगा?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q1">
+          <span class="optletter">A</span><span class="opttext">312</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q1">
+          <span class="optletter">B</span><span class="opttext">321</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q1">
+          <span class="optletter">C</span><span class="opttext">313</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q1">
+          <span class="optletter">D</span><span class="opttext">311</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 2.</span> <span class="qtopic">[कोडिंग-डिकोडिंग]</span></div>
+      <div class="qtext">एक कोड में प्रत्येक अक्षर को वर्णमाला में एक स्थान आगे खिसकाया जाता है (जैसे A→B)। इस नियम से &#x27;SUN&#x27; शब्द को किस प्रकार कोडित किया जाएगा?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q2">
+          <span class="optletter">A</span><span class="opttext">TVO</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q2">
+          <span class="optletter">B</span><span class="opttext">TVP</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q2">
+          <span class="optletter">C</span><span class="opttext">UVO</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q2">
+          <span class="optletter">D</span><span class="opttext">TWO</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 3.</span> <span class="qtopic">[नंबर एनालॉजी]</span></div>
+      <div class="qtext">81 : 729 :: 64 : ?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q3">
+          <span class="optletter">A</span><span class="opttext">512</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q3">
+          <span class="optletter">B</span><span class="opttext">576</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q3">
+          <span class="optletter">C</span><span class="opttext">648</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q3">
+          <span class="optletter">D</span><span class="opttext">720</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 4.</span> <span class="qtopic">[नंबर एनालॉजी]</span></div>
+      <div class="qtext">9 : 81 :: 11 : ?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q4">
+          <span class="optletter">A</span><span class="opttext">110</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q4">
+          <span class="optletter">B</span><span class="opttext">121</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q4">
+          <span class="optletter">C</span><span class="opttext">132</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q4">
+          <span class="optletter">D</span><span class="opttext">144</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 5.</span> <span class="qtopic">[डायरेक्शन सेंस]</span></div>
+      <div class="qtext">सीमा पूर्व दिशा में मुख करके खड़ी है। वह 135° दक्षिणावर्त (clockwise) घूमती है। अब उसका मुख किस दिशा में है?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q5">
+          <span class="optletter">A</span><span class="opttext">दक्षिण</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q5">
+          <span class="optletter">B</span><span class="opttext">दक्षिण-पश्चिम</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q5">
+          <span class="optletter">C</span><span class="opttext">पश्चिम</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q5">
+          <span class="optletter">D</span><span class="opttext">उत्तर-पश्चिम</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 6.</span> <span class="qtopic">[डायरेक्शन सेंस]</span></div>
+      <div class="qtext">राम अपने घर से 8 किमी उत्तर चलता है, फिर दायें मुड़कर 6 किमी चलता है। वह अपने घर से कितनी दूरी पर है?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q6">
+          <span class="optletter">A</span><span class="opttext">8 किमी</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q6">
+          <span class="optletter">B</span><span class="opttext">9 किमी</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q6">
+          <span class="optletter">C</span><span class="opttext">10 किमी</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q6">
+          <span class="optletter">D</span><span class="opttext">12 किमी</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 7.</span> <span class="qtopic">[कैलेंडर]</span></div>
+      <div class="qtext">यदि 1 जनवरी 2023 को रविवार था (2023 एक सामान्य वर्ष है), तो 1 जनवरी 2024 को कौन सा दिन था?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q7">
+          <span class="optletter">A</span><span class="opttext">सोमवार</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q7">
+          <span class="optletter">B</span><span class="opttext">मंगलवार</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q7">
+          <span class="optletter">C</span><span class="opttext">बुधवार</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q7">
+          <span class="optletter">D</span><span class="opttext">रविवार</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 8.</span> <span class="qtopic">[कैलेंडर]</span></div>
+      <div class="qtext">वर्ष 2025 (सामान्य वर्ष) का कैलेंडर किस अगले वर्ष के कैलेंडर जैसा ही होगा?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q8">
+          <span class="optletter">A</span><span class="opttext">2029</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q8">
+          <span class="optletter">B</span><span class="opttext">2030</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q8">
+          <span class="optletter">C</span><span class="opttext">2031</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q8">
+          <span class="optletter">D</span><span class="opttext">2033</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 9.</span> <span class="qtopic">[ब्लड रिलेशन]</span></div>
+      <div class="qtext">राधा ने एक फोटो की ओर इशारा करते हुए कहा, &#x27;यह मेरी माँ के इकलौते भाई का पुत्र है।&#x27; फोटो में मौजूद व्यक्ति राधा से किस प्रकार संबंधित है?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q9">
+          <span class="optletter">A</span><span class="opttext">भाई</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q9">
+          <span class="optletter">B</span><span class="opttext">मामा</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q9">
+          <span class="optletter">C</span><span class="opttext">कज़िन (ममेरा भाई)</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q9">
+          <span class="optletter">D</span><span class="opttext">पिता</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 10.</span> <span class="qtopic">[ब्लड रिलेशन (कोडेड)]</span></div>
+      <div class="qtext">यदि P$Q का अर्थ है &#x27;Q, P की पुत्री है&#x27; और P&amp;Q का अर्थ है &#x27;Q, P का भाई है&#x27;, तो अभिव्यक्ति M$N&amp;O में O, M से किस प्रकार संबंधित है?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q10">
+          <span class="optletter">A</span><span class="opttext">पुत्र</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q10">
+          <span class="optletter">B</span><span class="opttext">पुत्री</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q10">
+          <span class="optletter">C</span><span class="opttext">भाई</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q10">
+          <span class="optletter">D</span><span class="opttext">पिता</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 11.</span> <span class="qtopic">[ऑड वन आउट]</span></div>
+      <div class="qtext">निम्न में से विषम (Odd One Out) संख्या चुनें: 91, 117, 143, 145</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q11">
+          <span class="optletter">A</span><span class="opttext">91</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q11">
+          <span class="optletter">B</span><span class="opttext">117</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q11">
+          <span class="optletter">C</span><span class="opttext">143</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q11">
+          <span class="optletter">D</span><span class="opttext">145</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 12.</span> <span class="qtopic">[ऑड वन आउट]</span></div>
+      <div class="qtext">निम्न में से विषम (Odd One Out) संख्या चुनें: 133, 152, 171, 187</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q12">
+          <span class="optletter">A</span><span class="opttext">133</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q12">
+          <span class="optletter">B</span><span class="opttext">152</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q12">
+          <span class="optletter">C</span><span class="opttext">171</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q12">
+          <span class="optletter">D</span><span class="opttext">187</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 13.</span> <span class="qtopic">[इनइक्वलिटीज़]</span></div>
+      <div class="qtext">कथन: A=B≥C=D. निष्कर्ष: I. A≥D  II. A=D</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q13">
+          <span class="optletter">A</span><span class="opttext">केवल I सत्य है</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q13">
+          <span class="optletter">B</span><span class="opttext">केवल II सत्य है</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q13">
+          <span class="optletter">C</span><span class="opttext">I और II दोनों सत्य हैं</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q13">
+          <span class="optletter">D</span><span class="opttext">न तो I न ही II सत्य है</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 14.</span> <span class="qtopic">[इनइक्वलिटीज़]</span></div>
+      <div class="qtext">कथन: P&gt;Q&gt;R. निष्कर्ष: I. P&gt;R  II. P≥R</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q14">
+          <span class="optletter">A</span><span class="opttext">केवल I सत्य है</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q14">
+          <span class="optletter">B</span><span class="opttext">केवल II सत्य है</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q14">
+          <span class="optletter">C</span><span class="opttext">I और II दोनों सत्य हैं</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q14">
+          <span class="optletter">D</span><span class="opttext">न तो I न ही II सत्य है</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 15.</span> <span class="qtopic">[रैंकिंग/पोजीशन]</span></div>
+      <div class="qtext">एक पंक्ति में 30 विद्यार्थी हैं। सोनू बायें से 12वें स्थान पर है। दायें से उसका स्थान क्या होगा?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q15">
+          <span class="optletter">A</span><span class="opttext">18वां</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q15">
+          <span class="optletter">B</span><span class="opttext">19वां</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q15">
+          <span class="optletter">C</span><span class="opttext">20वां</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q15">
+          <span class="optletter">D</span><span class="opttext">21वां</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 16.</span> <span class="qtopic">[पेंटेड क्यूब]</span></div>
+      <div class="qtext">एक घन के सभी फलकों को लाल रंग से रंगकर उसे 64 बराबर छोटे घनों में काटा गया है। कितने छोटे घनों के ठीक 2 फलक रंगे हुए हैं?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q16">
+          <span class="optletter">A</span><span class="opttext">16</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q16">
+          <span class="optletter">B</span><span class="opttext">20</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q16">
+          <span class="optletter">C</span><span class="opttext">24</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q16">
+          <span class="optletter">D</span><span class="opttext">28</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 17.</span> <span class="qtopic">[डिक्शनरी ऑर्डर]</span></div>
+      <div class="qtext">निम्न शब्दों को शब्दकोश (Dictionary) क्रम में व्यवस्थित करें: 1. Precaution  2. Precede  3. Precise  4. Precept</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q17">
+          <span class="optletter">A</span><span class="opttext">1-2-4-3</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q17">
+          <span class="optletter">B</span><span class="opttext">1-2-3-4</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q17">
+          <span class="optletter">C</span><span class="opttext">2-1-4-3</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q17">
+          <span class="optletter">D</span><span class="opttext">1-4-2-3</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 18.</span> <span class="qtopic">[डेटा इंटरप्रिटेशन]</span></div>
+      <div class="qtext">एक स्कूल में कुल 600 विद्यार्थी हैं, जिनमें से 45% छात्राएं हैं। छात्रों (लड़कों) की संख्या कितनी है?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q18">
+          <span class="optletter">A</span><span class="opttext">310</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q18">
+          <span class="optletter">B</span><span class="opttext">320</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q18">
+          <span class="optletter">C</span><span class="opttext">330</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q18">
+          <span class="optletter">D</span><span class="opttext">340</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 19.</span> <span class="qtopic">[नंबर सीरीज़]</span></div>
+      <div class="qtext">श्रृंखला में आगे की संख्या ज्ञात करें: 2, 3, 5, 9, 17, ?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q19">
+          <span class="optletter">A</span><span class="opttext">31</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q19">
+          <span class="optletter">B</span><span class="opttext">33</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q19">
+          <span class="optletter">C</span><span class="opttext">35</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q19">
+          <span class="optletter">D</span><span class="opttext">37</span>
+        </label>
+      </div>
+    </div>
+
+<div class="section-title">भाग B — गणित (प्रश्न 20–25)</div>
+
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 20.</span> <span class="qtopic">[रेशियो (अनुपात)]</span></div>
+      <div class="qtext">दो संख्याओं का अनुपात 4:5 है। यदि प्रत्येक संख्या में 8 जोड़ा जाए तो अनुपात 6:7 हो जाता है। दोनों संख्याएं ज्ञात करें।</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q20">
+          <span class="optletter">A</span><span class="opttext">12 और 15</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q20">
+          <span class="optletter">B</span><span class="opttext">16 और 20</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q20">
+          <span class="optletter">C</span><span class="opttext">20 और 25</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q20">
+          <span class="optletter">D</span><span class="opttext">24 और 30</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 21.</span> <span class="qtopic">[रेशियो (अनुपात)]</span></div>
+      <div class="qtext">A और B की वर्तमान आयु का अनुपात 3:4 है। 5 वर्ष बाद यह अनुपात 4:5 हो जाएगा। A की वर्तमान आयु ज्ञात करें।</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q21">
+          <span class="optletter">A</span><span class="opttext">12</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q21">
+          <span class="optletter">B</span><span class="opttext">15</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q21">
+          <span class="optletter">C</span><span class="opttext">18</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q21">
+          <span class="optletter">D</span><span class="opttext">20</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 22.</span> <span class="qtopic">[मिक्सचर]</span></div>
+      <div class="qtext">50 लीटर के मिश्रण में दूध और पानी का अनुपात 3:2 है। इसमें कितना पानी मिलाया जाए कि अनुपात 1:2 हो जाए?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q22">
+          <span class="optletter">A</span><span class="opttext">30 लीटर</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q22">
+          <span class="optletter">B</span><span class="opttext">35 लीटर</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q22">
+          <span class="optletter">C</span><span class="opttext">40 लीटर</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q22">
+          <span class="optletter">D</span><span class="opttext">45 लीटर</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 23.</span> <span class="qtopic">[एज प्रॉब्लम (%)]</span></div>
+      <div class="qtext">A की आयु B की आयु से 20% अधिक है। यदि B की आयु 45 वर्ष है, तो A की आयु ज्ञात करें।</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q23">
+          <span class="optletter">A</span><span class="opttext">50</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q23">
+          <span class="optletter">B</span><span class="opttext">52</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q23">
+          <span class="optletter">C</span><span class="opttext">54</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q23">
+          <span class="optletter">D</span><span class="opttext">56</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 24.</span> <span class="qtopic">[क्वाड्रैटिक इक्वेशन]</span></div>
+      <div class="qtext">यदि समीकरण 5x²−11x+k=0 के मूल परस्पर व्युत्क्रम (reciprocal) हैं, तो k का मान ज्ञात करें।</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q24">
+          <span class="optletter">A</span><span class="opttext">3</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q24">
+          <span class="optletter">B</span><span class="opttext">4</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q24">
+          <span class="optletter">C</span><span class="opttext">5</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q24">
+          <span class="optletter">D</span><span class="opttext">6</span>
+        </label>
+      </div>
+    </div>
+    <div class="qblock">
+      <div class="qhead"><span class="qnum">प्रश्न 25.</span> <span class="qtopic">[कंपाउंड इंटरेस्ट]</span></div>
+      <div class="qtext">कोई धन चक्रवृद्धि ब्याज पर 5 वर्षों में स्वयं का 3 गुना हो जाता है। वह धन स्वयं का 9 गुना कितने वर्षों में होगा?</div>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="q25">
+          <span class="optletter">A</span><span class="opttext">8</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q25">
+          <span class="optletter">B</span><span class="opttext">9</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q25">
+          <span class="optletter">C</span><span class="opttext">10</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="q25">
+          <span class="optletter">D</span><span class="opttext">12</span>
+        </label>
+      </div>
+    </div>
+
+<div class="answerkey">
+  <h2>उत्तर कुंजी (Answer Key)</h2>
+  <div class="akgrid">
+    <div class='akitem'><span class='akq'>1.</span> A</div><div class='akitem'><span class='akq'>2.</span> A</div><div class='akitem'><span class='akq'>3.</span> B</div><div class='akitem'><span class='akq'>4.</span> B</div><div class='akitem'><span class='akq'>5.</span> B</div><div class='akitem'><span class='akq'>6.</span> C</div><div class='akitem'><span class='akq'>7.</span> A</div><div class='akitem'><span class='akq'>8.</span> C</div><div class='akitem'><span class='akq'>9.</span> C</div><div class='akitem'><span class='akq'>10.</span> A</div><div class='akitem'><span class='akq'>11.</span> D</div><div class='akitem'><span class='akq'>12.</span> D</div><div class='akitem'><span class='akq'>13.</span> A</div><div class='akitem'><span class='akq'>14.</span> A</div><div class='akitem'><span class='akq'>15.</span> B</div><div class='akitem'><span class='akq'>16.</span> C</div><div class='akitem'><span class='akq'>17.</span> A</div><div class='akitem'><span class='akq'>18.</span> C</div><div class='akitem'><span class='akq'>19.</span> B</div><div class='akitem'><span class='akq'>20.</span> B</div><div class='akitem'><span class='akq'>21.</span> B</div><div class='akitem'><span class='akq'>22.</span> C</div><div class='akitem'><span class='akq'>23.</span> C</div><div class='akitem'><span class='akq'>24.</span> C</div><div class='akitem'><span class='akq'>25.</span> C</div>
+  </div>
+</div>
+
+</body>
+</html>
