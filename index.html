@@ -1,1111 +1,1115 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BCI Quiz — RSMSSB Preparation</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BCI Quiz — RSMSSB Preparation</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet" />
 </head>
+
 <body>
 
-  <!-- ====== NAV ====== -->
-  <nav class="navbar">
-    <div class="nav-brand">
-      <span class="nav-logo">📚</span>
-      <span class="nav-title">BCI Quiz</span>
-      <span class="nav-sub">RSMSSB Prep</span>
+    <!-- ====== NAV ====== -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="nav-logo">📚</span>
+            <span class="nav-title">BCI Quiz</span>
+            <span class="nav-sub">RSMSSB Prep</span>
+        </div>
+        <div class="nav-links">
+            <button class="nav-btn active" onclick="showScreen('home')">🏠 Home</button>
+            <button class="nav-btn" onclick="showScreen('dashboard')">📊 Dashboard</button>
+            <button class="nav-btn" onclick="showScreen('revision')">🔁 Revision</button>
+            <button class="nav-btn" onclick="showScreen('notes')">📖 Notes</button>
+        </div>
+        <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" style="background:none;border:none;color:#fff;font-size:18px;cursor:pointer;padding:6px 10px;display:inline-flex;align-items:center;justify-content:center;transition:transform 0.2s ease;"
+            title="Toggle Dark/Light Mode">🌙</button>
+        <button class="hamburger" id="hamburger" onclick="toggleNav()">☰</button>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <button onclick="showScreen('home'); toggleNav()">🏠 Home</button>
+        <button onclick="showScreen('dashboard'); toggleNav()">📊 Dashboard</button>
+        <button onclick="showScreen('revision'); toggleNav()">🔁 Revision</button>
+        <button onclick="showScreen('notes'); toggleNav()">📖 Notes</button>
     </div>
-    <div class="nav-links">
-      <button class="nav-btn active" onclick="showScreen('home')">🏠 Home</button>
-      <button class="nav-btn" onclick="showScreen('dashboard')">📊 Dashboard</button>
-      <button class="nav-btn" onclick="showScreen('revision')">🔁 Revision</button>
-      <button class="nav-btn" onclick="showScreen('notes')">📖 Notes</button>
-    </div>
-    <button class="theme-toggle-btn" id="themeToggle" onclick="toggleTheme()" style="background:none;border:none;color:#fff;font-size:18px;cursor:pointer;padding:6px 10px;display:inline-flex;align-items:center;justify-content:center;transition:transform 0.2s ease;" title="Toggle Dark/Light Mode">🌙</button>
-    <button class="hamburger" id="hamburger" onclick="toggleNav()">☰</button>
-  </nav>
-  <div class="mobile-nav" id="mobileNav">
-    <button onclick="showScreen('home'); toggleNav()">🏠 Home</button>
-    <button onclick="showScreen('dashboard'); toggleNav()">📊 Dashboard</button>
-    <button onclick="showScreen('revision'); toggleNav()">🔁 Revision</button>
-    <button onclick="showScreen('notes'); toggleNav()">📖 Notes</button>
-  </div>
 
-  <!-- ====== SCREENS CONTAINER ====== -->
-  <main class="screens-wrap">
+    <!-- ====== SCREENS CONTAINER ====== -->
+    <main class="screens-wrap">
 
-    <!-- ===== SCREEN: HOME ===== -->
-    <div class="screen active" id="screen-home">
-      <div class="home-hero">
-        <div class="hero-badge">RSMSSB BCI 2024–25</div>
-        <h1 class="hero-title">Smart Practice.<br/>Exam Ready.</h1>
-        <p class="hero-sub">6666+ questions · Negative marking · Performance tracking</p>
-      </div>
+        <!-- ===== SCREEN: HOME ===== -->
+        <div class="screen active" id="screen-home">
+            <div class="home-hero">
+                <div class="hero-badge">RSMSSB BCI 2024–25</div>
+                <h1 class="hero-title">Smart Practice.<br/>Exam Ready.</h1>
+                <p class="hero-sub">6666+ questions · Negative marking · Performance tracking</p>
+            </div>
 
-      <div class="section-label">TOPIC चुनें</div>
+            <div class="section-label">TOPIC चुनें</div>
 
-      <!-- Search Bar -->
-      <div style="margin-bottom: 16px;">
-        <input type="text" id="topicSearch" placeholder="🔍 Search topics (विषय खोजें)..." oninput="searchTopics(this.value)" style="width:100%; padding:12px 18px; border:2px solid var(--border); border-radius:var(--radius); font-size:14px; outline:none; background:var(--surface); color:var(--text); box-shadow:var(--shadow); transition:var(--transition);">
-      </div>
-      
-      <div class="home-filter-row" id="homeFilterRow">
-        <button class="home-filter-btn active" onclick="filterHomeCategory('all', this)">✨ All</button>
-        <button class="home-filter-btn" onclick="filterHomeCategory('dbms', this)">🗄️ DBMS</button>
-        <button class="home-filter-btn" onclick="filterHomeCategory('msoffice', this)">📊 MS Office</button>
-        <button class="home-filter-btn" onclick="filterHomeCategory('papers', this)">📝 Papers</button>
-        <button class="home-filter-btn" onclick="filterHomeCategory('others', this)">📖 Others</button>
-      </div>
+            <!-- Search Bar -->
+            <div style="margin-bottom: 16px;">
+                <input type="text" id="topicSearch" placeholder="🔍 Search topics (विषय खोजें)..." oninput="searchTopics(this.value)" style="width:100%; padding:12px 18px; border:2px solid var(--border); border-radius:var(--radius); font-size:14px; outline:none; background:var(--surface); color:var(--text); box-shadow:var(--shadow); transition:var(--transition);">
+            </div>
 
-      <!-- Practice Modes Grid -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 24px;">
-        <div onclick="startWeakTopicQuiz()" style="cursor: pointer; background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); transition: var(--transition);">
-          <div style="font-size: 20px; margin-bottom: 4px;">🎯</div>
-          <div style="font-weight: 700; font-size: 14px;">Weak Topic Diagnostic</div>
-          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">AI targets accuracy &lt; 65%</div>
-        </div>
+            <div class="home-filter-row" id="homeFilterRow">
+                <button class="home-filter-btn active" onclick="filterHomeCategory('all', this)">✨ All</button>
+                <button class="home-filter-btn" onclick="filterHomeCategory('dbms', this)">🗄️ DBMS</button>
+                <button class="home-filter-btn" onclick="filterHomeCategory('msoffice', this)">📊 MS Office</button>
+                <button class="home-filter-btn" onclick="filterHomeCategory('papers', this)">📝 Papers</button>
+                <button class="home-filter-btn" onclick="filterHomeCategory('others', this)">📖 Others</button>
+            </div>
 
-        <div onclick="startMistakeQuiz()" style="cursor: pointer; background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); transition: var(--transition);">
-          <div style="font-size: 20px; margin-bottom: 4px;">📕</div>
-          <div style="font-weight: 700; font-size: 14px;">Mistake Notebook</div>
-          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Re-test incorrect questions</div>
-        </div>
+            <!-- Practice Modes Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 24px;">
+                <div onclick="startWeakTopicQuiz()" style="cursor: pointer; background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); transition: var(--transition);">
+                    <div style="font-size: 20px; margin-bottom: 4px;">🎯</div>
+                    <div style="font-weight: 700; font-size: 14px;">Weak Topic Diagnostic</div>
+                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">AI targets accuracy &lt; 65%</div>
+                </div>
 
-        <div onclick="startBookmarkedQuiz()" style="cursor: pointer; background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); transition: var(--transition);">
-          <div style="font-size: 20px; margin-bottom: 4px;">⭐</div>
-          <div style="font-weight: 700; font-size: 14px;">Bookmarked Quiz</div>
-          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Drill saved items</div>
-        </div>
+                <div onclick="startMistakeQuiz()" style="cursor: pointer; background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); transition: var(--transition);">
+                    <div style="font-size: 20px; margin-bottom: 4px;">📕</div>
+                    <div style="font-weight: 700; font-size: 14px;">Mistake Notebook</div>
+                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Re-test incorrect questions</div>
+                </div>
 
-        <div onclick="startRapidFire()" style="cursor: pointer; background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); transition: var(--transition);">
-          <div style="font-size: 20px; margin-bottom: 4px;">⚡</div>
-          <div style="font-weight: 700; font-size: 14px;">Rapid Fire Mode</div>
-          <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">15s speed drill</div>
-        </div>
-      </div>
+                <div onclick="startBookmarkedQuiz()" style="cursor: pointer; background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); transition: var(--transition);">
+                    <div style="font-size: 20px; margin-bottom: 4px;">⭐</div>
+                    <div style="font-weight: 700; font-size: 14px;">Bookmarked Quiz</div>
+                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Drill saved items</div>
+                </div>
 
-      <div id="topicsContainer">
-        <div class="topic-grid">
-          <div class="topic-skeleton"></div>
-          <div class="topic-skeleton"></div>
-          <div class="topic-skeleton"></div>
-        </div>
-      </div>
+                <div onclick="startRapidFire()" style="cursor: pointer; background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); transition: var(--transition);">
+                    <div style="font-size: 20px; margin-bottom: 4px;">⚡</div>
+                    <div style="font-weight: 700; font-size: 14px;">Rapid Fire Mode</div>
+                    <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">15s speed drill</div>
+                </div>
+            </div>
 
-      <div class="config-box" id="configBox" style="display:none">
-        <div class="config-header">
-          <span id="selectedTopicLabel">Topic</span>
-          <button class="clear-btn" onclick="clearTopic()">✕ बदलें</button>
-        </div>
+            <div id="topicsContainer">
+                <div class="topic-grid">
+                    <div class="topic-skeleton"></div>
+                    <div class="topic-skeleton"></div>
+                    <div class="topic-skeleton"></div>
+                </div>
+            </div>
 
-        <div class="config-row">
-          <div class="config-label">📝 Questions</div>
-          <div class="config-options" id="qCountOptions">
-            <button class="cfg-btn active" data-val="25">25</button>
-            <button class="cfg-btn" data-val="50">50</button>
-            <button class="cfg-btn" data-val="100">100</button>
-            <button class="cfg-btn" data-val="all">Full Test</button>
-            <button class="cfg-btn" data-val="range">Custom Range</button>
-          </div>
-        </div>
+            <div class="config-box" id="configBox" style="display:none">
+                <div class="config-header">
+                    <span id="selectedTopicLabel">Topic</span>
+                    <button class="clear-btn" onclick="clearTopic()">✕ बदलें</button>
+                </div>
 
-        <div class="custom-range-row" id="customRangeRow" style="display:none; align-items: center; gap: 8px; margin-top: -8px; margin-bottom: 12px; flex-wrap: wrap;">
-          <span style="font-size: 13px; font-weight: 600; color: var(--text-muted);">From Q:</span>
-          <input type="number" id="rangeStart" value="1" min="1" style="width: 75px; padding: 6px 12px; border: 2px solid var(--border); border-radius: 99px; font-family: inherit; font-size: 13px; background: var(--cream); color: var(--text); outline: none;" />
-          <span style="font-size: 13px; color: var(--text-muted); font-weight: 600;">to</span>
-          <input type="number" id="rangeEnd" value="50" min="1" style="width: 75px; padding: 6px 12px; border: 2px solid var(--border); border-radius: 99px; font-family: inherit; font-size: 13px; background: var(--cream); color: var(--text); outline: none;" />
-          <span id="rangeMaxLabel" style="font-size: 12px; color: var(--text-muted); font-weight: 600;"></span>
-        </div>
+                <div class="config-row">
+                    <div class="config-label">📝 Questions</div>
+                    <div class="config-options" id="qCountOptions">
+                        <button class="cfg-btn active" data-val="25">25</button>
+                        <button class="cfg-btn" data-val="50">50</button>
+                        <button class="cfg-btn" data-val="100">100</button>
+                        <button class="cfg-btn" data-val="all">Full Test</button>
+                        <button class="cfg-btn" data-val="range">Custom Range</button>
+                    </div>
+                </div>
 
-        <div class="config-row">
-          <div class="config-label">🔀 Order</div>
-          <div class="config-options" id="qOrderOptions">
-            <button class="cfg-btn active" data-val="random">Random</button>
-            <button class="cfg-btn" data-val="sequential">Sequential</button>
-          </div>
-        </div>
+                <div class="custom-range-row" id="customRangeRow" style="display:none; align-items: center; gap: 8px; margin-top: -8px; margin-bottom: 12px; flex-wrap: wrap;">
+                    <span style="font-size: 13px; font-weight: 600; color: var(--text-muted);">From Q:</span>
+                    <input type="number" id="rangeStart" value="1" min="1" style="width: 75px; padding: 6px 12px; border: 2px solid var(--border); border-radius: 99px; font-family: inherit; font-size: 13px; background: var(--cream); color: var(--text); outline: none;" />
+                    <span style="font-size: 13px; color: var(--text-muted); font-weight: 600;">to</span>
+                    <input type="number" id="rangeEnd" value="50" min="1" style="width: 75px; padding: 6px 12px; border: 2px solid var(--border); border-radius: 99px; font-family: inherit; font-size: 13px; background: var(--cream); color: var(--text); outline: none;" />
+                    <span id="rangeMaxLabel" style="font-size: 12px; color: var(--text-muted); font-weight: 600;"></span>
+                </div>
 
-        <div class="config-row">
-          <div class="config-label">⏱ Timer</div>
-          <div class="config-options" id="timerOptions">
-            <button class="cfg-btn active" data-val="none">No Timer</button>
-            <button class="cfg-btn" data-val="30">30 min</button>
-            <button class="cfg-btn" data-val="60">60 min</button>
-            <button class="cfg-btn" data-val="custom">Custom</button>
-          </div>
-        </div>
+                <div class="config-row">
+                    <div class="config-label">🔀 Order</div>
+                    <div class="config-options" id="qOrderOptions">
+                        <button class="cfg-btn active" data-val="random">Random</button>
+                        <button class="cfg-btn" data-val="sequential">Sequential</button>
+                    </div>
+                </div>
 
-        <div class="custom-timer-row" id="customTimerRow" style="display:none">
-          <input type="number" id="customMinutes" placeholder="Minutes (e.g. 45)" min="1" max="300" />
-        </div>
+                <div class="config-row">
+                    <div class="config-label">⏱ Timer</div>
+                    <div class="config-options" id="timerOptions">
+                        <button class="cfg-btn active" data-val="none">No Timer</button>
+                        <button class="cfg-btn" data-val="30">30 min</button>
+                        <button class="cfg-btn" data-val="60">60 min</button>
+                        <button class="cfg-btn" data-val="custom">Custom</button>
+                    </div>
+                </div>
 
-        <div class="config-row">
-          <div class="config-label">🎯 Mode</div>
-          <div class="config-options" id="modeOptions">
-            <button class="cfg-btn active" data-val="practice">Practice</button>
-            <button class="cfg-btn" data-val="exam">Exam Simulation</button>
-          </div>
-        </div>
+                <div class="custom-timer-row" id="customTimerRow" style="display:none">
+                    <input type="number" id="customMinutes" placeholder="Minutes (e.g. 45)" min="1" max="300" />
+                </div>
 
-        <button class="start-btn" onclick="startTest()">
+                <div class="config-row">
+                    <div class="config-label">🎯 Mode</div>
+                    <div class="config-options" id="modeOptions">
+                        <button class="cfg-btn active" data-val="practice">Practice</button>
+                        <button class="cfg-btn" data-val="exam">Exam Simulation</button>
+                    </div>
+                </div>
+
+                <button class="start-btn" onclick="startTest()">
           <span>Start Test →</span>
         </button>
-      </div>
+            </div>
+        </div>
+
+        <!-- ===== SCREEN: QUIZ ===== -->
+        <div class="screen" id="screen-quiz">
+            <!-- Timer bar -->
+            <div class="timer-bar" id="timerBar" style="display:none">
+                <div class="timer-inner">
+                    <span class="timer-icon">⏱</span>
+                    <span id="timerDisplay">00:00</span>
+                </div>
+                <div class="timer-progress-wrap">
+                    <div class="timer-progress" id="timerProgress"></div>
+                </div>
+            </div>
+
+            <!-- Progress -->
+            <div class="quiz-progress-row">
+                <span class="progress-label" id="progressLabel">Q 1 / 25</span>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                </div>
+                <span class="score-live" id="scoreLive">Score: 0</span>
+            </div>
+
+            <!-- Question palette toggle -->
+            <div class="palette-toggle-row">
+                <button class="palette-toggle-btn" onclick="togglePalette()">📋 Question Map</button>
+                <div class="mini-legend">
+                    <span class="dot dot-answered"></span>Answered
+                    <span class="dot dot-skipped"></span>Skipped
+                    <span class="dot dot-current"></span>Current
+                </div>
+            </div>
+            <div class="question-palette" id="questionPalette" style="display:none">
+                <div class="palette-grid" id="paletteGrid"></div>
+            </div>
+
+            <!-- Question card -->
+            <div class="question-card" id="questionCard">
+                <div class="q-meta">
+                    <span class="q-number" id="qNumber">Q1</span>
+                    <span class="q-difficulty" id="qDifficulty">Medium</span>
+                    <span class="q-important" id="qImportant" style="display:none">⭐ Important</span>
+                    <span class="q-source" id="qSource" style="display:none"></span>
+                </div>
+                <div class="q-text" id="questionText">Loading...</div>
+                <div class="options-list" id="optionsList"></div>
+
+                <!-- Answer reveal (shown after selection in practice mode) -->
+                <div class="answer-reveal" id="answerReveal" style="display:none">
+                    <div class="reveal-correct">✅ Correct Answer: <strong id="revealAnswer"></strong></div>
+                    <div class="reveal-explanation" id="revealExplanation"></div>
+                </div>
+            </div>
+
+            <!-- Nav buttons -->
+            <div class="quiz-nav">
+                <button class="qnav-btn" id="prevBtn" onclick="navigate(-1)">← Prev</button>
+                <button class="skip-btn" id="skipBtn" onclick="skipQuestion()">Skip →</button>
+                <button class="qnav-btn" id="nextBtn" onclick="navigate(1)">Next →</button>
+            </div>
+            <button class="submit-quiz-btn" id="submitBtn" onclick="confirmSubmit()">🏁 Submit Test</button>
+        </div>
+
+        <!-- ===== SCREEN: RESULT ===== -->
+        <div class="screen" id="screen-result">
+            <div class="result-hero">
+                <div class="result-emoji" id="resultEmoji">🎯</div>
+                <div class="result-score" id="resultScore">0.00</div>
+                <div class="result-label">Final Score</div>
+                <div class="result-status" id="resultStatus">Calculating...</div>
+            </div>
+
+            <div class="result-grid">
+                <div class="result-stat">
+                    <div class="rstat-val" id="rTotal">0</div>
+                    <div class="rstat-label">Total</div>
+                </div>
+                <div class="result-stat">
+                    <div class="rstat-val green" id="rCorrect">0</div>
+                    <div class="rstat-label">Correct</div>
+                </div>
+                <div class="result-stat">
+                    <div class="rstat-val red" id="rWrong">0</div>
+                    <div class="rstat-label">Wrong</div>
+                </div>
+                <div class="result-stat">
+                    <div class="rstat-val muted" id="rSkipped">0</div>
+                    <div class="rstat-label">Skipped</div>
+                </div>
+                <div class="result-stat">
+                    <div class="rstat-val" id="rOptionE">0</div>
+                    <div class="rstat-label">Option E</div>
+                </div>
+                <div class="result-stat">
+                    <div class="rstat-val red" id="rBlank">0</div>
+                    <div class="rstat-label">Blank</div>
+                </div>
+                <div class="result-stat">
+                    <div class="rstat-val" id="rAttempted">0</div>
+                    <div class="rstat-label">Attempted</div>
+                </div>
+                <div class="result-stat">
+                    <div class="rstat-val accent" id="rAccuracy">0%</div>
+                    <div class="rstat-label">Accuracy</div>
+                </div>
+            </div>
+
+            <div class="marking-note">
+                Marking: +1 Correct | −⅓ Wrong | 0 Option E | −⅓ Blank &nbsp;·&nbsp; Qualifying: 40% &nbsp;·&nbsp; Disqualification: >10% Blank
+            </div>
+
+            <div class="result-actions">
+                <button class="ra-btn primary" onclick="reviewAnswers()">📖 Review Answers</button>
+                <button class="ra-btn" onclick="showScreen('home')">🏠 Home</button>
+                <button class="ra-btn" onclick="retestWrong()">🔁 Redo Wrong Qs</button>
+            </div>
+        </div>
+
+        <!-- ===== SCREEN: REVIEW ===== -->
+        <div class="screen" id="screen-review">
+            <div class="review-header">
+                <button class="back-btn" onclick="showScreen('result')">← Back to Result</button>
+                <h2>Answer Review</h2>
+            </div>
+            <div class="review-filters">
+                <button class="rf-btn active" data-filter="all" onclick="filterReview(this,'all')">All</button>
+                <button class="rf-btn" data-filter="correct" onclick="filterReview(this,'correct')">✅ Correct</button>
+                <button class="rf-btn" data-filter="wrong" onclick="filterReview(this,'wrong')">❌ Wrong</button>
+                <button class="rf-btn" data-filter="skipped" onclick="filterReview(this,'skipped')">⏭ Skipped</button>
+            </div>
+            <div class="review-list" id="reviewList"></div>
+        </div>
+
+        <!-- ===== SCREEN: DASHBOARD ===== -->
+        <div class="screen" id="screen-dashboard">
+            <div class="dash-title">📊 My Performance</div>
+            <div class="dash-grid">
+                <div class="dash-card big">
+                    <div class="dash-num" id="dTotalTests">0</div>
+                    <div class="dash-label">Tests Taken</div>
+                </div>
+                <div class="dash-card big">
+                    <div class="dash-num green" id="dOverallAccuracy">0%</div>
+                    <div class="dash-label">Overall Accuracy</div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-num" id="dTotalQs">0</div>
+                    <div class="dash-label">Qs Attempted</div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-num green" id="dTotalCorrect">0</div>
+                    <div class="dash-label">Correct</div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-num red" id="dTotalWrong">0</div>
+                    <div class="dash-label">Wrong</div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-num accent" id="dTotalScore">0</div>
+                    <div class="dash-label">Total Score</div>
+                </div>
+            </div>
+
+            <div class="dash-section">
+                <div class="dash-sec-title">🔥 Weak Topics</div>
+                <div id="weakTopics" class="weak-list">No data yet</div>
+            </div>
+
+            <div class="dash-section">
+                <div class="dash-sec-title">📈 Topic-wise Stats</div>
+                <div id="topicStats" class="topic-stats-list"></div>
+            </div>
+
+            <button class="danger-btn" onclick="clearAllData()">🗑 Clear All Data</button>
+        </div>
+
+        <!-- ===== SCREEN: REVISION ===== -->
+        <div class="screen" id="screen-revision">
+            <div class="dash-title">🔁 Revision Center</div>
+
+            <div class="revision-cards">
+                <div class="rev-card" onclick="startRevision('wrong')">
+                    <div class="rev-icon">❌</div>
+                    <div class="rev-label">Wrong Questions</div>
+                    <div class="rev-count" id="revWrongCount">0 questions</div>
+                </div>
+                <div class="rev-card" onclick="startRevision('important')">
+                    <div class="rev-icon">⭐</div>
+                    <div class="rev-label">Important Questions</div>
+                    <div class="rev-count" id="revImportantCount">0 questions</div>
+                </div>
+                <div class="rev-card" onclick="startRevision('skipped')">
+                    <div class="rev-icon">⏭</div>
+                    <div class="rev-label">Skipped Questions</div>
+                    <div class="rev-count" id="revSkippedCount">0 questions</div>
+                </div>
+                <div class="rev-card" onclick="startRevision('bookmarked')">
+                    <div class="rev-icon">📌</div>
+                    <div class="rev-label">Bookmarked</div>
+                    <div class="rev-count" id="revBookmarkedCount">0 questions</div>
+                </div>
+            </div>
+
+            <div class="rev-note">Wrong Questions are automatically saved from every test.</div>
+        </div>
+
+        <!-- ===== SCREEN: NOTES ===== -->
+        <div class="screen" id="screen-notes">
+            <div class="dash-title">📖 Revision & Study Sheets</div>
+
+            <!-- Search & Filters -->
+            <div class="notes-search-row">
+                <input type="text" id="notesSearch" placeholder="🔍 Search sheets (e.g. DCCN, Lakes, Mela...)" oninput="filterNotes()" />
+                <div class="notes-category-filters">
+                    <button class="notes-filter-btn active" onclick="filterCategory('all', this)">✨ All</button>
+                    <button class="notes-filter-btn" onclick="filterCategory('cs', this)">💻 CS</button>
+                    <button class="notes-filter-btn" onclick="filterCategory('history', this)">🏰 History</button>
+                    <button class="notes-filter-btn" onclick="filterCategory('art-culture', this)">🎨 Art & Culture</button>
+                    <button class="notes-filter-btn" onclick="filterCategory('geography-general', this)">🗺️ Geography</button>
+                    <button class="notes-filter-btn" onclick="filterCategory('pedagogy-aptitude', this)">🧠 Pedagogy & Aptitude</button>
+                </div>
+            </div>
+
+            <!-- Notes Grid Container -->
+            <div id="notesContainer">
+
+                <!-- Section: Computer Science -->
+                <div class="notes-section" data-section-category="cs">
+                    <div class="notes-section-header">
+                        <span class="notes-section-icon">💻</span>
+                        <span class="notes-section-title">Computer Science (कम्प्यूटर विज्ञान)</span>
+                    </div>
+                    <div class="notes-grid">
+                        <!-- Card 1: FOC -->
+                        <div class="note-card" data-category="cs" data-title="computer fundamentals foc basic hardware software history">
+                            <div class="note-card-badge cs">CS</div>
+                            <div class="note-card-icon">💻</div>
+                            <div class="note-card-title">Computer Fundamentals (FOC)</div>
+                            <div class="note-card-desc">High-yield revision notes covering basic concepts, computer history, generations, memory organization, and input/output hardware.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/foc.html', 'Computer Fundamentals (FOC)')">👁️ Read Inside</button>
+                                <a href="notes/computer-science/foc.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: DCCN -->
+                        <div class="note-card" data-category="cs" data-title="data communication computer networking dccn protocol osi tcp ip address devices topology">
+                            <div class="note-card-badge cs">CS</div>
+                            <div class="note-card-icon">🌐</div>
+                            <div class="note-card-title">Computer Networking (DCCN)</div>
+                            <div class="note-card-desc">Bug-free high-yield review sheet focusing on OSI/TCP models, protocols, port numbers, IPv4/IPv6 addressing, subnetting, and devices.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/dccn.html', 'Computer Networking (DCCN)')">👁️ Read Inside</button>
+                                <a href="notes/computer-science/dccn.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 2B: Networking Master Revision Sheet -->
+                        <div class="note-card" data-category="cs" data-title="networking master revision sheet tcp ip osi protocol ip address internet security">
+                            <div class="note-card-badge cs">CS</div>
+                            <div class="note-card-icon">🌐</div>
+                            <div class="note-card-title">Networking Master Revision Sheet</div>
+                            <div class="note-card-desc">High-yield networking notes covering OSI/TCP-IP, Internet basics, IP addressing, routing, protocols, and security traps.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/networking-master-revision-sheet.html', 'Networking Master Revision Sheet')">👁️ Read Inside</button>
+                                <a href="notes/computer-science/networking-master-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: BCI CS Master Revision (Combined Edition) -->
+                        <div class="note-card" data-category="cs" data-title="bci master revision handbook computer instructor full revision cs core technical data structures oop network security os number system compiler dbms java cpp python uml">
+                            <div class="note-card-badge cs">Combined Master</div>
+                            <div class="note-card-icon">📘</div>
+                            <div class="note-card-title">BCI CS Ultimate Master Revision</div>
+                            <div class="note-card-desc">Unified Complete Master Handbook (v4.0) combining CS technical revision, Number Systems, Compilers, OS, Networks, DBMS, Java, C++, DSA, SAD, & UML.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/bci-computer-science-master-revision.html', 'BCI CS Ultimate Master Revision')">👁️ Read Inside</button>
+                                <a href="notes/computer-science/bci-computer-science-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: BCI Tech Master Revision (Redirect Alias) -->
+                        <div class="note-card" data-category="cs" data-title="bci tech computer science master revision technical number system compiler operating system os network dbms sql java oop cpp c data structures algorithms software engineering">
+                            <div class="note-card-badge cs">Tech Revision</div>
+                            <div class="note-card-icon">💻</div>
+                            <div class="note-card-title">BCI Tech Master Revision</div>
+                            <div class="note-card-desc">High-yield CS technical notes & recall tables integrated into the Ultimate Master Handbook.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/bci-computer-science-master-revision.html', 'BCI Tech Master Revision')">👁️ Read Inside</button>
+                                <a href="notes/computer-science/bci-computer-science-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: MS PowerPoint & Access -->
+                        <div class="note-card" data-category="cs" data-title="ms office powerpoint power point access presentation slide keyboard shortcuts database">
+                            <div class="note-card-badge cs">CS</div>
+                            <div class="note-card-icon">📊</div>
+                            <div class="note-card-title">MS PowerPoint & Access</div>
+                            <div class="note-card-desc">Consolidated keyboard shortcuts, exam traps, and features of MS PowerPoint and MS Access database.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/ms-powerpoint-master-revision.html', 'MS PowerPoint & Access')">👁️ Read Inside</button>
+                                <a href="notes/computer-science/ms-powerpoint-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 6: System Analysis & Design (SAD) -->
+                        <div class="note-card" data-category="cs" data-title="sad system analysis design software engineering sdlc flow charts charts coupling cohesion">
+                            <div class="note-card-badge cs">CS</div>
+                            <div class="note-card-icon">⚙️</div>
+                            <div class="note-card-title">System Analysis & Design (SAD)</div>
+                            <div class="note-card-desc">Master handbook for SAD covering SDLC phases, tools (Data Dictionary, Decision Tree), coupling & cohesion, and design principles.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/sad-master-revision.html', 'System Analysis & Design (SAD)')">👁️ Read Inside</button>
+                                <a href="notes/computer-science/sad-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 7: File Extension, OS & Cyber Security -->
+                        <div class="note-card" data-category="cs" data-title="file extensions operating system cyber security virus malware Trojan ports cryptography">
+                            <div class="note-card-badge cs">CS</div>
+                            <div class="note-card-icon">🦠</div>
+                            <div class="note-card-title">File, OS & Cyber Security</div>
+                            <div class="note-card-desc">Revision handbook covering file extensions, operating systems, malware/virus types, and cyber security traps.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/bci-file-os-virus-master-revision.html', 'File, OS & Cyber Security')">👁️ Read Inside</button>
+                                <a href="notes/computer-science/bci-file-os-virus-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 8: Computer Memory & Fundamentals -->
+                        <div class="note-card" data-category="cs" data-title="computer memory fundamentals register mar mdr ram rom cache memory hierarchy">
+                            <div class="note-card-badge cs">CS</div>
+                            <div class="note-card-icon">💾</div>
+                            <div class="note-card-title">Memory & Fundamentals</div>
+                            <div class="note-card-desc">Key memory concepts, memory hierarchy, RAM/ROM structures, and CPU address/data registers.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/computer-fundamentals-master-revision.html', 'Memory & Fundamentals')">👁️ Read Inside</button>
+                                <a href="notes/computer-science/computer-fundamentals-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 9: BCI Programming Languages -->
+                        <div class="note-card" data-category="cs" data-title="programming languages c cpp java oop constructor compiler relational logical abstraction encapsulation">
+                            <div class="note-card-badge cs">CS</div>
+                            <div class="note-card-icon">☕</div>
+                            <div class="note-card-title">Programming Languages (OOP)</div>
+                            <div class="note-card-desc">Comprehensive programming handbook covering C, C++, Java, OOP concepts, compilers, interpreters, and memory management.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/bci-programming-master-revision.html', 'Programming Languages (OOP)')">👁️ Read Inside</button>
+                                <a href="notes/computer-science/bci-programming-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 9B: DBMS Master Revision Handbook -->
+                        <div class="note-card" data-category="cs" data-title="dbms database management system sql relational normalization acid er diagram rdbms">
+                            <div class="note-card-badge cs">CS</div>
+                            <div class="note-card-icon">🗄️</div>
+                            <div class="note-card-title">DBMS Master Handbook</div>
+                            <div class="note-card-desc">Complete database management revision handbook covering relational models, SQL, normalization, and ACID properties.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/dbms-master-revision-handbook.html', 'DBMS Master Handbook')">👁️ Read Inside</button>
+                                <a href="notes/computer-science/dbms-master-revision-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 9C: DSA Master Revision Handbook -->
+                        <div class="note-card" data-category="cs" data-title="dsa data structures algorithms arrays stack queue tree graph sorting searching recursion">
+                            <div class="note-card-badge cs">CS</div>
+                            <div class="note-card-icon">⚡</div>
+                            <div class="note-card-title">DSA Master Handbook</div>
+                            <div class="note-card-desc">High-yield Data Structures & Algorithms revision notes covering arrays, trees, graphs, sorting, and algorithmic complexities.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/dsa-master-revision-handbook.html', 'DSA Master Handbook')">👁️ Read Inside</button>
+                                <a href="notes/computer-science/dsa-master-revision-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Rajasthan History -->
+                <div class="notes-section" data-section-category="history">
+                    <div class="notes-section-header">
+                        <span class="notes-section-icon">🏰</span>
+                        <span class="notes-section-title">Rajasthan History (राजस्थान का इतिहास)</span>
+                    </div>
+                    <div class="notes-grid">
+                        <!-- Card 10: Ancient Civilizations -->
+                        <div class="note-card" data-category="history" data-title="rajasthan ancient civilizations prachin sabhytaye kalibangan ahar bairath ganeshwar">
+                            <div class="note-card-badge history">History</div>
+                            <div class="note-card-icon">🏺</div>
+                            <div class="note-card-title">Ancient Civilizations (सभ्यताएं)</div>
+                            <div class="note-card-desc">Very short notes & exam-oriented traps on Kalibangan, Ahar, Bairath, Ganeshwar, Bagore, Balathal, and other archaeological sites.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/prachin-sabhytaye-very-short-notes.html', 'Ancient Civilizations (प्राचीन सभ्यताएं)')">👁️ Read Inside</button>
+                                <a href="notes/gk/history/prachin-sabhytaye-very-short-notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 11: Rajasthan Integration -->
+                        <div class="note-card" data-category="history" data-title="rajasthan integration ekikaran 7 stages dates rulers prime ministers satyanarayan samiti">
+                            <div class="note-card-badge history">History</div>
+                            <div class="note-card-icon">🗺️</div>
+                            <div class="note-card-title">Rajasthan Integration (एकीकरण)</div>
+                            <div class="note-card-desc">7 stages of Rajasthan integration, dates, capitals, Rajpramukhs, PMs, and critical exam confusion traps.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/rajasthan-ekikaran-revision-sheet.html', 'Rajasthan Integration (राजस्थान एकीकरण)')">👁️ Read Inside</button>
+                                <a href="notes/gk/history/rajasthan-ekikaran-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 12: Chauhan Dynasty -->
+                        <div class="note-card" data-category="history" data-title="chauhan vansh dynasty history rajasthan kings rulers battle">
+                            <div class="note-card-badge history">History</div>
+                            <div class="note-card-icon">🛡️</div>
+                            <div class="note-card-title">Chauhan Dynasty (चौहान वंश)</div>
+                            <div class="note-card-desc">High-yield notes on the history of the Chauhan dynasty in Rajasthan, major rulers, battles, and previous exam questions.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/chauhan-vansh-master-revision.html', 'Chauhan Dynasty (चौहान वंश)')">👁️ Read Inside</button>
+                                <a href="notes/gk/history/chauhan-vansh-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 13: Mewar Guhil Dynasty -->
+                        <div class="note-card" data-category="history" data-title="mewar guhil vansh dynasty history rajasthan sisodia rulers battle">
+                            <div class="note-card-badge history">History</div>
+                            <div class="note-card-icon">🏰</div>
+                            <div class="note-card-title">Mewar Guhil Dynasty (गुहिल वंश)</div>
+                            <div class="note-card-desc">Comprehensive revision guide for Mewar's Guhil and Sisodia dynasty, key historical figures, achievements, and war details.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/mewar-guhil-vansh-master-handbook.html', 'Mewar Guhil Dynasty (गुहिल वंश)')">👁️ Read Inside</button>
+                                <a href="notes/gk/history/mewar-guhil-vansh-master-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 14: Rajasthan History (Other Dynasties) -->
+                        <div class="note-card" data-category="history" data-title="rajasthan other dynasties anya rajvansh jaisalmer bhati karauli jadaun bharatpur jat tonk pindari sakas">
+                            <div class="note-card-badge history">History</div>
+                            <div class="note-card-icon">🏰</div>
+                            <div class="note-card-title">Other Dynasties (जैसलमेर, भरतपुर...)</div>
+                            <div class="note-card-desc">Jaisalmer (Bhati), Karauli (Jadaun), Bharatpur (Jat), and Tonk (Pindari) dynasties, with traps and PYQ database.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/rajasthan-anya-rajvansh-master-revision.html', 'Other Dynasties (जैसलमेर, भरतपुर...)')">👁️ Read Inside</button>
+                                <a href="notes/gk/history/rajasthan-anya-rajvansh-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 15: Kachwaha Dynasty -->
+                        <div class="note-card" data-category="history" data-title="kachwaha vansh amer dynasty history rulers battles treaties dulharay kokildev jai singh man singh">
+                            <div class="note-card-badge history">History</div>
+                            <div class="note-card-icon">👑</div>
+                            <div class="note-card-title">Kachwaha Dynasty (कछवाहा वंश)</div>
+                            <div class="note-card-desc">Complete Amer/Jaipur Kachwaha dynasty timeline, rulers, battles, treaties, and branch lineages.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/kachwaha-vansh-master-revision.html', 'Kachwaha Dynasty (कछवाहा वंश)')">👁️ Read Inside</button>
+                                <a href="notes/gk/history/kachwaha-vansh-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 16: Gurjar Pratihar Dynasty -->
+                        <div class="note-card" data-category="history" data-title="gurjar pratihar dynasty mandor jalor kannauj tri partite harishchandra nagbhatt vatsraj mihir bhoj">
+                            <div class="note-card-badge history">History</div>
+                            <div class="note-card-icon">🏛️</div>
+                            <div class="note-card-title">Gurjar Pratihar Dynasty</div>
+                            <div class="note-card-desc">Mandor and Jalor-Kannauj branches of Gurjar Pratihar rulers, tri-partite struggle, and exam traps.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/gurjar-pratihar-master-revision.html', 'Gurjar Pratihar Dynasty')">👁️ Read Inside</button>
+                                <a href="notes/gk/history/gurjar-pratihar-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 16B: Rathore Vansh Dynasty -->
+                        <div class="note-card" data-category="history" data-title="rathore vansh marwar bikaner jodhpur rao jodha maldeo jaswant singh ganga singh dynasty history">
+                            <div class="note-card-badge history">History</div>
+                            <div class="note-card-icon">🛡️</div>
+                            <div class="note-card-title">Rathore Vansh (राठौड़ वंश)</div>
+                            <div class="note-card-desc">Comprehensive history of Rathore rulers of Marwar (Jodhpur) & Bikaner, battles, cultural contributions, and PYQs.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/rathore-vansh-master-revision.html', 'Rathore Vansh (राठौड़ वंश)')">👁️ Read Inside</button>
+                                <a href="notes/gk/history/rathore-vansh-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 16C: 1857 Revolution in Rajasthan -->
+                        <div class="note-card" data-category="history" data-title="1857 kranti rajasthan revolt nasirabad neemuch erinpura auwa kota tata topa rajputana">
+                            <div class="note-card-badge history">History</div>
+                            <div class="note-card-icon">⚔️</div>
+                            <div class="note-card-title">1857 Kranti in Rajasthan</div>
+                            <div class="note-card-desc">Master revision handbook for the 1857 revolt in Rajasthan, covering key dates, rulers, political agents, and major battle sites.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/1857-kranti-rajasthan-master-notes.html', '1857 Kranti in Rajasthan')">👁️ Read Inside</button>
+                                <a href="notes/gk/history/1857-kranti-rajasthan-master-notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 16D: Rajasthan Kisan Andolan -->
+                        <div class="note-card" data-category="history" data-title="rajasthan kisan andolan tribal movement bijolia begu alwar nemuchana shekhawati bikaner meena bhil marwar">
+                            <div class="note-card-badge history">History</div>
+                            <div class="note-card-icon">🌾</div>
+                            <div class="note-card-title">Rajasthan Kisan & Tribal Movements</div>
+                            <div class="note-card-desc">High-yield master notes on peasant and tribal movements in Rajasthan, with timelines, leaders, and common exam traps.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/rajasthan-kisan-andolan-master-notes.html', 'Rajasthan Kisan & Tribal Movements')">👁️ Read Inside</button>
+                                <a href="notes/gk/history/rajasthan-kisan-andolan-master-notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 16E: Rajasthan Riyasatein & British Sandhiyan -->
+                        <div class="note-card" data-category="history" data-title="rajasthan riyasatein british treaties sandhiyan princely states history">
+                            <div class="note-card-badge history">History</div>
+                            <div class="note-card-icon">📜</div>
+                            <div class="note-card-title">Rajasthan Riyasatein & British Sandhiyan</div>
+                            <div class="note-card-desc">Master revision handbook on Rajasthan princely states and British treaties, with timelines, traps, and high-yield one-liners.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/rajasthan-riyasatein-british-sandhiyan-handbook.html', 'Rajasthan Riyasatein & British Sandhiyan')">👁️ Read Inside</button>
+                                <a href="notes/gk/history/rajasthan-riyasatein-british-sandhiyan-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 16F: Rajasthan Madhyakalin Prashasan -->
+                        <div class="note-card" data-category="history" data-title="rajasthan madhyakalin prashasan administration revenue officers terminology">
+                            <div class="note-card-badge history">History</div>
+                            <div class="note-card-icon">🏛️</div>
+                            <div class="note-card-title">Rajasthan Madhyakalin Prashasan</div>
+                            <div class="note-card-desc">Revision notes on medieval administrative systems of Rajasthan, officers, taxation, land revenue, and official terminology.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/rajasthan-madhyakalin-prashasan-master-notes.html', 'Rajasthan Madhyakalin Prashasan')">👁️ Read Inside</button>
+                                <a href="notes/gk/history/rajasthan-madhyakalin-prashasan-master-notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Rajasthan Art & Culture -->
+                <div class="notes-section" data-section-category="art-culture">
+                    <div class="notes-section-header">
+                        <span class="notes-section-icon">🎨</span>
+                        <span class="notes-section-title">Rajasthan Art & Culture (कला एवं संस्कृति)</span>
+                    </div>
+                    <div class="notes-grid">
+                        <!-- Card 17: Rajasthan Festivals -->
+                        <div class="note-card" data-category="art-culture" data-title="rajasthan festivals festival tyohar hindu muslim jain lunar calendar months teej gangaur">
+                            <div class="note-card-badge art-culture">Art & Culture</div>
+                            <div class="note-card-icon">🗓️</div>
+                            <div class="note-card-title">Rajasthan Festivals (त्योहार)</div>
+                            <div class="note-card-desc">Detailed calendar of Hindu, Muslim, Jain, and Christian festivals sorted by lunar months, along with previous year questions.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-festival-revision-sheet.html', 'Rajasthan Festivals (त्योहार)')">👁️ Read Inside</button>
+                                <a href="notes/gk/art-culture/rajasthan-festival-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 18: Rajasthan Fairs Guide -->
+                        <div class="note-card" data-category="art-culture" data-title="rajasthan mela fairs guide pushkar karni mata ramdevra tejaji jambheshwar">
+                            <div class="note-card-badge art-culture">Art & Culture</div>
+                            <div class="note-card-icon">🎪</div>
+                            <div class="note-card-title">Rajasthan Fairs Guide (मेले)</div>
+                            <div class="note-card-desc">High-yield district-wise and month-wise lists of major fairs (mela), related deities, locations, and historical significance.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-mela-revision-guide.html', 'Rajasthan Fairs (राजस्थान के मेले)')">👁️ Read Inside</button>
+                                <a href="notes/gk/art-culture/rajasthan-mela-revision-guide.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 18B: Rajasthan Lok Sanskriti -->
+                        <div class="note-card" data-category="art-culture" data-title="rajasthan lok sanskriti mela tyohar festivals customs folk culture">
+                            <div class="note-card-badge art-culture">Art & Culture</div>
+                            <div class="note-card-icon">🎭</div>
+                            <div class="note-card-title">Rajasthan Lok Sanskriti, Mela & Tyohar</div>
+                            <div class="note-card-desc">Integrated master handbook on Rajasthan folk culture, fairs, festivals, customs, and recurring trap points.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-lok-sanskriti-mela-tyohar-master-handbook.html', 'Rajasthan Lok Sanskriti, Mela & Tyohar')">👁️ Read Inside</button>
+                                <a href="notes/gk/art-culture/rajasthan-lok-sanskriti-mela-tyohar-master-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 19: Fairs & Festivals Combined -->
+                        <div class="note-card" data-category="art-culture" data-title="rajasthan fairs festivals mela tyohar combined comprehensive list">
+                            <div class="note-card-badge art-culture">Art & Culture</div>
+                            <div class="note-card-icon">📚</div>
+                            <div class="note-card-title">Mela & Tyohar (Combined)</div>
+                            <div class="note-card-desc">A comprehensive unified list combining fairs and festivals to avoid overlapping confusion during revisions.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-mela-tyohar-combined.html', 'Mela & Tyohar (Combined)')">👁️ Read Inside</button>
+                                <a href="notes/gk/art-culture/rajasthan-mela-tyohar-combined.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 20: Rajasthan Aabhushan & Veshbhusha -->
+                        <div class="note-card" data-category="art-culture" data-title="rajasthan ornaments dresses aabhushan veshbhusha master handbook revision">
+                            <div class="note-card-badge art-culture">Art & Culture</div>
+                            <div class="note-card-icon">👑</div>
+                            <div class="note-card-title">Aabhushan & Veshbhusha</div>
+                            <div class="note-card-desc">Master Revision Handbook for traditional ornaments (आभूषण) and dresses (वेशभूषा) of Rajasthan.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-aabhushan-veshbhusha-master-handbook.html', 'Aabhushan & Veshbhusha (आभूषण एवं वेशभूषा)')">👁️ Read Inside</button>
+                                <a href="notes/gk/art-culture/rajasthan-aabhushan-veshbhusha-master-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 21: Rajasthan Hastkala -->
+                        <div class="note-card" data-category="art-culture" data-title="rajasthan handicrafts hastkala thewa pottery painting block print master revision">
+                            <div class="note-card-badge art-culture">Art & Culture</div>
+                            <div class="note-card-icon">🎨</div>
+                            <div class="note-card-title">Rajasthan Hastkala (हस्तकला)</div>
+                            <div class="note-card-desc">Master Revision Sheet on traditional handicrafts of Rajasthan, including Blue Pottery, Thewa Art, Usta Art, Miniature Paintings, and textile works.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-hastkala-master-revision.html', 'Rajasthan Hastkala (राजस्थान की हस्तकला)')">👁️ Read Inside</button>
+                                <a href="notes/gk/art-culture/rajasthan-hastkala-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 22: Rajasthan Folk Dances -->
+                        <div class="note-card" data-category="art-culture" data-title="rajasthan folk dances nritya ghoomar kalbeliya chang chari tribal regional master handbook">
+                            <div class="note-card-badge art-culture">Art & Culture</div>
+                            <div class="note-card-icon">💃</div>
+                            <div class="note-card-title">Folk Dances (लोकनृत्य)</div>
+                            <div class="note-card-desc">Comprehensive revision guide for tribal, regional, and professional folk dances of Rajasthan (Ghoomar, Kalbeliya, Chari, Gair, etc.).</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-nritya-master-handbook.html', 'Folk Dances (राजस्थान के लोकनृत्य)')">👁️ Read Inside</button>
+                                <a href="notes/gk/art-culture/rajasthan-nritya-master-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 23: Rajasthani Shabdavali -->
+                        <div class="note-card" data-category="art-culture" data-title="rajasthani shabdavali dialect vocabulary regional language words agriculture terms dialect translation master revision">
+                            <div class="note-card-badge art-culture">Art & Culture</div>
+                            <div class="note-card-icon">🗣️</div>
+                            <div class="note-card-title">Rajasthani Shabdavali</div>
+                            <div class="note-card-desc">Essential list of traditional Rajasthani dialect vocabulary, agriculture terms, domestic items, and dialect meanings for BCI exam revision.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthani-shabdavali-master-revision.html', 'Rajasthani Shabdavali (राजस्थानी शब्दावली)')">👁️ Read Inside</button>
+                                <a href="notes/gk/art-culture/rajasthani-shabdavali-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 24: Rajasthan Bhasha Boliyan -->
+                        <div class="note-card" data-category="art-culture" data-title="rajasthan bhasha boliyan master revision handbook dialect language">
+                            <div class="note-card-badge art-culture">Art & Culture</div>
+                            <div class="note-card-icon">🗣️</div>
+                            <div class="note-card-title">Rajasthan Bhasha Boliyan</div>
+                            <div class="note-card-desc">Master revision handbook for Rajasthan language history, dialect groups, and high-yield exam facts.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-bhasha-boliyan-master-revision-handbook.html', 'Rajasthan Bhasha Boliyan')">👁️ Read Inside</button>
+                                <a href="notes/gk/art-culture/rajasthan-bhasha-boliyan-master-revision-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 25: Rajasthan RitiRiwaj -->
+                        <div class="note-card" data-category="art-culture" data-title="rajasthan riti riwaj customs traditions master revision handbook">
+                            <div class="note-card-badge art-culture">Art & Culture</div>
+                            <div class="note-card-icon">🎭</div>
+                            <div class="note-card-title">Rajasthan Riti-Riwaj</div>
+                            <div class="note-card-desc">Revision handbook covering Rajasthan customs, rituals, social practices, and frequent trap points.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-ritiriwaj-master-revision-handbook.html', 'Rajasthan Riti-Riwaj')">👁️ Read Inside</button>
+                                <a href="notes/gk/art-culture/rajasthan-ritiriwaj-master-revision-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 26: Rajasthan Chitra Shailiya -->
+                        <div class="note-card" data-category="art-culture" data-title="rajasthan chitra shailiya master notes painting art school">
+                            <div class="note-card-badge art-culture">Art & Culture</div>
+                            <div class="note-card-icon">🎨</div>
+                            <div class="note-card-title">Rajasthan Chitra Shailiya</div>
+                            <div class="note-card-desc">Master notes on Rajasthan painting styles, artists, schools, and exam-trap comparisons.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-chitra-shailiya-master-notes.html', 'Rajasthan Chitra Shailiya')">👁️ Read Inside</button>
+                                <a href="notes/gk/art-culture/rajasthan-chitra-shailiya-master-notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 26B: Rajasthani Sahitya -->
+                        <div class="note-card" data-category="art-culture" data-title="rajasthani sahitya literature writers works rajasthani poetry prose bhasha boliyan muhavare">
+                            <div class="note-card-badge art-culture">Art & Culture</div>
+                            <div class="note-card-icon">📖</div>
+                            <div class="note-card-title">Rajasthani Sahitya</div>
+                            <div class="note-card-desc">Master revision handbook for Rajasthani literature, authors, works, genres, and recurring exam matches.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthani-sahitya-master-revision-handbook.html', 'Rajasthani Sahitya')">👁️ Read Inside</button>
+                                <a href="notes/gk/art-culture/rajasthani-sahitya-master-revision-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 27: Rajasthani Muhavare -->
+                        <div class="note-card" data-category="art-culture" data-title="rajasthani muhavare kahavate lokoktiyan master revision handbook">
+                            <div class="note-card-badge art-culture">Art & Culture</div>
+                            <div class="note-card-icon">📝</div>
+                            <div class="note-card-title">Rajasthani Muhavare</div>
+                            <div class="note-card-desc">Master revision handbook for Rajasthani idioms, proverbs, and commonly asked trap meanings for quick exam revision.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthani-muhavare-master-revision.html', 'Rajasthani Muhavare (मुहावरे, कहावतें और लोकोक्तियाँ)')">👁️ Read Inside</button>
+                                <a href="notes/gk/art-culture/rajasthani-muhavare-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 28: Riti Rivaj & Customs -->
+                        <div class="note-card" data-category="art-culture" data-title="rajasthan riti rivaj customs traditional culture rituals sanskar">
+                            <div class="note-card-badge art-culture">Art & Culture</div>
+                            <div class="note-card-icon">🎭</div>
+                            <div class="note-card-title">Riti Rivaj & Customs (रीति-रिवाज)</div>
+                            <div class="note-card-desc">Traditional customs, rituals, 16 Sanskars, and repeated previous year questions on Rajasthani culture.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-riti-rivaj-master-revision-partial.html', 'Riti Rivaj & Customs (रीति-रिवाज)')">👁️ Read Inside</button>
+                                <a href="notes/gk/art-culture/rajasthan-riti-rivaj-master-revision-partial.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Rajasthan Geography & General -->
+                <div class="notes-section" data-section-category="geography-general">
+                    <div class="notes-section-header">
+                        <span class="notes-section-icon">🗺️</span>
+                        <span class="notes-section-title">Rajasthan Geography & General (भूगोल एवं सामान्य ज्ञान)</span>
+                    </div>
+                    <div class="notes-grid">
+                        <!-- Card 29: Rajasthan GK Master Revision -->
+                        <div class="note-card" data-category="geography-general" data-title="rajasthan gk master revision handbook regional programs institutions">
+                            <div class="note-card-badge geography-general">Geography & Gen</div>
+                            <div class="note-card-icon">📘</div>
+                            <div class="note-card-title">Rajasthan GK Master Revision</div>
+                            <div class="note-card-desc">Unified Rajasthan GK handbook covering traps, institutions, regional development programs, and high-yield exam facts.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/rajasthan-gk-master-revision-handbook.html', 'Rajasthan GK Master Revision')">👁️ Read Inside</button>
+                                <a href="notes/gk/geography/rajasthan-gk-master-revision-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 30: BCI GK & Science Revision -->
+                        <div class="note-card" data-category="geography-general" data-title="bci gk general science revision non tech rajasthan tribes dialects archaeology mahajanapada census general science space chemistry physics biology">
+                            <div class="note-card-badge geography-general">Geography & Gen</div>
+                            <div class="note-card-icon">🗺️</div>
+                            <div class="note-card-title">BCI GK & Science Revision</div>
+                            <div class="note-card-desc">Master handbook (v1.0) for Rajasthan GK, General Science, and Current Affairs (up to batch 7).</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/bci-gk-master-revision.html', 'BCI GK & Science Revision')">👁️ Read Inside</button>
+                                <a href="notes/gk/geography/bci-gk-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 30B: Rajasthan Budget & Current Affairs -->
+                        <div class="note-card" data-category="geography-general" data-title="rajasthan budget current affairs schemes full forms traps quick revision">
+                            <div class="note-card-badge geography-general">Geography & Gen</div>
+                            <div class="note-card-icon">📘</div>
+                            <div class="note-card-title">Rajasthan Budget & Current Affairs</div>
+                            <div class="note-card-desc">Unified budget and current affairs handbook for Rajasthan covering schemes, budgets, full forms, traps, and quick revision facts.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/rajasthan-budget-current-affairs-master-handbook.html', 'Rajasthan Budget & Current Affairs')">👁️ Read Inside</button>
+                                <a href="notes/gk/geography/rajasthan-budget-current-affairs-master-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 30C: Agriculture, Animal Husbandry & Wildlife -->
+                        <div class="note-card" data-category="geography-general" data-title="rajasthan agriculture animal husbandry forest wildlife group 4 revision sheet crops breeds forest acts sanctuaries">
+                            <div class="note-card-badge geography-general">Geography & Gen</div>
+                            <div class="note-card-icon">🌾</div>
+                            <div class="note-card-title">Agriculture, Animal Husbandry & Wildlife</div>
+                            <div class="note-card-desc">Group 4 connected revision sheet on crops, livestock, forests, wildlife habitats, and exam traps across Rajasthan.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/rajasthan-krishi-pashupalan-van-vanyajeev-group-4-revision-sheet.html', 'Agriculture, Animal Husbandry & Wildlife')">👁️ Read Inside</button>
+                                <a href="notes/gk/geography/rajasthan-krishi-pashupalan-van-vanyajeev-group-4-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 30D: Science & General Knowledge -->
+                        <div class="note-card" data-category="geography-general" data-title="science general knowledge master revision handbook physics chemistry biology static gk">
+                            <div class="note-card-badge geography-general">Geography & Gen</div>
+                            <div class="note-card-icon">🔬</div>
+                            <div class="note-card-title">Science & General Knowledge</div>
+                            <div class="note-card-desc">Master revision handbook covering core science facts, common traps, and fast GK recall points.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/science-general-knowledge-master-revision-handbook.html', 'Science & General Knowledge')">👁️ Read Inside</button>
+                                <a href="notes/gk/geography/science-general-knowledge-master-revision-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 30E: Rajasthan Water Resources -->
+                        <div class="note-card" data-category="geography-general" data-title="rajasthan water resources jal sansadhan rivers lakes irrigation traditional water management">
+                            <div class="note-card-badge geography-general">Geography & Gen</div>
+                            <div class="note-card-icon">💧</div>
+                            <div class="note-card-title">Rajasthan Water Resources</div>
+                            <div class="note-card-desc">Group revision sheet on rivers, lakes, irrigation projects, and traditional water management systems in Rajasthan.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/rajasthan-jal-sansadhan-group-revision-sheet.html', 'Rajasthan Water Resources')">👁️ Read Inside</button>
+                                <a href="notes/gk/geography/rajasthan-jal-sansadhan-group-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 31: Rajasthan Lakes -->
+                        <div class="note-card" data-category="geography-general" data-title="rajasthan lakes jheel salt water fresh water sambhar jaisamand rajasmand pachpadra">
+                            <div class="note-card-badge geography-general">Geography & Gen</div>
+                            <div class="note-card-icon">💧</div>
+                            <div class="note-card-title">Rajasthan Lakes (झीलें)</div>
+                            <div class="note-card-desc">Complete facts sheet about saltwater and freshwater lakes in Rajasthan, their geographical locations, and economic importance.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/rajasthan-lakes-revision-sheet.html', 'Rajasthan Lakes (राजस्थान की झीलें)')">👁️ Read Inside</button>
+                                <a href="notes/gk/geography/rajasthan-lakes-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 32: Rajasthan Physical Geography -->
+                        <div class="note-card" data-category="geography-general" data-title="rajasthan physical geography master revision sheet physical features climate soils desertification">
+                            <div class="note-card-badge geography-general">Geography & Gen</div>
+                            <div class="note-card-icon">🗺️</div>
+                            <div class="note-card-title">Rajasthan Physical Geography</div>
+                            <div class="note-card-desc">Group 1 master revision sheet covering physical features, climate, soils, desertification, and high-yield exam traps.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/rajasthan-physical-geography-master-revision-sheet.html', 'Rajasthan Physical Geography')">👁️ Read Inside</button>
+                                <a href="notes/gk/geography/rajasthan-physical-geography-master-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 33: Rajasthan Geography Borders & Districts -->
+                        <div class="note-card" data-category="geography-general" data-title="rajasthan geography borders districts divisions map international borders inter state borders">
+                            <div class="note-card-badge geography-general">Geography & Gen</div>
+                            <div class="note-card-icon">🗺️</div>
+                            <div class="note-card-title">Geography, Borders & Districts</div>
+                            <div class="note-card-desc">In-depth geography revision covering land borders, districts, divisions, and reorganized border lines.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/rajasthan-gk-districts-divisions-master-revision.html', 'Geography, Borders & Districts')">👁️ Read Inside</button>
+                                <a href="notes/gk/geography/rajasthan-gk-districts-divisions-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Pedagogy & General Aptitude -->
+                <div class="notes-section" data-section-category="pedagogy-aptitude">
+                    <div class="notes-section-header">
+                        <span class="notes-section-icon">🧠</span>
+                        <span class="notes-section-title">Pedagogy & General Aptitude (शिक्षाशास्त्र व सामान्य योग्यता)</span>
+                    </div>
+                    <div class="notes-grid">
+                        <!-- Card 33: BCI Pedagogy -->
+                        <div class="note-card" data-category="pedagogy-aptitude" data-title="bci pedagogy educational psychology teaching aids assessment techniques classroom management school lecturer REET school management">
+                            <div class="note-card-badge pedagogy-aptitude">Pedagogy</div>
+                            <div class="note-card-icon">🧠</div>
+                            <div class="note-card-title">BCI Pedagogy & School Admin</div>
+                            <div class="note-card-desc">Educational psychology, teaching models, assessment techniques, and school lecturer/REET school management notes.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/pedagogy/bci-pedagogy-master-revision.html', 'BCI Pedagogy & School Admin')">👁️ Read Inside</button>
+                                <a href="notes/pedagogy/bci-pedagogy-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 33B: Group Revision Sheet Education & IT -->
+                        <div class="note-card" data-category="pedagogy-aptitude" data-title="group revision sheet education it computer pedagogy micro teaching lesson planning cai cmi programming learning">
+                            <div class="note-card-badge pedagogy-aptitude">Pedagogy</div>
+                            <div class="note-card-icon">📘</div>
+                            <div class="note-card-title">Group Revision Sheet — Education & IT</div>
+                            <div class="note-card-desc">Combined revision sheet for Computer Pedagogy and core IT developments, including micro-teaching, lesson planning, and CAI/CMI.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/pedagogy/group-revision-sheet-education-it.html', 'Group Revision Sheet — Education & IT')">👁️ Read Inside</button>
+                                <a href="notes/pedagogy/group-revision-sheet-education-it.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 34: Calendar Revision Sheet -->
+                        <div class="note-card" data-category="pedagogy-aptitude" data-title="calendar revision sheet reasoning logic aptitude time date">
+                            <div class="note-card-badge pedagogy-aptitude">Aptitude</div>
+                            <div class="note-card-icon">🗓️</div>
+                            <div class="note-card-title">Calendar Revision Sheet</div>
+                            <div class="note-card-desc">High-yield revision guide for Calendar-related reasoning questions, exam tricks, and formulas.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('notes/pedagogy/calendar-revision-sheet.html', 'Calendar Revision Sheet')">👁️ Read Inside</button>
+                                <a href="notes/pedagogy/calendar-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section: Papers & Practice -->
+                <div class="notes-section" data-section-category="papers">
+                    <div class="notes-section-header">
+                        <span class="notes-section-icon">📝</span>
+                        <span class="notes-section-title">Papers & Practice (अभ्यास पत्र)</span>
+                    </div>
+                    <div class="notes-grid">
+                        <!-- Card 35: BCI Practice Paper -->
+                        <div class="note-card" data-category="papers" data-title="rsmssb bci reasoning math practice paper personalized paper reasoning arithmetic aptitude">
+                            <div class="note-card-badge pedagogy-aptitude">Paper</div>
+                            <div class="note-card-icon">✍️</div>
+                            <div class="note-card-title">BCI Reasoning & Math Practice Paper</div>
+                            <div class="note-card-desc">Personalized practice paper for reasoning and arithmetic with focused exam-style questions and timing.</div>
+                            <div class="note-card-actions">
+                                <button class="note-card-btn read" onclick="openNotesSheet('question-bank/papers/rsmssb-bci-reasoning-math-practice-paper.html', 'BCI Reasoning & Math Practice Paper')">👁️ Read Inside</button>
+                                <a href="question-bank/papers/rsmssb-bci-reasoning-math-practice-paper.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ====== MODAL: Confirm Submit ====== -->
+    <div class="modal-overlay" id="confirmModal" style="display:none">
+        <div class="modal-box">
+            <div class="modal-title">Submit Test?</div>
+            <div class="modal-body" id="confirmModalBody">Are you sure?</div>
+            <div class="modal-actions">
+                <button class="modal-btn cancel" onclick="closeModal()">Cancel</button>
+                <button class="modal-btn confirm" onclick="submitTest()">Submit</button>
+            </div>
+        </div>
     </div>
 
-    <!-- ===== SCREEN: QUIZ ===== -->
-    <div class="screen" id="screen-quiz">
-      <!-- Timer bar -->
-      <div class="timer-bar" id="timerBar" style="display:none">
-        <div class="timer-inner">
-          <span class="timer-icon">⏱</span>
-          <span id="timerDisplay">00:00</span>
-        </div>
-        <div class="timer-progress-wrap">
-          <div class="timer-progress" id="timerProgress"></div>
-        </div>
-      </div>
-
-      <!-- Progress -->
-      <div class="quiz-progress-row">
-        <span class="progress-label" id="progressLabel">Q 1 / 25</span>
-        <div class="progress-track">
-          <div class="progress-fill" id="progressFill" style="width: 0%"></div>
-        </div>
-        <span class="score-live" id="scoreLive">Score: 0</span>
-      </div>
-
-      <!-- Question palette toggle -->
-      <div class="palette-toggle-row">
-        <button class="palette-toggle-btn" onclick="togglePalette()">📋 Question Map</button>
-        <div class="mini-legend">
-          <span class="dot dot-answered"></span>Answered
-          <span class="dot dot-skipped"></span>Skipped
-          <span class="dot dot-current"></span>Current
-        </div>
-      </div>
-      <div class="question-palette" id="questionPalette" style="display:none">
-        <div class="palette-grid" id="paletteGrid"></div>
-      </div>
-
-      <!-- Question card -->
-      <div class="question-card" id="questionCard">
-        <div class="q-meta">
-          <span class="q-number" id="qNumber">Q1</span>
-          <span class="q-difficulty" id="qDifficulty">Medium</span>
-          <span class="q-important" id="qImportant" style="display:none">⭐ Important</span>
-          <span class="q-source" id="qSource" style="display:none"></span>
-        </div>
-        <div class="q-text" id="questionText">Loading...</div>
-        <div class="options-list" id="optionsList"></div>
-
-        <!-- Answer reveal (shown after selection in practice mode) -->
-        <div class="answer-reveal" id="answerReveal" style="display:none">
-          <div class="reveal-correct">✅ Correct Answer: <strong id="revealAnswer"></strong></div>
-          <div class="reveal-explanation" id="revealExplanation"></div>
-        </div>
-      </div>
-
-      <!-- Nav buttons -->
-      <div class="quiz-nav">
-        <button class="qnav-btn" id="prevBtn" onclick="navigate(-1)">← Prev</button>
-        <button class="skip-btn" id="skipBtn" onclick="skipQuestion()">Skip →</button>
-        <button class="qnav-btn" id="nextBtn" onclick="navigate(1)">Next →</button>
-      </div>
-      <button class="submit-quiz-btn" id="submitBtn" onclick="confirmSubmit()">🏁 Submit Test</button>
-    </div>
-
-    <!-- ===== SCREEN: RESULT ===== -->
-    <div class="screen" id="screen-result">
-      <div class="result-hero">
-        <div class="result-emoji" id="resultEmoji">🎯</div>
-        <div class="result-score" id="resultScore">0.00</div>
-        <div class="result-label">Final Score</div>
-        <div class="result-status" id="resultStatus">Calculating...</div>
-      </div>
-
-      <div class="result-grid">
-        <div class="result-stat">
-          <div class="rstat-val" id="rTotal">0</div>
-          <div class="rstat-label">Total</div>
-        </div>
-        <div class="result-stat">
-          <div class="rstat-val green" id="rCorrect">0</div>
-          <div class="rstat-label">Correct</div>
-        </div>
-        <div class="result-stat">
-          <div class="rstat-val red" id="rWrong">0</div>
-          <div class="rstat-label">Wrong</div>
-        </div>
-        <div class="result-stat">
-          <div class="rstat-val muted" id="rSkipped">0</div>
-          <div class="rstat-label">Skipped</div>
-        </div>
-        <div class="result-stat">
-          <div class="rstat-val" id="rOptionE">0</div>
-          <div class="rstat-label">Option E</div>
-        </div>
-        <div class="result-stat">
-          <div class="rstat-val red" id="rBlank">0</div>
-          <div class="rstat-label">Blank</div>
-        </div>
-        <div class="result-stat">
-          <div class="rstat-val" id="rAttempted">0</div>
-          <div class="rstat-label">Attempted</div>
-        </div>
-        <div class="result-stat">
-          <div class="rstat-val accent" id="rAccuracy">0%</div>
-          <div class="rstat-label">Accuracy</div>
-        </div>
-      </div>
-
-      <div class="marking-note">
-        Marking: +1 Correct | −⅓ Wrong | 0 Option E | −⅓ Blank &nbsp;·&nbsp; Qualifying: 40% &nbsp;·&nbsp; Disqualification: >10% Blank
-      </div>
-
-      <div class="result-actions">
-        <button class="ra-btn primary" onclick="reviewAnswers()">📖 Review Answers</button>
-        <button class="ra-btn" onclick="showScreen('home')">🏠 Home</button>
-        <button class="ra-btn" onclick="retestWrong()">🔁 Redo Wrong Qs</button>
-      </div>
-    </div>
-
-    <!-- ===== SCREEN: REVIEW ===== -->
-    <div class="screen" id="screen-review">
-      <div class="review-header">
-        <button class="back-btn" onclick="showScreen('result')">← Back to Result</button>
-        <h2>Answer Review</h2>
-      </div>
-      <div class="review-filters">
-        <button class="rf-btn active" data-filter="all" onclick="filterReview(this,'all')">All</button>
-        <button class="rf-btn" data-filter="correct" onclick="filterReview(this,'correct')">✅ Correct</button>
-        <button class="rf-btn" data-filter="wrong" onclick="filterReview(this,'wrong')">❌ Wrong</button>
-        <button class="rf-btn" data-filter="skipped" onclick="filterReview(this,'skipped')">⏭ Skipped</button>
-      </div>
-      <div class="review-list" id="reviewList"></div>
-    </div>
-
-    <!-- ===== SCREEN: DASHBOARD ===== -->
-    <div class="screen" id="screen-dashboard">
-      <div class="dash-title">📊 My Performance</div>
-      <div class="dash-grid">
-        <div class="dash-card big">
-          <div class="dash-num" id="dTotalTests">0</div>
-          <div class="dash-label">Tests Taken</div>
-        </div>
-        <div class="dash-card big">
-          <div class="dash-num green" id="dOverallAccuracy">0%</div>
-          <div class="dash-label">Overall Accuracy</div>
-        </div>
-        <div class="dash-card">
-          <div class="dash-num" id="dTotalQs">0</div>
-          <div class="dash-label">Qs Attempted</div>
-        </div>
-        <div class="dash-card">
-          <div class="dash-num green" id="dTotalCorrect">0</div>
-          <div class="dash-label">Correct</div>
-        </div>
-        <div class="dash-card">
-          <div class="dash-num red" id="dTotalWrong">0</div>
-          <div class="dash-label">Wrong</div>
-        </div>
-        <div class="dash-card">
-          <div class="dash-num accent" id="dTotalScore">0</div>
-          <div class="dash-label">Total Score</div>
-        </div>
-      </div>
-
-      <div class="dash-section">
-        <div class="dash-sec-title">🔥 Weak Topics</div>
-        <div id="weakTopics" class="weak-list">No data yet</div>
-      </div>
-
-      <div class="dash-section">
-        <div class="dash-sec-title">📈 Topic-wise Stats</div>
-        <div id="topicStats" class="topic-stats-list"></div>
-      </div>
-
-      <button class="danger-btn" onclick="clearAllData()">🗑 Clear All Data</button>
-    </div>
-
-    <!-- ===== SCREEN: REVISION ===== -->
-    <div class="screen" id="screen-revision">
-      <div class="dash-title">🔁 Revision Center</div>
-
-      <div class="revision-cards">
-        <div class="rev-card" onclick="startRevision('wrong')">
-          <div class="rev-icon">❌</div>
-          <div class="rev-label">Wrong Questions</div>
-          <div class="rev-count" id="revWrongCount">0 questions</div>
-        </div>
-        <div class="rev-card" onclick="startRevision('important')">
-          <div class="rev-icon">⭐</div>
-          <div class="rev-label">Important Questions</div>
-          <div class="rev-count" id="revImportantCount">0 questions</div>
-        </div>
-        <div class="rev-card" onclick="startRevision('skipped')">
-          <div class="rev-icon">⏭</div>
-          <div class="rev-label">Skipped Questions</div>
-          <div class="rev-count" id="revSkippedCount">0 questions</div>
-        </div>
-        <div class="rev-card" onclick="startRevision('bookmarked')">
-          <div class="rev-icon">📌</div>
-          <div class="rev-label">Bookmarked</div>
-          <div class="rev-count" id="revBookmarkedCount">0 questions</div>
-        </div>
-      </div>
-
-      <div class="rev-note">Wrong Questions are automatically saved from every test.</div>
-    </div>
-
-    <!-- ===== SCREEN: NOTES ===== -->
-    <div class="screen" id="screen-notes">
-      <div class="dash-title">📖 Revision & Study Sheets</div>
-      
-      <!-- Search & Filters -->
-      <div class="notes-search-row">
-        <input type="text" id="notesSearch" placeholder="🔍 Search sheets (e.g. DCCN, Lakes, Mela...)" oninput="filterNotes()" />
-        <div class="notes-category-filters">
-          <button class="notes-filter-btn active" onclick="filterCategory('all', this)">✨ All</button>
-          <button class="notes-filter-btn" onclick="filterCategory('cs', this)">💻 CS</button>
-          <button class="notes-filter-btn" onclick="filterCategory('history', this)">🏰 History</button>
-          <button class="notes-filter-btn" onclick="filterCategory('art-culture', this)">🎨 Art & Culture</button>
-          <button class="notes-filter-btn" onclick="filterCategory('geography-general', this)">🗺️ Geography</button>
-          <button class="notes-filter-btn" onclick="filterCategory('pedagogy-aptitude', this)">🧠 Pedagogy & Aptitude</button>
-        </div>
-      </div>
-
-      <!-- Notes Grid Container -->
-      <div id="notesContainer">
-        
-        <!-- Section: Computer Science -->
-        <div class="notes-section" data-section-category="cs">
-          <div class="notes-section-header">
-            <span class="notes-section-icon">💻</span>
-            <span class="notes-section-title">Computer Science (कम्प्यूटर विज्ञान)</span>
-          </div>
-          <div class="notes-grid">
-            <!-- Card 1: FOC -->
-            <div class="note-card" data-category="cs" data-title="computer fundamentals foc basic hardware software history">
-              <div class="note-card-badge cs">CS</div>
-              <div class="note-card-icon">💻</div>
-              <div class="note-card-title">Computer Fundamentals (FOC)</div>
-              <div class="note-card-desc">High-yield revision notes covering basic concepts, computer history, generations, memory organization, and input/output hardware.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/foc.html', 'Computer Fundamentals (FOC)')">👁️ Read Inside</button>
-                <a href="notes/computer-science/foc.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 2: DCCN -->
-            <div class="note-card" data-category="cs" data-title="data communication computer networking dccn protocol osi tcp ip address devices topology">
-              <div class="note-card-badge cs">CS</div>
-              <div class="note-card-icon">🌐</div>
-              <div class="note-card-title">Computer Networking (DCCN)</div>
-              <div class="note-card-desc">Bug-free high-yield review sheet focusing on OSI/TCP models, protocols, port numbers, IPv4/IPv6 addressing, subnetting, and devices.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/dccn.html', 'Computer Networking (DCCN)')">👁️ Read Inside</button>
-                <a href="notes/computer-science/dccn.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 2B: Networking Master Revision Sheet -->
-            <div class="note-card" data-category="cs" data-title="networking master revision sheet tcp ip osi protocol ip address internet security">
-              <div class="note-card-badge cs">CS</div>
-              <div class="note-card-icon">🌐</div>
-              <div class="note-card-title">Networking Master Revision Sheet</div>
-              <div class="note-card-desc">High-yield networking notes covering OSI/TCP-IP, Internet basics, IP addressing, routing, protocols, and security traps.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/networking-master-revision-sheet.html', 'Networking Master Revision Sheet')">👁️ Read Inside</button>
-                <a href="notes/computer-science/networking-master-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 3: BCI CS Master Revision (Combined Edition) -->
-            <div class="note-card" data-category="cs" data-title="bci master revision handbook computer instructor full revision cs core technical data structures oop network security os number system compiler dbms java cpp python uml">
-              <div class="note-card-badge cs">Combined Master</div>
-              <div class="note-card-icon">📘</div>
-              <div class="note-card-title">BCI CS Ultimate Master Revision</div>
-              <div class="note-card-desc">Unified Complete Master Handbook (v4.0) combining CS technical revision, Number Systems, Compilers, OS, Networks, DBMS, Java, C++, DSA, SAD, & UML.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/bci-computer-science-master-revision.html', 'BCI CS Ultimate Master Revision')">👁️ Read Inside</button>
-                <a href="notes/computer-science/bci-computer-science-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 4: BCI Tech Master Revision (Redirect Alias) -->
-            <div class="note-card" data-category="cs" data-title="bci tech computer science master revision technical number system compiler operating system os network dbms sql java oop cpp c data structures algorithms software engineering">
-              <div class="note-card-badge cs">Tech Revision</div>
-              <div class="note-card-icon">💻</div>
-              <div class="note-card-title">BCI Tech Master Revision</div>
-              <div class="note-card-desc">High-yield CS technical notes & recall tables integrated into the Ultimate Master Handbook.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/bci-computer-science-master-revision.html', 'BCI Tech Master Revision')">👁️ Read Inside</button>
-                <a href="notes/computer-science/bci-computer-science-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 5: MS PowerPoint & Access -->
-            <div class="note-card" data-category="cs" data-title="ms office powerpoint power point access presentation slide keyboard shortcuts database">
-              <div class="note-card-badge cs">CS</div>
-              <div class="note-card-icon">📊</div>
-              <div class="note-card-title">MS PowerPoint & Access</div>
-              <div class="note-card-desc">Consolidated keyboard shortcuts, exam traps, and features of MS PowerPoint and MS Access database.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/ms-powerpoint-master-revision.html', 'MS PowerPoint & Access')">👁️ Read Inside</button>
-                <a href="notes/computer-science/ms-powerpoint-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 6: System Analysis & Design (SAD) -->
-            <div class="note-card" data-category="cs" data-title="sad system analysis design software engineering sdlc flow charts charts coupling cohesion">
-              <div class="note-card-badge cs">CS</div>
-              <div class="note-card-icon">⚙️</div>
-              <div class="note-card-title">System Analysis & Design (SAD)</div>
-              <div class="note-card-desc">Master handbook for SAD covering SDLC phases, tools (Data Dictionary, Decision Tree), coupling & cohesion, and design principles.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/sad-master-revision.html', 'System Analysis & Design (SAD)')">👁️ Read Inside</button>
-                <a href="notes/computer-science/sad-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 7: File Extension, OS & Cyber Security -->
-            <div class="note-card" data-category="cs" data-title="file extensions operating system cyber security virus malware Trojan ports cryptography">
-              <div class="note-card-badge cs">CS</div>
-              <div class="note-card-icon">🦠</div>
-              <div class="note-card-title">File, OS & Cyber Security</div>
-              <div class="note-card-desc">Revision handbook covering file extensions, operating systems, malware/virus types, and cyber security traps.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/bci-file-os-virus-master-revision.html', 'File, OS & Cyber Security')">👁️ Read Inside</button>
-                <a href="notes/computer-science/bci-file-os-virus-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 8: Computer Memory & Fundamentals -->
-            <div class="note-card" data-category="cs" data-title="computer memory fundamentals register mar mdr ram rom cache memory hierarchy">
-              <div class="note-card-badge cs">CS</div>
-              <div class="note-card-icon">💾</div>
-              <div class="note-card-title">Memory & Fundamentals</div>
-              <div class="note-card-desc">Key memory concepts, memory hierarchy, RAM/ROM structures, and CPU address/data registers.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/computer-fundamentals-master-revision.html', 'Memory & Fundamentals')">👁️ Read Inside</button>
-                <a href="notes/computer-science/computer-fundamentals-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 9: BCI Programming Languages -->
-            <div class="note-card" data-category="cs" data-title="programming languages c cpp java oop constructor compiler relational logical abstraction encapsulation">
-              <div class="note-card-badge cs">CS</div>
-              <div class="note-card-icon">☕</div>
-              <div class="note-card-title">Programming Languages (OOP)</div>
-              <div class="note-card-desc">Comprehensive programming handbook covering C, C++, Java, OOP concepts, compilers, interpreters, and memory management.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/bci-programming-master-revision.html', 'Programming Languages (OOP)')">👁️ Read Inside</button>
-                <a href="notes/computer-science/bci-programming-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 9B: DBMS Master Revision Handbook -->
-            <div class="note-card" data-category="cs" data-title="dbms database management system sql relational normalization acid er diagram rdbms">
-              <div class="note-card-badge cs">CS</div>
-              <div class="note-card-icon">🗄️</div>
-              <div class="note-card-title">DBMS Master Handbook</div>
-              <div class="note-card-desc">Complete database management revision handbook covering relational models, SQL, normalization, and ACID properties.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/dbms-master-revision-handbook.html', 'DBMS Master Handbook')">👁️ Read Inside</button>
-                <a href="notes/computer-science/dbms-master-revision-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 9C: DSA Master Revision Handbook -->
-            <div class="note-card" data-category="cs" data-title="dsa data structures algorithms arrays stack queue tree graph sorting searching recursion">
-              <div class="note-card-badge cs">CS</div>
-              <div class="note-card-icon">⚡</div>
-              <div class="note-card-title">DSA Master Handbook</div>
-              <div class="note-card-desc">High-yield Data Structures & Algorithms revision notes covering arrays, trees, graphs, sorting, and algorithmic complexities.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/computer-science/dsa-master-revision-handbook.html', 'DSA Master Handbook')">👁️ Read Inside</button>
-                <a href="notes/computer-science/dsa-master-revision-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section: Rajasthan History -->
-        <div class="notes-section" data-section-category="history">
-          <div class="notes-section-header">
-            <span class="notes-section-icon">🏰</span>
-            <span class="notes-section-title">Rajasthan History (राजस्थान का इतिहास)</span>
-          </div>
-          <div class="notes-grid">
-            <!-- Card 10: Ancient Civilizations -->
-            <div class="note-card" data-category="history" data-title="rajasthan ancient civilizations prachin sabhytaye kalibangan ahar bairath ganeshwar">
-              <div class="note-card-badge history">History</div>
-              <div class="note-card-icon">🏺</div>
-              <div class="note-card-title">Ancient Civilizations (सभ्यताएं)</div>
-              <div class="note-card-desc">Very short notes & exam-oriented traps on Kalibangan, Ahar, Bairath, Ganeshwar, Bagore, Balathal, and other archaeological sites.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/prachin-sabhytaye-very-short-notes.html', 'Ancient Civilizations (प्राचीन सभ्यताएं)')">👁️ Read Inside</button>
-                <a href="notes/gk/history/prachin-sabhytaye-very-short-notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 11: Rajasthan Integration -->
-            <div class="note-card" data-category="history" data-title="rajasthan integration ekikaran 7 stages dates rulers prime ministers satyanarayan samiti">
-              <div class="note-card-badge history">History</div>
-              <div class="note-card-icon">🗺️</div>
-              <div class="note-card-title">Rajasthan Integration (एकीकरण)</div>
-              <div class="note-card-desc">7 stages of Rajasthan integration, dates, capitals, Rajpramukhs, PMs, and critical exam confusion traps.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/rajasthan-ekikaran-revision-sheet.html', 'Rajasthan Integration (राजस्थान एकीकरण)')">👁️ Read Inside</button>
-                <a href="notes/gk/history/rajasthan-ekikaran-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 12: Chauhan Dynasty -->
-            <div class="note-card" data-category="history" data-title="chauhan vansh dynasty history rajasthan kings rulers battle">
-              <div class="note-card-badge history">History</div>
-              <div class="note-card-icon">🛡️</div>
-              <div class="note-card-title">Chauhan Dynasty (चौहान वंश)</div>
-              <div class="note-card-desc">High-yield notes on the history of the Chauhan dynasty in Rajasthan, major rulers, battles, and previous exam questions.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/chauhan-vansh-master-revision.html', 'Chauhan Dynasty (चौहान वंश)')">👁️ Read Inside</button>
-                <a href="notes/gk/history/chauhan-vansh-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 13: Mewar Guhil Dynasty -->
-            <div class="note-card" data-category="history" data-title="mewar guhil vansh dynasty history rajasthan sisodia rulers battle">
-              <div class="note-card-badge history">History</div>
-              <div class="note-card-icon">🏰</div>
-              <div class="note-card-title">Mewar Guhil Dynasty (गुहिल वंश)</div>
-              <div class="note-card-desc">Comprehensive revision guide for Mewar's Guhil and Sisodia dynasty, key historical figures, achievements, and war details.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/mewar-guhil-vansh-master-handbook.html', 'Mewar Guhil Dynasty (गुहिल वंश)')">👁️ Read Inside</button>
-                <a href="notes/gk/history/mewar-guhil-vansh-master-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 14: Rajasthan History (Other Dynasties) -->
-            <div class="note-card" data-category="history" data-title="rajasthan other dynasties anya rajvansh jaisalmer bhati karauli jadaun bharatpur jat tonk pindari sakas">
-              <div class="note-card-badge history">History</div>
-              <div class="note-card-icon">🏰</div>
-              <div class="note-card-title">Other Dynasties (जैसलमेर, भरतपुर...)</div>
-              <div class="note-card-desc">Jaisalmer (Bhati), Karauli (Jadaun), Bharatpur (Jat), and Tonk (Pindari) dynasties, with traps and PYQ database.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/rajasthan-anya-rajvansh-master-revision.html', 'Other Dynasties (जैसलमेर, भरतपुर...)')">👁️ Read Inside</button>
-                <a href="notes/gk/history/rajasthan-anya-rajvansh-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 15: Kachwaha Dynasty -->
-            <div class="note-card" data-category="history" data-title="kachwaha vansh amer dynasty history rulers battles treaties dulharay kokildev jai singh man singh">
-              <div class="note-card-badge history">History</div>
-              <div class="note-card-icon">👑</div>
-              <div class="note-card-title">Kachwaha Dynasty (कछवाहा वंश)</div>
-              <div class="note-card-desc">Complete Amer/Jaipur Kachwaha dynasty timeline, rulers, battles, treaties, and branch lineages.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/kachwaha-vansh-master-revision.html', 'Kachwaha Dynasty (कछवाहा वंश)')">👁️ Read Inside</button>
-                <a href="notes/gk/history/kachwaha-vansh-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 16: Gurjar Pratihar Dynasty -->
-            <div class="note-card" data-category="history" data-title="gurjar pratihar dynasty mandor jalor kannauj tri partite harishchandra nagbhatt vatsraj mihir bhoj">
-              <div class="note-card-badge history">History</div>
-              <div class="note-card-icon">🏛️</div>
-              <div class="note-card-title">Gurjar Pratihar Dynasty</div>
-              <div class="note-card-desc">Mandor and Jalor-Kannauj branches of Gurjar Pratihar rulers, tri-partite struggle, and exam traps.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/gurjar-pratihar-master-revision.html', 'Gurjar Pratihar Dynasty')">👁️ Read Inside</button>
-                <a href="notes/gk/history/gurjar-pratihar-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 16B: Rathore Vansh Dynasty -->
-            <div class="note-card" data-category="history" data-title="rathore vansh marwar bikaner jodhpur rao jodha maldeo jaswant singh ganga singh dynasty history">
-              <div class="note-card-badge history">History</div>
-              <div class="note-card-icon">🛡️</div>
-              <div class="note-card-title">Rathore Vansh (राठौड़ वंश)</div>
-              <div class="note-card-desc">Comprehensive history of Rathore rulers of Marwar (Jodhpur) & Bikaner, battles, cultural contributions, and PYQs.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/rathore-vansh-master-revision.html', 'Rathore Vansh (राठौड़ वंश)')">👁️ Read Inside</button>
-                <a href="notes/gk/history/rathore-vansh-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 16C: 1857 Revolution in Rajasthan -->
-            <div class="note-card" data-category="history" data-title="1857 kranti rajasthan revolt nasirabad neemuch erinpura auwa kota tata topa rajputana">
-              <div class="note-card-badge history">History</div>
-              <div class="note-card-icon">⚔️</div>
-              <div class="note-card-title">1857 Kranti in Rajasthan</div>
-              <div class="note-card-desc">Master revision handbook for the 1857 revolt in Rajasthan, covering key dates, rulers, political agents, and major battle sites.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/1857-kranti-rajasthan-master-notes.html', '1857 Kranti in Rajasthan')">👁️ Read Inside</button>
-                <a href="notes/gk/history/1857-kranti-rajasthan-master-notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 16D: Rajasthan Kisan Andolan -->
-            <div class="note-card" data-category="history" data-title="rajasthan kisan andolan tribal movement bijolia begu alwar nemuchana shekhawati bikaner meena bhil marwar">
-              <div class="note-card-badge history">History</div>
-              <div class="note-card-icon">🌾</div>
-              <div class="note-card-title">Rajasthan Kisan & Tribal Movements</div>
-              <div class="note-card-desc">High-yield master notes on peasant and tribal movements in Rajasthan, with timelines, leaders, and common exam traps.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/rajasthan-kisan-andolan-master-notes.html', 'Rajasthan Kisan & Tribal Movements')">👁️ Read Inside</button>
-                <a href="notes/gk/history/rajasthan-kisan-andolan-master-notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 16E: Rajasthan Riyasatein & British Sandhiyan -->
-            <div class="note-card" data-category="history" data-title="rajasthan riyasatein british treaties sandhiyan princely states history">
-              <div class="note-card-badge history">History</div>
-              <div class="note-card-icon">📜</div>
-              <div class="note-card-title">Rajasthan Riyasatein & British Sandhiyan</div>
-              <div class="note-card-desc">Master revision handbook on Rajasthan princely states and British treaties, with timelines, traps, and high-yield one-liners.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/rajasthan-riyasatein-british-sandhiyan-handbook.html', 'Rajasthan Riyasatein & British Sandhiyan')">👁️ Read Inside</button>
-                <a href="notes/gk/history/rajasthan-riyasatein-british-sandhiyan-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 16F: Rajasthan Madhyakalin Prashasan -->
-            <div class="note-card" data-category="history" data-title="rajasthan madhyakalin prashasan administration revenue officers terminology">
-              <div class="note-card-badge history">History</div>
-              <div class="note-card-icon">🏛️</div>
-              <div class="note-card-title">Rajasthan Madhyakalin Prashasan</div>
-              <div class="note-card-desc">Revision notes on medieval administrative systems of Rajasthan, officers, taxation, land revenue, and official terminology.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/history/rajasthan-madhyakalin-prashasan-master-notes.html', 'Rajasthan Madhyakalin Prashasan')">👁️ Read Inside</button>
-                <a href="notes/gk/history/rajasthan-madhyakalin-prashasan-master-notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section: Rajasthan Art & Culture -->
-        <div class="notes-section" data-section-category="art-culture">
-          <div class="notes-section-header">
-            <span class="notes-section-icon">🎨</span>
-            <span class="notes-section-title">Rajasthan Art & Culture (कला एवं संस्कृति)</span>
-          </div>
-          <div class="notes-grid">
-            <!-- Card 17: Rajasthan Festivals -->
-            <div class="note-card" data-category="art-culture" data-title="rajasthan festivals festival tyohar hindu muslim jain lunar calendar months teej gangaur">
-              <div class="note-card-badge art-culture">Art & Culture</div>
-              <div class="note-card-icon">🗓️</div>
-              <div class="note-card-title">Rajasthan Festivals (त्योहार)</div>
-              <div class="note-card-desc">Detailed calendar of Hindu, Muslim, Jain, and Christian festivals sorted by lunar months, along with previous year questions.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-festival-revision-sheet.html', 'Rajasthan Festivals (त्योहार)')">👁️ Read Inside</button>
-                <a href="notes/gk/art-culture/rajasthan-festival-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 18: Rajasthan Fairs Guide -->
-            <div class="note-card" data-category="art-culture" data-title="rajasthan mela fairs guide pushkar karni mata ramdevra tejaji jambheshwar">
-              <div class="note-card-badge art-culture">Art & Culture</div>
-              <div class="note-card-icon">🎪</div>
-              <div class="note-card-title">Rajasthan Fairs Guide (मेले)</div>
-              <div class="note-card-desc">High-yield district-wise and month-wise lists of major fairs (mela), related deities, locations, and historical significance.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-mela-revision-guide.html', 'Rajasthan Fairs (राजस्थान के मेले)')">👁️ Read Inside</button>
-                <a href="notes/gk/art-culture/rajasthan-mela-revision-guide.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 18B: Rajasthan Lok Sanskriti -->
-            <div class="note-card" data-category="art-culture" data-title="rajasthan lok sanskriti mela tyohar festivals customs folk culture">
-              <div class="note-card-badge art-culture">Art & Culture</div>
-              <div class="note-card-icon">🎭</div>
-              <div class="note-card-title">Rajasthan Lok Sanskriti, Mela & Tyohar</div>
-              <div class="note-card-desc">Integrated master handbook on Rajasthan folk culture, fairs, festivals, customs, and recurring trap points.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-lok-sanskriti-mela-tyohar-master-handbook.html', 'Rajasthan Lok Sanskriti, Mela & Tyohar')">👁️ Read Inside</button>
-                <a href="notes/gk/art-culture/rajasthan-lok-sanskriti-mela-tyohar-master-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 19: Fairs & Festivals Combined -->
-            <div class="note-card" data-category="art-culture" data-title="rajasthan fairs festivals mela tyohar combined comprehensive list">
-              <div class="note-card-badge art-culture">Art & Culture</div>
-              <div class="note-card-icon">📚</div>
-              <div class="note-card-title">Mela & Tyohar (Combined)</div>
-              <div class="note-card-desc">A comprehensive unified list combining fairs and festivals to avoid overlapping confusion during revisions.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-mela-tyohar-combined.html', 'Mela & Tyohar (Combined)')">👁️ Read Inside</button>
-                <a href="notes/gk/art-culture/rajasthan-mela-tyohar-combined.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 20: Rajasthan Aabhushan & Veshbhusha -->
-            <div class="note-card" data-category="art-culture" data-title="rajasthan ornaments dresses aabhushan veshbhusha master handbook revision">
-              <div class="note-card-badge art-culture">Art & Culture</div>
-              <div class="note-card-icon">👑</div>
-              <div class="note-card-title">Aabhushan & Veshbhusha</div>
-              <div class="note-card-desc">Master Revision Handbook for traditional ornaments (आभूषण) and dresses (वेशभूषा) of Rajasthan.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-aabhushan-veshbhusha-master-handbook.html', 'Aabhushan & Veshbhusha (आभूषण एवं वेशभूषा)')">👁️ Read Inside</button>
-                <a href="notes/gk/art-culture/rajasthan-aabhushan-veshbhusha-master-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 21: Rajasthan Hastkala -->
-            <div class="note-card" data-category="art-culture" data-title="rajasthan handicrafts hastkala thewa pottery painting block print master revision">
-              <div class="note-card-badge art-culture">Art & Culture</div>
-              <div class="note-card-icon">🎨</div>
-              <div class="note-card-title">Rajasthan Hastkala (हस्तकला)</div>
-              <div class="note-card-desc">Master Revision Sheet on traditional handicrafts of Rajasthan, including Blue Pottery, Thewa Art, Usta Art, Miniature Paintings, and textile works.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-hastkala-master-revision.html', 'Rajasthan Hastkala (राजस्थान की हस्तकला)')">👁️ Read Inside</button>
-                <a href="notes/gk/art-culture/rajasthan-hastkala-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 22: Rajasthan Folk Dances -->
-            <div class="note-card" data-category="art-culture" data-title="rajasthan folk dances nritya ghoomar kalbeliya chang chari tribal regional master handbook">
-              <div class="note-card-badge art-culture">Art & Culture</div>
-              <div class="note-card-icon">💃</div>
-              <div class="note-card-title">Folk Dances (लोकनृत्य)</div>
-              <div class="note-card-desc">Comprehensive revision guide for tribal, regional, and professional folk dances of Rajasthan (Ghoomar, Kalbeliya, Chari, Gair, etc.).</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-nritya-master-handbook.html', 'Folk Dances (राजस्थान के लोकनृत्य)')">👁️ Read Inside</button>
-                <a href="notes/gk/art-culture/rajasthan-nritya-master-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 23: Rajasthani Shabdavali -->
-            <div class="note-card" data-category="art-culture" data-title="rajasthani shabdavali dialect vocabulary regional language words agriculture terms dialect translation master revision">
-              <div class="note-card-badge art-culture">Art & Culture</div>
-              <div class="note-card-icon">🗣️</div>
-              <div class="note-card-title">Rajasthani Shabdavali</div>
-              <div class="note-card-desc">Essential list of traditional Rajasthani dialect vocabulary, agriculture terms, domestic items, and dialect meanings for BCI exam revision.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthani-shabdavali-master-revision.html', 'Rajasthani Shabdavali (राजस्थानी शब्दावली)')">👁️ Read Inside</button>
-                <a href="notes/gk/art-culture/rajasthani-shabdavali-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 24: Rajasthan Bhasha Boliyan -->
-            <div class="note-card" data-category="art-culture" data-title="rajasthan bhasha boliyan master revision handbook dialect language">
-              <div class="note-card-badge art-culture">Art & Culture</div>
-              <div class="note-card-icon">🗣️</div>
-              <div class="note-card-title">Rajasthan Bhasha Boliyan</div>
-              <div class="note-card-desc">Master revision handbook for Rajasthan language history, dialect groups, and high-yield exam facts.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-bhasha-boliyan-master-revision-handbook.html', 'Rajasthan Bhasha Boliyan')">👁️ Read Inside</button>
-                <a href="notes/gk/art-culture/rajasthan-bhasha-boliyan-master-revision-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 25: Rajasthan RitiRiwaj -->
-            <div class="note-card" data-category="art-culture" data-title="rajasthan riti riwaj customs traditions master revision handbook">
-              <div class="note-card-badge art-culture">Art & Culture</div>
-              <div class="note-card-icon">🎭</div>
-              <div class="note-card-title">Rajasthan Riti-Riwaj</div>
-              <div class="note-card-desc">Revision handbook covering Rajasthan customs, rituals, social practices, and frequent trap points.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-ritiriwaj-master-revision-handbook.html', 'Rajasthan Riti-Riwaj')">👁️ Read Inside</button>
-                <a href="notes/gk/art-culture/rajasthan-ritiriwaj-master-revision-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 26: Rajasthan Chitra Shailiya -->
-            <div class="note-card" data-category="art-culture" data-title="rajasthan chitra shailiya master notes painting art school">
-              <div class="note-card-badge art-culture">Art & Culture</div>
-              <div class="note-card-icon">🎨</div>
-              <div class="note-card-title">Rajasthan Chitra Shailiya</div>
-              <div class="note-card-desc">Master notes on Rajasthan painting styles, artists, schools, and exam-trap comparisons.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-chitra-shailiya-master-notes.html', 'Rajasthan Chitra Shailiya')">👁️ Read Inside</button>
-                <a href="notes/gk/art-culture/rajasthan-chitra-shailiya-master-notes.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 26B: Rajasthani Sahitya -->
-            <div class="note-card" data-category="art-culture" data-title="rajasthani sahitya literature writers works rajasthani poetry prose bhasha boliyan muhavare">
-              <div class="note-card-badge art-culture">Art & Culture</div>
-              <div class="note-card-icon">📖</div>
-              <div class="note-card-title">Rajasthani Sahitya</div>
-              <div class="note-card-desc">Master revision handbook for Rajasthani literature, authors, works, genres, and recurring exam matches.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthani-sahitya-master-revision-handbook.html', 'Rajasthani Sahitya')">👁️ Read Inside</button>
-                <a href="notes/gk/art-culture/rajasthani-sahitya-master-revision-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 27: Rajasthani Muhavare -->
-            <div class="note-card" data-category="art-culture" data-title="rajasthani muhavare kahavate lokoktiyan master revision handbook">
-              <div class="note-card-badge art-culture">Art & Culture</div>
-              <div class="note-card-icon">📝</div>
-              <div class="note-card-title">Rajasthani Muhavare</div>
-              <div class="note-card-desc">Master revision handbook for Rajasthani idioms, proverbs, and commonly asked trap meanings for quick exam revision.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthani-muhavare-master-revision.html', 'Rajasthani Muhavare (मुहावरे, कहावतें और लोकोक्तियाँ)')">👁️ Read Inside</button>
-                <a href="notes/gk/art-culture/rajasthani-muhavare-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 28: Riti Rivaj & Customs -->
-            <div class="note-card" data-category="art-culture" data-title="rajasthan riti rivaj customs traditional culture rituals sanskar">
-              <div class="note-card-badge art-culture">Art & Culture</div>
-              <div class="note-card-icon">🎭</div>
-              <div class="note-card-title">Riti Rivaj & Customs (रीति-रिवाज)</div>
-              <div class="note-card-desc">Traditional customs, rituals, 16 Sanskars, and repeated previous year questions on Rajasthani culture.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/art-culture/rajasthan-riti-rivaj-master-revision-partial.html', 'Riti Rivaj & Customs (रीति-रिवाज)')">👁️ Read Inside</button>
-                <a href="notes/gk/art-culture/rajasthan-riti-rivaj-master-revision-partial.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section: Rajasthan Geography & General -->
-        <div class="notes-section" data-section-category="geography-general">
-          <div class="notes-section-header">
-            <span class="notes-section-icon">🗺️</span>
-            <span class="notes-section-title">Rajasthan Geography & General (भूगोल एवं सामान्य ज्ञान)</span>
-          </div>
-          <div class="notes-grid">
-            <!-- Card 29: Rajasthan GK Master Revision -->
-            <div class="note-card" data-category="geography-general" data-title="rajasthan gk master revision handbook regional programs institutions">
-              <div class="note-card-badge geography-general">Geography & Gen</div>
-              <div class="note-card-icon">📘</div>
-              <div class="note-card-title">Rajasthan GK Master Revision</div>
-              <div class="note-card-desc">Unified Rajasthan GK handbook covering traps, institutions, regional development programs, and high-yield exam facts.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/rajasthan-gk-master-revision-handbook.html', 'Rajasthan GK Master Revision')">👁️ Read Inside</button>
-                <a href="notes/gk/geography/rajasthan-gk-master-revision-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 30: BCI GK & Science Revision -->
-            <div class="note-card" data-category="geography-general" data-title="bci gk general science revision non tech rajasthan tribes dialects archaeology mahajanapada census general science space chemistry physics biology">
-              <div class="note-card-badge geography-general">Geography & Gen</div>
-              <div class="note-card-icon">🗺️</div>
-              <div class="note-card-title">BCI GK & Science Revision</div>
-              <div class="note-card-desc">Master handbook (v1.0) for Rajasthan GK, General Science, and Current Affairs (up to batch 7).</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/bci-gk-master-revision.html', 'BCI GK & Science Revision')">👁️ Read Inside</button>
-                <a href="notes/gk/geography/bci-gk-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 30B: Rajasthan Budget & Current Affairs -->
-            <div class="note-card" data-category="geography-general" data-title="rajasthan budget current affairs schemes full forms traps quick revision">
-              <div class="note-card-badge geography-general">Geography & Gen</div>
-              <div class="note-card-icon">📘</div>
-              <div class="note-card-title">Rajasthan Budget & Current Affairs</div>
-              <div class="note-card-desc">Unified budget and current affairs handbook for Rajasthan covering schemes, budgets, full forms, traps, and quick revision facts.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/rajasthan-budget-current-affairs-master-handbook.html', 'Rajasthan Budget & Current Affairs')">👁️ Read Inside</button>
-                <a href="notes/gk/geography/rajasthan-budget-current-affairs-master-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 30C: Agriculture, Animal Husbandry & Wildlife -->
-            <div class="note-card" data-category="geography-general" data-title="rajasthan agriculture animal husbandry forest wildlife group 4 revision sheet crops breeds forest acts sanctuaries">
-              <div class="note-card-badge geography-general">Geography & Gen</div>
-              <div class="note-card-icon">🌾</div>
-              <div class="note-card-title">Agriculture, Animal Husbandry & Wildlife</div>
-              <div class="note-card-desc">Group 4 connected revision sheet on crops, livestock, forests, wildlife habitats, and exam traps across Rajasthan.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/rajasthan-krishi-pashupalan-van-vanyajeev-group-4-revision-sheet.html', 'Agriculture, Animal Husbandry & Wildlife')">👁️ Read Inside</button>
-                <a href="notes/gk/geography/rajasthan-krishi-pashupalan-van-vanyajeev-group-4-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 30D: Science & General Knowledge -->
-            <div class="note-card" data-category="geography-general" data-title="science general knowledge master revision handbook physics chemistry biology static gk">
-              <div class="note-card-badge geography-general">Geography & Gen</div>
-              <div class="note-card-icon">🔬</div>
-              <div class="note-card-title">Science & General Knowledge</div>
-              <div class="note-card-desc">Master revision handbook covering core science facts, common traps, and fast GK recall points.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/science-general-knowledge-master-revision-handbook.html', 'Science & General Knowledge')">👁️ Read Inside</button>
-                <a href="notes/gk/geography/science-general-knowledge-master-revision-handbook.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 30E: Rajasthan Water Resources -->
-            <div class="note-card" data-category="geography-general" data-title="rajasthan water resources jal sansadhan rivers lakes irrigation traditional water management">
-              <div class="note-card-badge geography-general">Geography & Gen</div>
-              <div class="note-card-icon">💧</div>
-              <div class="note-card-title">Rajasthan Water Resources</div>
-              <div class="note-card-desc">Group revision sheet on rivers, lakes, irrigation projects, and traditional water management systems in Rajasthan.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/rajasthan-jal-sansadhan-group-revision-sheet.html', 'Rajasthan Water Resources')">👁️ Read Inside</button>
-                <a href="notes/gk/geography/rajasthan-jal-sansadhan-group-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 31: Rajasthan Lakes -->
-            <div class="note-card" data-category="geography-general" data-title="rajasthan lakes jheel salt water fresh water sambhar jaisamand rajasmand pachpadra">
-              <div class="note-card-badge geography-general">Geography & Gen</div>
-              <div class="note-card-icon">💧</div>
-              <div class="note-card-title">Rajasthan Lakes (झीलें)</div>
-              <div class="note-card-desc">Complete facts sheet about saltwater and freshwater lakes in Rajasthan, their geographical locations, and economic importance.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/rajasthan-lakes-revision-sheet.html', 'Rajasthan Lakes (राजस्थान की झीलें)')">👁️ Read Inside</button>
-                <a href="notes/gk/geography/rajasthan-lakes-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 32: Rajasthan Physical Geography -->
-            <div class="note-card" data-category="geography-general" data-title="rajasthan physical geography master revision sheet physical features climate soils desertification">
-              <div class="note-card-badge geography-general">Geography & Gen</div>
-              <div class="note-card-icon">🗺️</div>
-              <div class="note-card-title">Rajasthan Physical Geography</div>
-              <div class="note-card-desc">Group 1 master revision sheet covering physical features, climate, soils, desertification, and high-yield exam traps.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/rajasthan-physical-geography-master-revision-sheet.html', 'Rajasthan Physical Geography')">👁️ Read Inside</button>
-                <a href="notes/gk/geography/rajasthan-physical-geography-master-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 33: Rajasthan Geography Borders & Districts -->
-            <div class="note-card" data-category="geography-general" data-title="rajasthan geography borders districts divisions map international borders inter state borders">
-              <div class="note-card-badge geography-general">Geography & Gen</div>
-              <div class="note-card-icon">🗺️</div>
-              <div class="note-card-title">Geography, Borders & Districts</div>
-              <div class="note-card-desc">In-depth geography revision covering land borders, districts, divisions, and reorganized border lines.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/gk/geography/rajasthan-gk-districts-divisions-master-revision.html', 'Geography, Borders & Districts')">👁️ Read Inside</button>
-                <a href="notes/gk/geography/rajasthan-gk-districts-divisions-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section: Pedagogy & General Aptitude -->
-        <div class="notes-section" data-section-category="pedagogy-aptitude">
-          <div class="notes-section-header">
-            <span class="notes-section-icon">🧠</span>
-            <span class="notes-section-title">Pedagogy & General Aptitude (शिक्षाशास्त्र व सामान्य योग्यता)</span>
-          </div>
-          <div class="notes-grid">
-            <!-- Card 33: BCI Pedagogy -->
-            <div class="note-card" data-category="pedagogy-aptitude" data-title="bci pedagogy educational psychology teaching aids assessment techniques classroom management school lecturer REET school management">
-              <div class="note-card-badge pedagogy-aptitude">Pedagogy</div>
-              <div class="note-card-icon">🧠</div>
-              <div class="note-card-title">BCI Pedagogy & School Admin</div>
-              <div class="note-card-desc">Educational psychology, teaching models, assessment techniques, and school lecturer/REET school management notes.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/pedagogy/bci-pedagogy-master-revision.html', 'BCI Pedagogy & School Admin')">👁️ Read Inside</button>
-                <a href="notes/pedagogy/bci-pedagogy-master-revision.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 33B: Group Revision Sheet Education & IT -->
-            <div class="note-card" data-category="pedagogy-aptitude" data-title="group revision sheet education it computer pedagogy micro teaching lesson planning cai cmi programming learning">
-              <div class="note-card-badge pedagogy-aptitude">Pedagogy</div>
-              <div class="note-card-icon">📘</div>
-              <div class="note-card-title">Group Revision Sheet — Education & IT</div>
-              <div class="note-card-desc">Combined revision sheet for Computer Pedagogy and core IT developments, including micro-teaching, lesson planning, and CAI/CMI.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/pedagogy/group-revision-sheet-education-it.html', 'Group Revision Sheet — Education & IT')">👁️ Read Inside</button>
-                <a href="notes/pedagogy/group-revision-sheet-education-it.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-
-            <!-- Card 34: Calendar Revision Sheet -->
-            <div class="note-card" data-category="pedagogy-aptitude" data-title="calendar revision sheet reasoning logic aptitude time date">
-              <div class="note-card-badge pedagogy-aptitude">Aptitude</div>
-              <div class="note-card-icon">🗓️</div>
-              <div class="note-card-title">Calendar Revision Sheet</div>
-              <div class="note-card-desc">High-yield revision guide for Calendar-related reasoning questions, exam tricks, and formulas.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('notes/pedagogy/calendar-revision-sheet.html', 'Calendar Revision Sheet')">👁️ Read Inside</button>
-                <a href="notes/pedagogy/calendar-revision-sheet.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section: Papers & Practice -->
-        <div class="notes-section" data-section-category="papers">
-          <div class="notes-section-header">
-            <span class="notes-section-icon">📝</span>
-            <span class="notes-section-title">Papers & Practice (अभ्यास पत्र)</span>
-          </div>
-          <div class="notes-grid">
-            <!-- Card 35: BCI Practice Paper -->
-            <div class="note-card" data-category="papers" data-title="rsmssb bci reasoning math practice paper personalized paper reasoning arithmetic aptitude">
-              <div class="note-card-badge pedagogy-aptitude">Paper</div>
-              <div class="note-card-icon">✍️</div>
-              <div class="note-card-title">BCI Reasoning & Math Practice Paper</div>
-              <div class="note-card-desc">Personalized practice paper for reasoning and arithmetic with focused exam-style questions and timing.</div>
-              <div class="note-card-actions">
-                <button class="note-card-btn read" onclick="openNotesSheet('question-bank/papers/rsmssb-bci-reasoning-math-practice-paper.html', 'BCI Reasoning & Math Practice Paper')">👁️ Read Inside</button>
-                <a href="question-bank/papers/rsmssb-bci-reasoning-math-practice-paper.html" target="_blank" class="note-card-btn open-tab">🔗 New Tab</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </main>
-
-  <!-- ====== MODAL: Confirm Submit ====== -->
-  <div class="modal-overlay" id="confirmModal" style="display:none">
-    <div class="modal-box">
-      <div class="modal-title">Submit Test?</div>
-      <div class="modal-body" id="confirmModalBody">Are you sure?</div>
-      <div class="modal-actions">
-        <button class="modal-btn cancel" onclick="closeModal()">Cancel</button>
-        <button class="modal-btn confirm" onclick="submitTest()">Submit</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ====== MODAL: Notes Iframe Viewer ====== -->
-  <div class="notes-iframe-overlay" id="notesIframeModal" style="display:none">
-    <div class="notes-iframe-box">
-      <div class="notes-iframe-header">
-        <div class="notes-iframe-title-area">
-          <span class="notes-iframe-logo">📖</span>
-          <span class="notes-iframe-title" id="notesIframeTitle">Revision Sheet</span>
-        </div>
-        <div class="notes-iframe-actions">
-          <a href="#" target="_blank" class="notes-iframe-btn-tab" id="notesIframeTabLink" title="Open in new tab">
+    <!-- ====== MODAL: Notes Iframe Viewer ====== -->
+    <div class="notes-iframe-overlay" id="notesIframeModal" style="display:none">
+        <div class="notes-iframe-box">
+            <div class="notes-iframe-header">
+                <div class="notes-iframe-title-area">
+                    <span class="notes-iframe-logo">📖</span>
+                    <span class="notes-iframe-title" id="notesIframeTitle">Revision Sheet</span>
+                </div>
+                <div class="notes-iframe-actions">
+                    <a href="#" target="_blank" class="notes-iframe-btn-tab" id="notesIframeTabLink" title="Open in new tab">
             ↗ Open in New Tab
           </a>
-          <button class="notes-iframe-close-btn" onclick="closeNotesSheet()" title="Close viewer">✕</button>
+                    <button class="notes-iframe-close-btn" onclick="closeNotesSheet()" title="Close viewer">✕</button>
+                </div>
+            </div>
+            <div class="notes-iframe-body">
+                <iframe id="notesIframe" src="" frameborder="0"></iframe>
+            </div>
         </div>
-      </div>
-      <div class="notes-iframe-body">
-        <iframe id="notesIframe" src="" frameborder="0"></iframe>
-      </div>
     </div>
-  </div>
 
-  <!-- ====== MODAL: Universal Search Overlay (Ctrl+K) ====== -->
-  <div class="modal-overlay" id="searchModalOverlay" style="display:none">
-    <div class="modal-box" style="max-width: 650px; width: 90%;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-        <div style="font-weight: 700; font-size: 16px; color: var(--saffron);">🔍 Universal Search (Ctrl+K)</div>
-        <button onclick="closeModal()" style="background:none; border:none; font-size:18px; cursor:pointer;">✕</button>
-      </div>
-      <input type="text" id="universalSearchInput" placeholder="Search questions, explanations, trap points, or topics..." style="width: 100%; padding: 12px 16px; border: 2px solid var(--border); border-radius: var(--radius); font-size: 14px; outline: none; background: var(--surface); color: var(--text); margin-bottom: 16px;">
-      <div id="searchResultsContainer" style="max-height: 380px; overflow-y: auto; text-align: left;"></div>
+    <!-- ====== MODAL: Universal Search Overlay (Ctrl+K) ====== -->
+    <div class="modal-overlay" id="searchModalOverlay" style="display:none">
+        <div class="modal-box" style="max-width: 650px; width: 90%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <div style="font-weight: 700; font-size: 16px; color: var(--saffron);">🔍 Universal Search (Ctrl+K)</div>
+                <button onclick="closeModal()" style="background:none; border:none; font-size:18px; cursor:pointer;">✕</button>
+            </div>
+            <input type="text" id="universalSearchInput" placeholder="Search questions, explanations, trap points, or topics..." style="width: 100%; padding: 12px 16px; border: 2px solid var(--border); border-radius: var(--radius); font-size: 14px; outline: none; background: var(--surface); color: var(--text); margin-bottom: 16px;">
+            <div id="searchResultsContainer" style="max-height: 380px; overflow-y: auto; text-align: left;"></div>
+        </div>
     </div>
-  </div>
 
-  <!-- ====== TOAST ====== -->
-  <div class="toast" id="toast"></div>
+    <!-- ====== TOAST ====== -->
+    <div class="toast" id="toast"></div>
 
-  <!-- ====== SCRIPT MODULES ====== -->
-  <script src="js/modules/storage.js"></script>
-  <script src="js/modules/questionEngine.js"></script>
-  <script src="js/modules/aiEngine.js"></script>
-  <script src="js/modules/analyticsEngine.js"></script>
-  <script src="js/modules/searchEngine.js"></script>
-  <script src="js/modules/uiController.js"></script>
-  <script src="js/script.js"></script>
+    <!-- ====== SCRIPT MODULES ====== -->
+    <script src="js/modules/storage.js"></script>
+    <script src="js/modules/questionEngine.js"></script>
+    <script src="js/modules/aiEngine.js"></script>
+    <script src="js/modules/analyticsEngine.js"></script>
+    <script src="js/modules/searchEngine.js"></script>
+    <script src="js/modules/uiController.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
