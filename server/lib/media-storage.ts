@@ -1,6 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import crypto from "crypto";
+import { v2 as cloudinary, UploadApiResponse } from "cloudinary";
 
 export interface UploadResult {
   url: string;
@@ -54,60 +55,47 @@ export class LocalDiskStorageProvider implements IMediaStorageProvider {
   }
 }
 
-// Cloudinary Storage Provider
+// Cloudinary Storage Provider (Production on Vercel / Remote Storage)
 export class CloudinaryStorageProvider implements IMediaStorageProvider {
-  private apiKey: string;
-  private apiSecret: string;
-  private cloudName: string;
-
-  constructor(cloudinaryUrl: string) {
-    const match = cloudinaryUrl.trim().match(/cloudinary:\/\/([^:]+):([^@]+)@(.+)/);
-    if (!match) {
-      throw new Error("Invalid CLOUDINARY_URL format. Expected: cloudinary://<api_key>:<api_secret>@<cloud_name>");
+  constructor(cloudinaryUrl?: string) {
+    if (cloudinaryUrl) {
+      cloudinary.config({
+        cloudinary_url: cloudinaryUrl.trim(),
+      });
     }
-    this.apiKey = match[1];
-    this.apiSecret = match[2];
-    this.cloudName = match[3];
   }
 
   async upload(fileBuffer: Buffer, originalFilename: string, mimeType: string): Promise<UploadResult> {
-    const timestamp = Math.round(Date.now() / 1000);
-    const signatureStr = `timestamp=${timestamp}${this.apiSecret}`;
-    const signature = crypto.createHash("sha1").update(signatureStr).digest("hex");
+    const isPdf = mimeType === "application/pdf";
+    const resourceType: "image" | "raw" = isPdf ? "raw" : "image";
+    const baseName = path.parse(originalFilename).name.replace(/[^a-zA-Z0-9_-]/g, "_");
+    const publicId = `ret_${baseName}_${Date.now()}`;
 
-    const formData = new FormData();
-    const blob = new Blob([new Uint8Array(fileBuffer)], { type: mimeType });
-    formData.append("file", blob, originalFilename);
-    formData.append("api_key", this.apiKey);
-    formData.append("timestamp", String(timestamp));
-    formData.append("signature", signature);
+    return new Promise((resolve, reject) => {
+      const uploadStream = cloudinary.uploader.upload_stream(
+        {
+          resource_type: resourceType,
+          public_id: publicId,
+          folder: "rajasthan_exam_twister",
+          overwrite: false,
+        },
+        (error, result?: UploadApiResponse) => {
+          if (error || !result) {
+            return reject(new Error(error?.message || "Cloudinary upload failed"));
+          }
 
-    const resourceType = mimeType === "application/pdf" ? "raw" : "image";
-    const res = await fetch(`https://api.cloudinary.com/v1_1/${this.cloudName}/${resourceType}/upload`, {
-      method: "POST",
-      body: formData,
+          resolve({
+            url: result.secure_url || result.url,
+            fileSize: result.bytes || fileBuffer.length,
+            mimeType,
+            width: result.width,
+            height: result.height,
+          });
+        }
+      );
+
+      uploadStream.end(fileBuffer);
     });
-
-    if (!res.ok) {
-      const err = (await res.json().catch(() => ({}))) as { error?: { message?: string } };
-      throw new Error(err.error?.message || `Cloudinary upload failed with status ${res.statusText}`);
-    }
-
-    const data = (await res.json()) as {
-      secure_url?: string;
-      url: string;
-      bytes?: number;
-      width?: number;
-      height?: number;
-    };
-
-    return {
-      url: data.secure_url || data.url,
-      fileSize: data.bytes || fileBuffer.length,
-      mimeType,
-      width: data.width,
-      height: data.height,
-    };
   }
 }
 

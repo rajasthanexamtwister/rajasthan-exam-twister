@@ -33,26 +33,32 @@ interface CategoryWithCounts {
 }
 
 export default async function PublicCategoriesPage() {
-  await connectToDatabase();
+  let categoriesWithCounts: CategoryWithCounts[] = [];
 
-  const categories = await Category.find().sort({ name: 1 }).lean();
+  try {
+    await connectToDatabase();
 
-  const categoriesWithCounts: CategoryWithCounts[] = await Promise.all(
-    categories.map(async (cat) => {
-      const [blogCount, noteCount] = await Promise.all([
-        Blog.countDocuments({ categoryId: cat._id, status: "PUBLISHED" }),
-        Note.countDocuments({ categoryId: cat._id, status: "PUBLISHED" }),
-      ]);
+    const categories = await Category.find().sort({ name: 1 }).lean();
 
-      return {
-        _id: cat._id.toString(),
-        name: cat.name,
-        slug: cat.slug,
-        blogCount,
-        noteCount,
-      };
-    })
-  );
+    categoriesWithCounts = await Promise.all(
+      categories.map(async (cat) => {
+        const [blogCount, noteCount] = await Promise.all([
+          Blog.countDocuments({ categoryId: cat._id, status: "PUBLISHED" }),
+          Note.countDocuments({ categoryId: cat._id, status: "PUBLISHED" }),
+        ]);
+
+        return {
+          _id: cat._id.toString(),
+          name: cat.name,
+          slug: cat.slug,
+          blogCount,
+          noteCount,
+        };
+      })
+    );
+  } catch (err) {
+    console.warn("PublicCategoriesPage: Database unavailable during static build, using empty fallback:", err);
+  }
 
   const siteUrl = getSiteUrl();
 

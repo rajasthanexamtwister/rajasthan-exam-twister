@@ -52,24 +52,36 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  await connectToDatabase();
+  let recentBlogs: any[] = [];
+  let recentNotes: any[] = [];
+  let categories: any[] = [];
+  let publishedQuizzesCount = 0;
 
-  const [recentBlogs, recentNotes, categories, publishedQuizzesCount] = await Promise.all([
-    Blog.find({ status: "PUBLISHED" })
-      .populate("categoryId", "name slug")
-      .sort({ publishedAt: -1, createdAt: -1 })
-      .limit(6)
-      .lean()
-      .catch(() => []),
-    Note.find({ status: "PUBLISHED" })
-      .populate("categoryId", "name slug")
-      .sort({ publishedAt: -1, createdAt: -1 })
-      .limit(6)
-      .lean()
-      .catch(() => []),
-    Category.find().sort({ name: 1 }).limit(12).lean().catch(() => []),
-    Quiz.countDocuments({ status: "PUBLISHED" }).catch(() => 0),
-  ]);
+  try {
+    await connectToDatabase();
+
+    const [blogs, notes, cats, quizzesCount] = await Promise.all([
+      Blog.find({ status: "PUBLISHED" })
+        .populate("categoryId", "name slug")
+        .sort({ publishedAt: -1, createdAt: -1 })
+        .limit(6)
+        .lean(),
+      Note.find({ status: "PUBLISHED" })
+        .populate("categoryId", "name slug")
+        .sort({ publishedAt: -1, createdAt: -1 })
+        .limit(6)
+        .lean(),
+      Category.find().sort({ name: 1 }).lean(),
+      Quiz.countDocuments({ status: "PUBLISHED" }),
+    ]);
+
+    recentBlogs = blogs;
+    recentNotes = notes;
+    categories = cats;
+    publishedQuizzesCount = quizzesCount;
+  } catch (err) {
+    console.warn("HomePage: Database fetch failed or unavailable during static build, using fallback:", err);
+  }
 
   const siteUrl = getSiteUrl();
 
