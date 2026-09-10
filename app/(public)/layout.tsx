@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { PublicHeader } from "@/components/layout/public-header";
+import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { CategoryRepository } from "@/server/repositories/category";
 import { SOCIAL_LINKS } from "@/server/lib/social-links";
 import {
@@ -26,6 +27,9 @@ export default async function PublicLayout({
   return (
     <PublicSessionProvider>
       <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-slate-900 selection:bg-amber-200 selection:text-amber-950">
+        {/* Top Dismissible Announcement Bar */}
+        <AnnouncementBar />
+
         {/* Top Sticky Navigation */}
         <PublicHeader />
 
