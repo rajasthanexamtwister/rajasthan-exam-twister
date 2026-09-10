@@ -2,12 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { PublicHeader } from "@/components/layout/public-header";
 import { CategoryRepository } from "@/server/repositories/category";
+import { SOCIAL_LINKS } from "@/server/lib/social-links";
 import {
   Mail,
   ArrowUpRight,
-  BookOpen,
-  Sparkles,
-  HelpCircle,
+  Send,
+  Instagram,
+  Youtube,
 } from "lucide-react";
 
 export const revalidate = 60;
@@ -32,7 +33,7 @@ export default async function PublicLayout({
       <footer className="border-t border-amber-200/70 bg-[#0B132B] text-slate-300 text-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {/* Column 1: Brand & Mission */}
+            {/* Column 1: Brand, Mission & Official Channels */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="relative w-9 h-9 rounded-full overflow-hidden ring-2 ring-amber-400 bg-slate-900 shrink-0">
@@ -57,6 +58,55 @@ export default async function PublicLayout({
               <p className="text-slate-400 leading-relaxed text-xs">
                 Comprehensive GK revision notes, infographics handbooks, current affairs blogs, and mock quizzes for REET, RPSC, CET, Police SI, and state recruitment exams.
               </p>
+
+              {/* Official Social Links in Footer */}
+              <div className="pt-2">
+                <span className="text-[11px] font-bold text-amber-400 uppercase tracking-wider block mb-2">
+                  Official Channels
+                </span>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={SOCIAL_LINKS.telegram.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-xl bg-slate-900/80 hover:bg-sky-600 hover:text-white text-slate-300 transition-all border border-slate-800 hover:border-sky-500 shadow-xs"
+                    title="Join Telegram Channel"
+                    aria-label="Telegram Channel"
+                  >
+                    <Send className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={SOCIAL_LINKS.instagram.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-xl bg-slate-900/80 hover:bg-pink-600 hover:text-white text-slate-300 transition-all border border-slate-800 hover:border-pink-500 shadow-xs"
+                    title="Follow on Instagram"
+                    aria-label="Instagram Profile"
+                  >
+                    <Instagram className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={SOCIAL_LINKS.twitter.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-xl bg-slate-900/80 hover:bg-slate-800 hover:text-white text-slate-300 transition-all border border-slate-800 hover:border-slate-600 shadow-xs font-mono text-sm leading-none flex items-center justify-center w-8 h-8"
+                    title="Follow on X (Twitter)"
+                    aria-label="X (Twitter) Profile"
+                  >
+                    𝕏
+                  </a>
+                  <a
+                    href={SOCIAL_LINKS.youtube.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-xl bg-slate-900/80 hover:bg-red-600 hover:text-white text-slate-300 transition-all border border-slate-800 hover:border-red-500 shadow-xs"
+                    title="Subscribe on YouTube"
+                    aria-label="YouTube Channel"
+                  >
+                    <Youtube className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Column 2: Quick Links */}

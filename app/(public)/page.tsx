@@ -7,6 +7,7 @@ import { Note } from "@/server/models/Note";
 import { Category } from "@/server/models/Category";
 import { Quiz } from "@/server/models/Quiz";
 import { getSiteUrl } from "@/server/lib/seo";
+import { SOCIAL_LINKS, OFFICIAL_SOCIAL_URLS } from "@/server/lib/social-links";
 import {
   Search,
   BookOpen,
@@ -19,8 +20,8 @@ import {
   Calendar,
   Image as ImageIcon,
   Flame,
-  Star,
-  GraduationCap,
+  Send,
+  Users,
 } from "lucide-react";
 import clsx from "clsx";
 
@@ -72,7 +73,7 @@ export default async function HomePage() {
 
   const siteUrl = getSiteUrl();
 
-  // Structured Data (JSON-LD) for WebSite with SearchAction + Organization
+  // Structured Data (JSON-LD) for WebSite with SearchAction + Organization with real social links
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -106,6 +107,7 @@ export default async function HomePage() {
           height: 512,
         },
         slogan: "सवाल सीधा नहीं, सोच टेढ़ी करो!",
+        sameAs: OFFICIAL_SOCIAL_URLS,
       },
     ],
   };
@@ -316,7 +318,35 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* 4. Latest Revision Notes Section (With Asymmetric Featured Card) */}
+      {/* Community Banner Strip: Join Telegram Channel */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl bg-gradient-to-r from-[#0B132B] via-[#111C38] to-[#0B132B] border border-amber-400/30 p-6 sm:p-8 text-white shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 text-center sm:text-left">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 border border-sky-400/30 text-xs font-bold">
+              <Send className="w-3.5 h-3.5" />
+              <span>Rajasthan Aspirants Telegram Community</span>
+            </div>
+            <h3 className="text-lg sm:text-xl font-bold">
+              Join 10,000+ Students for Daily GK Polls & Notes
+            </h3>
+            <p className="text-xs text-slate-300 max-w-xl">
+              Get instant updates on RPSC & RSSB notifications, daily MCQ quizzes, and downloadable PDF revision sheets directly on Telegram.
+            </p>
+          </div>
+
+          <a
+            href={SOCIAL_LINKS.telegram.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs shadow-lg shadow-sky-500/25 whitespace-nowrap transition-all hover:scale-105 active:scale-95 shrink-0"
+          >
+            <Send className="w-4 h-4" />
+            <span>Join Official Telegram</span>
+          </a>
+        </div>
+      </section>
+
+      {/* 4. Latest Revision Notes Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
         <div className="flex items-center justify-between">
           <div>
