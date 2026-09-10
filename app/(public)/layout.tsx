@@ -11,6 +11,8 @@ import {
   Youtube,
 } from "lucide-react";
 
+import { PublicSessionProvider } from "@/components/providers/session-provider";
+
 export const revalidate = 60;
 
 export default async function PublicLayout({
@@ -22,12 +24,13 @@ export default async function PublicLayout({
   const topCategories = categories.slice(0, 6);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-slate-900 selection:bg-amber-200 selection:text-amber-950">
-      {/* Top Sticky Navigation */}
-      <PublicHeader />
+    <PublicSessionProvider>
+      <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-slate-900 selection:bg-amber-200 selection:text-amber-950">
+        {/* Top Sticky Navigation */}
+        <PublicHeader />
 
-      {/* Main Page Body */}
-      <main className="flex-1">{children}</main>
+        {/* Main Page Body */}
+        <main className="flex-1">{children}</main>
 
       {/* Comprehensive Public Footer (No Admin Links) */}
       <footer className="border-t border-amber-200/70 bg-[#0B132B] text-slate-300 text-xs">
@@ -227,5 +230,6 @@ export default async function PublicLayout({
         </div>
       </footer>
     </div>
+    </PublicSessionProvider>
   );
 }

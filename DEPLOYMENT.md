@@ -46,3 +46,45 @@ All set as Vercel project environment variables (Production/Preview/Development 
 **Free/low-cost v1:** Vercel Hobby, MongoDB Atlas M0 free tier, Cloudinary/ImageKit free tier, no paid search or APM.
 
 **Optional future paid services (not needed for v1):** Vercel Pro (traffic growth), paid MongoDB Atlas tier (storage/RAM limits), dedicated error tracking, a background job queue service (only if bulk import volume demands it — see README Open Questions), CDN/edge caching upgrades.
+
+## 8. Student Google OAuth Setup (NextAuth)
+
+### Required Environment Variables
+
+```
+GOOGLE_CLIENT_ID=         # Google OAuth 2.0 Client ID
+GOOGLE_CLIENT_SECRET=     # Google OAuth 2.0 Client Secret
+NEXTAUTH_SECRET=          # Random 32+ character string (e.g., openssl rand -base64 32)
+NEXTAUTH_URL=             # Canonical app URL (e.g. http://localhost:3000 or https://examtwister.com)
+```
+
+### Google Cloud Console Setup Guide
+
+1. **Create/Select Project**:
+   - Go to [Google Cloud Console](https://console.cloud.google.com/).
+   - Click the project dropdown at the top and select **New Project** (e.g. "ExamTwister").
+2. **Configure OAuth Consent Screen**:
+   - Navigate to **APIs & Services** > **OAuth consent screen**.
+   - Select User Type: **External**, then click **Create**.
+   - Fill in App Information:
+     - **App name**: `Rajasthan Exam Twister`
+     - **User support email**: Your admin/support email
+     - **Developer contact email**: Your developer email
+   - Under **Scopes**, add `openid`, `.../auth/userinfo.email`, and `.../auth/userinfo.profile`.
+   - Save and proceed. (Publish the app or add test users during development).
+3. **Create OAuth 2.0 Client Credentials**:
+   - Go to **APIs & Services** > **Credentials**.
+   - Click **+ CREATE CREDENTIALS** > **OAuth client ID**.
+   - Application type: **Web application**.
+   - Name: `ExamTwister Web Client`.
+   - **Authorized JavaScript origins**:
+     - `http://localhost:3000` (for local development)
+     - `https://examtwister.com` (and your Vercel production/preview domains)
+   - **Authorized redirect URIs**:
+     - `http://localhost:3000/api/auth/callback/google` (local)
+     - `https://examtwister.com/api/auth/callback/google` (production)
+   - Click **Create**.
+4. **Copy Secrets**:
+   - Copy **Client ID** and set as `GOOGLE_CLIENT_ID`.
+   - Copy **Client Secret** and set as `GOOGLE_CLIENT_SECRET`.
+

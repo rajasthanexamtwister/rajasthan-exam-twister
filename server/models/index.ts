@@ -7,3 +7,7 @@ export * from "./Note";
 export * from "./ImportJob";
 export * from "./ImportLog";
 export * from "./Settings";
+export * from "./Quiz";
+export * from "./QuizQuestion";
+export * from "./QuizAttempt";
+export * from "./Student";
