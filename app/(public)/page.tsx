@@ -106,9 +106,6 @@ export default async function HomePage() {
           height: 512,
         },
         slogan: "सवाल सीधा नहीं, सोच टेढ़ी करो!",
-        sameAs: [
-          "https://t.me/rajasthanexamtwister",
-        ],
       },
     ],
   };
