@@ -24,13 +24,19 @@ interface SiteSettings {
   contactEmail?: string;
 }
 
+interface SocialLinkInfo {
+  name: string;
+  url: string;
+  handle: string;
+}
+
 export default function AdminSettingsPage() {
   const [settings, setSettings] = useState<SiteSettings>({
     siteTitle: "Rajasthan Exam Twister",
     siteTagline: "Rajasthan Competitive Exam Preparation & Master Revision Hub",
     contactEmail: "admin@rajasthanexamtwister.com",
   });
-  const [socialLinks, setSocialLinks] = useState<Record<string, string>>({});
+  const [socialLinks, setSocialLinks] = useState<Record<string, SocialLinkInfo>>({});
   const [loading, setLoading] = useState(true);
   const [savingSettings, setSavingSettings] = useState(false);
   const [settingsMessage, setSettingsMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
@@ -354,21 +360,30 @@ export default function AdminSettingsPage() {
             </p>
 
             <div className="space-y-2.5 pt-1 text-xs">
-              {Object.entries(socialLinks).map(([platform, url]) => (
-                <div key={platform} className="p-2.5 bg-slate-50 rounded-xl border border-slate-200/80">
+              {Object.entries(socialLinks).map(([key, item]) => (
+                <div key={key} className="p-2.5 bg-slate-50 rounded-xl border border-slate-200/80">
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-slate-900 capitalize">{platform}</span>
-                    <a
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-amber-700 hover:text-amber-900 inline-flex items-center gap-1 font-semibold text-[11px]"
-                    >
-                      <span>Visit</span>
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
+                    <div>
+                      <span className="font-bold text-slate-900 capitalize">{item?.name || key}</span>
+                      {item?.handle && (
+                        <span className="text-[11px] text-slate-500 ml-2">({item.handle})</span>
+                      )}
+                    </div>
+                    {item?.url && (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-amber-700 hover:text-amber-900 inline-flex items-center gap-1 font-semibold text-[11px]"
+                      >
+                        <span>Visit</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
                   </div>
-                  <span className="text-[11px] text-slate-500 truncate block mt-0.5 font-mono">{url}</span>
+                  {item?.url && (
+                    <span className="text-[11px] text-slate-500 truncate block mt-0.5 font-mono">{item.url}</span>
+                  )}
                 </div>
               ))}
             </div>
