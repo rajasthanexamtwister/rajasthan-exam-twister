@@ -58,18 +58,14 @@ export default function QuizPromptGeneratorPage() {
   return (
     <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto space-y-8">
-        {/* Header Breadcrumb & Tag */}
-        <div className="flex items-center justify-between">
-          <Link
-            href="/"
-            className="text-xs font-semibold text-slate-500 hover:text-amber-600 transition-colors"
-          >
-            &larr; Return to Rajasthan Exam Twister
+        {/* Breadcrumb Navigation */}
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-slate-500 font-medium">
+          <Link href="/" className="hover:text-amber-600 transition-colors">
+            Home
           </Link>
-          <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-800">
-            AI Quiz Tool
-          </span>
-        </div>
+          <span className="text-slate-300">/</span>
+          <span className="text-slate-900 font-bold">AI Quiz Tool</span>
+        </nav>
 
         {/* Title Section */}
         <div className="text-center space-y-3">
@@ -166,11 +162,11 @@ export default function QuizPromptGeneratorPage() {
             </p>
 
             <Link
-              href="/admin/quizzes/import"
-              className="inline-flex items-center justify-center gap-2 px-4 py-2 text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 rounded-xl transition-all shadow-sm shrink-0"
+              href="/quizzes"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2 text-xs font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl transition-all shadow-sm shrink-0"
             >
-              <UploadCloud className="w-4 h-4 text-amber-400" />
-              <span>Go to Admin Quiz Importer</span>
+              <BookOpen className="w-4 h-4" />
+              <span>Browse Active Mock Quizzes</span>
             </Link>
           </div>
         </div>

@@ -44,15 +44,26 @@ export default async function QuizIntroPage({ params }: QuizPageProps) {
   return (
     <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto space-y-8">
-        {/* Navigation Breadcrumb */}
-        <div>
-          <Link
-            href="/quizzes"
-            className="text-xs font-semibold text-slate-500 hover:text-amber-600 transition-colors"
-          >
-            &larr; Back to all quizzes
+        {/* Structured Breadcrumbs */}
+        <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-2 text-xs text-slate-500 font-medium">
+          <Link href="/" className="hover:text-amber-600 transition-colors">
+            Home
           </Link>
-        </div>
+          <span className="text-slate-300">/</span>
+          <Link href="/quizzes" className="hover:text-amber-600 transition-colors">
+            Mock Quizzes
+          </Link>
+          {quiz.subject && (
+            <>
+              <span className="text-slate-300">/</span>
+              <span className="text-slate-600">{quiz.subject}</span>
+            </>
+          )}
+          <span className="text-slate-300">/</span>
+          <span className="text-slate-800 font-bold truncate max-w-xs sm:max-w-md">
+            {quiz.title}
+          </span>
+        </nav>
 
         {/* Hero Card */}
         <div className="bg-white rounded-3xl border border-slate-200 shadow-xl p-8 sm:p-10 space-y-6">

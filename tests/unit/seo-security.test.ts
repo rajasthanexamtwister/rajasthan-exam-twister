@@ -117,6 +117,7 @@ describe("Robots & Sitemap Configuration", () => {
     // Static pages
     expect(urls.some((u) => u.endsWith("/blogs"))).toBe(true);
     expect(urls.some((u) => u.endsWith("/notes"))).toBe(true);
+    expect(urls.some((u) => u.endsWith("/categories"))).toBe(true);
     expect(urls.some((u) => u.endsWith("/quizzes"))).toBe(true);
     expect(urls.some((u) => u.endsWith("/quiz-tools/create"))).toBe(true);
     expect(urls.some((u) => u.endsWith("/search"))).toBe(true);

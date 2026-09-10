@@ -153,25 +153,30 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
       />
 
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-        {/* Breadcrumbs & Back Navigation */}
-        <nav aria-label="Breadcrumb" className="flex items-center justify-between text-xs text-slate-500">
-          <Link
-            href="/notes"
-            className="inline-flex items-center gap-1.5 font-semibold text-slate-700 hover:text-amber-600 transition-colors"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Back to all revision notes</span>
+        {/* Structured Breadcrumbs */}
+        <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-2 text-xs text-slate-500 font-medium">
+          <Link href="/" className="hover:text-amber-600 transition-colors">
+            Home
           </Link>
-          <div className="flex items-center gap-2">
-            {categoryDoc?.name && (
+          <span className="text-slate-300">/</span>
+          <Link href="/notes" className="hover:text-amber-600 transition-colors">
+            Notes
+          </Link>
+          {categoryDoc?.name && (
+            <>
+              <span className="text-slate-300">/</span>
               <Link
                 href={`/notes?category=${categoryDoc.slug}`}
-                className="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-amber-50 text-slate-700 hover:text-amber-800 font-medium transition-colors border border-slate-200/60"
+                className="hover:text-amber-600 transition-colors"
               >
                 {categoryDoc.name}
               </Link>
-            )}
-          </div>
+            </>
+          )}
+          <span className="text-slate-300">/</span>
+          <span className="text-slate-800 font-bold truncate max-w-xs sm:max-w-md">
+            {note.title}
+          </span>
         </nav>
 
         {/* Note Header (Exactly one <h1> per page) */}

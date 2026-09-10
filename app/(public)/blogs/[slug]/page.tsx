@@ -127,23 +127,30 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
       />
 
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-        {/* Breadcrumbs & Back Navigation */}
-        <nav aria-label="Breadcrumb" className="flex items-center justify-between text-xs text-slate-500">
-          <Link
-            href="/blogs"
-            className="inline-flex items-center gap-1.5 font-semibold text-slate-700 hover:text-amber-600 transition-colors"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Back to all blogs</span>
+        {/* Structured Breadcrumbs */}
+        <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-2 text-xs text-slate-500 font-medium">
+          <Link href="/" className="hover:text-amber-600 transition-colors">
+            Home
+          </Link>
+          <span className="text-slate-300">/</span>
+          <Link href="/blogs" className="hover:text-amber-600 transition-colors">
+            Blogs
           </Link>
           {categoryDoc?.name && (
-            <Link
-              href={`/blogs?category=${categoryDoc.slug}`}
-              className="px-2.5 py-1 rounded-full bg-slate-100 hover:bg-amber-50 text-slate-700 hover:text-amber-800 font-medium transition-colors border border-slate-200/60"
-            >
-              {categoryDoc.name}
-            </Link>
+            <>
+              <span className="text-slate-300">/</span>
+              <Link
+                href={`/blogs?category=${categoryDoc.slug}`}
+                className="hover:text-amber-600 transition-colors"
+              >
+                {categoryDoc.name}
+              </Link>
+            </>
           )}
+          <span className="text-slate-300">/</span>
+          <span className="text-slate-800 font-bold truncate max-w-xs sm:max-w-md">
+            {blog.title}
+          </span>
         </nav>
 
         {/* Article Header (Exactly one <h1> per page) */}
