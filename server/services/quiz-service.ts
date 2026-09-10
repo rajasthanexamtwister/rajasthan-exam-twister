@@ -16,6 +16,8 @@ import {
   SubmitQuizAttemptInput,
 } from "@/server/validation/quiz";
 
+import { QuizDifficulty, Quiz } from "@/server/models/Quiz";
+
 export interface PublicQuizQuestion {
   id: string;
   order: number;
@@ -30,6 +32,9 @@ export interface PublicQuizDetail {
   title: string;
   slug: string;
   subject?: string;
+  examTags: string[];
+  difficulty: QuizDifficulty;
+  attemptCount: number;
   category?: { name: string; slug: string } | null;
   timeLimitSeconds?: number | null;
   defaultMarks: number;
@@ -80,11 +85,14 @@ export class QuizService {
     // Sanitize title and subject as plain text
     const cleanTitle = sanitizePlainText(validated.quizTitle);
     const cleanSubject = validated.subject ? sanitizePlainText(validated.subject) : undefined;
+    const cleanExamTags = (validated.examTags || []).map((t) => sanitizePlainText(t)).filter(Boolean);
 
     // Create the Quiz in DRAFT status
     const quiz = await QuizRepository.create({
       title: cleanTitle,
       subject: cleanSubject,
+      examTags: cleanExamTags,
+      difficulty: validated.difficulty || "medium",
       status: "DRAFT",
       defaultMarks: 1,
       defaultNegativeMarks: 0,
@@ -120,6 +128,20 @@ export class QuizService {
   }
 
   /**
+   * Get distinct exam tags and published counts
+   */
+  static async listDistinctExams() {
+    return QuizRepository.listDistinctExams();
+  }
+
+  /**
+   * Get distinct subjects and published counts
+   */
+  static async listDistinctSubjects() {
+    return QuizRepository.listDistinctSubjects();
+  }
+
+  /**
    * Get public quiz view by slug — NEVER exposes correctOptionIndex or explanation
    */
   static async getPublicQuizBySlug(slug: string): Promise<PublicQuizDetail | null> {
@@ -151,6 +173,9 @@ export class QuizService {
       title: quiz.title,
       slug: quiz.slug,
       subject: quiz.subject,
+      examTags: quiz.examTags || [],
+      difficulty: quiz.difficulty || "medium",
+      attemptCount: quiz.attemptCount || 0,
       category: categoryObj?.name ? { name: categoryObj.name, slug: categoryObj.slug || "" } : null,
       timeLimitSeconds: quiz.timeLimitSeconds,
       defaultMarks: quiz.defaultMarks,
@@ -249,7 +274,8 @@ export class QuizService {
    */
   static async evaluateAttempt(
     quizId: string,
-    input: SubmitQuizAttemptInput
+    input: SubmitQuizAttemptInput,
+    studentId?: string
   ): Promise<AttemptResult | null> {
     const quiz = await QuizRepository.findById(quizId);
     if (!quiz) return null;
@@ -324,9 +350,13 @@ export class QuizService {
         ? Math.round((Math.max(0, finalScore) / finalTotalPossible) * 10000) / 100
         : 0;
 
+    // Atomically increment attemptCount on Quiz
+    await QuizRepository.incrementAttemptCount(quizId);
+
     // Persist attempt
     const attempt = await QuizAttemptRepository.create({
       quizId,
+      studentId,
       answers: input.answers.map((a) => ({
         questionId: a.questionId,
         selectedOptionIndex: a.selectedOptionIndex,

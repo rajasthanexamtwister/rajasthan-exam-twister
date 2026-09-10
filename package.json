@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "db:seed": "tsx scripts/seed.ts"
+    "db:seed": "tsx scripts/seed.ts",
+    "notes:import": "tsx scripts/import-local-notes.ts"
   },
   "dependencies": {
     "@tiptap/extension-image": "^3.31.3",

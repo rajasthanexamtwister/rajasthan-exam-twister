@@ -8,6 +8,7 @@ export interface IQuizAttemptAnswer {
 export interface IQuizAttempt extends Document {
   _id: mongoose.Types.ObjectId;
   quizId: mongoose.Types.ObjectId;
+  studentId?: mongoose.Types.ObjectId;
   answers: IQuizAttemptAnswer[];
   score: number;
   totalPossibleScore: number;
@@ -42,6 +43,12 @@ const QuizAttemptSchema = new Schema<IQuizAttempt>(
       ref: "Quiz",
       required: true,
       index: true,
+    },
+    studentId: {
+      type: Schema.Types.ObjectId,
+      ref: "Student",
+      index: true,
+      default: null,
     },
     answers: {
       type: [QuizAttemptAnswerSchema],
@@ -84,6 +91,7 @@ const QuizAttemptSchema = new Schema<IQuizAttempt>(
 );
 
 QuizAttemptSchema.index({ quizId: 1, submittedAt: -1 });
+QuizAttemptSchema.index({ studentId: 1, submittedAt: -1 });
 
 export const QuizAttempt: Model<IQuizAttempt> =
   mongoose.models.QuizAttempt ||

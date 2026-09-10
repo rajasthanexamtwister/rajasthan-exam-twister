@@ -19,6 +19,8 @@ if (!global.mongooseCache) {
 }
 
 export async function connectToDatabase(): Promise<typeof mongoose> {
+  const uri = process.env.DATABASE_URL || process.env.MONGODB_URI || "mongodb://localhost:27017/rajasthan_exam_twister";
+
   if (cached.conn) {
     return cached.conn;
   }
@@ -29,7 +31,7 @@ export async function connectToDatabase(): Promise<typeof mongoose> {
       maxPoolSize: 10,
     };
 
-    cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongooseInstance) => {
+    cached.promise = mongoose.connect(uri, opts).then((mongooseInstance) => {
       return mongooseInstance;
     });
   }

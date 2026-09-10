@@ -24,8 +24,9 @@ const navItems = [
   { name: "Home", href: "/" },
   { name: "Blogs", href: "/blogs" },
   { name: "Notes", href: "/notes" },
-  { name: "Categories", href: "/categories" },
   { name: "Quizzes", href: "/quizzes" },
+  { name: "Leaderboard", href: "/leaderboard" },
+  { name: "Categories", href: "/categories" },
   { name: "AI Quiz Tool", href: "/quiz-tools/create", highlight: true },
   { name: "About", href: "/about" },
 ];

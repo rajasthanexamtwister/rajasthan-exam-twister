@@ -10,6 +10,7 @@ import { IQuizAttempt } from "@/server/models/QuizAttempt";
 describe("QuizService Logic & Scoring Security", () => {
   beforeEach(() => {
     vi.restoreAllMocks();
+    vi.spyOn(QuizRepository, "incrementAttemptCount").mockResolvedValue(undefined);
   });
 
   describe("Security: Answer & Explanation Isolation (getPublicQuizBySlug)", () => {

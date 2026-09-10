@@ -1,12 +1,17 @@
 import mongoose, { Schema, Document, Model } from "mongoose";
 import { ContentStatus } from "./Blog";
 
+export type QuizDifficulty = "easy" | "medium" | "hard";
+
 export interface IQuiz extends Document {
   _id: mongoose.Types.ObjectId;
   title: string;
   slug: string;
   subject?: string;
   categoryId?: mongoose.Types.ObjectId;
+  examTags: string[];
+  difficulty: QuizDifficulty;
+  attemptCount: number;
   status: ContentStatus;
   timeLimitSeconds?: number | null;
   shuffleQuestions: boolean;
@@ -42,6 +47,22 @@ const QuizSchema = new Schema<IQuiz>(
       type: Schema.Types.ObjectId,
       ref: "Category",
       index: true,
+    },
+    examTags: {
+      type: [String],
+      default: [],
+      index: true,
+    },
+    difficulty: {
+      type: String,
+      enum: ["easy", "medium", "hard"],
+      default: "medium",
+      index: true,
+    },
+    attemptCount: {
+      type: Number,
+      default: 0,
+      min: 0,
     },
     status: {
       type: String,
@@ -84,9 +105,12 @@ const QuizSchema = new Schema<IQuiz>(
   }
 );
 
-// Compound index for published listings
+// Compound indexes for published listings & discovery
 QuizSchema.index({ status: 1, publishedAt: -1 });
 QuizSchema.index({ subject: 1, status: 1 });
+QuizSchema.index({ examTags: 1, status: 1 });
+QuizSchema.index({ difficulty: 1, status: 1 });
+QuizSchema.index({ status: 1, attemptCount: -1 });
 
 export const Quiz: Model<IQuiz> =
   mongoose.models.Quiz || mongoose.model<IQuiz>("Quiz", QuizSchema);

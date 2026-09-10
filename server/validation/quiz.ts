@@ -69,6 +69,15 @@ export const QuizImportJSONSchema = z.object({
     .string()
     .max(100, "Subject cannot exceed 100 characters")
     .optional(),
+  examTags: z
+    .array(z.string().min(1).max(50))
+    .max(20, "Cannot exceed 20 exam tags")
+    .optional()
+    .default([]),
+  difficulty: z
+    .enum(["easy", "medium", "hard"])
+    .optional()
+    .default("medium"),
   questions: z
     .array(QuizImportQuestionSchema)
     .min(1, "At least 1 question is required")
@@ -83,6 +92,8 @@ export const UpdateQuizSettingsSchema = z.object({
   title: z.string().min(1).max(200).optional(),
   subject: z.string().max(100).optional(),
   categoryId: z.string().nullable().optional(),
+  examTags: z.array(z.string().min(1).max(50)).max(20).optional(),
+  difficulty: z.enum(["easy", "medium", "hard"]).optional(),
   timeLimitSeconds: z.number().int().min(10).nullable().optional(),
   shuffleQuestions: z.boolean().optional(),
   shuffleOptions: z.boolean().optional(),
@@ -140,6 +151,8 @@ export const QuizQuerySchema = z.object({
   status: z.enum(["DRAFT", "PUBLISHED", "ARCHIVED", "ALL"]).optional(),
   subject: z.string().optional(),
   categoryId: z.string().optional(),
+  examTag: z.string().optional(),
+  difficulty: z.enum(["easy", "medium", "hard"]).optional(),
   search: z.string().optional(),
   page: z.coerce.number().int().min(1).default(1),
   pageSize: z.coerce.number().int().min(1).max(100).default(10),

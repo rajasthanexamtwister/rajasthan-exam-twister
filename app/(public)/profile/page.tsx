@@ -1,26 +1,77 @@
 "use client";
 
 import { useSession, signIn, signOut } from "next-auth/react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
   User,
   Mail,
-  Calendar,
   Award,
   CheckCircle2,
   BookOpen,
   ArrowRight,
   LogOut,
   ShieldCheck,
-  Sparkles,
+  Zap,
   Loader2,
-  FileText,
+  Trophy,
+  History,
+  XCircle,
+  HelpCircle,
 } from "lucide-react";
 import clsx from "clsx";
 
+interface AttemptHistoryItem {
+  _id: string;
+  quizId: {
+    _id: string;
+    title: string;
+    slug: string;
+    subject?: string;
+    difficulty?: string;
+  };
+  score: number;
+  totalPossibleScore: number;
+  correctCount: number;
+  incorrectCount: number;
+  unattemptedCount: number;
+  submittedAt: string;
+}
+
+interface StudentStats {
+  totalAttempts: number;
+  averagePercentage: number;
+  bestPercentage: number;
+}
+
 export default function StudentProfilePage() {
   const { data: session, status } = useSession();
+  const [attempts, setAttempts] = useState<AttemptHistoryItem[]>([]);
+  const [stats, setStats] = useState<StudentStats>({
+    totalAttempts: 0,
+    averagePercentage: 0,
+    bestPercentage: 0,
+  });
+  const [loadingAttempts, setLoadingAttempts] = useState(false);
+
+  useEffect(() => {
+    if (session?.user) {
+      setLoadingAttempts(true);
+      fetch("/api/student/attempts")
+        .then((res) => (res.ok ? res.json() : null))
+        .then((data) => {
+          if (data) {
+            setAttempts(data.attempts || []);
+            if (data.stats) {
+              setStats(data.stats);
+            }
+          }
+        })
+        .catch((err) => console.error("Failed to load student attempts:", err))
+        .finally(() => setLoadingAttempts(false));
+    }
+  }, [session]);
 
   if (status === "loading") {
     return (
@@ -55,7 +106,7 @@ export default function StudentProfilePage() {
               <li>Save unlimited mock test attempts & track accuracy over time</li>
               <li>Compete on weekly Rajasthan-wide test leaderboards</li>
               <li>Auto-detect your weakest exam syllabus subjects</li>
-              <li>Bookmark and review wrong answers in your revision notebook</li>
+              <li>Review solutions and previous scores anytime</li>
             </ul>
           </div>
 
@@ -93,9 +144,9 @@ export default function StudentProfilePage() {
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] py-10 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto space-y-8">
+      <div className="max-w-5xl mx-auto space-y-8">
         {/* Profile Header Card */}
-        <div className="bg-white rounded-3xl border border-amber-200 shadow-xl p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6">
+        <div className="bg-white rounded-3xl border border-amber-200/80 shadow-sm p-6 sm:p-8 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6">
           <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
             <div className="relative w-20 h-20 rounded-2xl overflow-hidden ring-4 ring-amber-400 bg-[#0B132B] shadow-md shrink-0">
               {user.image ? (
@@ -126,54 +177,173 @@ export default function StudentProfilePage() {
             </div>
           </div>
 
-          <button
-            type="button"
-            onClick={() => signOut({ callbackUrl: "/" })}
-            className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-red-700 bg-red-50 hover:bg-red-100 rounded-xl transition-colors self-center sm:self-start"
-          >
-            <LogOut className="w-3.5 h-3.5" />
-            <span>Sign Out</span>
-          </button>
+          <div className="flex items-center gap-2 self-center sm:self-start">
+            <Link
+              href="/leaderboard"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-amber-900 bg-amber-100 hover:bg-amber-200/80 border border-amber-300 rounded-xl transition-colors"
+            >
+              <Trophy className="w-3.5 h-3.5 text-amber-700" />
+              <span>Leaderboard</span>
+            </Link>
+            <button
+              type="button"
+              onClick={() => signOut({ callbackUrl: "/" })}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-red-700 bg-red-50 hover:bg-red-100 rounded-xl transition-colors"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              <span>Sign Out</span>
+            </button>
+          </div>
         </div>
 
-        {/* Quick Stats Banner (Prepared for 13B-13E) */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {/* Real Stats Cards (13B) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           <div className="bg-white p-5 rounded-2xl border border-amber-200/80 shadow-xs space-y-1">
             <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">
-              Quiz Attempts
+              Tests Attempted
             </span>
-            <span className="text-2xl font-black text-[#0B132B] block">0</span>
-            <span className="text-[10px] text-slate-400">Mock tests completed</span>
+            <span className="text-2xl font-black text-[#0B132B] block">
+              {stats.totalAttempts}
+            </span>
+            <span className="text-[10px] text-slate-400">Mock tests & quizzes completed</span>
           </div>
 
           <div className="bg-white p-5 rounded-2xl border border-amber-200/80 shadow-xs space-y-1">
             <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">
-              Overall Accuracy
+              Average Score
             </span>
-            <span className="text-2xl font-black text-amber-700 block">—</span>
-            <span className="text-[10px] text-slate-400">Average % score</span>
+            <span className="text-2xl font-black text-amber-700 block">
+              {stats.averagePercentage > 0 ? `${stats.averagePercentage}%` : "—"}
+            </span>
+            <span className="text-[10px] text-slate-400">Average accuracy across attempts</span>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-amber-200/80 shadow-xs space-y-1">
+          <div className="bg-white p-5 rounded-2xl border border-amber-200/80 shadow-xs space-y-1 col-span-2 sm:col-span-1">
             <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">
-              Weekly Rank
+              Best Score
             </span>
-            <span className="text-2xl font-black text-emerald-700 block">—</span>
-            <span className="text-[10px] text-slate-400">Statewide leaderboard</span>
+            <span className="text-2xl font-black text-emerald-700 block">
+              {stats.bestPercentage > 0 ? `${stats.bestPercentage}%` : "—"}
+            </span>
+            <span className="text-[10px] text-slate-400">Highest performance achieved</span>
+          </div>
+        </div>
+
+        {/* Persisted Attempt History Section */}
+        <div className="bg-white rounded-3xl border border-amber-200/80 shadow-xs overflow-hidden">
+          <div className="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <History className="w-4 h-4 text-amber-600" />
+              <h2 className="text-sm font-extrabold text-[#0B132B] uppercase tracking-wider">
+                My Quiz Attempt History
+              </h2>
+            </div>
+            <span className="text-xs text-slate-500 font-semibold">
+              {attempts.length} Recorded
+            </span>
           </div>
 
-          <div className="bg-white p-5 rounded-2xl border border-amber-200/80 shadow-xs space-y-1">
-            <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">
-              Wrong Questions
-            </span>
-            <span className="text-2xl font-black text-red-600 block">0</span>
-            <span className="text-[10px] text-slate-400">In revision notebook</span>
-          </div>
+          {loadingAttempts ? (
+            <div className="p-8 text-center space-y-2">
+              <Loader2 className="w-6 h-6 animate-spin text-amber-500 mx-auto" />
+              <p className="text-xs text-slate-500 font-medium">Loading your attempts...</p>
+            </div>
+          ) : attempts.length === 0 ? (
+            <div className="p-8 text-center space-y-3">
+              <div className="w-12 h-12 rounded-full bg-amber-50 text-amber-700 mx-auto flex items-center justify-center">
+                <Zap className="w-6 h-6" />
+              </div>
+              <h3 className="text-sm font-bold text-slate-900">No tests completed yet</h3>
+              <p className="text-xs text-slate-500 max-w-sm mx-auto">
+                Take your first mock test to see your scores, accuracy breakdowns, and rank on the student leaderboard!
+              </p>
+              <Link
+                href="/quizzes"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs hover:bg-amber-400 transition-all shadow-xs"
+              >
+                <span>Take a Quiz Now</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          ) : (
+            <div className="divide-y divide-slate-100">
+              {attempts.map((att) => {
+                const quiz = att.quizId;
+                const percentage =
+                  att.totalPossibleScore > 0
+                    ? Math.round((att.score / att.totalPossibleScore) * 10000) / 100
+                    : 0;
+                const formattedDate = new Date(att.submittedAt).toLocaleDateString("en-IN", {
+                  day: "numeric",
+                  month: "short",
+                  year: "numeric",
+                });
+
+                return (
+                  <div
+                    key={att._id}
+                    className="p-4 sm:px-6 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-amber-50/40 transition-colors"
+                  >
+                    <div className="space-y-1 truncate">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        {quiz?.subject && (
+                          <span className="px-2 py-0.2 rounded-md text-[10px] font-bold uppercase bg-amber-50 text-amber-800 border border-amber-200/60">
+                            {quiz.subject}
+                          </span>
+                        )}
+                        <span className="text-[11px] text-slate-400 font-medium">
+                          {formattedDate}
+                        </span>
+                      </div>
+                      <h4 className="text-sm font-bold text-[#0B132B] truncate">
+                        {quiz?.title || "Practice Test"}
+                      </h4>
+                      <div className="flex items-center gap-3 text-xs text-slate-500 pt-0.5">
+                        <span className="inline-flex items-center gap-1 text-emerald-700 font-semibold">
+                          <CheckCircle2 className="w-3.5 h-3.5" />
+                          {att.correctCount} correct
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-red-600 font-semibold">
+                          <XCircle className="w-3.5 h-3.5" />
+                          {att.incorrectCount} wrong
+                        </span>
+                        {att.unattemptedCount > 0 && (
+                          <span className="text-slate-400">
+                            {att.unattemptedCount} skipped
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between sm:justify-end gap-4 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
+                      <div className="text-left sm:text-right">
+                        <div className="text-sm font-extrabold text-[#0B132B]">
+                          {att.score} / {att.totalPossibleScore} pts
+                        </div>
+                        <div className="text-[11px] font-bold text-amber-700">
+                          {percentage}% accuracy
+                        </div>
+                      </div>
+
+                      {quiz?.slug && (
+                        <Link
+                          href={`/quizzes/${quiz.slug}`}
+                          className="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-amber-500 hover:text-slate-950 text-slate-700 text-xs font-bold transition-all whitespace-nowrap"
+                        >
+                          Retake Test &rarr;
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {/* Quick Action Navigation */}
-        <div className="bg-white rounded-3xl border border-amber-200 shadow-xs p-6 space-y-4">
-          <h2 className="text-base font-bold text-[#0B132B]">Continue Studying</h2>
+        <div className="bg-white rounded-3xl border border-amber-200/80 shadow-xs p-6 space-y-4">
+          <h2 className="text-base font-bold text-[#0B132B]">Quick Exam Tools</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <Link
               href="/quizzes"
@@ -181,18 +351,18 @@ export default function StudentProfilePage() {
             >
               <div>
                 <span className="text-xs font-bold text-[#0B132B] block">Practice Quizzes</span>
-                <span className="text-[11px] text-slate-500">Attempt state exam papers</span>
+                <span className="text-[11px] text-slate-500">Filter by exam & subject</span>
               </div>
               <ArrowRight className="w-4 h-4 text-amber-700 group-hover:translate-x-1 transition-transform" />
             </Link>
 
             <Link
-              href="/notes"
+              href="/leaderboard"
               className="p-4 rounded-2xl bg-amber-50/60 hover:bg-amber-100/80 border border-amber-200/80 transition-all flex items-center justify-between group"
             >
               <div>
-                <span className="text-xs font-bold text-[#0B132B] block">Revision Notes</span>
-                <span className="text-[11px] text-slate-500">High-yield GK summaries</span>
+                <span className="text-xs font-bold text-[#0B132B] block">Student Leaderboard</span>
+                <span className="text-[11px] text-slate-500">Weekly statewide ranks</span>
               </div>
               <ArrowRight className="w-4 h-4 text-amber-700 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -203,7 +373,7 @@ export default function StudentProfilePage() {
             >
               <div>
                 <span className="text-xs font-bold text-[#0B132B] block">AI Quiz Tool</span>
-                <span className="text-[11px] text-slate-500">Convert question papers</span>
+                <span className="text-[11px] text-slate-500">Convert exam papers</span>
               </div>
               <ArrowRight className="w-4 h-4 text-amber-700 group-hover:translate-x-1 transition-transform" />
             </Link>

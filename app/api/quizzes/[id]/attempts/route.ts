@@ -12,6 +12,9 @@ interface RouteParams {
   };
 }
 
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/server/lib/auth-options";
+
 // POST /api/quizzes/:id/attempts - Authoritative attempt scoring
 export async function POST(request: NextRequest, { params }: RouteParams) {
   try {
@@ -46,7 +49,18 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
       return errorResponse("VALIDATION_ERROR", "Invalid quiz attempt submission", 400, fieldErrors);
     }
 
-    const result = await QuizService.evaluateAttempt(params.id, validation.data);
+    // Retrieve logged-in student session if available
+    let studentId: string | undefined;
+    try {
+      const session = await getServerSession(authOptions);
+      if (session?.user && (session.user as any).id) {
+        studentId = (session.user as any).id;
+      }
+    } catch (e) {
+      // Guest attempt fallback
+    }
+
+    const result = await QuizService.evaluateAttempt(params.id, validation.data, studentId);
     if (!result) {
       return errorResponse("NOT_FOUND", "Quiz not found or has no active questions", 404);
     }

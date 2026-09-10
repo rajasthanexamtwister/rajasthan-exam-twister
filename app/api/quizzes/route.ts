@@ -18,6 +18,8 @@ export async function GET(request: NextRequest) {
       status: searchParams.get("status") || undefined,
       subject: searchParams.get("subject") || undefined,
       categoryId: searchParams.get("categoryId") || searchParams.get("category") || undefined,
+      examTag: searchParams.get("examTag") || searchParams.get("exam") || undefined,
+      difficulty: searchParams.get("difficulty") || undefined,
       search: searchParams.get("search") || searchParams.get("q") || undefined,
       page: searchParams.get("page") || undefined,
       pageSize: searchParams.get("pageSize") || undefined,
@@ -27,13 +29,15 @@ export async function GET(request: NextRequest) {
       return errorResponse("VALIDATION_ERROR", "Invalid query parameters", 400);
     }
 
-    const { status, subject, categoryId, search, page, pageSize } = queryValidation.data;
+    const { status, subject, categoryId, examTag, difficulty, search, page, pageSize } = queryValidation.data;
 
     const result = await QuizService.listQuizzes(
       {
         status: status as ContentStatus | "ALL",
         subject,
         categoryId,
+        examTag,
+        difficulty: difficulty as any,
         search,
         page,
         pageSize,
