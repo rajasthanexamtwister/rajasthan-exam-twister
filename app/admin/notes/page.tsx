@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import Link from "next/link";
 import {
   PlusCircle,
@@ -17,6 +17,11 @@ import {
   Image as ImageIcon,
   FileText,
   FileCode,
+  CheckCircle2,
+  ChevronDown,
+  ChevronUp,
+  X,
+  UploadCloud,
 } from "lucide-react";
 import clsx from "clsx";
 
@@ -33,6 +38,14 @@ interface NoteItem {
   pdfMediaId?: string;
 }
 
+interface BulkPublishReport {
+  published: string[];
+  skipped: { id: string; title?: string; reason: string }[];
+  totalRequested: number;
+  publishedCount: number;
+  skippedCount: number;
+}
+
 export default function AdminNotesPage() {
   const [notes, setNotes] = useState<NoteItem[]>([]);
   const [loading, setLoading] = useState(true);
@@ -41,6 +54,13 @@ export default function AdminNotesPage() {
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const [confirmModalId, setConfirmModalId] = useState<string | null>(null);
   const [actionLoadingId, setActionLoadingId] = useState<string | null>(null);
+
+  // Bulk selection state
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+  const [bulkLoading, setBulkLoading] = useState(false);
+  const [bulkActionType, setBulkActionType] = useState<"publish" | "unpublish" | null>(null);
+  const [bulkReport, setBulkReport] = useState<BulkPublishReport | null>(null);
+  const [showSkippedDetails, setShowSkippedDetails] = useState(false);
 
   const fetchNotes = useCallback(async () => {
     try {
@@ -65,6 +85,45 @@ export default function AdminNotesPage() {
   useEffect(() => {
     fetchNotes();
   }, [fetchNotes]);
+
+  // Clean up selection when notes change or filter changes
+  const visibleNoteIds = useMemo(() => notes.map((n) => n._id), [notes]);
+  const isAllVisibleSelected = visibleNoteIds.length > 0 && visibleNoteIds.every((id) => selectedIds.has(id));
+  const isSomeVisibleSelected = visibleNoteIds.some((id) => selectedIds.has(id));
+
+  const toggleSelectAll = () => {
+    if (isAllVisibleSelected) {
+      // Unselect all visible
+      setSelectedIds((prev) => {
+        const next = new Set(prev);
+        visibleNoteIds.forEach((id) => next.delete(id));
+        return next;
+      });
+    } else {
+      // Select all visible
+      setSelectedIds((prev) => {
+        const next = new Set(prev);
+        visibleNoteIds.forEach((id) => next.add(id));
+        return next;
+      });
+    }
+  };
+
+  const toggleSelectRow = (id: string) => {
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
+
+  const clearSelection = () => {
+    setSelectedIds(new Set());
+  };
 
   const handlePublishToggle = async (id: string, currentStatus: string) => {
     try {
@@ -92,6 +151,73 @@ export default function AdminNotesPage() {
     }
   };
 
+  const handleBulkPublish = async () => {
+    if (selectedIds.size === 0) return;
+    try {
+      setBulkLoading(true);
+      setBulkActionType("publish");
+      const noteIds = Array.from(selectedIds);
+
+      const res = await fetch("/api/notes/bulk-publish", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-requested-with": "ret-admin",
+        },
+        body: JSON.stringify({ noteIds }),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        setBulkReport(data);
+        setShowSkippedDetails((data.skippedCount || 0) > 0);
+        clearSelection();
+        await fetchNotes();
+      } else {
+        alert(data.error?.message || "Bulk publish failed");
+      }
+    } catch (err) {
+      console.error("Bulk publish error:", err);
+      alert("Network error during bulk publish");
+    } finally {
+      setBulkLoading(false);
+      setBulkActionType(null);
+    }
+  };
+
+  const handleBulkUnpublish = async () => {
+    if (selectedIds.size === 0) return;
+    try {
+      setBulkLoading(true);
+      setBulkActionType("unpublish");
+      const noteIds = Array.from(selectedIds);
+
+      const res = await fetch("/api/notes/bulk-unpublish", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-requested-with": "ret-admin",
+        },
+        body: JSON.stringify({ noteIds }),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        clearSelection();
+        await fetchNotes();
+        alert(`Successfully reverted ${data.unpublishedCount || noteIds.length} notes to Draft status.`);
+      } else {
+        alert(data.error?.message || "Bulk unpublish failed");
+      }
+    } catch (err) {
+      console.error("Bulk unpublish error:", err);
+      alert("Network error during bulk unpublish");
+    } finally {
+      setBulkLoading(false);
+      setBulkActionType(null);
+    }
+  };
+
   const handleDelete = async (id: string) => {
     try {
       setDeletingId(id);
@@ -102,6 +228,11 @@ export default function AdminNotesPage() {
 
       if (res.ok) {
         setNotes((prev) => prev.filter((n) => n._id !== id));
+        setSelectedIds((prev) => {
+          const next = new Set(prev);
+          next.delete(id);
+          return next;
+        });
         setConfirmModalId(null);
       } else {
         const data = await res.json();
@@ -115,7 +246,7 @@ export default function AdminNotesPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto space-y-6">
+    <div className="max-w-7xl mx-auto space-y-6 pb-20">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
         <div>
@@ -129,7 +260,7 @@ export default function AdminNotesPage() {
           </div>
           <h1 className="text-2xl font-bold text-slate-900 mt-1">Manage Revision Notes</h1>
           <p className="text-xs text-slate-500 mt-0.5">
-            Create, edit, attach ordered infographics/PDFs, and publish master revision notes
+            Create, edit, batch publish drafts, attach infographics/PDFs, and publish notes
           </p>
         </div>
 
@@ -196,6 +327,57 @@ export default function AdminNotesPage() {
         </div>
       </div>
 
+      {/* Bulk Action Sticky/Floating Bar */}
+      {selectedIds.size > 0 && (
+        <div className="sticky top-4 z-40 bg-slate-900 text-white p-3.5 px-5 rounded-2xl shadow-xl border border-slate-800 flex flex-wrap items-center justify-between gap-4 animate-in fade-in slide-in-from-top-4 duration-200">
+          <div className="flex items-center gap-3">
+            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-amber-500 text-slate-950 font-bold text-xs">
+              {selectedIds.size}
+            </span>
+            <span className="text-xs font-semibold text-slate-200">
+              {selectedIds.size === 1 ? "1 note selected" : `${selectedIds.size} notes selected`}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={handleBulkPublish}
+              disabled={bulkLoading}
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white transition-colors shadow-sm disabled:opacity-50"
+            >
+              {bulkLoading && bulkActionType === "publish" ? (
+                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+              ) : (
+                <CheckCircle2 className="w-3.5 h-3.5" />
+              )}
+              <span>Publish Selected ({selectedIds.size})</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={handleBulkUnpublish}
+              disabled={bulkLoading}
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 transition-colors disabled:opacity-50"
+            >
+              {bulkLoading && bulkActionType === "unpublish" ? (
+                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+              ) : null}
+              <span>Unpublish Selected ({selectedIds.size})</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={clearSelection}
+              disabled={bulkLoading}
+              className="px-2.5 py-1.5 rounded-xl text-xs font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-colors"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Table Container */}
       <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
         {loading ? (
@@ -212,7 +394,7 @@ export default function AdminNotesPage() {
             <p className="text-xs text-slate-500 mt-1 max-w-sm mx-auto">
               {statusFilter !== "ALL"
                 ? `No notes matching the filter "${statusFilter}".`
-                : "Get started by creating your first revision note or infographic handbook."}
+                : "Get started by creating your first revision note or importing HTML notes."}
             </p>
             <div className="mt-5">
               <Link
@@ -229,7 +411,19 @@ export default function AdminNotesPage() {
             <table className="w-full text-left text-sm text-slate-600">
               <thead className="bg-slate-50/80 border-b border-slate-200 text-[11px] font-bold uppercase tracking-wider text-slate-500">
                 <tr>
-                  <th className="py-3.5 px-6">Title & Subject</th>
+                  <th className="py-3.5 pl-6 pr-2 w-10">
+                    <input
+                      type="checkbox"
+                      checked={isAllVisibleSelected}
+                      ref={(el) => {
+                        if (el) el.indeterminate = !isAllVisibleSelected && isSomeVisibleSelected;
+                      }}
+                      onChange={toggleSelectAll}
+                      className="w-4 h-4 rounded border-slate-300 text-amber-600 focus:ring-amber-500 cursor-pointer"
+                      title="Select all visible notes"
+                    />
+                  </th>
+                  <th className="py-3.5 px-4">Title & Subject</th>
                   <th className="py-3.5 px-4">Status</th>
                   <th className="py-3.5 px-4">Assets</th>
                   <th className="py-3.5 px-4">Last Updated</th>
@@ -237,139 +431,245 @@ export default function AdminNotesPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                {notes.map((note) => (
-                  <tr
-                    key={note._id}
-                    className="hover:bg-slate-50/80 transition-colors group"
-                  >
-                    <td className="py-4 px-6 max-w-md">
-                      <Link
-                        href={`/admin/notes/${note._id}/edit`}
-                        className="font-bold text-slate-900 hover:text-amber-600 line-clamp-1 group-hover:underline text-sm"
-                      >
-                        {note.title}
-                      </Link>
-                      <div className="flex items-center gap-2 mt-1 text-xs text-slate-500">
-                        <span className="font-mono text-[11px] text-slate-400">/{note.slug}</span>
-                        {note.subject && (
-                          <span className="px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-semibold text-[10px]">
-                            {note.subject}
-                          </span>
-                        )}
-                        {note.category && (
-                          <span className="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium text-[10px]">
-                            {note.category.name}
-                          </span>
-                        )}
-                      </div>
-                    </td>
-
-                    <td className="py-4 px-4 whitespace-nowrap">
-                      <span
-                        className={clsx(
-                          "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border",
-                          note.status === "PUBLISHED" &&
-                            "bg-emerald-50 text-emerald-800 border-emerald-200",
-                          note.status === "DRAFT" &&
-                            "bg-amber-50 text-amber-800 border-amber-200",
-                          note.status === "ARCHIVED" &&
-                            "bg-slate-100 text-slate-700 border-slate-200"
-                        )}
-                      >
-                        <span
-                          className={clsx(
-                            "w-1.5 h-1.5 rounded-full",
-                            note.status === "PUBLISHED" && "bg-emerald-500",
-                            note.status === "DRAFT" && "bg-amber-500",
-                            note.status === "ARCHIVED" && "bg-slate-400"
-                          )}
+                {notes.map((note) => {
+                  const isSelected = selectedIds.has(note._id);
+                  return (
+                    <tr
+                      key={note._id}
+                      className={clsx(
+                        "transition-colors group",
+                        isSelected ? "bg-amber-50/50" : "hover:bg-slate-50/80"
+                      )}
+                    >
+                      <td className="py-4 pl-6 pr-2">
+                        <input
+                          type="checkbox"
+                          checked={isSelected}
+                          onChange={() => toggleSelectRow(note._id)}
+                          className="w-4 h-4 rounded border-slate-300 text-amber-600 focus:ring-amber-500 cursor-pointer"
                         />
-                        {note.status}
-                      </span>
-                    </td>
+                      </td>
 
-                    <td className="py-4 px-4 whitespace-nowrap text-xs text-slate-500">
-                      <div className="flex items-center gap-3">
-                        {note.imageIds && note.imageIds.length > 0 && (
-                          <span className="flex items-center gap-1 text-slate-600" title={`${note.imageIds.length} images`}>
-                            <ImageIcon className="w-3.5 h-3.5 text-amber-600" />
-                            <span>{note.imageIds.length}</span>
-                          </span>
-                        )}
-                        {note.pdfMediaId && (
-                          <span className="flex items-center gap-1 text-slate-600" title="PDF handbook attached">
-                            <FileText className="w-3.5 h-3.5 text-blue-600" />
-                            <span>PDF</span>
-                          </span>
-                        )}
-                      </div>
-                    </td>
-
-                    <td className="py-4 px-4 whitespace-nowrap text-xs text-slate-500">
-                      {new Date(note.updatedAt).toLocaleDateString("en-IN", {
-                        day: "numeric",
-                        month: "short",
-                        year: "numeric",
-                      })}
-                    </td>
-
-                    <td className="py-4 px-6 text-right whitespace-nowrap">
-                      <div className="flex items-center justify-end gap-1.5">
-                        {note.status === "PUBLISHED" && (
-                          <Link
-                            href={`/notes/${note.slug}`}
-                            target="_blank"
-                            className="p-1.5 text-slate-500 hover:text-slate-900 rounded-lg hover:bg-slate-100 transition-colors"
-                            title="View live on public site"
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                          </Link>
-                        )}
-
-                        <button
-                          onClick={() => handlePublishToggle(note._id, note.status)}
-                          disabled={actionLoadingId === note._id}
-                          className={clsx(
-                            "px-2.5 py-1 rounded-lg text-xs font-semibold border transition-colors",
-                            note.status === "PUBLISHED"
-                              ? "bg-amber-50 text-amber-800 border-amber-200 hover:bg-amber-100"
-                              : "bg-emerald-50 text-emerald-800 border-emerald-200 hover:bg-emerald-100"
-                          )}
-                          title={note.status === "PUBLISHED" ? "Unpublish to draft" : "Publish"}
-                        >
-                          {actionLoadingId === note._id ? (
-                            <Loader2 className="w-3.5 h-3.5 animate-spin mx-auto" />
-                          ) : note.status === "PUBLISHED" ? (
-                            "Unpublish"
-                          ) : (
-                            "Publish"
-                          )}
-                        </button>
-
+                      <td className="py-4 px-4 max-w-md">
                         <Link
                           href={`/admin/notes/${note._id}/edit`}
-                          className="p-1.5 text-slate-700 hover:text-amber-600 rounded-lg hover:bg-amber-50 transition-colors"
-                          title="Edit note"
+                          className="font-bold text-slate-900 hover:text-amber-600 line-clamp-1 group-hover:underline text-sm"
                         >
-                          <Edit className="w-4 h-4" />
+                          {note.title}
                         </Link>
+                        <div className="flex items-center gap-2 mt-1 text-xs text-slate-500">
+                          <span className="font-mono text-[11px] text-slate-400">/{note.slug}</span>
+                          {note.subject && (
+                            <span className="px-2 py-0.5 rounded bg-blue-50 text-blue-700 font-semibold text-[10px]">
+                              {note.subject}
+                            </span>
+                          )}
+                          {note.category && (
+                            <span className="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-medium text-[10px]">
+                              {note.category.name}
+                            </span>
+                          )}
+                        </div>
+                      </td>
 
-                        <button
-                          onClick={() => setConfirmModalId(note._id)}
-                          className="p-1.5 text-slate-400 hover:text-red-600 rounded-lg hover:bg-red-50 transition-colors"
-                          title="Delete note"
+                      <td className="py-4 px-4 whitespace-nowrap">
+                        <span
+                          className={clsx(
+                            "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border",
+                            note.status === "PUBLISHED" &&
+                              "bg-emerald-50 text-emerald-800 border-emerald-200",
+                            note.status === "DRAFT" &&
+                              "bg-amber-50 text-amber-800 border-amber-200",
+                            note.status === "ARCHIVED" &&
+                              "bg-slate-100 text-slate-700 border-slate-200"
+                          )}
                         >
-                          <Trash2 className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+                          <span
+                            className={clsx(
+                              "w-1.5 h-1.5 rounded-full",
+                              note.status === "PUBLISHED" && "bg-emerald-500",
+                              note.status === "DRAFT" && "bg-amber-500",
+                              note.status === "ARCHIVED" && "bg-slate-400"
+                            )}
+                          />
+                          {note.status}
+                        </span>
+                      </td>
+
+                      <td className="py-4 px-4 whitespace-nowrap text-xs text-slate-500">
+                        <div className="flex items-center gap-3">
+                          {note.imageIds && note.imageIds.length > 0 && (
+                            <span className="flex items-center gap-1 text-slate-600" title={`${note.imageIds.length} images`}>
+                              <ImageIcon className="w-3.5 h-3.5 text-amber-600" />
+                              <span>{note.imageIds.length}</span>
+                            </span>
+                          )}
+                          {note.pdfMediaId && (
+                            <span className="flex items-center gap-1 text-slate-600" title="PDF handbook attached">
+                              <FileText className="w-3.5 h-3.5 text-blue-600" />
+                              <span>PDF</span>
+                            </span>
+                          )}
+                        </div>
+                      </td>
+
+                      <td className="py-4 px-4 whitespace-nowrap text-xs text-slate-500">
+                        {new Date(note.updatedAt).toLocaleDateString("en-IN", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                        })}
+                      </td>
+
+                      <td className="py-4 px-6 text-right whitespace-nowrap">
+                        <div className="flex items-center justify-end gap-1.5">
+                          {note.status === "PUBLISHED" && (
+                            <Link
+                              href={`/notes/${note.slug}`}
+                              target="_blank"
+                              className="p-1.5 text-slate-500 hover:text-slate-900 rounded-lg hover:bg-slate-100 transition-colors"
+                              title="View live on public site"
+                            >
+                              <ExternalLink className="w-4 h-4" />
+                            </Link>
+                          )}
+
+                          <button
+                            onClick={() => handlePublishToggle(note._id, note.status)}
+                            disabled={actionLoadingId === note._id}
+                            className={clsx(
+                              "px-2.5 py-1 rounded-lg text-xs font-semibold border transition-colors",
+                              note.status === "PUBLISHED"
+                                ? "bg-amber-50 text-amber-800 border-amber-200 hover:bg-amber-100"
+                                : "bg-emerald-50 text-emerald-800 border-emerald-200 hover:bg-emerald-100"
+                            )}
+                            title={note.status === "PUBLISHED" ? "Unpublish to draft" : "Publish"}
+                          >
+                            {actionLoadingId === note._id ? (
+                              <Loader2 className="w-3.5 h-3.5 animate-spin mx-auto" />
+                            ) : note.status === "PUBLISHED" ? (
+                              "Unpublish"
+                            ) : (
+                              "Publish"
+                            )}
+                          </button>
+
+                          <Link
+                            href={`/admin/notes/${note._id}/edit`}
+                            className="p-1.5 text-slate-700 hover:text-amber-600 rounded-lg hover:bg-amber-50 transition-colors"
+                            title="Edit note"
+                          >
+                            <Edit className="w-4 h-4" />
+                          </Link>
+
+                          <button
+                            onClick={() => setConfirmModalId(note._id)}
+                            className="p-1.5 text-slate-400 hover:text-red-600 rounded-lg hover:bg-red-50 transition-colors"
+                            title="Delete note"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
         )}
       </div>
+
+      {/* Bulk Publish Result Report Modal */}
+      {bulkReport && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-4 animate-in fade-in zoom-in-95 duration-150">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                  <CheckCircle2 className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-base font-bold text-slate-900">Bulk Publish Summary</h3>
+                  <p className="text-xs text-slate-500">Processed {bulkReport.totalRequested} selected note(s)</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setBulkReport(null)}
+                className="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              <div className="p-3.5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <span className="text-xs font-semibold text-emerald-800">Published</span>
+                <p className="text-2xl font-bold text-emerald-900 mt-0.5">{bulkReport.publishedCount}</p>
+              </div>
+              <div className={clsx(
+                "p-3.5 rounded-xl border",
+                bulkReport.skippedCount > 0
+                  ? "bg-amber-50 border-amber-200"
+                  : "bg-slate-50 border-slate-200"
+              )}>
+                <span className={clsx(
+                  "text-xs font-semibold",
+                  bulkReport.skippedCount > 0 ? "text-amber-800" : "text-slate-600"
+                )}>
+                  Skipped
+                </span>
+                <p className={clsx(
+                  "text-2xl font-bold mt-0.5",
+                  bulkReport.skippedCount > 0 ? "text-amber-900" : "text-slate-700"
+                )}>
+                  {bulkReport.skippedCount}
+                </p>
+              </div>
+            </div>
+
+            {bulkReport.skippedCount > 0 && (
+              <div className="space-y-2 border border-amber-200 bg-amber-50/50 rounded-xl p-3.5">
+                <button
+                  type="button"
+                  onClick={() => setShowSkippedDetails(!showSkippedDetails)}
+                  className="flex items-center justify-between w-full text-xs font-bold text-amber-900 hover:text-amber-800"
+                >
+                  <span>{bulkReport.skippedCount} note(s) skipped (validation reasons)</span>
+                  {showSkippedDetails ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                </button>
+
+                {showSkippedDetails && (
+                  <div className="max-h-48 overflow-y-auto space-y-2 pt-2 border-t border-amber-200/60">
+                    {bulkReport.skipped.map((item, idx) => (
+                      <div key={idx} className="text-xs bg-white p-2.5 rounded-lg border border-amber-200 shadow-2xs space-y-0.5">
+                        <div className="flex items-center justify-between">
+                          <span className="font-semibold text-slate-800 truncate max-w-[240px]">
+                            {item.title || "Untitled Note"}
+                          </span>
+                          <span className="font-mono text-[10px] text-slate-400">{item.id.slice(-6)}</span>
+                        </div>
+                        <p className="text-[11px] text-red-600 font-medium">{item.reason}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            <div className="pt-2 flex justify-end">
+              <button
+                type="button"
+                onClick={() => setBulkReport(null)}
+                className="px-4 py-2 text-xs font-bold text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
+              >
+                Close Report
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Delete Confirmation Modal */}
       {confirmModalId && (

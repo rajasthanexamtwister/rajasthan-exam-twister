@@ -19,6 +19,10 @@ import {
   FileText,
   Layers,
   Sparkles,
+  Send,
+  X,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 import clsx from "clsx";
 
@@ -52,6 +56,14 @@ interface ImportLogItem {
   createdAt: string;
 }
 
+interface BulkPublishReport {
+  published: string[];
+  skipped: { id: string; title?: string; reason: string }[];
+  totalRequested: number;
+  publishedCount: number;
+  skippedCount: number;
+}
+
 export default function AdminNotesImportPage() {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -81,6 +93,12 @@ export default function AdminNotesImportPage() {
   const [viewingJobId, setViewingJobId] = useState<string | null>(null);
   const [viewingJobLogs, setViewingJobLogs] = useState<ImportLogItem[]>([]);
   const [loadingJobDetail, setLoadingJobDetail] = useState(false);
+
+  // Bulk action inside Job Detail Modal
+  const [selectedModalNoteIds, setSelectedModalNoteIds] = useState<Set<string>>(new Set());
+  const [bulkModalLoading, setBulkModalLoading] = useState(false);
+  const [bulkReport, setBulkReport] = useState<BulkPublishReport | null>(null);
+  const [showSkippedDetails, setShowSkippedDetails] = useState(false);
 
   // Rollback confirmation modal
   const [rollbackJobId, setRollbackJobId] = useState<string | null>(null);
@@ -206,6 +224,7 @@ export default function AdminNotesImportPage() {
   const handleOpenJobDetail = async (jobId: string) => {
     try {
       setViewingJobId(jobId);
+      setSelectedModalNoteIds(new Set());
       setLoadingJobDetail(true);
       const res = await fetch(`/api/import/jobs/${jobId}`, {
         headers: { "x-requested-with": "ret-admin" },
@@ -218,6 +237,60 @@ export default function AdminNotesImportPage() {
       console.error("Failed to load job details:", err);
     } finally {
       setLoadingJobDetail(false);
+    }
+  };
+
+  const toggleModalSelectAll = () => {
+    const createdNoteIds = viewingJobLogs
+      .filter((l) => l.createdNoteId?._id)
+      .map((l) => l.createdNoteId!._id);
+
+    if (selectedModalNoteIds.size === createdNoteIds.length) {
+      setSelectedModalNoteIds(new Set());
+    } else {
+      setSelectedModalNoteIds(new Set(createdNoteIds));
+    }
+  };
+
+  const toggleModalSelectRow = (id: string) => {
+    setSelectedModalNoteIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const handleBulkPublishModalNotes = async () => {
+    if (selectedModalNoteIds.size === 0) return;
+    try {
+      setBulkModalLoading(true);
+      const noteIds = Array.from(selectedModalNoteIds);
+      const res = await fetch("/api/notes/bulk-publish", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-requested-with": "ret-admin",
+        },
+        body: JSON.stringify({ noteIds }),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        setBulkReport(data);
+        setShowSkippedDetails((data.skippedCount || 0) > 0);
+        setSelectedModalNoteIds(new Set());
+        if (viewingJobId) {
+          await handleOpenJobDetail(viewingJobId);
+        }
+      } else {
+        alert(data.error?.message || "Bulk publish failed");
+      }
+    } catch (err) {
+      console.error("Bulk publish error:", err);
+      alert("Network error during bulk publish");
+    } finally {
+      setBulkModalLoading(false);
     }
   };
 
@@ -246,7 +319,7 @@ export default function AdminNotesImportPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto space-y-8">
+    <div className="max-w-7xl mx-auto space-y-8 pb-20">
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
         <div className="flex items-center gap-3">
@@ -385,7 +458,6 @@ export default function AdminNotesImportPage() {
       {/* Immediate Batch Summary Banner & Results Table */}
       {currentSummary && (
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden space-y-4 p-6 animate-in fade-in zoom-in-95 duration-150">
-          {/* Summary Line per CONTENT_IMPORT.md §10 */}
           <div className="p-4 rounded-xl bg-slate-900 text-white flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-400">
@@ -402,18 +474,28 @@ export default function AdminNotesImportPage() {
               </p>
             </div>
 
-            {/* If was dry run, provide one-click 'Create Drafts' button */}
-            {currentSummary.isDryRun && currentSummary.successCount > 0 && (
-              <button
-                type="button"
-                onClick={() => handleRunImport(true)}
-                disabled={importing}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 transition-all shadow-md shadow-amber-500/20 whitespace-nowrap self-start md:self-auto"
-              >
-                {importing ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle2 className="w-4 h-4" />}
-                <span>Create Drafts ({currentSummary.successCount} valid)</span>
-              </button>
-            )}
+            <div className="flex items-center gap-2">
+              {currentSummary.isDryRun && currentSummary.successCount > 0 && (
+                <button
+                  type="button"
+                  onClick={() => handleRunImport(true)}
+                  disabled={importing}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 transition-all shadow-md shadow-amber-500/20 whitespace-nowrap"
+                >
+                  {importing ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle2 className="w-4 h-4" />}
+                  <span>Create Drafts ({currentSummary.successCount} valid)</span>
+                </button>
+              )}
+              {!currentSummary.isDryRun && currentSummary.successCount > 0 && (
+                <Link
+                  href="/admin/notes?status=DRAFT"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all shadow-md whitespace-nowrap"
+                >
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span>Review Drafts in Notes CMS</span>
+                </Link>
+              )}
+            </div>
           </div>
 
           {/* Results Table */}
@@ -450,7 +532,7 @@ export default function AdminNotesImportPage() {
                       {item.reason ? (
                         <span className="text-red-600 font-medium">{item.reason}</span>
                       ) : (
-                        <span className="text-emerald-700">Ready for review</span>
+                        <span className="text-emerald-700 font-medium">Created as Draft</span>
                       )}
                     </td>
                   </tr>
@@ -529,7 +611,7 @@ export default function AdminNotesImportPage() {
                           className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-100 border border-slate-200 transition-colors"
                         >
                           <Eye className="w-3.5 h-3.5 text-slate-500" />
-                          <span>Logs</span>
+                          <span>Logs & Publish</span>
                         </button>
 
                         {!job.isDryRun && job.successCount > 0 && (
@@ -553,22 +635,40 @@ export default function AdminNotesImportPage() {
         )}
       </div>
 
-      {/* Job Details Modal */}
+      {/* Job Details & Bulk Action Modal */}
       {viewingJobId && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4 overflow-y-auto">
           <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[85vh] flex flex-col shadow-2xl border border-slate-200 animate-in fade-in zoom-in-95 duration-150">
-            <div className="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50/80 rounded-t-2xl">
+            <div className="p-4 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3 bg-slate-50/80 rounded-t-2xl">
               <div>
                 <h3 className="text-base font-bold text-slate-900">Import Job Per-File Logs</h3>
                 <p className="text-xs text-slate-500 font-mono">Job ID: {viewingJobId}</p>
               </div>
-              <button
-                type="button"
-                onClick={() => setViewingJobId(null)}
-                className="text-xs font-semibold text-slate-600 hover:text-slate-900 bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors"
-              >
-                Close
-              </button>
+
+              <div className="flex items-center gap-2">
+                {selectedModalNoteIds.size > 0 && (
+                  <button
+                    type="button"
+                    onClick={handleBulkPublishModalNotes}
+                    disabled={bulkModalLoading}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white transition-colors shadow-sm disabled:opacity-50"
+                  >
+                    {bulkModalLoading ? (
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                    ) : (
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                    )}
+                    <span>Publish Selected ({selectedModalNoteIds.size})</span>
+                  </button>
+                )}
+                <button
+                  type="button"
+                  onClick={() => setViewingJobId(null)}
+                  className="text-xs font-semibold text-slate-600 hover:text-slate-900 bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:bg-slate-100 transition-colors"
+                >
+                  Close
+                </button>
+              </div>
             </div>
 
             <div className="p-6 overflow-y-auto">
@@ -584,48 +684,191 @@ export default function AdminNotesImportPage() {
                   <table className="w-full text-left text-xs text-slate-600">
                     <thead className="bg-slate-50 border-b border-slate-200 font-bold uppercase tracking-wider text-slate-500 text-[10px]">
                       <tr>
-                        <th className="py-2.5 px-4">File Name</th>
-                        <th className="py-2.5 px-4">Result</th>
-                        <th className="py-2.5 px-4">Reason / Notes</th>
-                        <th className="py-2.5 px-4">Created Note</th>
+                        <th className="py-2.5 pl-4 pr-2 w-8">
+                          <input
+                            type="checkbox"
+                            onChange={toggleModalSelectAll}
+                            checked={
+                              viewingJobLogs.filter((l) => l.createdNoteId?._id).length > 0 &&
+                              selectedModalNoteIds.size ===
+                                viewingJobLogs.filter((l) => l.createdNoteId?._id).length
+                            }
+                            className="w-3.5 h-3.5 rounded border-slate-300 text-amber-600 focus:ring-amber-500 cursor-pointer"
+                            title="Select all notes created by this batch"
+                          />
+                        </th>
+                        <th className="py-2.5 px-3">File Name</th>
+                        <th className="py-2.5 px-3">Result</th>
+                        <th className="py-2.5 px-3">Reason / Details</th>
+                        <th className="py-2.5 px-3">Draft Note</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100">
-                      {viewingJobLogs.map((log) => (
-                        <tr key={log._id} className="hover:bg-slate-50/80 transition-colors">
-                          <td className="py-2.5 px-4 font-mono text-[11px] text-slate-800">{log.fileName}</td>
-                          <td className="py-2.5 px-4 whitespace-nowrap">
-                            <span
-                              className={clsx(
-                                "px-2 py-0.5 rounded text-[10px] font-bold",
-                                log.result === "SUCCESS" && "bg-emerald-50 text-emerald-800",
-                                log.result === "DUPLICATE" && "bg-amber-50 text-amber-800",
-                                log.result === "FAILED" && "bg-red-50 text-red-800"
-                              )}
-                            >
-                              {log.result}
-                            </span>
-                          </td>
-                          <td className="py-2.5 px-4 text-slate-600">{log.reason || "—"}</td>
-                          <td className="py-2.5 px-4 text-slate-700">
-                            {log.createdNoteId ? (
-                              <Link
-                                href={`/admin/notes/${log.createdNoteId._id}/edit`}
-                                className="text-amber-600 hover:underline font-semibold"
-                                target="_blank"
-                              >
-                                {log.createdNoteId.title || "View Draft Note"}
-                              </Link>
-                            ) : (
-                              "—"
+                      {viewingJobLogs.map((log) => {
+                        const noteId = log.createdNoteId?._id;
+                        const isSelected = noteId ? selectedModalNoteIds.has(noteId) : false;
+                        return (
+                          <tr
+                            key={log._id}
+                            className={clsx(
+                              "transition-colors",
+                              isSelected ? "bg-amber-50/50" : "hover:bg-slate-50/80"
                             )}
-                          </td>
-                        </tr>
-                      ))}
+                          >
+                            <td className="py-2.5 pl-4 pr-2">
+                              {noteId ? (
+                                <input
+                                  type="checkbox"
+                                  checked={isSelected}
+                                  onChange={() => toggleModalSelectRow(noteId)}
+                                  className="w-3.5 h-3.5 rounded border-slate-300 text-amber-600 focus:ring-amber-500 cursor-pointer"
+                                />
+                              ) : null}
+                            </td>
+                            <td className="py-2.5 px-3 font-mono text-[11px] text-slate-800">{log.fileName}</td>
+                            <td className="py-2.5 px-3 whitespace-nowrap">
+                              <span
+                                className={clsx(
+                                  "px-2 py-0.5 rounded text-[10px] font-bold",
+                                  log.result === "SUCCESS" && "bg-emerald-50 text-emerald-800",
+                                  log.result === "DUPLICATE" && "bg-amber-50 text-amber-800",
+                                  log.result === "FAILED" && "bg-red-50 text-red-800"
+                                )}
+                              >
+                                {log.result}
+                              </span>
+                            </td>
+                            <td className="py-2.5 px-3 text-slate-600">{log.reason || "—"}</td>
+                            <td className="py-2.5 px-3 text-slate-700">
+                              {log.createdNoteId ? (
+                                <div className="flex items-center gap-2">
+                                  <Link
+                                    href={`/admin/notes/${log.createdNoteId._id}/edit`}
+                                    className="text-amber-600 hover:underline font-semibold truncate max-w-xs"
+                                    target="_blank"
+                                  >
+                                    {log.createdNoteId.title || "View Draft Note"}
+                                  </Link>
+                                  <span
+                                    className={clsx(
+                                      "px-1.5 py-0.5 rounded text-[9px] font-bold uppercase",
+                                      log.createdNoteId.status === "PUBLISHED"
+                                        ? "bg-emerald-100 text-emerald-800"
+                                        : "bg-amber-100 text-amber-800"
+                                    )}
+                                  >
+                                    {log.createdNoteId.status}
+                                  </span>
+                                </div>
+                              ) : (
+                                "—"
+                              )}
+                            </td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Bulk Publish Result Report Modal */}
+      {bulkReport && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-4 animate-in fade-in zoom-in-95 duration-150">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                  <CheckCircle2 className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-base font-bold text-slate-900">Bulk Publish Summary</h3>
+                  <p className="text-xs text-slate-500">Processed {bulkReport.totalRequested} note(s)</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setBulkReport(null)}
+                className="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              <div className="p-3.5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <span className="text-xs font-semibold text-emerald-800">Published</span>
+                <p className="text-2xl font-bold text-emerald-900 mt-0.5">{bulkReport.publishedCount}</p>
+              </div>
+              <div
+                className={clsx(
+                  "p-3.5 rounded-xl border",
+                  bulkReport.skippedCount > 0 ? "bg-amber-50 border-amber-200" : "bg-slate-50 border-slate-200"
+                )}
+              >
+                <span
+                  className={clsx(
+                    "text-xs font-semibold",
+                    bulkReport.skippedCount > 0 ? "text-amber-800" : "text-slate-600"
+                  )}
+                >
+                  Skipped
+                </span>
+                <p
+                  className={clsx(
+                    "text-2xl font-bold mt-0.5",
+                    bulkReport.skippedCount > 0 ? "text-amber-900" : "text-slate-700"
+                  )}
+                >
+                  {bulkReport.skippedCount}
+                </p>
+              </div>
+            </div>
+
+            {bulkReport.skippedCount > 0 && (
+              <div className="space-y-2 border border-amber-200 bg-amber-50/50 rounded-xl p-3.5">
+                <button
+                  type="button"
+                  onClick={() => setShowSkippedDetails(!showSkippedDetails)}
+                  className="flex items-center justify-between w-full text-xs font-bold text-amber-900 hover:text-amber-800"
+                >
+                  <span>{bulkReport.skippedCount} note(s) skipped (validation reasons)</span>
+                  {showSkippedDetails ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                </button>
+
+                {showSkippedDetails && (
+                  <div className="max-h-48 overflow-y-auto space-y-2 pt-2 border-t border-amber-200/60">
+                    {bulkReport.skipped.map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="text-xs bg-white p-2.5 rounded-lg border border-amber-200 shadow-2xs space-y-0.5"
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-semibold text-slate-800 truncate max-w-[240px]">
+                            {item.title || "Untitled Note"}
+                          </span>
+                          <span className="font-mono text-[10px] text-slate-400">{item.id.slice(-6)}</span>
+                        </div>
+                        <p className="text-[11px] text-red-600 font-medium">{item.reason}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            <div className="pt-2 flex justify-end">
+              <button
+                type="button"
+                onClick={() => setBulkReport(null)}
+                className="px-4 py-2 text-xs font-bold text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
+              >
+                Close Report
+              </button>
             </div>
           </div>
         </div>

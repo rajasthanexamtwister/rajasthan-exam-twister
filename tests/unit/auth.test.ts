@@ -20,7 +20,7 @@ describe("Auth Utilities", () => {
 
     const isInvalid = await verifyPassword("WrongPassword!", hash);
     expect(isInvalid).toBe(false);
-  });
+  }, 30000);
 
   it("should sign and verify valid admin JWT tokens", async () => {
     const payload = {

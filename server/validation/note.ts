@@ -23,6 +23,14 @@ export const NoteQuerySchema = z.object({
   search: z.string().optional(),
 });
 
+export const BulkNoteActionSchema = z.object({
+  noteIds: z
+    .array(z.string().regex(/^[0-9a-fA-F]{24}$/, "Invalid note ID format"))
+    .min(1, "At least one note ID is required")
+    .max(200, "Cannot process more than 200 notes in a single bulk operation"),
+});
+
 export type CreateNoteInput = z.infer<typeof CreateNoteSchema>;
 export type UpdateNoteInput = z.infer<typeof UpdateNoteSchema>;
 export type NoteQueryInput = z.infer<typeof NoteQuerySchema>;
+export type BulkNoteActionInput = z.infer<typeof BulkNoteActionSchema>;

@@ -136,6 +136,77 @@ export class NoteService {
     return { success: true, note: updated || undefined };
   }
 
+  static async bulkPublishNotes(noteIds: string[]): Promise<{
+    published: string[];
+    skipped: { id: string; title?: string; reason: string }[];
+    totalRequested: number;
+    publishedCount: number;
+    skippedCount: number;
+  }> {
+    const published: string[] = [];
+    const skipped: { id: string; title?: string; reason: string }[] = [];
+
+    for (const id of noteIds) {
+      const existing = await NoteRepository.findById(id);
+      if (!existing) {
+        skipped.push({ id, reason: "Note not found" });
+        continue;
+      }
+
+      const res = await this.publishNote(id);
+      if (res.success && res.note) {
+        published.push(res.note._id ? res.note._id.toString() : id);
+      } else {
+        skipped.push({
+          id,
+          title: existing.title,
+          reason: res.error || "Validation failed",
+        });
+      }
+    }
+
+    return {
+      published,
+      skipped,
+      totalRequested: noteIds.length,
+      publishedCount: published.length,
+      skippedCount: skipped.length,
+    };
+  }
+
+  static async bulkUnpublishNotes(noteIds: string[]): Promise<{
+    success: boolean;
+    unpublished: string[];
+    failed: { id: string; reason: string }[];
+    totalRequested: number;
+    unpublishedCount: number;
+    failedCount: number;
+  }> {
+    const unpublished: string[] = [];
+    const failed: { id: string; reason: string }[] = [];
+
+    for (const id of noteIds) {
+      const res = await this.unpublishNote(id);
+      if (res.success && res.note) {
+        unpublished.push(res.note._id ? res.note._id.toString() : id);
+      } else {
+        failed.push({
+          id,
+          reason: res.error || "Note not found",
+        });
+      }
+    }
+
+    return {
+      success: true,
+      unpublished,
+      failed,
+      totalRequested: noteIds.length,
+      unpublishedCount: unpublished.length,
+      failedCount: failed.length,
+    };
+  }
+
   static async deleteNote(id: string, confirm: boolean): Promise<{ success: boolean; error?: string; status: number }> {
     if (!confirm) {
       return {
