@@ -19,6 +19,9 @@ import {
   History,
   XCircle,
   HelpCircle,
+  Target,
+  Flame,
+  AlertTriangle,
 } from "lucide-react";
 import clsx from "clsx";
 
@@ -39,6 +42,17 @@ interface AttemptHistoryItem {
   submittedAt: string;
 }
 
+interface WeakTopicItem {
+  topic: string;
+  totalAttempts: number;
+  questionsAttempted: number;
+  correctCount: number;
+  incorrectCount: number;
+  unattemptedCount: number;
+  accuracyPercentage: number;
+  status: "CRITICAL" | "NEEDS_IMPROVEMENT" | "PROFICIENT";
+}
+
 interface StudentStats {
   totalAttempts: number;
   averagePercentage: number;
@@ -48,16 +62,20 @@ interface StudentStats {
 export default function StudentProfilePage() {
   const { data: session, status } = useSession();
   const [attempts, setAttempts] = useState<AttemptHistoryItem[]>([]);
+  const [weakTopics, setWeakTopics] = useState<WeakTopicItem[]>([]);
   const [stats, setStats] = useState<StudentStats>({
     totalAttempts: 0,
     averagePercentage: 0,
     bestPercentage: 0,
   });
   const [loadingAttempts, setLoadingAttempts] = useState(false);
+  const [loadingWeakTopics, setLoadingWeakTopics] = useState(false);
 
   useEffect(() => {
     if (session?.user) {
       setLoadingAttempts(true);
+      setLoadingWeakTopics(true);
+
       fetch("/api/student/attempts")
         .then((res) => (res.ok ? res.json() : null))
         .then((data) => {
@@ -70,6 +88,16 @@ export default function StudentProfilePage() {
         })
         .catch((err) => console.error("Failed to load student attempts:", err))
         .finally(() => setLoadingAttempts(false));
+
+      fetch("/api/student/weak-topics")
+        .then((res) => (res.ok ? res.json() : null))
+        .then((data) => {
+          if (data?.weakTopics) {
+            setWeakTopics(data.weakTopics);
+          }
+        })
+        .catch((err) => console.error("Failed to load weak topics:", err))
+        .finally(() => setLoadingWeakTopics(false));
     }
   }, [session]);
 
@@ -227,6 +255,118 @@ export default function StudentProfilePage() {
             </span>
             <span className="text-[10px] text-slate-400">Highest performance achieved</span>
           </div>
+        </div>
+
+        {/* Focus & Weak-Topic Analysis Section (13C) */}
+        <div className="bg-white rounded-3xl border border-amber-200/80 shadow-xs overflow-hidden">
+          <div className="px-6 py-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <Target className="w-4 h-4 text-amber-600" />
+              <h2 className="text-sm font-extrabold text-[#0B132B] uppercase tracking-wider">
+                Your Focus & Weak Topics
+              </h2>
+            </div>
+            <span className="text-[11px] text-slate-400 font-medium">
+              Ranked weakest-first (min. 5 questions evaluated)
+            </span>
+          </div>
+
+          {loadingWeakTopics ? (
+            <div className="p-8 text-center space-y-2">
+              <Loader2 className="w-6 h-6 animate-spin text-amber-500 mx-auto" />
+              <p className="text-xs text-slate-500 font-medium">Analyzing your subject performance...</p>
+            </div>
+          ) : weakTopics.length === 0 ? (
+            <div className="p-8 text-center space-y-3">
+              <div className="w-11 h-11 rounded-full bg-amber-50 text-amber-700 mx-auto flex items-center justify-center">
+                <Flame className="w-5 h-5" />
+              </div>
+              <h3 className="text-sm font-bold text-slate-900">More data needed for topic analysis</h3>
+              <p className="text-xs text-slate-500 max-w-md mx-auto">
+                Complete at least 5 questions in any subject or syllabus category to unlock automated accuracy analytics, accuracy indicators, and targeted practice recommendations!
+              </p>
+            </div>
+          ) : (
+            <div className="divide-y divide-slate-100">
+              {weakTopics.map((item) => {
+                const isCritical = item.status === "CRITICAL";
+                const isImprovement = item.status === "NEEDS_IMPROVEMENT";
+
+                return (
+                  <div
+                    key={item.topic}
+                    className="p-4 sm:px-6 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-amber-50/30 transition-colors"
+                  >
+                    <div className="space-y-2 flex-1">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-sm font-bold text-[#0B132B]">
+                          {item.topic}
+                        </span>
+                        <span
+                          className={clsx(
+                            "px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border",
+                            isCritical
+                              ? "bg-red-50 text-red-800 border-red-200"
+                              : isImprovement
+                              ? "bg-amber-50 text-amber-800 border-amber-200"
+                              : "bg-emerald-50 text-emerald-800 border-emerald-200"
+                          )}
+                        >
+                          {isCritical
+                            ? "Critical Focus Area"
+                            : isImprovement
+                            ? "Needs Practice"
+                            : "Proficient"}
+                        </span>
+                      </div>
+
+                      {/* Progress accuracy bar */}
+                      <div className="w-full max-w-md space-y-1">
+                        <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
+                          <div
+                            className={clsx(
+                              "h-full rounded-full transition-all duration-500",
+                              isCritical
+                                ? "bg-red-500"
+                                : isImprovement
+                                ? "bg-amber-500"
+                                : "bg-emerald-500"
+                            )}
+                            style={{ width: `${Math.min(100, Math.max(0, item.accuracyPercentage))}%` }}
+                          />
+                        </div>
+                        <div className="flex items-center justify-between text-[11px] text-slate-500">
+                          <span>
+                            {item.correctCount} correct / {item.questionsAttempted} attempted ({item.totalAttempts} {item.totalAttempts === 1 ? "quiz" : "quizzes"})
+                          </span>
+                          <span className="font-bold text-[#0B132B]">
+                            {item.accuracyPercentage}% accuracy
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="shrink-0 flex items-center justify-end">
+                      <Link
+                        href={`/quizzes?subject=${encodeURIComponent(item.topic)}`}
+                        className={clsx(
+                          "inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all shadow-xs",
+                          isCritical
+                            ? "bg-red-600 hover:bg-red-700 text-white"
+                            : isImprovement
+                            ? "bg-amber-500 hover:bg-amber-600 text-slate-950"
+                            : "bg-slate-100 hover:bg-slate-200 text-slate-800"
+                        )}
+                      >
+                        <span>Practice This Topic</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
 
         {/* Persisted Attempt History Section */}

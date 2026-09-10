@@ -73,6 +73,7 @@ may have changed counts.
 | 14 | rajtest.in-style discovery: `examTags` array, `difficulty` (easy/medium/hard), `attemptCount` counter, `/exam/[examSlug]`, `/subject/[subjectSlug]`, enhanced `/quizzes` browse chips | 106/106 tests, 79 routes compiled (31 static pages) |
 | 13B | Student Persisted Attempts & Leaderboard: `QuizAttempt.studentId`, `GET /api/student/attempts`, `GET /api/leaderboard`, `/leaderboard` podium page, student `/profile` real attempt history table | 106/106 tests, 79 routes compiled (31 static pages) |
 | — | Admin CMS Consolidation & Settings: `/admin/settings` (singleton metadata + password rotation API), unified `AdminSidebar`/`AdminHeader` layout for all `/admin/*` pages | 106/106 tests, 79 routes compiled (31 static pages) |
+| 13C | Weak-Topic Analysis: `AnalyticsService.getStudentWeakTopics`, `GET /api/student/weak-topics` & `/api/students/me/weak-topics`, min sample size 5+ threshold, ranked weakest-first, `/profile` focus & weak topics section | 111/111 tests, 81 routes compiled (31 static pages) |
 
 ---
 
@@ -243,10 +244,8 @@ Jakarta Sans (body), loaded via `next/font`.
 ### 8c. Sub-Batches 13B–13E — Student Accounts feature set
 - **13A (COMPLETED):** Student Google OAuth (NextAuth), `Student` model, `/profile` page, session isolation.
 - **13B (COMPLETED):** Persisted Attempts + Leaderboard: `QuizAttempt.studentId`, `GET /api/student/attempts` API, `GET /api/leaderboard` aggregation API, `/leaderboard` podium page, student `/profile` real attempt history table.
-- **13C (NEXT):** **Weak-Topic Analysis:** per-subject accuracy computation from a
-  student's attempt history, `/profile` weak-topics section (minimum
-  sample size of 5+ attempted questions per topic before surfacing it).
-- **13D:** **Wrong-Question Notebook:** derived-or-stored wrong-answer
+- **13C (COMPLETED):** Weak-Topic Analysis: `AnalyticsService.getStudentWeakTopics`, `GET /api/student/weak-topics` & `/api/students/me/weak-topics` APIs, min sample size 5+ threshold, ranked weakest-first, `/profile` focus & weak topics section with progress indicators and targeted practice links.
+- **13D (NEXT):** **Wrong-Question Notebook:** derived-or-stored wrong-answer
   tracking + independent bookmark feature, `/profile/notebook` page.
 - **13E:** **Booster Test Generation:** assemble a new practice set from a
   student's weakest subjects using EXISTING questions only (no AI
