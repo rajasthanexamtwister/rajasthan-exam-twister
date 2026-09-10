@@ -4,7 +4,7 @@ import { QuizService } from "@/server/services/quiz-service";
 import { CheckSquare, Clock, Award, ArrowRight, BookOpen, Zap } from "lucide-react";
 import clsx from "clsx";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 interface SubjectBrowsePageProps {
   params: {

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 import {
   Award,
   CheckCircle2,
@@ -13,6 +14,10 @@ import {
   ArrowRight,
   TrendingUp,
   Percent,
+  Bookmark,
+  BookmarkCheck,
+  Loader2,
+  BookMarked,
 } from "lucide-react";
 import clsx from "clsx";
 
@@ -45,12 +50,15 @@ interface AttemptResult {
 }
 
 export default function QuizResultPage() {
+  const { data: session } = useSession();
   const params = useParams();
   const router = useRouter();
   const slug = params.slug as string;
 
   const [result, setResult] = useState<AttemptResult | null>(null);
   const [filter, setFilter] = useState<"ALL" | "CORRECT" | "INCORRECT" | "UNATTEMPTED">("ALL");
+  const [bookmarkedIds, setBookmarkedIds] = useState<Set<string>>(new Set());
+  const [togglingBookmarkId, setTogglingBookmarkId] = useState<string | null>(null);
 
   useEffect(() => {
     const raw = sessionStorage.getItem(`ret_quiz_result_${slug}`);
@@ -63,6 +71,58 @@ export default function QuizResultPage() {
       }
     }
   }, [slug]);
+
+  useEffect(() => {
+    if (session?.user) {
+      fetch("/api/student/bookmarks")
+        .then((res) => (res.ok ? res.json() : null))
+        .then((data) => {
+          if (data?.bookmarks) {
+            setBookmarkedIds(new Set(data.bookmarks.map((b: any) => b.questionId)));
+          }
+        })
+        .catch((err) => console.error("Failed to fetch initial bookmarks:", err));
+    }
+  }, [session]);
+
+  const handleToggleBookmark = async (questionId: string) => {
+    if (!session?.user) return;
+    setTogglingBookmarkId(questionId);
+
+    const isBookmarked = bookmarkedIds.has(questionId);
+
+    try {
+      if (isBookmarked) {
+        const res = await fetch(`/api/student/bookmarks/${questionId}`, {
+          method: "DELETE",
+        });
+        if (res.ok) {
+          setBookmarkedIds((prev) => {
+            const next = new Set(prev);
+            next.delete(questionId);
+            return next;
+          });
+        }
+      } else {
+        const res = await fetch("/api/student/bookmarks", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ questionId }),
+        });
+        if (res.ok) {
+          setBookmarkedIds((prev) => {
+            const next = new Set(prev);
+            next.add(questionId);
+            return next;
+          });
+        }
+      }
+    } catch (err) {
+      console.error("Error toggling bookmark:", err);
+    } finally {
+      setTogglingBookmarkId(null);
+    }
+  };
 
   if (!result) {
     return (
@@ -160,18 +220,30 @@ export default function QuizResultPage() {
           </div>
 
           {/* Retake & Explore Actions */}
-          <div className="p-6 bg-white border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <Link
-              href={`/quizzes/${slug}/attempt`}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 text-xs font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl transition-all shadow-sm"
-            >
-              <RotateCcw className="w-4 h-4" />
-              <span>Retake Quiz</span>
-            </Link>
+          <div className="p-6 bg-white border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 flex-wrap">
+            <div className="flex items-center gap-2 w-full sm:w-auto">
+              <Link
+                href={`/quizzes/${slug}/attempt`}
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl transition-all shadow-sm"
+              >
+                <RotateCcw className="w-4 h-4" />
+                <span>Retake Quiz</span>
+              </Link>
+
+              {session?.user && (
+                <Link
+                  href="/profile/notebook"
+                  className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold text-amber-950 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl transition-colors"
+                >
+                  <BookMarked className="w-4 h-4 text-amber-700" />
+                  <span>Revision Notebook</span>
+                </Link>
+              )}
+            </div>
 
             <Link
               href="/quizzes"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 text-xs font-bold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 text-xs font-bold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
             >
               <span>Explore More Tests</span>
               <ArrowRight className="w-4 h-4" />
@@ -253,23 +325,51 @@ export default function QuizResultPage() {
                       </span>
                     </div>
 
-                    <span
-                      className={clsx(
-                        "text-xs font-bold px-2.5 py-1 rounded-lg border",
-                        q.marksAwarded > 0
-                          ? "bg-emerald-50 text-emerald-800 border-emerald-200"
-                          : q.marksAwarded < 0
-                          ? "bg-red-50 text-red-800 border-red-200"
-                          : "bg-slate-50 text-slate-600 border-slate-200"
+                    <div className="flex items-center gap-2">
+                      {session?.user && (
+                        <button
+                          type="button"
+                          onClick={() => handleToggleBookmark(q.questionId)}
+                          disabled={togglingBookmarkId === q.questionId}
+                          title={bookmarkedIds.has(q.questionId) ? "Remove Bookmark" : "Bookmark Question"}
+                          className={clsx(
+                            "inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all border",
+                            bookmarkedIds.has(q.questionId)
+                              ? "bg-amber-100 text-amber-900 border-amber-300 hover:bg-amber-200"
+                              : "bg-slate-50 text-slate-600 border-slate-200 hover:bg-amber-50 hover:text-amber-800"
+                          )}
+                        >
+                          {togglingBookmarkId === q.questionId ? (
+                            <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                          ) : bookmarkedIds.has(q.questionId) ? (
+                            <BookmarkCheck className="w-3.5 h-3.5 text-amber-700 fill-amber-700" />
+                          ) : (
+                            <Bookmark className="w-3.5 h-3.5" />
+                          )}
+                          <span className="hidden sm:inline">
+                            {bookmarkedIds.has(q.questionId) ? "Bookmarked" : "Bookmark"}
+                          </span>
+                        </button>
                       )}
-                    >
-                      {q.marksAwarded > 0
-                        ? `+${q.marksAwarded}`
-                        : q.marksAwarded < 0
-                        ? `${q.marksAwarded}`
-                        : "0"}{" "}
-                      Marks
-                    </span>
+
+                      <span
+                        className={clsx(
+                          "text-xs font-bold px-2.5 py-1 rounded-lg border",
+                          q.marksAwarded > 0
+                            ? "bg-emerald-50 text-emerald-800 border-emerald-200"
+                            : q.marksAwarded < 0
+                            ? "bg-red-50 text-red-800 border-red-200"
+                            : "bg-slate-50 text-slate-600 border-slate-200"
+                        )}
+                      >
+                        {q.marksAwarded > 0
+                          ? `+${q.marksAwarded}`
+                          : q.marksAwarded < 0
+                          ? `${q.marksAwarded}`
+                          : "0"}{" "}
+                        Marks
+                      </span>
+                    </div>
                   </div>
 
                   {/* Question Text */}

@@ -11,3 +11,4 @@ export * from "./Quiz";
 export * from "./QuizQuestion";
 export * from "./QuizAttempt";
 export * from "./Student";
+export * from "./Bookmark";

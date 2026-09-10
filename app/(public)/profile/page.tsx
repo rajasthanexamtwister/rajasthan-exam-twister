@@ -22,7 +22,11 @@ import {
   Target,
   Flame,
   AlertTriangle,
+  BookMarked,
+  Bookmark,
+  Sparkles,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 import clsx from "clsx";
 
 interface AttemptHistoryItem {
@@ -61,6 +65,7 @@ interface StudentStats {
 
 export default function StudentProfilePage() {
   const { data: session, status } = useSession();
+  const router = useRouter();
   const [attempts, setAttempts] = useState<AttemptHistoryItem[]>([]);
   const [weakTopics, setWeakTopics] = useState<WeakTopicItem[]>([]);
   const [stats, setStats] = useState<StudentStats>({
@@ -70,6 +75,31 @@ export default function StudentProfilePage() {
   });
   const [loadingAttempts, setLoadingAttempts] = useState(false);
   const [loadingWeakTopics, setLoadingWeakTopics] = useState(false);
+  const [generatingBooster, setGeneratingBooster] = useState(false);
+  const [boosterError, setBoosterError] = useState<string | null>(null);
+
+  const handleGenerateBooster = async () => {
+    if (generatingBooster) return;
+    setGeneratingBooster(true);
+    setBoosterError(null);
+
+    try {
+      const res = await fetch("/api/student/booster-test", {
+        method: "POST",
+      });
+
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        throw new Error(data.message || data.error?.message || "Failed to generate booster test");
+      }
+
+      router.push(`/quizzes/${data.data.slug}/attempt`);
+    } catch (err: any) {
+      console.error("Booster generation error:", err);
+      setBoosterError(err.message || "Failed to generate booster test.");
+      setGeneratingBooster(false);
+    }
+  };
 
   useEffect(() => {
     if (session?.user) {
@@ -205,7 +235,14 @@ export default function StudentProfilePage() {
             </div>
           </div>
 
-          <div className="flex items-center gap-2 self-center sm:self-start">
+          <div className="flex items-center gap-2 self-center sm:self-start flex-wrap">
+            <Link
+              href="/profile/notebook"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-[#0B132B] bg-amber-400 hover:bg-amber-300 rounded-xl transition-all shadow-xs"
+            >
+              <BookMarked className="w-3.5 h-3.5 text-[#0B132B]" />
+              <span>Revision Notebook</span>
+            </Link>
             <Link
               href="/leaderboard"
               className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-amber-900 bg-amber-100 hover:bg-amber-200/80 border border-amber-300 rounded-xl transition-colors"
@@ -255,6 +292,59 @@ export default function StudentProfilePage() {
             </span>
             <span className="text-[10px] text-slate-400">Highest performance achieved</span>
           </div>
+        </div>
+
+        {/* Revision Notebook & Personalized Booster Test Card (13D & 13E) */}
+        <div className="bg-gradient-to-br from-[#0B132B] to-[#1C2541] rounded-3xl p-6 sm:p-8 text-white shadow-xl space-y-6 relative overflow-hidden">
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-xl">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-400/20 text-amber-300 border border-amber-400/30">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                <span>Smart Revision Suite (13D & 13E)</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-black text-white">
+                Turn Wrong Answers Into Guaranteed Marks
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Review every question you ever missed with complete explanations in your <strong>Revision Notebook</strong>, or let our engine generate a customized 20-25 question <strong>Booster Test</strong> focusing strictly on your weakest subjects.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+              <button
+                type="button"
+                onClick={handleGenerateBooster}
+                disabled={generatingBooster}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-black uppercase tracking-wider text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 rounded-2xl shadow-lg shadow-amber-500/25 transition-all active:scale-95 disabled:opacity-50"
+              >
+                {generatingBooster ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin text-slate-950" />
+                    <span>Building Booster...</span>
+                  </>
+                ) : (
+                  <>
+                    <Zap className="w-4 h-4 text-slate-950 fill-slate-950" />
+                    <span>Generate My Booster Test</span>
+                  </>
+                )}
+              </button>
+
+              <Link
+                href="/profile/notebook"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-bold text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl transition-all"
+              >
+                <BookMarked className="w-4 h-4 text-amber-400" />
+                <span>Open Revision Notebook</span>
+              </Link>
+            </div>
+          </div>
+
+          {boosterError && (
+            <div className="relative z-10 p-3.5 rounded-xl bg-red-500/20 border border-red-500/40 text-xs text-red-200">
+              {boosterError}
+            </div>
+          )}
         </div>
 
         {/* Focus & Weak-Topic Analysis Section (13C) */}

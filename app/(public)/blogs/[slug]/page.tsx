@@ -8,7 +8,7 @@ import { SocialShare } from "@/components/public/social-share";
 import { Clock, Calendar, ArrowLeft, User, Sparkles, BookOpen, ArrowRight, Layers, RefreshCw } from "lucide-react";
 import type { Metadata } from "next";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 interface BlogDetailPageProps {
   params: {

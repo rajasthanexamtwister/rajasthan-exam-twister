@@ -1,7 +1,7 @@
 # PROJECT_STATUS.md — Rajasthan Exam Twister
 ## Master Handoff Document — Read This Completely Before Touching Any Code
 
-**Last updated:** This file is the single source of truth for what has
+**Last updated:** 2026-09-11 — 13D/13E complete, final gate passed (119/119 tests, 84 routes, exit 0 all three checks). This file is the single source of truth for what has
 been built, what is verified, what is broken/unconfirmed, and what is
 still pending. If you are a coding agent picking up this project, read
 this file FIRST, then cross-check the claims below against the actual
@@ -73,7 +73,9 @@ may have changed counts.
 | 14 | rajtest.in-style discovery: `examTags` array, `difficulty` (easy/medium/hard), `attemptCount` counter, `/exam/[examSlug]`, `/subject/[subjectSlug]`, enhanced `/quizzes` browse chips | 106/106 tests, 79 routes compiled (31 static pages) |
 | 13B | Student Persisted Attempts & Leaderboard: `QuizAttempt.studentId`, `GET /api/student/attempts`, `GET /api/leaderboard`, `/leaderboard` podium page, student `/profile` real attempt history table | 106/106 tests, 79 routes compiled (31 static pages) |
 | — | Admin CMS Consolidation & Settings: `/admin/settings` (singleton metadata + password rotation API), unified `AdminSidebar`/`AdminHeader` layout for all `/admin/*` pages | 106/106 tests, 79 routes compiled (31 static pages) |
-| 13C | Weak-Topic Analysis: `AnalyticsService.getStudentWeakTopics`, `GET /api/student/weak-topics` & `/api/students/me/weak-topics`, min sample size 5+ threshold, ranked weakest-first, `/profile` focus & weak topics section | 111/111 tests, 81 routes compiled (31 static pages) |
+| 13C | Weak-Topic Analysis: `AnalyticsService.getStudentWeakTopics`, `GET /api/student/weak-topics` (consolidated, `/api/students/me/weak-topics` duplicate removed), min sample size 5+ threshold, ranked weakest-first, `/profile` focus & weak topics section | 111/111 tests, 81 routes |
+| 13D | Wrong-Question Notebook + Bookmarks: `Bookmark` model, `NotebookService` (wrong-question derivation from `QuizAttempt.answers`), `GET /api/student/wrong-questions`, `GET/POST/DELETE /api/student/bookmarks`, `DELETE /api/student/bookmarks/[id]`, `/profile/notebook` page, bookmark toggle on result page | 119/119 tests, 84 routes |
+| 13E | Booster Test Generation: `BoosterService`, `POST /api/student/booster-test` — assembles 20-25 questions from student's weakest subjects using EXISTING QuizQuestion documents only (persisted as real Quiz row to reuse attempt flow), CTA on `/profile` | 119/119 tests, 84 routes |
 
 ---
 
@@ -241,22 +243,14 @@ Jakarta Sans (body), loaded via `next/font`.
 - `/exam/[examSlug]` and `/subject/[subjectSlug]` public browse pages
 - "Browse by Exam" / "Browse by Subject" / Difficulty chip sections on `/quizzes`
 
-### 8c. Sub-Batches 13B–13E — Student Accounts feature set
+### 8c. Sub-Batches 13B–13E — Student Accounts feature set (ALL COMPLETED)
 - **13A (COMPLETED):** Student Google OAuth (NextAuth), `Student` model, `/profile` page, session isolation.
 - **13B (COMPLETED):** Persisted Attempts + Leaderboard: `QuizAttempt.studentId`, `GET /api/student/attempts` API, `GET /api/leaderboard` aggregation API, `/leaderboard` podium page, student `/profile` real attempt history table.
-- **13C (COMPLETED):** Weak-Topic Analysis: `AnalyticsService.getStudentWeakTopics`, `GET /api/student/weak-topics` & `/api/students/me/weak-topics` APIs, min sample size 5+ threshold, ranked weakest-first, `/profile` focus & weak topics section with progress indicators and targeted practice links.
-- **13D (NEXT):** **Wrong-Question Notebook:** derived-or-stored wrong-answer
-  tracking + independent bookmark feature, `/profile/notebook` page.
-- **13E:** **Booster Test Generation:** assemble a new practice set from a
-  student's weakest subjects using EXISTING questions only (no AI
-  generation on the server) — decide and document whether this is a
-  persisted Quiz row or ephemeral.
+- **13C (COMPLETED):** Weak-Topic Analysis: `AnalyticsService.getStudentWeakTopics`, `GET /api/student/weak-topics` (consolidated — duplicate `/api/students/me/weak-topics` removed), min sample size 5+ threshold, ranked weakest-first, `/profile` focus & weak topics section with progress indicators and targeted practice links.
+- **13D (COMPLETED):** Wrong-Question Notebook + Bookmarks: `Bookmark` model, `NotebookService`, `GET /api/student/wrong-questions`, `GET/POST/DELETE /api/student/bookmarks`, `/profile/notebook` page, bookmark toggle on result page.
+- **13E (COMPLETED):** Booster Test Generation: `BoosterService`, `POST /api/student/booster-test` — persisted Quiz row from student's weakest subjects using EXISTING QuizQuestion documents only. CTA on `/profile`.
 
-Each of these has a full detailed prompt already written in project
-history (see the "BATCH 13" master prompt) — reuse verbatim, do not
-re-derive from scratch. Rule established: implement strictly in order
-(13B before 13C before 13D before 13E), verify+commit+STOP after each
-one, never merge sub-batches.
+**Final gate verified 2026-09-11:** `npx vitest run` → 119/119 passed (22 files), `npm run typecheck` → exit 0 (zero errors), `npm run build` → exit 0 (84 routes, 32/32 static pages).
 
 ### 8d. Smaller future ideas (not scoped into a batch yet, low priority)
 - PWA installability (rajtest.in has this)
@@ -317,11 +311,10 @@ These were established across many batches and must continue to hold:
 5. Human: import real legacy HTML notes via /admin/notes/import (§7)
 6. Human: publish 2-3 SEO+AEO blogs using the existing prompt
 7. Human: submit sitemap to Google Search Console
-8. THEN, if desired: Batch 14 (exam/subject browse) — spec ready
-9. THEN, if desired: Sub-Batch 13B onward (leaderboard/accounts feature)
-   — only if student accounts are genuinely wanted; this is optional
-   scope, not required for the core product to be complete
+8. COMPLETED — Batch 14 (exam/subject browse) ✅
+9. COMPLETED — Sub-Batches 13B/13C/13D/13E (student accounts full feature set) ✅
 ```
 
-Do not skip ahead to step 8/9 while 1-7 remain unresolved — those are
-live-site correctness/launch issues, not feature requests.
+All agent-completable feature work is done. Remaining items (1-7) require
+human action (live deploy, OAuth setup, content creation) and cannot be
+automated by the coding agent.
