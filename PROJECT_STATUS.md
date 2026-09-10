@@ -70,8 +70,9 @@ may have changed counts.
 | 13A | Student Google OAuth (NextAuth), `Student` model, `/profile` page, admin/student session isolation proven by test | 101/101 tests, 29/29 routes |
 | — | Telegram top announcement bar (dismissible, sessionStorage) | 101/101 tests, 29/29 routes |
 | — | Mobile drawer overlay/transparency bug fix (backdrop scrim, opaque container, scroll lock) | code-verified (DOM layers, backdrop, scroll-lock) |
-| 14 | rajtest.in-style discovery: `examTags` array, `difficulty` (easy/medium/hard), `attemptCount` counter, `/exam/[examSlug]`, `/subject/[subjectSlug]`, enhanced `/quizzes` browse chips | 106/106 tests, 30/30 routes |
-| 13B | Student Persisted Attempts & Leaderboard: `QuizAttempt.studentId`, `GET /api/student/attempts`, `GET /api/leaderboard`, `/leaderboard` podium page, student `/profile` real attempt history table | 106/106 tests, 30/30 routes |
+| 14 | rajtest.in-style discovery: `examTags` array, `difficulty` (easy/medium/hard), `attemptCount` counter, `/exam/[examSlug]`, `/subject/[subjectSlug]`, enhanced `/quizzes` browse chips | 106/106 tests, 79 routes compiled (31 static pages) |
+| 13B | Student Persisted Attempts & Leaderboard: `QuizAttempt.studentId`, `GET /api/student/attempts`, `GET /api/leaderboard`, `/leaderboard` podium page, student `/profile` real attempt history table | 106/106 tests, 79 routes compiled (31 static pages) |
+| — | Admin CMS Consolidation & Settings: `/admin/settings` (singleton metadata + password rotation API), unified `AdminSidebar`/`AdminHeader` layout for all `/admin/*` pages | 106/106 tests, 79 routes compiled (31 static pages) |
 
 ---
 

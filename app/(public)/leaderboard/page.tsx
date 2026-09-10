@@ -5,7 +5,7 @@ import { QuizAttemptRepository } from "@/server/repositories/quiz-attempt";
 import { Trophy, Medal, Award, Flame, Target, CheckCircle2, User, ArrowRight } from "lucide-react";
 import clsx from "clsx";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Student Leaderboard & Top Scorers — Rajasthan Exam Twister",
@@ -28,7 +28,12 @@ export default async function LeaderboardPage({ searchParams }: LeaderboardPageP
     windowDays = 0;
   }
 
-  const leaderboard = await QuizAttemptRepository.getLeaderboard(windowDays, 50);
+  let leaderboard: any[] = [];
+  try {
+    leaderboard = await QuizAttemptRepository.getLeaderboard(windowDays, 50);
+  } catch (err) {
+    console.error("Leaderboard fetch error:", err);
+  }
 
   const top3 = leaderboard.slice(0, 3);
   const remainingRankings = leaderboard.slice(3);

@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import { connectToDatabase } from "@/server/lib/mongodb";
 import { QuizAttempt, IQuizAttempt } from "@/server/models/QuizAttempt";
+import "@/server/models/Student";
 
 export class QuizAttemptRepository {
   static async create(data: {
