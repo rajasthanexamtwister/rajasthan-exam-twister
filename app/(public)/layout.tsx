@@ -34,10 +34,10 @@ export default async function PublicLayout({
         <PublicHeader />
 
         {/* Main Page Body */}
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 w-full">{children}</main>
 
       {/* Comprehensive Public Footer (No Admin Links) */}
-      <footer className="border-t border-amber-200/70 bg-[#0B132B] text-slate-300 text-xs">
+      <footer className="border-t border-amber-200/70 bg-[#0B132B] text-slate-300 text-xs w-full mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             {/* Column 1: Brand, Mission & Official Channels */}
