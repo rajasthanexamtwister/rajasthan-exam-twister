@@ -35,3 +35,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# legacy archives & reports
+/_legacy_archive/
+/archive/
+/scripts/*-report.json
+scripts/smart-import-report.json
+scripts/pre-import-scan-report.json
+

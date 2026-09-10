@@ -236,11 +236,11 @@ describe("Content Import Engine & HTML Parser (Batch 4)", () => {
     vi.spyOn(NoteRepository, "isSlugTaken").mockResolvedValue(false);
     vi.spyOn(NoteRepository, "findByContentHash").mockResolvedValue(null);
 
-    const realNotePath = path.join(process.cwd(), "notes", "gk", "art-culture", "rajasthan-nritya-master-handbook.html");
-    const realContent = fs.readFileSync(realNotePath, "utf-8");
+    const fixturePath = path.join(process.cwd(), "tests", "fixtures", "clean-note.html");
+    const fixtureContent = fs.readFileSync(fixturePath, "utf-8");
 
     const summary = await ImportService.processBatch(
-      [{ name: "rajasthan-nritya-master-handbook.html", content: realContent }],
+      [{ name: "clean-note.html", content: fixtureContent }],
       [],
       { dryRun: true }
     );
@@ -250,7 +250,7 @@ describe("Content Import Engine & HTML Parser (Batch 4)", () => {
     expect(summary.failedCount).toBe(0);
     expect(summary.isDryRun).toBe(true);
     expect(summary.results[0].result).toBe("SUCCESS");
-    expect(summary.results[0].title).toBe("राजस्थान में नृत्य — Master Revision Handbook");
+    expect(summary.results[0].title).toBe("Rajasthan Geography & Physical Divisions Handbook");
   });
 });
 
