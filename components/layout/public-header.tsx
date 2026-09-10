@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import clsx from "clsx";
 import { SOCIAL_LINKS } from "@/server/lib/social-links";
+import { LivePresenceBadge } from "@/components/public/live-presence-badge";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -166,6 +167,9 @@ export function PublicHeader() {
                   <Youtube className="w-4 h-4" />
                 </a>
               </div>
+
+              {/* Live Active Learners Badge */}
+              <LivePresenceBadge variant="header" />
 
               {/* Desktop Search Button */}
               <Link
@@ -343,6 +347,9 @@ export function PublicHeader() {
 
             {/* Drawer Content */}
             <div className="p-4 space-y-4">
+              {/* Live Presence Indicator */}
+              <LivePresenceBadge variant="mobile" />
+
               {/* Student Auth Banner */}
               <div className="p-3 bg-white rounded-2xl border border-amber-200/80 shadow-xs">
                 {session?.user ? (
