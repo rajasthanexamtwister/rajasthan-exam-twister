@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: 210 40% 98%;
-  --foreground: 222 47% 11%;
+  /* Warm Rajasthani Heritage Palette (Light Mode) */
+  --background: 40 33% 98%; /* Warm heritage cream #FAF8F5 */
+  --foreground: 222 47% 11%; /* Deep navy text #0B132B */
 
   --card: 0 0% 100%;
   --card-foreground: 222 47% 11%;
@@ -12,40 +13,40 @@
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
 
-  --primary: 25 95% 48%; /* Rich Amber/Saffron */
-  --primary-foreground: 0 0% 100%;
+  --primary: 38 92% 50%; /* Radiant Brand Amber/Gold #F59E0B */
+  --primary-foreground: 222 47% 11%;
 
-  --secondary: 215 25% 27%;
-  --secondary-foreground: 210 40% 98%;
+  --secondary: 222 47% 11%; /* Deep Brand Navy #0B132B */
+  --secondary-foreground: 0 0% 100%;
 
-  --muted: 210 40% 94%;
-  --muted-foreground: 215 16% 47%;
+  --muted: 40 25% 93%;
+  --muted-foreground: 215 16% 45%;
 
-  --accent: 210 40% 92%;
+  --accent: 38 92% 94%;
   --accent-foreground: 222 47% 11%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 25 95% 48%;
+  --border: 40 20% 88%;
+  --input: 40 20% 88%;
+  --ring: 38 92% 50%;
 
-  --radius: 0.625rem;
+  --radius: 0.75rem;
 }
 
 .dark {
-  --background: 224 71% 4%;
+  --background: 222 47% 7%;
   --foreground: 213 31% 91%;
 
-  --card: 224 71% 7%;
+  --card: 222 47% 10%;
   --card-foreground: 213 31% 91%;
 
-  --popover: 224 71% 7%;
+  --popover: 222 47% 10%;
   --popover-foreground: 213 31% 91%;
 
-  --primary: 25 95% 53%;
-  --primary-foreground: 0 0% 100%;
+  --primary: 38 92% 50%;
+  --primary-foreground: 222 47% 11%;
 
   --secondary: 215 28% 17%;
   --secondary-foreground: 210 40% 98%;
@@ -61,7 +62,7 @@
 
   --border: 216 34% 17%;
   --input: 216 34% 17%;
-  --ring: 25 95% 53%;
+  --ring: 38 92% 50%;
 }
 
 * {
@@ -72,4 +73,47 @@ body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), var(--font-devanagari), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Study Sheet & Print Stylesheet */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  header, footer, nav, aside, .no-print, button, .print\\:hidden {
+    display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  article, .study-sheet-content {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+
+  a[href]:after {
+    content: "" !important;
+  }
+
+  /* Keep page breaks clean */
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+
+  table, figure, img {
+    page-break-inside: avoid;
+  }
 }

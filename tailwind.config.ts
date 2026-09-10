@@ -10,6 +10,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", "var(--font-devanagari)", "system-ui", "sans-serif"],
+        heading: ["var(--font-heading)", "var(--font-devanagari)", "system-ui", "sans-serif"],
+        devanagari: ["var(--font-devanagari)", "sans-serif"],
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -44,6 +49,16 @@ const config: Config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        brand: {
+          navy: "#0B132B",
+          "navy-light": "#1C2541",
+          gold: "#F59E0B",
+          "gold-hover": "#D97706",
+          "gold-light": "#FEF3C7",
+          crimson: "#DC2626",
+          sand: "#FAF8F5",
+          cream: "#FFFDF9",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -2,17 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   Menu,
   X,
   Search,
-  BookOpen,
-  FileText,
-  CheckSquare,
-  Sparkles,
-  FolderTree,
-  Info,
   ArrowRight,
 } from "lucide-react";
 import clsx from "clsx";
@@ -32,20 +27,27 @@ export function PublicHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <header className="sticky top-0 z-50 bg-[#FFFDF9]/95 backdrop-blur-md border-b border-amber-200/60 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-4">
           {/* Brand Logo & Name */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-600 to-amber-400 flex items-center justify-center font-black text-slate-950 text-sm shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform">
-              RT
+          <Link href="/" className="flex items-center gap-3 shrink-0 group">
+            <div className="relative w-10 h-10 rounded-full overflow-hidden shadow-sm ring-2 ring-amber-400/50 group-hover:scale-105 transition-transform bg-[#0B132B]">
+              <Image
+                src="/brand/logo.png"
+                alt="Rajasthan Exam Twister Official Logo"
+                width={40}
+                height={40}
+                className="object-cover w-full h-full"
+                priority
+              />
             </div>
             <div className="leading-tight">
-              <span className="font-extrabold text-slate-900 tracking-tight block text-sm sm:text-base group-hover:text-amber-600 transition-colors">
+              <span className="font-extrabold text-[#0B132B] tracking-tight block text-sm sm:text-base group-hover:text-amber-600 transition-colors">
                 Rajasthan Exam Twister
               </span>
-              <span className="text-[10px] text-amber-600 font-semibold block leading-none">
-                Master GK & Revision
+              <span className="text-[10px] text-amber-700 font-bold block leading-none font-devanagari">
+                सवाल सीधा नहीं, सोच टेढ़ी करो!
               </span>
             </div>
           </Link>
@@ -63,12 +65,12 @@ export function PublicHeader() {
                   key={item.name}
                   href={item.href}
                   className={clsx(
-                    "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all",
+                    "px-3 py-1.5 rounded-xl text-xs font-semibold transition-all",
                     item.highlight
-                      ? "text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200/80 font-bold"
+                      ? "text-amber-900 bg-amber-100/80 hover:bg-amber-200/80 border border-amber-300 font-bold shadow-xs"
                       : isActive
-                      ? "bg-slate-900 text-white shadow-sm"
-                      : "text-slate-700 hover:text-amber-600 hover:bg-slate-100"
+                      ? "bg-[#0B132B] text-amber-300 shadow-sm"
+                      : "text-slate-700 hover:text-amber-700 hover:bg-amber-50/60"
                   )}
                 >
                   {item.name}
@@ -81,10 +83,10 @@ export function PublicHeader() {
           <div className="hidden sm:flex items-center gap-3">
             <Link
               href="/search"
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200/80 rounded-xl transition-all border border-slate-200 font-medium"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs text-slate-700 hover:text-[#0B132B] bg-amber-50/60 hover:bg-amber-100/70 rounded-xl transition-all border border-amber-200/80 font-medium shadow-xs"
               title="Search Rajasthan GK notes, topics, and blogs"
             >
-              <Search className="w-3.5 h-3.5 text-slate-400" />
+              <Search className="w-3.5 h-3.5 text-amber-700" />
               <span>Search GK & Notes...</span>
             </Link>
           </div>
@@ -93,19 +95,19 @@ export function PublicHeader() {
           <div className="flex items-center gap-2 lg:hidden">
             <Link
               href="/search"
-              className="p-2 text-slate-600 hover:text-slate-900 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors"
+              className="p-2 text-slate-700 hover:text-slate-950 rounded-xl bg-amber-50 hover:bg-amber-100/70 transition-colors border border-amber-200/60"
               aria-label="Search"
             >
-              <Search className="w-4 h-4" />
+              <Search className="w-4 h-4 text-amber-700" />
             </Link>
 
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-700 hover:text-slate-950 rounded-lg hover:bg-slate-100 transition-colors"
+              className="p-2 text-slate-800 hover:text-[#0B132B] rounded-xl hover:bg-amber-50/80 transition-colors"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-amber-700" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -113,9 +115,9 @@ export function PublicHeader() {
 
       {/* Mobile Slide-down Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-16 bg-white/98 backdrop-blur-xl border-b border-slate-200 shadow-2xl p-4 sm:p-6 space-y-4 max-h-[calc(100vh-4rem)] overflow-y-auto animate-in slide-in-from-top-2 duration-200">
+        <div className="lg:hidden fixed inset-x-0 top-16 bg-[#FFFDF9]/98 backdrop-blur-xl border-b border-amber-200 shadow-2xl p-4 sm:p-6 space-y-4 max-h-[calc(100vh-4rem)] overflow-y-auto animate-in slide-in-from-top-2 duration-200">
           <div className="space-y-1">
-            <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 pb-1">
+            <div className="text-[11px] font-bold text-amber-800 uppercase tracking-wider px-3 pb-1">
               Navigation
             </div>
             {navItems.map((item) => {
@@ -132,8 +134,8 @@ export function PublicHeader() {
                   className={clsx(
                     "flex items-center justify-between px-3.5 py-3 rounded-xl text-sm font-semibold transition-all",
                     isActive
-                      ? "bg-amber-500 text-slate-950 font-bold shadow-sm"
-                      : "text-slate-800 hover:bg-slate-100"
+                      ? "bg-amber-500 text-[#0B132B] font-bold shadow-sm"
+                      : "text-slate-800 hover:bg-amber-50/70"
                   )}
                 >
                   <span>{item.name}</span>
@@ -143,13 +145,13 @@ export function PublicHeader() {
             })}
           </div>
 
-          <div className="pt-2 border-t border-slate-100">
+          <div className="pt-2 border-t border-amber-100">
             <Link
               href="/search"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-800 transition-colors border border-slate-200"
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-amber-50 hover:bg-amber-100/80 text-xs font-bold text-[#0B132B] transition-colors border border-amber-200"
             >
-              <Search className="w-4 h-4 text-slate-500" />
+              <Search className="w-4 h-4 text-amber-700" />
               <span>Search Entire Portal</span>
             </Link>
           </div>
