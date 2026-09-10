@@ -1,0 +1,358 @@
+import mongoose from "mongoose";
+import { QuizRepository, QuizFilterOptions, PaginatedQuizzes } from "@/server/repositories/quiz";
+import { QuizQuestionRepository } from "@/server/repositories/quiz-question";
+import { QuizAttemptRepository } from "@/server/repositories/quiz-attempt";
+import { IQuiz } from "@/server/models/Quiz";
+import { IQuizQuestion } from "@/server/models/QuizQuestion";
+import { IQuizAttempt } from "@/server/models/QuizAttempt";
+import {
+  QuizImportJSON,
+  QuizImportJSONSchema,
+  sanitizePlainText,
+  UpdateQuizSettingsInput,
+  UpdateQuizSettingsSchema,
+  UpdateQuizQuestionInput,
+  UpdateQuizQuestionSchema,
+  SubmitQuizAttemptInput,
+} from "@/server/validation/quiz";
+
+export interface PublicQuizQuestion {
+  id: string;
+  order: number;
+  questionText: string;
+  options: string[];
+  marks?: number;
+  negativeMarks?: number;
+}
+
+export interface PublicQuizDetail {
+  id: string;
+  title: string;
+  slug: string;
+  subject?: string;
+  category?: { name: string; slug: string } | null;
+  timeLimitSeconds?: number | null;
+  defaultMarks: number;
+  defaultNegativeMarks: number;
+  maxAttempts?: number | null;
+  questionCount: number;
+  questions: PublicQuizQuestion[];
+}
+
+export interface AttemptQuestionBreakdown {
+  questionId: string;
+  order: number;
+  questionText: string;
+  options: string[];
+  selectedOptionIndex: number | null;
+  correctOptionIndex: number;
+  explanation: string;
+  isCorrect: boolean;
+  isUnattempted: boolean;
+  marksAwarded: number;
+}
+
+export interface AttemptResult {
+  attemptId: string;
+  quizId: string;
+  quizTitle: string;
+  score: number;
+  totalPossibleScore: number;
+  percentage: number;
+  correctCount: number;
+  incorrectCount: number;
+  unattemptedCount: number;
+  totalQuestions: number;
+  breakdown: AttemptQuestionBreakdown[];
+  submittedAt: Date;
+}
+
+export class QuizService {
+  /**
+   * Import a quiz from AI-generated JSON payload
+   */
+  static async importQuizJson(rawJson: unknown): Promise<{
+    quiz: IQuiz;
+    questionCount: number;
+  }> {
+    const validated = QuizImportJSONSchema.parse(rawJson);
+
+    // Sanitize title and subject as plain text
+    const cleanTitle = sanitizePlainText(validated.quizTitle);
+    const cleanSubject = validated.subject ? sanitizePlainText(validated.subject) : undefined;
+
+    // Create the Quiz in DRAFT status
+    const quiz = await QuizRepository.create({
+      title: cleanTitle,
+      subject: cleanSubject,
+      status: "DRAFT",
+      defaultMarks: 1,
+      defaultNegativeMarks: 0,
+    });
+
+    // Prepare questions with plain-text sanitization
+    const sanitizedQuestions = validated.questions.map((q, idx) => ({
+      order: idx + 1,
+      questionText: sanitizePlainText(q.questionText),
+      options: q.options.map((opt) => sanitizePlainText(opt)),
+      correctOptionIndex: q.correctOptionIndex,
+      explanation: q.explanation ? sanitizePlainText(q.explanation) : "",
+      marks: q.marks,
+      negativeMarks: q.negativeMarks,
+    }));
+
+    await QuizQuestionRepository.insertMany(quiz._id.toString(), sanitizedQuestions);
+
+    return {
+      quiz,
+      questionCount: sanitizedQuestions.length,
+    };
+  }
+
+  /**
+   * List quizzes (public or admin)
+   */
+  static async listQuizzes(
+    filters: QuizFilterOptions = {},
+    isAdmin: boolean = false
+  ): Promise<PaginatedQuizzes> {
+    return QuizRepository.list(filters, isAdmin);
+  }
+
+  /**
+   * Get public quiz view by slug — NEVER exposes correctOptionIndex or explanation
+   */
+  static async getPublicQuizBySlug(slug: string): Promise<PublicQuizDetail | null> {
+    const quiz = await QuizRepository.findBySlug(slug);
+    if (!quiz || quiz.status !== "PUBLISHED") {
+      return null;
+    }
+
+    const rawQuestions = await QuizQuestionRepository.findByQuizId(quiz._id.toString());
+
+    let questionsList = rawQuestions.map((q) => ({
+      id: q._id.toString(),
+      order: q.order,
+      questionText: q.questionText,
+      options: [...q.options],
+      marks: q.marks ?? quiz.defaultMarks,
+      negativeMarks: q.negativeMarks ?? quiz.defaultNegativeMarks,
+    }));
+
+    // Shuffle questions if enabled
+    if (quiz.shuffleQuestions) {
+      questionsList = [...questionsList].sort(() => Math.random() - 0.5);
+    }
+
+    const categoryObj = quiz.categoryId as unknown as { name?: string; slug?: string } | undefined;
+
+    return {
+      id: quiz._id.toString(),
+      title: quiz.title,
+      slug: quiz.slug,
+      subject: quiz.subject,
+      category: categoryObj?.name ? { name: categoryObj.name, slug: categoryObj.slug || "" } : null,
+      timeLimitSeconds: quiz.timeLimitSeconds,
+      defaultMarks: quiz.defaultMarks,
+      defaultNegativeMarks: quiz.defaultNegativeMarks,
+      maxAttempts: quiz.maxAttempts,
+      questionCount: rawQuestions.length,
+      questions: questionsList,
+    };
+  }
+
+  /**
+   * Get full quiz for Admin (includes correctOptionIndex & explanation)
+   */
+  static async getAdminQuizById(id: string): Promise<{
+    quiz: IQuiz;
+    questions: IQuizQuestion[];
+  } | null> {
+    const quiz = await QuizRepository.findById(id);
+    if (!quiz) return null;
+
+    const questions = await QuizQuestionRepository.findByQuizId(id);
+    return { quiz, questions };
+  }
+
+  /**
+   * Update quiz settings
+   */
+  static async updateQuizSettings(
+    id: string,
+    input: UpdateQuizSettingsInput
+  ): Promise<IQuiz | null> {
+    const validated = UpdateQuizSettingsSchema.parse(input);
+
+    const updatePayload: Record<string, unknown> = { ...validated };
+    if (validated.title) {
+      updatePayload.title = sanitizePlainText(validated.title);
+    }
+    if (validated.subject) {
+      updatePayload.subject = sanitizePlainText(validated.subject);
+    }
+
+    return QuizRepository.update(id, updatePayload);
+  }
+
+  /**
+   * Update single question (inline typo/answer fix)
+   */
+  static async updateQuestion(
+    questionId: string,
+    input: UpdateQuizQuestionInput
+  ): Promise<IQuizQuestion | null> {
+    const validated = UpdateQuizQuestionSchema.parse(input);
+
+    const updatePayload: Record<string, unknown> = { ...validated };
+    if (validated.questionText) {
+      updatePayload.questionText = sanitizePlainText(validated.questionText);
+    }
+    if (validated.options) {
+      updatePayload.options = validated.options.map((opt) => sanitizePlainText(opt));
+    }
+    if (validated.explanation) {
+      updatePayload.explanation = sanitizePlainText(validated.explanation);
+    }
+
+    return QuizQuestionRepository.updateQuestion(questionId, updatePayload);
+  }
+
+  /**
+   * Publish quiz
+   */
+  static async publishQuiz(id: string): Promise<IQuiz | null> {
+    return QuizRepository.update(id, {
+      status: "PUBLISHED",
+      publishedAt: new Date(),
+    });
+  }
+
+  /**
+   * Unpublish quiz
+   */
+  static async unpublishQuiz(id: string): Promise<IQuiz | null> {
+    return QuizRepository.update(id, {
+      status: "DRAFT",
+    });
+  }
+
+  /**
+   * Delete quiz and all its questions
+   */
+  static async deleteQuiz(id: string): Promise<boolean> {
+    return QuizRepository.delete(id);
+  }
+
+  /**
+   * Authoritative server-side evaluation of an attempt
+   */
+  static async evaluateAttempt(
+    quizId: string,
+    input: SubmitQuizAttemptInput
+  ): Promise<AttemptResult | null> {
+    const quiz = await QuizRepository.findById(quizId);
+    if (!quiz) return null;
+
+    const canonicalQuestions = await QuizQuestionRepository.findByQuizId(quizId);
+    if (canonicalQuestions.length === 0) return null;
+
+    // Create a map of user answers by questionId
+    const answerMap = new Map<string, number | null>();
+    for (const ans of input.answers) {
+      answerMap.set(ans.questionId, ans.selectedOptionIndex);
+    }
+
+    let score = 0;
+    let totalPossibleScore = 0;
+    let correctCount = 0;
+    let incorrectCount = 0;
+    let unattemptedCount = 0;
+
+    const breakdown: AttemptQuestionBreakdown[] = [];
+
+    for (const q of canonicalQuestions) {
+      const qIdStr = q._id.toString();
+      const userSelected = answerMap.has(qIdStr) ? answerMap.get(qIdStr)! : null;
+
+      const qPositiveMarks = q.marks ?? quiz.defaultMarks ?? 1;
+      const qNegativeMarks = q.negativeMarks ?? quiz.defaultNegativeMarks ?? 0;
+
+      totalPossibleScore += qPositiveMarks;
+
+      let isCorrect = false;
+      let isUnattempted = false;
+      let marksAwarded = 0;
+
+      if (userSelected === null || userSelected === undefined) {
+        // Unattempted
+        isUnattempted = true;
+        unattemptedCount++;
+        marksAwarded = 0;
+      } else if (userSelected === q.correctOptionIndex) {
+        // Correct
+        isCorrect = true;
+        correctCount++;
+        marksAwarded = qPositiveMarks;
+        score += qPositiveMarks;
+      } else {
+        // Incorrect
+        incorrectCount++;
+        marksAwarded = -qNegativeMarks;
+        score -= qNegativeMarks;
+      }
+
+      breakdown.push({
+        questionId: qIdStr,
+        order: q.order,
+        questionText: q.questionText,
+        options: q.options,
+        selectedOptionIndex: userSelected,
+        correctOptionIndex: q.correctOptionIndex,
+        explanation: q.explanation || "",
+        isCorrect,
+        isUnattempted,
+        marksAwarded: Math.round(marksAwarded * 100) / 100,
+      });
+    }
+
+    // Round total scores to 2 decimal places
+    const finalScore = Math.round(score * 100) / 100;
+    const finalTotalPossible = Math.round(totalPossibleScore * 100) / 100;
+    const percentage =
+      finalTotalPossible > 0
+        ? Math.round((Math.max(0, finalScore) / finalTotalPossible) * 10000) / 100
+        : 0;
+
+    // Persist attempt
+    const attempt = await QuizAttemptRepository.create({
+      quizId,
+      answers: input.answers.map((a) => ({
+        questionId: a.questionId,
+        selectedOptionIndex: a.selectedOptionIndex,
+      })),
+      score: finalScore,
+      totalPossibleScore: finalTotalPossible,
+      correctCount,
+      incorrectCount,
+      unattemptedCount,
+      startedAt: input.startedAt ? new Date(input.startedAt) : undefined,
+      submittedAt: new Date(),
+    });
+
+    return {
+      attemptId: attempt._id.toString(),
+      quizId: quiz._id.toString(),
+      quizTitle: quiz.title,
+      score: finalScore,
+      totalPossibleScore: finalTotalPossible,
+      percentage,
+      correctCount,
+      incorrectCount,
+      unattemptedCount,
+      totalQuestions: canonicalQuestions.length,
+      breakdown,
+      submittedAt: attempt.submittedAt,
+    };
+  }
+}
