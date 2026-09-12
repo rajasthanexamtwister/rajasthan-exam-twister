@@ -8,12 +8,12 @@ import {
   BookOpen,
   UploadCloud,
   Image as ImageIcon,
-  HelpCircle,
   CheckSquare,
   FolderTree,
   Tag,
   Settings,
   ExternalLink,
+  Users,
 } from "lucide-react";
 import clsx from "clsx";
 
@@ -26,6 +26,7 @@ const navigation = [
   { name: "Media Library", href: "/admin/media", icon: ImageIcon, exact: false },
   { name: "Categories", href: "/admin/categories", icon: FolderTree, exact: false },
   { name: "Tags", href: "/admin/tags", icon: Tag, exact: false },
+  { name: "Students", href: "/admin/students", icon: Users, exact: false },
   { name: "Settings", href: "/admin/settings", icon: Settings, exact: false },
 ];
 
