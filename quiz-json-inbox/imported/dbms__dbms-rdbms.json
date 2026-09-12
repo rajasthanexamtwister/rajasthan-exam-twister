@@ -10,6 +10,7 @@
   "questions": [
     {
       "questionText": "एक RDBMS का संग्रह होता है-",
+      "questionTextEn": "An RDBMS consists a collection of —",
       "options": [
         "Tables",
         "Records",
@@ -23,6 +24,7 @@
     },
     {
       "questionText": "एट्री यूट एक टेबल के __________ को संदर्भित करता है।",
+      "questionTextEn": "The term 'attribute' refers to a __________ table.",
       "options": [
         "Column",
         "Tuple",
@@ -36,6 +38,7 @@
     },
     {
       "questionText": "रिलेशनल मॉडल में टेबल की रो को कहा जाता है-",
+      "questionTextEn": "In relational model, the row of table is known to be?",
       "options": [
         "Entity field",
         "Tuple",
@@ -49,6 +52,7 @@
     },
     {
       "questionText": "रिलेशनल मॉडल का सबंध किससे है?",
+      "questionTextEn": "The relational model is concerned with?",
       "options": [
         "Data Manipulation",
         "Data Structure and Data Integrity",
@@ -62,6 +66,7 @@
     },
     {
       "questionText": "किसी व्यक्ति का पता क्षेत्र प्राथमिक कुंजी का हिस्सा नहीं होना चाहिए, क्योंकि यह ___ होने की संभावना है?",
+      "questionTextEn": "Address field of a person should not be part of primary key, since it is likely to ___.",
       "options": [
         "Too long",
         "Changed",
@@ -75,6 +80,7 @@
     },
     {
       "questionText": "संबंधित इकाई सेट की प्राथमिक कुंजी का संघ संबंध का ___ बन जाता है?",
+      "questionTextEn": "The union of primary keys of the related entity sets becomes a ___ of the relation?",
       "options": [
         "Primary key",
         "Foreign key",
@@ -88,6 +94,7 @@
     },
     {
       "questionText": "Relation के प्रत्येक रिकॉर्ड को कहा जाता है-",
+      "questionTextEn": "Each record of a Relation is called ___.",
       "options": [
         "Attribute",
         "Tuple",
@@ -101,6 +108,7 @@
     },
     {
       "questionText": "डेटाबेस में वस्तुओं के बीच एक शीर्ष से नीचे संबंध ___ द्वारा स्थापित किया गया है-",
+      "questionTextEn": "Objects between entities in a database are established via ___.",
       "options": [
         "Hierarchical schema",
         "Network schema",
@@ -114,6 +122,7 @@
     },
     {
       "questionText": "छात्र (आईडी, नाम, विभाग का नाम, tot_cred) इस प्रश्न में प्राथमिक कुंजी कौन सी विशेषता है?",
+      "questionTextEn": "Student (ID, name, dept_name, tot_cred) — which attribute forms the primary key?",
       "options": [
         "Name",
         "Dept",
@@ -127,6 +136,7 @@
     },
     {
       "questionText": "रिलेशनल डेटाबेस किस प्रकार के रिलेशन होते हैं-",
+      "questionTextEn": "Relational databases consist of which type of relations?",
       "options": [
         "Consolidated",
         "Normalized",
@@ -140,6 +150,7 @@
     },
     {
       "questionText": "A ___ व्यक्तिगत टुपल्स के बजाय संपूर्ण संबंध की एक संपत्ति है जिसमे प्रत्येक टपल अद्वितीय है।",
+      "questionTextEn": "Which is a property of the entire relation, rather than of the individual tuples in which each tuple is unique?",
       "options": [
         "Attribute",
         "Fields",
@@ -153,6 +164,7 @@
     },
     {
       "questionText": "DFD का पूरा नाम क्या है?",
+      "questionTextEn": "What is the full form of DFD?",
       "options": [
         "Data Flow Document",
         "Data File Diagram",
@@ -166,6 +178,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सी एक प्रक्रियात्मक भाषा है?",
+      "questionTextEn": "Which one of the following is a procedural language?",
       "options": [
         "Query language",
         "Domain relational calculus",
@@ -179,6 +192,7 @@
     },
     {
       "questionText": "उपयोगकर्ता किस भाषा का उपयोग करके डेटाबेस से जानकारी का अनुरोध कर सकता है?",
+      "questionTextEn": "Using which language can a user request information from a database?",
       "options": [
         "Structural",
         "Compiler",
@@ -192,6 +206,7 @@
     },
     {
       "questionText": "___ ऑपरेशन टपल्स के युग्मों को मर्ज करके दो संबंधों के संयोजन की अनुमति देता है, प्रत्येक संबंध से एक, एक एकल टपल में।",
+      "questionTextEn": "The ___ operation allows the combining of two relations by merging pairs of tuples, one from each relation, into a single tuple.",
       "options": [
         "Join",
         "Union",
@@ -205,6 +220,7 @@
     },
     {
       "questionText": "एक ___ अखंडता बाधा की आवश्यकता है कि संदर्भित संबंध में किसी भी टुपल की निर्दिष्ट विशेषताओं में आने वाले मान संदर्भित संबंध में कम से कम एक टपल की निर्दिए विशेषताओ में भी दिखाई दें।",
+      "questionTextEn": "A ___ integrity constraint requires that values appearing in specified attributes of any tuple in the referencing relation also appear in specified attributes of at least one tuple in the referenced relation.",
       "options": [
         "Specific",
         "Entity",
@@ -218,6 +234,7 @@
     },
     {
       "questionText": "परिणाम जो ऑपरेशन में दो संबंधों से टुपल्स के सभी जोड़े शामिल होते हैं, भले ही उनकी विशेषता मान मेल खाते हों।",
+      "questionTextEn": "The result of which operation contains all pairs of tuples from the two relations, regardless of whether their attribute values match?",
       "options": [
         "Intersection",
         "Set difference",
@@ -231,6 +248,7 @@
     },
     {
       "questionText": "___ वह है जो एक संबंध की प्राथमिक कुंजी का उपयोग दूसरे संबंध में सामान्य विशेषता के रूप में किया जाता है।",
+      "questionTextEn": "The ___ is the one in which the primary key of one relation is used as a normal attribute in another relation.",
       "options": [
         "Referenced relation",
         "Referential relation",
@@ -244,6 +262,7 @@
     },
     {
       "questionText": "संबंध से टपल के एक सेट को प्रक्षेपित करने के लिए संबंधपरक बीजगणित में सबसे अधिक इस्तेमाल किया जाने वाला ऑपरेशन है?",
+      "questionTextEn": "The most commonly used operation in relational algebra to projecting a set of tuples from a relation is?",
       "options": [
         "Projection",
         "Select",
@@ -257,6 +276,7 @@
     },
     {
       "questionText": "एक रिलेशनल स्कीमा में, प्रत्येक Tuple को फ़ील्ड में विभाजित किया जाता है जिसे ___ कहते हैं-",
+      "questionTextEn": "In a relational schema, each Tuple is divided into fields called ___.",
       "options": [
         "Relations",
         "Domains",
@@ -270,6 +290,7 @@
     },
     {
       "questionText": "___ ऑपरेटर दो प्रश्नों के परिणाम लेता है और केवल उन पंक्तियों को लौटाता है जो दोनों परिणाम सेट में दिखाई देती हैं।",
+      "questionTextEn": "The ___ operator takes the results of two queries and returns only rows that appear in both result sets.",
       "options": [
         "Projection",
         "Difference",
@@ -283,6 +304,7 @@
     },
     {
       "questionText": "विशेषता के साथ संबंध जो प्राथमिक कुंजी है उसे दूसरे संबंध में संदर्भित किया जाता है। वह संबंध जिसमें प्राथमिक कुंजी के रूप में विशेषता होती है, कहलाती है-",
+      "questionTextEn": "The relation with the attribute which is the primary key is referenced in another relation. The relation which has the attribute as primary key is called?",
       "options": [
         "Referencing relation",
         "Referred relation",
@@ -296,6 +318,7 @@
     },
     {
       "questionText": "एक ___ एक डेटाबेस के स्कीमा का एक सचित्र चित्रण है जो डेटाबेस में संबंधों, उनकी विशेषताओं और प्राथमिक कुंजियों और विदेशी कुंजियों को दर्शाता है।",
+      "questionTextEn": "A ___ is a pictorial depiction of the schema of a database that shows the relations in the database, their attributes, and primary keys and foreign keys.",
       "options": [
         "Relational algebra",
         "Database diagram",
@@ -309,6 +332,7 @@
     },
     {
       "questionText": "___ संचालन का एक सेट प्रदान करता है जो एक या एक से अधिक संबंधों को इनपुट में रूप में लेता है और एक संबंध को आउटपुट के रूप में लौटाता है।",
+      "questionTextEn": "The ___ provides a set of operations that take one or more relations as input and return a relation as an output.",
       "options": [
         "Relation flow",
         "Relational algebra",
@@ -322,6 +346,7 @@
     },
     {
       "questionText": "एक रिलेशनल डेटाबेस डेवलपर किसे रिकॉर्ड के रूप में संदर्भित करता है?",
+      "questionTextEn": "A relational database developer refers to a record as ___.",
       "options": [
         "a criteria",
         "a relation",
@@ -335,6 +360,7 @@
     },
     {
       "questionText": "एक संबंध में एक विशेषता एक विदेशी कुंजी है यदि एक संबंध की ___ कुंजी का उपयोग उस संबंध में एक विशेषता के रूप में किया जाता है।",
+      "questionTextEn": "An attribute in a relation is a foreign key if a primary key from one relation is used as ___ attribute in that relation.",
       "options": [
         "Primary (Rijmary)",
         "Super",
@@ -348,6 +374,7 @@
     },
     {
       "questionText": "_____ कीवर्ड का उपयोग कॉलम में मानों की संख्या खोजने के लिए किया जाता है-",
+      "questionTextEn": "The ___ keyword is used to count the number of values in a column.",
       "options": [
         "Total",
         "Count",
@@ -361,6 +388,7 @@
     },
     {
       "questionText": "एक ___ डेटाबेस के समग्र डिजाइन को परिभाषित करने के लिए प्रयोग किया जाता है-",
+      "questionTextEn": "A ___ is used to define the complete design of a database.",
       "options": [
         "schema",
         "application program",
@@ -374,6 +402,7 @@
     },
     {
       "questionText": "निम्नलिखित में से किसका प्रयोग संबंध की संरचना को परिभाषित करने, संबंधों को हटाने और संबंधित स्कीमा को परिभाषित करने के लिए किया जाता है?",
+      "questionTextEn": "Which one of the following is used to define the structure of the relation, deleting relations and relating schemas?",
       "options": [
         "Data Definition Language",
         "Data Manipulation Language",
@@ -387,6 +416,7 @@
     },
     {
       "questionText": "निम्नलिखित में से किसे प्राथमिक कुंजी के रूप में नहीं लिया जा सकता है?",
+      "questionTextEn": "Which one of the following cannot be taken as a primary key?",
       "options": [
         "Dept_id",
         "Street",
@@ -400,6 +430,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन डेटाबेस से जानकारी को क्वेरी करने और डेटाबेस में टुपल्स की सम्मिलित करने, टुपल्स को हटाने और डेटाबेस में टुपल्स को संशोधित करने की क्षमता प्रदान करता है?",
+      "questionTextEn": "Which one of the following provides the ability to query information from the database and to insert tuples into, delete tuples from, and modify tuples in the database?",
       "options": [
         "Data Definition Language",
         "Data Manipulation Language",
@@ -413,6 +444,7 @@
     },
     {
       "questionText": "A ___ व्यक्तिगत टुपल्स के बजाय संपूर्ण संबंध की एक संपत्ति है जिसमे प्रत्येक टपल अद्वितीय है।",
+      "questionTextEn": "Which is a property of the entire relation, rather than of the individual tuples, in which each tuple is unique?",
       "options": [
         "Attribute",
         "Fields",
@@ -426,6 +458,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सी विशेषता को प्राथमिक कुंजी के रूप में लिया जा सकता है?",
+      "questionTextEn": "Which one of the following attribute can be taken as a primary key?",
       "options": [
         "Id",
         "Department",
@@ -439,6 +472,7 @@
     },
     {
       "questionText": "Relation database में Rows (रोज) क्या कहलाती है-",
+      "questionTextEn": "In Relation database, Rows (rows) are called ___.",
       "options": [
         "Relation",
         "Tuples",
@@ -452,6 +486,7 @@
     },
     {
       "questionText": "Relationship की degree का प्रकार है-",
+      "questionTextEn": "Types of Relationship degree are?",
       "options": [
         "Binary degree",
         "Ternary degree",
@@ -465,6 +500,7 @@
     },
     {
       "questionText": "विभाग और कर्मचारी यहाँ dept_name विशेषता दोनों संबंधों में प्रकट होती है। यहाँ संबंध स्कीमा में सामान्य विशेषताओं का उपयोग करना ___ संबंधों को जोड़ने का एक तरीका है।",
+      "questionTextEn": "Department (dept_name, building, budget) and Employee (employee_id, name, dept_name, salary) — using common attributes in relation schema is one way of relating ___ relations.",
       "options": [
         "Attributes of distinct",
         "Tuple of distinct",
@@ -478,6 +514,7 @@
     },
     {
       "questionText": "...... डेटाबेस की का एक अवैध प्रकार है-",
+      "questionTextEn": "Which of the following is an invalid type of database primary key?",
       "options": [
         "Structured primary key",
         "Atomic primary key",
@@ -491,6 +528,7 @@
     },
     {
       "questionText": "........... एक फाइल की प्राइमरी कुंजी होती है जो दूसरी फाइल में भी उपस्थित होती है- (A key that appears in another file/table)",
+      "questionTextEn": "A ___ is the primary key of one file that also appears in another file.",
       "options": [
         "Physical key (फिजिकल कुंजी)",
         "Primary key (प्राइमरी कुंजी)",
@@ -504,6 +542,7 @@
     },
     {
       "questionText": "निम्नलिखित में से असत्य कथन कौन-सा है?",
+      "questionTextEn": "Which IS the false statement from the following?",
       "options": [
         "A name relation is variable",
         "A view is a named derived table",
@@ -517,6 +556,7 @@
     },
     {
       "questionText": "Relationship के प्रकार हैं-",
+      "questionTextEn": "Types of Relationship are?",
       "options": [
         "One to one",
         "One to Many",
@@ -530,6 +570,7 @@
     },
     {
       "questionText": "डाटा, रिलेशनशिप, सिमेंटिक्स (Semantics) और Constraints का वर्णन करने के लिए प्रयोग किए जाने वाले टूल (tool) को क्या कहते हैं-",
+      "questionTextEn": "The tool used to describe Data, Relationship, Semantics, and Constraints is?",
       "options": [
         "E-R Model",
         "Database",
@@ -543,6 +584,7 @@
     },
     {
       "questionText": "समय के साथ संबंध के रूप में बदल सकती है ___",
+      "questionTextEn": "Contents of a relation instance may change with time as relation ___.",
       "options": [
         "Retrieved",
         "Updated",
@@ -556,6 +598,7 @@
     },
     {
       "questionText": "रिलेशनल मॉडल में, ___ को कार्डिनेलिटी कहते हैं-",
+      "questionTextEn": "In relational model, ___ is called cardinality.",
       "options": [
         "Total number of tuples (ट्यूपल्स की कुल संख्या)",
         "Total number of attributes (एट्रिब्यूट्स की कुल संख्या)",
@@ -569,6 +612,7 @@
     },
     {
       "questionText": "एक DBMS में डेटाबेस संरचना फाइलों के संग्रह के रूप में संगृहीत की जाती है-",
+      "questionTextEn": "The database structure in a DBMS is stored as a collection of files. (True/False)",
       "options": [
         "True",
         "False",
@@ -582,6 +626,7 @@
     },
     {
       "questionText": "रिलेशनल डेटाबेस ____________ का उपयोग करके संबंधों का प्रतिनिधित्व करता है।",
+      "questionTextEn": "Relational database represents relationships using ___?",
       "options": [
         "Key",
         "Row",
@@ -595,6 +640,7 @@
     },
     {
       "questionText": "अधिक भाषा में केस स्ट्रक्चर को ___ स्टेटमेंट कहा जाता है।",
+      "questionTextEn": "In which language is the case structure called a ___ statement?",
       "options": [
         "Switch",
         "Selective",
@@ -608,6 +654,7 @@
     },
     {
       "questionText": "आरडीबीएमएस का फुल फॉर्म क्या है?",
+      "questionTextEn": "What is the full form of RDBMS?",
       "options": [
         "Route Database Management System",
         "Rapid Database Management System",
@@ -621,6 +668,7 @@
     },
     {
       "questionText": "___ ऑपरेशन दो 'समान रूप से संरचित' टेबल का एक सेट यूनियन करता है।",
+      "questionTextEn": "The ___ operation performs a set union of two 'similarly structured' tables.",
       "options": [
         "Join",
         "Union",
@@ -634,6 +682,7 @@
     },
     {
       "questionText": "संबंध की प्रत्येक विशेषता के लिए, अनुमत मानों का एक सेट होता है, जिसे उस विशेषता का ___ कहा जाता है।",
+      "questionTextEn": "For each attribute of a relation, there is a set of permitted values, called the ___ of that attribute.",
       "options": [
         "Set",
         "Relation",
@@ -647,6 +696,7 @@
     },
     {
       "questionText": "Relational Model कुछ अपरिचित शब्दावली का उपयोग करता है। एक Tuple एक के बराबर है-",
+      "questionTextEn": "Relational Model uses some unfamiliar terminology. A Tuple is equivalent to a ___.",
       "options": [
         "record",
         "field",
@@ -660,6 +710,7 @@
     },
     {
       "questionText": "एक रिलेशनल डेटाबेस में एक रेफरेशियल इंटीग्रिटी कंस्ट्रवैन कैब की मदद से निदिर्ष किया जा सकता है?",
+      "questionTextEn": "In a relational database, a referential integrity constraint can be specified with the help of?",
       "options": [
         "foreign key",
         "secondary key",
@@ -673,6 +724,7 @@
     },
     {
       "questionText": "एक तालिका रिश्तों का एक संग्रह है, ___ की अवधारणाओं के बीच एक करीबी पत्राचार है।",
+      "questionTextEn": "A table is a collection of relationships; it is a correspondence between concepts of ___?",
       "options": [
         "Tables and Entries",
         "Tables and instances",
@@ -686,6 +738,7 @@
     },
     {
       "questionText": "कोर्स (course_id, sec_id, सेमेस्टर) यहां course_id, sec_id और सेमेस्टर ___ हैं और कोर्स ___ है।",
+      "questionTextEn": "Course (course_id, sec_id, semester) — Here the course_id, sec_id, and semester are ___ and course is ___ a.",
       "options": [
         "Attributes, Relation",
         "Tuple, Relation",
@@ -699,6 +752,7 @@
     },
     {
       "questionText": "प्राथमिक कुंजी को इस प्रकार चुना जाना चाहिए कि उसके गुण मान कभी भी ___ न हों?",
+      "questionTextEn": "Primary key should be chosen such that its attribute values are never ___.",
       "options": [
         "Dependent",
         "Changed",
@@ -712,6 +766,7 @@
     },
     {
       "questionText": "एक डोमेन एक परमाणु है यदि डोमेन के तत्त्वों को ___ इकाइयाँ माना जाता है?",
+      "questionTextEn": "A domain is atomic if elements of the domain are considered to be ___ units.",
       "options": [
         "Constant",
         "Divisible",
@@ -725,6 +780,7 @@
     },
     {
       "questionText": "___ ऑपरेशन टपल्स के जोड़े को मर्ज करके दो संबंधों के संयोजन की अनुमति देता है, प्रत्येक संबंध से एक, एक एकल टपल में।",
+      "questionTextEn": "The ___ operation allows the combining of two relations by merging pairs of tuples, one from each relation, into a single tuple. (Repeated question)",
       "options": [
         "Union",
         "Join",
@@ -738,6 +794,7 @@
     },
     {
       "questionText": "संबंध की टपल्स लिखकाने के सकते हैं।",
+      "questionTextEn": "The tuples of the relations can be of ___ order.",
       "options": [
         "Sorted",
         "Constant",
@@ -751,6 +808,7 @@
     },
     {
       "questionText": "मिनिमल सुपरकीज कहलाती हैं-",
+      "questionTextEn": "Minimal superkeys are called ___?",
       "options": [
         "Candidate key",
         "Unique key",
@@ -764,6 +822,7 @@
     },
     {
       "questionText": "डेटाबेस के तार्किक डिजाइन को ___ के रूप में जाना जाता है?",
+      "questionTextEn": "Logical design of database is known to be ___?",
       "options": [
         "Database Schema",
         "Database Instance",
@@ -777,6 +836,7 @@
     },
     {
       "questionText": "कौन सा ऑपरेटर है, जो दो प्रश्नों के परिणाम लेता है और केवल उन पंक्तियों को लौटाता है जो दोनों परिणाम सेट में दिखाई देती है?",
+      "questionTextEn": "Which is the operator that takes the results of two queries and returns only rows that appear in both result sets?",
       "options": [
         "Intersect",
         "Difference",
@@ -790,11 +850,12 @@
     },
     {
       "questionText": "प्रश्न भाषा एक ऐसी भाषा है जिसमें उपयोगकर्ता ___?",
+      "questionTextEn": "Query language is a language in which a user ___?",
       "options": [
         "Stores",
         "Requests",
         "Response",
-        "Represents"
+        "(d) Represents"
       ],
       "correctOptionIndex": 1,
       "explanation": "A Query Language is a language in which a user REQUESTS information from a database. The user makes a request (query), and the DBMS responds with the matching data.",
@@ -803,6 +864,7 @@
     },
     {
       "questionText": "Related फाइल्स का समूह क्या कहलाता है-",
+      "questionTextEn": "A collection of related files is called ___.",
       "options": [
         "Character (करैक्टर)",
         "Field (फील्ड)",
@@ -816,6 +878,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सा एक रिकॉर्ड की विशिष्ट पहचान के लिए सामूहिक रूप से ली गई एक या अधिक विशेषताओं का एक समूह है?",
+      "questionTextEn": "Which one of the following is a set of one or more attributes taken collectively to uniquely identify a record?",
       "options": [
         "Foreign key",
         "Sub key",
@@ -842,6 +905,7 @@
     },
     {
       "questionText": "सुपर-की का उपसमुच्चय किस स्थिति में उम्मीदवार कुंजी है?",
+      "questionTextEn": "The subset of super key is a candidate key under what condition?",
       "options": [
         "Subset is a super key",
         "No proper subset is a super key",
@@ -855,6 +919,7 @@
     },
     {
       "questionText": "विशेषताएँ ID, CITY और NAME पर विचार करें, इनमें से किसे सुपर कुंजी माना जा सकता है?",
+      "questionTextEn": "Consider attributes ID, CITY and NAME. Which one of these can be considered as a super key?",
       "options": [
         "CITY, ID",
         "ID",
@@ -868,6 +933,7 @@
     },
     {
       "questionText": "RDBMS में Object table में बनी छोटी-छोटी entities कहलाती है-",
+      "questionTextEn": "In RDBMS, small entities built in an Object table are called ___.",
       "options": [
         "NULL value",
         "Field",
@@ -881,6 +947,7 @@
     },
     {
       "questionText": "प्रथम Commercial RDBMS माना जाता है-",
+      "questionTextEn": "Which is considered the first commercial RDBMS?",
       "options": [
         "Oracle",
         "SQL",
@@ -894,6 +961,7 @@
     },
     {
       "questionText": "अभ्यास में प्रयुक्त प्रश्न भाषा में शामिल हैं?",
+      "questionTextEn": "Query language used in practice includes?",
       "options": [
         "Fields",
         "Tuples",
@@ -907,6 +975,7 @@
     },
     {
       "questionText": "RDBMS निर्माण हेतु सर्वाधिक महत्वपूर्ण Object है-",
+      "questionTextEn": "The most important object for building RDBMS is?",
       "options": [
         "Table",
         "Circle",
@@ -920,6 +989,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सा एक रिकॉर्ड की विशिष्ट पहचान के लिए सामूहिक रूप से ली गई एक या अधिक विशेषताओं का एक समूह है?",
+      "questionTextEn": "Which one of the following is a set of one or more attributes taken collectively to uniquely identify a record? (Same as Q63 — confirmed high priority)",
       "options": [
         "Foreign key",
         "Sub key",

@@ -24,7 +24,9 @@ export interface PublicQuizQuestion {
   id: string;
   order: number;
   questionText: string;
+  questionTextEn?: string;
   options: string[];
+  optionsEn?: string[];
   marks?: number;
   negativeMarks?: number;
 }
@@ -78,7 +80,9 @@ export interface AttemptQuestionBreakdown {
   questionId: string;
   order: number;
   questionText: string;
+  questionTextEn?: string;
   options: string[];
+  optionsEn?: string[];
   selectedOptionIndex: number | null;
   correctOptionIndex: number;
   explanation: string;
@@ -134,7 +138,9 @@ export class QuizService {
     const sanitizedQuestions = validated.questions.map((q, idx) => ({
       order: idx + 1,
       questionText: sanitizePlainText(q.questionText),
+      questionTextEn: q.questionTextEn ? sanitizePlainText(q.questionTextEn) : undefined,
       options: q.options.map((opt) => sanitizePlainText(opt)),
+      optionsEn: q.optionsEn ? q.optionsEn.map((opt) => sanitizePlainText(opt)) : undefined,
       correctOptionIndex: q.correctOptionIndex,
       explanation: q.explanation ? sanitizePlainText(q.explanation) : "",
       marks: q.marks,
@@ -188,7 +194,9 @@ export class QuizService {
       id: q._id.toString(),
       order: q.order,
       questionText: q.questionText,
+      questionTextEn: q.questionTextEn || undefined,
       options: [...q.options],
+      optionsEn: q.optionsEn && q.optionsEn.length > 0 ? [...q.optionsEn] : undefined,
       marks: q.marks ?? quiz.defaultMarks,
       negativeMarks: q.negativeMarks ?? quiz.defaultNegativeMarks,
     }));
@@ -229,11 +237,15 @@ export class QuizService {
     if (!quiz) return null;
 
     const questions = await QuizQuestionRepository.findByQuizId(id);
-    return { quiz, questions };
+
+    return {
+      quiz,
+      questions,
+    };
   }
 
   /**
-   * Update quiz settings
+   * Update quiz settings (Admin)
    */
   static async updateQuizSettings(
     id: string,
@@ -247,6 +259,9 @@ export class QuizService {
     }
     if (validated.subject) {
       updatePayload.subject = sanitizePlainText(validated.subject);
+    }
+    if (validated.examTags) {
+      updatePayload.examTags = validated.examTags.map((t) => sanitizePlainText(t)).filter(Boolean);
     }
 
     return QuizRepository.update(id, updatePayload);
@@ -265,8 +280,14 @@ export class QuizService {
     if (validated.questionText) {
       updatePayload.questionText = sanitizePlainText(validated.questionText);
     }
+    if (validated.questionTextEn) {
+      updatePayload.questionTextEn = sanitizePlainText(validated.questionTextEn);
+    }
     if (validated.options) {
       updatePayload.options = validated.options.map((opt) => sanitizePlainText(opt));
+    }
+    if (validated.optionsEn) {
+      updatePayload.optionsEn = validated.optionsEn.map((opt) => sanitizePlainText(opt));
     }
     if (validated.explanation) {
       updatePayload.explanation = sanitizePlainText(validated.explanation);
@@ -286,7 +307,7 @@ export class QuizService {
   }
 
   /**
-   * Unpublish quiz
+   * Unpublish quiz (return to DRAFT)
    */
   static async unpublishQuiz(id: string): Promise<IQuiz | null> {
     return QuizRepository.update(id, {
@@ -295,7 +316,7 @@ export class QuizService {
   }
 
   /**
-   * Delete quiz and all its questions
+   * Delete quiz and all its associated questions and attempts
    */
   static async deleteQuiz(id: string): Promise<boolean> {
     return QuizRepository.delete(id);
@@ -364,7 +385,9 @@ export class QuizService {
         questionId: qIdStr,
         order: q.order,
         questionText: q.questionText,
+        questionTextEn: q.questionTextEn || undefined,
         options: q.options,
+        optionsEn: q.optionsEn && q.optionsEn.length > 0 ? q.optionsEn : undefined,
         selectedOptionIndex: userSelected,
         correctOptionIndex: q.correctOptionIndex,
         explanation: q.explanation || "",

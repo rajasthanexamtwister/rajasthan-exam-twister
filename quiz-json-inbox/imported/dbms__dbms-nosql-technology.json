@@ -10,6 +10,7 @@
   "questions": [
     {
       "questionText": "निम्न में से कौन एक NoSQL डेटाबेस नहीं है?",
+      "questionTextEn": "Which of the following is NOT a NoSQL database?",
       "options": [
         "MongoDB",
         "SQL Server",
@@ -23,10 +24,11 @@
     },
     {
       "questionText": "निम्न में से कौनसा कथन सत्य नहीं है?",
+      "questionTextEn": "Which of the following statements is NOT true?",
       "options": [
         "The primary key must be unique for a given table",
-        "Specifying a zero (0) for the lower bound for the association multiplicity on a class diagram indicates that the item is required",
-        "Specifying a one (1) for the lower bound for the association multiplicity on a class diagram indicates that the item is required",
+        "(b) Specifying a zero (0) for the lower bound for the association multiplicity on a class diagram indicates that the item is required",
+        "(c) Specifying a one (1) for the lower bound for the association multiplicity on a class diagram indicates that the item is required",
         "Most databases allow multiple records that are identical"
       ],
       "correctOptionIndex": 1,
@@ -36,6 +38,7 @@
     },
     {
       "questionText": "एक NoSQL डेटाबेस ___ मॉडल का उपयोग करके जानकारी का प्रबंध कर सकता है।",
+      "questionTextEn": "A NoSQL database can manage information using ___ models.",
       "options": [
         "Document-based",
         "Key-value store",
@@ -49,6 +52,7 @@
     },
     {
       "questionText": "SQL के कमांड्स में सबसे महत्वपूर्ण है-",
+      "questionTextEn": "Which is the most important command in SQL?",
       "options": [
         "SELECT",
         "ROUND",
@@ -62,6 +66,7 @@
     },
     {
       "questionText": "एक फॉरिन की के साथ अन्य फॉरिन की को जोड़ने पर क्रिएट होती है-",
+      "questionTextEn": "When a foreign key is joined with another foreign key, it creates a ___.",
       "options": [
         "Parent-child relationship between tables",
         "Many-to-many relationship between tables",
@@ -75,6 +80,7 @@
     },
     {
       "questionText": "डेटा मैनीपुलेशन लैंगवेज कमाण्ड्स की श्रेणी में आने वाले कमाण्ड्स हैं-",
+      "questionTextEn": "Which of the following are Data Manipulation Language (DML) commands?",
       "options": [
         "INSERT",
         "DELETE",
@@ -88,6 +94,7 @@
     },
     {
       "questionText": "निम्न में से कौन एक NoSQL डेटाबेस प्रकार है?",
+      "questionTextEn": "Which of the following is a NoSQL database type?",
       "options": [
         "JSON",
         "SQL",
@@ -101,6 +108,7 @@
     },
     {
       "questionText": "SQL में कमाण्ड डेटाबेस में डेटा के एक्सेस के कन्ट्रोलिंग की अनुमति प्रदान करती है-",
+      "questionTextEn": "Which command in SQL controls access to data in the database?",
       "options": [
         "Database",
         "Data",
@@ -114,6 +122,7 @@
     },
     {
       "questionText": "Unique एवं Primary Key के बारे में क्या सत्य है-",
+      "questionTextEn": "What is true about Unique and Primary Key?",
       "options": [
         "Unique can have NULL values but Primary Key cannot",
         "Both can have duplicate values",
@@ -127,6 +136,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सबसे सरल NoSQL डेटाबेस हैं?",
+      "questionTextEn": "Which of the following are the simplest NoSQL databases?",
       "options": [
         "Key-value",
         "Wide-column",
@@ -140,6 +150,7 @@
     },
     {
       "questionText": "SQL में, किस कमांड का उपयोग लेनदेन की शुरुआत के बाद से बयान जारी करने में स्थायी परिवर्तन करने के लिए किया जाता है?",
+      "questionTextEn": "Which SQL command is used to make permanent changes after a transaction?",
       "options": [
         "ZIP",
         "PACK",
@@ -153,6 +164,7 @@
     },
     {
       "questionText": "SQL में निम्न में से Data Definition Language कौनसी कमाण्ड नहीं है?",
+      "questionTextEn": "Which of the following is NOT a Data Definition Language (DDL) command in SQL?",
       "options": [
         "RENAME",
         "REVOKE",
@@ -166,6 +178,7 @@
     },
     {
       "questionText": "MongoDB ___ में लिखा गया है।",
+      "questionTextEn": "MongoDB is written in ___?",
       "options": [
         "Python",
         "C++",
@@ -179,6 +192,7 @@
     },
     {
       "questionText": "NoSQL वर्ष ___ में जारी किया गया था।",
+      "questionTextEn": "NoSQL was released in the year ___.",
       "options": [
         "1997",
         "1998",
@@ -192,6 +206,7 @@
     },
     {
       "questionText": "SQL में कौनसी कमाण्ड डेटा टेबल में डेटा की बदलने के लिए विशेष प्रयोग की जाती है?",
+      "questionTextEn": "Which SQL command is used to modify data in a table?",
       "options": [
         "UPDATE",
         "INSERT",
@@ -205,6 +220,7 @@
     },
     {
       "questionText": "NoSQL का उद्देश्य क्या है?",
+      "questionTextEn": "What is the aim of NoSQL?",
       "options": [
         "NoSQL database allows storing non-structured data",
         "NoSQL provides an alternative to SQL database to store textual data",
@@ -218,6 +234,7 @@
     },
     {
       "questionText": "SQL में, किस कमांड का प्रयोग टेबल में नई पंक्तियाँ जोड़ने के लिए किया जाता है?",
+      "questionTextEn": "Which SQL command is used to add new rows to a table?",
       "options": [
         "Alter Table",
         "Add Row",
@@ -231,6 +248,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सा NoSQL डेटाबेस के लिए स्ट्रॉन फीचर नहीं है?",
+      "questionTextEn": "Which of the following is NOT a strong feature of NoSQL database?",
       "options": [
         "Faster data access than RDBMS",
         "Scalability",
@@ -244,6 +262,7 @@
     },
     {
       "questionText": "निम्न में से कौनसी SQL सर्वर में एक Key नहीं है?",
+      "questionTextEn": "Which key is NOT present in SQL Server?",
       "options": [
         "Primary",
         "Foreign",
@@ -257,6 +276,7 @@
     },
     {
       "questionText": "NoSQL डेटाबेस के प्रकार क्या हैं?",
+      "questionTextEn": "What are the types of NoSQL databases?",
       "options": [
         "Graph and column-oriented database",
         "Key-value stores",
@@ -270,6 +290,7 @@
     },
     {
       "questionText": "SQL में, मल्टीपल टेबल बनाने, जारी करने के लिए किस कमांड का उपयोग किया जाता है?",
+      "questionTextEn": "Which command is used for creating multiple tables in SQL?",
       "options": [
         "Create Package",
         "Create Schema",
@@ -283,6 +304,7 @@
     },
     {
       "questionText": "निम्न में से कौनसा SQL स्टेटमेंट सही है?",
+      "questionTextEn": "Which of the following is a correct SQL statement?",
       "options": [
         "SELECT Username AND Password FROM Users",
         "SELECT Username, Password FROM Users",
@@ -296,6 +318,7 @@
     },
     {
       "questionText": "SQL में किस कमांड का प्रयोग डेटाबेस ट्रिगर को सक्षम/अक्षम करने के लिए किया जाता है?",
+      "questionTextEn": "Which SQL command is used to enable/disable a database trigger?",
       "options": [
         "Modify User",
         "Change User",
@@ -309,6 +332,7 @@
     },
     {
       "questionText": "यदि SQL है तो कोई NoSQL डेटाबेस से डेटा कैसे निकालता है?",
+      "questionTextEn": "How does one extract data from a NoSQL database if SQL is used?",
       "options": [
         "By writing the queries",
         "Run queries and output the data you need",
@@ -322,6 +346,7 @@
     },
     {
       "questionText": "सभी शहरों के तापमान को बढ़ते क्रम में प्राप्त करने हेतु-",
+      "questionTextEn": "Which SQL query retrieves all cities with their temperatures ordered by temperature in ascending order?",
       "options": [
         "SELECT city FROM weather ORDER BY temperature;",
         "SELECT city, temperature FROM weather;",
@@ -335,6 +360,7 @@
     },
     {
       "questionText": "निम्न में से कौनसा कथन असत्य है-",
+      "questionTextEn": "Which of the following SQL statements is FALSE?",
       "options": [
         "SELECT SYSDATE - SYSDATE FROM DUAL;",
         "SELECT SYSDATE - (SYSDATE - 2) FROM DUAL;",
@@ -348,6 +374,7 @@
     },
     {
       "questionText": "SQL में कौनसी कमाण्ड न्यू Row की टेबल में जोड़ने के लिए प्रयोग की जाती है?",
+      "questionTextEn": "Which SQL command is used to add a new row to a table?",
       "options": [
         "ALTER TABLE",
         "Add row",
@@ -361,6 +388,7 @@
     },
     {
       "questionText": "नई तकनीकी चुनोतियों का निर्माण करने वाले रुझान जिनका NoSQL DB समाधान कर सकते हैं-",
+      "questionTextEn": "The trends creating new technical challenges that NoSQL DBs can address ___.",
       "options": [
         "The internet is connecting everything",
         "More customers are going online",
@@ -374,6 +402,7 @@
     },
     {
       "questionText": "SQL में निम्न में से कौनसी Data Manipulation Language की कमाण्ड नहीं है?",
+      "questionTextEn": "Which of the following is NOT a Data Manipulation Language command in SQL?",
       "options": [
         "Delete",
         "Truncate",
@@ -387,6 +416,7 @@
     },
     {
       "questionText": "DML लैंगवेज में निम्न में से कौनसा शामिल नहीं है?",
+      "questionTextEn": "Which of the following is NOT included in DML language?",
       "options": [
         "INSERT",
         "UPDATE",
@@ -400,6 +430,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन वैध NoSQL डेटाबेस नहीं है?",
+      "questionTextEn": "Which of the following is NOT a valid NoSQL database?",
       "options": [
         "Scylla",
         "Cassandra",
@@ -413,6 +444,7 @@
     },
     {
       "questionText": "निम्न में से कौनसा SQL Statement का प्रकार नहीं है?",
+      "questionTextEn": "Which of the following is NOT a type of SQL Statement?",
       "options": [
         "Data Manipulation Language (DML)",
         "Data Definition Language (DDL)",
@@ -426,6 +458,7 @@
     },
     {
       "questionText": "SQL में डेटाबेस से इंडेक्स को हटाने के लिए किस कमांड का उपयोग किया जाता है?",
+      "questionTextEn": "Which SQL command is used to remove an index from the database?",
       "options": [
         "Delete Index",
         "Drop Index",
@@ -439,6 +472,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सा कारण नहीं है कि NoSQL कुछ संगठनों के लिए एक लोकप्रिय समाधान बन गया है?",
+      "questionTextEn": "Which of the following is NOT a reason NoSQL has become a popular solution for organizations?",
       "options": [
         "Faster access to data than RDBMS",
         "Better scalability",
@@ -452,6 +486,7 @@
     },
     {
       "questionText": "नोएसक्यूएल डेटाबेस क्या है?",
+      "questionTextEn": "What is a NoSQL database?",
       "options": [
         "NoSQL is a database built on ways and means other than tables and columns",
         "NoSQL is a database in an enhanced form of RDBMS",
@@ -465,6 +500,7 @@
     },
     {
       "questionText": "एक SQL डवलपर एक टेबल में एक Key कैसे Add कर सकता है?",
+      "questionTextEn": "How can a SQL developer add a key to an existing table?",
       "options": [
         "While creating a table",
         "With Alter Table command",
@@ -478,10 +514,11 @@
     },
     {
       "questionText": "NoSQL को ___ के रूप में संदर्भित किया जा सकता है?",
+      "questionTextEn": "NoSQL can be referred to as ___?",
       "options": [
         "Not only SQL",
         "No SQL",
-        "Only SQL",
+        "(c) Only SQL",
         "SQL undefined"
       ],
       "correctOptionIndex": 0,
@@ -504,6 +541,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन NoSQL में कॉलम का प्रतिनिधित्व करता है?",
+      "questionTextEn": "Which of the following represents a column in NoSQL?",
       "options": [
         "Collection",
         "Document",
@@ -517,6 +555,7 @@
     },
     {
       "questionText": "___ कोलुडेरा द्वारा विकसित एक ऑनलाइन नोएसक्यूएल है?",
+      "questionTextEn": "___ is an online NoSQL developed by Cloudera?",
       "options": [
         "Imphala",
         "HBase",
@@ -530,6 +569,7 @@
     },
     {
       "questionText": "NoSQL डेटाबेस का उपयोग मुख्य रूप से ___ डेटा की बड़ी मात्रा की संभालने के लिए किया जाता है।",
+      "questionTextEn": "NoSQL database is used mainly for handling large volumes of ___ data.",
       "options": [
         "Semi-Structured",
         "Unstructured",
@@ -543,6 +583,7 @@
     },
     {
       "questionText": "Table Employee में 10 रिकार्ड हैं। इसमें non-NULL SALARY Column है जो UNIQUE भी है। SQL स्टेटमेंट SELECT COUNT(*) FROM Employee WHERE SALARY > ANY (SELECT SALARY FROM EMPLOYEE); प्रिंट करता है-",
+      "questionTextEn": "Table Employee has 10 records with a non-NULL SALARY Column which is also UNIQUE. The SQL statement SELECT COUNT(*) FROM Employee WHERE SALARY > ANY (SELECT SALARY FROM EMPLOYEE); prints ___.",
       "options": [
         "10",
         "9",
@@ -556,6 +597,7 @@
     },
     {
       "questionText": "निम्न में से कौनसा DDL स्टेटमेंट है?",
+      "questionTextEn": "Which of the following is a DDL statement?",
       "options": [
         "Create",
         "Drop",
@@ -569,6 +611,7 @@
     },
     {
       "questionText": "NoSQL ___ द्वारा बनाया गया था?",
+      "questionTextEn": "NoSQL was created by ___?",
       "options": [
         "Carlo Strozzi",
         "James Gosling",
@@ -582,6 +625,7 @@
     },
     {
       "questionText": "जब 3 GL के अंदर SQL कथन एम्बेडेड होते हैं, तो हम इस तरह के कार्यक्रम को कहते हैं-",
+      "questionTextEn": "When 3 GL is embedded inside SQL code, that kind of program is called ___.",
       "options": [
         "Nested query",
         "Nested programming",
@@ -595,6 +639,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन एक NoSQL डेटाबेस प्रबंधन प्रणाली का उदाहरण नहीं है?",
+      "questionTextEn": "Which of the following is NOT an example of a NoSQL database management system?",
       "options": [
         "PostgreSQL",
         "MongoDB",
@@ -608,6 +653,7 @@
     },
     {
       "questionText": "SQL में किसी टेबल की स्टोरेज विशेषता को change करने हेतु प्रयुक्त करता है-",
+      "questionTextEn": "Which SQL command is used to change the storage properties of a table?",
       "options": [
         "ALTER TABLE",
         "MODIFY TABLE",
@@ -621,6 +667,7 @@
     },
     {
       "questionText": "SQL में, कौनसी कमाण्ड टेबल से Rows को रिमूव करने के लिए प्रयोग की जाती है?",
+      "questionTextEn": "Which SQL command is used to remove rows from a table?",
       "options": [
         "Delete",
         "Remove",
@@ -634,6 +681,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन एक NoSQL डेटाबेस की विशेषता है?",
+      "questionTextEn": "Which of the following is a characteristic of a NoSQL database?",
       "options": [
         "Requires JOINs",
         "Uses tables for storage",
@@ -647,6 +695,7 @@
     },
     {
       "questionText": "SQL स्टेटमेंट में Row Selection की कण्डीशन्स को कौनसा भाग बताता है?",
+      "questionTextEn": "What is the condition part (for row selection) in an SQL SELECT statement called?",
       "options": [
         "Where",
         "From",
@@ -660,6 +709,7 @@
     },
     {
       "questionText": "NoSQL डेटाबेस अधिक बेहतर क्यों हैं?",
+      "questionTextEn": "Why are NoSQL databases more preferable?",
       "options": [
         "Faster development",
         "Flexibility",
@@ -673,6 +723,7 @@
     },
     {
       "questionText": "NoSQL डेटाबेस को अक्सर हमारे पास भेजा जाता है-",
+      "questionTextEn": "NoSQL databases are most often referred to as ___?",
       "options": [
         "Object-oriented",
         "Relational",
@@ -686,6 +737,7 @@
     },
     {
       "questionText": "निम्न में से कौन SQL डेटाबेस का उपयोग करने का एक कारण है?",
+      "questionTextEn": "Which of the following is a reason to use an SQL database?",
       "options": [
         "It's ACID-compliant",
         "It can enable development in the cloud",
@@ -699,6 +751,7 @@
     },
     {
       "questionText": "SQL स्टेटमेंट SELECT SUBSTR('123456789', 4) INSTR('abcabcabc', 'b'), FROM DUAL-",
+      "questionTextEn": "The SQL statement SELECT SUBSTR('123456789', 4) INSTR('abcabcabc', 'b'), FROM DUAL — evaluates to?",
       "options": [
         "6789",
         "2345",
@@ -712,6 +765,7 @@
     },
     {
       "questionText": "निम्न में से कौनसा कॉमन डेटा तत्वों का सबसे छोटे से सबसे बड़े तक ही सही क्रम है?",
+      "questionTextEn": "Which is the correct order of common data elements from smallest to largest?",
       "options": [
         "Character, Field, File, Record, Database",
         "Database, File, Record, Field, Character",
@@ -725,6 +779,7 @@
     },
     {
       "questionText": "रिलेशन डेटाबेस में, यह एक डेटा संरचना है जिसमें एक ही विषय के बारे में जानकारी की पंक्तियों और स्तंभों के रूप में आयोजित किया जाता है-",
+      "questionTextEn": "In a relational database, this is a data structure where rows and columns are organized to store information about one subject.",
       "options": [
         "Block (ब्लॉक)",
         "Record (रिकॉर्ड)",
@@ -738,6 +793,7 @@
     },
     {
       "questionText": "निम्न में से कौन-सी SQL में DDL की Command नहीं है?",
+      "questionTextEn": "Which of the following is NOT a DDL command in SQL?",
       "options": [
         "RENAME",
         "REVOKE",
@@ -751,6 +807,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सा NOSQL डेटाबेस के लिए सही है?",
+      "questionTextEn": "Which of the following is true of NOSQL database?",
       "options": [
         "They do not support distributed database architectures",
         "They are not based on the relational model",
@@ -764,6 +821,7 @@
     },
     {
       "questionText": "___ स्टोर का उपयोग नेटवर्कों के बारे में जानकारी संग्रहीत करन के लिए किया जाता है, जैसे कि सामाजिक कनवेशन?",
+      "questionTextEn": "___ stores are used to store information about networks, such as social connections?",
       "options": [
         "Wide-column",
         "Document",
@@ -777,6 +835,7 @@
     },
     {
       "questionText": "SQL में TRUNCATE स्टेटमेंट है-",
+      "questionTextEn": "SQL TRUNCATE statement is a ___ statement.",
       "options": [
         "DML statement",
         "DDL statement",
@@ -790,6 +849,7 @@
     },
     {
       "questionText": "SQL में कौनसी कमाण्ड एक टेबल में नई Row add करने हेतु प्रयुक्त होती है?",
+      "questionTextEn": "Which SQL command is used to add a new Row to a table?",
       "options": [
         "Alter Table",
         "Add row",
@@ -803,6 +863,7 @@
     },
     {
       "questionText": "SQL में Create Tablespace का उपयोग किस लिए किया जाता है?",
+      "questionTextEn": "CREATE TABLESPACE in SQL is used for ___.",
       "options": [
         "Creating space in database for objects, rollback segments, and naming data files",
         "Creating database triggers",
@@ -816,6 +877,7 @@
     },
     {
       "questionText": "प्राथमिक कुंजी के बजाय MongoDB ___ का उपयोग करता है?",
+      "questionTextEn": "Instead of Primary key, MongoDB uses ___?",
       "options": [
         "Mongo_id",
         "Mongo key id",
@@ -829,6 +891,7 @@
     },
     {
       "questionText": "SQL में डेटाबेस से इंडेक्स को हटाने के लिए किस कमांड का उपयोग किया जाता है?",
+      "questionTextEn": "Which SQL command is used to remove an index from the database?",
       "options": [
         "Delete Index",
         "Drop index",
@@ -842,6 +905,7 @@
     },
     {
       "questionText": "NoSQL का मूल सिद्धांत क्या है?",
+      "questionTextEn": "What is the core principle of NoSQL?",
       "options": [
         "Low availability",
         "High availability",
@@ -855,6 +919,7 @@
     },
     {
       "questionText": "Accept and Reject स्टेटमेंट-",
+      "questionTextEn": "Accept and Reject statements in SQL belong to ___.",
       "options": [
         "DDL",
         "TCL",
@@ -868,6 +933,7 @@
     },
     {
       "questionText": "SQL में कौनसे कमाण्ड duplicable row के एक सेट में से प्रत्येक की एक copy को select करने हेतु प्रयुक्त होती है-",
+      "questionTextEn": "Which SQL command is used to select one copy of each duplicate row from a set of rows?",
       "options": [
         "SELECT DISTINCT",
         "SELECT UNIQUE",
@@ -881,6 +947,7 @@
     },
     {
       "questionText": "नेटवर्क संरचना के बारे में निम्नलिखित में से कौन-सा सत्य है?",
+      "questionTextEn": "Which of the following is true about network structure in databases?",
       "options": [
         "It represents data's physical structure",
         "It allows many-to-many relation",
@@ -907,6 +974,7 @@
     },
     {
       "questionText": "निम्न में से कौन-सा कथन सत्य है?",
+      "questionTextEn": "Which of the following statements is true?",
       "options": [
         "NoSQL databases are built to allow insertion of data without a predefined schema",
         "NewSQL databases are built to allow insertion of data without a predefined schema",
@@ -920,6 +988,7 @@
     },
     {
       "questionText": "नोएसक्यूएल के क्या फायदे हैं?",
+      "questionTextEn": "What are the advantages of NoSQL?",
       "options": [
         "It does not have schema",
         "Read/Write throughput is very high",
@@ -933,6 +1002,7 @@
     },
     {
       "questionText": "SQL में DDL के लिए मुख्य रूप से Commands होती है-",
+      "questionTextEn": "How many main commands are there in SQL DDL?",
       "options": [
         "1",
         "2",
@@ -946,6 +1016,7 @@
     },
     {
       "questionText": "___ डेटा और एकत्रीकरण कार्यों के बैच प्रोसेसिंग के लिए उपयोग किया जा सकता है।",
+      "questionTextEn": "___ can be used for batch processing of data and aggregation operations.",
       "options": [
         "Oozie",
         "Hive",
@@ -959,6 +1030,7 @@
     },
     {
       "questionText": "डीबीएमएस प्राप्त करने में मदद करता है-",
+      "questionTextEn": "DBMS helps in ___.",
       "options": [
         "Data independence",
         "Centralized control of data",

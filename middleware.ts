@@ -6,8 +6,9 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const method = request.method.toUpperCase();
 
-  // 1. CSRF Defense-in-depth for mutating API routes (POST, PUT, PATCH, DELETE)
-  if (pathname.startsWith("/api/")) {
+  // 1. CSRF Defense-in-depth for mutating admin API routes only (POST, PUT, PATCH, DELETE)
+  // Only /api/admin/* requires the custom CSRF header — student routes and NextAuth routes are excluded
+  if (pathname.startsWith("/api/admin/")) {
     const isMutating = ["POST", "PUT", "PATCH", "DELETE"].includes(method);
     if (isMutating) {
       if (!validateCsrfHeader(request)) {

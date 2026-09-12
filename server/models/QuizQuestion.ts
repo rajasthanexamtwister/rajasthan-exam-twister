@@ -5,7 +5,9 @@ export interface IQuizQuestion extends Document {
   quizId: mongoose.Types.ObjectId;
   order: number;
   questionText: string;
+  questionTextEn?: string;
   options: string[];
+  optionsEn?: string[];
   correctOptionIndex: number;
   explanation?: string;
   marks?: number;
@@ -32,6 +34,10 @@ const QuizQuestionSchema = new Schema<IQuizQuestion>(
       required: true,
       trim: true,
     },
+    questionTextEn: {
+      type: String,
+      trim: true,
+    },
     options: {
       type: [String],
       required: true,
@@ -39,6 +45,10 @@ const QuizQuestionSchema = new Schema<IQuizQuestion>(
         (val: string[]) => val.length >= 2 && val.length <= 6,
         "Options array must contain between 2 and 6 items",
       ],
+    },
+    optionsEn: {
+      type: [String],
+      default: undefined,
     },
     correctOptionIndex: {
       type: Number,

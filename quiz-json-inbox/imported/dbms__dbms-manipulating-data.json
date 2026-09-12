@@ -10,6 +10,7 @@
   "questions": [
     {
       "questionText": "(एक रिश्ते की पंक्तियों को ___ के रूप में जाना जाता है।)",
+      "questionTextEn": "Rows of a relation are known as the ___.",
       "options": [
         "Fields",
         "Database",
@@ -23,6 +24,7 @@
     },
     {
       "questionText": "(निम्न में से कौन-सा एक प्रकार का डेटा मैनिपुलेशन कमांड है?)",
+      "questionTextEn": "Which one of the following is a type of Data Manipulation Command?",
       "options": [
         "Delete",
         "Alter",
@@ -36,6 +38,7 @@
     },
     {
       "questionText": "(निम्न में से कौन सा कमांड SQL डेटाबेस से रिलेशन बनाने (या डिलीट करने) के लिए प्रयोग किया जाता है?)",
+      "questionTextEn": "Which one of the following commands is used for removing (or deleting) a relation from the SQL database?",
       "options": [
         "Remove",
         "Drop",
@@ -49,6 +52,7 @@
     },
     {
       "questionText": "(Conceptual Level Schema के बारे में सत्य statement है-)",
+      "questionTextEn": "Which statement is TRUE about Conceptual Level Schema?",
       "options": [
         "It is also called Logical Level Schema",
         "It describes the Structure of the complete Database",
@@ -62,6 +66,7 @@
     },
     {
       "questionText": "(कॉलम में मानों की संख्या ज्ञात करने के लिए निम्नलिखित में से किस कीवर्ड का उपयोग किया जाता है?)",
+      "questionTextEn": "Which one of the following keywords is used to find out the number of values in a column?",
       "options": [
         "Add",
         "Total",
@@ -75,6 +80,7 @@
     },
     {
       "questionText": "(एक डेटाबेस भाषा जो सम्पूर्ण डेटाबेस स्ट्रक्चर एवं स्कीम की परिभाषा से संदर्भित है-)",
+      "questionTextEn": "A database language that refers to the complete database structure and schema definition is?",
       "options": [
         "DCL",
         "DML",
@@ -88,6 +94,7 @@
     },
     {
       "questionText": "(कौनसी Key अनेक NULL Values को accept कर सकती है-)",
+      "questionTextEn": "Which key can accept multiple NULL values?",
       "options": [
         "Foreign key",
         "Unique key",
@@ -101,6 +108,7 @@
     },
     {
       "questionText": "(निम्न में से क्या सभी रिकॉर्ड प्रबंधन प्रणालियों के लिए सामान्य आदिम संचालन में शामिल है?)",
+      "questionTextEn": "Which of the following is included in the basic primitive operations for all record management systems?",
       "options": [
         "Print",
         "Sort",
@@ -114,6 +122,7 @@
     },
     {
       "questionText": "(Physical Schema को कहा जाता है-)",
+      "questionTextEn": "Physical Schema is called ___.",
       "options": [
         "Internal Schema",
         "External Schema",
@@ -127,6 +136,7 @@
     },
     {
       "questionText": "(डेटाबेस के समग्र डिजाइन को परिभाषित करने के लिए आसतौर पर निम्नलिखित में से किसका उपयोग किया जाता है?)",
+      "questionTextEn": "Which one of the following is commonly used to define the overall design of the database?",
       "options": [
         "Schema",
         "Source code",
@@ -140,6 +150,7 @@
     },
     {
       "questionText": "(Three Schema Architecture में कितने level होते हैं-)",
+      "questionTextEn": "How many levels does the Three Schema Architecture have?",
       "options": [
         "1",
         "2",
@@ -153,6 +164,7 @@
     },
     {
       "questionText": "(निम्नलिखित में से किस कमांड का प्रयोग टेबल के अंदर कॉलम को संशोधित करने के लिए किया जाता है?)",
+      "questionTextEn": "Which one of the following commands is used to modify a column inside a table?",
       "options": [
         "Update",
         "Drop",
@@ -166,6 +178,7 @@
     },
     {
       "questionText": "(निम्न में से कौन-सा कमांड डेटा डेफिनिशन लैंग्वेज कमांड का एक प्रकार है?)",
+      "questionTextEn": "Which of the following commands is a type of Data Definition Language (DDL) command?",
       "options": [
         "Merge",
         "Delete",
@@ -179,6 +192,7 @@
     },
     {
       "questionText": "(डेटाबेस में किसी भी ट्रांजेक्शन को स्थायी रूप से सेव करो के लिए निम्न में से किस कमांड का उपयोग किया जाता है?)",
+      "questionTextEn": "Which of the following commands is used to save any transaction permanently into the database?",
       "options": [
         "Rollback",
         "Commit",
@@ -192,6 +206,7 @@
     },
     {
       "questionText": "(एक Oracle table का स्ट्रक्चर प्राप्त करने हेतु प्रयुक्त कमाण्ड है-)",
+      "questionTextEn": "Which is the command used to get the structure of an Oracle table?",
       "options": [
         "STRUCTURE [TableName]",
         "DESCRIBE [TableName]",
@@ -205,6 +220,7 @@
     },
     {
       "questionText": "(कौनसी key bydefault clustered index किएट करती है-)",
+      "questionTextEn": "Which key creates a clustered index by default?",
       "options": [
         "Foreign key",
         "Unique key",
@@ -218,6 +234,7 @@
     },
     {
       "questionText": "(निम्नलिखित में से कौन सा टॉप-डाउन दृष्टिकोण है जिसमें इकाई के उच्च स्तर को दो निम्न उप-संस्थाओं में विभाजित किया जा सकता है?)",
+      "questionTextEn": "Which of the following is a top-down approach in which a higher-level entity can be divided into two or more lower sub-entities?",
       "options": [
         "Specialization",
         "Generalization",
@@ -231,6 +248,7 @@
     },
     {
       "questionText": "(निम्नलिखित में से किस एक में, एक उच्च-स्तरीय इकाई बनाने के लिए कई निचली संस्थाओं को एक साथ समूहीकृत (संयुक्त) किया जाता है?)",
+      "questionTextEn": "In which one of the following, multiple lower entities are grouped (or combined) together to form a single higher-level entity?",
       "options": [
         "Aggregation",
         "Generalization",
@@ -244,6 +262,7 @@
     },
     {
       "questionText": "(लॉग-इन के लिए एक कंप्यूटर सुरक्षा प्रोटोकॉल को सूचना प्रणाली के ___ संजुएवक के उदाहरण के रूप में माना जा सकता है।)",
+      "questionTextEn": "A computer security protocol for logging in can be considered as the example of the ___ component of an information system.",
       "options": [
         "Software",
         "Procedure",
@@ -257,6 +276,7 @@
     },
     {
       "questionText": "(निम्न में से कौन-सा Logical Database Structure नहीं है?)",
+      "questionTextEn": "Which one of the following is NOT a Logical Database Structure?",
       "options": [
         "Tree",
         "Relational",
@@ -270,6 +290,7 @@
     },
     {
       "questionText": "(डेटाबेस प्रबंधन प्रणाली को ___ के संग्रह के रूप में माना जा सकता है जो हमें डेटाबेस बनाने और बनाए रखने में सक्षम बनाता है।)",
+      "questionTextEn": "The Database Management System can be considered as the collection of ___ that enables us to create and maintain the database.",
       "options": [
         "Programs",
         "Keys",
@@ -283,6 +304,7 @@
     },
     {
       "questionText": "(प्रत्येक विशेषता में कुछ पूर्वनिर्धारित वैल्यू क्षेत्र होता है जिसे कहा जाता है-)",
+      "questionTextEn": "Which of the following refers to the collection of attributes having some predefined value domain set for each entity?",
       "options": [
         "Tuple",
         "Tables",
@@ -296,6 +318,7 @@
     },
     {
       "questionText": "(निम्न में से किस स्तर को अंतिम उपयोग कला का की लिए बंद स्तर माना जाता है?)",
+      "questionTextEn": "Which of the following levels is considered as closest to the end users?",
       "options": [
         "External level",
         "Physical level",
@@ -309,6 +332,7 @@
     },
     {
       "questionText": "(DCL का पूर्ण मतलब है-)",
+      "questionTextEn": "DCL stands for ___.",
       "options": [
         "Data Control Language",
         "Data Console Language",
@@ -322,6 +346,7 @@
     },
     {
       "questionText": "(___ key एक minimal super key है-)",
+      "questionTextEn": "Which key is a minimal super key?",
       "options": [
         "Primary",
         "Foreign",
@@ -335,6 +360,7 @@
     },
     {
       "questionText": "(डेटाबेस को अंतिम प्रतिबद्ध स्थिति में पुनर्स्थापित करने के लिए निम्न में से किस कमांड का उपयोग किया जाता है?)",
+      "questionTextEn": "Which one of the following commands is used to restore the database to the last committed state?",
       "options": [
         "Rollback",
         "Commit",
@@ -348,6 +374,7 @@
     },
     {
       "questionText": "(TCL का मतलब है-)",
+      "questionTextEn": "TCL stands for ___.",
       "options": [
         "Transaction control languages",
         "Transaction command languages",
@@ -361,6 +388,7 @@
     },
     {
       "questionText": "(एक रिलेशन डेटाबेस में, फील्ड में विभाजित प्रत्येक टपल्स को ___ के रूप में जाना जाता है।)",
+      "questionTextEn": "In a relational database, every tuple divided into fields are known as the ___.",
       "options": [
         "Domains",
         "Relations",
@@ -374,6 +402,7 @@
     },
     {
       "questionText": "(निम्नलिखित में से कौन डेटाबेस सामग्री के कुल दृश्य को संदर्भित करता है?)",
+      "questionTextEn": "Which one of the following refers to the total view of the database content?",
       "options": [
         "Internal view",
         "External view",
@@ -387,6 +416,7 @@
     },
     {
       "questionText": "(रिलेशन कैल्कुलस क्या है?)",
+      "questionTextEn": "What is Relational Calculus?",
       "options": [
         "It is high-level language",
         "It is kind of procedural language",
@@ -400,6 +430,7 @@
     },
     {
       "questionText": "(शब्द 'ओडीबीसी' ___ के लिए है?)",
+      "questionTextEn": "The term 'ODBC' stands for?",
       "options": [
         "Open Database Connectivity",
         "Object Database Connectivity",
@@ -413,6 +444,7 @@
     },
     {
       "questionText": "(निम्नलिखित में से कौन एक विशिष्ट समय पर डेटाबेस में संगहीत जानकारी के संग्रह को सदर्भित करता है?)",
+      "questionTextEn": "Which of the following refers to the collection of information stored in a database at a specific time?",
       "options": [
         "Schema",
         "Instance of the database",
@@ -426,6 +458,7 @@
     },
     {
       "questionText": "(किस प्रकार के attribute में एक entity के लिए बहुत सारी values होती है-)",
+      "questionTextEn": "Which type of attribute can have many values for a single entity?",
       "options": [
         "Multivalued attribute",
         "Composite attribute",
@@ -439,6 +472,7 @@
     },
     {
       "questionText": "(निम्नलिखित में से कौन सा कमांड किसी टेबल में मौजूद पंक्ति को हटाने के लिए उपयोग किया जाता है?)",
+      "questionTextEn": "Which one of the following commands is used to delete an existing row in a table?",
       "options": [
         "Update",
         "Disert",
@@ -452,6 +486,7 @@
     },
     {
       "questionText": "(Hierarchical model में डेटा को organise किया जाता है-)",
+      "questionTextEn": "In the Hierarchical model, data is organized in a ___.",
       "options": [
         "Logical structure",
         "Physical structure",
@@ -465,6 +500,7 @@
     },
     {
       "questionText": "(डीएमएल किस उद्देश्य के लिए प्रदान किया जाता है?)",
+      "questionTextEn": "For what purpose is DML provided?",
       "options": [
         "Definition of the physical structure of the database system",
         "Addition of new structure in the database",
@@ -478,6 +514,7 @@
     },
     {
       "questionText": "(किस प्रकार के architecture में user सीधे DBMS का प्रयोग कर सकता है?)",
+      "questionTextEn": "In which type of architecture can a user directly use DBMS?",
       "options": [
         "2-Tier architecture",
         "1-Tier architecture",
@@ -491,6 +528,7 @@
     },
     {
       "questionText": "(निम्न में से किस कुंजी का प्रयोग सामान्यतः तालिकाओं के बीच संबंधों को दर्शाने के लिए किया जाता है?)",
+      "questionTextEn": "Which of the following keys is generally used to represent the relationships between tables?",
       "options": [
         "Foreign key",
         "Primary key",
@@ -504,6 +542,7 @@
     },
     {
       "questionText": "(शब्द 'टीसीएल' ___ के लिए है?)",
+      "questionTextEn": "The term 'TCL' stands for?",
       "options": [
         "Transmission control language",
         "Transaction control language",
@@ -517,6 +556,7 @@
     },
     {
       "questionText": "(___ कॉलम्स में अनुमत मानों के नियमों को परिभाषित करता है, और डेटाबेस Integrity को लागू करने के मानक Mechanism है-)",
+      "questionTextEn": "___ defines the rules allowed in a column and is the standard mechanism to enforce database integrity.",
       "options": [
         "Column",
         "Constraint",
@@ -530,6 +570,7 @@
     },
     {
       "questionText": "(संबंधपरक तालिका में, निम्नलिखित में से किसे 'विशेषता' शब्द द्वारा भी दर्शाया जा सकता है?)",
+      "questionTextEn": "In the relational table, which of the following can also be represented by the term 'attribute'?",
       "options": [
         "Column",
         "Row",
@@ -543,6 +584,7 @@
     },
     {
       "questionText": "(निम्नलिखित में से कान संबंध में विशेषताओं की संख्या को संदर्भित करता है?)",
+      "questionTextEn": "Which of the following refers to the number of attributes in a relation?",
       "options": [
         "Row",
         "Column",
@@ -556,6 +598,7 @@
     },
     {
       "questionText": "(शब्द 'डेटा स्वतंत्रता' ___ को संदर्भित करता है?)",
+      "questionTextEn": "The term 'Data Independence' refers to ___?",
       "options": [
         "Programs are not dependent on the physical attributes of the data",
         "Data is defined separately and not included in the program",
@@ -569,6 +612,7 @@
     },
     {
       "questionText": "(डेटाबेस प्रबंधन क्वेरी भाषा आम तौर पर ___ के लिए डिज़ाइन की गई है?)",
+      "questionTextEn": "The Database Management Query Language is generally designed for ___?",
       "options": [
         "Specifying the structure of the database",
         "Support in the development of complex application software",
@@ -582,6 +626,7 @@
     },
     {
       "questionText": "(रिलेशन मॉडल में, रिलेशन को आम तौर पर ___ कहा जाता है?)",
+      "questionTextEn": "In the relation model, the relation is generally termed as ___?",
       "options": [
         "Tables",
         "Rows",
@@ -595,6 +640,7 @@
     },
     {
       "questionText": "(डेटाबेस के आर्किटेक्चर के किस स्तर में डेटाबेस की पूर्ण संरचना होती है-)",
+      "questionTextEn": "At which level of database architecture is the total structure of the database found?",
       "options": [
         "Internal level (आन्तरिक स्तर में)",
         "Conceptual level (विचार सम्बन्धी स्तर)",
@@ -608,6 +654,7 @@
     },
     {
       "questionText": "(डेटाबेस प्रबंधन प्रणाली से डेटा का अनुरोध करने के लिए एप्लिकेशन प्रोग्राम में निम्न में से किसका उपयोग किया जाता है?)",
+      "questionTextEn": "Which of the following is used in application programs to request data from the database management system?",
       "options": [
         "Data Control Language",
         "Data Manipulation Language",
@@ -621,6 +668,7 @@
     },
     {
       "questionText": "(Primary Key जो अनेक attributes से मिलकर बनी होती है कहलाती है-)",
+      "questionTextEn": "A Primary Key made up of multiple attributes is called ___.",
       "options": [
         "Composite Primary Key",
         "Addition Primary Key",
@@ -634,6 +682,7 @@
     },
     {
       "questionText": "(डेटाबेस के आर्किटेक्चर को ___ के रूप में देखा जा सकता है?)",
+      "questionTextEn": "The architecture of a database can be viewed as ___.",
       "options": [
         "One-Level",
         "Two-Level",
@@ -647,6 +696,7 @@
     },
     {
       "questionText": "(एक की जो ऐसे एक या अधिक कॉलम्स का समूह है जो एक रिकॉर्ड को Uniquely आइडेन्टिफाई कर सकते हैं-)",
+      "questionTextEn": "Which is a set of one or more columns that can uniquely identify a record?",
       "options": [
         "Natural key",
         "Candidate key",

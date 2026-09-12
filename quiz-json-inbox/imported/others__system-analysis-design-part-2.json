@@ -10,9 +10,9 @@
     {
       "questionText": "The requirements report includes-",
       "options": [
-        "hierarchy chart showing the top-level modules",
-        "list of alternative solutions considered",
-        "data flow diagram describing the proposed new system.",
+        "a hierarchy chart showing the top-level modules",
+        "a list of alternative solutions considered",
+        "a data flow diagram describing the proposed new system.",
         "All of the above"
       ],
       "correctOptionIndex": 3,
@@ -61,6 +61,7 @@
     },
     {
       "questionText": "जब कंडीशन अधिक और जटिल (complex) होती है तो किस स्ट्रक्चर्ड टूल का प्रयोग किया जाता है-",
+      "questionTextEn": "Which structured tool is used when conditions are more numerous and complex?",
       "options": [
         "Decision table",
         "Structured English",
@@ -74,6 +75,7 @@
     },
     {
       "questionText": "निम्नलिखित में से Gantt chart किसके द्वारा डेवलप किया गया-",
+      "questionTextEn": "Gantt chart was developed by-",
       "options": [
         "Larry Breed",
         "Donald Becker",
@@ -88,10 +90,16 @@
     {
       "questionText": "A feasibility study ___.",
       "options": [
-        "समस्याओं का एक कथन शामिल है / includes a statement of the problems",
-        "एकल समाधान पर विचार करता है / considers single solutions",
-        "दोनों (a) और (b) / both (a) and (b)",
-        "वैकल्पिक समाधान की एक सूची / a list of alternative solution considered"
+        "समस्याओं का एक कथन शामिल है",
+        "एकल समाधान पर विचार करता है",
+        "दोनों (a) और (b)",
+        "वैकल्पिक समाधान की एक सूची"
+      ],
+      "optionsEn": [
+        "includes a statement of the problems",
+        "considers single solutions",
+        "both (a) and (b)",
+        "a list of alternative solution considered"
       ],
       "correctOptionIndex": 0,
       "explanation": "Per the book's key, the core content emphasized here is the PROBLEM STATEMENT itself, not solution enumeration (which is a separate/additional component per Q253).",
@@ -139,6 +147,7 @@
     },
     {
       "questionText": "एक EDP Organization को मैनेज करने का काम ___ करता है-",
+      "questionTextEn": "The task of managing an EDP Organization is done by ___.",
       "options": [
         "System analyst",
         "EDP manager",
@@ -180,9 +189,9 @@
       "questionText": "In data-flow diagrams, an originator or receiver of the data is usually designated by ___.",
       "options": [
         "an arrow",
-        "circle",
-        "square box",
-        "rectangle"
+        "a circle",
+        "a square box",
+        "a rectangle"
       ],
       "correctOptionIndex": 3,
       "explanation": "This is yet another confirmation of the core DFD symbol convention tested repeatedly throughout this exam.",
@@ -191,10 +200,11 @@
     },
     {
       "questionText": "किसी system को develop करने हेतु प्रयुक्त Planning के आयाम (dimension) होते हैं-",
+      "questionTextEn": "The dimensions of Planning used for developing a system are-",
       "options": [
         "Managerial",
         "Operational Planning",
-        "and B both",
+        "A and B both",
         "None of these"
       ],
       "correctOptionIndex": 2,
@@ -204,6 +214,7 @@
     },
     {
       "questionText": "एक Systems analyst में कौनसी विशेषता का होना आवश्यक है-",
+      "questionTextEn": "Which characteristic is necessary for a Systems analyst to have?",
       "options": [
         "Q-factor",
         "Innovation",
@@ -308,6 +319,7 @@
     },
     {
       "questionText": "सिस्टम के लिए जरूरी जानकारियों को इकट्ठा करना कहलाता है-",
+      "questionTextEn": "Collecting information necessary for the system is called-",
       "options": [
         "Data transfer",
         "Data gathering",
@@ -399,6 +411,7 @@
     },
     {
       "questionText": "___ रिपोर्ट cost benefit report कहलाती है-",
+      "questionTextEn": "The ___ report is called the cost benefit report-",
       "options": [
         "System Analysis",
         "Feasibility Study",
@@ -452,10 +465,10 @@
     {
       "questionText": "A data dictionary has consolidated list of data contained in-",
       "options": [
-        "and (iii)",
-        "and (ii)",
-        "and (iv)",
-        "and (iv)"
+        "(i) and (iii)",
+        "(i) and (ii)",
+        "(ii) and (iv)",
+        "(i) and (iv)"
       ],
       "correctOptionIndex": 1,
       "explanation": "Data Dictionaries catalog the data elements that appear WITHIN data flows and data stores in a DFD - this is their core, defining scope per standard SAD teaching.",
@@ -477,6 +490,7 @@
     },
     {
       "questionText": "सॉफ्टवेयर डिजाइन में कितने प्रकार के सामंजस्य (cohesion) होते हैं?",
+      "questionTextEn": "How many types of cohesion are there in software design?",
       "options": [
         "5",
         "6",
@@ -491,10 +505,10 @@
     {
       "questionText": "A data dictionary is useful as-",
       "options": [
-        "and (ii)",
-        "and (iv)",
-        ", (ii) and (iii)",
-        "and (iv)"
+        "(i) and (ii)",
+        "(i) and (iv)",
+        "(i), (ii) and (iii)",
+        "(i) and (iv)"
       ],
       "correctOptionIndex": 3,
       "explanation": "🚨 OCR ISSUE: Options (b) and (d) both read '(i) and (iv)' in the source text - this is very likely a printing or OCR duplication error. The more substantively complete and commonly expected answer would be option (c) '(i), (ii) and (iii)', since data dictionaries genuinely serve as documentation aids, assist in designing input forms, AND contain all application data including temporary process data.",
@@ -607,6 +621,7 @@
     },
     {
       "questionText": "सिस्टम एनालिस्ट इनमें से कौनसा कार्य करता है-",
+      "questionTextEn": "Which of the following tasks does a Systems Analyst perform?",
       "options": [
         "Problem Identication",
         "System Design",
@@ -620,6 +635,7 @@
     },
     {
       "questionText": "एक कम्प्यूटर इंस्टीट्यूट में कम्प्यूटर खरीदने की Cost किस प्रकार की Cost कहलाती है-",
+      "questionTextEn": "The cost of buying computers in a computer institute is called what type of cost?",
       "options": [
         "Fixed Cost",
         "Variable Cost",
@@ -635,7 +651,7 @@
       "questionText": "Which of the following is not correct model in Software Development Paradigm?",
       "options": [
         "Spiral Model",
-        "model",
+        "V model",
         "Waterfall Model",
         "P Model"
       ],

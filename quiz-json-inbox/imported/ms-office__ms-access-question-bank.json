@@ -11,11 +11,18 @@
   "questions": [
     {
       "questionText": "एक कम्प्यूटर उपयोग करने देने से पहले यूज़रनेम और पासवर्ड के ___ की जाँच करता है।",
+      "questionTextEn": "A computer checks the ___ of username and password before allowing it to be used.",
       "options": [
-        "वेबसाइट / Website",
-        "नेटवर्क / Network",
-        "बैक-अप फाइल / Backup file",
-        "डेटाबेस / Database"
+        "वेबसाइट",
+        "नेटवर्क",
+        "बैक-अप फाइल",
+        "डेटाबेस"
+      ],
+      "optionsEn": [
+        "Website",
+        "Network",
+        "Backup file",
+        "Database"
       ],
       "correctOptionIndex": 3,
       "explanation": "The system verifies entered credentials against records maintained in a database of authorized users.",
@@ -24,11 +31,18 @@
     },
     {
       "questionText": "एंटिटी सेट, जिसमें प्राइमरी की बनाने के लिए पर्याप्त फील्ड नहीं होते हैं, कहलाता है।",
+      "questionTextEn": "Entity set, which does not have enough fields to form the primary key, is called-",
       "options": [
-        "स्ट्रॉन्ग एंटिटी सेट / Strong entity set",
-        "वीक एंटिटी सेट / Weak entity set",
-        "सिम्पल एंटिटी सेट / Simple entity set",
-        "प्राइमरी एंटिटी सेट / Primary entity set"
+        "स्ट्रॉन्ग एंटिटी सेट",
+        "वीक एंटिटी सेट",
+        "सिम्पल एंटिटी सेट",
+        "प्राइमरी एंटिटी सेट"
+      ],
+      "optionsEn": [
+        "Strong entity set",
+        "Weak entity set",
+        "Simple entity set",
+        "Primary entity set"
       ],
       "correctOptionIndex": 1,
       "explanation": "A weak entity set cannot have a primary key of its own and depends on a related strong entity set for unique identification.",
@@ -37,6 +51,7 @@
     },
     {
       "questionText": "RDBMS का पूरा नाम है-",
+      "questionTextEn": "The full name of RDBMS is-",
       "options": [
         "Relational Data Base Management System",
         "Real Data Board Master System",
@@ -50,6 +65,7 @@
     },
     {
       "questionText": "DML का पूरा नाम है-",
+      "questionTextEn": "Full form of DML is-",
       "options": [
         "Data Management Language",
         "Data Manipulation Language",
@@ -63,11 +79,18 @@
     },
     {
       "questionText": "डेटाबेस की संरचना ___ में होती है।",
+      "questionTextEn": "Database is structured in ___.",
       "options": [
-        "दो स्तरों / Two levels",
-        "चार स्तरों / Four levels",
-        "तीन स्तरों / Three levels",
-        "एक स्तर / One level"
+        "दो स्तरों",
+        "चार स्तरों",
+        "तीन स्तरों",
+        "एक स्तर"
+      ],
+      "optionsEn": [
+        "Two levels",
+        "Four levels",
+        "Three levels",
+        "One level"
       ],
       "correctOptionIndex": 2,
       "explanation": "Database architecture is structured into three levels — external, conceptual, and internal.",
@@ -76,11 +99,18 @@
     },
     {
       "questionText": "एक डेटा आइटम के संग्रहण के लिए ___ की आवश्यकता होती है।",
+      "questionTextEn": "Storage of a data item requires ___.",
       "options": [
-        "फील्ड / Field",
-        "फीड / Feed",
-        "डेटाबेस / Database",
-        "इनमें से कोई नहीं / None of these"
+        "फील्ड",
+        "फीड",
+        "डेटाबेस",
+        "इनमें से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Field",
+        "Feed",
+        "Database",
+        "None of these"
       ],
       "correctOptionIndex": 0,
       "explanation": "🚨 ANSWER KEY BUG DETECTED! Book Answer: Database (c). Correct Answer: Field (a). Reason: In data hierarchy (Bit→Byte→Character→Field→Record→File→Database), an individual data item is held in a Field, not an entire Database. Technical Proof: Standard data-hierarchy concept taught in every DBMS syllabus (see also Q58 of this same paper, which itself lists Field before Record before Database in the hierarchy).",
@@ -89,6 +119,7 @@
     },
     {
       "questionText": "DDL का पूरा नाम है-",
+      "questionTextEn": "Full form of DDL is-",
       "options": [
         "Data Definition Language",
         "Data Dynamic Language",
@@ -102,11 +133,18 @@
     },
     {
       "questionText": "माइक्रोसॉफ्ट एक्सेस 2010 से ___ कर सकते हैं।",
+      "questionTextEn": "From Microsoft Access 2010 you can ___.",
       "options": [
-        "डाटाबेस को वेबब्राउज़र में प्रयोग / Using the database in a web browser",
-        "डाटाबेस को वेब पर क्रिएट / Create the database on the web",
-        "शेयर पॉइंट साइट पर पब्लिश / Publish on SharePoint site",
-        "उपरोक्त सभी / All of the above"
+        "डाटाबेस को वेबब्राउज़र में प्रयोग",
+        "डाटाबेस को वेब पर क्रिएट",
+        "शेयर पॉइंट साइट पर पब्लिश",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Using the database in a web browser",
+        "Create the database on the web",
+        "Publish on SharePoint site",
+        "All of the above"
       ],
       "correctOptionIndex": 3,
       "explanation": "Access 2010's Web Database feature supports creating, publishing to SharePoint, and browser-based use — so all listed options are correct.",
@@ -115,10 +153,11 @@
     },
     {
       "questionText": "माइक्रोसॉफ्ट एक्सेस शुरू करने का तरीका है-",
+      "questionTextEn": "How to start Microsoft Access-",
       "options": [
         "M.S.Access शॉर्टकट पर डबल क्लिक करें / Double click on M.S.Access shortcut",
         "Start → All Programs → MS Office → MS Access",
-        "और b दोनों / Both a and b",
+        "a और b दोनों / Both a and b",
         "उपरोक्त में से कोई नहीं / None of the above"
       ],
       "correctOptionIndex": 2,
@@ -128,11 +167,18 @@
     },
     {
       "questionText": "निम्न में से माइक्रोसॉफ्ट एक्सेस से संबंधित टैब नहीं है-",
+      "questionTextEn": "Which of the following is not a Microsoft Access related tab-",
       "options": [
-        "होम / Home",
-        "क्रिएट / Create",
-        "डाटाबेस टूल / Database Tools",
-        "हाइपरलिंक / Hyperlink"
+        "होम",
+        "क्रिएट",
+        "डाटाबेस टूल",
+        "हाइपरलिंक"
+      ],
+      "optionsEn": [
+        "Home",
+        "Create",
+        "Database Tools",
+        "Hyperlink"
       ],
       "correctOptionIndex": 3,
       "explanation": "Hyperlink is not a ribbon tab in MS Access; it's a data type/command found inside tabs.",
@@ -141,11 +187,18 @@
     },
     {
       "questionText": "माइक्रोसॉफ्ट एक्सेस के होम टैब में पाया जाने वाला ग्रुप है-",
+      "questionTextEn": "The group found in the Home tab of Microsoft Access is-",
       "options": [
-        "रिपोर्ट / Report",
-        "सॉर्ट और फ़िल्टर / Sort and Filter",
-        "फॉर्म / Form",
-        "एक्सपोर्ट / Export"
+        "रिपोर्ट",
+        "सॉर्ट और फ़िल्टर",
+        "फॉर्म",
+        "एक्सपोर्ट"
+      ],
+      "optionsEn": [
+        "Report",
+        "Sort and Filter",
+        "Form",
+        "Export"
       ],
       "correctOptionIndex": 1,
       "explanation": "'Sort and Filter' is a group under the Home tab; Report, Form, and Export belong to Create/External Data tabs.",
@@ -154,11 +207,18 @@
     },
     {
       "questionText": "डाटाबेस को मैनिपुलेट करने से संबंधित टूल उपलब्ध होते हैं-",
+      "questionTextEn": "Tools for manipulating the database are available in-",
       "options": [
-        "डाटाबेस टूल / Database Tools",
-        "क्रिएट / Create",
-        "एक्सटर्नल डेटा टैब / External Data tab",
-        "होम / Home"
+        "डाटाबेस टूल",
+        "क्रिएट",
+        "एक्सटर्नल डेटा टैब",
+        "होम"
+      ],
+      "optionsEn": [
+        "Database Tools",
+        "Create",
+        "External Data tab",
+        "Home"
       ],
       "correctOptionIndex": 0,
       "explanation": "Database manipulation utilities (Relationships, Compact & Repair, Analyze) reside under the Database Tools tab.",
@@ -167,11 +227,18 @@
     },
     {
       "questionText": "डाटाबेस में वैल्यू इम्पोर्ट व एक्सपोर्ट से संबंधित टूल्स उपलब्ध होते हैं-",
+      "questionTextEn": "Tools related to value import and export are available in the database-",
       "options": [
-        "एक्सटर्नल डेटा टैब / External Data tab",
-        "डाटाबेस टूल / Database Tools",
-        "क्रिएट टैब / Create tab",
-        "होम टैब / Home tab"
+        "एक्सटर्नल डेटा टैब",
+        "डाटाबेस टूल",
+        "क्रिएट टैब",
+        "होम टैब"
+      ],
+      "optionsEn": [
+        "External Data tab",
+        "Database Tools",
+        "Create tab",
+        "Home tab"
       ],
       "correctOptionIndex": 0,
       "explanation": "Import/Export functionality is grouped under the External Data tab.",
@@ -180,11 +247,18 @@
     },
     {
       "questionText": "डाटाबेस के अवयव हैं-",
+      "questionTextEn": "Components of the database are-",
       "options": [
-        "फॉर्म / Form",
-        "क्वेरी / Query",
-        "ऑब्जेक्ट / Object",
-        "उपरोक्त सभी / All of the above"
+        "फॉर्म",
+        "क्वेरी",
+        "ऑब्जेक्ट",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Form",
+        "Query",
+        "Object",
+        "All of the above"
       ],
       "correctOptionIndex": 3,
       "explanation": "Form, Query, and other objects are all valid components of an Access database.",
@@ -193,11 +267,18 @@
     },
     {
       "questionText": "सम्बन्धित फाइल्स का व्यवस्थित समूह कहलाता है।",
+      "questionTextEn": "An organized group of related files is called.",
       "options": [
-        "कैरेक्टर / Character",
-        "फील्ड / Field",
-        "डेटाबेस / Database",
-        "रिकॉर्ड / Record"
+        "कैरेक्टर",
+        "फील्ड",
+        "डेटाबेस",
+        "रिकॉर्ड"
+      ],
+      "optionsEn": [
+        "Character",
+        "Field",
+        "Database",
+        "Record"
       ],
       "correctOptionIndex": 2,
       "explanation": "A database is an organized collection of related files/data.",
@@ -206,6 +287,7 @@
     },
     {
       "questionText": "SQL का पूरा नाम-",
+      "questionTextEn": "Full name of SQL-",
       "options": [
         "Structured Query Language",
         "System Query Language",
@@ -219,11 +301,18 @@
     },
     {
       "questionText": "एम.एस.एक्सेस में डाटाबेस का प्रकार है-",
+      "questionTextEn": "The type of database in M.S.Access is-",
       "options": [
-        "नेटवर्क डाटाबेस / Network database",
-        "हैरार्किकल डाटाबेस / Hierarchical database",
-        "रिलेशनल डाटाबेस / Relational database",
-        "उपरोक्त सभी / All of the above"
+        "नेटवर्क डाटाबेस",
+        "हैरार्किकल डाटाबेस",
+        "रिलेशनल डाटाबेस",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Network database",
+        "Hierarchical database",
+        "Relational database",
+        "All of the above"
       ],
       "correctOptionIndex": 2,
       "explanation": "🚨 ANSWER KEY BUG DETECTED! Book Answer: All of the above (d). Correct Answer: Relational database (c). Reason: Microsoft Access is officially classified and marketed by Microsoft as a Relational Database Management System (RDBMS); it does not support hierarchical or network data models. Technical Proof: Microsoft's own documentation and every standard textbook describe Access as an RDBMS based on tables/relations, not hierarchical or network models.",
@@ -232,11 +321,18 @@
     },
     {
       "questionText": "एम.एस.एक्सेस में पाया जाने वाला व्यू है-",
+      "questionTextEn": "M.S. Views found in Access are-",
       "options": [
-        "डेटा शीट व्यू / Datasheet view",
-        "डिजाइन व्यू / Design view",
-        "और b दोनों / Both a and b",
-        "टेबल व्यू / Table view"
+        "डेटा शीट व्यू",
+        "डिजाइन व्यू",
+        "a और b दोनों",
+        "टेबल व्यू"
+      ],
+      "optionsEn": [
+        "Datasheet view",
+        "Design view",
+        "Both a and b",
+        "Table view"
       ],
       "correctOptionIndex": 2,
       "explanation": "Both Datasheet view and Design view are standard Access views.",
@@ -245,11 +341,18 @@
     },
     {
       "questionText": "डाटा का लॉजिकल स्तर कहलाता है-",
+      "questionTextEn": "The logical level of data is called-",
       "options": [
-        "कांसेप्चुअल लेवल / Conceptual level",
-        "एक्सटर्नल लेवल / External level",
-        "इंटरनल लेवल / Internal level",
-        "उपरोक्त में से कोई नहीं / None of the above"
+        "कांसेप्चुअल लेवल",
+        "एक्सटर्नल लेवल",
+        "इंटरनल लेवल",
+        "उपरोक्त में से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Conceptual level",
+        "External level",
+        "Internal level",
+        "None of the above"
       ],
       "correctOptionIndex": 0,
       "explanation": "The logical level of data corresponds to the Conceptual level in the three-level DB architecture.",
@@ -258,11 +361,18 @@
     },
     {
       "questionText": "ई-आर डायग्राम (E-R Diagram) ___ को प्रदर्शित करने का ग्राफिकल तरीका है।",
+      "questionTextEn": "E-R Diagram is a graphical way of representing ___.",
       "options": [
-        "प्राइमरी की और उनका आपस में सम्बन्ध / Primary keys and their relationships",
-        "प्राइमरी की और उनका इन्स्टैन्स से सम्बन्ध / Primary keys and their instances",
-        "एंटिटी क्लॉसेस और उनका आपस में सम्बन्ध / Entities and their relationships",
-        "उपरोक्त में से कोई नहीं / None of these"
+        "प्राइमरी की और उनका आपस में सम्बन्ध",
+        "प्राइमरी की और उनका इन्स्टैन्स से सम्बन्ध",
+        "एंटिटी क्लॉसेस और उनका आपस में सम्बन्ध",
+        "उपरोक्त में से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Primary keys and their relationships",
+        "Primary keys and their instances",
+        "Entities and their relationships",
+        "None of these"
       ],
       "correctOptionIndex": 2,
       "explanation": "E-R diagrams represent entities and the relationships among them.",
@@ -271,11 +381,18 @@
     },
     {
       "questionText": "की, जिसका प्रयोग दो सारणियों के बीच सम्बन्ध को प्रदर्शित करने के लिए किया जाता है, कहलाती है।",
+      "questionTextEn": "Key, which is used to represent the relation between two tables, is called-",
       "options": [
-        "प्राइमरी की / Primary Key",
-        "सेकेंडरी की / Secondary Key",
-        "फॉरिन की / Foreign Key",
-        "कंपोजिट की / Composite Key"
+        "प्राइमरी की",
+        "सेकेंडरी की",
+        "फॉरिन की",
+        "कंपोजिट की"
+      ],
+      "optionsEn": [
+        "Primary Key",
+        "Secondary Key",
+        "Foreign Key",
+        "Composite Key"
       ],
       "correctOptionIndex": 2,
       "explanation": "A Foreign Key links two tables by referencing the primary key of the related table.",
@@ -284,11 +401,18 @@
     },
     {
       "questionText": "एम.एस.एक्सेस में डिफॉल्ट डेटा टाइप का प्रकार है-",
+      "questionTextEn": "The default data type in M.S.Access is-",
       "options": [
-        "संख्या / Number",
-        "टैक्स्ट / Text",
-        "मुद्रा / Currency",
-        "हाँ/नहीं / Yes/No"
+        "संख्या",
+        "टैक्स्ट",
+        "मुद्रा",
+        "हाँ/नहीं / Yes"
+      ],
+      "optionsEn": [
+        "Number",
+        "Text",
+        "Currency",
+        "No"
       ],
       "correctOptionIndex": 1,
       "explanation": "Access assigns the 'Text' (Short Text) data type by default to new fields.",
@@ -297,6 +421,7 @@
     },
     {
       "questionText": "M.S. Access-2010 में किए की गयी नयी डेटाबेस फाइल का डिफॉल्ट फॉर्मेट होता है-",
+      "questionTextEn": "The default format for newly created database files in M.S. Access-2010 is-",
       "options": [
         ".sqldb",
         ".accdb",
@@ -310,11 +435,18 @@
     },
     {
       "questionText": "___ डेटाबेस में डेटा को वृक्ष के रूप में नोड्स के माध्यम से व्यवस्थित किया जाता है।",
+      "questionTextEn": "The data in a ___ database is organized in form of a tree through nodes.",
       "options": [
-        "नेटवर्क / Network",
-        "हैरार्किकल / Hierarchical",
-        "रिलेशनल / Relational",
-        "और b दोनों / Both a and b"
+        "नेटवर्क",
+        "हैरार्किकल",
+        "रिलेशनल",
+        "a और b दोनों"
+      ],
+      "optionsEn": [
+        "Network",
+        "Hierarchical",
+        "Relational",
+        "Both a and b"
       ],
       "correctOptionIndex": 1,
       "explanation": "Hierarchical databases organize data as a tree structure using nodes.",
@@ -323,11 +455,18 @@
     },
     {
       "questionText": "इनमें से डेटा मॉडल क्या है-",
+      "questionTextEn": "What is a data model-",
       "options": [
-        "एंटिटी रिलेशनशिप मॉडल / Entity Relationship Model",
-        "रिलेशनल डेटा मॉडल / Relational Data Model",
-        "ऑब्जेक्ट बेस्ड डेटा मॉडल / Object Based Data Model",
-        "उपरोक्त सभी / All of the above"
+        "एंटिटी रिलेशनशिप मॉडल",
+        "रिलेशनल डेटा मॉडल",
+        "ऑब्जेक्ट बेस्ड डेटा मॉडल",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Entity Relationship Model",
+        "Relational Data Model",
+        "Object Based Data Model",
+        "All of the above"
       ],
       "correctOptionIndex": 3,
       "explanation": "All three listed models (E-R, Relational, Object-based) are legitimate types of data models.",
@@ -336,11 +475,18 @@
     },
     {
       "questionText": "M.S. Access-2010 Window के शीर्ष में दिखायी देने वाला भाग जो डेटाबेस फाईल का नाम व पथ प्रदर्शित करता है, है-",
+      "questionTextEn": "The part visible at the top of the M.S. Access 2010 window that displays the name and path of that database file is-",
       "options": [
-        "नेविगेशन पेन / Navigation Pane",
-        "टाइटल बार / Title Bar",
-        "स्टेटस बार / Status Bar",
-        "बैकस्टेज व्यू / Backstage view"
+        "नेविगेशन पेन",
+        "टाइटल बार",
+        "स्टेटस बार",
+        "बैकस्टेज व्यू"
+      ],
+      "optionsEn": [
+        "Navigation Pane",
+        "Title Bar",
+        "Status Bar",
+        "Backstage view"
       ],
       "correctOptionIndex": 1,
       "explanation": "The Title Bar at the top of the Access window shows the database file's name.",
@@ -349,11 +495,18 @@
     },
     {
       "questionText": "रिलेशनल मॉडल में कार्डिनेलिटी ___ कुल संख्या होती है।",
+      "questionTextEn": "In relational model cardinality is total number of-",
       "options": [
-        "ट्यूपल्स / Tuples",
-        "एट्रिब्यूट्स / Attributes",
-        "सारणियों / Tables",
-        "कन्स्ट्रेण्ट्स / Constraints"
+        "ट्यूपल्स",
+        "एट्रिब्यूट्स",
+        "सारणियों",
+        "कन्स्ट्रेण्ट्स"
+      ],
+      "optionsEn": [
+        "Tuples",
+        "Attributes",
+        "Tables",
+        "Constraints"
       ],
       "correctOptionIndex": 0,
       "explanation": "Cardinality = number of tuples (rows) in a relation.",
@@ -362,11 +515,18 @@
     },
     {
       "questionText": "ई-आर डायग्राम में, रिलेशनशिप टाइप को ___ द्वारा प्रदर्शित किया जाता है।",
+      "questionTextEn": "In E-R diagram, relationship type represented by-",
       "options": [
-        "एलिप्टिकल बॉक्स / Elliptical box",
-        "डैश्ड एलिप्सोइडल बॉक्स / Dashed ellipsoidal box",
-        "रेक्टेंगुलर बॉक्स / Rectangular box",
-        "डायमंड बॉक्स / Diamond Box"
+        "एलिप्टिकल बॉक्स",
+        "डैश्ड एलिप्सोइडल बॉक्स",
+        "रेक्टेंगुलर बॉक्स",
+        "डायमंड बॉक्स"
+      ],
+      "optionsEn": [
+        "Elliptical box",
+        "Dashed ellipsoidal box",
+        "Rectangular box",
+        "Diamond Box"
       ],
       "correctOptionIndex": 3,
       "explanation": "Relationships in an E-R diagram are represented using a diamond-shaped box.",
@@ -375,9 +535,10 @@
     },
     {
       "questionText": "निम्न में से कौनसी Valid Relationship नहीं है-",
+      "questionTextEn": "Which of the following is not a valid relationship-",
       "options": [
-        "1, 1:N",
-        "1, 0:N",
+        "1:1, 1:N",
+        "0:1, 0:N",
         "N:1, N:N",
         "उपरोक्त सभी / All of the above"
       ],
@@ -388,11 +549,18 @@
     },
     {
       "questionText": "इंटररिलेटेड रिकॉर्ड का कलेक्शन कहलाता है-",
+      "questionTextEn": "Collection of interrelated records is called-",
       "options": [
-        "स्प्रेडशीट / Spreadsheet",
-        "टैक्स्ट / Text",
-        "डेटाबेस / Database",
-        "रिपोर्ट / Report"
+        "स्प्रेडशीट",
+        "टैक्स्ट",
+        "डेटाबेस",
+        "रिपोर्ट"
+      ],
+      "optionsEn": [
+        "Spreadsheet",
+        "Text",
+        "Database",
+        "Report"
       ],
       "correctOptionIndex": 2,
       "explanation": "A collection of interrelated records is called a Database.",
@@ -401,11 +569,18 @@
     },
     {
       "questionText": "डेटाबेस में डेटा को इनपुट करने के लिए प्रयोग में आने वाली युक्तियाँ हैं-",
+      "questionTextEn": "The devices used for inputting data into the database are-",
       "options": [
-        "कीबोर्ड, प्रिंटर / Keyboard, Printer",
-        "माउस, कीबोर्ड, मॉनिटर / Mouse, Keyboard, Monitor",
-        "माउस, कीबोर्ड, टचस्क्रीन / Mouse, Keyboard, Touchscreen",
-        "उपरोक्त सभी / All of the above"
+        "कीबोर्ड, प्रिंटर",
+        "माउस, कीबोर्ड, मॉनिटर",
+        "माउस, कीबोर्ड, टचस्क्रीन",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Keyboard, Printer",
+        "Mouse, Keyboard, Monitor",
+        "Mouse, Keyboard, Touchscreen",
+        "All of the above"
       ],
       "correctOptionIndex": 2,
       "explanation": "Mouse, Keyboard, and Touchscreen are all input devices; Printer and Monitor are output devices, so option (c) is the only fully correct set.",
@@ -414,11 +589,18 @@
     },
     {
       "questionText": "डेटाबेस का वह Object जो डेटा को व्यू, चेंज तथा विभिन्न प्रकार से विश्लेषण करने के काम आता है-",
+      "questionTextEn": "The object of the database which is used to view, change and analyze the data in different ways-",
       "options": [
-        "क्वेरी / Query",
-        "रिपोर्ट / Report",
-        "फॉर्म / Form",
-        "इनमें से कोई नहीं / None of these"
+        "क्वेरी",
+        "रिपोर्ट",
+        "फॉर्म",
+        "इनमें से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Query",
+        "Report",
+        "Form",
+        "None of these"
       ],
       "correctOptionIndex": 0,
       "explanation": "Query objects allow viewing, changing (via action queries), and analyzing data.",
@@ -427,11 +609,18 @@
     },
     {
       "questionText": "MS Access में Alt + F4 का प्रयोग होता है-",
+      "questionTextEn": "Alt + F4 is used in MS Access-",
       "options": [
-        "नया डेटाबेस खोलने में / Opening a new database",
-        "पहले से रक्षित डेटाबेस खोलने में / Opening an already protected database",
-        "MS Access-2010 से बाहर आने के लिये / To exit MS Access-2010",
-        "इनमें से कोई नहीं / None of these"
+        "नया डेटाबेस खोलने में",
+        "पहले से रक्षित डेटाबेस खोलने में",
+        "MS Access-2010 से बाहर आने के लिये",
+        "इनमें से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Opening a new database",
+        "Opening an already protected database",
+        "To exit MS Access-2010",
+        "None of these"
       ],
       "correctOptionIndex": 2,
       "explanation": "Alt+F4 exits/closes the MS Access application.",
@@ -440,11 +629,18 @@
     },
     {
       "questionText": "Instance ऑफ डेटाबेस से क्या तात्पर्य है-",
+      "questionTextEn": "What is meant by Instance of Database-",
       "options": [
-        "डेटाबेस के किसी निश्चित क्षण में स्टोर जानकारी का संग्रह / Collection of information stored in a database at a given moment",
-        "डेटाबेस में संग्रहित डेटा की पुर्नप्राप्ति / Retrieval of data stored in the database",
-        "डेटाबेस में संग्रहित जानकारी का संग्रह / Collection of information stored in the database",
-        "उपरोक्त सभी / All of the above"
+        "डेटाबेस के किसी निश्चित क्षण में स्टोर जानकारी का संग्रह",
+        "डेटाबेस में संग्रहित डेटा की पुर्नप्राप्ति",
+        "डेटाबेस में संग्रहित जानकारी का संग्रह",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Collection of information stored in a database at a given moment",
+        "Retrieval of data stored in the database",
+        "Collection of information stored in the database",
+        "All of the above"
       ],
       "correctOptionIndex": 0,
       "explanation": "Database Instance = the snapshot of stored data at a specific moment in time.",
@@ -453,11 +649,18 @@
     },
     {
       "questionText": "रिलेशनल मॉडल में होता है-",
+      "questionTextEn": "Relational model consists of-",
       "options": [
-        "टेबल / Table",
-        "दोनों / Both",
-        "एंटिटी / Entity",
-        "इनमें से कोई नहीं / None of these"
+        "टेबल",
+        "दोनों",
+        "एंटिटी",
+        "इनमें से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Table",
+        "Both",
+        "Entity",
+        "None of these"
       ],
       "correctOptionIndex": 0,
       "explanation": "🚨 ANSWER KEY BUG DETECTED! Book Answer: Entity (c). Correct Answer: Table (a). Reason: By definition, the relational model organizes data strictly into relations (tables) consisting of rows (tuples) and columns (attributes) — 'Entity' belongs to the conceptual E-R model, used before the relational schema is derived. Technical Proof: Codd's relational model (1970) defines a database as a set of relations/tables; entities are mapped INTO tables during the ER-to-relational conversion process, so 'Table' is the correct structural component, not 'Entity'.",
@@ -466,6 +669,7 @@
     },
     {
       "questionText": "___ डेटा के दोहराव को, डेटा की अस्थिरता को, निर्भरता को तथा डेटा के अनाधिकृत उपयोग को कम करने के लिए समाधान प्रदान करता है।",
+      "questionTextEn": "___ provides solutions to reduce duplication of data, volatility of data, dependency and unauthorized access to data.",
       "options": [
         "DBMS",
         "टेबल्स / Tables",
@@ -479,11 +683,18 @@
     },
     {
       "questionText": "डेटाबेस सूचना को ___ में संग्रहीत करती है।",
+      "questionTextEn": "Database stores information in ___.",
       "options": [
-        "पंक्तियों और स्तम्भों / Rows and Columns",
-        "ब्लॉक्स / Blocks",
-        "ट्रैक्स और सेक्टर्स / Tracks and Sectors",
-        "उपरोक्त सभी / All of the above"
+        "पंक्तियों और स्तम्भों",
+        "ब्लॉक्स",
+        "ट्रैक्स और सेक्टर्स",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Rows and Columns",
+        "Blocks",
+        "Tracks and Sectors",
+        "All of the above"
       ],
       "correctOptionIndex": 0,
       "explanation": "Databases logically store data in rows and columns (tables).",
@@ -492,11 +703,18 @@
     },
     {
       "questionText": "MS Access-2010 में यूज़र टेबल क्रियेट कर सकता है-",
+      "questionTextEn": "In MS Access-2010 user can create table-",
       "options": [
-        "डिजाइन व्यू में / In design view",
-        "डेटा शीट व्यू में / In datasheet view",
-        "दोनों / Both",
-        "इनमें से कोई नहीं / None of these"
+        "डिजाइन व्यू में",
+        "डेटा शीट व्यू में",
+        "दोनों",
+        "इनमें से कोई नहीं"
+      ],
+      "optionsEn": [
+        "In design view",
+        "In datasheet view",
+        "Both",
+        "None of these"
       ],
       "correctOptionIndex": 2,
       "explanation": "Tables can be created in both Design view and Datasheet view in Access 2010.",
@@ -505,11 +723,18 @@
     },
     {
       "questionText": "निम्न में से DBMS का लाभ नहीं है-",
+      "questionTextEn": "Which of the following is not an advantage of DBMS-",
       "options": [
-        "डेटा डिपेंडेंस / Data dependence",
-        "कुशल डेटा एक्सेस / Efficient Data Access",
-        "डेटा सुरक्षा और अखंडता / Data Security and Integrity",
-        "विकास समय में कमी / Reduced Development Time"
+        "डेटा डिपेंडेंस",
+        "कुशल डेटा एक्सेस",
+        "डेटा सुरक्षा और अखंडता",
+        "विकास समय में कमी"
+      ],
+      "optionsEn": [
+        "Data dependence",
+        "Efficient Data Access",
+        "Data Security and Integrity",
+        "Reduced Development Time"
       ],
       "correctOptionIndex": 0,
       "explanation": "Data dependence is NOT an advantage of DBMS — DBMS instead provides data independence.",
@@ -518,11 +743,18 @@
     },
     {
       "questionText": "डेटा, रिलेशनशिप, सिमेंटिक्स और कन्स्ट्रेंट्स का वर्णन करने के लिए प्रयोग किए जाने वाले टूल को कहते हैं-",
+      "questionTextEn": "The tool used to describe data, relationships, semantics and constraints is called-",
       "options": [
-        "ER मॉडल / ER Model",
-        "डेटाबेस / Database",
-        "डेटा मॉडल / Data Model",
-        "इनमें से कोई नहीं / None of these"
+        "ER मॉडल",
+        "डेटाबेस",
+        "डेटा मॉडल",
+        "इनमें से कोई नहीं"
+      ],
+      "optionsEn": [
+        "ER Model",
+        "Database",
+        "Data Model",
+        "None of these"
       ],
       "correctOptionIndex": 2,
       "explanation": "A Data Model broadly describes data, relationships, semantics, and constraints; E-R Model is one specific example of a data model.",
@@ -531,11 +763,18 @@
     },
     {
       "questionText": "फील्ड व टेबल नाम की अधिकतम लंबाई होती है-",
+      "questionTextEn": "The maximum length of field and table name is-",
       "options": [
-        "16 अक्षर / 16 characters",
-        "64 अक्षर / 64 characters",
-        "32 अक्षर / 32 characters",
-        "12 अक्षर / 12 characters"
+        "16 अक्षर",
+        "64 अक्षर",
+        "32 अक्षर",
+        "12 अक्षर"
+      ],
+      "optionsEn": [
+        "16 characters",
+        "64 characters",
+        "32 characters",
+        "12 characters"
       ],
       "correctOptionIndex": 1,
       "explanation": "Field and table names in Access can be up to 64 characters long.",
@@ -544,11 +783,18 @@
     },
     {
       "questionText": "किसी डेटाबेस व्यवस्थापक की क्या जिम्मेदारी होती है?",
+      "questionTextEn": "What are the responsibilities of a database administrator?-",
       "options": [
-        "किसी डेटाबेस को विकसित करना और मेंटेन करना / Develop and maintain a database",
-        "एक सारणी बनाना / Create a table",
-        "डेटाबेस को डेवलेप करना / Develop a database",
-        "दोनों (a) और (c) / Both (a) and (c)"
+        "किसी डेटाबेस को विकसित करना और मेंटेन करना",
+        "एक सारणी बनाना",
+        "डेटाबेस को डेवलेप करना",
+        "दोनों (a) और (c)"
+      ],
+      "optionsEn": [
+        "Develop and maintain a database",
+        "Create a table",
+        "Develop a database",
+        "Both (a) and (c)"
       ],
       "correctOptionIndex": 3,
       "explanation": "A DBA is responsible for developing and maintaining databases (encompassing both a and c).",
@@ -557,11 +803,18 @@
     },
     {
       "questionText": "___ डेटा की सम्पूर्णता (Data integrity) की समस्याओं के लिए एक कारण है।",
+      "questionTextEn": "___ is one of the reasons for the problems of data integrity-",
       "options": [
-        "डेटा की उपलब्धता का अभाव / Lack of availability of data",
-        "डेटा की संगति का अभाव / Lack of consistency of data",
-        "सुरक्षा का अभाव / Lack of security",
-        "डेटा की पुनरावृत्ति / Duplication of data"
+        "डेटा की उपलब्धता का अभाव",
+        "डेटा की संगति का अभाव",
+        "सुरक्षा का अभाव",
+        "डेटा की पुनरावृत्ति"
+      ],
+      "optionsEn": [
+        "Lack of availability of data",
+        "Lack of consistency of data",
+        "Lack of security",
+        "Duplication of data"
       ],
       "correctOptionIndex": 3,
       "explanation": "🚨 ANSWER KEY BUG DETECTED! Book Answer: Lack of availability of data (a). Correct Answer: Duplication of data (d). Reason: Data integrity refers to the accuracy and consistency of data; the classic textbook cause of integrity problems is data redundancy (the same data stored in multiple places becoming inconsistent after updates). 'Availability' is a separate concern related to accessibility/uptime, not correctness. Technical Proof: Standard DBMS textbooks (e.g., Elmasri & Navathe) list data redundancy/duplication as the primary cause of update anomalies and integrity violations, which DBMS/normalization aims to solve.",
@@ -570,6 +823,7 @@
     },
     {
       "questionText": "निम्न में से कौन-सा DBMS सॉफ्टवेयर नहीं है?",
+      "questionTextEn": "Which of the following is not a DBMS software?",
       "options": [
         "OBASE",
         "FOXPRO",
@@ -583,11 +837,18 @@
     },
     {
       "questionText": "समय-समय पर, किसी फाइल में डेटा को जोड़ना, डेटा को बदलना तथा डेटा को मिटाना, फाइल का ___ कहलाता है।",
+      "questionTextEn": "Addition of data, change of data and deletion of data in a file from time to time is called ___ of the file.",
       "options": [
-        "अपडेटेशन / Updation",
-        "अपग्रेडिंग / Upgrading",
-        "री-स्ट्रक्चरिंग / Restructuring",
-        "रिन्यूइंग / Renewing"
+        "अपडेटेशन",
+        "अपग्रेडिंग",
+        "री-स्ट्रक्चरिंग",
+        "रिन्यूइंग"
+      ],
+      "optionsEn": [
+        "Updation",
+        "Upgrading",
+        "Restructuring",
+        "Renewing"
       ],
       "correctOptionIndex": 0,
       "explanation": "Insert + Modify + Delete operations over time = Updation of the file.",
@@ -596,11 +857,18 @@
     },
     {
       "questionText": "डेटाबेस प्रबन्धन प्रणाली का लाभ है।",
+      "questionTextEn": "The advantage of database management system is-",
       "options": [
-        "डेटा, प्रोग्राम्स पर निर्भर करता है / Data depends on the programs",
-        "डेटा की पुनरावृत्ति बढ़ती है / Repetition of data increases",
-        "डेटा एकीकृत होता है और कई प्रोग्राम्स द्वारा प्रयोग किया जा सकता है / The data is integrated and can be used by many programs",
-        "उपरोक्त सभी / All of the above"
+        "डेटा, प्रोग्राम्स पर निर्भर करता है",
+        "डेटा की पुनरावृत्ति बढ़ती है",
+        "डेटा एकीकृत होता है और कई प्रोग्राम्स द्वारा प्रयोग किया जा सकता है",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Data depends on the programs",
+        "Repetition of data increases",
+        "The data is integrated and can be used by many programs",
+        "All of the above"
       ],
       "correctOptionIndex": 2,
       "explanation": "Data integration and multi-program sharing is a core DBMS advantage.",
@@ -609,6 +877,7 @@
     },
     {
       "questionText": "वह भाषा जो डेटाबेस ऑब्जेक्ट्स की विशेषताओं को परिभाषित करती है, कहलाती है।",
+      "questionTextEn": "The language which defines the characteristics of database objects is called-",
       "options": [
         "DML",
         "DDL",
@@ -622,11 +891,18 @@
     },
     {
       "questionText": "वह डेटाबेस जो कॉमन फील्ड से जुड़ी टेबलों को रखता है-",
+      "questionTextEn": "The database that holds tables associated with common fields-",
       "options": [
-        "केंद्रीकृत डेटाबेस / Centralized Database",
-        "फ्लैट फाइल डेटाबेस / Flat File Database",
-        "रिलेशनल डेटाबेस / Relational database",
-        "उपरोक्त सभी / All of these"
+        "केंद्रीकृत डेटाबेस",
+        "फ्लैट फाइल डेटाबेस",
+        "रिलेशनल डेटाबेस",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Centralized Database",
+        "Flat File Database",
+        "Relational database",
+        "All of these"
       ],
       "correctOptionIndex": 2,
       "explanation": "Tables associated via common (shared) fields describe a Relational Database.",
@@ -635,9 +911,10 @@
     },
     {
       "questionText": "ई-आर डेटा मॉडल किसके द्वारा दिया गया था?",
+      "questionTextEn": "E-R data model was given by-",
       "options": [
         "पास्कल / Pascal",
-        "S.Date",
+        "C.S.Date",
         "Dr.Edgar F.Codd",
         "'a' और 'b' दोनों / Both 'a' and 'b'"
       ],
@@ -648,11 +925,18 @@
     },
     {
       "questionText": "डेटाबेस की हानियाँ हैं?",
+      "questionTextEn": "What are the disadvantages of database?",
       "options": [
-        "आसान / Easy",
-        "असुरक्षित / Unsafe",
-        "अविश्वसनीय / Unreliable",
-        "महंगा / More expensive"
+        "आसान",
+        "असुरक्षित",
+        "अविश्वसनीय",
+        "महंगा"
+      ],
+      "optionsEn": [
+        "Easy",
+        "Unsafe",
+        "Unreliable",
+        "More expensive"
       ],
       "correctOptionIndex": 3,
       "explanation": "Higher cost ('More expensive') is a recognized disadvantage of adopting a DBMS.",
@@ -661,11 +945,18 @@
     },
     {
       "questionText": "निम्न में से कौन-सा ऑब्जेक्ट छपे हुए फॉर्मेट में होता है?",
+      "questionTextEn": "Which of the following objects are in printed format?",
       "options": [
-        "सारणी / Table",
-        "क्वेरी / Query",
-        "फॉर्म / Form",
-        "रिपोर्ट / Report"
+        "सारणी",
+        "क्वेरी",
+        "फॉर्म",
+        "रिपोर्ट"
+      ],
+      "optionsEn": [
+        "Table",
+        "Query",
+        "Form",
+        "Report"
       ],
       "correctOptionIndex": 3,
       "explanation": "Reports are the Access object type designed for a printed/presentation format.",
@@ -674,6 +965,7 @@
     },
     {
       "questionText": "डॉ.E.F. Codd ने ___ नियमों का प्रतिनिधित्व किया जिनका पालन एक डेटाबेस द्वारा किया जाना चाहिए-",
+      "questionTextEn": "Dr.E.F. Codd represented ___ rules that must be followed by a database-",
       "options": [
         "10",
         "8",
@@ -687,11 +979,18 @@
     },
     {
       "questionText": "एक रिकॉर्ड का एक विशेष फील्ड, जो प्रत्येक रिकॉर्ड को विशिष्ट रूप से पहचान दिलाता है।",
+      "questionTextEn": "A special field of a record that uniquely identifies each record.",
       "options": [
-        "की-फील्ड / Key field",
-        "प्राइमरी फील्ड / Primary field",
-        "मास्टर फील्ड / Master field",
-        "उपरोक्त में से कोई नहीं / None of these"
+        "की-फील्ड",
+        "प्राइमरी फील्ड",
+        "मास्टर फील्ड",
+        "उपरोक्त में से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Key field",
+        "Primary field",
+        "Master field",
+        "None of these"
       ],
       "correctOptionIndex": 0,
       "explanation": "The field that uniquely identifies records is called the Key field.",
@@ -700,11 +999,18 @@
     },
     {
       "questionText": "किसी क्वेरी के उत्तर में जो सूचनाएँ या रिकॉर्ड प्राप्त होता है, उसे उस क्वेरी का ___ कहते हैं।",
+      "questionTextEn": "The information or record that response to a query is called ___.",
       "options": [
-        "रिजल्ट / Result",
-        "डायनासेट / Dynaset",
-        "आउटपुट / Output",
-        "सारणी / Table"
+        "रिजल्ट",
+        "डायनासेट",
+        "आउटपुट",
+        "सारणी"
+      ],
+      "optionsEn": [
+        "Result",
+        "Dynaset",
+        "Output",
+        "Table"
       ],
       "correctOptionIndex": 1,
       "explanation": "The record set returned by a query in Access is called a Dynaset.",
@@ -713,6 +1019,7 @@
     },
     {
       "questionText": "DDE का पूरा नाम है-",
+      "questionTextEn": "Full form of DDE is-",
       "options": [
         "Disk Data Exchange",
         "Dynamic Data Exchange",
@@ -726,6 +1033,7 @@
     },
     {
       "questionText": "DBMS का पूरा नाम है-",
+      "questionTextEn": "Full name of DBMS is-",
       "options": [
         "Data Base Management System",
         "Data Business Management System",
@@ -739,6 +1047,7 @@
     },
     {
       "questionText": "DBA का पूरा नाम है-",
+      "questionTextEn": "Full form of DBA is-",
       "options": [
         "Data Base Assembly",
         "Data Business Assembly",
@@ -752,11 +1061,18 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सा क्रम डेटा एलिमेंट्स को उनके आकार के आरोही क्रम में दर्शाता है-",
+      "questionTextEn": "Which one of the following shows the data elements in ascending order of their size?",
       "options": [
-        "कैरेक्टर, फ़ाइल, रिकॉर्ड, फील्ड, डेटाबेस / Character, File, Record, Field, Database",
-        "कैरेक्टर, रिकॉर्ड, फील्ड, फ़ाइल, डेटाबेस / Character, Record, Field, File, Database",
-        "कैरेक्टर, फील्ड, रिकॉर्ड, फ़ाइल, डेटाबेस / Character, Field, Record, File, Database",
-        "बिट, बाइट, कैरेक्टर, रिकॉर्ड, फील्ड, फ़ाइल, डेटाबेस / Bit, Byte, Character, Record, Field, File, Database"
+        "कैरेक्टर, फ़ाइल, रिकॉर्ड, फील्ड, डेटाबेस",
+        "कैरेक्टर, रिकॉर्ड, फील्ड, फ़ाइल, डेटाबेस",
+        "कैरेक्टर, फील्ड, रिकॉर्ड, फ़ाइल, डेटाबेस",
+        "बिट, बाइट, कैरेक्टर, रिकॉर्ड, फील्ड, फ़ाइल, डेटाबेस"
+      ],
+      "optionsEn": [
+        "Character, File, Record, Field, Database",
+        "Character, Record, Field, File, Database",
+        "Character, Field, Record, File, Database",
+        "Bit, Byte, Character, Record, Field, File, Database"
       ],
       "correctOptionIndex": 2,
       "explanation": "Character → Field → Record → File → Database is the correct ascending order of data elements by size.",
@@ -765,11 +1081,18 @@
     },
     {
       "questionText": "किसी एंटिटी-रिलेशनशिप डायग्राम में किसी विद्यार्थी का नाम तथा पता क्या माना जाएगा?",
+      "questionTextEn": "What will be considered as the name and address of a student in an entity-relationship diagram?",
       "options": [
-        "रिलेशनशिप / Relationship",
-        "एंटिटी / Entity",
-        "एट्रिब्यूट / Attribute",
-        "उपरोक्त सभी / All of the above"
+        "रिलेशनशिप",
+        "एंटिटी",
+        "एट्रिब्यूट",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Relationship",
+        "Entity",
+        "Attribute",
+        "All of the above"
       ],
       "correctOptionIndex": 2,
       "explanation": "Name and address of a student are Attributes of the Student entity.",
@@ -778,11 +1101,18 @@
     },
     {
       "questionText": "रिलेशनल डेटाबेस में, एक डेटा स्ट्रक्चर जो किसी विषय के बारे में सभी सूचनाओं को पंक्तियों तथा स्तम्भ के रूप में व्यवस्थित करता है।",
+      "questionTextEn": "In a relational database, a data structure that organizes all the information about a subject in the form of rows and columns.",
       "options": [
-        "ब्लॉक / Block",
-        "रिकॉर्ड / Record",
-        "ट्यूपल / Tuple",
-        "सारणी / Table"
+        "ब्लॉक",
+        "रिकॉर्ड",
+        "ट्यूपल",
+        "सारणी"
+      ],
+      "optionsEn": [
+        "Block",
+        "Record",
+        "Tuple",
+        "Table"
       ],
       "correctOptionIndex": 3,
       "explanation": "A Table organizes subject-related data into rows and columns in a relational database.",
@@ -791,11 +1121,18 @@
     },
     {
       "questionText": "किसी डेटाबेस में पंक्ति का अन्य नाम क्या है?",
+      "questionTextEn": "What is another name for a row in a database?",
       "options": [
-        "रिकॉर्ड / Record",
-        "फील्ड / Field",
-        "रिलेशन / Relation",
-        "कॉलम / Column"
+        "रिकॉर्ड",
+        "फील्ड",
+        "रिलेशन",
+        "कॉलम"
+      ],
+      "optionsEn": [
+        "Record",
+        "Field",
+        "Relation",
+        "Column"
       ],
       "correctOptionIndex": 0,
       "explanation": "A row is also called a Record.",
@@ -804,11 +1141,18 @@
     },
     {
       "questionText": "एक डेटाबेस में एक रिकॉर्ड के बारे में सूचना की सबसे छोटी इकाई को क्या कहा जाता है?",
+      "questionTextEn": "The smallest unit of information about a record in a database is called-",
       "options": [
-        "सेल / Cell",
-        "फील्ड / Field",
-        "रिकॉर्ड / Record",
-        "क्वेरी / Query"
+        "सेल",
+        "फील्ड",
+        "रिकॉर्ड",
+        "क्वेरी"
+      ],
+      "optionsEn": [
+        "Cell",
+        "Field",
+        "Record",
+        "Query"
       ],
       "correctOptionIndex": 1,
       "explanation": "The smallest unit of information within a record is called a Field.",
@@ -817,11 +1161,18 @@
     },
     {
       "questionText": "इनमें से कौन-सा डेटाबेस का अवयव नहीं है-",
+      "questionTextEn": "Which of the following is not a component of database-",
       "options": [
-        "सारणी / Table",
-        "क्वेरी / Query",
-        "फॉर्म / Form",
-        "ट्यूपल / Tuple"
+        "सारणी",
+        "क्वेरी",
+        "फॉर्म",
+        "ट्यूपल"
+      ],
+      "optionsEn": [
+        "Table",
+        "Query",
+        "Form",
+        "Tuple"
       ],
       "correctOptionIndex": 3,
       "explanation": "Table, Query, and Form are standalone database objects; Tuple is just a row within a Table, not a separate object.",
@@ -830,11 +1181,18 @@
     },
     {
       "questionText": "डेटाबेस ट्रांजेक्शन का अर्थ होता है-",
+      "questionTextEn": "Database transaction means-",
       "options": [
-        "डाटाबेस से डाटा उपार्जित करना / Acquiring data from database",
-        "डाटाबेस में डाटा लिखना / Writing data to the database",
-        "डाटाबेस में डाटा पढ़ना / Reading data in database",
-        "उपरोक्त सभी / All of the above"
+        "डाटाबेस से डाटा उपार्जित करना",
+        "डाटाबेस में डाटा लिखना",
+        "डाटाबेस में डाटा पढ़ना",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Acquiring data from database",
+        "Writing data to the database",
+        "Reading data in database",
+        "All of the above"
       ],
       "correctOptionIndex": 3,
       "explanation": "A transaction can involve reading, writing, or acquiring data, making 'All of the above' the correct broad definition.",
@@ -843,11 +1201,18 @@
     },
     {
       "questionText": "डेटाबेस सारणियों से मिलकर बना होता है तथा सारणियाँ पंक्तियों, जिन्हें ___ कहते हैं, तथा स्तम्भ, जिन्हें ___ कहते हैं, से मिलकर बनी होती हैं।",
+      "questionTextEn": "Database is made up of tables and tables are made up of rows, called ___ and columns, called ___.",
       "options": [
-        "फील्ड, रिकॉर्ड / Field, Record",
-        "रिकॉर्ड, फील्ड / Record, Field",
-        "एड्रेस, फील्ड / Address, Field",
-        "इनमें से कोई नहीं / None of these"
+        "फील्ड, रिकॉर्ड",
+        "रिकॉर्ड, फील्ड",
+        "एड्रेस, फील्ड",
+        "इनमें से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Field, Record",
+        "Record, Field",
+        "Address, Field",
+        "None of these"
       ],
       "correctOptionIndex": 1,
       "explanation": "Rows are called Records, and Columns are called Fields.",

@@ -9,11 +9,12 @@
   "questions": [
     {
       "questionText": "'राष्ट्रीय हरित हाइड्रोजन मिशन' के संदर्भ में निम्नलिखित में से कौन-से कथन सही हैं? (a) भारत का लक्ष्य 2030 तक सालाना 50 लाख मीट्रिक टन हरित हाइड्रोजन का उत्पादन करना है। (b) राजस्थान को उसकी उच्च सौर ऊर्जा क्षमता के कारण एक संभावित हरित हाइड्रोजन केंद्र के रूप में पहचाना गया है। (c) इस मिशन में वित्तीय प्रोत्साहन प्रदान करने के लिए एस.आई.जी.एच.टी. (हरित हाइड्रोजन संक्रमण के लिए रणनीतिक हस्तक्षेप) कार्यक्रम शामिल है। (d) 2026 तक भारत के सभी घरों में हरित हाइड्रोजन का उपयोग करना अनिवार्य है।",
+      "questionTextEn": "Which of the following statements are correct with reference to the 'National Green Hydrogen Mission'? (a) India aims to produce 5 million metric tonnes of green hydrogen annually by 2030. (b) Rajasthan has been identified as a potential Green Hydrogen Hub due to its high solar energy potential. (c) The mission includes the SIGHT (Strategic Interventions for Green Hydrogen Transition) programme to provide financial incentives. (d) It is mandatory for all households in India to use green hydrogen by 2026.",
       "options": [
-        ", (c) and (d) only",
-        ", (b) and (d) only",
-        ", (c) and (d) only",
-        ", (b) and (c) only"
+        "(b), (c) and (d) only",
+        "(a), (b) and (d) only",
+        "(a), (c) and (d) only",
+        "(a), (b) and (c) only"
       ],
       "correctOptionIndex": 3,
       "explanation": "The National Green Hydrogen Mission targets 5 MMTPA production by 2030. Rajasthan is a identified hub due to solar potential. SIGHT programme provides financial incentives. Statement (d) is incorrect — no such mandate exists.",
@@ -22,11 +23,12 @@
     },
     {
       "questionText": "'डीप ओशन मिशन' (डी.ओ.एम.) के संबंध में निम्नलिखित में से कौन-से कथन सही हैं? (a) यह दुर्लभ खनिजों के लिए समुद्र तल का पता लगाने का एक लक्ष्य है। (b) मत्स्य 6000 इसके लिए डिजाइन किया गया मानवयुक्त पनडुब्बी वाहन है। (c) इसका नेतृत्व पृथ्वी विज्ञान मंत्रालय द्वारा किया जाता है। (d) इस मिशन का मुख्य उद्देश्य गहरे समुद्र के तल से तेल निकालना है।",
+      "questionTextEn": "Which of the following statements are correct regarding the 'Deep Ocean Mission' (DOM)? (a) It is a mission to explore the ocean floor for rare minerals. (b) The MATSYA 6000 is the manned submersible vehicle designed for this. (c) It is spearheaded by the Ministry of Earth Sciences. (d) The mission primarily aims to extract oil from deep-sea beds.",
       "options": [
-        ", (b) and (d) only",
-        ", (b), (c) and (d)",
-        ", (b) and (c) only",
-        "and (d) only"
+        "(a), (b) and (d) only",
+        "(a), (b), (c) and (d)",
+        "(a), (b) and (c) only",
+        "(c) and (d) only"
       ],
       "correctOptionIndex": 2,
       "explanation": "Deep Ocean Mission is led by Ministry of Earth Sciences. MATSYA 6000 is the manned submersible. The mission explores rare minerals, not oil. Statement (d) is incorrect.",
@@ -35,6 +37,7 @@
     },
     {
       "questionText": "ऊपर दी गई तालिका तीन महीनों के दौरान विभिन्न उत्पादों की बिक्री को दर्शाती है। जनवरी में हुई कुल उत्पाद बिक्री की तुलना में मार्च में हुई कुल उत्पाद बिक्री में कितने प्रतिशत की वृद्धि हुई है? (उत्पाद A: Jan=120, Feb=150, Mar=180; B: Jan=200, Feb=180, Mar=160; C: Jan=100, Feb=120, Mar=140; D: Jan=80, Feb=100, Mar=120)",
+      "questionTextEn": "The above table shows the sales of different products over three months. What is percentage increase in total product sales in March compared to total product sales in January? (Product A: Jan=120, Feb=150, Mar=180; B: Jan=200, Feb=180, Mar=160; C: Jan=100, Feb=120, Mar=140; D: Jan=80, Feb=100, Mar=120)",
       "options": [
         "25%",
         "10%",
@@ -48,6 +51,7 @@
     },
     {
       "questionText": "राज्य वित्त आयोग (SFC) की नियुक्ति राज्यपाल द्वारा, किनके बीच संसाधनों के वितरण की अनुशंसा करने हेतु की जाती है?",
+      "questionTextEn": "The State Finance Commission (SFC) is appointed by the Governor to recommend the distribution of resources between:",
       "options": [
         "Districts and Tehsils",
         "Centre and State",
@@ -61,11 +65,12 @@
     },
     {
       "questionText": "सूची-I (पद) का सूची-II (भूमिका) के साथ मिलान कीजिए: (a) राज्यपाल → (i) राज्य के राजनीतिक प्रमुख (b) मुख्यमंत्री → (ii) राज्य का संवैधानिक प्रमुख (c) मुख्य सचिव → (iii) जिले के प्रशासनिक प्रमुख (d) जिला कलेक्टर → (iv) राज्य सिविल सेवाओं के प्रमुख",
+      "questionTextEn": "Match List-I (Post) with List-II (Role): (a) Governor → (i) Political Head of State (b) Chief Minister → (ii) Constitutional Head of State (c) Chief Secretary → (iii) Administrative Head of District (d) District Collector → (iv) Head of State Civil Services",
       "options": [
-        "(iii), (b)-(iv), (c)-(i), (d)-(ii)",
-        "(i), (b)-(ii), (c)-(iii), (d)-(iv)",
-        "(i), (b)-(ii), (c)-(iv), (d)-(iii)",
-        "(ii), (b)-(i), (c)-(iv), (d)-(iii)"
+        "(a)-(iii), (b)-(iv), (c)-(i), (d)-(ii)",
+        "(a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)",
+        "(a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)",
+        "(a)-(ii), (b)-(i), (c)-(iv), (d)-(iii)"
       ],
       "correctOptionIndex": 2,
       "explanation": "Governor is the Constitutional Head of State; Chief Minister is the Political Head of State; Chief Secretary heads State Civil Services; District Collector is Administrative Head of District. Correct match: (a)-(ii), (b)-(i), (c)-(iv), (d)-(iii) = Option D.",
@@ -74,11 +79,12 @@
     },
     {
       "questionText": "अभिकथन (A): राज्यपाल राज्य विधानसभा को भंग कर सकते हैं। कारण (R): राज्यपाल मुख्यमंत्री की सलाह पर ऐसा करते हैं।",
+      "questionTextEn": "Assertion (A): The Governor can dissolve the State Assembly. Reason (R): The Governor does so on the advice of the Chief Minister.",
       "options": [
-        "is false but (R) is true.",
+        "(A) is false but (R) is true.",
         "Both (A) and (R) are true and (R) is the correct explanation of (A).",
         "Both (A) and (R) are true but (R) is NOT the correct explanation of (A).",
-        "is true but (R) is false."
+        "(A) is true but (R) is false."
       ],
       "correctOptionIndex": 1,
       "explanation": "Governor dissolves the Assembly on the advice of the CM/Council of Ministers. Both statements are true and R correctly explains A.",
@@ -87,11 +93,12 @@
     },
     {
       "questionText": "एक समयुग्मजी प्रभावी लंबा पादप (TT) एक समयुग्मजी अप्रभावी बौने पौधे (tt) के साथ क्रॉस कराया जाता है। F₁ पीढ़ी के पौधों में स्व-निषेचन कराया जाता है, जिससे F₂ पीढ़ी उत्पन्न होती है। F₂ पीढ़ी में, समयुग्मजी प्रभावी (TT) व्यष्टियों और समयुग्मजी अप्रभावी (tt) व्यष्टियों का जीनप्ररूपी अनुपात क्या होगा?",
+      "questionTextEn": "A homozygous dominant tall plant (TT) is crossed with a homozygous recessive dwarf plant (tt). The F₁ progeny are self-fertilized to produce the F₂ generation. In the F₂ generation, what is the genotypic ratio of homozygous dominant (TT) individuals to homozygous recessive (tt) individuals?",
       "options": [
-        "1",
-        "3",
-        "1",
-        "1"
+        "2:1",
+        "1:3",
+        "3:1",
+        "1:1"
       ],
       "correctOptionIndex": 3,
       "explanation": "F₂ genotypic ratio is 1 TT : 2 Tt : 1 tt. Therefore TT:tt = 1:1.",
@@ -100,6 +107,7 @@
     },
     {
       "questionText": "इनमें से कौन-सा कानूनी कदम, जिसे राजस्थान ने सबसे पहले लागू किया था, उसका मकसद शासन में पारदर्शिता और जवाबदेही बढ़ाना था?",
+      "questionTextEn": "Which of the following legislative measures, first enacted by Rajasthan, aimed at enhancing transparency and accountability in governance?",
       "options": [
         "Rajasthan Public Service Guarantee Act, 2011",
         "Rajasthan Transparency in Public Procurement Act, 2012",
@@ -113,11 +121,12 @@
     },
     {
       "questionText": "सूची-I (प्राकृतिक स्रोत) का सूची-II (अम्ल) के साथ मिलान करें: (a) सिरका → (i) ऑक्जेलिक अम्ल (b) नारंगी → (ii) एसीटिक अम्ल (c) दही → (iii) साइट्रिक अम्ल (d) टमाटर → (iv) लैक्टिक अम्ल",
+      "questionTextEn": "Match List-I (Natural source) with List-II (Acid): (a) Vinegar → (i) Oxalic acid (b) Orange → (ii) Acetic acid (c) Curd → (iii) Citric acid (d) Tomato → (iv) Lactic acid",
       "options": [
-        "(iii), (b)-(iv), (c)-(i), (d)-(ii)",
-        "(i), (b)-(ii), (c)-(iii), (d)-(iv)",
-        "(ii), (b)-(iii), (c)-(i), (d)-(iv)",
-        "(ii), (b)-(iii), (c)-(iv), (d)-(i)"
+        "(a)-(iii), (b)-(iv), (c)-(i), (d)-(ii)",
+        "(a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)",
+        "(a)-(ii), (b)-(iii), (c)-(i), (d)-(iv)",
+        "(a)-(ii), (b)-(iii), (c)-(iv), (d)-(i)"
       ],
       "correctOptionIndex": 3,
       "explanation": "Vinegar=Acetic acid; Orange=Citric acid; Curd=Lactic acid; Tomato=Oxalic acid.",
@@ -126,6 +135,7 @@
     },
     {
       "questionText": "मोतीलाल तेजावत के नेतृत्व में 'एकी आंदोलन' के रूप में एक बड़े भील विद्रोह की शुरुआत क्यों की गई?",
+      "questionTextEn": "Why was a major Bhil Uprising launched as Eki Movement under the leadership of Motilal Tejawat?",
       "options": [
         "To integrate Bhils with intense colonial sympathy.",
         "To initiate religious reforms among Bhils.",
@@ -139,6 +149,7 @@
     },
     {
       "questionText": "9 क्रमागत विषम संख्याओं का औसत, यदि उन संख्याओं में से सबसे छोटी संख्या को n द्वारा दर्शाया जाता है, है:",
+      "questionTextEn": "The average of 9 consecutive odd numbers if the smallest of those numbers is denoted by n is:",
       "options": [
         "n + 9",
         "n + 4",
@@ -152,11 +163,12 @@
     },
     {
       "questionText": "निम्नलिखित तत्वों को इलेक्ट्रॉनों की संख्या के आरोही क्रम में व्यवस्थित करें: (a) नियोन, (b) मैग्नीशियम, (c) पोटेशियम, (d) सल्फर",
+      "questionTextEn": "Arrange the following elements in the ascending order of number of electrons: (a) Neon, (b) Magnesium, (c) Potassium, (d) Sulphur",
       "options": [
-        ", (b), (d), (a)",
-        ", (b), (d), (c)",
-        ", (b), (c), (d)",
-        ", (a), (d), (c)"
+        "(c), (b), (d), (a)",
+        "(a), (b), (d), (c)",
+        "(a), (b), (c), (d)",
+        "(b), (a), (d), (c)"
       ],
       "correctOptionIndex": 1,
       "explanation": "Ne=10, Mg=12, S=16, K=19. Ascending: (a)Ne, (b)Mg, (d)S, (c)K.",
@@ -165,6 +177,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सा शहर सोरसन वन्यजीव अभयारण्य के सबसे निकट है?",
+      "questionTextEn": "Which of the following city is closest to Sorsan Wildlife Sanctuary?",
       "options": [
         "Kota",
         "Nagaur",
@@ -178,11 +191,12 @@
     },
     {
       "questionText": "अभिकथन (A): राजस्थान सहकारी डेयरी महासंघ (आर. सी. डी. एफ.) के तहत 'सरस' ब्रांड त्रिस्तरीय संरचना का अनुसरण करता है। कारण (R): त्रिस्तरीय सहकारी संरचना में शीर्ष पर जिला परिषद, उसके बाद पंचायत समिति और ग्राम पंचायत शामिल हैं।",
+      "questionTextEn": "Assertion (A): The 'Saras' brand under the Rajasthan Cooperative Dairy Federation (RCDF) follows a Three-Tier structure. Reason (R): The Three-Tier Cooperative structure consists of the Zila Parishad at the top, followed by the Panchayat Samiti and the Gram Panchayat.",
       "options": [
-        "is not correct but (R) is correct.",
+        "(A) is not correct but (R) is correct.",
         "Both (A) and (R) are correct and (R) is the correct explanation of (A).",
         "Both (A) and (R) are correct but (R) is NOT the correct explanation of (A).",
-        "is correct but (R) is not correct."
+        "(A) is correct but (R) is not correct."
       ],
       "correctOptionIndex": 3,
       "explanation": "Assertion (A) is correct. Reason (R) is incorrect — it describes PRIs structure, not dairy cooperative structure.",
@@ -191,6 +205,7 @@
     },
     {
       "questionText": "कर्सर के बाईं ओर के वर्णों को हटाने के लिए किस कुंजी (की) का उपयोग किया जाता है?",
+      "questionTextEn": "Which key is used to delete characters to the left of the cursor?",
       "options": [
         "Shift",
         "Enter",
@@ -204,6 +219,7 @@
     },
     {
       "questionText": "कौन-सा प्राधिकरण पंचायती राज संस्थानों के खातों का लेखा-परीक्षण करता है?",
+      "questionTextEn": "Which authority audits the accounts of Panchayati Raj Institutions?",
       "options": [
         "Governor",
         "CAG of India",
@@ -217,6 +233,7 @@
     },
     {
       "questionText": "'भारत में हिम तेंदुओं की स्थिति रिपोर्ट' (2024) के अनुसार भारत के किस राज्य में हिम तेंदुओं की संख्या सबसे अधिक है?",
+      "questionTextEn": "Which state in India hosts the highest number of snow leopards as per the 'status report of snow leopards in India' (2024)?",
       "options": [
         "Sikkim",
         "Uttarakhand",
@@ -230,6 +247,7 @@
     },
     {
       "questionText": "कार्तिक मास में दीपदान की परंपरा और पशु मेला किसकी प्रमुख विशेषताएँ हैं?",
+      "questionTextEn": "A tradition of deepdan in the Karthik month and an animal fair are the primary features of:",
       "options": [
         "Pushkar Fair",
         "Jeenmata Fair",
@@ -243,6 +261,7 @@
     },
     {
       "questionText": "2024 के अंत में चर्चा में आई 'पीएम-विद्यालक्ष्मी' योजना मुख्य रूप से किसके लिए है?",
+      "questionTextEn": "The 'PM-Vidyalaxmi' scheme, discussed in late 2024, is primarily intended for:",
       "options": [
         "Financial support (loans) for meritorious students for higher education.",
         "Primary education infrastructure.",
@@ -256,11 +275,12 @@
     },
     {
       "questionText": "यदि A : B = 1 : 2, B : C = 3 : 4, C : D = 5 : 6 और D : E = 7 : 8 हैं, तो A : E क्या है?",
+      "questionTextEn": "If A : B = 1 : 2, B : C = 3 : 4, C : D = 5 : 6 and D : E = 7 : 8, then what is A : E?",
       "options": [
         "41 : 137",
         "35 : 128",
-        "4",
-        "8"
+        "3 : 4",
+        "7 : 8"
       ],
       "correctOptionIndex": 1,
       "explanation": "Multiply all ratios: A/E = (A/B)×(B/C)×(C/D)×(D/E) = (1/2)×(3/4)×(5/6)×(7/8) = 105/384 = 35/128. So A:E = 35:128.",
@@ -269,6 +289,7 @@
     },
     {
       "questionText": "निम्नलिखित में से किस यौगिक का क्वथनांक सबसे कम है?",
+      "questionTextEn": "Which of the following compounds has the lowest boiling point?",
       "options": [
         "Ethanol",
         "Methane",
@@ -282,6 +303,7 @@
     },
     {
       "questionText": "किस मौलिक अधिकार को संविधान के हृदय और आत्मा के रूप में जाना जाता है?",
+      "questionTextEn": "Which Fundamental Right is known as the heart and soul of the Constitution?",
       "options": [
         "Right to Constitutional Remedies",
         "Right to Equality",
@@ -295,6 +317,7 @@
     },
     {
       "questionText": "अंतर्राष्ट्रीय योग दिवस 2025 का विषय क्या था?",
+      "questionTextEn": "What was the theme of the International Day of Yoga 2025?",
       "options": [
         "Yoga for Peace",
         "Yoga for Humanity",
@@ -308,11 +331,12 @@
     },
     {
       "questionText": "राजस्थान के निम्नलिखित जलवायु क्षेत्रों को पूर्व से पश्चिम के क्रम में व्यवस्थित कीजिए: (a) आर्द्र जलवायु क्षेत्र, (b) बहुत आर्द्र जलवायु क्षेत्र, (c) शुष्क जलवायु क्षेत्र, (d) अर्ध-शुष्क जलवायु क्षेत्र",
+      "questionTextEn": "Arrange the following climatic regions of Rajasthan from east to west: (a) Humid Climatic Region, (b) Very Humid Climatic Region, (c) Arid Climatic Region, (d) Semi Arid Climatic Region",
       "options": [
-        ", (b), (d), (a)",
-        ", (b), (c), (d)",
-        ", (a), (c), (d)",
-        ", (a), (d), (c)"
+        "(c), (b), (d), (a)",
+        "(a), (b), (c), (d)",
+        "(b), (a), (c), (d)",
+        "(b), (a), (d), (c)"
       ],
       "correctOptionIndex": 3,
       "explanation": "East to West Rajasthan climate: Very Humid → Humid → Semi-Arid → Arid (Thar Desert).",
@@ -321,6 +345,7 @@
     },
     {
       "questionText": "16 श्रमिक दिन में 6 घंटे काम करते हैं, 25 दिनों में 150 m लंबाई, 20 m चौड़ाई और 2 m ऊँचाई की दीवार बनाते हैं। 12 श्रमिक, जो दिन में 8 घंटे काम करते हैं, 800 m लंबाई, 15 m चौड़ाई और 6 m ऊँचाई की दीवार कितने दिनों में बना सकते हैं?",
+      "questionTextEn": "16 workers working 6 hours a day, build a wall of length 150 m, breadth 20 m, and height 2 m in 25 days. In how many days 12 workers, working 8 hours a day can build a wall of length 800 m, breadth 15 m and height 6 m?",
       "options": [
         "50",
         "300",
@@ -334,6 +359,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सी नदी अरब सागर में गिरती है?",
+      "questionTextEn": "Which of the following river falls into the Arabian Sea?",
       "options": [
         "Kali Sindh River",
         "Chambal River",
@@ -347,6 +373,7 @@
     },
     {
       "questionText": "राजस्थान के निम्नलिखित में से किस केंद्रीय रूप से संरक्षित टिकट वाले स्मारक में वर्ष 2024-25 में सर्वाधिक घरेलू पर्यटक आए?",
+      "questionTextEn": "Which of the following Centrally Protected Ticketed Monuments of Rajasthan received the largest domestic tourists in 2024-25?",
       "options": [
         "Chand Baori",
         "Chittorgarh Fort",
@@ -360,11 +387,12 @@
     },
     {
       "questionText": "'पीएम-जनमन' मिशन के बारे में निम्नलिखित में से कौन-से कथन सही हैं? (a) इसका उद्देश्य विशेष रूप से कमजोर जनजातीय समूहों (पी.वी.टी.जी.) का विकास करना है। (b) इसमें आवास, स्वच्छ जल और सड़क संपर्क जैसे 11 महत्वपूर्ण कार्य शामिल हैं। (c) इस मिशन का बजट 24,000 करोड़ रुपये से अधिक है। (d) यह विशेष रूप से पूर्वोत्तर भारत में जनजातीय आबादी के लिए है।",
+      "questionTextEn": "Which of the following statements are correct about 'PM-JANMAN' Mission? (a) It is aimed at the development of Particularly Vulnerable Tribal Groups (PVTGs). (b) It covers 11 critical interventions like housing, clean water, and road connectivity. (c) The mission has a budget of over ₹24,000 crore. (d) It is exclusively for tribal populations in North-Eastern India.",
       "options": [
-        "and (d) only",
-        ", (b) and (d) only",
-        ", (b), (c) and (d)",
-        ", (b) and (c) only"
+        "(c) and (d) only",
+        "(a), (b) and (d) only",
+        "(a), (b), (c) and (d)",
+        "(a), (b) and (c) only"
       ],
       "correctOptionIndex": 3,
       "explanation": "PM-JANMAN targets PVTGs across India with 11 interventions and ₹24,000 crore budget. Statement (d) is false.",
@@ -373,6 +401,7 @@
     },
     {
       "questionText": "ओलंपिक (पेरिस 2024) के एकल संस्करण में दो ओलंपिक पदक जीतने वाली पहली भारतीय महिला कौन बनीं?",
+      "questionTextEn": "Who became the first Indian woman to win two Olympic medals in a single edition of the Olympics (Paris 2024)?",
       "options": [
         "Mirabai Chanu",
         "P.V. Sindhu",
@@ -386,11 +415,12 @@
     },
     {
       "questionText": "उत्तरी अरावली पर्वत की चोटियों की पहचान कीजिए: (a) रघुनाथगढ़ चोटी, (b) गुरु शिखर, (c) भैरच चोटी, (d) खो चोटी",
+      "questionTextEn": "Identify the peaks of North Aravalli Mountain: (a) Raghunathgarh Peak, (b) Guru Shikhar, (c) Bhairach Peak, (d) Kho Peak",
       "options": [
-        ", (b) and (c) only",
-        ", (c) and (d) only",
-        ", (c) and (d) only",
-        ", (b), (c) and (d)"
+        "(a), (b) and (c) only",
+        "(b), (c) and (d) only",
+        "(a), (c) and (d) only",
+        "(a), (b), (c) and (d)"
       ],
       "correctOptionIndex": 2,
       "explanation": "North Aravalli peaks: Raghunathgarh, Bhairach, Kho. Guru Shikhar is in South Aravalli (Mt. Abu). So (a), (c), (d) = Option C.",
@@ -399,6 +429,7 @@
     },
     {
       "questionText": "गोलू और बोलू की गतियों का अनुपात 4 : 7 है। यदि गोलू 270 m से दौड़ हार जाता है, तो धावन-पथ (रेस-कोर्स) की लंबाई क्या है?",
+      "questionTextEn": "The ratio of speeds of Golu and Bolu is 4 : 7. If Golu loses the race by 270 m, then what is the length of the race course?",
       "options": [
         "540 m",
         "1080 m",
@@ -412,6 +443,7 @@
     },
     {
       "questionText": "मनुष्यों में वृक्क निम्नलिखित तंत्र का एक भाग है:",
+      "questionTextEn": "The kidneys in human beings are a part of the system for:",
       "options": [
         "excretion",
         "nutrition",
@@ -425,6 +457,7 @@
     },
     {
       "questionText": "मेवाड़ के किस शासक को 32 किलों के निर्माण और 'संगीतराज' की रचना के लिए जाना जाता है, और जिनके बारे में यह भी माना जाता है कि उन्होंने 'गीत गोविंद' पर एक टीका लिखी थी?",
+      "questionTextEn": "Which ruler of Mewar is celebrated for building 32 forts, for writing Sangitaraj and believed to have written a commentary on Gita Govinda?",
       "options": [
         "Rana Sanga",
         "Maharana Kumbha",
@@ -438,6 +471,7 @@
     },
     {
       "questionText": "दूसरे वर्ष और तीसरे वर्ष के लिए ब्याज की एक निश्चित दर पर एक निश्चित राशि पर चक्रवृद्धि ब्याज क्रमशः ₹21,780 और ₹23,958 हैं। ब्याज की दर क्या है?",
+      "questionTextEn": "The compound interest on a certain sum at a certain rate of interest for the second year and third year is ₹21,780 and ₹23,958, respectively. What is the rate of interest?",
       "options": [
         "11%",
         "8%",
@@ -451,6 +485,7 @@
     },
     {
       "questionText": "राजस्थान की राज्य आय (सकल राज्य घरेलू उत्पाद) का आधिकारिक अनुमान और प्रकाशन निम्नलिखित में से किस संस्था द्वारा किया जाता है?",
+      "questionTextEn": "The State Income (Gross State Domestic Product) of Rajasthan is officially estimated and published by which of the following agencies?",
       "options": [
         "Directorate of Economics and Statistics, Government of Rajasthan",
         "Department of Finance, Government of Rajasthan",
@@ -464,6 +499,7 @@
     },
     {
       "questionText": "राजस्थान के पारंपरिक 'मांड' लोक संगीत में योगदान के लिए 2024 में 'पद्म श्री' किसे प्राप्त हुआ?",
+      "questionTextEn": "Who received the 'Padma Shri' in 2024 for contribution to traditional 'Maand' folk music of Rajasthan?",
       "options": [
         "Manganiyar Khan",
         "Ali Mohammad and Gani Mohammad",
@@ -477,6 +513,7 @@
     },
     {
       "questionText": "पादपों में कार्बोहाइड्रेट संग्रहीत होता है:",
+      "questionTextEn": "Carbohydrates in plants are stored in the form of:",
       "options": [
         "Maltose",
         "Glycogen",
@@ -490,11 +527,12 @@
     },
     {
       "questionText": "सूची-I (स्थानीय निकाय) का सूची-II (प्रमुख) के साथ मिलान कीजिए: (a) ग्राम पंचायत → (i) सरपंच (b) पंचायत समिति → (ii) प्रधान (c) जिला परिषद → (iii) महापौर/सभापति (d) नगर निगम → (iv) प्रमुख",
+      "questionTextEn": "Match List-I (Local Body) with List-II (Head): (a) Gram Panchayat → (i) Sarpanch (b) Panchayat Samiti → (ii) Pradhan (c) Zila Parishad → (iii) Mayor/Chairman (d) Municipal Corporation → (iv) Pramukh",
       "options": [
-        "(iii), (b)-(iv), (c)-(i), (d)-(ii)",
-        "(i), (b)-(ii), (c)-(iii), (d)-(iv)",
-        "(i), (b)-(ii), (c)-(iv), (d)-(iii)",
-        "(iii), (b)-(iv), (c)-(ii), (d)-(i)"
+        "(a)-(iii), (b)-(iv), (c)-(i), (d)-(ii)",
+        "(a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)",
+        "(a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)",
+        "(a)-(iii), (b)-(iv), (c)-(ii), (d)-(i)"
       ],
       "correctOptionIndex": 2,
       "explanation": "Gram Panchayat=Sarpanch; Panchayat Samiti=Pradhan; Zila Parishad=Pramukh; Municipal Corp=Mayor. Option C is correct.",
@@ -503,11 +541,12 @@
     },
     {
       "questionText": "निम्नलिखित में से उन श्रेणियों को पहचानिए जिनमें राजस्थान में लोक संगीत को विभाजित किया गया है: (a) गीत जो सामंती वातावरण में विकसित हुए। (b) ऐसे गाने जिनमें क्षेत्रीय खासियतों का बहुत ज्यादा इस्तेमाल होता है। (c) पारंपरिक शास्त्रीय संगीत। (d) अलग-अलग अवसरों पर लोगों द्वारा गाए जाने वाले गीत।",
+      "questionTextEn": "Identify from the following the categories in which Folk Music is divided in Rajasthan: (a) Songs which evolved in feudal environment. (b) Songs in which regional features are abundantly used. (c) Canonical classical music. (d) Songs sung by people on different occasions.",
       "options": [
-        "and (a) only",
-        "and (c) only",
-        ", (c) and (d) only",
-        ", (b) and (d) only"
+        "(d) and (a) only",
+        "(b) and (c) only",
+        "(b), (c) and (d) only",
+        "(a), (b) and (d) only"
       ],
       "correctOptionIndex": 3,
       "explanation": "Rajasthan folk music categories: (a) feudal environment songs, (b) regional feature songs, (d) occasion-based songs. Classical music (c) is not folk.",
@@ -516,11 +555,12 @@
     },
     {
       "questionText": "नीचे दी गई सूची में अलैंगिक विधि से प्रजनन करने वाले जीव हैं: (a) केला, (b) कुत्ता, (c) यीस्ट, (d) अमीबा",
+      "questionTextEn": "In the list of organisms given below, those that reproduced by the asexual method are: (a) Banana, (b) Dog, (c) Yeast, (d) Amoeba",
       "options": [
-        ", (c) and (d) only",
-        ", (c) and (d) only",
-        "and (d) only",
-        "and (d) only"
+        "(b), (c) and (d) only",
+        "(a), (c) and (d) only",
+        "(a) and (d) only",
+        "(b) and (d) only"
       ],
       "correctOptionIndex": 1,
       "explanation": "Asexual: Banana (vegetative), Yeast (budding), Amoeba (binary fission). Dog = sexual reproduction.",
@@ -529,6 +569,7 @@
     },
     {
       "questionText": "कौन-सा निकाय किसी राज्य में पंचायतों को वित्तीय वितरण की सिफारिश करता है?",
+      "questionTextEn": "Which body recommends financial distribution to Panchayats in a state?",
       "options": [
         "NITI Aayog",
         "Planning Commission",
@@ -542,6 +583,7 @@
     },
     {
       "questionText": "राजस्थान में मवेशियों की किस नस्ल को अपनी उच्च दूध उत्पादन क्षमता के कारण 'राजस्थान के कामधेनु' के रूप में जाना जाता है?",
+      "questionTextEn": "Which breed of cattle in Rajasthan is popularly known as the 'Kamdhenu of Rajasthan' due to its high milk-yielding capacity?",
       "options": [
         "Rathi",
         "Tharparkar",
@@ -555,6 +597,7 @@
     },
     {
       "questionText": "राजस्थान के प्रसिद्ध पुरातत्वविद् का नाम बताइए जिन्होंने प्रसिद्ध 'लिपिमाला' लिखी थी?",
+      "questionTextEn": "Name the famous archaeologist of Rajasthan who wrote the famous 'Lipimala':",
       "options": [
         "Birbal Singh",
         "Gaurishankar Heerachand Ojha",
@@ -568,6 +611,7 @@
     },
     {
       "questionText": "हाइड्रोक्लोरिक अम्ल से आमाशय की भीतरी परत की सुरक्षा निम्नलिखित में से एक द्वारा की जाती है। सही की पहचान करें।",
+      "questionTextEn": "The inner lining of stomach is protected by one of the following from hydrochloric acid. Identify the correct one.",
       "options": [
         "Mucus",
         "Bile",
@@ -581,6 +625,7 @@
     },
     {
       "questionText": "4/3, 4/9, 2/15, 36/21 का म.स. है:",
+      "questionTextEn": "The HCF of 4/3, 4/9, 2/15, 36/21 is:",
       "options": [
         "36/15",
         "36/21",
@@ -594,11 +639,12 @@
     },
     {
       "questionText": "अभिकथन (A): भारत ने क्वांटम कंप्यूटिंग क्षमताओं को विकसित करने के लिए 'राष्ट्रीय क्वांटम मिशन' (NQM) शुरू किया है। कारण (R): क्वांटम कंप्यूटर 'क्यूबिट्स' का उपयोग करते हैं, जो उन्हें क्लासिकल कंप्यूटरों की तुलना में कहीं अधिक तेजी से जटिल गणनाएँ करने में सक्षम बनाते हैं।",
+      "questionTextEn": "Assertion (A): India has launched the 'National Quantum Mission' (NQM) to develop quantum computing capabilities. Reason (R): Quantum computers use 'Qubits' which allow them to perform complex calculations much faster than classical computers.",
       "options": [
-        "is not correct but (R) is correct.",
+        "(A) is not correct but (R) is correct.",
         "Both (A) and (R) are correct and (R) is the correct explanation of (A).",
         "Both (A) and (R) are correct but (R) is NOT the correct explanation of (A).",
-        "is correct but (R) is not correct."
+        "(A) is correct but (R) is not correct."
       ],
       "correctOptionIndex": 1,
       "explanation": "A: NQM launched by India (2023) — True. R: Qubits enable faster complex calculations than classical computers — True and explains A.",
@@ -607,11 +653,12 @@
     },
     {
       "questionText": "चंबल नदी पर निर्मित निम्नलिखित में से कौन-से बांध/बैराज राजस्थान में स्थित हैं? (a) राणा प्रताप सागर बांध, (b) कोटा बैराज, (c) जवाहर सागर बांध, (d) गांधी सागर बांध",
+      "questionTextEn": "Which of the following dams/barrages built on Chambal River are located in Rajasthan? (a) Rana Pratap Sagar Dam, (b) Kota Barrage, (c) Jawahar Sagar Dam, (d) Gandhi Sagar Dam",
       "options": [
-        ", (b) and (c) only",
-        ", (b) and (d) only",
-        "and (c) only",
-        "and (b) only"
+        "(a), (b) and (c) only",
+        "(a), (b) and (d) only",
+        "(b) and (c) only",
+        "(a) and (b) only"
       ],
       "correctOptionIndex": 0,
       "explanation": "Chambal dams in Rajasthan: Rana Pratap Sagar (Rawatbhata), Kota Barrage (Kota), Jawahar Sagar (Kota). Gandhi Sagar Dam is in MP.",
@@ -620,9 +667,10 @@
     },
     {
       "questionText": "अमित भूषण से तीन गुना कुशल है। यदि अमित को एक काम पूरा करने में 6 दिन लगते हैं, तो भूषण उसी काम को कितने दिनों में पूरा करेगा?",
+      "questionTextEn": "Amit is thrice as efficient as Bhushan. If Amit takes 6 days to complete a job, then in how many days will Bhushan complete the same job?",
       "options": [
-        "days",
-        "days",
+        "9 days",
+        "2 days",
         "12 days",
         "18 days"
       ],
@@ -633,6 +681,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सा खनिज तेल भंडार राजस्थान में स्थित है?",
+      "questionTextEn": "Which of the following is a mineral oil reservoir situated in Rajasthan?",
       "options": [
         "Bassein",
         "Gudamalani",
@@ -646,6 +695,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सा विकल्प 'विकसित भारत @ 2047' पहल का मुख्य उद्देश्य है?",
+      "questionTextEn": "Which of the following is the primary objective of the 'Viksit Bharat @ 2047' initiative?",
       "options": [
         "Reduce income inequality across all regions of the country",
         "Establish India as a global leader in digital and technological innovation.",
@@ -659,6 +709,7 @@
     },
     {
       "questionText": "मेवाड़ी बोली की साहित्यिक रचनाएँ राजस्थानी भाषा की किस प्रमुख बोली की साहित्यिक समृद्धि के तुलनीय हैं?",
+      "questionTextEn": "The literary works of Mewari dialect are comparable in richness to which prominent dialect of Rajasthani language?",
       "options": [
         "Malawi Dialect",
         "Hadoti Dialect",
@@ -672,6 +723,7 @@
     },
     {
       "questionText": "तान्या का वेतन रीमा की तुलना में 33.33% अधिक है। रीमा का वेतन तान्या के वेतन से कितना प्रतिशत कम है?",
+      "questionTextEn": "Tanya's salary is 33.33% more than that of Reema. By how much percent is Reema's salary less than that of Tanya's?",
       "options": [
         "25%",
         "33.33%",
@@ -685,11 +737,12 @@
     },
     {
       "questionText": "सूची-I (प्रेक्षण) का सूची-II (घटना) के साथ मिलान करें: (a) साफ आसमान का नीला रंग → (i) अपवर्तन (b) इंद्रधनुष का निर्माण → (ii) परावर्तन (c) तारों का टिमटिमाना → (iii) प्रकीर्णन (d) दर्पण में अपना प्रतिबिंब देखना → (iv) परिक्षेपण",
+      "questionTextEn": "Match List-I (Observation) with List-II (Phenomenon): (a) Blue color of the clear sky → (i) Refraction (b) Formation of a rainbow → (ii) Reflection (c) Twinkling of stars → (iii) Scattering (d) Seeing your image in a mirror → (iv) Dispersion",
       "options": [
-        "(iii), (b)-(ii), (c)-(iv), (d)-(i)",
-        "(iii), (b)-(iv), (c)-(i), (d)-(ii)",
-        "(iii), (b)-(iv), (c)-(ii), (d)-(i)",
-        "(i), (b)-(ii), (c)-(iv), (d)-(iii)"
+        "(a)-(iii), (b)-(ii), (c)-(iv), (d)-(i)",
+        "(a)-(iii), (b)-(iv), (c)-(i), (d)-(ii)",
+        "(a)-(iii), (b)-(iv), (c)-(ii), (d)-(i)",
+        "(a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)"
       ],
       "correctOptionIndex": 1,
       "explanation": "Blue sky=Scattering; Rainbow=Dispersion; Star twinkle=Refraction; Mirror=Reflection. Option B.",
@@ -698,6 +751,7 @@
     },
     {
       "questionText": "2011 की जनगणना के अनुसार राजस्थान की साक्षरता दर क्या थी?",
+      "questionTextEn": "What was the literacy rate of Rajasthan, according to the 2011 Census?",
       "options": [
         "54%",
         "76%",
@@ -711,11 +765,12 @@
     },
     {
       "questionText": "राजस्थान के पश्चिमी भाग में मौजूदा सूखे की स्थिति के लिए निम्नलिखित में से कौन-से कारक मुख्य रूप से जिम्मेदार हैं? (a) अरावली पर्वत की स्थिति भारतीय मानसून की अरब सागर शाखा के समानांतर है। (b) अरावली पर्वत की स्थिति भारतीय मानसून की बंगाल की खाड़ी शाखा के समानांतर है। (c) अरावली पर्वत की कम ऊँचाई और वनस्पति की कमी। (d) अरब सागर मानसून शाखा में बंगाल की खाड़ी मानसून शाखा की तुलना में नमी की मात्रा कम होना।",
+      "questionTextEn": "Which of the following factors are mainly responsible for prevailing drought conditions in Western Part of Rajasthan? (a) Position of Aravalli Mountain parallel of Arabian Sea branch of Indian Monsoon. (b) Position of Aravalli Mountain parallel of Bay of Bengal branch of Indian Monsoon. (c) Lesser height of Aravalli Mountain and Lack of vegetation (d) Low moisture content in Arabian Sea monsoon branch than Bay of Bengal monsoon branch.",
       "options": [
-        "and (c) only",
-        ", (c) and (d) only",
-        "and (d) only",
-        "and (d) only"
+        "(a) and (c) only",
+        "(a), (c) and (d) only",
+        "(b) and (d) only",
+        "(a) and (d) only"
       ],
       "correctOptionIndex": 1,
       "explanation": "Factors (a), (c), (d) cause western Rajasthan drought. Aravalli runs parallel to Arabian Sea monsoon = no orographic rainfall.",
@@ -724,6 +779,7 @@
     },
     {
       "questionText": "राजस्थान बजट 2026-27 में घोषित 'मुख्यमंत्री लखपति दीदी योजना' के तहत संशोधित ऋण सीमा क्या है?",
+      "questionTextEn": "What is the revised loan limit under the 'Mukhyamantri Lakhpati Didi Yojana' as announced in the Rajasthan Budget 2026-27?",
       "options": [
         "₹2 lakh",
         "₹1 lakh",
@@ -737,11 +793,12 @@
     },
     {
       "questionText": "उपर्युक्त पाई-चार्ट विभिन्न समूहों में छात्रों की संख्या को दर्शाता है। छात्रों की कुल संख्या 1200 है और लड़कियों तथा लड़कों का अनुपात 2:1 है। यदि 30% लड़कियाँ D समूह में हैं तो समूह D में लड़कों और लड़कियों का अनुपात है: (D group = 35% of total)",
+      "questionTextEn": "The above pie-chart shows the number of students in different groups. The total number of students is 1200 and the ratio of girls to boys is 2:1. If 30% of girls are in D, then the ratio of boys to girls in group D is: (D group = 35% of total)",
       "options": [
-        "3",
-        "2",
-        "1",
-        "4"
+        "4:3",
+        "1:2",
+        "2:1",
+        "3:4"
       ],
       "correctOptionIndex": 1,
       "explanation": "Girls=800, Boys=400. D=420 students. Girls in D=240. Boys in D=180. Boys:Girls = 180:240 = 3:4.",
@@ -750,10 +807,11 @@
     },
     {
       "questionText": "ऊपर दिया गया ग्राफ कंपनियों A, B, C और D के आयात और निर्यात मूल्यों को करोड़ों में दर्शाता है। कंपनी A और C के कुल निर्यात का, कंपनी A और C के कुल आयात से क्या अनुपात है?",
+      "questionTextEn": "The above graph represents the import and export values in crores of A, B, C and D companies. What is the ratio of exports of A and C together to the imports of A and C together?",
       "options": [
         "12:17",
-        "5",
-        "7",
+        "7:5",
+        "5:7",
         "17:12"
       ],
       "correctOptionIndex": 2,
@@ -763,6 +821,7 @@
     },
     {
       "questionText": "जब मैग्नीशियम रिबन को हवा में जलाया जाता है, तो निर्मित राख का रंग होता है:",
+      "questionTextEn": "When a magnesium ribbon is burnt in air, the color of ash that is formed is:",
       "options": [
         "Pink",
         "Black",
@@ -776,6 +835,7 @@
     },
     {
       "questionText": "राजस्थान के मुख्यमंत्री के रूप में सबसे लंबे कार्यकाल का रिकॉर्ड किसके नाम है?",
+      "questionTextEn": "Who holds the record for the longest tenure as Chief Minister of Rajasthan?",
       "options": [
         "Vasundhara Raje",
         "Bhairon Singh Shekhawat",
@@ -789,6 +849,7 @@
     },
     {
       "questionText": "राजस्थान में कई प्रकार के 'लहरिया' लोकप्रिय हैं। जब पट्टियाँ एक-दूसरे को क्रॉस करती हैं तो उस डिज़ाइन पैटर्न को क्या कहा जाता है?",
+      "questionTextEn": "Many types of 'Lahariyas' are popular in Rajasthan. What is the design pattern called when strips criss-cross each other?",
       "options": [
         "Samudra Lahariya",
         "Rajshahi Lahariya",
@@ -802,11 +863,12 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सा कारक राजस्थान में कम बाल लिंग अनुपात के लिए सीधे तौर पर जिम्मेदार नहीं है? (a) बाल विवाह के कारण मातृ मृत्यु हुई (b) पितृसत्तात्मक समाज (c) प्रसव पूर्व लिंग निधारण के संपर्क में आना (d) दहेज प्रणाली",
+      "questionTextEn": "Which of the following factor is not directly responsible for low child sex ratio in Rajasthan? (a) Child Marriage led Maternal Deaths (b) Patriarchal Society (c) Exposure to Pre-natal Sex Determination (d) Dowry System",
       "options": [
-        ", (b), (c) and (d)",
-        "only",
-        "and (d) only",
-        "and (c) only"
+        "(a), (b), (c) and (d)",
+        "(a) only",
+        "(a) and (d) only",
+        "(b) and (c) only"
       ],
       "correctOptionIndex": 2,
       "explanation": "(a) Child marriage maternal deaths and (d) Dowry system are indirect/not direct causes of low child sex ratio. Direct causes are (b) and (c).",
@@ -815,6 +877,7 @@
     },
     {
       "questionText": "राजस्थान का कौन-सा जिला हाल ही में महत्वपूर्ण लिथियम भंडार की खोज के लिए चर्चा में था?",
+      "questionTextEn": "Which district in Rajasthan was recently in the news for the discovery of significant lithium reserves?",
       "options": [
         "Bikaner",
         "Nagaur",
@@ -828,6 +891,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सा आर.ए.जे.एस.आई.सी.ओ. (राजस्थान लघु उद्योग निगम) के प्राथमिक कार्य का सबसे अच्छा वर्णन करता है?",
+      "questionTextEn": "Which of the following best describes the primary function of RAJSICO (Rajasthan Small Industries Corporation)?",
       "options": [
         "Promoting export-oriented industrial units through financial incentives",
         "Regulating and licensing small-scale industries within the state",
@@ -841,11 +905,12 @@
     },
     {
       "questionText": "जब सोडियम हाइड्रोजन कार्बोनेट को एसीटिक अम्ल में मिलाया जाता है तो एक गैस निर्मुक्त होती है। निम्नलिखित में से कौन से कथन गैस के निर्मुक्त होने के बारे में सही हैं? (a) यह चूने के पानी को दूधिया कर देता है। (b) यह जलती हुई फाँस को बुझा देता है। (c) यह सोडियम हाइड्रॉक्साइड के विलयन में घुल जाता है। (d) इसमें तीखी गंध होती है।",
+      "questionTextEn": "When Sodium hydrogen carbonate is added to acetic acid a gas evolves. Which of the following statements are true about the gas evolved? (a) It turns lime water milky. (b) It extinguishes a burning splinter. (c) It dissolves in a solution of sodium hydroxide. (d) It has a pungent odour.",
       "options": [
-        "and (d) only",
-        "and (b) only",
-        ", (b) and (c) only",
-        ", (c) and (d) only"
+        "(a) and (d) only",
+        "(a) and (b) only",
+        "(a), (b) and (c) only",
+        "(b), (c) and (d) only"
       ],
       "correctOptionIndex": 2,
       "explanation": "Gas evolved = CO₂. (a),(b),(c) are all true properties of CO₂. (d) is false — CO₂ is odourless.",
@@ -854,6 +919,7 @@
     },
     {
       "questionText": "कौन-सी विशेषता भारत में संविधान की सर्वोच्चता सुनिश्चित करती है?",
+      "questionTextEn": "Which feature ensures supremacy of the Constitution in India?",
       "options": [
         "Bicameralism",
         "Judicial review",
@@ -867,6 +933,7 @@
     },
     {
       "questionText": "एक उत्तल लेंस अपनी से 50 cm की दूरी पर रखी एक सुई का वास्तविक और उल्टा प्रतिबिंब बनाता है। यदि प्रतिबिंब का आकार वस्तु के आकार के बराबर हो, तो सुई को उत्तल लेंस के सामने कहाँ रखा गया है?",
+      "questionTextEn": "A convex lens forms a real and inverted image of a needle at a distance of 50 cm from it. Where is the needle placed in front of the convex lens if the image is equal to the size of the object?",
       "options": [
         "50 cm",
         "25 cm",
@@ -880,11 +947,12 @@
     },
     {
       "questionText": "सूची-I (प्रसिद्ध व्यक्तित्व) का सूची-II (उपलब्धि/भूमिका) के साथ मिलान कीजिए: (a) सुंदर पिचाई → (i) माइक्रोसॉफ्ट के सी ई ओ (b) सत्य नडेला → (ii) गूगल के सी ई ओ (c) बी.आर. गवई → (iii) भारत के 52वें मुख्य न्यायाधीश (d) संजीव खन्ना → (iv) भारत के 51वें मुख्य न्यायाधीश",
+      "questionTextEn": "Match List-I (Famous Personality) with List-II (Achievement/Role): (a) Sundar Pichai → (i) CEO of Microsoft (b) Satya Nadella → (ii) CEO of Google (c) B.R. Gavai → (iii) 52nd Chief Justice of India (d) Sanjiv Khanna → (iv) 51st Chief Justice of India",
       "options": [
-        "(iii), (b)-(iv), (c)-(i), (d)-(ii)",
-        "(i), (b)-(ii), (c)-(iii), (d)-(iv)",
-        "(ii), (b)-(i), (c)-(iii), (d)-(iv)",
-        "(i), (b)-(ii), (c)-(iv), (d)-(iii)"
+        "(a)-(iii), (b)-(iv), (c)-(i), (d)-(ii)",
+        "(a)-(i), (b)-(ii), (c)-(iii), (d)-(iv)",
+        "(a)-(ii), (b)-(i), (c)-(iii), (d)-(iv)",
+        "(a)-(i), (b)-(ii), (c)-(iv), (d)-(iii)"
       ],
       "correctOptionIndex": 2,
       "explanation": "Sundar Pichai=Google CEO; Satya Nadella=Microsoft CEO; B.R. Gavai=52nd CJI; Sanjiv Khanna=51st CJI.",
@@ -893,6 +961,7 @@
     },
     {
       "questionText": "कौन-सी परियोजना 'सन सिटी' जोधपुर को पीने का पानी प्रदान करती है?",
+      "questionTextEn": "Which project provides drinking water to the 'Sun City' Jodhpur?",
       "options": [
         "Jakham Project",
         "Bisalpur Project",
@@ -906,11 +975,12 @@
     },
     {
       "questionText": "राजस्थान में 'डेयरी क्षेत्र' के संबंध में निम्नलिखित कथनों पर विचार कीजिए: (a) कुल दूध उत्पादन में राजस्थान का भारत में दूसरा स्थान है। (b) 'मुख्यमंत्री दुग्ध उत्पादक संबल योजना' के तहत दूध उत्पादकों को ₹5 प्रति लीटर की सब्सिडी प्रदान की जाती है। (c) राजस्थान सहकारी डेयरी फेडरेशन (आर.सी.डी.एफ.) की स्थापना वर्ष 1977 में की गई थी। (d) 'सरस अमृतम' दूध की गुणवत्ता सुनिश्चित करने के लिए शुरू किया गया एक अभियान है।",
+      "questionTextEn": "Consider the following statements regarding the 'Dairy Sector' in Rajasthan: (a) Rajasthan ranks 2nd in India for total milk production. (b) The 'Mukhyamantri Dugdh Utpadak Sambal Yojana' provides a subsidy of ₹5 per litre to milk producers. (c) The Rajasthan Cooperative Dairy Federation (RCDF) was established in the year 1977. (d) 'Saras Amritam' is a campaign launched to ensure the quality of milk.",
       "options": [
-        ", (b), (c) and (d)",
-        ", (c) and (d) only",
-        ", (c) and (d) only",
-        "and (b) only"
+        "(a), (b), (c) and (d)",
+        "(a), (c) and (d) only",
+        "(b), (c) and (d) only",
+        "(a) and (b) only"
       ],
       "correctOptionIndex": 2,
       "explanation": "Paper marks C (b), (c), (d) only — implying (a) is incorrect (Rajasthan may not rank 2nd). Needs official data confirmation.",
@@ -919,6 +989,7 @@
     },
     {
       "questionText": "8 और 98 के बीच का माध्यानुपाती है:",
+      "questionTextEn": "The mean proportional between 8 and 98 is:",
       "options": [
         "45",
         "42",
@@ -932,6 +1003,7 @@
     },
     {
       "questionText": "भारतीय दंड संहिता (आई.पी.सी.) 1860 को किस कानून ने प्रतिस्थापित किया और 1 जुलाई 2024 को पूर्ण रूप से प्रभावी हुआ?",
+      "questionTextEn": "Which legislation replaced the Indian Penal Code (IPC) 1860 and came into full effect on 1st July 2024?",
       "options": [
         "Digital Personal Data Protection Act",
         "Bharatiya Nagarik Suraksha Sanhita (BNSS)",
@@ -945,6 +1017,7 @@
     },
     {
       "questionText": "बहादुरी, बलिदान और शहादत के लिए पूजित एक लोक देवता जो हाथ में भाला लिए हुए एक घुड़सवार के लोकप्रिय प्रतीक चिन्ह के तौर पर जाना जाता है, उसकी पहचान कीजिए।",
+      "questionTextEn": "A folk deity worshipped for bravery, sacrifice and martyrdom is known for a popular insignia of a horseman with a spear in his hand. Identify the deity:",
       "options": [
         "Tejaji",
         "Pabuji",
@@ -958,6 +1031,7 @@
     },
     {
       "questionText": "भारत की 'हरित क्रांति' में उनकी भूमिका के लिए 2024 में मरणोपरांत 'भारत रत्न' से किसे सम्मानित किया गया?",
+      "questionTextEn": "Who was awarded the 'Bharat Ratna' posthumously in 2024 for his role in the 'Green Revolution' of India?",
       "options": [
         "P.V. Narasimha Rao",
         "Karpoori Thakur",
@@ -971,11 +1045,12 @@
     },
     {
       "questionText": "निम्नलिखित में से राजस्थान के महावीर चक्र विजेताओं की पहचान कीजिए: (a) सूबेदार चूनाराम फगेरिया (b) ब्रिगेडियर रघुवीर सिंह राजावत (c) शहीद सैनिक ढोंकल सिंह (d) शहीद मेजर शैतान सिंह",
+      "questionTextEn": "Identify from the following the Mahavir Chakra winners of Rajasthan: (a) Subedar Choonaram Fageria (b) Brigadier Raghuveer Singh Rajawat (c) Shaheed Soldier Dhonkal Singh (d) Shaheed Major Shaitan Singh",
       "options": [
-        ", (b) and (c) only",
-        "and (a) only",
-        "and (b) only",
-        ", (c) and (d) only"
+        "(a), (b) and (c) only",
+        "(c) and (a) only",
+        "(a) and (b) only",
+        "(b), (c) and (d) only"
       ],
       "correctOptionIndex": 3,
       "explanation": "Paper marks (b),(c),(d) as Mahavir Chakra winners from Rajasthan. Major Shaitan Singh received PVC — this may be an error in the question.",
@@ -984,6 +1059,7 @@
     },
     {
       "questionText": "उस नृत्य रूप की पहचान कीजिए जिसमें नकाबपोश महिलाएँ काँच या तलवार के किनारे पर झूमते हुए अपने सिर पर पीतल के बर्तनों को संतुलित करती हैं।",
+      "questionTextEn": "Identify the dance form in which veiled women balance brass pots on their heads while swaying on top of a glass or edge of a sword:",
       "options": [
         "Terah Taali",
         "Kalbelia",
@@ -997,6 +1073,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सी एक धातु है?",
+      "questionTextEn": "Which of the following is a metal?",
       "options": [
         "Lead",
         "Sulphur",
@@ -1010,11 +1087,12 @@
     },
     {
       "questionText": "निम्नलिखित को प्रशासनिक पदानुक्रम के बढ़ते क्रम में व्यवस्थित कीजिए: (a) तहसील, (b) उप-मंडल, (c) जिला, (d) प्रभाग",
+      "questionTextEn": "Arrange the following in increasing order of administrative hierarchy: (a) Tehsil, (b) Sub-Division, (c) District, (d) Division",
       "options": [
-        ", (a), (c), (d)",
-        ", (b), (c), (d)",
-        ", (b), (d), (c)",
-        ", (a), (d), (c)"
+        "(b), (a), (c), (d)",
+        "(a), (b), (c), (d)",
+        "(a), (b), (d), (c)",
+        "(b), (a), (d), (c)"
       ],
       "correctOptionIndex": 1,
       "explanation": "Hierarchy: Tehsil → Sub-Division → District → Division. Option B: (a),(b),(c),(d).",
@@ -1023,6 +1101,7 @@
     },
     {
       "questionText": "लोहे के औजार मिलने वाली इन जगहों में से कौन-सी जगह भारत में लौह युग की शुरुआत की तारीख तय करने के लिए जरूरी मानी जाती है?",
+      "questionTextEn": "Which of the following sites, yielding iron tools, is considered significant to fix the date for the advent of Iron Age in India?",
       "options": [
         "Sonari (Jhunjhunu)",
         "Jodhpur (Jaipur)",
@@ -1036,6 +1115,7 @@
     },
     {
       "questionText": "मौलिक कर्तव्यों को किस संशोधन द्वारा जोड़ा गया था?",
+      "questionTextEn": "Fundamental Duties were added by which amendment?",
       "options": [
         "86th",
         "24th",
@@ -1049,11 +1129,12 @@
     },
     {
       "questionText": "पुष्पी पादपों में दिखाई देने वाली प्रजनन अवस्थाओं का सही क्रम है: (a) नवोद्भिद्, (b) युग्मक, (c) युग्मनज, (d) भ्रूण",
+      "questionTextEn": "The correct sequence of reproductive stages seen in flowering plants is: (a) Seedling, (b) Gametes, (c) Zygote, (d) Embryo",
       "options": [
-        ", (b), (d), (a)",
-        ", (b), (c), (d)",
-        ", (c), (d), (a)",
-        ", (a), (d), (c)"
+        "(c), (b), (d), (a)",
+        "(a), (b), (c), (d)",
+        "(b), (c), (d), (a)",
+        "(b), (a), (d), (c)"
       ],
       "correctOptionIndex": 2,
       "explanation": "Sequence: Gametes → Zygote → Embryo → Seedling. Option C: (b),(c),(d),(a).",
@@ -1062,6 +1143,7 @@
     },
     {
       "questionText": "जब प्रकाश किरण एक माध्यम से दूसरे माध्यम में जाती है, तो निम्नलिखित में से कौन सा गुण अपरिवर्तित रहता है?",
+      "questionTextEn": "When the light ray travels from one medium to another medium, which of the following property remains unchanged?",
       "options": [
         "Amplitude",
         "Frequency",
@@ -1075,6 +1157,7 @@
     },
     {
       "questionText": "एक वृत्त की त्रिज्या क्या है जिसका क्षेत्रफल दो वृत्तों के क्षेत्रफल के योग के बराबर है जिनकी त्रिज्याएँ 20 cm और 21 cm हैं?",
+      "questionTextEn": "What is the radius of a circle whose area is equal to the sum of the areas of two circles whose radii are 20 cm and 21 cm?",
       "options": [
         "20.5 cm",
         "41 cm",
@@ -1088,6 +1171,7 @@
     },
     {
       "questionText": "ऋग्वेद में उल्लिखित प्राचीन क्षेत्रों के नामों में से, राजस्थान का निम्नलिखित में से कौन-सा भाग 'मारू' से जुड़ा हुआ है?",
+      "questionTextEn": "Among the names of ancient territories mentioned in the Rigveda, which of the following parts of Rajasthan is associated with 'Maru'?",
       "options": [
         "Jodhpur",
         "Jaipur",
@@ -1101,6 +1185,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सा भारत को 'धर्मनिरपेक्ष राज्य' के रूप में वर्णित करता है?",
+      "questionTextEn": "Which of the following describes India as a 'Secular State'?",
       "options": [
         "Preamble",
         "Fundamental Rights",
@@ -1114,6 +1199,7 @@
     },
     {
       "questionText": "राजस्थानी चित्रकला की किस शैली के कलाकारों ने ऐसे पाठ-चित्रण और लघुचित्रों का सृजन किया है, जो दुनिया भर के संग्रहालयों में प्रदर्शन के योग्य हैं?",
+      "questionTextEn": "The artists of which school of Rajasthani painting have produced text illustrations and miniatures worthy of exhibition in the museums world over?",
       "options": [
         "Bundi School of Painting",
         "Ajmer School of Painting",
@@ -1127,6 +1213,7 @@
     },
     {
       "questionText": "राजस्थान का राज्य मानवाधिकार आयोग (एस.एच.आर.सी.) किस वर्ष कार्यशील हुआ?",
+      "questionTextEn": "The State Human Rights Commission (SHRC) of Rajasthan became functional in which year?",
       "options": [
         "2005",
         "1993",
@@ -1140,6 +1227,7 @@
     },
     {
       "questionText": "निम्नलिखित में से मेवाड़ प्रजा मंडल के संस्थापक की पहचान कीजिए।",
+      "questionTextEn": "Identify the founder of Mewar Praja Mandal from the following:",
       "options": [
         "Krishna Dutt",
         "Madharam Vaidya",
@@ -1153,6 +1241,7 @@
     },
     {
       "questionText": "राजस्थान भूमि राजस्व (संशोधन और वैधीकरण) अधिनियम, 2025, मुख्य रूप से किस संस्थान की शक्तियों का विस्तार करने के लिए अधिनियमित किया गया था?",
+      "questionTextEn": "The Rajasthan Land Revenue (Amendment and Validation) Act, 2025, was enacted primarily to expand the powers of which institution?",
       "options": [
         "Bureau of Investment Promotion",
         "RFC (Rajasthan Finance Corporation)",

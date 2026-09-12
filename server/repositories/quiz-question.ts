@@ -8,7 +8,9 @@ export class QuizQuestionRepository {
     questions: {
       order: number;
       questionText: string;
+      questionTextEn?: string;
       options: string[];
+      optionsEn?: string[];
       correctOptionIndex: number;
       explanation?: string;
       marks?: number;
@@ -22,7 +24,9 @@ export class QuizQuestionRepository {
       quizId: quizObjectId,
       order: q.order,
       questionText: q.questionText,
+      questionTextEn: q.questionTextEn,
       options: q.options,
+      optionsEn: q.optionsEn,
       correctOptionIndex: q.correctOptionIndex,
       explanation: q.explanation || "",
       marks: q.marks,
@@ -54,7 +58,9 @@ export class QuizQuestionRepository {
     id: string,
     data: Partial<{
       questionText: string;
+      questionTextEn: string;
       options: string[];
+      optionsEn: string[];
       correctOptionIndex: number;
       explanation: string;
       marks: number | null;

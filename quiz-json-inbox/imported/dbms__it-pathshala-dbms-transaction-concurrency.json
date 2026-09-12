@@ -10,11 +10,18 @@
   "questions": [
     {
       "questionText": "यदि ट्रांजेक्शन A के पास एक शेयर्ड लॉक R है और यदि ट्रांजेक्शन B भी R पर एक शेयर्ड लॉक का अनुरोध करता है, तो यह होगा-",
+      "questionTextEn": "If transaction A holds a shared lock R and if transaction B also requests for a shared lock on R, it will-",
       "options": [
-        "result in a deadlock situation / एक डेडलॉक स्थिति में परिणाम होगा",
-        "immediately be granted / तुरंत प्रदान किया जाएगा",
-        "immediately be rejected / तुरंत अस्वीकार कर दिया जाएगा",
-        "be granted as soon as it is released by A / A द्वारा जारी किए जाते ही प्रदान किया जाएगा"
+        "एक डेडलॉक स्थिति में परिणाम होगा",
+        "तुरंत प्रदान किया जाएगा",
+        "तुरंत अस्वीकार कर दिया जाएगा",
+        "A द्वारा जारी किए जाते ही प्रदान किया जाएगा"
+      ],
+      "optionsEn": [
+        "result in a deadlock situation",
+        "immediately be granted",
+        "immediately be rejected",
+        "be granted as soon as it is released by A"
       ],
       "correctOptionIndex": 1,
       "explanation": "A shared lock (S) is also called a read lock. Multiple transactions can hold a shared lock on the same data item at the same time because they are only reading the data, not modifying it. In contrast, if a transaction holds an exclusive lock (X), no other transaction can acquire any lock (S or X) on it.",
@@ -23,11 +30,18 @@
     },
     {
       "questionText": "दो बैंक खातों x और y से जुड़े निम्नलिखित ट्रांजेक्शन पर विचार करें। read (x); x:=x-50; write (x); read (y); y:=y+50; write (y)। यह बाधा कि खातों x और y का योग स्थिर रहना चाहिए, है-",
+      "questionTextEn": "Consider the following transaction involving two bank accounts x and y. read (x); x:=x-50; write (x); read (y); y:=y+50; write (y). The constraint that the sum of the accounts x and y should remain constant is that of-",
       "options": [
-        "Atomicity / एटोमिसिटी",
-        "Consistency / कंसिस्टेंसी",
-        "Isolation / आइसोलेशन",
-        "Durability / ड्यूरेबिलिटी"
+        "एटोमिसिटी",
+        "कंसिस्टेंसी",
+        "आइसोलेशन",
+        "ड्यूरेबिलिटी"
+      ],
+      "optionsEn": [
+        "Atomicity",
+        "Consistency",
+        "Isolation",
+        "Durability"
       ],
       "correctOptionIndex": 1,
       "explanation": "Consistency guarantees that any business rule or invariant (here, x + y must remain constant) holds true before and after the transaction. The transaction only moves money between accounts; it never creates or destroys money.",
@@ -36,11 +50,18 @@
     },
     {
       "questionText": "मान लीजिए कि एक डेटाबेस सिस्टम पिछली दुर्घटना से उबरते समय फिर से क्रैश हो जाता है। मान लें कि डेटाबेस द्वारा ट्रांजेक्शन के दौरान या रिकवरी के दौरान चेकपॉइंटिंग नहीं की जाती है। निम्नलिखित में से कौन सा/से कथन सही है/हैं?",
+      "questionTextEn": "Suppose a database system crashes again while recovering from a previous crash. Assume checkpointing is not done by the database either during the transactions or during recovery. Which of the following statements is/are correct?",
       "options": [
-        "The same undo and redo list will be used while recovering again. / फिर से रिकवरी करते समय उसी पूर्ववत और फिर से करने की सूची का उपयोग किया जाएगा।",
-        "The system cannot recover any further. / सिस्टम और रिकवरी नहीं कर सकता।",
-        "All the transactions that are already undone and redone will not recovered again. / वे सभी ट्रांजेक्शन जो पहले ही पूर्ववत और फिर से किए जा चुके हैं, फिर से रिकवर नहीं होंगे।",
-        "The database will become inconsistent. / डेटाबेस असंगत हो जाएगा।"
+        "फिर से रिकवरी करते समय उसी पूर्ववत और फिर से करने की सूची का उपयोग किया जाएगा।",
+        "सिस्टम और रिकवरी नहीं कर सकता।",
+        "वे सभी ट्रांजेक्शन जो पहले ही पूर्ववत और फिर से किए जा चुके हैं, फिर से रिकवर नहीं होंगे।",
+        "डेटाबेस असंगत हो जाएगा।"
+      ],
+      "optionsEn": [
+        "The same undo and redo list will be used while recovering again.",
+        "The system cannot recover any further.",
+        "All the transactions that are already undone and redone will not recovered again.",
+        "The database will become inconsistent."
       ],
       "correctOptionIndex": 0,
       "explanation": "Without checkpointing, recovery always scans the log from the beginning to determine the undo and redo lists. If the system crashes again mid-recovery, it simply restarts and recomputes the exact same undo/redo list using the unaffected system logs, ensuring the process is idempotent (repeating it causes no inconsistency).",
@@ -49,11 +70,18 @@
     },
     {
       "questionText": "एक डेटाबेस में ट्रांजेक्शन होना चाहिए-",
+      "questionTextEn": "Transaction in a database should be-",
       "options": [
-        "Atomic / एटोमिक",
-        "Durable / ड्यूरेबल",
-        "Consistent / कंसिस्टेंट",
-        "All options are correct / सभी विकल्प सही हैं"
+        "एटोमिक",
+        "ड्यूरेबल",
+        "कंसिस्टेंट",
+        "सभी विकल्प सही हैं"
+      ],
+      "optionsEn": [
+        "Atomic",
+        "Durable",
+        "Consistent",
+        "All options are correct"
       ],
       "correctOptionIndex": 3,
       "explanation": "A transaction must always follow ACID properties: Atomicity (all or nothing), Consistency (valid state to valid state), Isolation (independent execution), and Durability (permanent once committed). Since the options list three of the four ACID properties, all are correct simultaneously.",
@@ -62,11 +90,18 @@
     },
     {
       "questionText": "ट्रांजेक्शन प्रोसेसिंग के ACID गुणों में, 'C' का अर्थ है",
+      "questionTextEn": "In ACID properties of transactions processing, 'C' stands for",
       "options": [
-        "Consistency / कंसिस्टेंसी",
-        "Cardinality / कार्डिनैलिटी",
-        "Conformity / कन्फर्मिटी",
-        "None of these / इनमें से कोई नहीं"
+        "कंसिस्टेंसी",
+        "कार्डिनैलिटी",
+        "कन्फर्मिटी",
+        "इनमें से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Consistency",
+        "Cardinality",
+        "Conformity",
+        "None of these"
       ],
       "correctOptionIndex": 0,
       "explanation": "Consistency means that a transaction must take the database from one valid (consistent) state to another. No transaction should violate any database integrity constraints or business rules.",
@@ -75,11 +110,18 @@
     },
     {
       "questionText": "एक लॉक की गई डेटाबेस फ़ाइल हो सकती है-",
+      "questionTextEn": "A locked database file can be-",
       "options": [
-        "Accessed by only one user / केवल एक उपयोगकर्ता द्वारा एक्सेस किया गया",
-        "Modified by users with the correct password / सही पासवर्ड वाले उपयोगकर्ताओं द्वारा संशोधित",
-        "Used to hide sensitive information / संवेदनशील जानकारी छिपाने के लिए उपयोग किया जाता है",
-        "Updated by more than one user / एक से अधिक उपयोगकर्ताओं द्वारा अपडेट किया गया"
+        "केवल एक उपयोगकर्ता द्वारा एक्सेस किया गया",
+        "सही पासवर्ड वाले उपयोगकर्ताओं द्वारा संशोधित",
+        "संवेदनशील जानकारी छिपाने के लिए उपयोग किया जाता है",
+        "एक से अधिक उपयोगकर्ताओं द्वारा अपडेट किया गया"
+      ],
+      "optionsEn": [
+        "Accessed by only one user",
+        "Modified by users with the correct password",
+        "Used to hide sensitive information",
+        "Updated by more than one user"
       ],
       "correctOptionIndex": 0,
       "explanation": "Locking a file restricts access so that only one user or transaction can modify it at a given time, preventing data corruption from concurrent writes. By default, when a question says a file is simply 'locked' without specifying shared/exclusive, it implies exclusive lock behavior, meaning single-user access.",
@@ -88,11 +130,18 @@
     },
     {
       "questionText": "निम्नलिखित में से किसमें एक निश्चित अवधि के दौरान डेटाबेस की सामग्री को प्रभावित करने वाली सभी गतिविधियों का पूरा रिकॉर्ड होता है?",
+      "questionTextEn": "Which of the following contains complete record of all activity that affected the contents of a database during a certain period of time?",
       "options": [
-        "Transaction log / ट्रांजेक्शन लॉग",
-        "Query language / क्वेरी भाषा",
-        "Report writer / रिपोर्ट राइटर",
-        "Data manipulation language / डेटा मैनिपुलेशन लैंग्वेज"
+        "ट्रांजेक्शन लॉग",
+        "क्वेरी भाषा",
+        "रिपोर्ट राइटर",
+        "डेटा मैनिपुलेशन लैंग्वेज"
+      ],
+      "optionsEn": [
+        "Transaction log",
+        "Query language",
+        "Report writer",
+        "Data manipulation language"
       ],
       "correctOptionIndex": 0,
       "explanation": "The Transaction Log is a special file that maintains a complete record of every activity or change (insert, update, delete) performed on the database. It records what data changed, when, by which user, and previous/new values. This log is used for recovery, rollback, and auditing purposes.",
@@ -101,11 +150,18 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा परिदृश्य डेटाबेस सिस्टम में एक अप्राप्य त्रुटि का कारण बन सकता है?",
+      "questionTextEn": "Which of the following scenarios may lead to an irrecoverable error in a database system?",
       "options": [
-        "transaction writes a data item after it is read by an uncommitted transaction / एक ट्रांजेक्शन एक डेटा आइटम लिखता है जब उसे एक अनकमिटेड ट्रांजेक्शन द्वारा पढ़ा जाता है",
-        "transaction reads a data item after it is read by an uncommitted transaction / एक ट्रांजेक्शन एक डेटा आइटम पढ़ता है जब उसे एक अनकमिटेड ट्रांजेक्शन द्वारा पढ़ा जाता है",
-        "transaction reads a data item after it is written by a committed transaction / एक ट्रांजेक्शन एक डेटा आइटम पढ़ता है जब उसे एक कमिटेड ट्रांजेक्शन द्वारा लिखा जाता है",
-        "transaction reads a data item after it is written by an uncommitted transaction / एक ट्रांजेक्शन एक डेटा आइटम पढ़ता है जब उसे एक अनकमिटेड ट्रांजेक्शन द्वारा लिखा जाता है"
+        "एक ट्रांजेक्शन एक डेटा आइटम लिखता है जब उसे एक अनकमिटेड ट्रांजेक्शन द्वारा पढ़ा जाता है",
+        "एक ट्रांजेक्शन एक डेटा आइटम पढ़ता है जब उसे एक अनकमिटेड ट्रांजेक्शन द्वारा पढ़ा जाता है",
+        "एक ट्रांजेक्शन एक डेटा आइटम पढ़ता है जब उसे एक कमिटेड ट्रांजेक्शन द्वारा लिखा जाता है",
+        "एक ट्रांजेक्शन एक डेटा आइटम पढ़ता है जब उसे एक अनकमिटेड ट्रांजेक्शन द्वारा लिखा जाता है"
+      ],
+      "optionsEn": [
+        "A transaction writes a data item after it is read by an uncommitted transaction",
+        "A transaction reads a data item after it is read by an uncommitted transaction",
+        "A transaction reads a data item after it is written by a committed transaction",
+        "A transaction reads a data item after it is written by an uncommitted transaction"
       ],
       "correctOptionIndex": 3,
       "explanation": "This situation is called a 'Dirty Read'. If transaction T1 writes (updates) a value but hasn't committed yet, and T2 reads that uncommitted value, then if T1 later aborts, T2 has read data that never truly existed in a valid state. This can make the database inconsistent and irrecoverable, especially if T2 has already committed based on that dirty data.",
@@ -114,11 +170,18 @@
     },
     {
       "questionText": "एक ट्रांजेक्शन के ACID गुण हैं-",
+      "questionTextEn": "ACID properties of a transactions are-",
       "options": [
-        "Atomicity, consistency, isolation, database / एटोमिसिटी, कंसिस्टेंसी, आइसोलेशन, डेटाबेस",
-        "Atomicity, consistency, isolation, durability / एटोमिसिटी, कंसिस्टेंसी, आइसोलेशन, ड्यूरेबिलिटी",
-        "Atomicity, consistency, integrity, durability / एटोमिसिटी, कंसिस्टेंसी, इंटीग्रिटी, ड्यूरेबिलिटी",
-        "Atomicity, consistency, integrity, database / एटोमिसिटी, कंसिस्टेंसी, इंटीग्रिटी, डेटाबेस"
+        "एटोमिसिटी, कंसिस्टेंसी, आइसोलेशन, डेटाबेस",
+        "एटोमिसिटी, कंसिस्टेंसी, आइसोलेशन, ड्यूरेबिलिटी",
+        "एटोमिसिटी, कंसिस्टेंसी, इंटीग्रिटी, ड्यूरेबिलिटी",
+        "एटोमिसिटी, कंसिस्टेंसी, इंटीग्रिटी, डेटाबेस"
+      ],
+      "optionsEn": [
+        "Atomicity, consistency, isolation, database",
+        "Atomicity, consistency, isolation, durability",
+        "Atomicity, consistency, integrity, durability",
+        "Atomicity, consistency, integrity, database"
       ],
       "correctOptionIndex": 1,
       "explanation": "ACID = Atomicity (all-or-nothing execution), Consistency (valid state transitions), Isolation (transactions don't interfere with each other), Durability (committed changes persist permanently). Option B is the only one with all four terms correctly listed.",
@@ -127,11 +190,18 @@
     },
     {
       "questionText": "ट्रांजेक्शन प्रोसेसिंग नीचे दिए गए सभी से जुड़ा है, सिवाय इसके-",
+      "questionTextEn": "Transaction processing is associated with everything below except-",
       "options": [
-        "producing detail, summary, or exception reports / विस्तृत, सारांश, या अपवाद रिपोर्ट तैयार करना",
-        "recording a business activity / एक व्यावसायिक गतिविधि रिकॉर्ड करना",
-        "confirming an action or triggering a response / एक क्रिया की पुष्टि करना या एक प्रतिक्रिया को ट्रिगर करना",
-        "maintaining data / डेटा बनाए रखना"
+        "विस्तृत, सारांश, या अपवाद रिपोर्ट तैयार करना",
+        "एक व्यावसायिक गतिविधि रिकॉर्ड करना",
+        "एक क्रिया की पुष्टि करना या एक प्रतिक्रिया को ट्रिगर करना",
+        "डेटा बनाए रखना"
+      ],
+      "optionsEn": [
+        "producing detail, summary, or exception reports",
+        "recording a business activity",
+        "confirming an action or triggering a response",
+        "maintaining data"
       ],
       "correctOptionIndex": 0,
       "explanation": "Transaction Processing Systems (TPS) primarily record business activities, confirm actions, trigger responses, and maintain/update data in real time. Generating detail, summary, or exception reports is the function of a Management Information System (MIS) or reporting layer built on top of transactional data, not the TPS itself.",
@@ -140,11 +210,18 @@
     },
     {
       "questionText": "एक लॉक जो समवर्ती ट्रांजेक्शन को एक ही तालिका की विभिन्न पंक्तियों तक पहुंचने की अनुमति देता है, उसे कहा जाता है",
+      "questionTextEn": "A lock that allows concurrent transactions' to access different rows of the same table is known as a",
       "options": [
-        "Database-level lock / डेटाबेस-स्तरीय लॉक",
-        "Table-level lock / तालिका-स्तरीय लॉक",
-        "Page-level lock / पृष्ठ-स्तरीय लॉक",
-        "Row-level lock / पंक्ति-स्तरीय लॉक"
+        "डेटाबेस-स्तरीय लॉक",
+        "तालिका-स्तरीय लॉक",
+        "पृष्ठ-स्तरीय लॉक",
+        "पंक्ति-स्तरीय लॉक"
+      ],
+      "optionsEn": [
+        "Database-level lock",
+        "Table-level lock",
+        "Page-level lock",
+        "Row-level lock"
       ],
       "correctOptionIndex": 3,
       "explanation": "Row-level locks are fine-grained, meaning the lock applies only to a specific row, not the whole table or database. This allows maximum concurrency since different transactions can work on different rows of the same table at the same time without blocking each other.",
@@ -153,11 +230,18 @@
     },
     {
       "questionText": "यदि एक ही डेटा सेट पर कई समवर्ती ट्रांजेक्शन निष्पादित किए जाते हैं और दूसरा ट्रांजेक्शन पहले ट्रांजेक्शन के समाप्त होने से पहले डेटाबेस को अपडेट करता है, तो ______ गुण का उल्लंघन होता है और डेटाबेस अब सुसंगत नहीं रहता है।",
+      "questionTextEn": "If several concurrent transactions are executed over the same data set and the second transaction updates the database before the first transaction is finished, the _______ property is violated and the database is no longer consistent.",
       "options": [
-        "Atomicity / एटोमिसिटी",
-        "consistency / कंसिस्टेंसी",
-        "isolation / आइसोलेशन",
-        "Durability / ड्यूरेबिलिटी"
+        "एटोमिसिटी",
+        "कंसिस्टेंसी",
+        "आइसोलेशन",
+        "ड्यूरेबिलिटी"
+      ],
+      "optionsEn": [
+        "Atomicity",
+        "consistency",
+        "isolation",
+        "Durability"
       ],
       "correctOptionIndex": 2,
       "explanation": "Isolation ensures that the execution of one transaction is not interfered with by other concurrently executing transactions. If transaction T2 updates the data before T1 finishes, T1's intermediate state is exposed to T2, which is a violation of Isolation, not Consistency (Consistency is the resulting effect, but the violated property/mechanism is Isolation).",
@@ -166,11 +250,18 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा प्रोटोकॉल कॉन्फ्लिक्ट सीरियलाइजेबिलिटी और डेडलॉक से सुरक्षा सुनिश्चित करता है?",
+      "questionTextEn": "Which of the following protocols ensures conflict serializability and safety from deadlocks?",
       "options": [
-        "Two-phase locking protocol / टू-फेज लॉकिंग प्रोटोकॉल",
-        "Time-stamp ordering protocol / टाइम-स्टैम्प ऑर्डरिंग प्रोटोकॉल",
-        "Graph based protocol / ग्राफ आधारित प्रोटोकॉल",
-        "Both Two-phase locking protocol and Time-stamp ordering protocol / टू-फेज लॉकिंग प्रोटोकॉल और टाइम-स्टैम्प ऑर्डरिंग प्रोटोकॉल दोनों"
+        "टू-फेज लॉकिंग प्रोटोकॉल",
+        "टाइम-स्टैम्प ऑर्डरिंग प्रोटोकॉल",
+        "ग्राफ आधारित प्रोटोकॉल",
+        "टू-फेज लॉकिंग प्रोटोकॉल और टाइम-स्टैम्प ऑर्डरिंग प्रोटोकॉल दोनों"
+      ],
+      "optionsEn": [
+        "Two-phase locking protocol",
+        "Time-stamp ordering protocol",
+        "Graph based protocol",
+        "Both Two-phase locking protocol and Time-stamp ordering protocol"
       ],
       "correctOptionIndex": 1,
       "explanation": "Time-stamp ordering protocol assigns each transaction a unique timestamp and ensures operations execute in timestamp order, guaranteeing conflict serializability. Since transactions are aborted/restarted rather than made to wait when conflicts occur, there's no waiting involved, so deadlocks cannot occur. Two-Phase Locking (2PL) ensures serializability but transactions can wait for locks, which can lead to deadlocks.",
@@ -179,11 +270,18 @@
     },
     {
       "questionText": "यदि किसी डेटाबेस में कोई ट्रांजेक्शन किया जाता है और कमिट किया जाता है, तो परिवर्तनों को ट्रांजेक्शन की पिछली स्थिति में ले जाया जाता है-",
+      "questionTextEn": "If a transaction is performed in a database and committed, the changes are taken to the previous state of transaction by-",
       "options": [
-        "Flashback / फ्लैशबैक",
-        "Rollback / रोलबैक",
-        "Both Flashback and Rollback / फ्लैशबैक और रोलबैक दोनों",
-        "Cannot be done / नहीं किया जा सकता"
+        "फ्लैशबैक",
+        "रोलबैक",
+        "फ्लैशबैक और रोलबैक दोनों",
+        "नहीं किया जा सकता"
+      ],
+      "optionsEn": [
+        "Flashback",
+        "Rollback",
+        "Both Flashback and Rollback",
+        "Cannot be done"
       ],
       "correctOptionIndex": 2,
       "explanation": "Once a transaction is committed, the changes are saved permanently in the database. Standard ROLLBACK can only undo an UNCOMMITTED transaction — it has no effect after commit. However, some advanced databases (such as Oracle) provide a Flashback feature that allows a committed transaction's effects to be reverted to a prior state. Since the question specifically asks about reverting a transaction AFTER it has been committed, Flashback is the technically correct mechanism, not Rollback.",
@@ -192,11 +290,18 @@
     },
     {
       "questionText": "व्यवसाय के दैनिक संचालन में निम्नलिखित में से कौन सी सूचना प्रणाली का उपयोग किया जाता है?",
+      "questionTextEn": "In the daily running of the business which of the following information systems are used?",
       "options": [
-        "Operational planning systems / ऑपरेशनल प्लानिंग सिस्टम",
-        "Transaction Processing systems (TPS) / ट्रांजैक्शन प्रोसेसिंग सिस्टम (TPS)",
-        "Process control system / प्रोसेस कंट्रोल सिस्टम",
-        "Office automation system (OAS) / ऑफिस ऑटोमेशन सिस्टम (OAS)"
+        "ऑपरेशनल प्लानिंग सिस्टम",
+        "ट्रांजैक्शन प्रोसेसिंग सिस्टम (TPS)",
+        "प्रोसेस कंट्रोल सिस्टम",
+        "ऑफिस ऑटोमेशन सिस्टम (OAS)"
+      ],
+      "optionsEn": [
+        "Operational planning systems",
+        "Transaction Processing systems (TPS)",
+        "Process control system",
+        "Office automation system (OAS)"
       ],
       "correctOptionIndex": 1,
       "explanation": "TPS is the system most heavily used in daily operations because it records real-time, routine business transactions like sales, purchases, payments, and bookings (e.g., banking, retail systems).",
@@ -205,11 +310,18 @@
     },
     {
       "questionText": "डेटा को ....... में स्टोर, रिट्रीव और अपडेट किया जाता है।",
+      "questionTextEn": "The data is stored, retrieved and updated in .......",
       "options": [
-        "OLAP / ओएलएपी",
-        "OLTP / ओएलटीपी",
-        "Online processing / ऑनलाइन प्रोसेसिंग",
-        "POP3 / पीओपी3"
+        "ओएलएपी",
+        "ओएलटीपी",
+        "ऑनलाइन प्रोसेसिंग",
+        "पीओपी3"
+      ],
+      "optionsEn": [
+        "OLAP",
+        "OLTP",
+        "Online processing",
+        "POP3"
       ],
       "correctOptionIndex": 1,
       "explanation": "OLTP (Online Transaction Processing) is the process by which data is typically stored, retrieved, and updated in real-time, commonly used in banking, retail, and booking systems.",
@@ -218,11 +330,18 @@
     },
     {
       "questionText": "ट्रांजेक्शन के दौरान स्थिरता बनाए रखने के लिए डेटाबेस प्रदान करता है-",
+      "questionTextEn": "In order to maintain the consistency during transactions databases provides-",
       "options": [
-        "Commit / कमिट",
-        "Atomic / एटॉमिक",
-        "Flashback / फ्लैश बैक",
-        "Rollback / रोलबैक"
+        "कमिट",
+        "एटॉमिक",
+        "फ्लैश बैक",
+        "रोलबैक"
+      ],
+      "optionsEn": [
+        "Commit",
+        "Atomic",
+        "Flashback",
+        "Rollback"
       ],
       "correctOptionIndex": 0,
       "explanation": "Databases provide special mechanisms to maintain consistency during transactions. Commit permanently saves data upon successful completion, while Rollback reverts data to its prior state upon error or failure. Both work together as part of the ACID consistency guarantee, with the book emphasizing Commit as the primary answer here.",
@@ -231,11 +350,18 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सी कॉन्करेंसी कंट्रोल स्कीम सीरियलाइजेबिलिटी प्रॉपर्टी पर आधारित नहीं है?",
+      "questionTextEn": "Which of the following concurrency control schemes is not based on the serializability property?",
       "options": [
-        "Time-stamp based locking / टाइम-स्टैम्प बेस्ड लॉकिंग",
-        "Graph-based locking / ग्राफ-बेस्ड लॉकिंग",
-        "Two-phase locking / टू-फेज़ लॉकिंग",
-        "None of these / इनमें से कोई नहीं"
+        "टाइम-स्टैम्प बेस्ड लॉकिंग",
+        "ग्राफ-बेस्ड लॉकिंग",
+        "टू-फेज़ लॉकिंग",
+        "इनमें से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Time-stamp based locking",
+        "Graph-based locking",
+        "Two-phase locking",
+        "None of these"
       ],
       "correctOptionIndex": 3,
       "explanation": "Time-stamp ordering ensures serializability via timestamps. Graph-based protocols use a partial ordering on data items to prevent deadlocks while maintaining serializability. Two-Phase Locking (2PL) ensures conflict serializability via lock phases. Since all three are serializability-based, none is an exception.",
@@ -244,11 +370,18 @@
     },
     {
       "questionText": "ट्रांजेक्शन T2 एक डेटाबेस ऑब्जेक्ट A को पढ़ सकता है जिसे किसी अन्य ट्रांजेक्शन T1 द्वारा मॉडिफाई किया गया है जो अभी तक कमिट नहीं हुआ है, ऐसी अवधारणा को कहा जाता है-",
+      "questionTextEn": "The transaction T2 could read a database object A that has been modified by another transaction T1 which has not yet committed, such concept is called as-",
       "options": [
-        "dirty read / डर्टी रीड",
-        "dirty write / डर्टी राइट",
-        "lazy read / लेज़ी रीड",
-        "lazy write / लेज़ी राइट"
+        "डर्टी रीड",
+        "डर्टी राइट",
+        "लेज़ी रीड",
+        "लेज़ी राइट"
+      ],
+      "optionsEn": [
+        "dirty read",
+        "dirty write",
+        "lazy read",
+        "lazy write"
       ],
       "correctOptionIndex": 0,
       "explanation": "Dirty Read occurs when T2 reads an object modified by T1, but T1 hasn't committed yet. This is an unsafe (dirty) state because if T1 later rolls back, T2 has read data that never officially existed in the database.",
@@ -257,11 +390,18 @@
     },
     {
       "questionText": "एक ट्रांजेक्शन द्वारा किए गए परिवर्तन कमिट पॉइंट तक दूसरों को दिखाई नहीं देते हैं, इस प्रॉपर्टी को कहा जाता है:",
+      "questionTextEn": "The changes made by one transaction are not visible to others till the commit point, this property is called:",
       "options": [
-        "Atomicity / ऑटोमिसिटी",
-        "Consistency / कंसिस्टेंसी",
-        "Isolation / आइसोलेशन",
-        "Durability / ड्यूरेबिलिटी"
+        "ऑटोमिसिटी",
+        "कंसिस्टेंसी",
+        "आइसोलेशन",
+        "ड्यूरेबिलिटी"
+      ],
+      "optionsEn": [
+        "Atomicity",
+        "Consistency",
+        "Isolation",
+        "Durability"
       ],
       "correctOptionIndex": 2,
       "explanation": "Isolation ensures that transactions execute as if they were the only one running, with intermediate (uncommitted) changes hidden from other concurrent transactions until the commit point is reached.",
@@ -270,11 +410,18 @@
     },
     {
       "questionText": "निम्नलिखित क्रिया पर विचार करें: Transaction Commit; Roll back; रोलबैक क्या करता है?",
+      "questionTextEn": "Consider the following action: Transaction Commit; Roll back; What does rollback do?",
       "options": [
-        "Unclose the transaction before commit / कमिट से पहले ट्रांजैक्शन को अनक्लोज़ करें",
-        "Clears all transactions / सभी ट्रांजैक्शन को क्लियर करता है",
-        "Reclose the transactions before commit / कमिट से पहले ट्रांजैक्शन को रीक्लोज़ करें",
-        "Not action / कोई एक्शन नहीं"
+        "कमिट से पहले ट्रांजैक्शन को अनक्लोज़ करें",
+        "सभी ट्रांजैक्शन को क्लियर करता है",
+        "कमिट से पहले ट्रांजैक्शन को रीक्लोज़ करें",
+        "कोई एक्शन नहीं"
+      ],
+      "optionsEn": [
+        "Unclose the transaction before commit",
+        "Clears all transactions",
+        "Reclose the transactions before commit",
+        "Not action"
       ],
       "correctOptionIndex": 3,
       "explanation": "Rollback is an action that undoes (reverses) all changes made during a transaction, but it only works if the transaction has not yet been committed. Since options A, B, and C use incorrect or nonsensical terminology ('unclose', 'reclose') to describe this, the book's answer indicates none of the listed descriptions is technically accurate.",
@@ -283,11 +430,18 @@
     },
     {
       "questionText": "एक लॉक्ड फ़ाइल हो सकती है? केवल एक उपयोगकर्ता द्वारा एक्सेस की जा सकती है",
+      "questionTextEn": "A locked file can be? Accessed by only one user",
       "options": [
-        "Accessed by only one user / केवल एक उपयोगकर्ता द्वारा एक्सेस की जा सकती है",
-        "Modified by users with correct password / सही पासवर्ड वाले उपयोगकर्ताओं द्वारा मॉडिफाई की जा सकती है",
-        "Is used to hide sensitive information / संवेदनशील जानकारी छिपाने के लिए उपयोग की जाती है",
-        "Both (b) and (c) / (b) और (c) दोनों"
+        "केवल एक उपयोगकर्ता द्वारा एक्सेस की जा सकती है",
+        "सही पासवर्ड वाले उपयोगकर्ताओं द्वारा मॉडिफाई की जा सकती है",
+        "संवेदनशील जानकारी छिपाने के लिए उपयोग की जाती है",
+        "(b) और (c) दोनों"
+      ],
+      "optionsEn": [
+        "Accessed by only one user",
+        "Modified by users with correct password",
+        "Is used to hide sensitive information",
+        "Both (b) and (c)"
       ],
       "correctOptionIndex": 0,
       "explanation": "A locked file means access is restricted — only one user can access it while it's exclusively locked. This protects data integrity and prevents unwanted concurrent modification. By default, 'locked' implies exclusive lock semantics.",
@@ -296,11 +450,18 @@
     },
     {
       "questionText": "ALL or NONE संदर्भित करता है:",
+      "questionTextEn": "ALL or NONE refers to:",
       "options": [
-        "Consistency / कंसिस्टेंसी",
-        "Isolation / आइसोलेशन",
-        "Durability / ड्यूरेबिलिटी",
-        "Atomicity / एटोमिसिटी"
+        "कंसिस्टेंसी",
+        "आइसोलेशन",
+        "ड्यूरेबिलिटी",
+        "एटोमिसिटी"
+      ],
+      "optionsEn": [
+        "Consistency",
+        "Isolation",
+        "Durability",
+        "Atomicity"
       ],
       "correctOptionIndex": 3,
       "explanation": "Atomicity ensures a transaction is treated as a single indivisible unit — it either fully succeeds (ALL) or fully fails with no partial changes (NONE). If any part of the transaction fails, the entire transaction is rolled back.",
@@ -309,11 +470,18 @@
     },
     {
       "questionText": "निम्नलिखित कथन को दर्शाने वाला सही शब्द क्या होगा: \"ट्रांजेक्शन कमिट होने के बाद डेटाबेस में परिवर्तन बने रहने चाहिए\"",
+      "questionTextEn": "What would be the correct term denoting the following statement: \"Changes to the database must persist after transaction is committed\"",
       "options": [
-        "Consistency / कंसिस्टेंसी",
-        "Isolation / आइसोलेशन",
-        "Atomicity / एटोमिसिटी",
-        "Durability / ड्यूरेबिलिटी"
+        "कंसिस्टेंसी",
+        "आइसोलेशन",
+        "एटोमिसिटी",
+        "ड्यूरेबिलिटी"
+      ],
+      "optionsEn": [
+        "Consistency",
+        "Isolation",
+        "Atomicity",
+        "Durability"
       ],
       "correctOptionIndex": 3,
       "explanation": "Durability guarantees that once a transaction commits, its changes are permanent and will survive any subsequent system failure, since the data is written to non-volatile (stable) storage.",
@@ -322,11 +490,18 @@
     },
     {
       "questionText": "डेटा को _____ में स्टोर, रिट्रीव और अपडेट किया जा सकता है:",
+      "questionTextEn": "The data can be stored, retrieved and updated in:",
       "options": [
-        "OLAP / ओएलएपी",
-        "OLTP / ओएलटीपी",
-        "SMTP / एसएमटीपी",
-        "FTP / एफटीपी"
+        "ओएलएपी",
+        "ओएलटीपी",
+        "एसएमटीपी",
+        "एफटीपी"
+      ],
+      "optionsEn": [
+        "OLAP",
+        "OLTP",
+        "SMTP",
+        "FTP"
       ],
       "correctOptionIndex": 1,
       "explanation": "OLTP systems are used to store, retrieve, and update data in real-time, commonly applied in banking, booking systems, etc. SMTP and FTP are unrelated protocols (for email and file transfer respectively).",
@@ -335,11 +510,18 @@
     },
     {
       "questionText": "टू फेज कमिट प्रोटोकॉल के संबंध में निम्नलिखित में से कौन सा सही है?",
+      "questionTextEn": "Which of the following is correct with respect to Two phase commit protocol?",
       "options": [
-        "Ensures serializability / सीरियलाइजेबिलिटी सुनिश्चित करता है",
-        "Prevents Deadlock / डेडलॉक को रोकता है",
-        "Detects Deadlock / डेडलॉक का पता लगाता है",
-        "Recover from Deadlock / डेडलॉक से रिकवर करता है"
+        "सीरियलाइजेबिलिटी सुनिश्चित करता है",
+        "डेडलॉक को रोकता है",
+        "डेडलॉक का पता लगाता है",
+        "डेडलॉक से रिकवर करता है"
+      ],
+      "optionsEn": [
+        "Ensures serializability",
+        "Prevents Deadlock",
+        "Detects Deadlock",
+        "Recover from Deadlock"
       ],
       "correctOptionIndex": 0,
       "explanation": "2PC ensures all sites in a distributed database commit or rollback a transaction together (atomic commitment), maintaining a consistent state across all participating sites since the final commit doesn't happen until every site agrees ('yes' vote). 2PC has nothing to do with deadlock detection, prevention, or recovery — those are handled by separate concurrency control protocols.",
@@ -348,11 +530,18 @@
     },
     {
       "questionText": "ट्रांजैक्शन प्रोसेसिंग नीचे दिए गए सभी से जुड़ा है, सिवाय-",
+      "questionTextEn": "Transaction processing is associated with everything below except-",
       "options": [
-        "Conforming an action or triggering a response / किसी क्रिया की पुष्टि करना या प्रतिक्रिया शुरू करना",
-        "Producing detail summary or exception report / विवरण सारांश या अपवाद रिपोर्ट तैयार करना",
-        "Recording a business activity / एक व्यावसायिक गतिविधि रिकॉर्ड करना",
-        "Maintaining a data / डेटा बनाए रखना"
+        "किसी क्रिया की पुष्टि करना या प्रतिक्रिया शुरू करना",
+        "विवरण सारांश या अपवाद रिपोर्ट तैयार करना",
+        "एक व्यावसायिक गतिविधि रिकॉर्ड करना",
+        "डेटा बनाए रखना"
+      ],
+      "optionsEn": [
+        "Conforming an action or triggering a response",
+        "Producing detail summary or exception report",
+        "Recording a business activity",
+        "Maintaining a data"
       ],
       "correctOptionIndex": 1,
       "explanation": "Transaction Processing's main job is to record business activities, update/maintain data, and confirm actions or trigger responses. Generating detail, summary, or exception reports is performed by a Management Information System (MIS), not by transaction processing itself.",
@@ -361,11 +550,18 @@
     },
     {
       "questionText": "बैक-अप/क्षतिग्रस्त स्टोरेज ग्रुप्स की रिकवरी/मरम्मत के लिए समय-समय पर सहेजे जाने वाले लॉग को कहा जाता है-",
+      "questionTextEn": "The log that is required to be saved periodically for recovery/repair of backed-up/damaged storage groups is called-",
       "options": [
-        "Active Directory Transaction Log / एक्टिव डायरेक्टरी ट्रांजेक्शन लॉग",
-        "Transaction Log / ट्रांजेक्शन लॉग",
-        "Storage Information Log / स्टोरेज इंफॉर्मेशन लॉग",
-        "Storage Group Log / सेकंडरी स्टोरेज ग्रुप लॉग"
+        "एक्टिव डायरेक्टरी ट्रांजेक्शन लॉग",
+        "ट्रांजेक्शन लॉग",
+        "स्टोरेज इंफॉर्मेशन लॉग",
+        "सेकंडरी स्टोरेज ग्रुप लॉग"
+      ],
+      "optionsEn": [
+        "Active Directory Transaction Log",
+        "Transaction Log",
+        "Storage Information Log",
+        "Storage Group Log"
       ],
       "correctOptionIndex": 1,
       "explanation": "The Transaction Log holds a record of every change made to the database. It is periodically saved/serviced for recovery and repair purposes — if data storage gets corrupted or damaged, this log allows the system to recover by replaying or undoing recorded transactions.",
@@ -374,11 +570,18 @@
     },
     {
       "questionText": "ट्रांजैक्शन प्रोसेसिंग नीचे दिए गए सभी से जुड़ा है, सिवाय-",
+      "questionTextEn": "Two-Phase Commit Protocol (2PC) - additional details (continuation of Q26/explanation context)",
       "options": [
-        "Ensures synchronization across all sites for commit or rollback / सभी साइट्स पर कमिट या रोलबैक के लिए सिंक्रोनाइज़ेशन सुनिश्चित करता है",
-        "Not applicable / लागू नहीं",
-        "Not applicable / लागू नहीं",
-        "Not applicable / लागू नहीं"
+        "सभी साइट्स पर कमिट या रोलबैक के लिए सिंक्रोनाइज़ेशन सुनिश्चित करता है",
+        "लागू नहीं",
+        "लागू नहीं",
+        "लागू नहीं"
+      ],
+      "optionsEn": [
+        "Ensures synchronization across all sites for commit or rollback",
+        "Not applicable",
+        "Not applicable",
+        "Not applicable"
       ],
       "correctOptionIndex": 0,
       "explanation": "Two-Phase Commit Protocol (2PC) is an atomic commitment protocol that synchronizes all parties in a distributed database to commit a transaction together or roll it back together, ensuring the system remains in a consistent state. The final commit does not happen until all sites vote 'yes'.",
@@ -387,11 +590,18 @@
     },
     {
       "questionText": "वह घटना जिसमें एक सिंगल ट्रांजैक्शन विफलता ट्रांजैक्शन रोलबैक की एक श्रृंखला की ओर ले जाती है, कहलाती है:",
+      "questionTextEn": "The phenomenon in which a single transaction failure leads to a series of transaction rollbacks is called:",
       "options": [
-        "Concurrent rollback / कॉनकरेंट रोलबैक",
-        "Continuous rollback / कंटीन्युअस रोलबैक",
-        "Cascading rollback / कैस्केडिंग रोलबैक",
-        "Conflict rollback / कनफ्लिक्ट रोलबैक"
+        "कॉनकरेंट रोलबैक",
+        "कंटीन्युअस रोलबैक",
+        "कैस्केडिंग रोलबैक",
+        "कनफ्लिक्ट रोलबैक"
+      ],
+      "optionsEn": [
+        "Concurrent rollback",
+        "Continuous rollback",
+        "Cascading rollback",
+        "Conflict rollback"
       ],
       "correctOptionIndex": 2,
       "explanation": "Cascading Rollback occurs when one transaction fails and rolls back, and other transactions that had read its (uncommitted) data are also forced to roll back, since they read invalid/dirty data. This can cascade through multiple dependent transactions, like dominoes falling.",
@@ -400,11 +610,18 @@
     },
     {
       "questionText": "यह सुनिश्चित करने के लिए कि सिस्टम विफलताओं के बावजूद डेटाबेस एक सुसंगत स्थिति में बना रहे, एक डेटाबेस सिस्टम में होना चाहिए:",
+      "questionTextEn": "To ensure that database remains in a consistent state despite system failures, a database system should have:",
       "options": [
-        "Query processor / क्वेरी प्रोसेसर",
-        "Storage manager / स्टोरेज मैनेजर",
-        "Transaction manager / ट्रांजेक्शन मैनेजर",
-        "General manager / जनरल मैनेजर"
+        "क्वेरी प्रोसेसर",
+        "स्टोरेज मैनेजर",
+        "ट्रांजेक्शन मैनेजर",
+        "जनरल मैनेजर"
+      ],
+      "optionsEn": [
+        "Query processor",
+        "Storage manager",
+        "Transaction manager",
+        "General manager"
       ],
       "correctOptionIndex": 2,
       "explanation": "The Transaction Manager ensures all transactions follow ACID properties, keeps the database in a consistent state even during system failures or errors, and triggers rollback/recovery when needed.",
@@ -413,11 +630,18 @@
     },
     {
       "questionText": "हार्डवेयर इम्प्लीमेंटेशन जो म्यूचुअल एक्सक्लूज़न प्रदान करता है, वह है-",
+      "questionTextEn": "The hardware implementation which provides mutual exclusion is-",
       "options": [
-        "Semaphores / सेमाफोर",
-        "Test and set instruction / टेस्ट एंड सेट इंस्ट्रक्शन",
-        "Both options / दोनों विकल्प",
-        "None of the options / कोई भी विकल्प नहीं"
+        "सेमाफोर",
+        "टेस्ट एंड सेट इंस्ट्रक्शन",
+        "दोनों विकल्प",
+        "कोई भी विकल्प नहीं"
+      ],
+      "optionsEn": [
+        "Semaphores",
+        "Test and set instruction",
+        "Both options",
+        "None of the options"
       ],
       "correctOptionIndex": 1,
       "explanation": "Test-and-Set Instruction is a hardware-level atomic instruction used to implement mutual exclusion by atomically reading and modifying a memory location in a single, uninterruptible step. Semaphores are a software-level synchronization technique (often implemented using such hardware instructions), not a hardware mechanism themselves.",
@@ -426,11 +650,18 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा सिस्टम कस्टमर-ओरिएंटेड है और क्लर्क, क्लाइंट और आईटी प्रोफेशनल्स द्वारा ट्रांजेक्शन और क्वेरी प्रोसेसिंग के लिए उपयोग किया जाता है?",
+      "questionTextEn": "Which one of the following systems is customer-oriented and is used for transaction and query processing by Clerks, Clients and IT professionals?",
       "options": [
-        "OLAP / ओएलएपी",
-        "OLTP / ओएलटीपी",
-        "ROLAP / आरओएलएपी",
-        "HOLAP / एचओएलएपी"
+        "ओएलएपी",
+        "ओएलटीपी",
+        "आरओएलएपी",
+        "एचओएलएपी"
+      ],
+      "optionsEn": [
+        "OLAP",
+        "OLTP",
+        "ROLAP",
+        "HOLAP"
       ],
       "correctOptionIndex": 1,
       "explanation": "OLTP is a customer-oriented system used for routine, real-time transactions like banking, ticket booking, retail systems, etc., and is used by clerks, clients, and IT professionals for data entry, query processing, and transaction handling. OLAP, ROLAP, and HOLAP are analytical systems used for reporting and business intelligence, not day-to-day transaction processing.",
@@ -439,11 +670,18 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा स्टेट ट्रांजीशन तब होता है जब ट्रांजैक्शन को रोल बैक कर दिया गया हो और डेटाबेस ट्रांजीशन के शुरू होने से पहले की स्थिति में रिस्टोर कर दिया गया हो?",
+      "questionTextEn": "Which one of the following state transition is made when the transaction has been rolled back and the database is restored to the state prior to the start of the transition?",
       "options": [
-        "Active → Partially Committed / एक्टिव → पार्शियली कमिटेड",
-        "Active → Committed / एक्टिव → कमिटेड",
-        "Active → Aborted / एक्टिव → अबॉर्टेड",
-        "Partially Committed → Committed / पार्शियली कमिटेड → कमिटेड"
+        "एक्टिव → पार्शियली कमिटेड",
+        "एक्टिव → कमिटेड",
+        "एक्टिव → अबॉर्टेड",
+        "पार्शियली कमिटेड → कमिटेड"
+      ],
+      "optionsEn": [
+        "Active → Partially Committed",
+        "Active → Committed",
+        "Active → Aborted",
+        "Partially Committed → Committed"
       ],
       "correctOptionIndex": 2,
       "explanation": "The standard transaction state diagram includes: Active → Partially Committed → Committed (success path), or Active/Partially Committed → Failed → Aborted (failure/rollback path). When a transaction is rolled back and the database is restored to its state before the transaction started, the transition is Active → Aborted.",
@@ -452,11 +690,18 @@
     },
     {
       "questionText": "कई SQL ट्रांजैक्शंस के निष्पादन द्वारा उत्पन्न एक शेड्यूल पर विचार करें, जिनमें से प्रत्येक में READ ONLY एक्सेस-मोड है। निम्नलिखित में से किसकी गारंटी है?",
+      "questionTextEn": "Consider a schedule generated by the execution of several SQL transactions, each of which has READ ONLY access-mode. Which of the following is guaranteed?",
       "options": [
-        "conflict-serializable / कॉन्फ्लिक्ट-सीरियलाइजेबल",
-        "serializable / सीरियलाइजेबल",
-        "recoverable / रिकवरेबल",
-        "All the given options / दिए गए सभी विकल्प"
+        "कॉन्फ्लिक्ट-सीरियलाइजेबल",
+        "सीरियलाइजेबल",
+        "रिकवरेबल",
+        "दिए गए सभी विकल्प"
+      ],
+      "optionsEn": [
+        "conflict-serializable",
+        "serializable",
+        "recoverable",
+        "All the given options"
       ],
       "correctOptionIndex": 3,
       "explanation": "When every transaction has READ ONLY access mode, no transaction ever writes/modifies data. Without any writes, there are no conflicts (no RW or WW conflicts possible — only RR which never conflicts), so the schedule is automatically conflict-serializable. Since conflict-serializable implies serializable, and with no writes there's nothing to recover/undo, the schedule is also trivially recoverable. Hence all three properties are guaranteed.",
@@ -465,11 +710,18 @@
     },
     {
       "questionText": "निम्नलिखित उदाहरण है............: T1:R(X),T2:R(X),T2:W(X),T1:W(X), T2:Commit, T1:Commit",
+      "questionTextEn": "The following example is a ...........: T1:R(X),T2:R(X),T2:W(X),T1:W(X), T2:Commit, T1:Commit",
       "options": [
-        "Serializable schedule and it is strict / सीरियलाइज़ेबल शेड्यूल और यह स्ट्रिक्ट है",
-        "not serializable schedule and it's not strict / सीरियलाइज़ेबल शेड्यूल नहीं है और यह स्ट्रिक्ट नहीं है",
-        "Serializable schedule, but it's not strict / सीरियलाइज़ेबल शेड्यूल, लेकिन यह स्ट्रिक्ट नहीं है",
-        "not serializable schedule, but it is strict / सीरियलाइज़ेबल शेड्यूल नहीं है, लेकिन यह स्ट्रिक्ट है"
+        "सीरियलाइज़ेबल शेड्यूल और यह स्ट्रिक्ट है",
+        "सीरियलाइज़ेबल शेड्यूल नहीं है और यह स्ट्रिक्ट नहीं है",
+        "सीरियलाइज़ेबल शेड्यूल, लेकिन यह स्ट्रिक्ट नहीं है",
+        "सीरियलाइज़ेबल शेड्यूल नहीं है, लेकिन यह स्ट्रिक्ट है"
+      ],
+      "optionsEn": [
+        "Serializable schedule and it is strict",
+        "not serializable schedule and it's not strict",
+        "Serializable schedule, but it's not strict",
+        "not serializable schedule, but it is strict"
       ],
       "correctOptionIndex": 2,
       "explanation": "Examining the schedule: T1 reads X, T2 reads X, T2 writes X (uncommitted), T1 writes X (overwriting T2's uncommitted write), T2 commits, T1 commits. The conflicts are: T1.R(X)→T2.W(X) [T2 writes after T1 reads] and T2.W(X)→T1.W(X) [T1 writes after T2's write]. This creates a cycle in the precedence graph (T1→T2 and T2→T1), which by the conflict-serializability test (acyclic precedence graph required) indicates the schedule may NOT be conflict-serializable. Additionally, since T1 writes to X while T2's prior write to X is still uncommitted, the schedule is also NOT strict. This question has internal inconsistency between the book's stated answer and standard precedence-graph analysis — flagged for review.",
@@ -478,12 +730,20 @@
     },
     {
       "questionText": "_____ कमाण्ड transaction द्वारा किए गए अपडेट को डेटाबेस में स्थायी बनाता है।",
+      "questionTextEn": "_____ command makes the updates performed by the transaction permanent in the database.",
       "options": [
-        "ROLLBACK / रोलबैक",
-        "COMMIT / कमिट",
-        "TRUNCATE / ट्रंकेट",
-        "More than one of the above / उपयुक्त में से एक से अधिक",
-        "None of the above / उपयुक्त में से कोई नहीं"
+        "रोलबैक",
+        "कमिट",
+        "ट्रंकेट",
+        "उपयुक्त में से एक से अधिक",
+        "उपयुक्त में से कोई नहीं"
+      ],
+      "optionsEn": [
+        "ROLLBACK",
+        "COMMIT",
+        "TRUNCATE",
+        "More than one of the above",
+        "None of the above"
       ],
       "correctOptionIndex": 1,
       "explanation": "COMMIT permanently saves all changes made during a transaction. ROLLBACK does the opposite — it undoes changes by reverting to the prior state. TRUNCATE is a DDL command that deletes all rows from a table, unrelated to transaction persistence.",
@@ -492,12 +752,20 @@
     },
     {
       "questionText": "DBMS द्वारा तैनात तकनीक के अनुसार निम्नलिखित में से कौन-सा सही है?",
+      "questionTextEn": "Which of the following is correct according to the technology deployed by DBMS?",
       "options": [
-        "Pointers are used to maintain transactional integrity and consistency / पॉइंटर्स का उपयोग लेनदेन संबंधी अखंडता और स्थिरता बनाए रखने के लिए किया जाता है",
-        "Cursors are used to maintain transactional integrity and consistency / कर्सर का उपयोग लेनदेन संबंधी अखंडता और स्थिरता बनाए रखने के लिए किया जाता है",
-        "Locks are used to maintain transactional integrity and consistency / लॉक्स का उपयोग लेनदेन संबंधी अखंडता और स्थिरता बनाए रखने के लिए किया जाता है",
-        "More than one of the above / उपयुक्त में से एक से अधिक",
-        "None of the above / उपयुक्त में से कोई नहीं"
+        "पॉइंटर्स का उपयोग लेनदेन संबंधी अखंडता और स्थिरता बनाए रखने के लिए किया जाता है",
+        "कर्सर का उपयोग लेनदेन संबंधी अखंडता और स्थिरता बनाए रखने के लिए किया जाता है",
+        "लॉक्स का उपयोग लेनदेन संबंधी अखंडता और स्थिरता बनाए रखने के लिए किया जाता है",
+        "उपयुक्त में से एक से अधिक",
+        "उपयुक्त में से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Pointers are used to maintain transactional integrity and consistency",
+        "Cursors are used to maintain transactional integrity and consistency",
+        "Locks are used to maintain transactional integrity and consistency",
+        "More than one of the above",
+        "None of the above"
       ],
       "correctOptionIndex": 2,
       "explanation": "Locking Protocol: when multiple users access data simultaneously, DBMS uses locks to control access. If a user is writing/modifying data, the DBMS locks that data so other users cannot modify it until the first operation completes, keeping data consistent. Pointers are memory address references, and cursors are used to iterate over query result sets row-by-row — neither relates to transactional integrity enforcement.",

@@ -10,6 +10,7 @@
   "questions": [
     {
       "questionText": "कक्षा में किसी भी विषय से संबंधित कठिन अवधारणाओं को समझने संबंधी समस्याओं को तुरंत हल करने के लिए किस प्रकार का शोध किया जा सकता है?",
+      "questionTextEn": "Which type of research can be done for the solution of problem related to understanding of difficult concepts in the class?",
       "options": [
         "Case study",
         "Action research",
@@ -23,6 +24,7 @@
     },
     {
       "questionText": "विद्यार्थियों में 'समीक्षात्मक चिंतन' को बढ़ाने के लिए, निम्नलिखित में से कौन सी विधि सर्वाधिक प्रभावशाली है?",
+      "questionTextEn": "To increase the 'Critical thinking' ability among students, which of the following teaching method is most effective?",
       "options": [
         "Project based teaching learning",
         "Lecture method",
@@ -36,6 +38,7 @@
     },
     {
       "questionText": "आपके ध्यान में आया कि आपकी कक्षा के दो विद्यार्थी हमेशा कक्षा प्रबंधन में कठिनाई पैदा करते हैं। आप क्या कदम उठाएंगे?",
+      "questionTextEn": "You have realised that two students of your class always create a problem in classroom management. What efforts would be made by you?",
       "options": [
         "Ask them to stand and punish them",
         "Observe them continuously by assigning them small projects",
@@ -49,6 +52,7 @@
     },
     {
       "questionText": "'निबंधात्मक प्रश्नों' का अनुप्रयोग निम्न में से किसकी जाँच हेतु किया जाता है?",
+      "questionTextEn": "What are the applications of 'Essay Questions'?",
       "options": [
         "Check person's ability to make comparison",
         "Apply principles of new situations",
@@ -62,6 +66,7 @@
     },
     {
       "questionText": "स्नेहा को ठीक से याद है कि उसके पिता का जन्मदिन 16 जून से पहले लेकिन 11 जून के बाद है, जबकि, उसके छोटे भाई को ठीक से याद है कि उनके पिता का जन्मदिन 13 जून के बाद लेकिन 18 जून से पहले है और उनके बड़े भाई को ठीक से याद है कि उनके पिता का जन्मदिन जून में किसी सम तारीख को है। जून में किस सही तारीख को निश्चित रूप से उनके पिता का जन्मदिन है?",
+      "questionTextEn": "Sneha correctly remembers that her father's birthday is before 16th June but after 11th June, whereas, her younger brother correctly remembers that their father's birthday is after 13th June but before 18th June and her elder brother correctly remembers that their father's birthday is on an even date. On what date in June is definitely their father's birthday?",
       "options": [
         "16th",
         "12th",
@@ -75,6 +80,7 @@
     },
     {
       "questionText": "P, Q, R, S, T और U एक पंक्ति में उत्तर दिशा में मुँह करके बैठे हुए हैं। R, P और T के बीच बैठा है। S अंतिम छोर पर नहीं है। Q, T के ठीक दायीं ओर बैठा है, U दायीं छोर पर नहीं है। R के ठीक बाएँ कौन है?",
+      "questionTextEn": "P, Q, R, S, T and U are sitting in a row facing North. R is sitting between P and T, S is not sitting at the end. Q is sitting right to T, U is not at the right end. Then who is sitting immediate left of R?",
       "options": [
         "P",
         "Q",
@@ -88,6 +94,7 @@
     },
     {
       "questionText": "दिए गए कथनों से कौन सा निष्कर्ष निकाला जा सकता है? कथन: (I) शिक्षण एक कला है। (II) चित्र बनाना भी एक कला है। निष्कर्ष: (I) सभी कलाकार शिक्षक हैं। (II) सभी कलाकार चित्र बनाना जानते हैं।",
+      "questionTextEn": "Which conclusion can be drawn from the given statements? Statements: (I) Teaching is an art. (II) Drawing is also an art. Conclusions: (I) All artists are teachers. (II) All artists know how to draw pictures.",
       "options": [
         "Only conclusion (I) follows",
         "Only conclusion (II) follows",
@@ -101,6 +108,7 @@
     },
     {
       "questionText": "निम्न संख्या श्रेणी में गलत पद ज्ञात कीजिए — 325, 259, 204, 160, 125, 105, 94",
+      "questionTextEn": "Find the wrong term of the following number series — 325, 259, 204, 160, 125, 105, 94",
       "options": [
         "259",
         "204",
@@ -114,6 +122,7 @@
     },
     {
       "questionText": "यदि 'हवा' को 'हरा' कहा जाता है, 'हरे' को 'लाल' कहा जाता है, 'लाल' को 'समुद्र' कहा जाता है, 'समुद्र' को 'नीला' कहा जाता है, 'नीले' को 'जल' कहा जाता है और 'जल' को 'गुलाबी' कहा जाता है, तो घास का रंग क्या होता है?",
+      "questionTextEn": "If 'air' is called 'green', 'green' is called 'red', 'red' is called 'sea', 'sea' is called 'blue', 'blue' is called 'water' and 'water' is called 'pink', then what is the colour of grass?",
       "options": [
         "Green",
         "Air",
@@ -127,6 +136,7 @@
     },
     {
       "questionText": "निम्नलिखित प्रश्न में शब्दों के कुछ जोड़े दिए गए हैं, जिनमें से एक को छोड़कर सभी जोड़ियों में शब्दों के बीच एक निश्चित संबंध रखते हैं। विषम जोड़ी चुनें।",
+      "questionTextEn": "In the following question, certain pairs of words are given, out of which the words in all pairs except one bear a certain relationship. Choose the odd pair.",
       "options": [
         "Crime : Punishment",
         "Judgement : Advocate",
@@ -140,6 +150,7 @@
     },
     {
       "questionText": "एक बायनरी ट्री T का पोस्ट ऑर्डर ट्रेवर्सल क्या होगा, यदि T का प्रीऑर्डर तथा इनऑर्डर ट्रेवर्सल क्रमशः ABCDEF तथा BADCFE दिए गए हैं?",
+      "questionTextEn": "What will be post order traversal of a binary Tree T, if preorder and inorder traversals of T are given by ABCDEF and BADCFE respectively?",
       "options": [
         "BDFECA",
         "BCFDEA",
@@ -153,6 +164,7 @@
     },
     {
       "questionText": "निम्न में से कौन सी ई-मेल प्रोटोकॉल, इन्टरनेट के माध्यम से संदेशों को स्त्रोत से गंतव्य तक पहुँचाने में प्रयुक्त होती है?",
+      "questionTextEn": "Which of the following e-mail protocol is used to move messages through the internet from source to destination?",
       "options": [
         "SMTP",
         "IMAP",
@@ -166,6 +178,7 @@
     },
     {
       "questionText": "निम्न में से कौन सा एक Sans Serif फॉन्ट है?",
+      "questionTextEn": "Which of the following is a Sans Serif font?",
       "options": [
         "Arial",
         "Times New Roman",
@@ -179,6 +192,7 @@
     },
     {
       "questionText": "निम्न में से कौन सा एनिमेशन के फॉर्मेट से संबंधित नहीं है?",
+      "questionTextEn": "Which of the following is not related to format of animation?",
       "options": [
         "Flic Format (FLI/FLC)",
         "MPEG (.mpg)",
@@ -192,6 +206,7 @@
     },
     {
       "questionText": "निम्न में से कौन सा एक ऑडियो फाइल का उचित फाइल एक्सटेंशन नहीं है?",
+      "questionTextEn": "Which of the following is not a valid file extension of an audio file?",
       "options": [
         ".wav",
         ".mp3",
@@ -205,11 +220,12 @@
     },
     {
       "questionText": "कुंजी के संबंध में निम्नलिखित कथनों पर विचार करें — (I) सुपर की एक एट्रिब्यूट या एट्रिब्यूट्स का संयोजन है जो RDBMS टेबल में रिकॉर्ड्स की यूनिक पहचान करती है। (II) कैंडिडेट की, सुपर की का एक उपसमुच्चय होती है। (III) सभी सुपर कीज, कैंडिडेट कीज होती हैं लेकिन सभी कैंडिडेट की, सुपर कीज नहीं होती हैं।",
+      "questionTextEn": "Consider the following statements regarding key — (I) A super key is an attribute or combination of attributes that uniquely identifies records in a RDBMS table. (II) A candidate key is a subset of a super key. (III) All super keys are candidate keys but vice versa is not true.",
       "options": [
         "Only (I) is true",
         "Only (II) is true",
-        "and (III) are true",
-        "and (II) are true"
+        "(I) and (III) are true",
+        "(I) and (II) are true"
       ],
       "correctOptionIndex": 3,
       "explanation": "(I) is the standard definition of super key — TRUE. (II) candidate keys are minimal super keys, so they're effectively a 'type' satisfying the super key condition — TRUE. (III) is FALSE because it states the relationship backwards: every candidate key is a super key, not every super key is a candidate key.",
@@ -218,6 +234,7 @@
     },
     {
       "questionText": "निम्न में से कौन सा NoSQL का प्रकार नहीं है?",
+      "questionTextEn": "Which is not a type of NoSQL?",
       "options": [
         "CouchDB",
         "MongoDB",
@@ -231,6 +248,7 @@
     },
     {
       "questionText": "XML के अनुप्रयोग के बारे में सबसे सटीक कथन की पहचान करें।",
+      "questionTextEn": "Identify the most accurate statement about the application of XML.",
       "options": [
         "XML must be used to produce XML and HTML output.",
         "XML cannot specify or contain presentation information.",
@@ -244,6 +262,7 @@
     },
     {
       "questionText": "RDBMS में मैटेरियलाइज्ड व्यू को बनाये रखने के लिए क्या इस्तेमाल किया जाता है?",
+      "questionTextEn": "To maintain materialized view in RDBMS, we use -",
       "options": [
         "Trigger",
         "Pointer",
@@ -257,6 +276,7 @@
     },
     {
       "questionText": "उपसर्ग अभिव्यक्ति +, -, *, 3, 2, /, 8, 4, 1 का परिणाम क्या होगा?",
+      "questionTextEn": "What is the outcome of the prefix expression +, -, *, 3, 2, /, 8, 4, 1?",
       "options": [
         "12",
         "11",
@@ -270,6 +290,7 @@
     },
     {
       "questionText": "निम्नलिखित में से किस कथन में त्रुटि है?",
+      "questionTextEn": "Which of the following statement contains an error?",
       "options": [
         "Select * from emp where empid = 10003;",
         "Select empid from emp where empid = 1006;",
@@ -283,6 +304,7 @@
     },
     {
       "questionText": "एन्क्रिप्शन में रूपांतरित होने वाली जानकारी क्या है?",
+      "questionTextEn": "The information that gets transformed in encryption is -",
       "options": [
         "Plain text",
         "Parallel text",
@@ -296,10 +318,11 @@
     },
     {
       "questionText": "DFD में 'ब्लैक होल' क्या है?",
+      "questionTextEn": "A black hole in a DFD is -",
       "options": [
-        "data store with no in-bound flows",
-        "data store with only inbound flows",
-        "data store with more than one in-bound flow",
+        "A data store with no in-bound flows",
+        "A data store with only inbound flows",
+        "A data store with more than one in-bound flow",
         "None of these"
       ],
       "correctOptionIndex": 1,
@@ -309,6 +332,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा एक सॉफ्टवेयर प्रोसेस मॉडल नहीं है?",
+      "questionTextEn": "Which one of the following is not a valid Software process model?",
       "options": [
         "Linear sequential model",
         "Prototype model",
@@ -322,6 +346,7 @@
     },
     {
       "questionText": "माइक्रोसॉफ्ट पावरपॉइंट 2016 में निम्नलिखित में से कौन सा एक वैध मास्टर व्यू विकल्प नहीं है?",
+      "questionTextEn": "Which of the following is not a valid Master view option in Microsoft PowerPoint 2016?",
       "options": [
         "Notes master",
         "Outline master",
@@ -335,6 +360,7 @@
     },
     {
       "questionText": "एक्सेल 2016 में, यदि आप कॉलम G और H के बीच तीन कॉलम जोड़ना चाहते हैं तो आप क्या करेंगे?",
+      "questionTextEn": "In Excel 2016, if you want to insert 3 columns between Column G and H you would -",
       "options": [
         "Select column G and right click and select insert for 3 times",
         "Select column H and right click and select insert for three times",
@@ -348,6 +374,7 @@
     },
     {
       "questionText": "एक IP पैकेट पहले 8 बिट्स के रूप में 01000010 के साथ आया है। निम्नलिखित में से कौन सा सही है?",
+      "questionTextEn": "An IP packet has arrived with the first 8 bits as 01000010. Which of the following is correct?",
       "options": [
         "The number of hops this packet can travel is 2",
         "The total no. of bytes in header is 16 bytes",
@@ -361,6 +388,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा एक कॉम्बिनेशनल लॉजिक सर्किट है जिसमें 2ⁿ इनपुट लाइनें और एक सिंगल आउटपुट लाइन है?",
+      "questionTextEn": "Which of the following is a combinational logic circuit that has 2ⁿ input lines and a single output line?",
       "options": [
         "Multiplexer",
         "Demultiplexer",
@@ -374,6 +402,7 @@
     },
     {
       "questionText": "वेब पेज ट्रांसफर के लिए आमतौर पर इस्तेमाल किया जाने वाला प्रोटोकॉल है -",
+      "questionTextEn": "The commonly used protocol for webpage transfer is -",
       "options": [
         "HTML",
         "HTTP",
@@ -387,11 +416,12 @@
     },
     {
       "questionText": "WiFi और Wi-Max तकनीक के संबंध में सही कथन है/हैं — (I) वायरलेस कनेक्शन बनाने के लिए WiFi रेडियो तरंगों का उपयोग करता है, WiMax कनेक्शन देने के लिए स्पेक्ट्रम का उपयोग करता है। (II) WiFi को IEEE 802.11x मानकों के तहत परिभाषित किया गया है, जबकि WiMax को IEEE 802.16y मानकों के तहत परिभाषित किया गया है। (III) WiMax, WiFi की तुलना में तुलनात्मक रूप से बड़े क्षेत्र को कवर करता है।",
+      "questionTextEn": "The correct statement regarding WiFi and Wi-Max technology is/are - (I) WiFi uses radio waves to create wireless connection, WiMax uses spectrum to deliver connection. (II) WiFi is defined under IEEE 802.11x standards, while WiMax is defined under IEEE 803.16y standards. (III) WiMax covers comparatively larger area than WiFi.",
       "options": [
         "Only (II)",
         "Only (I) and (II)",
         "Only (I) and (III)",
-        ", (II) and (III)"
+        "(I), (II) and (III)"
       ],
       "correctOptionIndex": 3,
       "explanation": "All three statements are factually consistent with standard networking knowledge: WiFi=802.11 family for short range; WiMax=802.16 family for long range/metro coverage. Hence all three are true.",
@@ -400,6 +430,7 @@
     },
     {
       "questionText": "XML के संबंध में निम्नलिखित में से कौन से कथन सही हैं? (i) इसका उपयोग केवल डाटा डिस्प्ले करने के लिए किया जाता है। (ii) XML का उपयोग डाटाबेस के तौर पर भी किया जा सकता है। (iii) XPATH का उपयोग सर्वर के IP एड्रेस स्टोर करने के लिए किया जाता है। (iv) XLL डेफिनिशन का उपयोग किसी अन्य डॉक्यूमेंट्स के साथ लिंक की उल्लिखित करने के लिए किया जाता है।",
+      "questionTextEn": "Which of the following are correct statements with respect to XML? (i) It is used to display data only. (ii) XML can be used as a database. (iii) XPATH is used to store the IP address of the server. (iv) XLL definition is used along with XML to specify the links with other documents.",
       "options": [
         "Only (i) and (ii)",
         "Only (i), (ii) and (iii)",
@@ -413,6 +444,7 @@
     },
     {
       "questionText": "दिए गए बायनरी सर्च ट्री में, यदि रूट नोड को हटा दिया जाए, तो नया रूट क्या हो सकता है?",
+      "questionTextEn": "Consider the given binary search tree, if the root node will be deleted, the new root node can be -",
       "options": [
         "43 or 48",
         "63 or 81",
@@ -426,6 +458,7 @@
     },
     {
       "questionText": "दिए गए समीकरण के लिए उपसर्ग संकेतन क्या होगा? (a+(b/c)) *(d^e-f)",
+      "questionTextEn": "What would be the prefix notation for the given equation? (a+(b/c)) *(d^e-f)",
       "options": [
         "+a*/bcdef",
         "-a*b/c^def",
@@ -439,6 +472,7 @@
     },
     {
       "questionText": "स्टैक के अतिप्रवाह (overflow) का कारण नहीं बनने वाला top का अधिकतम मूल्य क्या होगा? #define SIZE 11 ; struct STACK { int arr[SIZE]; int top = -1; }",
+      "questionTextEn": "Consider the following stack implemented using stack: #define SIZE 11; struct STACK { int arr[SIZE]; int top = -1; } What would be the maximum value of top that does not cause the overflow of the stack?",
       "options": [
         "8",
         "9",
@@ -452,6 +486,7 @@
     },
     {
       "questionText": "उपरोक्त स्टैक पर विचार करें — शीर्ष का अधिकतम मूल्य क्या होगा जो स्टैक के अतिप्रवाह का कारण नहीं बनेगा?",
+      "questionTextEn": "Consider the implemented stack on the same definitions as above — what would be the maximum value of top that does not cause the overflow of the stack?",
       "options": [
         "8",
         "9",
@@ -465,6 +500,7 @@
     },
     {
       "questionText": "MS-Excel/PowerPoint में हम वर्तमान स्लाइड से प्रारंभ करके स्लाइड शो चला सकते हैं, ............ कुंजी का उपयोग करते हुए तथा शुरुआत से ............ कुंजी के प्रयोग से।",
+      "questionTextEn": "In MS-PowerPoint we can run slide show from beginning using ........... key and from current slide using ........ key.",
       "options": [
         "F5, F7",
         "F6, F8",
@@ -478,6 +514,7 @@
     },
     {
       "questionText": "स्लाइड को पुनर्व्यवस्थित करने के लिए MS-PowerPoint में निम्न में से कौन सा व्यू सबसे उपयुक्त है?",
+      "questionTextEn": "Which of the following view is most suitable to rearrange slide in MS-PowerPoint?",
       "options": [
         "Slide Sorter",
         "Notes Page",
@@ -491,6 +528,7 @@
     },
     {
       "questionText": "SD और MMC का संदर्भ में क्या तात्पर्य है?",
+      "questionTextEn": "In context of memory card, SD and MMC stands for -",
       "options": [
         "Secure Digital, Multimedia Card",
         "Secure Data, Memory Management Card",
@@ -504,6 +542,7 @@
     },
     {
       "questionText": "MS-Word में 'Gutter' किससे संबंधित है?",
+      "questionTextEn": "In MS-Word 'Gutter' is related to -",
       "options": [
         "Orientation",
         "Margins",
@@ -517,6 +556,7 @@
     },
     {
       "questionText": "MS-Word के संदर्भ में रिक्त स्थान की पूर्ति करें — 'एक डॉक्यूमेंट में किसी विशिष्ट स्थान को नामांकित करने के लिए ............. बनाएँ।'",
+      "questionTextEn": "In context of MS-Word, fill in the blank - 'Create ............... to assign a name to a specific point in a document'",
       "options": [
         "Clip Art",
         "Cross-reference",
@@ -530,6 +570,7 @@
     },
     {
       "questionText": "MS-Word डॉक्यूमेंट में सजावटी टेक्स्ट को क्या कहते हैं?",
+      "questionTextEn": "Decorative text in MS-Word document is called -",
       "options": [
         "Bookmark",
         "WordArt",
@@ -543,6 +584,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन एक सिस्टम सॉफ्टवेयर नहीं है?",
+      "questionTextEn": "Which of the following is not a system software?",
       "options": [
         "Programming language translators",
         "Utility programs",
@@ -556,6 +598,7 @@
     },
     {
       "questionText": "निम्नलिखित में से भंडारण की सबसे बड़ी इकाई कौन सी है?",
+      "questionTextEn": "Which is the largest unit of storage among the following?",
       "options": [
         "Terabyte",
         "Kilobyte",
@@ -569,6 +612,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा पहली पीढ़ी का कंप्यूटर नहीं है?",
+      "questionTextEn": "Which of the following is not a first generation computer?",
       "options": [
         "ENIAC",
         "PDP-11",
@@ -582,6 +626,7 @@
     },
     {
       "questionText": "बड़ी मात्रा में प्राप्त चेकों के प्रबंधन के लिए बैंकिंग उद्योग द्वारा निम्न में से किसका उपयोग किया जाता है?",
+      "questionTextEn": "Which of the following is used by banking industry to handle large volume of cheques?",
       "options": [
         "Digitizer",
         "MICR",
@@ -595,6 +640,7 @@
     },
     {
       "questionText": "यदि तीन थ्रेड एक ही समय में एक वस्तु को साझा करने का प्रयास कर रहे हैं, तो इस परिदृश्य में कौन सी स्थिति उत्पन्न होगी?",
+      "questionTextEn": "If three threads are trying to share a single object at the same time which condition will arise in the scenario?",
       "options": [
         "Time-lapse",
         "Critical situation",
@@ -608,6 +654,7 @@
     },
     {
       "questionText": "रिलेशनल डाटाबेस में न्यूनतम सुपर कीज को ............... के रूप में जाना जाता है।",
+      "questionTextEn": "In relational database minimal super keys are known as -",
       "options": [
         "Primary keys",
         "Candidate keys",
@@ -621,6 +668,7 @@
     },
     {
       "questionText": "डिसीजन टेबल में, बाएँ-नीचे के चतुर्थांश (quadrant) को क्या कहा जाता है?",
+      "questionTextEn": "In decision table the left-lower quadrant is called -",
       "options": [
         "Condition entry",
         "Condition stub",
@@ -634,6 +682,7 @@
     },
     {
       "questionText": "सूचना संग्रहण के संदर्भ में, रैंकिंग स्केल प्रश्न उत्तरदाताओं से क्या पूछते हैं?",
+      "questionTextEn": "In context of information gathering, ranking scale questions ask the respondents to -",
       "options": [
         "Choose one among given answer choices",
         "Rank list of items in order of importance",
@@ -647,6 +696,7 @@
     },
     {
       "questionText": "एक रिलेशन जिसमें प्रत्येक नॉन-की एट्रिब्यूट प्राइमरी कुंजी पर पूर्ण रूप से आश्रित/निर्भर हो और जिसमें कोई ट्रांजिटिव डिपेंडेंसी (निर्भरता) न हो, वह है -",
+      "questionTextEn": "A relation in which every non-key attribute is fully functionally dependent on the primary key and which has no transitive dependencies is in -",
       "options": [
         "5NF",
         "3NF",
@@ -660,6 +710,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा सॉफ्टवेयर जटिलता (complexity) का माप है?",
+      "questionTextEn": "Which one is measure of software complexity?",
       "options": [
         "Number of lines of code (LOC)",
         "Number of man years",
@@ -673,6 +724,7 @@
     },
     {
       "questionText": "निम्नलिखित में से किस क्रम में परीक्षण स्तर किए जाते हैं?",
+      "questionTextEn": "The test levels are performed in which of the following order?",
       "options": [
         "Unit, Integration, System, Acceptance",
         "It is based on nature of the project",
@@ -686,6 +738,7 @@
     },
     {
       "questionText": "जो परीक्षण किसी एक विशेष मॉड्यूल के परीक्षण पर अत्यधिक ध्यान केंद्रित करता है, वह है -",
+      "questionTextEn": "Which testing focuses heavily on testing of one particular module?",
       "options": [
         "Gorilla testing",
         "Fuzz testing",
@@ -699,6 +752,7 @@
     },
     {
       "questionText": "सिस्टम स्टडी प्रोजेक्ट के लिए पहला कदम है -",
+      "questionTextEn": "The first step to the system study project is to -",
       "options": [
         "Define system performance criteria",
         "Describe information needs",
@@ -712,6 +766,7 @@
     },
     {
       "questionText": "मेमोरी-प्रोसेसर गति असंतुलन को न्यूनतम करने के लिए निम्नलिखित में से किस मेमोरी का उपयोग किया जाता है?",
+      "questionTextEn": "Which of the following memory is used to minimize memory-processor speed mismatch?",
       "options": [
         "UVEPROM",
         "Flash memory",
@@ -725,6 +780,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सी विधियाँ Java में string बनाएँगी? I: String S = \"Hello Java\"; II: String S2 = new String(\"Hello Java\");",
+      "questionTextEn": "Which of the following methods will create string in Java? I : String S = \"Hello Java\"; II : String S2 = new String (\"Hello Java\");",
       "options": [
         "Only I",
         "Only II",
@@ -738,6 +794,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा लाइन और पेज प्रिंटर क्रमशः हैं?",
+      "questionTextEn": "Which of the following are line and page printer respectively?",
       "options": [
         "Laser Printer, Dot-Matrix Printer",
         "Drum Printer, Band Printer",
@@ -751,6 +808,7 @@
     },
     {
       "questionText": "यदि SQL कमांड DELETE FROM EMPLOYEE; 'n' टपल वाले रिलेशन EMPLOYEE पर निष्पादित की जाती है, तो EMPLOYEE रिलेशन से ............... हट जाएंगे।",
+      "questionTextEn": "If SQL command DELETE FROM EMPLOYEE; is executed on relation EMPLOYEE having 'n' tuple in it, ........... will be deleted from relation EMPLOYEE.",
       "options": [
         "Zero tuples",
         "Only first tuple",
@@ -764,6 +822,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा SQL में स्कीमा परिवर्तन कथनों का वैध युग्म है?",
+      "questionTextEn": "Which of the following is valid pair of schema change statements in SQL?",
       "options": [
         "DELETE, ALTER",
         "DROP, UPDATE",
@@ -777,6 +836,7 @@
     },
     {
       "questionText": "सत्य कथन का चुनाव करें — I: बायनरी सर्च, लीनियर सर्च की तुलना में तेज होती है। II: बायनरी सर्च उन सभी इनपुट लिस्ट पर लागू नहीं की जा सकती जिन पर लीनियर सर्च लागू की जा सकती है।",
+      "questionTextEn": "Choose true statement - I: Binary search is faster than linear search. II: Binary search may not be applied on all the input lists on which linear search can be applied.",
       "options": [
         "Only I",
         "Only II",
@@ -790,6 +850,7 @@
     },
     {
       "questionText": "LB और UB एक लीनियर एरे LA के निम्न और ऊपरी सीमा हैं। निम्नलिखित एल्गोरिथम पर विचार करें — 1. K=LB से UB तक दोहराएँ, LA[K] पर PROCESS लागू करें। 2. Exit. एल्गोरिथम एरे LA को ............... करता है।",
+      "questionTextEn": "LB and UB are the lower and upper bound of a linear array LA. Consider the following algorithm - 1. Repeat for K = LB to UB apply PROCESS to LA[K]. 2. Exit. The algorithm ............... the array LA.",
       "options": [
         "sorts",
         "searches",
@@ -803,10 +864,11 @@
     },
     {
       "questionText": "रिलेशनल बीजगणित के संदर्भ में, निम्नलिखित में से कौन से यूनरी ऑपरेटर हैं? 1. सिलेक्ट 2. प्रोजेक्ट 3. यूनियन 4. प्रोडक्ट",
+      "questionTextEn": "In context with Relational Algebra, which of the following are Unary operators? 1. Select 2. Project 3. Union 4. Product",
       "options": [
-        "and 2 only",
-        "and 4 only",
-        "and 2 vs 4",
+        "1 and 2 only",
+        "2 and 4 only",
+        "1 and 2 vs 4",
         "All are binary"
       ],
       "correctOptionIndex": 0,
@@ -816,6 +878,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा डाटाबेस ऑब्जेक्ट भौतिक रूप से मौजूद नहीं है?",
+      "questionTextEn": "Which of the following database object does not physically exist?",
       "options": [
         "Base table",
         "Index",
@@ -829,11 +892,12 @@
     },
     {
       "questionText": "निम्नलिखित का मिलान करें — सूची-I: (a) DDL (b) DML (c) TCL (d) बायनरी ऑपरेशन; सूची-II: (i) LOCK TABLE (ii) COMMIT (iii) Natural Difference (iv) REVOKE",
+      "questionTextEn": "Match the following - List-I: (a) DDL (b) DML (c) TCL (d) Binary operation; List-II: (i) LOCK TABLE (ii) COMMIT (iii) Natural Difference (iv) REVOKE",
       "options": [
-        "(ii), b-(i), c-(iii), d-(iv)",
-        "(i), b-(iv), c-(ii), d-(iii)",
-        "(iii), b-(ii), c-(i), d-(iv)",
-        "(iv), b-(i), c-(ii), d-(iii)"
+        "a-(ii), b-(i), c-(iii), d-(iv)",
+        "a-(i), b-(iv), c-(ii), d-(iii)",
+        "a-(iii), b-(ii), c-(i), d-(iv)",
+        "a-(iv), b-(i), c-(ii), d-(iii)"
       ],
       "correctOptionIndex": 1,
       "explanation": "COMMIT (TCL) and Natural Difference (binary relational-algebra operation) are unambiguous matches. The DDL/DML assignment of LOCK TABLE and REVOKE follows this specific question's apparent categorization scheme rather than the strictest standard SQL command classification (where REVOKE is normally DCL, not DML).",
@@ -842,6 +906,7 @@
     },
     {
       "questionText": "ट्यूपल रिलेशनल कैलकुलस में P1 → P2 किसके समतुल्य है?",
+      "questionTextEn": "In tuple relational calculus P1 → P2 is equivalent to -",
       "options": [
         "¬P1 ∨ P2",
         "P1 ∨ P2",
@@ -855,6 +920,7 @@
     },
     {
       "questionText": "रिलेशनल डेटा में हेर-फेर करने के लिए ऑपरेशंस का मूल सेट गठित करने वाला निम्नलिखित में से कौन सा है?",
+      "questionTextEn": "Which of the following operations constitute a basic set of operations for manipulating relational data?",
       "options": [
         "Predicate calculus",
         "Relational calculus",
@@ -868,6 +934,7 @@
     },
     {
       "questionText": "नेटवर्क लेयर फायरवॉल ............... के रूप में कार्य करता है।",
+      "questionTextEn": "Network layer firewall works as a -",
       "options": [
         "Frame filter",
         "Packet filter",
@@ -881,6 +948,7 @@
     },
     {
       "questionText": "............... एक मेलिशियस सॉफ्टवेयर है, जो किसी OS की नियमित कार्यात्मकता को बदल देता है, टारगेट सिस्टम पर पूर्ण नियंत्रण कर, पीड़ित के सिस्टम एडमिनिस्ट्रेटर की भांति कार्य करता है।",
+      "questionTextEn": "............... is malicious software that alters the regular functionality of an OS, takes full control of the targeted system and acts as the system administrator on the victim's system.",
       "options": [
         "Spyware",
         "Virus",
@@ -894,10 +962,11 @@
     },
     {
       "questionText": "हैक्टिविज्म ............... है।",
+      "questionTextEn": "Hacktivism is -",
       "options": [
-        "process of break into systems and dig out its information and make it public",
+        "a process of break into systems and dig out its information and make it public",
         "gaining access to systems with an intention to fix the identified weaknesses",
-        "test technique for an existing internet infrastructure and to find its loopholes",
+        "a test technique for an existing internet infrastructure and to find its loopholes",
         "the act of hacking a computer system for politically or socially motivated purpose"
       ],
       "correctOptionIndex": 3,
@@ -907,6 +976,7 @@
     },
     {
       "questionText": "हैकर्स द्वारा फ्री कॉल करने के लिए उपयोग की जाने वाली सबसे पुरानी फोन हैकिंग तकनीक की पहचान करें।",
+      "questionTextEn": "Identify the oldest phone hacking technique used by hackers to make free calls.",
       "options": [
         "Spamming",
         "Phreaking",
@@ -920,6 +990,7 @@
     },
     {
       "questionText": "एक RAM चिप की क्षमता 1024×8 बिट्स (1K×8) है। 1K×8 RAM से 16K×16 RAM बनाने के लिए आवश्यक न्यूनतम लाइन वाले 2×4 डिकोडर्स की संख्या क्या है?",
+      "questionTextEn": "A RAM chip has a capacity of 1024×8 bits (1K×8). The no. of 2×4 decoders with enable line needed to construct a 16K×16 RAM from 1K×8 RAM is -",
       "options": [
         "4",
         "5",
@@ -933,6 +1004,7 @@
     },
     {
       "questionText": "एक टाइनी बूटस्ट्रैप लोडर प्रोग्राम ............... में स्थित होता है।",
+      "questionTextEn": "A tiny bootstrap loader program is situated in -",
       "options": [
         "Hard disk",
         "ROM",
@@ -946,6 +1018,7 @@
     },
     {
       "questionText": "वाई-फाई हैकिंग की प्रक्रिया में आमतौर पर निम्नलिखित में से किसका उपयोग किया जाता है?",
+      "questionTextEn": "Which one of the following is usually used in the process of Wi-Fi hacking?",
       "options": [
         "Aircrack-ng",
         "Wireshark",
@@ -959,8 +1032,9 @@
     },
     {
       "questionText": "............... एन्कोडिंग योजना में, प्रत्येक 24 बिट चार 6 बिट खंड बन जाते हैं और अंततः 32 बिट के रूप में भेजे जाते हैं।",
+      "questionTextEn": "In the ............... encoding scheme, each 24 bits become four 6 bit chunks, and eventually are sent as 32 bits.",
       "options": [
-        "bit",
+        "8 bit",
         "binary",
         "base64",
         "quoted-printable"
@@ -972,6 +1046,7 @@
     },
     {
       "questionText": "FTP में, ............... के तीन प्रकार होते हैं — स्ट्रीम, ब्लॉक और कम्प्रेस्ड।",
+      "questionTextEn": "In FTP, there are three types of ..............., stream, block and compressed.",
       "options": [
         "file types",
         "data types",
@@ -985,6 +1060,7 @@
     },
     {
       "questionText": "चेक सम का उपयोग ............... के लिए किया जाता है।",
+      "questionTextEn": "Check sum is used for -",
       "options": [
         "error correction",
         "error detection",
@@ -998,6 +1074,7 @@
     },
     {
       "questionText": "MS-Excel के संदर्भ में, असंगत/विषम को खोजें -",
+      "questionTextEn": "In context of MS-Excel, find the odd one out -",
       "options": [
         "Portrait",
         "Scenario Manager",
@@ -1011,6 +1088,7 @@
     },
     {
       "questionText": "नौकरी कतार (job queue) बनाने के लिए विशेष सॉफ्टवेयर को क्या कहा जाता है?",
+      "questionTextEn": "A special software to create a job queue is called -",
       "options": [
         "Linkage editor",
         "Interpreter",
@@ -1024,6 +1102,7 @@
     },
     {
       "questionText": "पासवर्ड क्रैकिंग तकनीकों के रूप क्या हैं?",
+      "questionTextEn": "What are the forms of password cracking techniques?",
       "options": [
         "Attack: Syllable",
         "Attack: Brute Forcing",
@@ -1037,6 +1116,7 @@
     },
     {
       "questionText": "गलत कथन को चुनें -",
+      "questionTextEn": "Choose the incorrect statement -",
       "options": [
         "If a method is declared as final, that method cannot be overridden in sub class",
         "Finalize() is a method of java, which is called by garbage collector thread before removing an object from the memory",
@@ -1050,6 +1130,7 @@
     },
     {
       "questionText": "ऑपरेटिंग सिस्टम में कितने स्टेट प्रोसेस किए जा सकते हैं?",
+      "questionTextEn": "How many states can be processed in an operating system?",
       "options": [
         "2",
         "3",
@@ -1063,6 +1144,7 @@
     },
     {
       "questionText": "एक काउंटिंग सेमाफोर को 8 से प्रारंभ किया गया था। फिर इस पर 12 P (प्रतीक्षा) ऑपरेशन और 7 V (संकेत) ऑपरेशन पूर्ण किए गए। सेमाफोर का परिणामी मूल्य क्या है?",
+      "questionTextEn": "A counting semaphore was initialized to 8. Then 12 P (wait) operations and 7 V (signal) operations were completed on this semaphore. The resulting value of semaphore is -",
       "options": [
         "4",
         "3",
@@ -1076,9 +1158,10 @@
     },
     {
       "questionText": "JAVA के संबंध में निम्नलिखित में से कौन सा कथन/से सही है/हैं? A. ऐसे स्थिरांक (constants) जिन्हें बदला नहीं जा सकता, उन्हें 'Static' कीवर्ड का उपयोग करते हुए घोषित किया जाता है। B. एक वर्ग केवल एक क्लास को इनहेरिट कर सकता है लेकिन वह कई इंटरफेस को इम्प्लीमेंट कर सकता है।",
+      "questionTextEn": "Which of the following statements is/are true regarding JAVA? A. Constants that cannot be changed are declared using the 'Static' keyword. B. A class can only inherit one class but it can implement multiple interfaces.",
       "options": [
-        "is true",
-        "is true",
+        "A is true",
+        "B is true",
         "Both (A) and (B) are true",
         "Neither (A) nor (B) is true"
       ],
@@ -1089,6 +1172,7 @@
     },
     {
       "questionText": "आर्टिफिशियल इंटेलिजेंस (AI) में कौन सा एजेंट हैप्पी और अनहैप्पी स्टेट से संबंधित है?",
+      "questionTextEn": "In Artificial Intelligence (AI), which agent deals with happy and unhappy state?",
       "options": [
         "Simple reflex agent",
         "Model based agent",
@@ -1102,6 +1186,7 @@
     },
     {
       "questionText": "SQL में ............... एक एग्रीगेट फंक्शन है।",
+      "questionTextEn": "In SQL ............... is an aggregate function.",
       "options": [
         "SELECT",
         "CREATE",
@@ -1115,6 +1200,7 @@
     },
     {
       "questionText": "'ptrdata' एक डाटा टाइप के लिए पॉइंटर है। अभिव्यक्ति *ptrdata++ का मूल्यांकन (C++ में) इस प्रकार किया जाता है -",
+      "questionTextEn": "'ptrdata' is a pointer to a data type. The expression *ptrdata++ is evaluated as (C++) -",
       "options": [
         "(*ptrdata++)",
         "(*ptrdata)++",
@@ -1128,6 +1214,7 @@
     },
     {
       "questionText": "मान लें कि p और q गैर-शून्य सकारात्मक पूर्णांक हैं, निम्न प्रोग्राम खंड क्या प्रदर्शन करेगा — While(p!=q) { If(p>q) p=p-q; else q=q-p; }",
+      "questionTextEn": "Assume that p and q are non-zero positive integers, the following program segment will perform - While(p!=q) { If(p>q) p=p-q; else q=q-p; }",
       "options": [
         "Subtract small number from large number",
         "Compute GCD of the given numbers",
@@ -1141,6 +1228,7 @@
     },
     {
       "questionText": "अपनी स्क्रीन के केवल एक हिस्से का स्क्रीनशॉट लेने के लिए स्निपिंग टूल मेनू खोलने का कमांड है -",
+      "questionTextEn": "Command to open Snipping tool menu to take a screenshot of only a section of your screen -",
       "options": [
         "Window key + Ctrl + S",
         "Window key + Shift + S",
@@ -1154,6 +1242,7 @@
     },
     {
       "questionText": "x ज्ञात कीजिए: यदि (356)₈ = (x)₁₆",
+      "questionTextEn": "Find x = ? If (356)₈ = (x)₁₆",
       "options": [
         "EE",
         "EA",
@@ -1167,10 +1256,11 @@
     },
     {
       "questionText": "एक्सेप्शन हैंडलिंग के बारे में निम्नलिखित में से कौन सा/से सही है/हैं? i. try ब्लॉक के बिना catch ब्लॉक हो सकता है लेकिन इसके विपरीत संभव नहीं है। ii. किसी try ब्लॉक के लिए कितने भी catch ब्लॉक हो सकते हैं इसकी कोई सीमा नहीं है। iii. जिस ऑब्जेक्ट में एरर आया हो उसी विशिष्ट क्लास का ऑब्जेक्ट बनाया जाना चाहिए अन्यथा रन टाइम एरर आएगी। iv. किसी कोड को प्रोग्राम के प्रत्येक रन के साथ execute करने के लिए, कोड को finally ब्लॉक में लिखा जाता है।",
+      "questionTextEn": "Which statement is/are true about Exception handling? i. There can be try block without catch block but vice versa is not possible. ii. There is no limit on the number of catch block corresponding to a try block. iii. The object must be created of a specific class of which the error has occurred otherwise runtime error will appear. iv. To execute a code with each and every run of the program, the code is written in finally block.",
       "options": [
-        "and iv",
-        "and iii",
-        "and iv",
+        "i and iv",
+        "ii and iii",
+        "ii and iv",
         "i, ii and iv"
       ],
       "correctOptionIndex": 3,
@@ -1180,6 +1270,7 @@
     },
     {
       "questionText": "वायरस लाइफ साइकिल में निम्नलिखित में से कौन सा चरण शामिल नहीं है?",
+      "questionTextEn": "Which phase is not included in Virus Life Cycle?",
       "options": [
         "Dormant",
         "Execution",
@@ -1193,10 +1284,11 @@
     },
     {
       "questionText": "एब्सट्रैक्ट क्लासेस के संबंध में निम्नलिखित में से कौन सा कथन गलत है/हैं? i. एब्सट्रैक्ट क्लास की सबक्लास जो एब्सट्रैक्ट मेथड का इम्प्लीमेंटेशन उपलब्ध नहीं कराती, वह भी एब्सट्रैक्ट होती है। ii. एब्सट्रैक्ट क्लास में कंस्ट्रक्टर और स्टैटिक मेथड घोषित नहीं किए जा सकते हैं। iii. कभी-कभी हम सीधे ऑब्जेक्ट बना सकते हैं। iv. एब्सट्रैक्ट क्लास की सबक्लास में किसी मेथड को हमेशा पुनरीभाषित (redefine) किया जाना चाहिए।",
+      "questionTextEn": "Which statement is/are incorrect about abstract classes? i. Subclasses of an abstract class that do not provide an implementation of an abstract method, are also abstract. ii. Constructor and static methods cannot be declared in abstract class. iii. Sometimes we can create objects directly. iv. A method must always be redefined in a subclass of abstract class.",
       "options": [
-        "and ii",
-        "and iii",
-        "and iv",
+        "i and ii",
+        "ii and iii",
+        "ii and iv",
         "i, ii and iv"
       ],
       "correctOptionIndex": 1,
@@ -1206,6 +1298,7 @@
     },
     {
       "questionText": "C में, वास्तविक डेटा (फ्लोटिंग पॉइंट डेटा टाइप) के विभिन्न प्रकार क्या हैं?",
+      "questionTextEn": "In C, what are the various types of real data type (floating point data type)?",
       "options": [
         "float, long double",
         "long double, short int",
@@ -1219,11 +1312,12 @@
     },
     {
       "questionText": "निम्नलिखित कोड के निष्पादन के बाद परिणाम क्या है, यदि 'a' 10 है, 'b' 5 है और 'c' 10 है? if((a>b)&&(a<c)) { a=a+1; } else { c=c+1; }",
+      "questionTextEn": "What is the result after execution of the following code if 'a' is 10, 'b' is 5 and 'c' is 10? if ((a>b)&&(a<c)) { a=a+1; } else { c=c+1; }",
       "options": [
-        "= 10, c = 10",
-        "= 11, c = 10",
-        "= 10, c = 11",
-        "= 11, c = 11"
+        "a = 10, c = 10",
+        "a = 11, c = 10",
+        "a = 10, c = 11",
+        "a = 11, c = 11"
       ],
       "correctOptionIndex": 2,
       "explanation": "The && (logical AND) requires BOTH conditions to be true for the if-branch to execute. Since a<c fails (10 is not less than 10), the overall condition is false regardless of the first condition being true, triggering the else branch.",
@@ -1232,6 +1326,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सी घोषणा Python भाषा में सही नहीं है?",
+      "questionTextEn": "Which of the following declarations is incorrect in python language?",
       "options": [
         "xyzp = 5,000,000",
         "xyzp = 5000 6000 7000 8000",

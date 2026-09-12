@@ -10,6 +10,7 @@
   "questions": [
     {
       "questionText": "[खराब ई-आर डिज़ाइन का पता लगाने में आपकी मदद कर सकता है।]",
+      "questionTextEn": "__________ can help you to detect poor E-R design.",
       "options": [
         "EXR design process",
         "Relational Schema",
@@ -23,6 +24,7 @@
     },
     {
       "questionText": "[कौन सा डेटा बुनियादी वितरण रणनीति से संबंधित नहीं है?]",
+      "questionTextEn": "Which one is NOT related to the data basic distribution strategy?",
       "options": [
         "Centralized",
         "Replicated",
@@ -62,6 +64,7 @@
     },
     {
       "questionText": "[यदि एक बहु-मूल्यवान निर्भरता होती है और संबंधित कार्यात्मक निर्भरता से निहित नहीं होती है, तो यह आमतौर पर निम्नलिखित स्रोतों में से एक से उत्पन्न होती है।]",
+      "questionTextEn": "If a multivalued dependency holds and is NOT implied by the corresponding functional dependency, it usually arises from one of the following sources.",
       "options": [
         "A one-to-many relationship set",
         "A many-to-many relationship set",
@@ -75,6 +78,7 @@
     },
     {
       "questionText": "[निम्नलिखित में से किसके पास प्रत्येक संबंधित इकाई सेट की अपनी स्कीमा है और संबंध सेट के लिए एक अतिरिक्त स्कीमा है।]",
+      "questionTextEn": "Which of the following has each related entity set with its own schema and there is an additional schema for the relationship set?",
       "options": [
         "A multivalued attribute of an entity set",
         "A one-to-many relationship set",
@@ -88,6 +92,7 @@
     },
     {
       "questionText": "[सेकेंडरी स्टोरेज पर फाइल के रिकॉर्ड को फिजिकली अरेंज करने की कौन सी तकनीक है?]",
+      "questionTextEn": "On which technique for physically arranging records of a file on secondary storage is based?",
       "options": [
         "Data distribution",
         "Normalization",
@@ -114,6 +119,7 @@
     },
     {
       "questionText": "[निम्न में से किसमें उस विशेषता और इकाई सेट की प्राथमिक कुंजी सम्मिलकर एक अलगस्कीमा बनाया जाता है।]",
+      "questionTextEn": "In which of the following, a separate schema is created consisting of that attribute and the primary key of the entity set?",
       "options": [
         "A one-to-many relationship set",
         "A many-to-many relationship set",
@@ -153,6 +159,7 @@
     },
     {
       "questionText": "[मानलीजिए कि उपयोगकर्ता को एक रिलेशनल स्कीमा में रूम नंबर और फोन नंबर के उपयोग का पता चलता है तो भ्रम होता है। यहा ऐसे कम हो जाता है?]",
+      "questionTextEn": "Suppose the user finds the usage of room number and phone number in a relational schema and there is confusion. This is reduced by ___?",
       "options": [
         "Role integral assignment",
         "Unique-role assumption",
@@ -166,6 +173,7 @@
     },
     {
       "questionText": "[कौन सा डेटा बुनियादी वितरण रणनीति से संबंधित है?]",
+      "questionTextEn": "Which one is related to the data distribution strategy?",
       "options": [
         "Replicated",
         "Partitioned",
@@ -179,6 +187,7 @@
     },
     {
       "questionText": "[भौतिक डेटाबेस डिजाइन का ___ घटक डेटा की शुद्धता और स्थिरता को संदर्भित करता है?]",
+      "questionTextEn": "The ___ component of physical database design refers to the correctness and consistency of data.",
       "options": [
         "Integrity constraints",
         "Relationship",
@@ -205,6 +214,7 @@
     },
     {
       "questionText": "[बड़े डेटाबेस में विशेषताओं का प्रतिनिधित्व करने का सबसे अच्छा तरीका क्या है?]",
+      "questionTextEn": "What is the best way to represent attributes in a large database?",
       "options": [
         "Dot representation",
         "Concatenation",
@@ -218,6 +228,7 @@
     },
     {
       "questionText": "[डिजाइनर समय-महत्वपूर्ण संचालन का समर्थन करने के लिए सिस्टम के प्रदर्शन को टमन करने के लिए निम्न में से किसका उपयोग करते हैं?]",
+      "questionTextEn": "Designers use which of the following to tune performance of systems to support time-critical operations?",
       "options": [
         "Redundant optimization",
         "Optimization",
@@ -244,6 +255,7 @@
     },
     {
       "questionText": "[आवश्यक डेटाबेस की प्रारंभिक जांच को कहा जाता है?]",
+      "questionTextEn": "A preliminary investigation of the required database is called?",
       "options": [
         "Data flow diagram",
         "Feasibility study",
@@ -257,6 +269,7 @@
     },
     {
       "questionText": "[डेटाबेस के लिए संभावित इनपुट किसके द्वारा एकत्र किए जाते हैं?]",
+      "questionTextEn": "The possible inputs for the database are collected by?",
       "options": [
         "Decision tree",
         "Decision table",
@@ -283,6 +296,7 @@
     },
     {
       "questionText": "[जात कारक क्या हैं जिन्हें भाज में रखा जाता है?]",
+      "questionTextEn": "What are the cost factors that are taken into consideration?",
       "options": [
         "Feasibility study",
         "Project planning",
@@ -296,6 +310,7 @@
     },
     {
       "questionText": "[भौतिक डेटाबेस डिजाइन की अखंडता बाधा घटकों का दूसरा रूप है?]",
+      "questionTextEn": "The integrity constraints component of physical database design is another form of?",
       "options": [
         "Specialization",
         "Normalization",
@@ -309,6 +324,7 @@
     },
     {
       "questionText": "[हाइब्रिड वितरण में किस प्रकार का टुकड़ा केवल एक साइट पर संग्रहीत किया जाता है?]",
+      "questionTextEn": "Which kind of fragment is stored at only one site in hybrid distribution?",
       "options": [
         "Critical fragment",
         "Noncritical fragment",
@@ -348,6 +364,7 @@
     },
     {
       "questionText": "[डेटा विश्लेषण में कौन-से उपकरण शामिल हैं?]",
+      "questionTextEn": "Which tools are involved in the data analysis?",
       "options": [
         "Data Flow Diagram",
         "Decision tree",
@@ -387,6 +404,7 @@
     },
     {
       "questionText": "[वस्तु और उनके बीच संबंधों की पहचान करने की प्रक्रिया को क्या कहा जाता है?]",
+      "questionTextEn": "The process of identifying the objects and relationships between them is called?",
       "options": [
         "Data flow diagram",
         "E-R diagram",
@@ -426,6 +444,7 @@
     },
     {
       "questionText": "[ई-आर आरेख में इकाई को ___ दर्शाया गया है।]",
+      "questionTextEn": "The entity is represented ___ in the E-R diagram.",
       "options": [
         "Circle",
         "Diamond",
@@ -439,6 +458,7 @@
     },
     {
       "questionText": "[एट्रिब्यूट को E-R डायग्राम में ___ द्वारा दर्शाया जाता है?]",
+      "questionTextEn": "The attribute is represented in the E-R diagram by ___?",
       "options": [
         "Diamond",
         "Oval",

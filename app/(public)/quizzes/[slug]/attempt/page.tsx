@@ -19,7 +19,9 @@ interface PublicQuestion {
   id: string;
   order: number;
   questionText: string;
+  questionTextEn?: string;
   options: string[];
+  optionsEn?: string[];
   marks?: number;
   negativeMarks?: number;
 }
@@ -44,6 +46,7 @@ export default function QuizAttemptPage() {
   const [loading, setLoading] = useState(true);
   const [quiz, setQuiz] = useState<PublicQuizDetail | null>(null);
   const [answers, setAnswers] = useState<Record<string, number | null>>({});
+  const [language, setLanguage] = useState<"hi" | "en">("hi");
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -197,7 +200,41 @@ export default function QuizAttemptPage() {
             </p>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+            {/* Language Toggle Pill */}
+            <div
+              className="flex items-center bg-slate-100 p-0.5 rounded-xl border border-slate-200"
+              role="group"
+              aria-label="Language Toggle"
+            >
+              <button
+                type="button"
+                onClick={() => setLanguage("hi")}
+                className={clsx(
+                  "px-2.5 py-1 text-xs font-bold rounded-lg transition-all",
+                  language === "hi"
+                    ? "bg-white text-slate-950 shadow-xs font-extrabold"
+                    : "text-slate-500 hover:text-slate-900"
+                )}
+                title="हिंदी में देखें"
+              >
+                हिंदी
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage("en")}
+                className={clsx(
+                  "px-2.5 py-1 text-xs font-bold rounded-lg transition-all",
+                  language === "en"
+                    ? "bg-white text-slate-950 shadow-xs font-extrabold"
+                    : "text-slate-500 hover:text-slate-900"
+                )}
+                title="View in English"
+              >
+                English
+              </button>
+            </div>
+
             {timeLeft !== null && (
               <div
                 className={clsx(
@@ -238,6 +275,13 @@ export default function QuizAttemptPage() {
         {quiz.questions.map((q, idx) => {
           const selectedOption = answers[q.id];
           const isAnswered = selectedOption !== null && selectedOption !== undefined;
+          const isEnglish = language === "en";
+          const displayQuestionText = isEnglish && q.questionTextEn ? q.questionTextEn : q.questionText;
+          const isFallbackHindi = isEnglish && !q.questionTextEn;
+          const displayOptions =
+            isEnglish && q.optionsEn && q.optionsEn.length === q.options.length
+              ? q.optionsEn
+              : q.options;
 
           return (
             <div
@@ -277,12 +321,17 @@ export default function QuizAttemptPage() {
 
               {/* Question Text */}
               <p className="text-sm sm:text-base font-semibold text-slate-900 leading-relaxed pt-1">
-                {q.questionText}
+                {displayQuestionText}
+                {isFallbackHindi && (
+                  <span className="inline-block ml-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md align-middle border border-slate-200">
+                    Hindi only
+                  </span>
+                )}
               </p>
 
               {/* Options */}
               <div className="space-y-2.5 pt-2">
-                {q.options.map((opt, optIdx) => {
+                {displayOptions.map((opt, optIdx) => {
                   const isSelected = selectedOption === optIdx;
                   const letter = String.fromCharCode(65 + optIdx);
 

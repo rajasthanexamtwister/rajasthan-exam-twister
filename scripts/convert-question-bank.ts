@@ -118,57 +118,218 @@ export function parseJsonTolerant(rawContent: string): { data: any; hadCommentsO
 }
 
 /**
- * Clean option string: remove HTML, strip prefixes like (a), A., 1., (iv)
+ * Clean option string: remove HTML, strip option bullet prefixes (e.g. "(a) Internal", "A. Option")
+ * Safely protects:
+ * - Multi-statement combinations: "(1) and (2)", "(a), (b) and (c)", "(i) and (ii)"
+ * - Assertion-Reason statements: "(A) is false but (R) is true", "(A) और (B) दोनों सही हैं"
+ * - Quantities & file extensions: "1 Gbps", ".docx", "-3/5"
  */
-export function cleanOptionText(rawText: string): string {
+export function cleanOptionText(rawText: string, optionId?: string): string {
   if (!rawText) return "";
   const sanitized = sanitizePlainText(rawText);
-  // Strip leading option prefixes like "(a) ", "(A) ", "A. ", "1. ", "a) ", "(1) "
-  return sanitized.replace(/^[\(\[]?([a-eA-E0-9]|[ivxIVX]+)[\)\]\.\:\-\s]+\s*/, "").trim();
+  let text = sanitized.trim();
+
+  // 1. Guard against compound/multi-statement options:
+  // e.g. "(1) and (2)", "(a), (b)", "(1) & (2)", "(A) और (B)", "(c) and (d) only"
+  if (/^[\(\[]?[0-9a-eA-EivxIVX]+[\)\]]?\s*(?:,|\band\b|\bor\b|&|\+|\bतथा\b|\bऔर\b|\bव\b|\bएवं\b|\bदोनों\b|\bonly\b)/i.test(text)) {
+    return text;
+  }
+
+  // 2. Guard against Assertion-Reason or relational expressions:
+  // e.g. "(A) is true", "(A) is not correct", "(A) सत्य है", "(A) सही है", "(A) represents"
+  if (/^[\(\[]?[0-9a-eA-EivxIVX]+[\)\]]?\s*(?:is\b|are\b|was\b|were\b|सत्य\b|असत्य\b|सही\b|गलत\b|represents?\b|means?\b|denotes?\b)/i.test(text)) {
+    return text;
+  }
+
+  // 3. Guard against multiple parenthesized references in the same option:
+  // e.g. "(A) ... (R)", "(1) ... (2)", "(a) ... (b)"
+  if (/^[\(\[][0-9a-eA-EivxIVX]+[\)\]].*[\(\[][0-9a-eA-EivxIVXRr]+[\)\]]/.test(text)) {
+    return text;
+  }
+
+  // 4. If optionId is provided (e.g. "A", "B", "1"), strip bullet only if text starts with that explicit bullet label
+  if (optionId !== undefined && optionId !== null && String(optionId).trim()) {
+    const escapedId = String(optionId).trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const idRegex = new RegExp(`^(?:${escapedId}[\\.\\:\\-\\)]|\\(${escapedId}\\))\\s+`, "i");
+    if (idRegex.test(text)) {
+      const candidate = text.replace(idRegex, "").trim();
+      if (candidate && candidate.length > 0) {
+        return candidate;
+      }
+    }
+    return text;
+  }
+
+  // 5. If no optionId (e.g. raw string in array), strip standard option bullets like "A. ", "B) ", "(A) ", "(a) "
+  const prefixMatch = text.match(/^(?:[A-Ea-e1-5][\.\:\-\)]|\([A-Ea-e1-5]\))\s+(.*)$/);
+  if (prefixMatch) {
+    const rest = prefixMatch[1].trim();
+    if (rest.length > 0) {
+      return rest;
+    }
+  }
+
+  return text;
+}
+
+/**
+ * Extract question text and optional English question text
+ */
+export function extractBilingualQuestionText(rawQ: any): { questionText: string; questionTextEn?: string } {
+  let questionText = "";
+  let questionTextEn: string | undefined = undefined;
+
+  // 1. Check direct Hindi fields
+  const rawHindi = rawQ.question_hindi || rawQ.question_hi || rawQ.hindi;
+  if (rawHindi && typeof rawHindi === "string" && rawHindi.trim()) {
+    questionText = sanitizePlainText(rawHindi);
+  }
+
+  // 2. Check direct English fields
+  const rawEnglish = rawQ.question_english || rawQ.question_en || rawQ.english || rawQ.en;
+  let candidateEn = "";
+  if (rawEnglish && typeof rawEnglish === "string" && rawEnglish.trim()) {
+    candidateEn = sanitizePlainText(rawEnglish);
+  }
+
+  // 3. If primary Hindi was not found in specific field, check generic question field
+  if (!questionText && rawQ.question && typeof rawQ.question === "string" && rawQ.question.trim()) {
+    const lines = rawQ.question
+      .split("\n")
+      .map((l: string) => l.trim())
+      .filter(Boolean);
+
+    const hindiLines = lines.filter((l: string) => /[\u0900-\u097F]/.test(l));
+    const latinLines = lines.filter((l: string) => /[a-zA-Z]/.test(l) && !/[\u0900-\u097F]/.test(l));
+
+    if (hindiLines.length > 0) {
+      questionText = sanitizePlainText(hindiLines.join(" "));
+    } else {
+      questionText = sanitizePlainText(lines.join(" "));
+    }
+
+    if (!candidateEn && latinLines.length > 0) {
+      candidateEn = sanitizePlainText(latinLines.join(" "));
+    }
+  }
+
+  // 4. Fallback to English/generic if questionText is still empty
+  if (!questionText) {
+    if (candidateEn) {
+      questionText = candidateEn;
+    } else if (rawQ.questionText && typeof rawQ.questionText === "string" && rawQ.questionText.trim()) {
+      questionText = sanitizePlainText(rawQ.questionText);
+    }
+  }
+
+  // 5. Populate questionTextEn only if it differs from questionText
+  if (candidateEn && candidateEn.toLowerCase() !== questionText.toLowerCase()) {
+    questionTextEn = candidateEn;
+  }
+
+  return { questionText, questionTextEn };
 }
 
 /**
  * Extract question text prioritizing Hindi / Devanagari per project conventions
  */
 export function extractQuestionText(rawQ: any): string {
-  // 1. Direct Hindi fields
-  if (rawQ.question_hindi && typeof rawQ.question_hindi === "string" && rawQ.question_hindi.trim()) {
-    return sanitizePlainText(rawQ.question_hindi);
-  }
-  if (rawQ.question_hi && typeof rawQ.question_hi === "string" && rawQ.question_hi.trim()) {
-    return sanitizePlainText(rawQ.question_hi);
-  }
-  if (rawQ.hindi && typeof rawQ.hindi === "string" && rawQ.hindi.trim()) {
-    return sanitizePlainText(rawQ.hindi);
-  }
+  return extractBilingualQuestionText(rawQ).questionText;
+}
 
-  // 2. Generic question field (might be bilingual split by \n)
-  if (rawQ.question && typeof rawQ.question === "string" && rawQ.question.trim()) {
-    const lines = rawQ.question
-      .split("\n")
-      .map((l: string) => l.trim())
-      .filter(Boolean);
+/**
+ * Extract options and optional English options
+ */
+export function extractBilingualOptions(rawOptionsList: any[]): { options: string[]; optionsEn?: string[] } {
+  const fallbackOptions: string[] = [];
+  const cleanHindiOptions: string[] = [];
+  const candidateOptionsEn: (string | null)[] = [];
 
-    // Look for lines with Devanagari characters
-    const hindiLines = lines.filter((l: string) => /[\u0900-\u097F]/.test(l));
-    if (hindiLines.length > 0) {
-      return sanitizePlainText(hindiLines.join(" "));
+  for (let i = 0; i < rawOptionsList.length; i++) {
+    const rawOpt = rawOptionsList[i];
+    const optId = typeof rawOpt === "object" && rawOpt !== null ? (rawOpt.id !== undefined && rawOpt.id !== null ? String(rawOpt.id) : undefined) : undefined;
+
+    let rawOptStr = "";
+    if (typeof rawOpt === "object" && rawOpt !== null) {
+      const hiField = rawOpt.hi || rawOpt.hindi || rawOpt.text_hi;
+      const enField = rawOpt.en || rawOpt.english || rawOpt.text_en || rawOpt.title_en;
+
+      if (hiField || enField) {
+        const cleanHi = cleanOptionText(String(hiField || ""), optId);
+        const cleanEn = enField ? sanitizePlainText(String(enField)) : "";
+
+        fallbackOptions.push(cleanHi || cleanOptionText(String(enField), optId) || `Option ${i + 1}`);
+        cleanHindiOptions.push(cleanHi || `Option ${i + 1}`);
+        if (cleanEn && cleanEn.toLowerCase() !== cleanHi.toLowerCase()) {
+          candidateOptionsEn.push(cleanEn);
+        } else {
+          candidateOptionsEn.push(null);
+        }
+        continue;
+      }
+
+      rawOptStr = String(rawOpt.text || rawOpt.title || "");
+    } else if (typeof rawOpt === "string") {
+      rawOptStr = rawOpt;
     }
-    return sanitizePlainText(lines.join(" "));
+
+    if (rawOptStr) {
+      const rawCleaned = cleanOptionText(rawOptStr, optId);
+      fallbackOptions.push(rawCleaned || `Option ${i + 1}`);
+
+      // Check slash-separated bilingual string (on last slash)
+      const lastSlash = rawOptStr.lastIndexOf("/");
+      if (lastSlash > 0 && lastSlash < rawOptStr.length - 1) {
+        const part1 = rawOptStr.slice(0, lastSlash).trim();
+        const part2 = rawOptStr.slice(lastSlash + 1).trim();
+
+        const isDevanagari = (s: string) => /[\u0900-\u097F]/.test(s);
+        const isLatin = (s: string) => /[a-zA-Z]/.test(s) && !/[\u0900-\u097F]/.test(s);
+
+        if (isDevanagari(part1) && isLatin(part2)) {
+          const cleanHi = cleanOptionText(part1, optId);
+          const cleanEn = sanitizePlainText(part2);
+          if (cleanHi && cleanEn) {
+            cleanHindiOptions.push(cleanHi);
+            candidateOptionsEn.push(cleanEn);
+            continue;
+          }
+        } else if (isLatin(part1) && isDevanagari(part2)) {
+          const cleanHi = cleanOptionText(part2, optId);
+          const cleanEn = sanitizePlainText(part1);
+          if (cleanHi && cleanEn) {
+            cleanHindiOptions.push(cleanHi);
+            candidateOptionsEn.push(cleanEn);
+            continue;
+          }
+        }
+      }
+
+      cleanHindiOptions.push(rawCleaned || `Option ${i + 1}`);
+      candidateOptionsEn.push(null);
+    } else {
+      fallbackOptions.push(`Option ${i + 1}`);
+      cleanHindiOptions.push(`Option ${i + 1}`);
+      candidateOptionsEn.push(null);
+    }
   }
 
-  // 3. English fields
-  if (rawQ.question_english && typeof rawQ.question_english === "string" && rawQ.question_english.trim()) {
-    return sanitizePlainText(rawQ.question_english);
-  }
-  if (rawQ.question_en && typeof rawQ.question_en === "string" && rawQ.question_en.trim()) {
-    return sanitizePlainText(rawQ.question_en);
-  }
-  if (rawQ.questionText && typeof rawQ.questionText === "string" && rawQ.questionText.trim()) {
-    return sanitizePlainText(rawQ.questionText);
+  // If EVERY option in the question has a valid English string, return split options & optionsEn
+  if (
+    candidateOptionsEn.length === cleanHindiOptions.length &&
+    candidateOptionsEn.every((o) => typeof o === "string" && o.length > 0)
+  ) {
+    return {
+      options: cleanHindiOptions,
+      optionsEn: candidateOptionsEn as string[],
+    };
   }
 
-  return "";
+  // Otherwise, conservative fallback: leave options as fallbackOptions and optionsEn as undefined
+  return {
+    options: fallbackOptions,
+    optionsEn: undefined,
+  };
 }
 
 /**
@@ -360,7 +521,7 @@ export function convertSingleQuestion(
   const questionId = rawQ.id ? String(rawQ.id) : `Q${qIndex + 1}`;
 
   // 1. Extract question text
-  const questionText = extractQuestionText(rawQ);
+  const { questionText, questionTextEn } = extractBilingualQuestionText(rawQ);
   if (!questionText) {
     return {
       issue: {
@@ -393,21 +554,7 @@ export function convertSingleQuestion(
     };
   }
 
-  const cleanOptions: string[] = [];
-  for (let i = 0; i < rawOptionsList.length; i++) {
-    const rawOpt = rawOptionsList[i];
-    let optStr = "";
-    if (typeof rawOpt === "string") {
-      optStr = cleanOptionText(rawOpt);
-    } else if (typeof rawOpt === "object" && rawOpt !== null) {
-      const txt = rawOpt.hi || rawOpt.text || rawOpt.en || rawOpt.title || "";
-      optStr = cleanOptionText(String(txt));
-    }
-    if (!optStr) {
-      optStr = `Option ${i + 1}`;
-    }
-    cleanOptions.push(optStr);
-  }
+  const { options: cleanOptions, optionsEn } = extractBilingualOptions(rawOptionsList);
 
   // 3. Resolve correctOptionIndex
   const rawAns = rawQ.correct_answer ?? rawQ.correctAnswer ?? rawQ.book_answer ?? rawQ.answer ?? rawQ.correct_option;
@@ -436,7 +583,9 @@ export function convertSingleQuestion(
   return {
     question: {
       questionText,
+      ...(questionTextEn ? { questionTextEn } : {}),
       options: cleanOptions,
+      ...(optionsEn ? { optionsEn } : {}),
       correctOptionIndex,
       explanation: cleanExplanation,
       marks: typeof rawQ.marks === "number" && rawQ.marks > 0 ? rawQ.marks : 1,

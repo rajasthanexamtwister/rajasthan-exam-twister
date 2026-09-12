@@ -9,6 +9,7 @@
   "questions": [
     {
       "questionText": "___ प्रबंधन सूचना प्रणाली का एक महत्वपूर्ण कारक है।",
+      "questionTextEn": "___ is an important factor of management information system.",
       "options": [
         "System",
         "Data",
@@ -22,6 +23,7 @@
     },
     {
       "questionText": "निम्न में से Information gathering tool कौनसी है ___।",
+      "questionTextEn": "Which of the following is an Information gathering tool?",
       "options": [
         "On-site observation",
         "Interviews",
@@ -35,6 +37,7 @@
     },
     {
       "questionText": "निम्न में से Feasibility analysis का प्रकार नहीं है ___।",
+      "questionTextEn": "Which of the following is NOT a type of Feasibility analysis?",
       "options": [
         "Economic feasibility",
         "Social feasibility",
@@ -48,6 +51,7 @@
     },
     {
       "questionText": "बुद्धिशीलता (Brainstorming) में कितने चरण होते हैं?",
+      "questionTextEn": "How many phases are there in Brainstorming?",
       "options": [
         "2",
         "3",
@@ -61,6 +65,7 @@
     },
     {
       "questionText": "शीर्ष प्रबंधन के उपयोग के लिए रणनीतिक स्तर पर ___ स्तर की आपूर्ति की जानकारी देता है।",
+      "questionTextEn": "___ level supplies information to strategic tier for the use of top management.",
       "options": [
         "Operational",
         "Environmental",
@@ -74,6 +79,7 @@
     },
     {
       "questionText": "एक DFD में बाहरी संस्थाओं (external entities) को ___ द्वारा दर्शाया जाता है।",
+      "questionTextEn": "In a DFD, external entities are represented by a ___.",
       "options": [
         "Rectangle",
         "Ellipse",
@@ -87,11 +93,12 @@
     },
     {
       "questionText": "अनुक्रमिक संख्याओं (Serial numbers) का उपयोग कोड के रूप में किया जाता है, ये हैं-",
+      "questionTextEn": "Serial numbers used as codes are-",
       "options": [
-        "and ii",
-        "and iii",
-        "and iv",
-        "and iii"
+        "i and ii",
+        "ii and iii",
+        "ii and iv",
+        "i and iii"
       ],
       "correctOptionIndex": 3,
       "explanation": "(i) Concise and (iii) Expandable are true properties of serial codes; (ii) Meaningful and (iv) Comprehensive are not.",
@@ -100,6 +107,7 @@
     },
     {
       "questionText": "___ को डेटा के रूप में परिभाषित किया जा सकता है जिसे एक ऐसे रूप में संसाधित किया गया है जो प्राप्तकर्ता के लिए सार्थक है।",
+      "questionTextEn": "___ can be defined as data that has been processed into a form that is meaningful to the recipient and is of real or perceived value in current or prospective decisions.",
       "options": [
         "System",
         "Information",
@@ -113,6 +121,7 @@
     },
     {
       "questionText": "किस प्रकार की Feasibility में hardware के configuration पर system के लिए अधिक महत्व दिया जाता है?",
+      "questionTextEn": "Which type of Feasibility gives more importance to hardware for system configuration?",
       "options": [
         "Social feasibility",
         "Technical feasibility",
@@ -126,6 +135,7 @@
     },
     {
       "questionText": "Operational Feasibility का मुख्य सम्बन्ध किससे है-",
+      "questionTextEn": "Operational Feasibility is mainly concerned with-",
       "options": [
         "Human, organizational and political",
         "Data Structure",
@@ -139,6 +149,7 @@
     },
     {
       "questionText": "एक System है-",
+      "questionTextEn": "A System is-",
       "options": [
         "आपस में dependent units का समूह",
         "किसी विशेष लक्ष्य की प्राप्ति हेतु विभिन्न Components जोड़ना",
@@ -152,11 +163,12 @@
     },
     {
       "questionText": "Block codes हैं-",
+      "questionTextEn": "Block codes are-",
       "options": [
-        "and ii",
-        "and iii",
-        "and iv",
-        "and iii"
+        "i and ii",
+        "ii and iii",
+        "iii and iv",
+        "i and iii"
       ],
       "correctOptionIndex": 1,
       "explanation": "(ii) Meaningful and (iii) Expandable correctly describe block codes; they are not necessarily the most 'Concise' or 'Comprehensive' among coding types.",
@@ -165,6 +177,7 @@
     },
     {
       "questionText": "निम्न में से flow chart का प्रकार नहीं है-",
+      "questionTextEn": "Which of the following is NOT a type of flow chart?",
       "options": [
         "Bar chart",
         "Line chart",
@@ -178,6 +191,7 @@
     },
     {
       "questionText": "Relation तथा Speed को diagram में प्रदर्शित करने के लिए किसका उपयोग करते हैं-",
+      "questionTextEn": "Which is used to display Relation and Speed in a diagram?",
       "options": [
         "Box",
         "Chart",
@@ -191,6 +205,7 @@
     },
     {
       "questionText": "पुरानी प्रणाली की तरह ही नई प्रणाली का उपयोग करके परिणामों की तुलना करने के लिए इसे ___ के रूप में जाना जाता है।",
+      "questionTextEn": "Use the new system at the same time as the old system to compare the results. This is known as ___.",
       "options": [
         "Procedure Writing",
         "Simultaneous processing",
@@ -204,6 +219,7 @@
     },
     {
       "questionText": "Design चरण के बाद तैयार किए गए दस्तावेज़ को ___ के रूप में जाना जाता है।",
+      "questionTextEn": "After the design phase, the document prepared is known as ___.",
       "options": [
         "system specification",
         "performance specification",
@@ -217,11 +233,12 @@
     },
     {
       "questionText": "निम्न कॉलम A व कॉलम B का मिलान कीजिए- a.Technical Feasibility, b.Operational Feasibility, c.Economic Feasibility, d.Social Feasibility",
+      "questionTextEn": "Match Column A with Column B — a.Technical Feasibility, b.Operational Feasibility, c.Economic Feasibility, d.Social Feasibility",
       "options": [
-        "ii, b-iii, c-i, d-iv",
-        "ii, b-iii, c-iv, d-i",
-        "iii, b-i, c-ii, d-iv",
-        "i, b-ii, c-iv, d-iii"
+        "a-ii, b-iii, c-i, d-iv",
+        "a-ii, b-iii, c-iv, d-i",
+        "a-iii, b-i, c-ii, d-iv",
+        "a-i, b-ii, c-iv, d-iii"
       ],
       "correctOptionIndex": 2,
       "explanation": "Each feasibility type is matched to its defining concern as per standard SAD theory.",
@@ -230,6 +247,7 @@
     },
     {
       "questionText": "कौनसी Feasibility में Cost/benefit analysis किया जाता है-",
+      "questionTextEn": "In which Feasibility is Cost/benefit analysis done?",
       "options": [
         "Economic feasibility",
         "Operational feasibility",
@@ -243,6 +261,7 @@
     },
     {
       "questionText": "एक System में डेटाबेस बनाने का कार्य कौन करता है-",
+      "questionTextEn": "Who carries out the task of building the database in a System?",
       "options": [
         "Analyst",
         "Programmer",
@@ -256,9 +275,10 @@
     },
     {
       "questionText": "Economic feasibility का मुख्य उपयोग क्या है-",
+      "questionTextEn": "What is the main use of Economic feasibility?",
       "options": [
-        "and ii",
-        "and iii",
+        "i and ii",
+        "ii and iii",
         "i, ii and iii",
         "i, ii, iii and iv"
       ],
@@ -269,6 +289,7 @@
     },
     {
       "questionText": "किस प्रकार की feasibility में यह देखा जाता है कि प्रस्तावित Project उस सामान्य व्यक्ति को स्वीकार्य हो या नहीं-",
+      "questionTextEn": "In which feasibility is it checked whether the proposed Project is acceptable to the common/general person?",
       "options": [
         "Social feasibility",
         "Management feasibility",
@@ -282,10 +303,11 @@
     },
     {
       "questionText": "समूह वर्गीकरण कोड (Group classification codes) हैं-",
+      "questionTextEn": "Group classification codes are-",
       "options": [
-        "and iii",
+        "i and iii",
         "i, ii and iii",
-        "and iv",
+        "ii and iv",
         "i, iii and iv"
       ],
       "correctOptionIndex": 2,
@@ -295,6 +317,7 @@
     },
     {
       "questionText": "एक Data flow कर सकता है ___।",
+      "questionTextEn": "A data flow can ___.",
       "options": [
         "Only emanate from an external entity",
         "Only terminate in an external entity",
@@ -308,6 +331,7 @@
     },
     {
       "questionText": "___ को कंप्यूटर की समस्याओं को हल करने के लिए सबसे हालिया और शायद सबसे व्यापक तकनीक के रूप में परिभाषित किया जा सकता है।",
+      "questionTextEn": "___ can be defined as the most recent and perhaps the most comprehensive technique for solving computer problems.",
       "options": [
         "System Analysis",
         "System Data",
@@ -321,6 +345,7 @@
     },
     {
       "questionText": "SDLC का अर्थ ___ है।",
+      "questionTextEn": "SDLC stands for ___.",
       "options": [
         "System Development Life Cycle",
         "Structure Design Life Cycle",
@@ -334,6 +359,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सूचना की विशेषता है/हैं?",
+      "questionTextEn": "Which of the following is/are Characteristics of information?",
       "options": [
         "Accuracy and Relevance",
         "Form of information and Timeliness",
@@ -347,6 +373,7 @@
     },
     {
       "questionText": "The data Flow Diagram किस system का मूल घटक है।",
+      "questionTextEn": "The data Flow Diagram is the basic component of ___ system.",
       "options": [
         "Conceptual",
         "Logical",
@@ -360,6 +387,7 @@
     },
     {
       "questionText": "___ में मौजूदा प्रक्रियाओं और सूचना प्रवाह की समीक्षा शामिल है।",
+      "questionTextEn": "___ includes review of the existing procedures and information flow.",
       "options": [
         "Feasibility Study",
         "Feasibility report",
@@ -373,6 +401,7 @@
     },
     {
       "questionText": "Organization chart ___ का एक प्रकार है।",
+      "questionTextEn": "Organization chart is a type of ___.",
       "options": [
         "basic chart",
         "IPO chart",
@@ -386,11 +415,12 @@
     },
     {
       "questionText": "निम्नलिखित कॉलम A या कॉलम B का सही से मिलान कीजिए- a.Management Feasibility, b.Legal Feasibility, c.Social Feasibility(i), d.Social Feasibility(ii)",
+      "questionTextEn": "Match Column A with Column B — a.Management Feasibility, b.Legal Feasibility, c.(Social/Economic) Feasibility, d.Social Feasibility",
       "options": [
-        "ii, b-iii, c-i, d-iv",
-        "ii, b-iii, c-iv, d-i",
-        "i, b-iii, c-ii, d-iv",
-        "i, b-ii, c-iii, d-iv"
+        "a-ii, b-iii, c-i, d-iv",
+        "a-ii, b-iii, c-iv, d-i",
+        "a-i, b-iii, c-ii, d-iv",
+        "a-i, b-ii, c-iii, d-iv"
       ],
       "correctOptionIndex": 0,
       "explanation": "The source table appears to duplicate 'Social Feasibility' as both category c and d — likely an OCR/print duplication of what should be two distinct feasibility types (e.g., one may actually be 'Economic Feasibility').",
@@ -399,9 +429,10 @@
     },
     {
       "questionText": "Data दो Data stores के बीच प्रवाहित नहीं हो सकता क्योंकि ___?",
+      "questionTextEn": "Data cannot flow between two data stores because ___?",
       "options": [
         "it is not allowed in DFD",
-        "data store is a passive repository of data",
+        "a data store is a passive repository of data",
         "data can get corrupted",
         "they will get merged"
       ],
@@ -412,6 +443,7 @@
     },
     {
       "questionText": "Logical DFD's के लिए सत्य कथन है-",
+      "questionTextEn": "True statement(s) for Logical DFD's-",
       "options": [
         "True, false",
         "False, false",
@@ -425,6 +457,7 @@
     },
     {
       "questionText": "निम्न में से उच्चतम level का Data flow diagram कौनसा है-",
+      "questionTextEn": "Which of the following is the highest level Data flow diagram?",
       "options": [
         "Level 0",
         "Level 1",
@@ -438,6 +471,7 @@
     },
     {
       "questionText": "अच्छी तरह से डिजाइन किए गए सिस्टम की विशेषताएँ निम्नलिखित में से हैं-",
+      "questionTextEn": "The characteristics of a well-designed system are among the following-",
       "options": [
         "A, B, C and D",
         "A, C, D and E",
@@ -451,6 +485,7 @@
     },
     {
       "questionText": "संरचित चार्ट (Structured charts) ___ का उत्पाद हैं?",
+      "questionTextEn": "Structured charts are a product of?",
       "options": [
         "requirements gathering",
         "requirements analysis",
@@ -464,6 +499,7 @@
     },
     {
       "questionText": "___ सिस्टम प्रोजेक्ट से संबंधित जानकारी के संग्रह को संदर्भित करता है।",
+      "questionTextEn": "___ refers to the collection of information pertinent to systems Project.",
       "options": [
         "Data transfer",
         "Data gathering",
@@ -477,6 +513,7 @@
     },
     {
       "questionText": "___ किसी कंपनी या कार्यों की श्रृंखला के माध्यम से डेटा के प्रवाह को परिभाषित करता है जो कंप्यूटरीकृत प्रसंस्करण का प्रतिनिधित्व कर सकते हैं या नहीं भी कर सकते हैं।",
+      "questionTextEn": "___ gives defining the flow of data through an organization or a company or series of tasks that may or may not represent computerized processing.",
       "options": [
         "System process",
         "System flowchart",
@@ -490,9 +527,10 @@
     },
     {
       "questionText": "Management Feasibility का कार्य क्या है-",
+      "questionTextEn": "What is the function of Management Feasibility?",
       "options": [
-        "and ii",
-        "and iii",
+        "i and ii",
+        "ii and iii",
         "i, ii and iii",
         "उपरोक्त सभी"
       ],
@@ -503,6 +541,7 @@
     },
     {
       "questionText": "System design का मुख्य कार्य क्या है-",
+      "questionTextEn": "What is the main function of System design?",
       "options": [
         "System में आवश्यक सुधार, सुरक्षा व नियंत्रण की Design बनाना",
         "समस्त data flow को बनाया जाता है",
@@ -516,6 +555,7 @@
     },
     {
       "questionText": "तार्किक design जो कागज के ऊपर तैयार किया जाता है, उसे वास्तविक कार्यशील रूप में ढालना-",
+      "questionTextEn": "Converting the logical design prepared on paper into an actual working form is-",
       "options": [
         "Logical Design",
         "Physical Design",
@@ -529,6 +569,7 @@
     },
     {
       "questionText": "किस प्रक्रिया द्वारा पता लगाया जाता है कि Project सभी अधिनियमों एवं Legal rules को follow कर रहा है या नहीं-",
+      "questionTextEn": "Which process determines whether the Project is following all acts and Legal rules?",
       "options": [
         "Time feasibility",
         "Legal feasibility",
@@ -542,11 +583,18 @@
     },
     {
       "questionText": "System test plan कब निर्दिष्ट किया जाता है?",
+      "questionTextEn": "When is the System test plan specified?",
       "options": [
-        "जब अंतिम विनिर्देश तैयार किए जाते हैं / when the final specifications are drawn up",
-        "व्यवहार्यता अध्ययन के दौरान / during feasibility study",
-        "आवश्यकताओं विनिर्देशों चरण के दौरान / during requirements specifications stage",
-        "सिस्टम अध्ययन चरण के दौरान / during system study stage"
+        "जब अंतिम विनिर्देश तैयार किए जाते हैं",
+        "व्यवहार्यता अध्ययन के दौरान",
+        "आवश्यकताओं विनिर्देशों चरण के दौरान",
+        "सिस्टम अध्ययन चरण के दौरान"
+      ],
+      "optionsEn": [
+        "when the final specifications are drawn up",
+        "during feasibility study",
+        "during requirements specifications stage",
+        "during system study stage"
       ],
       "correctOptionIndex": 0,
       "explanation": "You can only define a meaningful test plan after you know exactly what the final system is supposed to do — hence it follows final specification finalization.",
@@ -555,6 +603,7 @@
     },
     {
       "questionText": "___ का अर्थ है समन्वित प्रयास, लिखित रूप में सिस्टम की जानकारी को संप्रेषित करना।",
+      "questionTextEn": "___ means coordinated effort to communicate the information of the system in written form.",
       "options": [
         "System documentation",
         "Resource required",
@@ -568,6 +617,7 @@
     },
     {
       "questionText": "Analysis चरण में, ___ का विकास होता है, जो परियोजना के लक्ष्यों और उद्देश्यों का एक स्पष्ट विवरण है।",
+      "questionTextEn": "In the Analysis phase, the development of the ___ occurs, which is a clear statement of the goals and objectives of the project.",
       "options": [
         "documentation",
         "flowchart",
@@ -581,6 +631,7 @@
     },
     {
       "questionText": "Actual programming of software code किस SDLC चरण के दौरान किया जाता है?",
+      "questionTextEn": "Actual programming of software code is done during the ___ step in the SDLC.",
       "options": [
         "Maintenance and Evaluation",
         "Design",
@@ -594,6 +645,7 @@
     },
     {
       "questionText": "Enhancements, upgrades, और bug fixes किस SDLC चरण में किए जाते हैं?",
+      "questionTextEn": "Enhancements, upgrades, and bug fixes are done during the ___ step in the SDLC.",
       "options": [
         "Maintenance and Evaluation",
         "Problem/Opportunity Identification",
@@ -607,11 +659,12 @@
     },
     {
       "questionText": "एक rectangle DFD में क्या दर्शाता है?",
+      "questionTextEn": "A rectangle in a DFD represents.",
       "options": [
-        "process",
+        "A process",
         "An input unit",
         "An external entity",
-        "data store"
+        "A data store"
       ],
       "correctOptionIndex": 2,
       "explanation": "This reinforces standard DFD symbol conventions taught throughout the chapter.",
@@ -620,6 +673,7 @@
     },
     {
       "questionText": "जिस कोड को किसी वस्तु के मापने योग्य गुणों के साथ विकसित किया जाता है, उसे ___ कहा जाता है।",
+      "questionTextEn": "The code developed with the measurable properties of an item is known as ___.",
       "options": [
         "Group classification code",
         "Self checking code",
@@ -633,6 +687,7 @@
     },
     {
       "questionText": "___ किसी संगठन की संरचना को निर्दिष्ट करता है।",
+      "questionTextEn": "___ specifies the structure of an organization.",
       "options": [
         "Organization chart",
         "DFD",
@@ -646,10 +701,11 @@
     },
     {
       "questionText": "Structured Analysis के प्रमुख लक्ष्य कौनसे हैं-",
+      "questionTextEn": "Structured analysis's main goals are-",
       "options": [
-        "and ii",
-        "and iii",
-        "and iii",
+        "i and ii",
+        "ii and iii",
+        "i and iii",
         "i, ii and iii"
       ],
       "correctOptionIndex": 3,
@@ -659,6 +715,7 @@
     },
     {
       "questionText": "Structured tools का मुख्य उद्देश्य क्या है-",
+      "questionTextEn": "What is the main objective of structured tools?",
       "options": [
         "Data flow diagram",
         "Data dictionary",
@@ -672,8 +729,9 @@
     },
     {
       "questionText": "System design में efficiency में क्या देखा जाता है-",
+      "questionTextEn": "In system design, what is looked at for efficiency?",
       "options": [
-        "and ii",
+        "i and ii",
         "i, ii and iii",
         "i, ii and iv",
         "ii, iii and iv"
@@ -685,6 +743,7 @@
     },
     {
       "questionText": "Functional decomposition में Module को किसके द्वारा दर्शाया जाता है-",
+      "questionTextEn": "In functional decomposition, a Module is represented by-",
       "options": [
         "आयत (Rectangle)",
         "वर्ग (Square)",
@@ -724,6 +783,7 @@
     },
     {
       "questionText": "To create a vehicle of information to provide evidence in the development process and to monitor the process - this is one objective of ___.",
+      "questionTextEn": "To create a vehicle of information to provide evidence in the development process and to monitor the process. This is one of the objectives of ___.",
       "options": [
         "Analysis",
         "Design",
@@ -737,6 +797,7 @@
     },
     {
       "questionText": "किसी भी input record या किसी system पर अपने original source पर वापस की गयी process का पता लगाना क्या कहलाता है-",
+      "questionTextEn": "Tracing back a process on any input record or system to its original source is called-",
       "options": [
         "Audit trial",
         "Conversion",
@@ -750,6 +811,7 @@
     },
     {
       "questionText": "Decision table का उपयोग क्यों करते हैं-",
+      "questionTextEn": "Why is a Decision table used?",
       "options": [
         "Information data को tabular form में displayed करने के लिए",
         "Decision path को displayed करने के लिए",
@@ -763,6 +825,7 @@
     },
     {
       "questionText": "Cost benefit analysis क्या है-",
+      "questionTextEn": "What is Cost benefit analysis?",
       "options": [
         "Hardware तथा software की cost को estimate करना",
         "Cost को benefit के साथ compare करना",
@@ -776,6 +839,7 @@
     },
     {
       "questionText": "DFD का मुख्य रूप से उपयोग में लिया जाता है-",
+      "questionTextEn": "DFD is primarily used to-",
       "options": [
         "Requirement specification को विस्तार से न्यूनतम level तक functionally रूप में अपघटित करता है",
         "यह Design phase का प्रारम्भिक बिन्दु है",
@@ -789,11 +853,12 @@
     },
     {
       "questionText": "Data Flow Diagram में संकेत चिह्नों का मिलान कीजिए: a.Square, b.Straight line, c.Circle, d.Open Rectangle",
+      "questionTextEn": "Match the DFD symbols: a.Square, b.Straight line, c.Circle, d.Open Rectangle",
       "options": [
-        "ii, b-i, c-iii, d-iv",
-        "i, b-ii, c-iii, d-iv",
-        "ii, b-i, c-iv, d-iii",
-        "i, b-ii, c-iv, d-iii"
+        "a-ii, b-i, c-iii, d-iv",
+        "a-i, b-ii, c-iii, d-iv",
+        "a-ii, b-i, c-iv, d-iii",
+        "a-i, b-ii, c-iv, d-iii"
       ],
       "correctOptionIndex": 2,
       "explanation": "This reflects standard DFD notation: Square/Rectangle=External Entity, Line=Data Flow (with arrow), Circle=Process, Open-ended rectangle=Data Store.",
@@ -828,10 +893,11 @@
     },
     {
       "questionText": "Prototyping में उपयोग लिए जाते हैं-",
+      "questionTextEn": "In Prototyping, which are used-",
       "options": [
         "BASIC",
         "COBOL",
-        "GLs",
+        "4 GLs",
         "System is documented"
       ],
       "correctOptionIndex": 2,
@@ -841,6 +907,7 @@
     },
     {
       "questionText": "Interaction का अर्थ क्या है-",
+      "questionTextEn": "What does Interaction mean?",
       "options": [
         "Unit system के components एक साथ मिल जुलकर काम करते हैं",
         "System को order में व्यवस्थित करना",
@@ -854,6 +921,7 @@
     },
     {
       "questionText": "निम्न में से acceptance testing कब किया जाता है-",
+      "questionTextEn": "When is acceptance testing done?",
       "options": [
         "Running the system with live data by the actual user.",
         "Testing change made in an existing or a new program",
@@ -867,6 +935,7 @@
     },
     {
       "questionText": "System Analysis में निम्न में से documentation कब prepared किया जाता है-",
+      "questionTextEn": "In System Analysis, when is documentation prepared?",
       "options": [
         "सभी stages में",
         "System designing में",
@@ -880,6 +949,7 @@
     },
     {
       "questionText": "किसी सॉफ्टवेयर कोड की वास्तविक प्रोग्रामिंग (Actual Programming) SDLC के किस चरण (step) में पूरी की जाती है-",
+      "questionTextEn": "During which SDLC step is actual programming of software code completed?",
       "options": [
         "Maintenance and Evaluation",
         "Design",
@@ -893,6 +963,7 @@
     },
     {
       "questionText": "प्रोसेस SDLC के किस स्टेप में Enhancement, Update और Bug Fix प्रोसेस पूरी की जाती है-",
+      "questionTextEn": "In which SDLC step are the Enhancement, Update, and Bug Fix processes completed?",
       "options": [
         "Initial investigation",
         "Analysis",
@@ -932,6 +1003,7 @@
     },
     {
       "questionText": "Physical DFD क्या-क्या दर्शाता है-",
+      "questionTextEn": "What does a Physical DFD represent?",
       "options": [
         "इस बात पर केंद्रित रहता है कि वास्तव में dataflow, system में किस प्रकार लागू हुआ है",
         "Current system में सम्मिलित वास्तविक devices departments को दर्शाता है",
@@ -945,6 +1017,7 @@
     },
     {
       "questionText": "Coupling किसे कहा जाता है-",
+      "questionTextEn": "What is called Coupling?",
       "options": [
         "एक module का दूसरे module से सम्बन्ध",
         "एक module का दूसरे module पर निर्भरता",
@@ -984,6 +1057,7 @@
     },
     {
       "questionText": "एक ऐसा program जो Coupling व Cohesion के मापदण्डों को पूरा करता है-",
+      "questionTextEn": "A program that satisfies the criteria of Coupling and Cohesion is-",
       "options": [
         "Hierarchy chart",
         "Called",
@@ -997,6 +1071,7 @@
     },
     {
       "questionText": "..... एक ग्राफिकल तकनीक है जो कंडीशन और एक्शन (Condition and action) को एक के बाद एक सीक्वेंस में प्रस्तुत करती है-",
+      "questionTextEn": "..... is a graphical technique that presents Condition and Action in a sequence, one after another-",
       "options": [
         "Decision tree",
         "Data Dictionary",
@@ -1010,6 +1085,7 @@
     },
     {
       "questionText": "Project Schedule को चित्रित (represent) करने के लिए किस चार्ट का प्रयोग किया जाता है-",
+      "questionTextEn": "Which chart is used to represent the Project Schedule?",
       "options": [
         "Pie chart",
         "Line chart",
@@ -1023,6 +1099,7 @@
     },
     {
       "questionText": "कौनसा DFDs System में data के flow तथा System के process पर केंद्रित रहता है-",
+      "questionTextEn": "Which DFD focuses on the flow of data and the system's process?",
       "options": [
         "Physical DFD",
         "Logical DFD",
@@ -1062,6 +1139,7 @@
     },
     {
       "questionText": "निम्न में से कौनसा data file, multiple data file को contain करता है-",
+      "questionTextEn": "Which of the following data file contains multiple data files?",
       "options": [
         "Sequential file",
         "Index file",
@@ -1075,6 +1153,7 @@
     },
     {
       "questionText": "निम्नलिखित file में से least file कौनसा है-",
+      "questionTextEn": "Which of the following is the 'least' (smallest/most transient) file?",
       "options": [
         "Working file",
         "Program file",
@@ -1117,8 +1196,8 @@
       "options": [
         "Unit outside the system being designed which can be controlled by an analyst.",
         "Unit outside the system whose behavior is independent of the system being designed",
-        "unit external to the system being designed",
-        "unit which is not part of a DFD"
+        "A unit external to the system being designed",
+        "A unit which is not part of a DFD"
       ],
       "correctOptionIndex": 2,
       "explanation": "Options (a) and (b) add extra (incorrect) qualifiers - analysts don't 'control' external entities, and their behavior isn't necessarily fully independent; (c) is the cleanest correct definition.",
@@ -1153,6 +1232,7 @@
     },
     {
       "questionText": "Database system का क्या लाभ है-",
+      "questionTextEn": "What are the advantages of a Database system?",
       "options": [
         "Data सभी application share कर सकते हैं",
         "Data redundancy कम हो जाती है",
@@ -1166,6 +1246,7 @@
     },
     {
       "questionText": "SDLC का first step कौनसा है-",
+      "questionTextEn": "What is the first step of SDLC?",
       "options": [
         "Design",
         "Analysis",
@@ -1205,6 +1286,7 @@
     },
     {
       "questionText": "Birth to Mature की प्रोसेस कहलाती है-",
+      "questionTextEn": "The process from Birth to Mature is called-",
       "options": [
         "System death",
         "System design",
@@ -1218,6 +1300,7 @@
     },
     {
       "questionText": "SDLC की प्रोसेस में Enhancement का अर्थ है-",
+      "questionTextEn": "In the SDLC process, Enhancement means-",
       "options": [
         "सिस्टम को बढ़ाना (Increase the system)",
         "सिस्टम को घटाना (Decrease the system)",
@@ -1231,6 +1314,7 @@
     },
     {
       "questionText": "System का मुख्य कार्य क्या है-",
+      "questionTextEn": "What is the main function of a System?",
       "options": [
         "एक या उससे अधिक उद्देश्यों को प्राप्त किया जा सके",
         "यह विभिन्न तत्वों का एक समूह होता है",
@@ -1271,7 +1355,7 @@
     {
       "questionText": "The rules to follow in constructing decision tables is (are):",
       "options": [
-        "decision should be given a name",
+        "a decision should be given a name",
         "the logic of the table is independent of the sequence in which conditions rules are written, but the action takes place in the order in which the events occur.",
         "Standardized language must be used consistently.",
         "All of the above"
@@ -1283,6 +1367,7 @@
     },
     {
       "questionText": "___ एक संगठित परिवर्तन प्रक्रिया में आदानों को स्वीकार करके और आउटपुट का उत्पादन करके एक सामान्य लक्ष्य की दिशा में एक साथ काम करने वाले इच्छुक घटकों का एक समूह है।",
+      "questionTextEn": "___ is a group of interested components working together towards a common goal by accepting inputs and producing outputs in an organized transformation process.",
       "options": [
         "System",
         "Network",
@@ -1296,6 +1381,7 @@
     },
     {
       "questionText": "समस्या कथन को प्रोग्राम को क्या करना चाहिए इसका वर्णन करने वाले क्रमिक चरणों की एक श्रृंखला में अनुवाद करना ___ के रूप में जाना जाता है।",
+      "questionTextEn": "Translating the problem statement into a series of sequential steps describing what the program must do is known as ___.",
       "options": [
         "coding",
         "debugging",
@@ -1309,11 +1395,12 @@
     },
     {
       "questionText": "DFD में डेटा स्टोर दर्शाता है-",
+      "questionTextEn": "Data store in a DFD represents-",
       "options": [
-        "sequential file",
-        "disk store",
-        "repository of data",
-        "random access memory"
+        "a sequential file",
+        "a disk store",
+        "a repository of data",
+        "a random access memory"
       ],
       "correctOptionIndex": 2,
       "explanation": "DFD data stores are logical/abstract representations, not bound to any specific technology like disk or RAM.",
@@ -1322,9 +1409,10 @@
     },
     {
       "questionText": "DFD में एक आयत ___ दर्शाता है?",
+      "questionTextEn": "A rectangle in a DFD represents ___?",
       "options": [
-        "process",
-        "data store",
+        "a process",
+        "a data store",
         "an external entity",
         "an input unit"
       ],
@@ -1335,8 +1423,9 @@
     },
     {
       "questionText": "System का मुख्य उद्देश्य क्या है-",
+      "questionTextEn": "What is the main objective of a System?",
       "options": [
-        "व (ii) दोनों",
+        "(i) व (ii) दोनों",
         "केवल (ii)",
         "केवल (i)",
         "दोनों में से कोई नहीं"
@@ -1348,6 +1437,7 @@
     },
     {
       "questionText": "एक संक्षिप्त कोड (concise code) अनिवार्य रूप से है-",
+      "questionTextEn": "A concise code is necessarily-",
       "options": [
         "Precise",
         "Meaningful",
@@ -1400,11 +1490,18 @@
     },
     {
       "questionText": "डिबगिंग है:",
+      "questionTextEn": "Debugging is:",
       "options": [
-        "प्रोग्राम कोड बनाना / creating program code",
-        "प्रोग्राम कोड में त्रुटियों को ढूँढना और सुधारना / finding and correcting errors in the program code",
-        "कम्प्यूटरीकृत किए जाने वाले कार्य की पहचान करना / identifying the task to be computerized",
-        "एल्गोरिद्म बनाना / creating the algorithm"
+        "प्रोग्राम कोड बनाना",
+        "प्रोग्राम कोड में त्रुटियों को ढूँढना और सुधारना",
+        "कम्प्यूटरीकृत किए जाने वाले कार्य की पहचान करना",
+        "एल्गोरिद्म बनाना"
+      ],
+      "optionsEn": [
+        "creating program code",
+        "finding and correcting errors in the program code",
+        "identifying the task to be computerized",
+        "creating the algorithm"
       ],
       "correctOptionIndex": 1,
       "explanation": "This is a direct definitional match with no ambiguity.",
@@ -1413,6 +1510,7 @@
     },
     {
       "questionText": "फीचर ओरिएंटेड डोमेन एनालिसिस (FODA) में कितने चरण शामिल हैं?",
+      "questionTextEn": "How many steps are involved in Feature Oriented Domain Analysis (FODA)?",
       "options": [
         "2",
         "3",
@@ -1426,6 +1524,7 @@
     },
     {
       "questionText": "___ system में programs, data files और documentation शामिल हैं।",
+      "questionTextEn": "___ system consists of programs, data files and documentation.",
       "options": [
         "Conceptual",
         "Logical",
@@ -1439,10 +1538,11 @@
     },
     {
       "questionText": "एक आवश्यकता विनिर्देश तैयार करने वाले सिस्टम विश्लेषक की भूमिका किसके समान है?",
+      "questionTextEn": "The role of a system analyst drawing up a requirements specification is similar to ?",
       "options": [
         "architect designing a building",
-        "structural engineer designing a building",
-        "contractor constructing a building",
+        "a structural engineer designing a building",
+        "a contractor constructing a building",
         "the workers who construct a building"
       ],
       "correctOptionIndex": 0,
@@ -1452,11 +1552,12 @@
     },
     {
       "questionText": "Open या Close System की प्रमुख विशेषता है-",
+      "questionTextEn": "The major characteristics of an Open or Closed System are-",
       "options": [
         "1,2 व 3",
-        "व 3",
-        "व 2",
-        "व 4"
+        "1 व 3",
+        "1 व 2",
+        "2 व 4"
       ],
       "correctOptionIndex": 2,
       "explanation": "Entropy (tendency toward disorder) and Equifinality (reaching the same end state via different paths) are classic systems-theory concepts often discussed together for open/closed systems.",
@@ -1465,6 +1566,7 @@
     },
     {
       "questionText": "ऐसा कोई real object जो operation की दृष्टि से static या dynamic हो ___ कहलाता है-",
+      "questionTextEn": "Any real object that is static or dynamic from an operational viewpoint is called-",
       "options": [
         "Physical system",
         "Open system",
@@ -1504,6 +1606,7 @@
     },
     {
       "questionText": "आवश्यकता विनिर्देश तैयार करते समय निम्नलिखित से परामर्श करना आवश्यक है?",
+      "questionTextEn": "It is necessary to consult the following while drawing up requirement specification?",
       "options": [
         "only top managers",
         "only top and middle management",
@@ -1517,11 +1620,12 @@
     },
     {
       "questionText": "Structured analysis में उपयोग ली जाने वाली chart तकनीक कौन-कौनसी हैं-",
+      "questionTextEn": "Which chart techniques are used in Structured analysis?",
       "options": [
-        "व (iv)",
-        "व (ii)",
-        "व (iii)",
-        ", (ii) व (iii)"
+        "(i) व (iv)",
+        "(i) व (ii)",
+        "(ii) व (iii)",
+        "(i), (ii) व (iii)"
       ],
       "correctOptionIndex": 1,
       "explanation": "This aligns with Q14's earlier fact that 'Square chart' isn't a real chart type, reinforcing why option combinations including (iv) are wrong.",
@@ -1530,6 +1634,7 @@
     },
     {
       "questionText": "Bubble Chart का अन्य नाम है-",
+      "questionTextEn": "Another name for Bubble Chart is-",
       "options": [
         "Data Flow Design",
         "Data Flow Diagram",
@@ -1608,6 +1713,7 @@
     },
     {
       "questionText": "System Study में शामिल होता है-",
+      "questionTextEn": "System Study includes-",
       "options": [
         "मौजूदा प्रणाली का अध्ययन (Study of an existing system)",
         "मौजूदा प्रणाली का डॉक्यूमेंटेशन (Documentation of existing system)",
@@ -1647,6 +1753,7 @@
     },
     {
       "questionText": "System designing हेतु प्रयुक्त SDLC का Second step कौनसा होता है-",
+      "questionTextEn": "What is the Second step of SDLC used for System designing?",
       "options": [
         "इनिशियल इन्वेस्टीगेशन",
         "सिस्टम एनालिसिस",
@@ -1673,6 +1780,7 @@
     },
     {
       "questionText": "___ को डेटा के रूप में परिभाषित किया जा सकता है जिसे एक ऐसे रूप में संसाधित किया गया है जो प्राप्तकर्ता के लिए सार्थक है और वर्तमान या संभावित निर्णयों में वास्तविक या अनुमानित मूल्य का है।",
+      "questionTextEn": "___ can be defined as data that has been processed into a form that is meaningful to the recipient and is of real or perceived value in current or prospective decisions.",
       "options": [
         "Information",
         "Data collection",
@@ -1712,6 +1820,7 @@
     },
     {
       "questionText": "सिस्टम डिफाइनिंग में प्रयुक्त ऐसा सिस्टम जो अपने बाहर के वातावरण (Environment) से interact नहीं करता ... सिस्टम कहलाता है-",
+      "questionTextEn": "In system defining, a system that does not interact with its outside environment is called a ___ system.",
       "options": [
         "Close",
         "Open",
@@ -1725,6 +1834,7 @@
     },
     {
       "questionText": "ऐसा सिस्टम जो अपने बाहर के वातावरण (environment) से इंटैक्ट करता है ___ सिस्टम कहलाता है-",
+      "questionTextEn": "A system that interacts with its outside environment is called a ___ system.",
       "options": [
         "Open system",
         "Physical system",
@@ -1738,6 +1848,7 @@
     },
     {
       "questionText": "Fact finding process के लिए निम्न में से कौनसी तकनीक इस्तेमाल की जाती है-",
+      "questionTextEn": "Which technique is used for the fact finding process?",
       "options": [
         "Review of written Document",
         "Onsite observation",
@@ -1764,6 +1875,7 @@
     },
     {
       "questionText": "Increased volume of sales किस Benefit का उदाहरण है। Reduction of bad debts किसका उदाहरण है?",
+      "questionTextEn": "Increased volume of sales is an example of ___ Benefit. Reduction of bad debts is an example of ___.",
       "options": [
         "Tangible, Intangible",
         "Tangible, Tangible",
@@ -1777,6 +1889,7 @@
     },
     {
       "questionText": "....... फिजिबिलिटी में अनुमानित लाभों (Estimated profit) की तुलना अनुमानित लागत (estimated cost) से की जाती है-",
+      "questionTextEn": "In ....... feasibility, estimated profit is compared with estimated cost-",
       "options": [
         "Economic",
         "Technical",
@@ -1803,6 +1916,7 @@
     },
     {
       "questionText": "सिस्टम से जुड़ी सभी बातें एक अरेंज फॉर्म में .... लिखी जाती हैं-",
+      "questionTextEn": "All matters related to the system are written in an arranged form in the ____-",
       "options": [
         "Operational Manual",
         "User Manual",
@@ -1816,6 +1930,7 @@
     },
     {
       "questionText": "निम्नलिखित System testing का उद्देश्य क्या है-",
+      "questionTextEn": "What is the objective of System testing?",
       "options": [
         "Online response",
         "Volume",
@@ -1842,6 +1957,7 @@
     },
     {
       "questionText": "System user से बात करके जानकारी इकट्ठा करना, डॉक्यूमेंटेशन करना, सिस्टम डिजाईन तैयार करना आदि कार्य कौन करता है-",
+      "questionTextEn": "Who performs tasks like gathering information from system users, documentation, and preparing system design?",
       "options": [
         "Project managers",
         "Network engineers",
@@ -1869,9 +1985,9 @@
     {
       "questionText": "A data cannot flow between a store and (i) a store (ii) a process (iii) an external entity",
       "options": [
-        "and ii",
-        "and iii",
-        "and iii",
+        "i and ii",
+        "i and iii",
+        "ii and iii",
         "ii"
       ],
       "correctOptionIndex": 1,
@@ -1881,6 +1997,7 @@
     },
     {
       "questionText": "EDP का फुल फॉर्म क्या है-",
+      "questionTextEn": "What is the full form of EDP?",
       "options": [
         "Electric data processing",
         "Electronic data procedure",
@@ -1934,10 +2051,16 @@
     {
       "questionText": "The ___ project should go forward, determines whether the...",
       "options": [
-        "व्यवहार्यता मूल्यांकन / feasibility assessment",
-        "अवसर पहचान / opportunity identification",
-        "प्रणाली मूल्यांकन / system evaluation",
-        "कार्यक्रम विनिर्देश / program specification"
+        "व्यवहार्यता मूल्यांकन",
+        "अवसर पहचान",
+        "प्रणाली मूल्यांकन",
+        "कार्यक्रम विनिर्देश"
+      ],
+      "optionsEn": [
+        "feasibility assessment",
+        "opportunity identification",
+        "system evaluation",
+        "program specification"
       ],
       "correctOptionIndex": 0,
       "explanation": "This reinforces feasibility study's role as the go/no-go decision point in SDLC.",
@@ -1985,6 +2108,7 @@
     },
     {
       "questionText": "Structured English का प्रयोग किया जाता है-",
+      "questionTextEn": "Structured English is used for-",
       "options": [
         "प्रोग्राम को कैसे लिखा जाए (how programs are to be written)",
         "DFD की प्रक्रियाओं को सटीक ढंग से समझाना (processes in a DFD in a reasonably precise manner)",
@@ -1998,6 +2122,7 @@
     },
     {
       "questionText": "PDLC का फुल फॉर्म क्या है-",
+      "questionTextEn": "What is the full form of PDLC?",
       "options": [
         "Personal system development life cycle",
         "Program definition life cycle",
@@ -2037,6 +2162,7 @@
     },
     {
       "questionText": "After Development प्रेपेर्ड is known as-",
+      "questionTextEn": "The document prepared after Development is known as-",
       "options": [
         "Program specification",
         "Design specification",
@@ -2063,6 +2189,7 @@
     },
     {
       "questionText": "Feed Back क्या है-",
+      "questionTextEn": "What is Feed Back?",
       "options": [
         "Input देने की विधि (Method of input)",
         "Data store करने की विधि (data storage method)",
@@ -2076,6 +2203,7 @@
     },
     {
       "questionText": "Pie chart का प्रयोग क्यों किया जाता है-",
+      "questionTextEn": "Why is a Pie chart used?",
       "options": [
         "दो सीरीज के बीच तुलना करने के लिए",
         "दो से ज्यादा सीरीज के बीच तुलना करने के लिए",
@@ -2090,10 +2218,10 @@
     {
       "questionText": "The primary objectives of system implementation are-",
       "options": [
-        "and iii",
+        "i and iii",
         "i, ii and iii",
-        "and iii",
-        "and iv"
+        "ii and iii",
+        "ii and iv"
       ],
       "correctOptionIndex": 3,
       "explanation": "Statement (i) 'build a prototype' belongs more to a Prototyping methodology stage, and (iii) is a partial restatement already captured better by (iv); the book's key selects (ii) and (iv) as the core implementation objectives.",
@@ -2129,9 +2257,9 @@
     {
       "questionText": "During system implementation the following are done",
       "options": [
-        "and iii",
-        "and iii",
-        "and iv",
+        "i and iii",
+        "ii and iii",
+        "ii and iv",
         "I, II and iv"
       ],
       "correctOptionIndex": 2,
@@ -2141,6 +2269,7 @@
     },
     {
       "questionText": "एक सिस्टम में डेटाबेस क्यों बनाया जाता है-",
+      "questionTextEn": "Why is a database created in a system?",
       "options": [
         "पुनरावृत्ति से बचाव (Safety from redundancy)",
         "डाटा की पुन: प्राप्ति (Recovery of data)",
@@ -2154,6 +2283,7 @@
     },
     {
       "questionText": "निम्न में से ___ को system recovery planning में शामिल नहीं किया जाता-",
+      "questionTextEn": "Which of the following is NOT included in system recovery planning?",
       "options": [
         "एक आपात योजना (A contingency plan)",
         "बैकअप योजना (a backup plan)",
@@ -2232,6 +2362,7 @@
     },
     {
       "questionText": "जानकारियों को इकट्ठा करने हेतु कौनसी तकनीक का इस्तेमाल किया जाता है-",
+      "questionTextEn": "Which technique is used to gather information?",
       "options": [
         "Onsite Observation",
         "After Program Development",
@@ -2245,6 +2376,7 @@
     },
     {
       "questionText": "System modification का मुख्य उद्देश्य है-",
+      "questionTextEn": "The main objective of System modification is-",
       "options": [
         "नवीनतम सॉफ्टवेयर उपकरण का उपयोग करने के लिए",
         "उपयोगकर्ता की नई और बदली जरूरतों को पूरा करने के लिए",
@@ -2310,10 +2442,11 @@
     },
     {
       "questionText": "System modeling के लिए सत्य कथन है-",
+      "questionTextEn": "True statement(s) for System modeling-",
       "options": [
         "i, ii व iii",
-        "व iii",
-        "व ii",
+        "ii व iii",
+        "i व ii",
         "केवल i"
       ],
       "correctOptionIndex": 2,
@@ -2349,10 +2482,11 @@
     },
     {
       "questionText": "UML के लिए सत्य कथन है-",
+      "questionTextEn": "True statement(s) for UML-",
       "options": [
-        "व iii",
-        "व iii",
-        "व ii",
+        "i व iii",
+        "ii व iii",
+        "i व ii",
         "उपरोक्त सभी"
       ],
       "correctOptionIndex": 0,
@@ -2364,8 +2498,8 @@
       "questionText": "System analysts have to interact with-",
       "options": [
         "i, ii iii व iv",
-        "व iii",
-        "व ii",
+        "ii व iii",
+        "i व ii",
         "केवल i"
       ],
       "correctOptionIndex": 0,
@@ -2389,10 +2523,16 @@
     {
       "questionText": "The first step in the systems development life cycle (SDLC) is ___.",
       "options": [
-        "विश्लेषण / Analysis",
-        "डिजाइन / Design",
-        "समस्या/अवसर की पहचान / Problem/ Opportunity Identification",
-        "विकास और प्रलेखन / Development and Documentation"
+        "विश्लेषण",
+        "डिजाइन",
+        "समस्या/अवसर की पहचान / Problem",
+        "विकास और प्रलेखन"
+      ],
+      "optionsEn": [
+        "Analysis",
+        "Design",
+        "Opportunity Identification",
+        "Development and Documentation"
       ],
       "correctOptionIndex": 2,
       "explanation": "Direct repeat of Q91's concept in bilingual form.",
@@ -2415,7 +2555,7 @@
     {
       "questionText": "The responsibilities of a system analyst include ___.",
       "options": [
-        "and ii",
+        "i and ii",
         "i, ii and iv",
         "i, ii, iii and iv",
         "i, ii and iii"
@@ -2441,7 +2581,7 @@
     {
       "questionText": "Among the attributes of a good systems analyst the following are essential",
       "options": [
-        "and ii",
+        "i and ii",
         "i, ii and iii",
         "i, ii, and iv",
         "i, iii and iv"
@@ -2453,6 +2593,7 @@
     },
     {
       "questionText": "UML diagram के प्रकार हैं-",
+      "questionTextEn": "Types of UML diagrams are-",
       "options": [
         "Activity diagram",
         "Sequence diagram",
@@ -2492,6 +2633,7 @@
     },
     {
       "questionText": "UML Diagrams में उपयोग आने वाला Symbol है-",
+      "questionTextEn": "The symbol used in UML Diagrams is-",
       "options": [
         "*",
         "%",
@@ -2507,7 +2649,7 @@
       "questionText": "Among the attributes of a systems analyst the following are most important",
       "options": [
         "i, iii and iv",
-        "and iii",
+        "i and iii",
         "i, ii and iv",
         "i, ii and iii"
       ],
@@ -2531,6 +2673,7 @@
     },
     {
       "questionText": "___ घटकों का एक समूह है जो एक निश्चित उद्देश्य के लिए इंटरैक्ट करता है-",
+      "questionTextEn": "___ is a group of components that interact for a specific purpose-",
       "options": [
         "System",
         "Network",
@@ -2570,6 +2713,7 @@
     },
     {
       "questionText": "निम्न में से कौनसा tool सिस्टम एनालिसिस के लिए प्रयोग नहीं होता-",
+      "questionTextEn": "Which of the following tools is NOT used for system analysis?",
       "options": [
         "System - text data",
         "Decision table",
@@ -2596,6 +2740,7 @@
     },
     {
       "questionText": "किसी special purpose के लिए विभिन्न घटकों (Components) के मध्य सम्बन्ध को क्या कहा जाता है-",
+      "questionTextEn": "The relationship between various components for a special purpose is called-",
       "options": [
         "Relation chart",
         "Start",
@@ -2609,11 +2754,18 @@
     },
     {
       "questionText": "Systems analyst को ___ के रूप में अपने काम में सॉफ्टवेयर टूल्स का उपयोग करना चाहिए।",
+      "questionTextEn": "Systems analyst should use software tools in their work as ___.",
       "options": [
-        "सभी विश्लेषक उनका उपयोग करते हैं / all analysts use them",
-        "वे सिस्टम के व्यवस्थित डिजाइन में सहायता करते हैं / they assist in systematic design of systems",
-        "वे सस्ती हैं / they are inexpensive",
-        "वे आसानी से उपलब्ध हैं / they are easily available"
+        "सभी विश्लेषक उनका उपयोग करते हैं",
+        "वे सिस्टम के व्यवस्थित डिजाइन में सहायता करते हैं",
+        "वे सस्ती हैं",
+        "वे आसानी से उपलब्ध हैं"
+      ],
+      "optionsEn": [
+        "all analysts use them",
+        "they assist in systematic design of systems",
+        "they are inexpensive",
+        "they are easily available"
       ],
       "correctOptionIndex": 1,
       "explanation": "This is a reasoning-quality question - the BEST justification relates to genuine design benefits, not superficial factors like cost or popularity.",
@@ -2648,6 +2800,7 @@
     },
     {
       "questionText": "System testing का कार्य किया जाता है-",
+      "questionTextEn": "System testing work is done-",
       "options": [
         "Before Program Development",
         "After making plan",
@@ -2661,11 +2814,12 @@
     },
     {
       "questionText": "System development की process के प्रयुक्त कारक हैं-",
+      "questionTextEn": "The factors used in the System development process are-",
       "options": [
         "सिस्टम विश्लेषण (System Analysis)",
         "सिस्टम डिजाइन (system Design)",
         "सिस्टम ब्रेक (System Break)",
-        "व B दोनों"
+        "A व B दोनों"
       ],
       "correctOptionIndex": 3,
       "explanation": "This composite question recognizes both Analysis and Design as core, complementary factors in system development.",
@@ -2675,9 +2829,9 @@
     {
       "questionText": "The structure chart is-",
       "options": [
-        "document of what has to be accomplished",
-        "statement of information processing requirement",
-        "hierarchical partitioning of the program",
+        "a document of what has to be accomplished",
+        "a statement of information processing requirement",
+        "a hierarchical partitioning of the program",
         "All of the above"
       ],
       "correctOptionIndex": 2,
@@ -2752,6 +2906,7 @@
     },
     {
       "questionText": "Bug क्या है-",
+      "questionTextEn": "What is a Bug?",
       "options": [
         "Virus",
         "Antivirus",
@@ -2805,10 +2960,16 @@
     {
       "questionText": "Study involves",
       "options": [
-        "एक मौजूदा प्रणाली का अध्ययन /study of an existing system",
-        "मौजूदा प्रणाली का दस्तावेजीकरण/ System documenting the existing system",
-        "मौजूदा कमियों की पहचान करना और नए लक्ष्य स्थापित करना /identifying current deficiencies and establishing new goals",
-        "उपर्युक्त सभी /All of the above"
+        "एक मौजूदा प्रणाली का अध्ययन",
+        "मौजूदा प्रणाली का दस्तावेजीकरण",
+        "मौजूदा कमियों की पहचान करना और नए लक्ष्य स्थापित करना",
+        "उपर्युक्त सभी"
+      ],
+      "optionsEn": [
+        "study of an existing system",
+        "System documenting the existing system",
+        "identifying current deficiencies and establishing new goals",
+        "All of the above"
       ],
       "correctOptionIndex": 3,
       "explanation": "Direct repeat of Q126's concept, slightly rephrased.",
@@ -2830,6 +2991,7 @@
     },
     {
       "questionText": "एल्गोरिथम को प्रोग्रामिंग लैंग्वेज में बदलना कहलाता है-",
+      "questionTextEn": "Converting an algorithm into a programming language is called-",
       "options": [
         "Debugging",
         "Coding",
@@ -2869,6 +3031,7 @@
     },
     {
       "questionText": "System documentation का अर्थ है-",
+      "questionTextEn": "System documentation means-",
       "options": [
         "प्रोग्राम के रिकॉर्ड को एकत्र (collect) करना",
         "प्रोग्राम के रिकॉर्ड को मैनेज करना",
@@ -2882,6 +3045,7 @@
     },
     {
       "questionText": "___ बताता है कि प्रोजेक्ट को आगे बढ़ाना (continue), postpone करना है या बंद (terminate) करना है-",
+      "questionTextEn": "___ determines whether the project should continue, be postponed, or be terminated-",
       "options": [
         "Opportunity identification",
         "Feasibility assessment",
@@ -2948,10 +3112,10 @@
     {
       "questionText": "Sequence numbering of records is used to",
       "options": [
-        "and ii",
+        "i and ii",
         "i, ii and iii",
         "i, ii, iii and iv",
-        "and iv"
+        "i and iv"
       ],
       "correctOptionIndex": 2,
       "explanation": "This is a broader view of sequential/serial codes than Q8's narrower properties list (concise, expandable) - here focusing on functional USES rather than code PROPERTIES.",
@@ -3025,6 +3189,7 @@
     },
     {
       "questionText": "In significant codes some or all parts of the code ___।",
+      "questionTextEn": "In significant codes, some or all parts of the code ___.",
       "options": [
         "are meaningful",
         "are usable",
@@ -3078,7 +3243,7 @@
     {
       "questionText": "Significant codes are-",
       "options": [
-        "and ii",
+        "i and ii",
         "i, ii and iii",
         "ii, iii and iv",
         "i, ii and iv"
@@ -3129,6 +3294,7 @@
     },
     {
       "questionText": "A Flow chart डिसीजन मेकिंग के लिए कौनसा सिंबल प्रयोग होता है-",
+      "questionTextEn": "Which symbol is used for decision making in a Flow chart?",
       "options": [
         "Rectangle",
         "Diamond",
@@ -3142,6 +3308,7 @@
     },
     {
       "questionText": "एक सिस्टम जिसे डेवलप किया जा रहा है उसे .............कहते हैं-",
+      "questionTextEn": "A system that is being developed is called a .............-",
       "options": [
         "Developing system",
         "Abstract system",
@@ -3168,6 +3335,7 @@
     },
     {
       "questionText": "ऐसे इनपुट जो डाटा एंट्री के समय कम्प्यूटर द्वारा मांगे जाने पर बीच-बीच में दिए जाते हैं ....... कहलाते हैं-",
+      "questionTextEn": "Inputs that are provided intermittently when requested by the computer during data entry are called ___.",
       "options": [
         "Interactive input",
         "Input From Inside",
@@ -3207,6 +3375,7 @@
     },
     {
       "questionText": "UML diagram के प्रकार हैं-",
+      "questionTextEn": "Types of UML diagrams are-",
       "options": [
         "Activity diagram",
         "Sequence diagram",
@@ -3233,6 +3402,7 @@
     },
     {
       "questionText": "Software का चुनाव करते समय किस बात का विशेष ध्यान रखा जाता है-",
+      "questionTextEn": "What is given special attention when selecting Software?",
       "options": [
         "Reliability",
         "Functionality",

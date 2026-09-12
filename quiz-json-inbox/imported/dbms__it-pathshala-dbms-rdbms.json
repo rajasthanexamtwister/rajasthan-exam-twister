@@ -10,11 +10,18 @@
   "questions": [
     {
       "questionText": "डेटाबेस, सूचना का संचय _____ में करता है।",
+      "questionTextEn": "The database stores information in _____.",
       "options": [
-        "rows and columns / पंक्तियों और स्तंभों",
-        "blocks / ब्लॉक",
-        "tracks and sectors / ट्रैक और सेक्टर",
-        "index / इंडेक्स"
+        "पंक्तियों और स्तंभों",
+        "ब्लॉक",
+        "ट्रैक और सेक्टर",
+        "इंडेक्स"
+      ],
+      "optionsEn": [
+        "rows and columns",
+        "blocks",
+        "tracks and sectors",
+        "index"
       ],
       "correctOptionIndex": 0,
       "explanation": "Relational Database Management System (RDBMS) में डेटा Tables में store होता है जो rows और columns से बना होता है।",
@@ -23,11 +30,18 @@
     },
     {
       "questionText": "एक रिलेशन में एट्रीब्यूट्स की संख्या, रिलेशन की _____ कहलाती है।",
+      "questionTextEn": "The number of attributes in a relation is called the _____ of the relation.",
       "options": [
-        "Degree / डिग्री",
-        "Domain / डोमेन",
-        "Cardinality / कार्डिनैलिटी",
-        "Tuples / टपल्स"
+        "डिग्री",
+        "डोमेन",
+        "कार्डिनैलिटी",
+        "टपल्स"
+      ],
+      "optionsEn": [
+        "Degree",
+        "Domain",
+        "Cardinality",
+        "Tuples"
       ],
       "correctOptionIndex": 0,
       "explanation": "Degree = Number of Attributes (Columns). Cardinality = Number of Tuples (Rows). Domain = Set of valid values in a column.",
@@ -36,11 +50,18 @@
     },
     {
       "questionText": "_____ डेटाबेस की का एक अवैध रूप है।",
+      "questionTextEn": "_____ is an invalid type of database key.",
       "options": [
-        "Structured primary key / संरचित प्राथमिक कुंजी",
-        "Atomic Primary key / एटॉमिक प्राथमिक कुंजी",
-        "Primary key / प्राथमिक कुंजी",
-        "Composite primary key / समष्टि प्राथमिक कुंजी"
+        "संरचित प्राथमिक कुंजी",
+        "एटॉमिक प्राथमिक कुंजी",
+        "प्राथमिक कुंजी",
+        "समष्टि प्राथमिक कुंजी"
+      ],
+      "optionsEn": [
+        "Structured primary key",
+        "Atomic Primary key",
+        "Primary key",
+        "Composite primary key"
       ],
       "correctOptionIndex": 0,
       "explanation": "DBMS में 'Structured primary key' कोई मान्यता प्राप्त प्रकार नहीं है। Atomic Primary Key और Composite Primary Key valid types हैं।",
@@ -49,12 +70,20 @@
     },
     {
       "questionText": "किसी रिकॉर्ड को विशिष्ट रूप से पहचानने के लिए सामूहिक रूप से ली गई एक या अधिक विशेषताओं का एक सेट है।",
+      "questionTextEn": "_____ is a set of one or more attribute(s) taken collectively to uniquely identify a record.",
       "options": [
-        "Primary key / प्राइमरी की",
-        "Foreign key / फॉरेन की",
-        "Superkey / सुपरकी",
-        "More than one of the above / उपरोक्त में से एक से अधिक",
-        "None of the above / उपरोक्त में से कोई नहीं"
+        "प्राइमरी की",
+        "फॉरेन की",
+        "सुपरकी",
+        "उपरोक्त में से एक से अधिक",
+        "उपरोक्त में से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Primary key",
+        "Foreign key",
+        "Superkey",
+        "More than one of the above",
+        "None of the above"
       ],
       "correctOptionIndex": 2,
       "explanation": "Superkey एक या अधिक attributes का वह set है जो किसी भी row को uniquely identify कर सके। Primary Key एक minimal superkey है।",
@@ -63,12 +92,20 @@
     },
     {
       "questionText": "रिलेशनल डेटाबेस में प्राथमिक कुंजी क्या है?",
+      "questionTextEn": "In a relational database, what is a primary key?",
       "options": [
-        "key used to uniquely identify each record in a table / विशिष्ट पहचान के लिए उपयोग की जाने वाली कुंजी तालिका में प्रत्येक रिकॉर्ड",
-        "key used to establish relationships between tables / स्थापित करने के लिए उपयोग की जाने वाली कुंजी तालिकाओं के बीच संबंध",
-        "key used to sort records in a table / एक कुंजी जिसका उपयोग रिकॉर्ड्स को सॉर्ट करने के लिए किया जाता है",
-        "More than one of the above / उपरोक्त में से एक से अधिक",
-        "None of the above / उपरोक्त में से कोई नहीं"
+        "विशिष्ट पहचान के लिए उपयोग की जाने वाली कुंजी तालिका में प्रत्येक रिकॉर्ड",
+        "स्थापित करने के लिए उपयोग की जाने वाली कुंजी तालिकाओं के बीच संबंध",
+        "एक कुंजी जिसका उपयोग रिकॉर्ड्स को सॉर्ट करने के लिए किया जाता है",
+        "उपरोक्त में से एक से अधिक",
+        "उपरोक्त में से कोई नहीं"
+      ],
+      "optionsEn": [
+        "A key used to uniquely identify each record in a table",
+        "A key used to establish relationships between tables",
+        "A key used to sort records in a table",
+        "More than one of the above",
+        "None of the above"
       ],
       "correctOptionIndex": 0,
       "explanation": "Primary Key किसी टेबल में हर record को uniquely identify करती है। यह NULL नहीं हो सकती और duplicate values नहीं हो सकती।",
@@ -77,12 +114,20 @@
     },
     {
       "questionText": "एक table में कितनी primary key/keys हो सकती है/हैं?",
+      "questionTextEn": "How many primary keys can there be in a table?",
       "options": [
-        "Only 1 / केवल 1",
-        "Only 2 / केवल 2",
-        "Depends on number of columns / कॉलमों की संख्या पर निर्भर करती है",
-        "More than one of the above / उपरोक्त में से एक से अधिक",
-        "None of the above / उपरोक्त में से कोई नहीं"
+        "केवल 1",
+        "केवल 2",
+        "कॉलमों की संख्या पर निर्भर करती है",
+        "उपरोक्त में से एक से अधिक",
+        "उपरोक्त में से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Only 1",
+        "Only 2",
+        "Depends on number of columns",
+        "More than one of the above",
+        "None of the above"
       ],
       "correctOptionIndex": 0,
       "explanation": "एक table में केवल एक Primary Key हो सकती है। यह Composite हो सकती है (multiple columns), लेकिन constraint के रूप में एक ही होती है।",
@@ -91,12 +136,20 @@
     },
     {
       "questionText": "एक टेबल का एट्रीब्यूट, जो दूसरे टेबल की प्राइमरी की से मैच (मिलता हो) करता है, कहलाता है-",
+      "questionTextEn": "An attribute of one table matching the primary key of another table is called as-",
       "options": [
-        "foreign key / फॉरेन की",
-        "secondary key / सेकेंडरी की",
-        "candidate key / कैंडिडेट की",
-        "More than one of the above / उपरोक्त में से एक से अधिक",
-        "None of the above / उपरोक्त में से कोई नहीं"
+        "फॉरेन की",
+        "सेकेंडरी की",
+        "कैंडिडेट की",
+        "उपरोक्त में से एक से अधिक",
+        "उपरोक्त में से कोई नहीं"
+      ],
+      "optionsEn": [
+        "foreign key",
+        "secondary key",
+        "candidate key",
+        "More than one of the above",
+        "None of the above"
       ],
       "correctOptionIndex": 0,
       "explanation": "Foreign Key वह column है जो दूसरी table की Primary Key को reference करता है। यह tables के बीच relationship establish करता है।",
@@ -105,12 +158,20 @@
     },
     {
       "questionText": "रिलेशनल डेटाबेस में, किसी टेबल के हरेक कॉलम के वैल्यू के डेटा टाइप को क्या कहा जाता है?",
+      "questionTextEn": "In relational database, the data type of values in each column of a table is called-",
       "options": [
-        "attribute / एट्रीब्यूट",
-        "domain / डोमेन",
-        "relation / रिलेशन",
-        "More than one of the above / उपरोक्त में से एक से अधिक",
-        "None of the above / उपरोक्त में से कोई नहीं"
+        "एट्रीब्यूट",
+        "डोमेन",
+        "रिलेशन",
+        "उपरोक्त में से एक से अधिक",
+        "उपरोक्त में से कोई नहीं"
+      ],
+      "optionsEn": [
+        "attribute",
+        "domain",
+        "relation",
+        "More than one of the above",
+        "None of the above"
       ],
       "correctOptionIndex": 1,
       "explanation": "Domain = किसी column में valid values का set (data type + constraints)। Example: Age column का domain = positive integers।",
@@ -119,6 +180,7 @@
     },
     {
       "questionText": "रिलेशनल डेटा बेस में एक रिलेशन का डिग्री और कार्डिनैलिटी क्रमश: 4 और 3 है। अगर 3 एट्रीब्यूट और 4 ट्यूपल उस रिलेशन में जोड़ दिया जाए, तो उस रिलेशन का नया कार्डिनैलिटी और डिग्री क्या होगा?",
+      "questionTextEn": "Degree and cardinality of a relation in relational database are 4 and 3 respectively. If 3 attributes and 4 tuples are added to the relation, what will be its new cardinality and degree?",
       "options": [
         "7, 6",
         "7, 7",
@@ -133,11 +195,18 @@
     },
     {
       "questionText": "एक कैंडिडेट कुंजी जो कि प्राथमिक कुंजी नहीं होती है, _____ होती है।",
+      "questionTextEn": "A candidate key that is not the primary key is an _____.",
       "options": [
-        "Master key / मास्टर कुंजी",
-        "Alternate key / आल्टरनेट कुंजी",
-        "Unique key / यूनिक कुंजी",
-        "Foreign key / फॉरेन कुंजी"
+        "मास्टर कुंजी",
+        "आल्टरनेट कुंजी",
+        "यूनिक कुंजी",
+        "फॉरेन कुंजी"
+      ],
+      "optionsEn": [
+        "Master key",
+        "Alternate key",
+        "Unique key",
+        "Foreign key"
       ],
       "correctOptionIndex": 1,
       "explanation": "Alternate Key = Candidate Key - Primary Key। यानी जो Candidate Keys Primary Key नहीं चुनी गईं, वे Alternate Keys बन जाती हैं।",
@@ -146,11 +215,18 @@
     },
     {
       "questionText": "किसी रिलेशन के कॉलम को सामान्यत: _____ कहा जाता है।",
+      "questionTextEn": "Columns of a relation are generally referred to as _____.",
       "options": [
-        "Couple / कपल",
-        "Degree / डिग्री",
-        "Tuples / टपल्स",
-        "Attributes / एट्रीब्यूट्स"
+        "कपल",
+        "डिग्री",
+        "टपल्स",
+        "एट्रीब्यूट्स"
+      ],
+      "optionsEn": [
+        "Couple",
+        "Degree",
+        "Tuples",
+        "Attributes"
       ],
       "correctOptionIndex": 3,
       "explanation": "RDBMS में: Relation=Table, Tuple=Row, Attribute=Column, Domain=Valid values set।",
@@ -159,11 +235,18 @@
     },
     {
       "questionText": "किसी की फील्ड की प्राथमिक विशेषता यह है कि वह:",
+      "questionTextEn": "The primary characteristic of a key field is that it must be:",
       "options": [
-        "text / टेक्स्ट हो",
-        "duplicate / डुप्लिकेट हो",
-        "name / एक नाम हो",
-        "unique / विशिष्ट हो"
+        "टेक्स्ट हो",
+        "डुप्लिकेट हो",
+        "एक नाम हो",
+        "विशिष्ट हो"
+      ],
+      "optionsEn": [
+        "a text",
+        "duplicate",
+        "a name",
+        "unique"
       ],
       "correctOptionIndex": 3,
       "explanation": "Key field की सबसे महत्वपूर्ण विशेषता uniqueness है — हर record का key value unique होना चाहिए।",
@@ -172,11 +255,18 @@
     },
     {
       "questionText": "RDBMS में डेटा कहाँ संग्रहित होता है?",
+      "questionTextEn": "In RDBMS data is stored in-",
       "options": [
-        "Trees / ट्री",
-        "Lists / लिस्ट",
-        "Tables / टेबल",
-        "Networks / नेटवर्क"
+        "ट्री",
+        "लिस्ट",
+        "टेबल",
+        "नेटवर्क"
+      ],
+      "optionsEn": [
+        "Trees",
+        "Lists",
+        "Tables",
+        "Networks"
       ],
       "correctOptionIndex": 2,
       "explanation": "RDBMS में डेटा Tables में store होता है। Trees = Hierarchical Model, Networks = Network Model।",
@@ -185,11 +275,18 @@
     },
     {
       "questionText": "_____ खोज को तेजी से लाने के लिए उपयोग किया जाता है।",
+      "questionTextEn": "_____ are used to speed up searching.",
       "options": [
-        "Vectors / वेक्टर",
-        "Indexes / सूचकांक",
-        "Lists / लिस्ट",
-        "Maps / मैप"
+        "वेक्टर",
+        "सूचकांक",
+        "लिस्ट",
+        "मैप"
+      ],
+      "optionsEn": [
+        "Vectors",
+        "Indexes",
+        "Lists",
+        "Maps"
       ],
       "correctOptionIndex": 1,
       "explanation": "Indexes डेटाबेस में searching को तेज करते हैं, जैसे किताब में Index पृष्ठ काम करता है। B-Tree structure use करते हैं।",
@@ -198,11 +295,18 @@
     },
     {
       "questionText": "_____ डेटाबेस में डेटा के लिए भौतिक भंडारण की प्राथमिक इकाई है।",
+      "questionTextEn": "A _____ is the primary unit of physical storage for data in a database.",
       "options": [
-        "table / टेबल",
-        "trigger / ट्रिगर",
-        "stored procedure / स्टोर्ड प्रोसीजर",
-        "page / पेज"
+        "टेबल",
+        "ट्रिगर",
+        "स्टोर्ड प्रोसीजर",
+        "पेज"
+      ],
+      "optionsEn": [
+        "table",
+        "trigger",
+        "stored procedure",
+        "page"
       ],
       "correctOptionIndex": 0,
       "explanation": "User perspective से Table ही primary storage unit है। Physical level पर Page/Block होता है, लेकिन logical level पर Table।",
@@ -211,11 +315,18 @@
     },
     {
       "questionText": "एक या एक से अधिक एट्रीब्यूट का वह सेट जो कि एक रिलेशन में टपल्स को विशिष्ट रूप से पहचान सके, _____ कहलाता है।",
+      "questionTextEn": "Set of one or more attributes that can uniquely identify tuples within a relation is called _____.",
       "options": [
-        "Candidate key / कैंडिडेट कुंजी",
-        "Foreign key / फॉरेन कुंजी",
-        "Master key / मास्टर कुंजी",
-        "Primary key / प्राइमरी कुंजी"
+        "कैंडिडेट कुंजी",
+        "फॉरेन कुंजी",
+        "मास्टर कुंजी",
+        "प्राइमरी कुंजी"
+      ],
+      "optionsEn": [
+        "Candidate key",
+        "Foreign key",
+        "Master key",
+        "Primary key"
       ],
       "correctOptionIndex": 3,
       "explanation": "🚨 NOTE: Book answer is (d) Primary key, but technically this definition fits Candidate Key. However, Primary Key is also a set of one or more attributes that uniquely identify tuples. The question is ambiguous — Candidate Key is the broader concept, but Primary Key is also correct in practical usage.",
@@ -224,11 +335,18 @@
     },
     {
       "questionText": "एक 'टपल' क्या है?",
+      "questionTextEn": "What is a 'tuple'?",
       "options": [
-        "It is a related set of records in a table / यह एक टेबल में रिकॉर्ड्स का एक सम्बन्धित सेट है।",
-        "It corresponds to a row in the table / यह टेबल में एक पंक्ति से मेल खाता है",
-        "It is another name for third normal form / यह तीसरे सामान्य रूप का दूसरा नाम है।",
-        "It is the attribute for each relation, and the governing constraint / यह प्रत्येक सम्बन्ध के लिए विशेषता है और शासन बाधा है।"
+        "यह एक टेबल में रिकॉर्ड्स का एक सम्बन्धित सेट है।",
+        "यह टेबल में एक पंक्ति से मेल खाता है",
+        "यह तीसरे सामान्य रूप का दूसरा नाम है।",
+        "यह प्रत्येक सम्बन्ध के लिए विशेषता है और शासन बाधा है।"
+      ],
+      "optionsEn": [
+        "It is a related set of records in a table",
+        "It corresponds to a row in the table",
+        "It is another name for third normal form",
+        "It is the attribute for each relation, and the governing constraint"
       ],
       "correctOptionIndex": 1,
       "explanation": "Tuple = एक Table में एक Row/Record। यह relational database की fundamental unit है।",
@@ -237,11 +355,18 @@
     },
     {
       "questionText": "किसी रिलेशन (टेबल) में रो की संख्या को रिलेशन की _____ कहा जाता है।",
+      "questionTextEn": "The number of rows in a relation (table) is called _____ of the relation.",
       "options": [
-        "Degree / डिग्री",
-        "Tuples / टपल",
-        "Attribute / एट्रीब्यूट",
-        "Cardinality / कार्डिनैलिटी"
+        "डिग्री",
+        "टपल",
+        "एट्रीब्यूट",
+        "कार्डिनैलिटी"
+      ],
+      "optionsEn": [
+        "Degree",
+        "Tuples",
+        "Attribute",
+        "Cardinality"
       ],
       "correctOptionIndex": 3,
       "explanation": "Cardinality = Number of Rows (Tuples) in a Relation. Degree = Number of Columns (Attributes).",
@@ -250,11 +375,18 @@
     },
     {
       "questionText": "\"कर्मचारी का वेतन 7000 से अधिक नहीं होना चाहिए\"। यह किसका उदाहरण है?",
+      "questionTextEn": "\"Employee's salary should not be greater than 7000\". This is an example of-",
       "options": [
-        "Infeasible constraint / अव्यवहार्य बाधा",
-        "Integrity constraint / अखंडता बाधा",
-        "Over defined constraint / अति परिभाषित बाधा",
-        "Field constraint / फील्ड बाधा"
+        "अव्यवहार्य बाधा",
+        "अखंडता बाधा",
+        "अति परिभाषित बाधा",
+        "फील्ड बाधा"
+      ],
+      "optionsEn": [
+        "Infeasible constraint",
+        "Integrity constraint",
+        "Over defined constraint",
+        "Field constraint"
       ],
       "correctOptionIndex": 1,
       "explanation": "Business rules जो data की validity ensure करते हैं वे Integrity Constraints कहलाते हैं। Example: Salary <= 7000 एक CHECK constraint (integrity constraint) है।",
@@ -263,11 +395,18 @@
     },
     {
       "questionText": "एक रिलेशनल डेटाबेस टेबल में, एक पंक्ति को _____ कहा जाता है।",
+      "questionTextEn": "In a relational database table, a row is called _____.",
       "options": [
-        "Attribute / एट्रीब्यूट",
-        "Field / फील्ड",
-        "Feature / फीचर",
-        "Tuple / टपल"
+        "एट्रीब्यूट",
+        "फील्ड",
+        "फीचर",
+        "टपल"
+      ],
+      "optionsEn": [
+        "Attribute",
+        "Field",
+        "Feature",
+        "Tuple"
       ],
       "correctOptionIndex": 3,
       "explanation": "Row = Tuple, Column = Attribute, Table = Relation — RDBMS की मूल terminology।",
@@ -276,11 +415,18 @@
     },
     {
       "questionText": "एक-से-अनेक या अनेक-से-अनेक संबंध के अनेक पक्ष की तालिका में होना चाहिए:",
+      "questionTextEn": "A table on the many side of a one to many or many to many relationship must:",
       "options": [
-        "Be in Second Normal Form (2NF) / दूसरे नॉर्मल फॉर्म (2NF) में हो",
-        "Be in Third Normal Form (3NF) / तीसरे नॉर्मल फॉर्म (3NF) में हो",
-        "Have a single attribute key / एक सिंगल एट्रीब्यूट की हो",
-        "Have a composite key / एक कम्पोजिट की हो"
+        "दूसरे नॉर्मल फॉर्म (2NF) में हो",
+        "तीसरे नॉर्मल फॉर्म (3NF) में हो",
+        "एक सिंगल एट्रीब्यूट की हो",
+        "एक कम्पोजिट की हो"
+      ],
+      "optionsEn": [
+        "Be in Second Normal Form (2NF)",
+        "Be in Third Normal Form (3NF)",
+        "Have a single attribute key",
+        "Have a composite key"
       ],
       "correctOptionIndex": 3,
       "explanation": "Many-to-Many relationship implement करने के लिए Junction/Bridge table बनाई जाती है जिसमें दोनों tables की Foreign Keys से बनी Composite Primary Key होती है।",
@@ -289,12 +435,20 @@
     },
     {
       "questionText": "की कंस्ट्रेंट बताता है कि:",
+      "questionTextEn": "Key constraint states that:",
       "options": [
-        "the value of primary key can not be Null / प्राइमरी की का मान Null नहीं हो सकता",
-        "the value of foreign key can not be Null / फॉरेन की का मान Null नहीं हो सकता",
-        "the value of primary key must be unique for each record / प्रत्येक रिकॉर्ड के लिए प्राइमरी की का मान अद्वितीय होना चाहिए",
-        "the value of foreign key must be unique for each record / प्रत्येक रिकॉर्ड के लिए फॉरेन की का मान अद्वितीय होना चाहिए",
-        "the value of foreign key can be Null / फॉरेन की का मान Null हो सकता है"
+        "प्राइमरी की का मान Null नहीं हो सकता",
+        "फॉरेन की का मान Null नहीं हो सकता",
+        "प्रत्येक रिकॉर्ड के लिए प्राइमरी की का मान अद्वितीय होना चाहिए",
+        "प्रत्येक रिकॉर्ड के लिए फॉरेन की का मान अद्वितीय होना चाहिए",
+        "फॉरेन की का मान Null हो सकता है"
+      ],
+      "optionsEn": [
+        "the value of primary key can not be Null",
+        "the value of foreign key can not be Null",
+        "the value of primary key must be unique for each record",
+        "the value of foreign key must be unique for each record",
+        "the value of foreign key can be Null"
       ],
       "correctOptionIndex": 2,
       "explanation": "Key Constraint: Primary Key की values हर record के लिए unique होनी चाहिए। Entity Integrity: Primary Key NULL नहीं हो सकती।",
@@ -303,11 +457,18 @@
     },
     {
       "questionText": "डेटाबेस में संबंधित फील्ड को एक _____ बनाने के लिए समूहीकृत किया जाता है।",
+      "questionTextEn": "Related fields in a database are grouped to form a-",
       "options": [
-        "data file / डेटा फाइल",
-        "data record / डेटा रिकॉर्ड",
-        "menu / मेन्यू",
-        "bank / बैंक"
+        "डेटा फाइल",
+        "डेटा रिकॉर्ड",
+        "मेन्यू",
+        "बैंक"
+      ],
+      "optionsEn": [
+        "data file",
+        "data record",
+        "menu",
+        "bank"
       ],
       "correctOptionIndex": 1,
       "explanation": "Related fields एक साथ मिलकर एक Record (data record) बनाते हैं। Example: Name + Age + Address = One Employee Record।",
@@ -316,11 +477,18 @@
     },
     {
       "questionText": "यदि संबंध स्कीमा R का एट्रीब्यूट किसी कैंडिडेट की का सदस्य है तो इस प्रकार के एट्रीब्यूट को इस रूप में वर्गीकृत किया जाता है:",
+      "questionTextEn": "If attribute of relation schema R is member of some candidate key then this type of attributes are classified as:",
       "options": [
-        "atomic attribute / परमाणु एट्रीब्यूट",
-        "candidate attribute / कैंडिडेट एट्रीब्यूट",
-        "nonprime attribute / नॉनप्राइम एट्रीब्यूट",
-        "prime attribute / प्राइम एट्रीब्यूट"
+        "परमाणु एट्रीब्यूट",
+        "कैंडिडेट एट्रीब्यूट",
+        "नॉनप्राइम एट्रीब्यूट",
+        "प्राइम एट्रीब्यूट"
+      ],
+      "optionsEn": [
+        "atomic attribute",
+        "candidate attribute",
+        "nonprime attribute",
+        "prime attribute"
       ],
       "correctOptionIndex": 3,
       "explanation": "Prime Attribute = Candidate Key का हिस्सा। Non-prime Attribute = किसी भी Candidate Key का हिस्सा नहीं।",
@@ -329,11 +497,18 @@
     },
     {
       "questionText": "प्राइमरी की का चयन इनमें से किया जाता है:",
+      "questionTextEn": "The primary key is selected from the:",
       "options": [
-        "Composite keys / कम्पोजिट की",
-        "Determinants / डिटरमिनेंट्स",
-        "Candidate keys / कैंडिडेट की",
-        "Foreign keys / फॉरेन की"
+        "कम्पोजिट की",
+        "डिटरमिनेंट्स",
+        "कैंडिडेट की",
+        "फॉरेन की"
+      ],
+      "optionsEn": [
+        "Composite keys",
+        "Determinants",
+        "Candidate keys",
+        "Foreign keys"
       ],
       "correctOptionIndex": 2,
       "explanation": "Primary Key को Candidate Keys में से चुना जाता है। सभी Candidate Keys में से सबसे उपयुक्त को Primary Key बनाया जाता है।",
@@ -342,11 +517,18 @@
     },
     {
       "questionText": "डेटाबेस संबंधों को अनुक्रमित करने के लिए बाइनरी सर्च ट्री के बजाय B-ट्री को प्राथमिकता देने के लिए निम्नलिखित में से कौन सा एक प्रमुख कारक है?",
+      "questionTextEn": "Which one of the following is a key factor for preferring B-trees to binary search trees for indexing database relations?",
       "options": [
-        "Database relations have a large number of records / डेटाबेस संबंधों में बड़ी संख्या में रिकॉर्ड होते हैं",
-        "Database relations are sorted on the primary key / डेटाबेस संबंधों को प्राइमरी की पर क्रमबद्ध किया जाता है",
-        "trees require less memory than binary search trees / B-ट्री को बाइनरी सर्च ट्री की तुलना में कम मेमोरी की आवश्यकता होती है",
-        "Data transfer from disks is in blocks / डिस्क से डेटा स्थानांतरण ब्लॉक में होता है"
+        "डेटाबेस संबंधों में बड़ी संख्या में रिकॉर्ड होते हैं",
+        "डेटाबेस संबंधों को प्राइमरी की पर क्रमबद्ध किया जाता है",
+        "B-ट्री को बाइनरी सर्च ट्री की तुलना में कम मेमोरी की आवश्यकता होती है",
+        "डिस्क से डेटा स्थानांतरण ब्लॉक में होता है"
+      ],
+      "optionsEn": [
+        "Database relations have a large number of records",
+        "Database relations are sorted on the primary key",
+        "B-trees require less memory than binary search trees",
+        "Data transfer from disks is in blocks"
       ],
       "correctOptionIndex": 3,
       "explanation": "Disk I/O blocks में होता है। B-Tree इसका फायदा उठाता है — एक block में कई keys store करता है, जिससे disk access कम होती है।",
@@ -355,11 +537,18 @@
     },
     {
       "questionText": "यदि DBMS में संबंध स्कीमा के लिए एक से अधिक की हैं तो संबंध स्कीमा में प्रत्येक की को इस रूप में वर्गीकृत किया जाता है:",
+      "questionTextEn": "If there is more than one key for relation schema in DBMS then each key in relation schema is classified as:",
       "options": [
-        "prime key / प्राइम की",
-        "super key / सुपर की",
-        "candidate key / कैंडिडेट की",
-        "primary key / प्राइमरी की"
+        "प्राइम की",
+        "सुपर की",
+        "कैंडिडेट की",
+        "प्राइमरी की"
+      ],
+      "optionsEn": [
+        "prime key",
+        "super key",
+        "candidate key",
+        "primary key"
       ],
       "correctOptionIndex": 2,
       "explanation": "Multiple keys जो uniquely identify कर सकें = Candidate Keys। उनमें से एक Primary Key बनती है।",
@@ -368,11 +557,18 @@
     },
     {
       "questionText": "रिलेशनल डेटा मॉडल के बारे में निम्नलिखित कथनों S1 और S2 पर विचार करें: S1: एक संबंध स्कीमा में अधिकतम एक फॉरेन की हो सकती है। S2: एक संबंध स्कीमा R में एक फॉरेन की का उपयोग R के टपल को संदर्भित करने के लिए नहीं किया जा सकता है। निम्नलिखित में से कौन सा विकल्प सही है?",
+      "questionTextEn": "Consider the following statements S1 and S2 about the relational data model: S1: A relation scheme can have at most one foreign key. S2: A foreign key in a relation scheme R cannot be used to refer to tuples of R. Which one of the following choices is correct?",
       "options": [
-        "Both S1 and S2 are true / S1 और S2 दोनों सत्य हैं।",
-        "S1 is true and S2 is false / S1 सत्य है और S2 असत्य है।",
-        "S1 is false and S2 is true / S1 असत्य है और S2 सत्य है।",
-        "Both S1 and S2 are false / S1 और S2 दोनों असत्य हैं।"
+        "S1 और S2 दोनों सत्य हैं।",
+        "S1 सत्य है और S2 असत्य है।",
+        "S1 असत्य है और S2 सत्य है।",
+        "S1 और S2 दोनों असत्य हैं।"
+      ],
+      "optionsEn": [
+        "Both S1 and S2 are true",
+        "S1 is true and S2 is false",
+        "S1 is false and S2 is true",
+        "Both S1 and S2 are false"
       ],
       "correctOptionIndex": 2,
       "explanation": "S1 गलत है — multiple foreign keys allowed हैं। S2 सत्य है — FK typically दूसरी relation के tuples को refer करती है।",
@@ -381,11 +577,18 @@
     },
     {
       "questionText": "एक संबंध स्कीमा R का एक प्राइम एट्रीब्यूट एक एट्रीब्यूट है जो दिखाई देता है-",
+      "questionTextEn": "A prime attribute of a relation scheme R is an attribute that appears-",
       "options": [
-        "in all candidate keys of R / R की सभी कैंडिडेट की में।",
-        "in some candidate key of R / R की कुछ कैंडिडेट की में।",
-        "in a foreign key of R / R की एक फॉरेन की में।",
-        "only in the primary key of R / केवल R की प्राइमरी की में।"
+        "R की सभी कैंडिडेट की में।",
+        "R की कुछ कैंडिडेट की में।",
+        "R की एक फॉरेन की में।",
+        "केवल R की प्राइमरी की में।"
+      ],
+      "optionsEn": [
+        "in all candidate keys of R",
+        "in some candidate key of R",
+        "in a foreign key of R",
+        "only in the primary key of R"
       ],
       "correctOptionIndex": 1,
       "explanation": "Prime Attribute = Appears in AT LEAST ONE (some) Candidate Key। Not necessarily ALL candidate keys।",
@@ -394,6 +597,7 @@
     },
     {
       "questionText": "नेस्टेड लूप विधि का उपयोग करके संबंधों r (R) और s (S) के बीच एक जॉइन (संबंध बीजगणित) पर विचार करें...जॉइन में डिस्क ब्लॉक एक्सेस की संख्या कम होगी यदि-",
+      "questionTextEn": "Consider a join (relation algebra) between relations r(R) and s(S) using the nested loop method...the join will have fewer number of disk block accesses if-",
       "options": [
         "relation r(R) is in the outer loop / संबंध r(R) बाहरी लूप में है।",
         "relation s(S) is in the outer loop / संबंध s(S) बाहरी लूप में है।",
@@ -407,11 +611,18 @@
     },
     {
       "questionText": "एक रिलेशनल डेटाबेस है-",
+      "questionTextEn": "A relational database is a-",
       "options": [
-        "Set of tuples / टपल का सेट",
-        "Set of nodes in tree form / पेड़ के रूप में नोड्स का सेट",
-        "Set of nodes in hierarchical form / पदानुक्रमित रूप में नोड्स का सेट",
-        "None of these / इनमें से कोई नहीं"
+        "टपल का सेट",
+        "पेड़ के रूप में नोड्स का सेट",
+        "पदानुक्रमित रूप में नोड्स का सेट",
+        "इनमें से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Set of tuples",
+        "Set of nodes in tree form",
+        "Set of nodes in hierarchical form",
+        "None of these"
       ],
       "correctOptionIndex": 0,
       "explanation": "Relational Database = Set of Relations (Tables) = Set of Tuples। Tree/Hierarchical = Hierarchical Database।",
@@ -420,11 +631,18 @@
     },
     {
       "questionText": "संदर्भात्मक अखंडता बाधा को डिजाइन करके लागू किया जा सकता है-",
+      "questionTextEn": "Referential Integrity constraint can be enforced by designing-",
       "options": [
-        "Foreign key with respect to primary key of another table / दूसरी तालिका की प्राइमरी की के संबंध में फॉरेन की",
-        "Subset of a single table / एक ही तालिका का उपसमुच्चय",
-        "Index with respect to primary key of another table / दूसरी तालिका की प्राइमरी की के संबंध में इंडेक्स",
-        "None of these / इनमें से कोई नहीं"
+        "दूसरी तालिका की प्राइमरी की के संबंध में फॉरेन की",
+        "एक ही तालिका का उपसमुच्चय",
+        "दूसरी तालिका की प्राइमरी की के संबंध में इंडेक्स",
+        "इनमें से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Foreign key with respect to primary key of another table",
+        "Subset of a single table",
+        "Index with respect to primary key of another table",
+        "None of these"
       ],
       "correctOptionIndex": 0,
       "explanation": "Referential Integrity = Foreign Key → Primary Key of another table। यह FK-PK relationship से enforce होती है।",
@@ -433,11 +651,18 @@
     },
     {
       "questionText": "डेटाबेस से रिकॉर्ड खोजने का प्राथमिक साधन कहलाता है-",
+      "questionTextEn": "Primary means of searching the records from database is called as-",
       "options": [
-        "Candidate Key / कैंडिडेट की",
-        "Primary Key / प्राइमरी की",
-        "Foreign key / फॉरेन की",
-        "Alternate Key / अल्टरनेट की"
+        "कैंडिडेट की",
+        "प्राइमरी की",
+        "फॉरेन की",
+        "अल्टरनेट की"
+      ],
+      "optionsEn": [
+        "Candidate Key",
+        "Primary Key",
+        "Foreign key",
+        "Alternate Key"
       ],
       "correctOptionIndex": 1,
       "explanation": "Primary Key = Database में records खोजने का primary means। यह हर record को uniquely identify करती है।",
@@ -446,11 +671,18 @@
     },
     {
       "questionText": "एक क्लस्टरिंग इंडेक्स उन क्षेत्रों पर परिभाषित किया गया है जो इस प्रकार के हैं-",
+      "questionTextEn": "A clustering index is defined on the fields which are of type _____.",
       "options": [
-        "Non-key and ordering / नॉन-की और आर्डरिंग",
-        "Non-key and non-ordering / नॉन-की और नॉन-आर्डरिंग",
-        "Key and ordering / की और आर्डरिंग",
-        "Key and non-ordering / की और नॉन-आर्डरिंग"
+        "नॉन-की और आर्डरिंग",
+        "नॉन-की और नॉन-आर्डरिंग",
+        "की और आर्डरिंग",
+        "की और नॉन-आर्डरिंग"
+      ],
+      "optionsEn": [
+        "Non-key and ordering",
+        "Non-key and non-ordering",
+        "Key and ordering",
+        "Key and non-ordering"
       ],
       "correctOptionIndex": 0,
       "explanation": "Clustering Index = Non-key + Ordering field पर बनाया जाता है। Data physically उसी order में store होता है।",
@@ -459,11 +691,18 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन उपरोक्त रिलेशनल अखंडता बाधा का उल्लंघन कर सकता है? [R(a,b,c) और S(d,e,f) जहाँ d FK है]",
+      "questionTextEn": "Let R(a,b,c) and S(d,e,f) be two relations in which d is the foreign key of S that refers to the primary key of R. Which of the following can cause violation of the relational integrity constraint?",
       "options": [
-        "Both I and IV / I और IV दोनों",
-        "Both II and III / II और III दोनों",
-        "All of these / ये सभी",
-        "None of these / इनमें से कोई नहीं"
+        "I और IV दोनों",
+        "II और III दोनों",
+        "ये सभी",
+        "इनमें से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Both I and IV",
+        "Both II and III",
+        "All of these",
+        "None of these"
       ],
       "correctOptionIndex": 1,
       "explanation": "Referential Integrity violations: II (Insert into S with invalid FK) and III (Delete from R when referenced by S). I and IV are safe operations.",
@@ -472,11 +711,18 @@
     },
     {
       "questionText": "एक तालिका में 'फॉरेन की' का उद्देश्य सुनिश्चित करना है-",
+      "questionTextEn": "Purpose of 'Foreign Key' in a table is to ensure-",
       "options": [
-        "Null integrity / नल अखंडता",
-        "Referential integrity / संदर्भात्मक अखंडता",
-        "Domain integrity / डोमेन अखंडता",
-        "Null & Domain integrity / नल और डोमेन अखंडता"
+        "नल अखंडता",
+        "संदर्भात्मक अखंडता",
+        "डोमेन अखंडता",
+        "नल और डोमेन अखंडता"
+      ],
+      "optionsEn": [
+        "Null integrity",
+        "Referential integrity",
+        "Domain integrity",
+        "Null & Domain integrity"
       ],
       "correctOptionIndex": 1,
       "explanation": "Foreign Key का purpose = Referential Integrity enforce करना। यह ensure करता है कि referenced values exist करती हों।",
@@ -485,6 +731,7 @@
     },
     {
       "questionText": "एक इंडेक्स क्लस्टर्ड होता है, यदि-",
+      "questionTextEn": "An index is clustered, if-",
       "options": [
         "it is on a set of fields that form a candidate key.",
         "it is on a set of fields that include the primary key.",
@@ -498,11 +745,18 @@
     },
     {
       "questionText": "_____ एक विशेष प्रकार की इंटीग्रिटी कंस्ट्रेंट है जो दो रिलेशन को जोड़ती है और रिलेशन के बीच स्थिरता बनाए रखती है।",
+      "questionTextEn": "_____ is a special type of integrity constraint that relates two relations & maintains consistency across the relations.",
       "options": [
-        "Entity Integrity constraints / एंटिटी इंटीग्रिटी कंस्ट्रेंट",
-        "Referential Integrity Constraints / रेफरेंशियल इंटीग्रिटी कंस्ट्रेंट",
-        "Domain Integrity Constraints / डोमेन इंटीग्रिटी कंस्ट्रेंट",
-        "Key Constraints / की कंस्ट्रेंट"
+        "एंटिटी इंटीग्रिटी कंस्ट्रेंट",
+        "रेफरेंशियल इंटीग्रिटी कंस्ट्रेंट",
+        "डोमेन इंटीग्रिटी कंस्ट्रेंट",
+        "की कंस्ट्रेंट"
+      ],
+      "optionsEn": [
+        "Entity Integrity constraints",
+        "Referential Integrity Constraints",
+        "Domain Integrity Constraints",
+        "Key Constraints"
       ],
       "correctOptionIndex": 1,
       "explanation": "Referential Integrity Constraint = दो relations को link करता है और consistency maintain करता है via FK-PK relationship।",
@@ -511,11 +765,18 @@
     },
     {
       "questionText": "कौन सा सही मिलान है?",
+      "questionTextEn": "Which is a correct matching?",
       "options": [
-        "Relation cardinality → Number of fields (columns) in the relation / रिलेशन कार्डिनैलिटी → रिलेशन में फील्ड्स (या कॉलम) की संख्या",
-        "Relation instance → Set of tuples that each conform to the schema of the relation / रिलेशन इन्स्टेंस → टुपल्स का सेट जो प्रत्येक रिलेशन के स्कीमा के अनुरूप होता है",
-        "Relation degree → Number of tuples in the relation / रिलेशन डिग्री → रिलेशन में ट्यूपल्स की संख्या",
-        "Attribute domain → Data type associated with a row / एट्रीब्यूट डोमेन → एक रो से जुड़ा डेटा टाइप"
+        "रिलेशन कार्डिनैलिटी → रिलेशन में फील्ड्स (या कॉलम) की संख्या",
+        "रिलेशन इन्स्टेंस → टुपल्स का सेट जो प्रत्येक रिलेशन के स्कीमा के अनुरूप होता है",
+        "रिलेशन डिग्री → रिलेशन में ट्यूपल्स की संख्या",
+        "एट्रीब्यूट डोमेन → एक रो से जुड़ा डेटा टाइप"
+      ],
+      "optionsEn": [
+        "Relation cardinality → Number of fields (columns) in the relation",
+        "Relation instance → Set of tuples that each conform to the schema of the relation",
+        "Relation degree → Number of tuples in the relation",
+        "Attribute domain → Data type associated with a row"
       ],
       "correctOptionIndex": 1,
       "explanation": "Correct: Relation Instance = Current set of tuples in relation। A,C,D सभी गलत definitions हैं।",
@@ -524,11 +785,18 @@
     },
     {
       "questionText": "डेटाबेस में मूवी और इमेज फाइलों को स्टोर करने के लिए निम्नलिखित में से किसका उपयोग किया जाता है?",
+      "questionTextEn": "Which of the following is used to store movies and image files in the database?",
       "options": [
-        "Clob / क्लॉब",
-        "Blob / ब्लॉब",
-        "Binary / बाइनरी",
-        "Image / इमेज"
+        "क्लॉब",
+        "ब्लॉब",
+        "बाइनरी",
+        "इमेज"
+      ],
+      "optionsEn": [
+        "Clob",
+        "Blob",
+        "Binary",
+        "Image"
       ],
       "correctOptionIndex": 1,
       "explanation": "BLOB (Binary Large Object) = Images, Audio, Video store करने के लिए। CLOB = Character Large Object (text के लिए)।",
@@ -537,11 +805,18 @@
     },
     {
       "questionText": "RDBMS में उन लीगल वैल्यूज के सेट के लिए क्या शब्दावली है जो एक एट्रीब्यूट में हो सकती हैं?",
+      "questionTextEn": "What is the RDBMS terminology for a set of legal values that an attribute can have?",
       "options": [
-        "Tuple / टपल",
-        "Relation / रिलेशन",
-        "Attribute / एट्रीब्यूट",
-        "Domain / डोमेन"
+        "टपल",
+        "रिलेशन",
+        "एट्रीब्यूट",
+        "डोमेन"
+      ],
+      "optionsEn": [
+        "Tuple",
+        "Relation",
+        "Attribute",
+        "Domain"
       ],
       "correctOptionIndex": 3,
       "explanation": "Domain = Set of legal (valid) values for an attribute। Example: Gender domain = {Male, Female, Other}।",
@@ -550,11 +825,18 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा इंटीग्रिटी कंस्ट्रेंट नहीं है?",
+      "questionTextEn": "Which of the following is not a integrity constraints?",
       "options": [
-        "Not null / नॉट नल",
-        "Positive / पॉजिटिव",
-        "Unique / यूनिक",
-        "Check / चेक"
+        "नॉट नल",
+        "पॉजिटिव",
+        "यूनिक",
+        "चेक"
+      ],
+      "optionsEn": [
+        "Not null",
+        "Positive",
+        "Unique",
+        "Check"
       ],
       "correctOptionIndex": 1,
       "explanation": "Standard SQL Integrity Constraints: NOT NULL, UNIQUE, CHECK, PRIMARY KEY, FOREIGN KEY। 'POSITIVE' कोई standard constraint नहीं है।",
@@ -563,11 +845,18 @@
     },
     {
       "questionText": "मिनिमल सुपर की है:",
+      "questionTextEn": "Minimal super key is:",
       "options": [
-        "Candidate key / कैंडिडेट की",
-        "Primary key / प्राइमरी की",
-        "Referential key / रफरेंशियल की",
-        "Foreign key / फॉरेन की"
+        "कैंडिडेट की",
+        "प्राइमरी की",
+        "रफरेंशियल की",
+        "फॉरेन की"
+      ],
+      "optionsEn": [
+        "Candidate key",
+        "Primary key",
+        "Referential key",
+        "Foreign key"
       ],
       "correctOptionIndex": 0,
       "explanation": "Minimal Super Key = Candidate Key। Super Key से कोई extra attribute हटाने पर वह Candidate Key बन जाती है।",
@@ -576,11 +865,18 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा कॉड का नियम (Codd's rule) कहता है कि RDBMS टेबल लेवल पर इंसर्शन, अपडेशन और डिलीशन का समर्थन करता है?",
+      "questionTextEn": "Which of the following Codd's rule states that the RDBMS support insertion, updation and deletion at a table level?",
       "options": [
-        "High-level update rule / हाई-लेवल अपडेट रूल",
-        "Guaranteed access rule / गारंटीड एक्सेस रूल",
-        "Non-subversion rule / नॉन-सब वर्शन रूल",
-        "View updating rule / व्यू अपडेटिंग रूल"
+        "हाई-लेवल अपडेट रूल",
+        "गारंटीड एक्सेस रूल",
+        "नॉन-सब वर्शन रूल",
+        "व्यू अपडेटिंग रूल"
+      ],
+      "optionsEn": [
+        "High-level update rule",
+        "Guaranteed access rule",
+        "Non-subversion rule",
+        "View updating rule"
       ],
       "correctOptionIndex": 0,
       "explanation": "Codd's Rule 6 = High-Level Update Rule: Table-level INSERT, UPDATE, DELETE support।",
@@ -589,8 +885,9 @@
     },
     {
       "questionText": "सेकेंडरी इंडेक्स के संबंध में निम्नलिखित में से कौन सा कथन सही नहीं है?",
+      "questionTextEn": "Which of the following statements is not correct with respect to secondary indices?",
       "options": [
-        "sequential scan in secondary key order is efficient / सेकेंडरी की की आर्डर में एक सीक्वेंशियल स्कैन कुशल है",
+        "A sequential scan in secondary key order is efficient / सेकेंडरी की की आर्डर में एक सीक्वेंशियल स्कैन कुशल है",
         "Improve the performance of queries that use keys other than search key",
         "Secondary indices must be dense / सेकेंडरी इंडेक्स डेंस होने चाहिए",
         "An extra level of indirection can be used to implement secondary indices"
@@ -602,11 +899,18 @@
     },
     {
       "questionText": "डोमेन कंस्ट्रेंट्स, फंक्शनल डिपेंडेंसी और रेफरेंशियल इंटीग्रिटी के विशेष शब्द हैं:",
+      "questionTextEn": "Domain constraints, functional dependency and referential integrity are special terms of:",
       "options": [
-        "Foreign key / फॉरेन की",
-        "Primary key / प्राइमरी की",
-        "Assertion / असर्शन",
-        "Referential constraint / रेफरेंशियल कंस्ट्रेंट"
+        "फॉरेन की",
+        "प्राइमरी की",
+        "असर्शन",
+        "रेफरेंशियल कंस्ट्रेंट"
+      ],
+      "optionsEn": [
+        "Foreign key",
+        "Primary key",
+        "Assertion",
+        "Referential constraint"
       ],
       "correctOptionIndex": 2,
       "explanation": "Domain constraints, Functional Dependencies, Referential Integrity = Assertions (database rules/constraints collectively)।",
@@ -615,11 +919,18 @@
     },
     {
       "questionText": "कंस्ट्रेंट्स जिन्हें सीधे डेटा मॉडल के स्कीमा में व्यक्त किया जा सकता है, आमतौर पर उन्हें DDL में निर्दिष्ट करके, कहलाते हैं:",
+      "questionTextEn": "Constraints that can be directly expressed in the schemas of the data model, typically by specifying them in the DDL are called:",
       "options": [
-        "Model-based constraints / मॉडल-बेस्ड कंस्ट्रेंट",
-        "Schema-based constraints / स्कीमा-बेस्ड कंस्ट्रेंट्स",
-        "Entity integrity constraints / एंटिटी इंटीग्रिटी कंस्ट्रेंट्स",
-        "Application-based constraints / एप्लीकेशन-बेस्ड कंस्ट्रेंट्स"
+        "मॉडल-बेस्ड कंस्ट्रेंट",
+        "स्कीमा-बेस्ड कंस्ट्रेंट्स",
+        "एंटिटी इंटीग्रिटी कंस्ट्रेंट्स",
+        "एप्लीकेशन-बेस्ड कंस्ट्रेंट्स"
+      ],
+      "optionsEn": [
+        "Model-based constraints",
+        "Schema-based constraints",
+        "Entity integrity constraints",
+        "Application-based constraints"
       ],
       "correctOptionIndex": 1,
       "explanation": "Schema-based Constraints = DDL में directly specify होते हैं। Examples: PRIMARY KEY, FOREIGN KEY, NOT NULL, UNIQUE।",
@@ -628,11 +939,18 @@
     },
     {
       "questionText": "डेटा इंटीग्रिटी को लागू करने के लिए निम्नलिखित में से कौन सा सबसे आम मेथड है?",
+      "questionTextEn": "Which of the following is the most common method for enforcing data integrity?",
       "options": [
-        "Constraints / कंस्ट्रेंट्स",
-        "Cursors / कर्सर्स",
-        "Triggers / ट्रिगर्स",
-        "Stored Procedure / स्टोर्ड प्रोसीजर"
+        "कंस्ट्रेंट्स",
+        "कर्सर्स",
+        "ट्रिगर्स",
+        "स्टोर्ड प्रोसीजर"
+      ],
+      "optionsEn": [
+        "Constraints",
+        "Cursors",
+        "Triggers",
+        "Stored Procedure"
       ],
       "correctOptionIndex": 0,
       "explanation": "Most common method = Constraints (PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, CHECK)। Triggers और Stored Procedures secondary methods हैं।",
@@ -641,11 +959,12 @@
     },
     {
       "questionText": "एक रिलेशन क्या है? (i) कार्टेशियन प्रोडक्ट का एक सबसेट (ii) ऑर्डर्ड टुपल्स का एक अनऑर्डर्ड सेट (iii) संबंधित डेटा का एक संग्रह",
+      "questionTextEn": "What is a relation? (i) a subset of a Cartesian product (ii) an unordered set of ordered tuples (iii) a collection of related data",
       "options": [
-        "and iii",
+        "i and iii",
         "i, ii and iii",
-        "and ii",
-        "and iii"
+        "i and ii",
+        "ii and iii"
       ],
       "correctOptionIndex": 1,
       "explanation": "All three statements about a relation are correct: (i) subset of Cartesian product, (ii) unordered set of ordered tuples, (iii) collection of related data.",
@@ -654,11 +973,18 @@
     },
     {
       "questionText": "एक रिकॉर्ड में प्रत्येक डेटा आइटम एक ग्रुप आइटम हो सकता है जो सब-आइटम से बना होता है; वे आइटम जो इंडिकंपोजेबल होते हैं, कहलाते हैं:",
+      "questionTextEn": "Each data item in a record may be a group item composed of sub-items; those items which are indecomposable are called:",
       "options": [
-        "Atoms / एटम्स",
-        "Scalars / स्केलर्स",
-        "Elementary items / एलिमेंट्री आइटम्स",
-        "All of the above / उपरोक्त सभी"
+        "एटम्स",
+        "स्केलर्स",
+        "एलिमेंट्री आइटम्स",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Atoms",
+        "Scalars",
+        "Elementary items",
+        "All of the above"
       ],
       "correctOptionIndex": 3,
       "explanation": "Indecomposable data items = Atoms = Scalars = Elementary items। तीनों same concept के different names हैं।",
@@ -667,6 +993,7 @@
     },
     {
       "questionText": "दिया गया है कि एक ब्लॉक या तो 3 रिकॉर्ड या 10 की-पॉइंटर्स रख सकता है। एक डेटाबेस में n रिकॉर्ड हैं, तो हमें डेटा फाइल और डेंस इंडेक्स को रखने के लिए कितने ब्लॉक की आवश्यकता है-",
+      "questionTextEn": "Given a block can hold either 3 records or 10 key pointers. A database contains n records, then how many block do we need to hold the data file and the dense index-",
       "options": [
         "13n/30",
         "n/3",
@@ -680,6 +1007,7 @@
     },
     {
       "questionText": "टेक्स्ट टाइप के एट्रीब्यूट की अधिकतम लंबाई है-",
+      "questionTextEn": "The maximum length of an attribute of type text is-",
       "options": [
         "127",
         "255",
@@ -693,6 +1021,7 @@
     },
     {
       "questionText": "मान लीजिए x,y,z,a,b,c एक एंटिटी सेट E के एट्रीब्यूट हैं। यदि {x},{x,y},{a,b},{a,b,c},{x,y,z} सुपर की हैं तो निम्नलिखित में से कौन सी कैंडिडेट की हैं?",
+      "questionTextEn": "Let x,y,z,a,b,c be the attributes of an entity set E. If {x},{x,y},{a,b},{a,b,c},{x,y,z} are super keys then which of the following are the candidate keys?",
       "options": [
         "{x,y} and {a,b}",
         "{x} and {a,b}",
@@ -706,11 +1035,18 @@
     },
     {
       "questionText": "यदि इंडेक्स वैल्यू बड़े होते हैं, तो इंडेक्स के इन वैल्यू के लिए इंडेक्स बनाया जाता है। इसे कहा जाता है-",
+      "questionTextEn": "In case the indices values are larger, index is created for these values of the index. This is called-",
       "options": [
-        "Pointed index / पॉइंटेड इंडेक्स",
-        "Sequential index / सीक्वेंशियल इंडेक्स",
-        "Multilevel index / मल्टीलेवल इंडेक्स",
-        "Multiple index / मल्टीपल इंडेक्स"
+        "पॉइंटेड इंडेक्स",
+        "सीक्वेंशियल इंडेक्स",
+        "मल्टीलेवल इंडेक्स",
+        "मल्टीपल इंडेक्स"
+      ],
+      "optionsEn": [
+        "Pointed index",
+        "Sequential index",
+        "Multilevel index",
+        "Multiple index"
       ],
       "correctOptionIndex": 2,
       "explanation": "Multilevel Index = Index पर Index। Large index को manage करने के लिए hierarchical structure बनाई जाती है।",
@@ -719,11 +1055,18 @@
     },
     {
       "questionText": "एक इंडेक्स में एक ही समय में बड़ी संख्या में एंट्रीज डालने का इंडेक्स का _____ कहा जाता है।",
+      "questionTextEn": "Insertion of a large number of entries at a time into an index is referred to as _____ of the index.",
       "options": [
-        "Loading / लोडिंग",
-        "Bulk insertion / बल्क इंसर्शन",
-        "Bulk loading / बल्क लोडिंग",
-        "Increase insertion / इन्क्रीस इंसर्शन"
+        "लोडिंग",
+        "बल्क इंसर्शन",
+        "बल्क लोडिंग",
+        "इन्क्रीस इंसर्शन"
+      ],
+      "optionsEn": [
+        "Loading",
+        "Bulk insertion",
+        "Bulk loading",
+        "Increase insertion"
       ],
       "correctOptionIndex": 2,
       "explanation": "Bulk Loading = एक ही बार में बहुत सारी entries insert करना (initial index creation)। More efficient than individual insertions।",
@@ -732,11 +1075,18 @@
     },
     {
       "questionText": "एक में एक सर्च-की वैल्यू और उस वैल्यू को उनकी सर्च-की वैल्यू के रूप में रखने वाले एक या अधिक रिकॉर्ड्स के पॉइंटर्स होते हैं।",
+      "questionTextEn": "An _____ consists of a search-key value and pointers to one or more records with that value as their search-key value.",
       "options": [
-        "Index entry / इंडेक्स एंट्री",
-        "Index hash / इंडेक्स हैश",
-        "Index cluster / इंडेक्स क्लस्टर",
-        "Index map / इंडेक्स मैप"
+        "इंडेक्स एंट्री",
+        "इंडेक्स हैश",
+        "इंडेक्स क्लस्टर",
+        "इंडेक्स मैप"
+      ],
+      "optionsEn": [
+        "Index entry",
+        "Index hash",
+        "Index cluster",
+        "Index map"
       ],
       "correctOptionIndex": 0,
       "explanation": "Index Entry = Search-key value + Pointer(s) to records। यह basic unit of an index है।",
@@ -745,6 +1095,7 @@
     },
     {
       "questionText": "प्राइमरी की के बारे में निम्नलिखित में से कौन सा/से कथन असत्य है/हैं?",
+      "questionTextEn": "Which of the following statement(s) is/are FALSE about primary key?",
       "options": [
         "Primary key uniquely identifies a row / प्राइमरी की विशिष्ट रूप से एक रो (row) की पहचान करती है।",
         "There can not be more than one primary key for a table / एक टेबल के लिए एक से अधिक प्राइमरी की नहीं हो सकती।",
@@ -758,9 +1109,10 @@
     },
     {
       "questionText": "एक टेबल में निम्नलिखित में से कौन से कॉलम अपडेट नहीं किए जा सकते हैं?",
+      "questionTextEn": "Which of the following columns in a table cannot be updated?",
       "options": [
         "Columns which allows NULL values in the table",
-        "Primary key column which also serves as foreign key reference in another table",
+        "A Primary key column which also serves as foreign key reference in another table",
         "DATE type columns in the table",
         "All of the above / उपरोक्त सभी"
       ],
@@ -771,6 +1123,7 @@
     },
     {
       "questionText": "एंटिटी 'Customer' के पास तीन कैंडिडेट कीज़ हैं: (A) CustId (B) Email and (C) ContactNo. इस एंटिटी के लिए सर्वश्रेष्ठ प्राइमरी की सुझाएं।",
+      "questionTextEn": "The Entity Customer has three candidate keys: (A) CustId (B) Email and (C) ContactNo. Suggest the best primary key for this entity.",
       "options": [
         "CustId",
         "Email",
@@ -784,6 +1137,7 @@
     },
     {
       "questionText": "डेटाबेस में इंडेक्स कांसेप्ट के संदर्भ में निम्नलिखित में से कौन से कथन सही हैं?",
+      "questionTextEn": "Which of the following statements are correct with reference to index concept in databases?",
       "options": [
         "Indexes need to be refreshed every night to reflect changes due to addition, updation or deletion of rows in the Primary table",
         "Too many indexes slow down the database backup and recovery processes",
@@ -797,11 +1151,12 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन से कथन सही हैं?",
+      "questionTextEn": "Which of the following statements are correct?",
       "options": [
         "Indexes should be created on attributes used in the Select clause",
         "Indexes should not be created on attributes used in the Where clause",
         "Indexes should be created on attributes used in the Order By clause",
-        "table can have only one clustered index and any number of non-clustered indexes"
+        "A table can have only one clustered index and any number of non-clustered indexes"
       ],
       "correctOptionIndex": 3,
       "explanation": "D is correct: एक table में केवल एक clustered index हो सकता है (data physically एक तरीके से sort होता है) लेकिन multiple non-clustered indexes allowed हैं।",
@@ -810,11 +1165,12 @@
     },
     {
       "questionText": "IXPC on Product Category इंडेक्स का उपयोग किस ऑपरेशन के परिणामस्वरूप होगा?",
+      "questionTextEn": "Which of the following operations will result in the usage of index IXPC (on Product Category)?",
       "options": [
-        "search for products belonging to a particular ProductCategory",
-        "retrieval of ProductCategory of all the rows in the table",
-        "search for products whose category contains a particular letter",
-        "search for products whose category ends with a particular letter"
+        "A search for products belonging to a particular ProductCategory",
+        "A retrieval of ProductCategory of all the rows in the table",
+        "A search for products whose category contains a particular letter",
+        "A search for products whose category ends with a particular letter"
       ],
       "correctOptionIndex": 0,
       "explanation": "IXPC (on ProductCategory) used when: Exact match or prefix match in WHERE clause. A = direct equality search = Index used.",
@@ -823,12 +1179,20 @@
     },
     {
       "questionText": "एंटिटी इंटीग्रिटी कंस्ट्रेंट कहता है कि:",
+      "questionTextEn": "Entity integrity constraint states that:",
       "options": [
-        "no candidate key value can be null / कोई कैंडिडेट की की वैल्यू null नहीं हो सकती",
-        "no foreign key value can be null / कोई फॉरेन की की वैल्यू null नहीं हो सकती",
-        "Primary key values can't be duplicate / प्राइमरी की की वैल्यू डुप्लिकेट नहीं हो सकती",
-        "No primary key value can be null / कोई प्राइमरी की की वैल्यू null नहीं हो सकती",
-        "foreign key values can't be duplicate / फॉरेन की की वैल्यू डुप्लिकेट नहीं हो सकती"
+        "कोई कैंडिडेट की की वैल्यू null नहीं हो सकती",
+        "कोई फॉरेन की की वैल्यू null नहीं हो सकती",
+        "प्राइमरी की की वैल्यू डुप्लिकेट नहीं हो सकती",
+        "कोई प्राइमरी की की वैल्यू null नहीं हो सकती",
+        "फॉरेन की की वैल्यू डुप्लिकेट नहीं हो सकती"
+      ],
+      "optionsEn": [
+        "no candidate key value can be null",
+        "no foreign key value can be null",
+        "Primary key values can't be duplicate",
+        "No primary key value can be null",
+        "foreign key values can't be duplicate"
       ],
       "correctOptionIndex": 3,
       "explanation": "Entity Integrity = Primary Key cannot be NULL। (Uniqueness is separate — Key Constraint handles that)।",
@@ -837,11 +1201,18 @@
     },
     {
       "questionText": "एक एंटिटी के लिए एक सुपरकी में होता है-",
+      "questionTextEn": "A superkey for an entity consists of-",
       "options": [
-        "one attribute only / केवल एक एट्रीब्यूट",
-        "at least two attributes / कम से कम दो एट्रीब्यूट",
-        "at most two attributes / अधिक से अधिक दो एट्रीब्यूट",
-        "one or more attributes / एक या अधिक एट्रीब्यूट"
+        "केवल एक एट्रीब्यूट",
+        "कम से कम दो एट्रीब्यूट",
+        "अधिक से अधिक दो एट्रीब्यूट",
+        "एक या अधिक एट्रीब्यूट"
+      ],
+      "optionsEn": [
+        "one attribute only",
+        "at least two attributes",
+        "at most two attributes",
+        "one or more attributes"
       ],
       "correctOptionIndex": 3,
       "explanation": "Superkey = One or more attributes that uniquely identify a tuple। Can be a single attribute or combination।",
@@ -850,11 +1221,18 @@
     },
     {
       "questionText": "एक एंटिटी के लिए एक प्राइमरी की है-",
+      "questionTextEn": "A primary key for an entity is-",
       "options": [
-        "candidate key / एक कैंडिडेट की",
-        "Any attribute / कोई भी एट्रीब्यूट",
-        "unique attribute / एक यूनिक एट्रीब्यूट",
-        "super key / एक सुपर की"
+        "एक कैंडिडेट की",
+        "कोई भी एट्रीब्यूट",
+        "एक यूनिक एट्रीब्यूट",
+        "एक सुपर की"
+      ],
+      "optionsEn": [
+        "A candidate key",
+        "Any attribute",
+        "A unique attribute",
+        "A super key"
       ],
       "correctOptionIndex": 0,
       "explanation": "Primary Key = A chosen Candidate Key। Every Primary Key is a Candidate Key (but not vice versa)।",
@@ -863,6 +1241,7 @@
     },
     {
       "questionText": "एक मल्टीलेवल इंडेक्स का फैन-आउट है:",
+      "questionTextEn": "The fan-out of a multilevel index is:",
       "options": [
         "the blocking factor for the index file / इंडेक्स फाइल के लिए ब्लॉकिंग फैक्टर",
         "the blocking factor for the data file / डेटा फाइल के लिए ब्लॉकिंग फैक्टर",
@@ -877,12 +1256,20 @@
     },
     {
       "questionText": "वह कंस्ट्रेंट जो यह सुनिश्चित करता है कि एट्रीब्यूट्स के एक दिए गए सेट के लिए एक रिलेशन में दिखने वाला मान दूसरे रिलेशन में एट्रीब्यूट्स के एक निश्चित सेट के लिए भी दिखाई दे, वह है:",
+      "questionTextEn": "Constraint that ensures that a value appearing in one relation for a given set of attributes also appears for a certain set of attributes in another relation is:",
       "options": [
-        "Domain constraint / डोमेन कंस्ट्रेंट",
-        "Unique constraint / यूनिक कंस्ट्रेंट",
-        "Key constraint / की कंस्ट्रेंट",
-        "Referential Integrity constraint / रेफरेंशियल इंटीग्रिटी कंस्ट्रेंट",
-        "Entity integrity constraint / एंटिटी इंटीग्रिटी कंस्ट्रेंट"
+        "डोमेन कंस्ट्रेंट",
+        "यूनिक कंस्ट्रेंट",
+        "की कंस्ट्रेंट",
+        "रेफरेंशियल इंटीग्रिटी कंस्ट्रेंट",
+        "एंटिटी इंटीग्रिटी कंस्ट्रेंट"
+      ],
+      "optionsEn": [
+        "Domain constraint",
+        "Unique constraint",
+        "Key constraint",
+        "Referential Integrity constraint",
+        "Entity integrity constraint"
       ],
       "correctOptionIndex": 3,
       "explanation": "Referential Integrity = Value in one relation must appear in another relation। FK-PK relationship।",
@@ -891,11 +1278,18 @@
     },
     {
       "questionText": "एंटिटी इंटीग्रिटी रूल की आवश्यकता है कि-",
+      "questionTextEn": "The entity integrity rule requires that-",
       "options": [
-        "All primary key entries are unique / सभी प्राइमरी की एंट्रीज यूनिक हों",
-        "part of the key may be null / की (key) का एक हिस्सा नल हो सकता है",
-        "Foreign key values are allowed / फॉरेन की की वैल्यूज की अनुमति है",
-        "Duplicate key values do not reference primary key object / डुप्लिकेट की की वैल्यू प्राइमरी की के ऑब्जेक्ट को रिफरेन्स नहीं करती हैं"
+        "सभी प्राइमरी की एंट्रीज यूनिक हों",
+        "की (key) का एक हिस्सा नल हो सकता है",
+        "फॉरेन की की वैल्यूज की अनुमति है",
+        "डुप्लिकेट की की वैल्यू प्राइमरी की के ऑब्जेक्ट को रिफरेन्स नहीं करती हैं"
+      ],
+      "optionsEn": [
+        "All primary key entries are unique",
+        "A part of the key may be null",
+        "Foreign key values are allowed",
+        "Duplicate key values do not reference primary key object"
       ],
       "correctOptionIndex": 0,
       "explanation": "Entity Integrity Rule: All PK entries must be unique AND not null। This ensures every entity is identifiable।",
@@ -904,6 +1298,7 @@
     },
     {
       "questionText": "रेफरेंशियल इंटीग्रिटी रूल की आवश्यकता है कि-",
+      "questionTextEn": "The referential integrity rule requires that-",
       "options": [
         "Every null foreign key value must reference an existing primary key value",
         "It makes it possible for an attribute to have a corresponding value",
@@ -917,11 +1312,18 @@
     },
     {
       "questionText": "Customers (custid, name, gender, rating) टेबल पर क्वेरी 'कितने मेल कस्टमर्स की रेटिंग 5 है?' के लिए उपयुक्त सबसे अच्छा इंडेक्सिंग मैकेनिज्म है-",
+      "questionTextEn": "Consider a table that describes the customers: Customers (custid, name, gender, rating). The rating value is an integer in the range 1 to 5 and only two values (male and female) are recorded for gender. The query 'how many male customers have a rating of 5?' — the best indexing mechanism appropriate for the query is-",
       "options": [
-        "Linear hashing / लीनियर हैशिंग",
-        "Extendible hashing / एक्सटेंसिबल हैशिंग",
-        "B+ tree / B+ ट्री",
-        "Bit-mapped index / बिट-मैप्ड इंडेक्स"
+        "लीनियर हैशिंग",
+        "एक्सटेंसिबल हैशिंग",
+        "B+ ट्री",
+        "बिट-मैप्ड इंडेक्स"
+      ],
+      "optionsEn": [
+        "Linear hashing",
+        "Extendible hashing",
+        "B+ tree",
+        "Bit-mapped index"
       ],
       "correctOptionIndex": 3,
       "explanation": "Low-cardinality columns (gender=2 values, rating=5 values) → Bit-mapped index = Most efficient। B+ tree better for high cardinality।",
@@ -930,6 +1332,7 @@
     },
     {
       "questionText": "यदि eno पर एक इंडेक्स उपलब्ध है, तो क्वेरी का उत्तर केवल इंडेक्स को स्कैन करके दिया जा सकता है यदि:",
+      "questionTextEn": "SELECT E.eno, COUNT() FROM Employees E GROUP BY E.eno — If an index on eno is available, the query can be answered by scanning only the index if:",
       "options": [
         "the index is only bhash and clustered",
         "the index is only B+ tree and clustered",
@@ -943,11 +1346,18 @@
     },
     {
       "questionText": "रिलेशनल डेटाबेस में, 'NULL' वैल्यू निर्दिष्ट करने के लिए निम्नलिखित में से कौन सा एक मान्य कारण नहीं है?",
+      "questionTextEn": "In relational database, which of the following is NOT a valid reason to specify 'NULL' value?",
       "options": [
-        "Value unknown / वैल्यू अज्ञात है",
-        "Value exists but is not available / वैल्यू मौजूद है लेकिन उपलब्ध नहीं है",
-        "Value not applicable / वैल्यू लागू नहीं है",
-        "Value invalid / वैल्यू अमान्य है"
+        "वैल्यू अज्ञात है",
+        "वैल्यू मौजूद है लेकिन उपलब्ध नहीं है",
+        "वैल्यू लागू नहीं है",
+        "वैल्यू अमान्य है"
+      ],
+      "optionsEn": [
+        "Value unknown",
+        "Value exists but is not available",
+        "Value not applicable",
+        "Value invalid"
       ],
       "correctOptionIndex": 3,
       "explanation": "NULL valid reasons: Unknown, Not Available, Not Applicable। 'Invalid' = NOT a valid NULL reason (invalid data shouldn't be stored at all).",
@@ -956,11 +1366,18 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा डेटा मॉडल में एक मान्य कंस्ट्रेंट नहीं है?",
+      "questionTextEn": "Which of the following is NOT a valid constraint in a data model?",
       "options": [
-        "Key constraints / की कंस्ट्रेंट्स",
-        "Schema-based constraints / स्कीमाबेस्ड कंस्ट्रेंट्स",
-        "Entity integrity constraint / एंटिटी इंटीग्रिटी कंस्ट्रेंट",
-        "Virtual constraints / वर्चुअल कंस्ट्रेंट्स"
+        "की कंस्ट्रेंट्स",
+        "स्कीमाबेस्ड कंस्ट्रेंट्स",
+        "एंटिटी इंटीग्रिटी कंस्ट्रेंट",
+        "वर्चुअल कंस्ट्रेंट्स"
+      ],
+      "optionsEn": [
+        "Key constraints",
+        "Schema-based constraints",
+        "Entity integrity constraint",
+        "Virtual constraints"
       ],
       "correctOptionIndex": 3,
       "explanation": "'Virtual Constraints' कोई standard database constraint नहीं है। Key, Schema-based, Entity Integrity, Referential Integrity = valid constraints।",
@@ -969,11 +1386,18 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा/से कथन असत्य है/हैं? i. एक डेटाबेस 'स्टेट' जो डोमेन कंस्ट्रेंट का पालन नहीं करता है, वह वैलिड स्टेट में हो सकता है। ii. रिलेशनल डेटाबेस में, डिलीट ऑपरेशन रेफरेंशियल इंटीग्रिटी कंस्ट्रेंट का उल्लंघन कर सकता है।",
+      "questionTextEn": "Which of the following statement is/are FALSE? i. A database 'state' that does not obey the domain constraint may be in valid state. ii. In relational database, delete operation can violate referential integrity constraint.",
       "options": [
-        "Only statement (i) is false / केवल कथन (i) असत्य है",
-        "Only statement (ii) is false / केवल कथन (ii) असत्य है",
-        "Both statements (i) and (ii) are false / दोनों कथन (i) और (ii) असत्य हैं",
-        "Neither statements (i) nor (ii) is false / न तो कथन (i) और न ही (ii) असत्य है"
+        "केवल कथन (i) असत्य है",
+        "केवल कथन (ii) असत्य है",
+        "दोनों कथन (i) और (ii) असत्य हैं",
+        "न तो कथन (i) और न ही (ii) असत्य है"
+      ],
+      "optionsEn": [
+        "Only statement (i) is false",
+        "Only statement (ii) is false",
+        "Both statements (i) and (ii) are false",
+        "Neither statements (i) nor (ii) is false"
       ],
       "correctOptionIndex": 0,
       "explanation": "Statement i = FALSE (violating domain constraint = invalid state). Statement ii = TRUE. So only (i) is false.",
@@ -982,11 +1406,18 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा/से कथन सत्य है/हैं? i. एक नॉनप्राइम एट्रीब्यूट एक डेटाबेस रिलेशन के कैंडिडेट की का सदस्य होता है। ii. एक रिलेशन में ट्यूपल्स का कोई विशेष क्रम नहीं होता है।",
+      "questionTextEn": "Which of the following statements is/are TRUE? i. A nonprime attribute is a member of a candidate key of a database relation. ii. Tuples in a relation do not have any particular order.",
       "options": [
-        "Both statements (i) and (ii) are true / दोनों कथन (i) और (ii) सत्य हैं",
-        "Statement (i) is true and statement (ii) is false / कथन (i) सत्य है और कथन (ii) असत्य है",
-        "Statement (i) is false and statement (ii) is true / कथन (i) असत्य है और कथन (ii) सत्य है",
-        "Both statements (i) and (ii) are false / दोनों कथन (i) और (ii) असत्य हैं"
+        "दोनों कथन (i) और (ii) सत्य हैं",
+        "कथन (i) सत्य है और कथन (ii) असत्य है",
+        "कथन (i) असत्य है और कथन (ii) सत्य है",
+        "दोनों कथन (i) और (ii) असत्य हैं"
+      ],
+      "optionsEn": [
+        "Both statements (i) and (ii) are true",
+        "Statement (i) is true and statement (ii) is false",
+        "Statement (i) is false and statement (ii) is true",
+        "Both statements (i) and (ii) are false"
       ],
       "correctOptionIndex": 2,
       "explanation": "i = FALSE (non-prime attribute ∉ any candidate key). ii = TRUE (tuples have no particular order in relation).",
@@ -995,11 +1426,18 @@
     },
     {
       "questionText": "डेटाबेस डिजाइनर द्वारा एक एंटिटी सेट के भीतर एंटिटीज की पहचान करने के प्रमुख साधन के रूप में चुनी गई, है-",
+      "questionTextEn": "The key chosen by database designer as principal means of identifying entities within an entity set, is-",
       "options": [
-        "Candidate key / कैंडिडेट की",
-        "Super key / सुपर की",
-        "Foreign key / फॉरेन की",
-        "primary key / प्राइमरी की"
+        "कैंडिडेट की",
+        "सुपर की",
+        "फॉरेन की",
+        "प्राइमरी की"
+      ],
+      "optionsEn": [
+        "Candidate key",
+        "Super key",
+        "Foreign key",
+        "primary key"
       ],
       "correctOptionIndex": 3,
       "explanation": "Primary Key = DB Designer द्वारा chosen key for entity identification। Principal means = Primary Key।",
@@ -1008,11 +1446,18 @@
     },
     {
       "questionText": "डेटाबेस में कोई भी अनमैच्ड फॉरेन की की वैल्यू नहीं होनी चाहिए। इस गुण को कहा जाता है-",
+      "questionTextEn": "The database must not contain any unmatched foreign key values. This property is known as-",
       "options": [
-        "Entity integrity / एंटिटी इंटीग्रिटी",
-        "Atomicity / एटोमिसिटी",
-        "Referential integrity / रेफरेंशियल इंटीग्रिटी",
-        "Consistency / कंसिस्टेंसी"
+        "एंटिटी इंटीग्रिटी",
+        "एटोमिसिटी",
+        "रेफरेंशियल इंटीग्रिटी",
+        "कंसिस्टेंसी"
+      ],
+      "optionsEn": [
+        "Entity integrity",
+        "Atomicity",
+        "Referential integrity",
+        "Consistency"
       ],
       "correctOptionIndex": 2,
       "explanation": "No unmatched FK values = Referential Integrity। यह FK और PK के बीच consistency ensure करती है।",
@@ -1021,11 +1466,18 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा डेंस इंडेक्स है?",
+      "questionTextEn": "Which of the following is dense index?",
       "options": [
-        "Primary index / प्राइमरी इंडेक्स",
-        "Clusters index / क्लस्टर्स इंडेक्स",
-        "Secondary index / सेकेंडरी इंडेक्स",
-        "Secondary non key index / सेकेंडरी नॉन की इंडेक्स"
+        "प्राइमरी इंडेक्स",
+        "क्लस्टर्स इंडेक्स",
+        "सेकेंडरी इंडेक्स",
+        "सेकेंडरी नॉन की इंडेक्स"
+      ],
+      "optionsEn": [
+        "Primary index",
+        "Clusters index",
+        "Secondary index",
+        "Secondary non key index"
       ],
       "correctOptionIndex": 2,
       "explanation": "Secondary Index = Dense Index (हर record के लिए एक entry होती है क्योंकि data physically sorted नहीं है)।",
@@ -1034,6 +1486,7 @@
     },
     {
       "questionText": "टेबल में दिखाए गए डेटा के अनुसार, निम्नलिखित में से कौन सा टेबल का कैंडिडेट की हो सकता है? [Table: LastName, Rank, Room, Shift]",
+      "questionTextEn": "According to the data shown in the table, which of the following could be a candidate key of the table? [Table: LastName, Rank, Room, Shift with data]",
       "options": [
         "{Last Name}",
         "{Room}",
@@ -1047,12 +1500,20 @@
     },
     {
       "questionText": "एक डेटाबेस फाइल का ब्लॉकिंग फैक्टर दर्शाता है:",
+      "questionTextEn": "The blocking factor of a database file represents:",
       "options": [
-        "total number of records in the file / फाइल में रिकॉर्ड्स की कुल संख्या",
-        "number of records per block / प्रति ब्लॉक रिकॉर्ड्स की संख्या",
-        "number of blocks per sector / प्रति सेक्टर ब्लॉक्स की संख्या",
-        "number of blocks per track / प्रति ट्रैक ब्लॉक्स की संख्या",
-        "number of blocks per cylinder / प्रति सिलेंडर ब्लॉक्स की संख्या"
+        "फाइल में रिकॉर्ड्स की कुल संख्या",
+        "प्रति ब्लॉक रिकॉर्ड्स की संख्या",
+        "प्रति सेक्टर ब्लॉक्स की संख्या",
+        "प्रति ट्रैक ब्लॉक्स की संख्या",
+        "प्रति सिलेंडर ब्लॉक्स की संख्या"
+      ],
+      "optionsEn": [
+        "total number of records in the file",
+        "number of records per block",
+        "number of blocks per sector",
+        "number of blocks per track",
+        "number of blocks per cylinder"
       ],
       "correctOptionIndex": 1,
       "explanation": "Blocking Factor = Number of records that fit in one block = Records per Block।",
@@ -1061,11 +1522,18 @@
     },
     {
       "questionText": "डेटाबेस में कीज के बारे में निम्नलिखित में से कौन सा कथन सही है?",
+      "questionTextEn": "Which one of the following statement is correct about keys in databases?",
       "options": [
-        "super key is also a candidate key / एक सुपर की एक कैंडिडेट की भी है।",
-        "primary key is also a candidate key / एक प्राइमरी की एक कैंडिडेट की भी है।",
-        "primary key is also a minimal key / एक प्राइमरी की एक मिनिमल की भी है।",
-        "minimal super key is a candidate key / एक मिनिमल सुपर की एक कैंडिडेट की है।"
+        "एक सुपर की एक कैंडिडेट की भी है।",
+        "एक प्राइमरी की एक कैंडिडेट की भी है।",
+        "एक प्राइमरी की एक मिनिमल की भी है।",
+        "एक मिनिमल सुपर की एक कैंडिडेट की है।"
+      ],
+      "optionsEn": [
+        "A super key is also a candidate key",
+        "A primary key is also a candidate key",
+        "A primary key is also a minimal key",
+        "A minimal super key is a candidate key"
       ],
       "correctOptionIndex": 1,
       "explanation": "Primary Key = Always a Candidate Key (it's chosen FROM candidate keys). B is correct.",
@@ -1074,11 +1542,18 @@
     },
     {
       "questionText": "निम्नलिखित में से RDBMS का पूर्ण रूप क्या है?",
+      "questionTextEn": "Which of the following is the full form of RDBMS?",
       "options": [
-        "Relational Data Management System / रिलेशनल डेटा मैनेजमेंट सिस्टम",
-        "Relational Database Management System / रिलेशनल डेटाबेस मैनेजमेंट सिस्टम",
-        "Relative Database Management System / रिलेटिव डेटाबेस मैनेजमेंट सिस्टम",
-        "Regional Data Management System / रिजनल डेटा मैनेजमेंट सिस्टम"
+        "रिलेशनल डेटा मैनेजमेंट सिस्टम",
+        "रिलेशनल डेटाबेस मैनेजमेंट सिस्टम",
+        "रिलेटिव डेटाबेस मैनेजमेंट सिस्टम",
+        "रिजनल डेटा मैनेजमेंट सिस्टम"
+      ],
+      "optionsEn": [
+        "Relational Data Management System",
+        "Relational Database Management System",
+        "Relative Database Management System",
+        "Regional Data Management System"
       ],
       "correctOptionIndex": 1,
       "explanation": "RDBMS = Relational Database Management System। Proposed by E.F. Codd in 1970।",
@@ -1087,11 +1562,18 @@
     },
     {
       "questionText": "RDBMS क्या है?",
+      "questionTextEn": "What is an RDBMS?",
       "options": [
-        "Database that stores data elements that are not linked / डेटाबेस जो लिंक न किए गए डेटा तत्वों को संग्रहीत करता है",
-        "Database that accesses data elements that are not linked / डेटाबेस जो लिंक न किए गए डेटा तत्वों तक पहुँचता है",
-        "Database that stores and allows access to data elements that are linked / डेटाबेस जो लिंक किए गए डेटा तत्वों को संग्रहीत करता है और उन तक पहुँच की अनुमति देता है",
-        "None of the mentioned / उल्लिखित में से कोई नहीं"
+        "डेटाबेस जो लिंक न किए गए डेटा तत्वों को संग्रहीत करता है",
+        "डेटाबेस जो लिंक न किए गए डेटा तत्वों तक पहुँचता है",
+        "डेटाबेस जो लिंक किए गए डेटा तत्वों को संग्रहीत करता है और उन तक पहुँच की अनुमति देता है",
+        "उल्लिखित में से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Database that stores data elements that are not linked",
+        "Database that accesses data elements that are not linked",
+        "Database that stores and allows access to data elements that are linked",
+        "None of the mentioned"
       ],
       "correctOptionIndex": 2,
       "explanation": "RDBMS = Stores AND manages LINKED data through relationships (FK-PK). Not just storage — relationships matter।",
@@ -1100,11 +1582,18 @@
     },
     {
       "questionText": "क्या RDBMS में ACID गुण होते हैं?",
+      "questionTextEn": "Does RDBMS have ACID properties?",
       "options": [
-        "Follows ACID properties / ACID गुणों का पालन करता है",
-        "Doesn't follow ACID properties / ACID गुणों का पालन नहीं करता",
-        "Depends on the data stored in the database / डेटाबेस में संग्रहीत डेटा पर निर्भर करता है",
-        "Can't say / नहीं कह सकते"
+        "ACID गुणों का पालन करता है",
+        "ACID गुणों का पालन नहीं करता",
+        "डेटाबेस में संग्रहीत डेटा पर निर्भर करता है",
+        "नहीं कह सकते"
+      ],
+      "optionsEn": [
+        "Follows ACID properties",
+        "Doesn't follow ACID properties",
+        "Depends on the data stored in the database",
+        "Can't say"
       ],
       "correctOptionIndex": 0,
       "explanation": "RDBMS follows ACID properties: Atomicity, Consistency, Isolation, Durability। This ensures transaction reliability।",
@@ -1113,11 +1602,18 @@
     },
     {
       "questionText": "RDBMS में संबंध क्या है?",
+      "questionTextEn": "What is a relation in RDBMS?",
       "options": [
-        "Key / की",
-        "Table / टेबल",
-        "Row / रो",
-        "Data Types / डेटा टाइप्स"
+        "की",
+        "टेबल",
+        "रो",
+        "डेटा टाइप्स"
+      ],
+      "optionsEn": [
+        "Key",
+        "Table",
+        "Row",
+        "Data Types"
       ],
       "correctOptionIndex": 1,
       "explanation": "Relation in RDBMS = Table। Tuple = Row, Attribute = Column, Domain = Valid values।",
@@ -1126,6 +1622,7 @@
     },
     {
       "questionText": "निम्न में से कौन सी प्रणाली RDMS का उपयोग करती है?",
+      "questionTextEn": "Which of the following systems use RDMS?",
       "options": [
         "Oracle",
         "Microsoft SQL Server",

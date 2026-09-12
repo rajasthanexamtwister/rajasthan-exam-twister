@@ -25,7 +25,9 @@ interface AttemptQuestionBreakdown {
   questionId: string;
   order: number;
   questionText: string;
+  questionTextEn?: string;
   options: string[];
+  optionsEn?: string[];
   selectedOptionIndex: number | null;
   correctOptionIndex: number;
   explanation: string;
@@ -56,6 +58,7 @@ export default function QuizResultPage() {
   const slug = params.slug as string;
 
   const [result, setResult] = useState<AttemptResult | null>(null);
+  const [language, setLanguage] = useState<"hi" | "en">("hi");
   const [filter, setFilter] = useState<"ALL" | "CORRECT" | "INCORRECT" | "UNATTEMPTED">("ALL");
   const [bookmarkedIds, setBookmarkedIds] = useState<Set<string>>(new Set());
   const [togglingBookmarkId, setTogglingBookmarkId] = useState<string | null>(null);
@@ -261,33 +264,77 @@ export default function QuizResultPage() {
               </p>
             </div>
 
-            {/* Solution Filter Tabs */}
-            <div className="flex items-center gap-1 bg-white p-1 rounded-xl border border-slate-200 shadow-sm overflow-x-auto">
-              {[
-                { label: `All (${result.totalQuestions})`, val: "ALL" as const },
-                { label: `Correct (${result.correctCount})`, val: "CORRECT" as const },
-                { label: `Incorrect (${result.incorrectCount})`, val: "INCORRECT" as const },
-                { label: `Skipped (${result.unattemptedCount})`, val: "UNATTEMPTED" as const },
-              ].map((t) => (
+            <div className="flex items-center gap-2">
+              {/* Language Toggle Pill */}
+              <div
+                className="flex items-center bg-white p-0.5 rounded-xl border border-slate-200 shadow-sm"
+                role="group"
+                aria-label="Language Toggle"
+              >
                 <button
-                  key={t.val}
                   type="button"
-                  onClick={() => setFilter(t.val)}
+                  onClick={() => setLanguage("hi")}
                   className={clsx(
-                    "px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-all",
-                    filter === t.val
-                      ? "bg-slate-900 text-white shadow-sm"
-                      : "text-slate-600 hover:bg-slate-100"
+                    "px-2.5 py-1 text-xs font-bold rounded-lg transition-all",
+                    language === "hi"
+                      ? "bg-slate-900 text-white shadow-xs"
+                      : "text-slate-600 hover:text-slate-900"
                   )}
+                  title="हिंदी में देखें"
                 >
-                  {t.label}
+                  हिंदी
                 </button>
-              ))}
+                <button
+                  type="button"
+                  onClick={() => setLanguage("en")}
+                  className={clsx(
+                    "px-2.5 py-1 text-xs font-bold rounded-lg transition-all",
+                    language === "en"
+                      ? "bg-slate-900 text-white shadow-xs"
+                      : "text-slate-600 hover:text-slate-900"
+                  )}
+                  title="View in English"
+                >
+                  English
+                </button>
+              </div>
+
+              {/* Solution Filter Tabs */}
+              <div className="flex items-center gap-1 bg-white p-1 rounded-xl border border-slate-200 shadow-sm overflow-x-auto">
+                {[
+                  { label: `All (${result.totalQuestions})`, val: "ALL" as const },
+                  { label: `Correct (${result.correctCount})`, val: "CORRECT" as const },
+                  { label: `Incorrect (${result.incorrectCount})`, val: "INCORRECT" as const },
+                  { label: `Skipped (${result.unattemptedCount})`, val: "UNATTEMPTED" as const },
+                ].map((t) => (
+                  <button
+                    key={t.val}
+                    type="button"
+                    onClick={() => setFilter(t.val)}
+                    className={clsx(
+                      "px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap transition-all",
+                      filter === t.val
+                        ? "bg-slate-900 text-white shadow-sm"
+                        : "text-slate-600 hover:bg-slate-100"
+                    )}
+                  >
+                    {t.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 
           <div className="space-y-4">
             {filteredQuestions.map((q) => {
+              const isEnglish = language === "en";
+              const displayQuestionText = isEnglish && q.questionTextEn ? q.questionTextEn : q.questionText;
+              const isFallbackHindi = isEnglish && !q.questionTextEn;
+              const displayOptions =
+                isEnglish && q.optionsEn && q.optionsEn.length === q.options.length
+                  ? q.optionsEn
+                  : q.options;
+
               const userOptLetter =
                 q.selectedOptionIndex !== null
                   ? String.fromCharCode(65 + q.selectedOptionIndex)
@@ -374,12 +421,17 @@ export default function QuizResultPage() {
 
                   {/* Question Text */}
                   <p className="text-sm font-semibold text-slate-900 leading-relaxed">
-                    {q.questionText}
+                    {displayQuestionText}
+                    {isFallbackHindi && (
+                      <span className="inline-block ml-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md align-middle border border-slate-200">
+                        Hindi only
+                      </span>
+                    )}
                   </p>
 
                   {/* Options List */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {q.options.map((opt, optIdx) => {
+                    {displayOptions.map((opt, optIdx) => {
                       const isCorrectAnswer = optIdx === q.correctOptionIndex;
                       const isUserSelection = optIdx === q.selectedOptionIndex;
                       const letter = String.fromCharCode(65 + optIdx);

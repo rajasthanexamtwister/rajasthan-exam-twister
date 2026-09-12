@@ -11,11 +11,18 @@
   "questions": [
     {
       "questionText": "पॉवर प्वाइंट में प्रत्येक पेज ___ कहलाता है।",
+      "questionTextEn": "In PowerPoint, each page is called ___.",
       "options": [
-        "वर्कशीट / Worksheet",
-        "टेक्स्ट पेज / Text Page",
-        "स्लाइड / Slide",
-        "चित्र / Picture"
+        "वर्कशीट",
+        "टेक्स्ट पेज",
+        "स्लाइड",
+        "चित्र"
+      ],
+      "optionsEn": [
+        "Worksheet",
+        "Text Page",
+        "Slide",
+        "Picture"
       ],
       "correctOptionIndex": 2,
       "explanation": "Each page of a PowerPoint presentation is called a Slide.",
@@ -24,6 +31,7 @@
     },
     {
       "questionText": "MS Power Point पर आधारित है-",
+      "questionTextEn": "MS PowerPoint is based on-",
       "options": [
         "GUI",
         "CUI",
@@ -37,6 +45,7 @@
     },
     {
       "questionText": "निम्न में से Slide Show किसमें होता है?",
+      "questionTextEn": "Slide Show is present in-",
       "options": [
         "MS Word",
         "MS Excel",
@@ -50,11 +59,18 @@
     },
     {
       "questionText": "Graphic Presentation Program में प्रत्येक प्रेजेंटेशन ___ में विभाजित होता है।",
+      "questionTextEn": "In a Graphic Presentation Program, each presentation is divided into ___.",
       "options": [
-        "चार्ट / Charts",
-        "स्लाइड्स / Slides",
-        "टेबल / Table",
-        "चित्र / Picture"
+        "चार्ट",
+        "स्लाइड्स",
+        "टेबल",
+        "चित्र"
+      ],
+      "optionsEn": [
+        "Charts",
+        "Slides",
+        "Table",
+        "Picture"
       ],
       "correctOptionIndex": 1,
       "explanation": "A presentation is a collection of slides.",
@@ -63,11 +79,18 @@
     },
     {
       "questionText": "___ सामान्य उद्देश्य जैसे फोटो एलबम या क्विज़ शो के लिए एक Predefined प्रेजेंटेशन है।",
+      "questionTextEn": "___ is a predefined presentation for general purpose such as photo album or quiz show.",
       "options": [
-        "चार्ट / Chart",
-        "टेबल / Table",
-        "स्लाइड / Slide",
-        "टेम्पलेट / Template"
+        "चार्ट",
+        "टेबल",
+        "स्लाइड",
+        "टेम्पलेट"
+      ],
+      "optionsEn": [
+        "Chart",
+        "Table",
+        "Slide",
+        "Template"
       ],
       "correctOptionIndex": 3,
       "explanation": "A Template is a ready-made, predefined presentation design used for common purposes like photo albums or quizzes.",
@@ -76,6 +99,7 @@
     },
     {
       "questionText": "निम्नलिखित में से किस पैकेज को Slide Presentation के लिए प्रयुक्त किया जाता है?",
+      "questionTextEn": "Which of the following package is used for Slide Presentation?",
       "options": [
         "MS Word",
         "MS Access",
@@ -89,6 +113,7 @@
     },
     {
       "questionText": "ऑटो कॉन्टेंट विजार्ड में स्टार्ट और फिनिश के बीच कितने स्टेप हैं?",
+      "questionTextEn": "How many steps are there between Start and Finish in Auto Content Wizard?",
       "options": [
         "3",
         "4",
@@ -102,11 +127,18 @@
     },
     {
       "questionText": "यूजर पावर पॉइंट का उपयोग कर प्रस्तुत कर सकता है-",
+      "questionTextEn": "A user can present using PowerPoint-",
       "options": [
-        "ओवरहेड ट्रांसपेरेंसी और 35mm स्लाइड्स / Overhead transparencies and 35 mm slides",
-        "दर्शकों के हैंडआउट्स और रूपरेखाएं / Audience handouts and outlines",
-        "स्पीकर के नोट मुद्रित कर सकते हैं / Speaker notes can be printed",
-        "उपरोक्त सभी / All of the above"
+        "ओवरहेड ट्रांसपेरेंसी और 35mm स्लाइड्स",
+        "दर्शकों के हैंडआउट्स और रूपरेखाएं",
+        "स्पीकर के नोट मुद्रित कर सकते हैं",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Overhead transparencies and 35 mm slides",
+        "Audience handouts and outlines",
+        "Speaker notes can be printed",
+        "All of the above"
       ],
       "correctOptionIndex": 3,
       "explanation": "PowerPoint supports multiple presentation output modes: overhead transparencies, 35mm slides, handouts, outlines, and printed speaker notes.",
@@ -115,6 +147,7 @@
     },
     {
       "questionText": "Microsoft PowerPoint 2010 प्रोग्राम में आपका फाइल ___ एक्सटेंशन में संग्रहित होता है।",
+      "questionTextEn": "In Microsoft PowerPoint 2010, your file is stored with ___ extension.",
       "options": [
         ".psd",
         ".rtf",
@@ -128,11 +161,18 @@
     },
     {
       "questionText": "पॉवर पॉइंट प्रजेन्टेशन निम्नलिखित एप्लीकेशन प्रोग्राम का एक हिस्सा है-",
+      "questionTextEn": "PowerPoint Presentation is part of which application program?",
       "options": [
-        "लिब्रा ऑफिस / Libra Office",
-        "स्टार ऑफिस / Star Office",
-        "ओपन ऑफिस / Open Office",
-        "MS ऑफिस / MS Office"
+        "लिब्रा ऑफिस",
+        "स्टार ऑफिस",
+        "ओपन ऑफिस",
+        "MS ऑफिस"
+      ],
+      "optionsEn": [
+        "Libra Office",
+        "Star Office",
+        "Open Office",
+        "MS Office"
       ],
       "correctOptionIndex": 3,
       "explanation": "PowerPoint is a component of the Microsoft Office suite.",
@@ -141,6 +181,7 @@
     },
     {
       "questionText": "पावर-प्वाइंट में निम्न में से कौनसी शॉर्टकट-की प्रेजेंटेशन को प्रारम्भ से शुरू करने के लिए उपयोग की जाती है?",
+      "questionTextEn": "Which shortcut key in PowerPoint is used to start the presentation from the beginning?",
       "options": [
         "F5",
         "F3",
@@ -154,11 +195,18 @@
     },
     {
       "questionText": "Microsoft PowerPoint 2007 में कौन से presentation view हैं?",
+      "questionTextEn": "Which presentation views are available in Microsoft PowerPoint 2007?",
       "options": [
-        "Normal, Slide Sorter / सामान्य, स्लाइड सॉर्टर",
-        "Note Page, Slide Show / नोट्स पेज, स्लाइड शो",
-        "Slide Master, Handout Master, Notes Master / स्लाइड मास्टर, हैंडआउट मास्टर, नोट्स मास्टर",
-        "उपरोक्त सभी / All of the above"
+        "सामान्य, स्लाइड सॉर्टर",
+        "नोट्स पेज, स्लाइड शो",
+        "स्लाइड मास्टर, हैंडआउट मास्टर, नोट्स मास्टर",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Normal, Slide Sorter",
+        "Note Page, Slide Show",
+        "Slide Master, Handout Master, Notes Master",
+        "All of the above"
       ],
       "correctOptionIndex": 3,
       "explanation": "PowerPoint 2007 includes Normal, Slide Sorter, Notes Page, Slide Show, and the Master views (Slide/Handout/Notes Master) — all listed options are valid views.",
@@ -167,6 +215,7 @@
     },
     {
       "questionText": "हैंडआउट के अंतर्गत एक पेज पर न्यूनतम एवं अधिकतम Slides को Print किया जा सकता है।",
+      "questionTextEn": "The minimum and maximum slides that can be printed on one page in handouts-",
       "options": [
         "3,7",
         "5,8",
@@ -180,6 +229,7 @@
     },
     {
       "questionText": "कौनसा पॉवर-प्वाइंट व्यू प्रेजेंटेशन के प्रत्येक स्लाइड को एक थम्बनेल के तौर पर डिस्प्ले करता है तथा स्लाइड्स को पुनः व्यवस्थित करने में उपयोगी है?",
+      "questionTextEn": "Which PowerPoint view displays each slide as a thumbnail and is useful for rearranging slides?",
       "options": [
         "Slide Design",
         "Slide Sorter",
@@ -193,11 +243,18 @@
     },
     {
       "questionText": ".........का उपयोग कम्प्यूटर पर Slide Show बनाने के लिए किया जाता है।",
+      "questionTextEn": ".........is used to create a Slide Show on a computer.",
       "options": [
-        "प्रेजेन्टेशन प्रोग्राम / Presentation Program",
-        "प्रोग्राम / Program",
-        "सुपर स्लाइड पैकेज / Super Slide Package",
-        "स्लाइड मेकर टूल्स / Slide Maker Tools"
+        "प्रेजेन्टेशन प्रोग्राम",
+        "प्रोग्राम",
+        "सुपर स्लाइड पैकेज",
+        "स्लाइड मेकर टूल्स"
+      ],
+      "optionsEn": [
+        "Presentation Program",
+        "Program",
+        "Super Slide Package",
+        "Slide Maker Tools"
       ],
       "correctOptionIndex": 0,
       "explanation": "A Presentation Program (like PowerPoint) is the software category used to build slide shows.",
@@ -206,11 +263,18 @@
     },
     {
       "questionText": "ऑटो कॉन्टेंट विजार्ड में कौन सी presentation style होती हैं?",
+      "questionTextEn": "Which presentation styles are available in Auto Content Wizard?",
       "options": [
-        "On Screen Presentation / ऑन स्क्रीन प्रेजेन्टेशन",
-        "Web Presentation / वेब प्रेजेन्टेशन",
-        "Block White Overheads / ब्लॉक व्हाइट ओवरहेड्स",
-        "उपरोक्त सभी / All of the above"
+        "ऑन स्क्रीन प्रेजेन्टेशन",
+        "वेब प्रेजेन्टेशन",
+        "ब्लॉक व्हाइट ओवरहेड्स",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "On Screen Presentation",
+        "Web Presentation",
+        "Block White Overheads",
+        "All of the above"
       ],
       "correctOptionIndex": 3,
       "explanation": "The Auto Content Wizard's style step offers On-Screen Presentation, Web Presentation, and Black-and-White Overheads as options.",
@@ -219,11 +283,18 @@
     },
     {
       "questionText": "___ टाइटल बार में एक आइकन प्रदर्शित करता है जिसमें सामान्य रूप से उपयोग होने वाले कमांड जैसे सेव, अन्डू, और रिड्रू होते हैं।",
+      "questionTextEn": "___ in the title bar displays an icon that contains commonly used commands like Save, Undo, and Redo.",
       "options": [
-        "होम बटन / Home Button",
-        "रिबन / Ribbon",
-        "क्विक एक्सेस / Quick Access",
-        "ऑफिस बटन / Office Button"
+        "होम बटन",
+        "रिबन",
+        "क्विक एक्सेस",
+        "ऑफिस बटन"
+      ],
+      "optionsEn": [
+        "Home Button",
+        "Ribbon",
+        "Quick Access",
+        "Office Button"
       ],
       "correctOptionIndex": 2,
       "explanation": "The Quick Access Toolbar, placed on the title bar, gives one-click access to common commands like Save, Undo, and Redo.",
@@ -232,11 +303,18 @@
     },
     {
       "questionText": "MS-Power Point में किस प्रकार का दृश्य उपलब्ध नहीं है?",
+      "questionTextEn": "Which type of view is not available in MS PowerPoint?",
       "options": [
-        "एक्स्ट्रीम एनीमेशन / Extreme Animation",
-        "स्लाइड शो / Slide Show",
-        "स्लाइड सॉर्टर / Slide Sorter",
-        "सामान्य / Normal"
+        "एक्स्ट्रीम एनीमेशन",
+        "स्लाइड शो",
+        "स्लाइड सॉर्टर",
+        "सामान्य"
+      ],
+      "optionsEn": [
+        "Extreme Animation",
+        "Slide Show",
+        "Slide Sorter",
+        "Normal"
       ],
       "correctOptionIndex": 0,
       "explanation": "'Extreme Animation' is not a real PowerPoint view; Normal, Slide Sorter, and Slide Show are all genuine views.",
@@ -245,11 +323,18 @@
     },
     {
       "questionText": "एमएस पॉवर पॉइंट में मैक्रो किस ग्रुप टैब में पाया जाता है?",
+      "questionTextEn": "In MS PowerPoint, in which tab group is Macro found?",
       "options": [
-        "होम / Home",
-        "डिज़ाइन / Design",
-        "फॉर्मेट / Format",
-        "व्यू / View"
+        "होम",
+        "डिज़ाइन",
+        "फॉर्मेट",
+        "व्यू"
+      ],
+      "optionsEn": [
+        "Home",
+        "Design",
+        "Format",
+        "View"
       ],
       "correctOptionIndex": 3,
       "explanation": "Macros are located in the Macros group under the View tab (also accessible via Developer tab if enabled).",
@@ -258,11 +343,18 @@
     },
     {
       "questionText": "एम एस पॉवरप्वाइंट 2010 का प्रयोग किस कार्य के लिए किया जाता है?",
+      "questionTextEn": "MS PowerPoint 2010 is used for-",
       "options": [
-        "प्रेजेन्टेशन / Presentation",
-        "डेटाबेस / Database",
-        "अकाउंट / Account",
-        "प्रोग्रामिंग / Programming"
+        "प्रेजेन्टेशन",
+        "डेटाबेस",
+        "अकाउंट",
+        "प्रोग्रामिंग"
+      ],
+      "optionsEn": [
+        "Presentation",
+        "Database",
+        "Account",
+        "Programming"
       ],
       "correctOptionIndex": 0,
       "explanation": "PowerPoint's core purpose is creating presentations.",
@@ -271,6 +363,7 @@
     },
     {
       "questionText": "ऑटो कॉन्टेंट विजार्ड के प्रथम चरण में कौनसे विकल्प होते हैं?",
+      "questionTextEn": "Which options are available in the first step of Auto Content Wizard?",
       "options": [
         "Corporate, General",
         "Project",
@@ -284,11 +377,18 @@
     },
     {
       "questionText": "PowerPoint की कौनसी सेटिंग प्रत्येक स्लाइड के बीच स्पेशल इफेक्ट जोड़ती है, जिससे स्लाइड appearance और प्रत्येक स्लाइड के बीच समय तय होता है?",
+      "questionTextEn": "Which setting in PowerPoint adds a special effect between each slide, determining appearance and timing between slides?",
       "options": [
-        "Color Schemes / कलर स्कीम",
-        "Transition Setting / ट्रांज़िशन सेटिंग",
-        "Animation / एनीमेशन",
-        "Handouts / हैंडआउट्स"
+        "कलर स्कीम",
+        "ट्रांज़िशन सेटिंग",
+        "एनीमेशन",
+        "हैंडआउट्स"
+      ],
+      "optionsEn": [
+        "Color Schemes",
+        "Transition Setting",
+        "Animation",
+        "Handouts"
       ],
       "correctOptionIndex": 1,
       "explanation": "Transition settings control the visual effect and timing that occurs as PowerPoint moves from one slide to the next.",
@@ -297,6 +397,7 @@
     },
     {
       "questionText": "एम एस पॉवर प्वाइंट प्रेजेंटेशन में कौनसा Format नहीं जोड़ा जा सकता है?",
+      "questionTextEn": "Which format cannot be added in MS PowerPoint presentation?",
       "options": [
         ".jpeg",
         ".html",
@@ -310,11 +411,18 @@
     },
     {
       "questionText": "जो सुविधा एक स्लाइड से बाहर निकालता है और अन्य में प्रवेश करता है, के बीच में गति प्रभाव लागू करने के लिए प्रयोग किया जाता है?",
+      "questionTextEn": "Which feature is used to apply motion effect between exiting one slide and entering another?",
       "options": [
-        "Slide Design / स्लाइड डिजाइन",
-        "Slide Transitions / स्लाइड ट्रांज़िशन्स",
-        "Animation Object / एनीमेशन ऑब्जेक्ट",
-        "Animation Scheme / एनीमेशन स्कीम"
+        "स्लाइड डिजाइन",
+        "स्लाइड ट्रांज़िशन्स",
+        "एनीमेशन ऑब्जेक्ट",
+        "एनीमेशन स्कीम"
+      ],
+      "optionsEn": [
+        "Slide Design",
+        "Slide Transitions",
+        "Animation Object",
+        "Animation Scheme"
       ],
       "correctOptionIndex": 1,
       "explanation": "Slide Transitions control the motion effect as one slide exits and the next enters.",
@@ -323,6 +431,7 @@
     },
     {
       "questionText": "नई स्लाइड इंसर्ट करने की शॉर्टकट कीज़?",
+      "questionTextEn": "Shortcut key to insert a new slide",
       "options": [
         "Ctrl+N",
         "Ctrl+Shift+N",
@@ -336,6 +445,7 @@
     },
     {
       "questionText": "निम्न में से कौनसा Presentation software है?",
+      "questionTextEn": "Which of the following is a Presentation software?",
       "options": [
         "पॉवर पॉइंट / PowerPoint",
         "MS Excel",
@@ -349,6 +459,7 @@
     },
     {
       "questionText": "ऑटो कॉन्टेंट विजार्ड के किस स्टेप में स्लाइड प्रजेंटेशन टाइटल और फुटर डिफाइन किया जाता है?",
+      "questionTextEn": "In which step of Auto Content Wizard are slide presentation title and footer defined?",
       "options": [
         "1",
         "2",
@@ -362,11 +473,18 @@
     },
     {
       "questionText": "MS PowerPoint में किसी Presentation को सेव करने हेतु प्रयुक्त विकल्प है-",
+      "questionTextEn": "Options to save a presentation in PowerPoint are-",
       "options": [
-        "Using Ctrl+S key / Ctrl+S कुंजी के प्रयोग से",
-        "Using File Tab → Save As / फ़ाइल टैब → सेव विकल्प से",
-        "Using File Tab → Save / फ़ाइल टैब → सेव विकल्प से",
-        "उपरोक्त सभी / All of the above"
+        "Ctrl+S कुंजी के प्रयोग से",
+        "फ़ाइल टैब → सेव विकल्प से",
+        "फ़ाइल टैब → सेव विकल्प से",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Using Ctrl+S key",
+        "Using File Tab → Save As",
+        "Using File Tab → Save",
+        "All of the above"
       ],
       "correctOptionIndex": 3,
       "explanation": "PowerPoint can be saved via Ctrl+S, or via the File tab's Save/Save As options — all are valid.",
@@ -375,11 +493,18 @@
     },
     {
       "questionText": "पॉवर पॉइन्ट एप्लीकेशन यूजर को अनुमति देता है-",
+      "questionTextEn": "PowerPoint application allows the user to-",
       "options": [
-        "स्पीकर नोट्स के लिए नोट्स / Notes for the speaker",
-        "स्लाइड का पेपर प्रिंटआउट / Paper printout of slides",
-        "एनिमेशन प्रेजेन्टेशन / Animation presentation",
-        "उपरोक्त सभी / All of the above"
+        "स्पीकर नोट्स के लिए नोट्स",
+        "स्लाइड का पेपर प्रिंटआउट",
+        "एनिमेशन प्रेजेन्टेशन",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Notes for the speaker",
+        "Paper printout of slides",
+        "Animation presentation",
+        "All of the above"
       ],
       "correctOptionIndex": 3,
       "explanation": "PowerPoint supports speaker notes, printed slide handouts, and animated presentations — all are valid features.",
@@ -388,11 +513,18 @@
     },
     {
       "questionText": "आप अपने हैंडआउट में हैडर एवं फुटर जोड़ने के लिए प्रयोग कर सकते हैं",
+      "questionTextEn": "To add header and footer in your handout you can use ...",
       "options": [
-        "टाइटल मास्टर / Title Master",
-        "स्लाइड मास्टर / Slide Master",
-        "हैंडआउट मास्टर / Handout Master",
-        "उक्त सभी / All of the Above"
+        "टाइटल मास्टर",
+        "स्लाइड मास्टर",
+        "हैंडआउट मास्टर",
+        "उक्त सभी"
+      ],
+      "optionsEn": [
+        "Title Master",
+        "Slide Master",
+        "Handout Master",
+        "All of the Above"
       ],
       "correctOptionIndex": 2,
       "explanation": "Headers and footers for printed handouts are controlled via the Handout Master.",
@@ -401,11 +533,18 @@
     },
     {
       "questionText": "वह व्यू जो प्रेजेंटेशन में स्लाइड को लघु रूप में दिखाता है कहलाता है",
+      "questionTextEn": "The view that shows slides in miniature form is called...",
       "options": [
-        "स्लाइड सॉर्टर व्यू / Slide Sorter View",
-        "स्लाइड शो / Slide Show",
-        "नोट्स पेज व्यू / Notes Page View",
-        "आउटलाइन व्यू / Outline View"
+        "स्लाइड सॉर्टर व्यू",
+        "स्लाइड शो",
+        "नोट्स पेज व्यू",
+        "आउटलाइन व्यू"
+      ],
+      "optionsEn": [
+        "Slide Sorter View",
+        "Slide Show",
+        "Notes Page View",
+        "Outline View"
       ],
       "correctOptionIndex": 0,
       "explanation": "Slide Sorter View shows miniature thumbnails of all slides.",
@@ -414,11 +553,18 @@
     },
     {
       "questionText": "Slide Layout Command किस टैब के अंतर्गत आता है?",
+      "questionTextEn": "Slide Layout Command comes under which tab?",
       "options": [
-        "होम टैब / Home Tab",
-        "डिज़ाइन टैब / Design Tab",
-        "फॉर्मेट टैब / Format Tab",
-        "व्यू टैब / View Tab"
+        "होम टैब",
+        "डिज़ाइन टैब",
+        "फॉर्मेट टैब",
+        "व्यू टैब"
+      ],
+      "optionsEn": [
+        "Home Tab",
+        "Design Tab",
+        "Format Tab",
+        "View Tab"
       ],
       "correctOptionIndex": 0,
       "explanation": "The Layout command (Slide Layout) is found in the Slides group under the Home tab.",
@@ -427,11 +573,18 @@
     },
     {
       "questionText": "कस्टम एनिमेशन टास्क पेन का कौनसा विकल्प आपको प्रीसेट अथवा कस्टम घूर्णन पथ लागू करने की अनुमति प्रदान करता है?",
+      "questionTextEn": "Which option in Custom Animation Task Pane allows applying preset or custom motion paths?",
       "options": [
-        "एड इफेक्ट / Add Effect",
-        "एफफैसिस / Emphasis",
-        "एनिमेट नाउ / Animate Now",
-        "उक्त सभी / All of the Above"
+        "एड इफेक्ट",
+        "एफफैसिस",
+        "एनिमेट नाउ",
+        "उक्त सभी"
+      ],
+      "optionsEn": [
+        "Add Effect",
+        "Emphasis",
+        "Animate Now",
+        "All of the Above"
       ],
       "correctOptionIndex": 0,
       "explanation": "'Add Effect' in the Custom Animation Task Pane lets you choose preset motion paths or draw a custom path.",
@@ -440,6 +593,7 @@
     },
     {
       "questionText": "पॉवर पाइंट में कौन सा फाइल फॉर्मेट जोड़ा जा सकता है?",
+      "questionTextEn": "Which file format can be added in PowerPoint?",
       "options": [
         ".gif",
         ".jpg",
@@ -453,11 +607,18 @@
     },
     {
       "questionText": "पॉवर-पॉइंट एक ___ है।",
+      "questionTextEn": "PowerPoint is a ___.",
       "options": [
-        "एप्लीकेशन सॉफ्टवेयर / Application Software",
-        "सिस्टम सॉफ्टवेयर / System Software",
-        "सिस्टम सॉफ्टवेयर / System Software",
-        "उपरोक्त में से कोई नहीं / None of the above"
+        "एप्लीकेशन सॉफ्टवेयर",
+        "सिस्टम सॉफ्टवेयर",
+        "सिस्टम सॉफ्टवेयर",
+        "उपरोक्त में से कोई नहीं"
+      ],
+      "optionsEn": [
+        "Application Software",
+        "System Software",
+        "System Software",
+        "None of the above"
       ],
       "correctOptionIndex": 0,
       "explanation": "PowerPoint is application software, used by end-users for a specific task (presentations), unlike system software which runs the computer itself.",
@@ -466,6 +627,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौनसे PowerPoint में प्रयुक्त Transition Effect के प्रकार हैं-",
+      "questionTextEn": "Which of the following are types of transition effects used in PowerPoint?",
       "options": [
         "Fade, Push, Wipe, Reveal",
         "Split, Cut, Uncover, Shape",
@@ -479,11 +641,18 @@
     },
     {
       "questionText": "प्रस्तुति में सभी स्लाइड को एक समान लुक देने के लिए निम्न में से क्या उपयोग करना चाहिए?",
+      "questionTextEn": "Which should be used to give all slides a uniform look in a presentation?",
       "options": [
-        "Slide Layout विकल्प / Slide Layout Option",
-        "एक स्लाइड जोड़ें विकल्प / Add a Slide Option",
-        "Outline Views / आउटलुक व्यूज",
-        "Design Template / प्रेजेंटेशन Design Template"
+        "Slide Layout विकल्प",
+        "एक स्लाइड जोड़ें विकल्प",
+        "आउटलुक व्यूज",
+        "प्रेजेंटेशन Design Template"
+      ],
+      "optionsEn": [
+        "Slide Layout Option",
+        "Add a Slide Option",
+        "Outline Views",
+        "Design Template"
       ],
       "correctOptionIndex": 3,
       "explanation": "Applying a Design Template gives all slides a consistent, uniform look.",
@@ -492,11 +661,18 @@
     },
     {
       "questionText": "पॉवर-पॉइंट का उपयोग मुख्य रूप से किस कार्य हेतु किया जाता है?",
+      "questionTextEn": "PowerPoint is mainly used for-",
       "options": [
-        "प्रस्तुतीकरण / Presentation",
-        "शब्द संसाधन / Word Processing",
-        "डाटाबेस / Database",
-        "प्रोग्रामिंग / Programming"
+        "प्रस्तुतीकरण",
+        "शब्द संसाधन",
+        "डाटाबेस",
+        "प्रोग्रामिंग"
+      ],
+      "optionsEn": [
+        "Presentation",
+        "Word Processing",
+        "Database",
+        "Programming"
       ],
       "correctOptionIndex": 0,
       "explanation": "PowerPoint's primary purpose is to create presentations.",
@@ -505,11 +681,18 @@
     },
     {
       "questionText": "कौनसा अनुप्रयोग प्रदर्शन तैयार करने के लिए उपयुक्त होता है?",
+      "questionTextEn": "Which application is suitable for preparing presentations?",
       "options": [
-        "फोटोशॉप / Photoshop",
-        "पावर पॉइंट / PowerPoint",
-        "आउटलुक एक्सप्रेस / Outlook Express",
-        "इंटरनेट एक्सप्लोरर / Internet Explorer"
+        "फोटोशॉप",
+        "पावर पॉइंट",
+        "आउटलुक एक्सप्रेस",
+        "इंटरनेट एक्सप्लोरर"
+      ],
+      "optionsEn": [
+        "Photoshop",
+        "PowerPoint",
+        "Outlook Express",
+        "Internet Explorer"
       ],
       "correctOptionIndex": 1,
       "explanation": "PowerPoint is the appropriate application for preparing presentations, unlike Photoshop (image editing), Outlook (email), or Internet Explorer (browsing).",
@@ -518,6 +701,7 @@
     },
     {
       "questionText": "एम एस पॉवर प्वाइंट में पहली स्लाइड पर जाने के लिए कौनसी Shortcut key का उपयोग किया जाता है?",
+      "questionTextEn": "Shortcut key to go to first slide in MS PowerPoint-",
       "options": [
         "Ctrl+Insert",
         "Ctrl+Home",
@@ -531,11 +715,18 @@
     },
     {
       "questionText": "निम्न में से कौनसा Presentation का basic element है?",
+      "questionTextEn": "Which of the following is a basic element of Presentation?",
       "options": [
-        "क्लिप्स / Clips",
-        "टेम्पलेट / Template",
-        "स्लाइड्स / Slides",
-        "फ्रेम्स / Frames"
+        "क्लिप्स",
+        "टेम्पलेट",
+        "स्लाइड्स",
+        "फ्रेम्स"
+      ],
+      "optionsEn": [
+        "Clips",
+        "Template",
+        "Slides",
+        "Frames"
       ],
       "correctOptionIndex": 2,
       "explanation": "Slides are the fundamental building blocks of any presentation.",
@@ -544,11 +735,18 @@
     },
     {
       "questionText": "एक नया प्रेजेंटेशन निम्न में से किस बनाया जा सकता है?",
+      "questionTextEn": "A new presentation can be created from ...",
       "options": [
-        "खाली प्रेजेंटेशन / Blank Presentation",
-        "पुराने प्रेजेंटेशन / Existing Presentation",
-        "डिजाइन टेम्पलेट / Design Template",
-        "उपरोक्त सभी / All of the above"
+        "खाली प्रेजेंटेशन",
+        "पुराने प्रेजेंटेशन",
+        "डिजाइन टेम्पलेट",
+        "उपरोक्त सभी"
+      ],
+      "optionsEn": [
+        "Blank Presentation",
+        "Existing Presentation",
+        "Design Template",
+        "All of the above"
       ],
       "correctOptionIndex": 3,
       "explanation": "New presentations can start blank, from an existing presentation, or from a design template — all are valid starting points.",
@@ -557,6 +755,7 @@
     },
     {
       "questionText": "Presentation बनाने के लिए प्रोग्राम का उपयोग किया जाता है-",
+      "questionTextEn": "Program used to create Presentation-",
       "options": [
         "Excel",
         "PowerPoint",
@@ -570,6 +769,7 @@
     },
     {
       "questionText": "एक प्रस्तुति में स्लाइड्स लाने के लिए क्या विशेष प्रभाव इस्तेमाल किया जाता है?",
+      "questionTextEn": "What special effect is used to bring slides in a presentation?",
       "options": [
         "Effects",
         "Custom Animation",
@@ -583,6 +783,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौनसा MS PowerPoint में एनीमेशन को व्यक्त करता है-",
+      "questionTextEn": "Which of the following represents animation in MS PowerPoint?",
       "options": [
         "Fly In, Random Bars, Bounce",
         "Darken, Fill Color, Wave",
@@ -596,11 +797,18 @@
     },
     {
       "questionText": "निम्न में से कौन स्लाइड शो व्यू में स्लाइड्स को आगे नहीं चलायेगा?",
+      "questionTextEn": "Which of the following will not advance slides in Slide Show view?",
       "options": [
-        "माउस बटन / Mouse Button",
-        "स्पेस बार / Space Bar",
-        "एंटर की / Enter Key",
-        "Esc की / Esc Key"
+        "माउस बटन",
+        "स्पेस बार",
+        "एंटर की",
+        "Esc की"
+      ],
+      "optionsEn": [
+        "Mouse Button",
+        "Space Bar",
+        "Enter Key",
+        "Esc Key"
       ],
       "correctOptionIndex": 3,
       "explanation": "Esc ends/exits the Slide Show rather than advancing it; Mouse click, Space, and Enter all advance to the next slide.",
@@ -609,6 +817,7 @@
     },
     {
       "questionText": "वर्तमान में खुले प्रेजेंटेशन में किस शॉर्टकट कुंजी से नई स्लाइड डाली जाती है?",
+      "questionTextEn": "Shortcut key to insert a new slide in the current presentation?",
       "options": [
         "Ctrl+S",
         "Ctrl+N",
@@ -622,11 +831,18 @@
     },
     {
       "questionText": "पॉवर पॉइंट में presentation को बनाने में प्रयुक्त पेज को ___ कहा जाता है।",
+      "questionTextEn": "In PowerPoint, the page used to create a presentation is called ___.",
       "options": [
-        "शीट / Sheet",
-        "पेपर / Paper",
-        "स्लाइड / Slide",
-        "डॉक्यूमेंट / Document"
+        "शीट",
+        "पेपर",
+        "स्लाइड",
+        "डॉक्यूमेंट"
+      ],
+      "optionsEn": [
+        "Sheet",
+        "Paper",
+        "Slide",
+        "Document"
       ],
       "correctOptionIndex": 2,
       "explanation": "The page unit in PowerPoint is called a Slide.",
@@ -635,6 +851,7 @@
     },
     {
       "questionText": "माइक्रोसॉफ्ट पॉवर पॉइन्ट की फाइल का By Default नाम होता है-",
+      "questionTextEn": "Default name of Microsoft PowerPoint file is-",
       "options": [
         "Presentation1",
         "PPT1",
@@ -648,10 +865,11 @@
     },
     {
       "questionText": "अपने प्रेजेंटेशन को सेव करने के लिए-",
+      "questionTextEn": "To save your presentation-",
       "options": [
         "Click Office button or File tab to save",
         "Press Ctrl+S",
-        "and B Both",
+        "A and B Both",
         "None of these"
       ],
       "correctOptionIndex": 2,
@@ -661,6 +879,7 @@
     },
     {
       "questionText": "ड्रॉइंग, फोटोग्राफ्स, मूवीज और सिमुलेशन ___ की श्रेणी के अंतर्गत आते हैं।",
+      "questionTextEn": "Drawing, photographs, movies and simulations fall under the category of ...",
       "options": [
         "Animation",
         "Image",
@@ -674,6 +893,7 @@
     },
     {
       "questionText": "प्रस्तुतकर्ता (Presenter) पर उपलब्ध स्लाइड शो विकल्प सभी को समाहित करता है केवल निम्न को छोड़कर",
+      "questionTextEn": "Slide Show options available in Presenter include all except ...",
       "options": [
         "Transition Command",
         "Speaker Note Command",
@@ -687,6 +907,7 @@
     },
     {
       "questionText": "..........एक प्रस्तुति के लिए वर्तमान विषय के बारे में जानकारी संग्रहित करता है, प्लेसहोल्डर्स का लेआउट, बुलेट वर्ण और अन्य स्वरूप जो किसी प्रस्तुति में सभी स्लाइड को प्रभावित करते हैं।",
+      "questionTextEn": ".......stores information about the current topic for a presentation, placeholder layouts, bullet characters, and other formats that affect all slides in a presentation.",
       "options": [
         "Slide Painter",
         "Slide Layer",
@@ -700,6 +921,7 @@
     },
     {
       "questionText": "..........टेब में बेसिक फॉर्मेटिंग टूल्स होते हैं।",
+      "questionTextEn": "Basic formatting tools are available in the ___ tab.",
       "options": [
         "Design",
         "View",
@@ -713,6 +935,7 @@
     },
     {
       "questionText": "एम.एस.पॉवर पॉइंट में ऑप्शन ___ के प्रयोग से एक पेज बहु स्लाइड प्रिंट की जाती है",
+      "questionTextEn": "Which option in PowerPoint is used to print multiple slides on a page?",
       "options": [
         "Slides",
         "Notes Page",
@@ -726,6 +949,7 @@
     },
     {
       "questionText": "स्लाइड पर वे ऑब्जेक्ट्स जो टेक्स्ट रखते हैं, कहलाते हैं",
+      "questionTextEn": "Objects on slides that hold text are called ...",
       "options": [
         "Placeholders",
         "Auto Layout",
@@ -739,6 +963,7 @@
     },
     {
       "questionText": "..........एक विशेष स्लाइड है जो प्रेजेंटेशन की सभी स्लाइड्स के लिए टाइटल और टेक्स्ट के फॉर्मेट एवं स्वरूप को निर्धारित करती है",
+      "questionTextEn": "..........is a special slide that controls the title and text format of all slides in the presentation.",
       "options": [
         "Master",
         "Main",
@@ -752,6 +977,7 @@
     },
     {
       "questionText": "कौन सी Keys के संयोजन से पॉवर प्वांट प्रस्तुतीकरण में नया स्लाइड जोड़ा जा सकता है?",
+      "questionTextEn": "Which key combination adds a new slide in a PowerPoint presentation?",
       "options": [
         "Ctrl+X",
         "Ctrl+N",
@@ -765,6 +991,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा Power Point में स्लाइड का Default पेज सेटअप ओरिएंटेशन है?",
+      "questionTextEn": "Which of the following is the default page setup orientation in PowerPoint?",
       "options": [
         "Portrait",
         "Landscape",
@@ -778,6 +1005,7 @@
     },
     {
       "questionText": "एक नया प्रेजेंटेशन से बनाया जा सकता है",
+      "questionTextEn": "A new presentation can be created from-",
       "options": [
         "Blank Presentation",
         "Design Template",
@@ -791,6 +1019,7 @@
     },
     {
       "questionText": "Presentation Slide के Text की टूलबार में Maximum Size होती है-",
+      "questionTextEn": "Maximum text size in PowerPoint Slide toolbar is-",
       "options": [
         "72",
         "82",
@@ -804,6 +1033,7 @@
     },
     {
       "questionText": "ट्रांजिशन इफेक्ट ___ के लिए लागू होते हैं",
+      "questionTextEn": "Transition effects are applied to...",
       "options": [
         "Text",
         "Slide",
@@ -817,6 +1047,7 @@
     },
     {
       "questionText": "एम.एस.पॉवरपॉइंट व्यू जो केवल टेक्स्ट, शीर्षक और बुलेट प्रदर्शित करता है",
+      "questionTextEn": "PowerPoint view that displays only text, titles, and bullets",
       "options": [
         "Slide Sorter View",
         "Slide Show",
@@ -830,6 +1061,7 @@
     },
     {
       "questionText": "Power Point में किसी स्लाइड के नोट्स को क्या कहा जाता है?",
+      "questionTextEn": "Notes of a slide in PowerPoint are called-",
       "options": [
         "Speaker Notes",
         "Slide Master",
@@ -843,6 +1075,7 @@
     },
     {
       "questionText": "अगर आप सभी स्लाइड का Look एक जैसा ही चाहिए, तो निम्न में से कौन से तरीके का आप उपयोग करेंगे?",
+      "questionTextEn": "If you want all slides to have the same look, which option will you use?",
       "options": [
         "Outline View",
         "The Slide Layout Option",
@@ -856,6 +1089,7 @@
     },
     {
       "questionText": "पॉवरपॉइंट में निम्नलिखित में से कौन-सा व्यू होता है?",
+      "questionTextEn": "Which of the following view exists in PowerPoint?",
       "options": [
         "Document View",
         "Slide Sorter View",
@@ -869,6 +1103,7 @@
     },
     {
       "questionText": "स्लाइड ___ का प्रयोग करते हुए प्रेजेंटेशन में सभी स्लाइडों के फॉन्ट की विशेषताओं को बदला जा सकता है",
+      "questionTextEn": "Using slide ___, you can change font features for all slides in presentation",
       "options": [
         "Theme",
         "Typicon",
@@ -882,6 +1117,7 @@
     },
     {
       "questionText": "Power Point में Ready Made फॉन्ट कलर और ग्राफिक्स प्रभावों का चयन करके नई प्रस्तुति किसके माध्यम से बनाई जा सकती है?",
+      "questionTextEn": "In PowerPoint, new presentation with ready-made font color and graphic effects can be created through-",
       "options": [
         "Master Slide",
         "Design Template",
@@ -895,6 +1131,7 @@
     },
     {
       "questionText": "सिलेक्टेड डिजाइन टेम्पलेट ___ पर अप्लाई किया जाता है।",
+      "questionTextEn": "Selected design template is applied on ___.",
       "options": [
         "All new presentations you create",
         "Only for current slide",
@@ -908,6 +1145,7 @@
     },
     {
       "questionText": "निम्न में से कौन आपके प्रदर्शन की मुद्रित प्रतिलिपी उपलब्ध करवाता है",
+      "questionTextEn": "Which of the following provides a printed copy of your presentation?",
       "options": [
         "Outlines",
         "Speaker Notes",
@@ -921,6 +1159,7 @@
     },
     {
       "questionText": "वेक्टर और ___ दो प्रकार के कम्प्यूटर ग्राफिक्स होते हैं",
+      "questionTextEn": "Vector and ___ are two types of computer graphics.",
       "options": [
         "Scalar",
         "Sector",
@@ -934,6 +1173,7 @@
     },
     {
       "questionText": "किसी प्रस्तुति में ऑडियंस को स्लाइड की प्रिंटआउट्स प्रस्तुति के ठीक पहले, समय के दौरान या उसके बाद भौतिक रूप से वितरित की जाती हैं, क्या कहलाते हैं?",
+      "questionTextEn": "Printed copies of slides distributed to audience before, during, or after presentation are called-",
       "options": [
         "Handout",
         "Speaker Notes",
@@ -947,6 +1187,7 @@
     },
     {
       "questionText": "किसी स्लाइड की प्रतिलिपि बनाने के लिए किस शॉर्टकट कुंजी का प्रयोग किया जाता है?",
+      "questionTextEn": "Shortcut key to duplicate a slide",
       "options": [
         "Shift+D",
         "Ctrl+D",
@@ -960,11 +1201,18 @@
     },
     {
       "questionText": "माइक्रोसॉफ्ट पॉवरपॉइंट में निम्न में से कौन सा 'होम' टैब के 'क्लिपबोर्ड' समूह में प्रकट नहीं होता है?",
+      "questionTextEn": "Which of the following does NOT appear in 'Clipboard' group under Home tab?",
       "options": [
-        "नई स्लाइड / New Slide",
-        "फॉर्मेट पेंटर / Format Painter",
-        "पेस्ट / Paste",
-        "कॉपी / Copy"
+        "नई स्लाइड",
+        "फॉर्मेट पेंटर",
+        "पेस्ट",
+        "कॉपी"
+      ],
+      "optionsEn": [
+        "New Slide",
+        "Format Painter",
+        "Paste",
+        "Copy"
       ],
       "correctOptionIndex": 0,
       "explanation": "'New Slide' belongs to the Slides group, not Clipboard; Paste, Copy, and Format Painter are all genuine Clipboard group commands.",
@@ -973,6 +1221,7 @@
     },
     {
       "questionText": "एक प्रस्तुति को शुरू करने के लिए की-बोर्ड की शॉर्टकट कुंजी क्या है?",
+      "questionTextEn": "Keyboard shortcut to start a presentation-",
       "options": [
         "F5",
         "Ctrl+F5",
@@ -986,6 +1235,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन-सा विकल्प प्रस्तुति कि एक मुद्रित प्रति प्रदान करता है?",
+      "questionTextEn": "Which option provides a printed copy of the presentation?",
       "options": [
         "Speaker notes",
         "Audience handout",
@@ -999,6 +1249,7 @@
     },
     {
       "questionText": "किसी स्लाइड में speaker notes का क्या उपयोग है?",
+      "questionTextEn": "What is the use of speaker notes in a slide?",
       "options": [
         "किसी स्लाइड में नोट्स जोड़ने देता है जो प्रस्तुति देने एवं तैयार करने में सहायता करता है / Add notes to help prepare and deliver presentation",
         "कम्प्यूटर स्पीकर में आउटपुट पाने के लिए / For output in computer speaker",
@@ -1012,6 +1263,7 @@
     },
     {
       "questionText": "विभिन्न Slides में Motion Effect लागू करने के लिए आप PowerPoint का कौनसा फीचर use करेंगे?",
+      "questionTextEn": "Which feature of PowerPoint will you use to apply motion effects in different slides?",
       "options": [
         "Slide Transition",
         "Animation Scheme",
@@ -1025,6 +1277,7 @@
     },
     {
       "questionText": "Presentation में किसी Slide के लिए Custom Timing सेट करने के लिए किस Option का उपयोग किया जाता है?",
+      "questionTextEn": "Which option is used to set custom timing for a slide in a presentation?",
       "options": [
         "Slide Timings",
         "Slide Transition",
@@ -1038,6 +1291,7 @@
     },
     {
       "questionText": "Presentation के Print out को क्या कहा जाता है?",
+      "questionTextEn": "What is the printout of a presentation called?",
       "options": [
         "Handout",
         "Printing",
@@ -1051,6 +1305,7 @@
     },
     {
       "questionText": "एम.एस.पॉवरपॉइंट में प्रयुक्त एनीमेशन Effects के प्रकार",
+      "questionTextEn": "Types of animation effects in MS PowerPoint",
       "options": [
         "Emphasis",
         "Entrance",
@@ -1064,6 +1319,7 @@
     },
     {
       "questionText": "Power Point की कौनसी सेटिंग प्रत्येक स्लाइड के बीच स्पेशल इफेक्ट जोड़ती है, जिससे स्लाइड का appearance और प्रत्येक स्लाइड के बीच समय तय होता है?",
+      "questionTextEn": "Which setting in PowerPoint adds a special effect between each slide, determining appearance and timing between slides?",
       "options": [
         "Color schemes",
         "Transition setting",
@@ -1077,6 +1333,7 @@
     },
     {
       "questionText": "हैंडआउट के अंतर्गत एक पेज पर न्यूनतम और अधिकतम कितनी Slides Print की जा सकती हैं?",
+      "questionTextEn": "Under handouts, what is the minimum and maximum number of slides that can be printed on a page?",
       "options": [
         "1,9",
         "2,8",
@@ -1090,6 +1347,7 @@
     },
     {
       "questionText": "माइक्रोसॉफ्ट पॉवरपॉइंट में डिफ़ॉल्ट ओरिएंटेशन क्या होता है?",
+      "questionTextEn": "Default page orientation in MS PowerPoint",
       "options": [
         "Right-slated",
         "Landscape",
@@ -1103,6 +1361,7 @@
     },
     {
       "questionText": "जब आप प्रेजेन्टेशन को Open करते हैं, तब लेफ्ट पैनल में कौनसा टैब नहीं होता?",
+      "questionTextEn": "When you open a presentation, which tab is NOT in the left panel?",
       "options": [
         "Notes",
         "Slides",
@@ -1116,6 +1375,7 @@
     },
     {
       "questionText": "प्रेजेंटेशन में स्लाइड को प्रवेश करने के लिए स्पेशल इफेक्ट को ................ कहते हैं।",
+      "questionTextEn": "The special effect applied for a slide to enter in a presentation is called ................",
       "options": [
         "Effects",
         "Present Animations",
@@ -1129,6 +1389,7 @@
     },
     {
       "questionText": "स्लाइड शॉ के दौरान प्रत्येक स्लाइड के मध्य एक विशेष प्रभाव होता है, उसे कहा जाता है-",
+      "questionTextEn": "During a slide show, the special effect between slides is called-",
       "options": [
         "Transition",
         "Animation",
@@ -1142,6 +1403,7 @@
     },
     {
       "questionText": "निम्नलिखित में से कौन सा विकल्प निम्नलिखित कथनों की सत्यता का सबसे अच्छा वर्णन करता है? (i) पॉवरपॉइंट स्लाइड का ओरिएंटेशन पोर्ट्रेट रूप में सेट नहीं किया जा सकता (ii) पृष्ठ संख्या माइक्रोसॉफ्ट पॉवरपॉइंट प्रेजेंटेशन स्लाइड के ऊपरी भाग में डाली जा सकती है",
+      "questionTextEn": "Which option best describes the truth of the following statements? (i) Cannot set slide orientation as portrait (ii) Page number can be inserted at the top of slide",
       "options": [
         "Both False",
         "Both True",
@@ -1155,6 +1417,7 @@
     },
     {
       "questionText": "जब नया एम.एस.पॉवर पॉइंट प्रेजेंटेशन खोला जाता है, लेफ्ट पेनल पर उपलब्ध टैब होते हैं",
+      "questionTextEn": "When a new MS PowerPoint presentation is opened, the left panel contains tabs ...",
       "options": [
         "Slides and Notes",
         "Slides and Outline",
@@ -1168,6 +1431,7 @@
     },
     {
       "questionText": "निम्न में से कौनसा युग्म एनीमेशन प्रभाव को इंगित करता है?",
+      "questionTextEn": "Which of the following pair indicates animation effects?",
       "options": [
         "Darken, Wipe, Shape, Font Colour",
         "Appear, Fly in, Float in, Split",
@@ -1181,6 +1445,7 @@
     },
     {
       "questionText": "हैंडआउट के अंतर्गत एक पेज पर निम्नलिखित में से कितनी Slides Print की जा सकती हैं?",
+      "questionTextEn": "Under handouts, how many slides can be printed on a page from the following options?",
       "options": [
         "1,2,3,4,5,6,7",
         "1,2,3,4,6,9",
@@ -1194,6 +1459,7 @@
     },
     {
       "questionText": "Transition के प्रकार हैं-",
+      "questionTextEn": "Types of transitions are-",
       "options": [
         "Subtle",
         "Exciting",
@@ -1207,6 +1473,7 @@
     },
     {
       "questionText": "Transition Effect हैं-",
+      "questionTextEn": "Transition effects are-",
       "options": [
         "Cut, Fade, Wipe, Split",
         "Clock, Flip, Zoom, Checkerboard",
@@ -1220,6 +1487,7 @@
     },
     {
       "questionText": "Slide का Background बदलने के लिए किस Tab का प्रयोग किया जाता है?",
+      "questionTextEn": "Which tab is used to change the background of a slide?",
       "options": [
         "Home",
         "Design",
@@ -1233,6 +1501,7 @@
     },
     {
       "questionText": "इनमें से किसको Slide Background के रूप में उपयोग किया जाता है?",
+      "questionTextEn": "Which of these is used as a slide background?",
       "options": [
         "Gradient",
         "Texture",
@@ -1246,6 +1515,7 @@
     },
     {
       "questionText": "पावर पॉइंट शो में कौनसा फाइल फॉर्मेट एड कर सकते हैं?",
+      "questionTextEn": "Which file format can be added in PowerPoint show?",
       "options": [
         "JPG",
         "MPEG",
@@ -1259,6 +1529,7 @@
     },
     {
       "questionText": "पॉवर पॉइंट में ctrl+E कमांड का use होता है-",
+      "questionTextEn": "Ctrl+E command in PowerPoint is used for-",
       "options": [
         "Align text left",
         "Align text right",
@@ -1272,6 +1543,7 @@
     },
     {
       "questionText": "किसी भी Shape या Picture को घुमाने के लिए किस Animation का प्रयोग किया जाता है?",
+      "questionTextEn": "Which animation is used to rotate any shape or picture?",
       "options": [
         "Spin",
         "Colour Pulse",
@@ -1285,6 +1557,7 @@
     },
     {
       "questionText": "MS PowerPoint 2010 में Text पर निम्न में से कौनसा Animation लागू किया जा सकता है?",
+      "questionTextEn": "Which of the following animations can be applied on text in MS PowerPoint 2010?",
       "options": [
         "Dissolute",
         "Flying",
@@ -1298,6 +1571,7 @@
     },
     {
       "questionText": "स्लाइड प्रस्तुति में विशेष प्रभाव (Special Effect) डालने को क्या कहते हैं?",
+      "questionTextEn": "What is it called to add special effects in a slide presentation?",
       "options": [
         "Effects",
         "Custom Animation",
@@ -1311,10 +1585,11 @@
     },
     {
       "questionText": "स्टेटस बार में स्लाइड के आकार को बढ़ाने या घटाने हेतु स्लाइड बार होता है। प्रतिशत में स्लाइड बार में उपलब्ध सीमा क्या है?",
+      "questionTextEn": "Status bar shows a slider to zoom slide. What is the range available in percentage?",
       "options": [
         "10 to 400",
         "10 to 500",
-        "to 400",
+        "0 to 400",
         "10 to 300"
       ],
       "correctOptionIndex": 0,
@@ -1324,6 +1599,7 @@
     },
     {
       "questionText": "Custom Animation Task Pane का कौनसा ऑप्शन आपको reset या custom motion path apply करवाता है?",
+      "questionTextEn": "Which option in Custom Animation Task Pane allows you to reset or apply custom motion path?",
       "options": [
         "Emphasis",
         "Add Effect",
@@ -1337,6 +1613,7 @@
     },
     {
       "questionText": "Current Presentation में नई slide insert करने के लिए शॉर्टकट की है-",
+      "questionTextEn": "Shortcut key to insert new slide in current presentation-",
       "options": [
         "Ctrl+O",
         "Ctrl+M",
@@ -1350,6 +1627,7 @@
     },
     {
       "questionText": "आप प्रस्तुति को कैसे बंद कर सकते हैं? निम्न में से सबसे उपयुक्त विकल्प का चयन करें",
+      "questionTextEn": "How can you close a presentation?",
       "options": [
         "Click on File tab then Close",
         "Click Close button top-right",
@@ -1363,6 +1641,7 @@
     },
     {
       "questionText": "प्रेजेंटेशन में Animation Scheme ___ को अप्लाई कर सकते हैं।",
+      "questionTextEn": "Animation schemes in a presentation can be applied to ___.",
       "options": [
         "Current Slide",
         "All Slides",
@@ -1376,6 +1655,7 @@
     },
     {
       "questionText": "एम.एस.पॉवरपॉइंट 2010 की फाइल का डिफ़ॉल्ट एक्सटेंशन क्या है?",
+      "questionTextEn": "Default file extension of MS PowerPoint 2010",
       "options": [
         ".ppt",
         ".pptx",
@@ -1389,6 +1669,7 @@
     },
     {
       "questionText": "एम.एस.पॉवरपॉइंट में मोशन पाथ क्या है?",
+      "questionTextEn": "What is Motion Path in MS PowerPoint?",
       "options": [
         "एक प्रकार का एनीमेशन प्रवेश प्रभाव / A type of entrance animation",
         "स्लाइड को आगे बढ़ाने की विधि / A method to advance slides",
@@ -1402,6 +1683,7 @@
     },
     {
       "questionText": "वर्तमान स्लाइड से स्लाइड शो आरंभ करने की शॉर्टकट कुंजी",
+      "questionTextEn": "Shortcut key to start slide show from current slide",
       "options": [
         "Alt+F5",
         "Ctrl+Shift+F5",
@@ -1415,11 +1697,18 @@
     },
     {
       "questionText": "Presentation Slide में Sound का कौनसा प्रकार नहीं होता है?",
+      "questionTextEn": "Which type of sound does not exist in a presentation slide?",
       "options": [
-        "Cemra/कैमरा",
-        "Chime/चाइम",
-        "Click/क्लिक",
-        "Review/रिव्यू"
+        "कैमरा",
+        "चाइम",
+        "क्लिक",
+        "रिव्यू"
+      ],
+      "optionsEn": [
+        "Cemra",
+        "Chime",
+        "Click",
+        "Review"
       ],
       "correctOptionIndex": 3,
       "explanation": "'Review' is not one of PowerPoint's built-in sound effect options; Camera, Chime, and Click are genuine built-in sound choices.",
@@ -1428,6 +1717,7 @@
     },
     {
       "questionText": "MS PowerPoint 2010 में स्लाइड शो देखने के लिए कौनसी shortcut key का उपयोग किया जाता है?",
+      "questionTextEn": "Which shortcut key is used to view slide show in MS PowerPoint 2010?",
       "options": [
         "F2",
         "F5",
@@ -1441,6 +1731,7 @@
     },
     {
       "questionText": "Microsoft PowerPoint में किसी Organization के लिए सभी स्लाइड में एक ही स्थिति में Automatic रूप से प्रदर्शित होने के लिए आपको इसे सम्मिलित करना होगा-",
+      "questionTextEn": "To display an element automatically in the same position on all slides for an organization, you must insert it in-",
       "options": [
         "Slide Master",
         "Notes Master",
@@ -1454,11 +1745,18 @@
     },
     {
       "questionText": "Animation क्या है?",
+      "questionTextEn": "What is animation?",
       "options": [
-        "चित्र बनाना / Creating pictures",
-        "स्थिर चित्रों को गति देना / Giving motion to still images",
-        "प्रिंट निकालना / Printing",
-        "ग्राफ में चित्रों को बदलना / Changing images in graph"
+        "चित्र बनाना",
+        "स्थिर चित्रों को गति देना",
+        "प्रिंट निकालना",
+        "ग्राफ में चित्रों को बदलना"
+      ],
+      "optionsEn": [
+        "Creating pictures",
+        "Giving motion to still images",
+        "Printing",
+        "Changing images in graph"
       ],
       "correctOptionIndex": 1,
       "explanation": "Animation means giving motion/movement to otherwise static objects (text, images, shapes).",
@@ -1467,6 +1765,7 @@
     },
     {
       "questionText": "एमएस पावरपॉइंट 2010 में निम्न में से कौनसा एनीमेशन प्रभाव ऑब्जेक्ट के आकार को बढ़ाकर या घटाकर, रंग बदलकर या उसके केन्द्र पर घुमाकर किसी ऑब्जेक्ट पर ध्यान आकर्षित करता है?",
+      "questionTextEn": "Which animation effect in MS PowerPoint 2010 draws attention to an object by changing its size, color, or rotation?",
       "options": [
         "Entrance Effect",
         "Exit Effect",
@@ -1480,6 +1779,7 @@
     },
     {
       "questionText": "Slide का Layout बदलने के लिए किस टैब का प्रयोग किया जाता है?",
+      "questionTextEn": "Which tab is used to change the layout of a slide?",
       "options": [
         "Home",
         "Insert",
@@ -1493,11 +1793,18 @@
     },
     {
       "questionText": "Motion Path क्या है?",
+      "questionTextEn": "What is a motion path?",
       "options": [
-        "Slides advancing का तरीका / Way of advancing slides",
-        "स्लाइड में आइटम को मूव करने का तरीका / Way to move items in a slide",
-        "Animation Entrance Effect का प्रकार / Type of animation entrance effect",
-        "उपर्युक्त सभी / All of the above"
+        "Slides advancing का तरीका",
+        "स्लाइड में आइटम को मूव करने का तरीका",
+        "Animation Entrance Effect का प्रकार",
+        "उपर्युक्त सभी"
+      ],
+      "optionsEn": [
+        "Way of advancing slides",
+        "Way to move items in a slide",
+        "Type of animation entrance effect",
+        "All of the above"
       ],
       "correctOptionIndex": 1,
       "explanation": "A motion path defines the route along which an object moves on a slide during animation.",
@@ -1506,6 +1813,7 @@
     },
     {
       "questionText": "रेडीमेड शैलियों (स्टाइल्स) की एक फाइल Presentation के लिए इस्तेमाल की जाती है, कहीं जाती है",
+      "questionTextEn": "A file of ready-made styles used for presentations is called-",
       "options": [
         "Auto Style",
         "Template",
@@ -1519,6 +1827,7 @@
     },
     {
       "questionText": "Slide show शुरू करने की shortcut key क्या है?",
+      "questionTextEn": "What is the shortcut key to start a slide show?",
       "options": [
         "F4",
         "F5",
@@ -1532,6 +1841,7 @@
     },
     {
       "questionText": "स्लाइड शो लगातार कैसे repeat किया जा सकता है?",
+      "questionTextEn": "How can a slide show be repeated continuously?",
       "options": [
         "Repeat Continuously",
         "Loop Continuously Until Esc",
@@ -1545,6 +1855,7 @@
     },
     {
       "questionText": "स्लाइड के अलग-अलग ऑब्जेक्ट के लिए motion effect apply करने के लिए आप PowerPoint के कौनसे फीचर का इस्तेमाल करेंगे?",
+      "questionTextEn": "Which feature of PowerPoint will you use to apply motion effects to different slide objects?",
       "options": [
         "Slide Design",
         "Animation Objects",
@@ -1558,6 +1869,7 @@
     },
     {
       "questionText": "Ellipse Motion एक predefined ___ है।",
+      "questionTextEn": "Ellipse Motion is a predefined ___.",
       "options": [
         "Design Template",
         "Colour Scheme",
@@ -1571,6 +1883,7 @@
     },
     {
       "questionText": "वर्तमान स्लाइड से स्लाइड शो शुरू करने के लिए Command प्रयोग होता है-",
+      "questionTextEn": "Which command is used to start slide show from current slide?",
       "options": [
         "From Beginning",
         "From Current Slide",
@@ -1584,6 +1897,7 @@
     },
     {
       "questionText": "Slide को Default Formatting में बदलने का कमांड",
+      "questionTextEn": "Command to reset slide to default formatting",
       "options": [
         "Layout",
         "Section",
@@ -1597,6 +1911,7 @@
     },
     {
       "questionText": "माइक्रोसॉफ्ट पॉवर पॉइंट में अलाइनमेंट (Alignment) होते हैं",
+      "questionTextEn": "Alignments in Microsoft PowerPoint are-",
       "options": [
         "Left, Right, Top, Bottom",
         "Left, Right, Justify, Centre, Distributed",
@@ -1610,6 +1925,7 @@
     },
     {
       "questionText": "स्लाइड पर संक्रमण (ट्रांज़िशन) जोड़ने के लिए कौनसा पॉवरपॉइंट व्यू सबसे अच्छा काम करता है?",
+      "questionTextEn": "Which PowerPoint view works best to add transitions on slides?",
       "options": [
         "Slide Show View",
         "Slide Sorter View",
@@ -1623,6 +1939,7 @@
     },
     {
       "questionText": "फॉर्मेट पेंटर का उपयोग है-",
+      "questionTextEn": "The use of Format Painter is-",
       "options": [
         "To paint beautiful pictures on your slide",
         "To copy formatting from one object or text and apply it elsewhere",
@@ -1636,6 +1953,7 @@
     },
     {
       "questionText": "किसी प्रेजेंटेशन में इच्छानुसार स्लाइड का क्रम बनाकर Slide Show करना है तो कमांड प्रयोग होता है-",
+      "questionTextEn": "Which command is used to create a custom order of slides in a presentation?",
       "options": [
         "Custom Slide Show",
         "Draft Slide",
@@ -1649,6 +1967,7 @@
     },
     {
       "questionText": "वास्तविक कंप्यूटर स्क्रीन पर सम्पूर्ण प्रेजेंटेशन की तरह नजर आता है।",
+      "questionTextEn": "Which view displays the slide show like a full computer screen presentation?",
       "options": [
         "Slide Sorter View",
         "Normal View",
@@ -1662,6 +1981,7 @@
     },
     {
       "questionText": "Custom Animation Task Pane से motion path का effect देखने के लिए आपको ___ करना होगा।",
+      "questionTextEn": "To view the motion path effect from Custom Animation Task Pane, you have to ___",
       "options": [
         "Click Show Effect button",
         "Double click Motion Path",
@@ -1675,6 +1995,7 @@
     },
     {
       "questionText": "Power Point में न्यूनतम व अधिकतम करेक्टर स्पेस दिया जा सकता है-",
+      "questionTextEn": "Minimum and maximum character spacing in PowerPoint-",
       "options": [
         "0Pt, 1000Pt",
         "100Pt, 1000Pt",
@@ -1688,6 +2009,7 @@
     },
     {
       "questionText": "Text को अलग-अलग डिग्री में रोटेट करने का कमाण्ड है-",
+      "questionTextEn": "Command to rotate text at different degrees-",
       "options": [
         "Text Direction",
         "Drawing",
@@ -1701,6 +2023,7 @@
     },
     {
       "questionText": "Animation Effects के प्रकार हैं-",
+      "questionTextEn": "Types of animation effects are-",
       "options": [
         "Emphasis",
         "Entrance",
@@ -1714,6 +2037,7 @@
     },
     {
       "questionText": "यदि आपके प्रेजेंटेशन में अनेक स्लाइड हो, तो ___ का उपयोग करके आप आसानी से अपनी सारी स्लाइड देख सकते हैं और उनके स्थानों में परिवर्तन कर सकते हैं।",
+      "questionTextEn": "If your presentation has many slides, which view allows you to easily see all slides and change their positions?",
       "options": [
         "Normal View",
         "Slide Sorter View",
@@ -1727,6 +2051,7 @@
     },
     {
       "questionText": "Presentation में Audio, Video File को जोड़ने का कार्य किस टैब में होता है।",
+      "questionTextEn": "Tab used to add Audio or Video file in Presentation-",
       "options": [
         "Home",
         "Insert",
@@ -1740,6 +2065,7 @@
     },
     {
       "questionText": "Insert Tab के कमाण्ड हैं-",
+      "questionTextEn": "Commands of Insert Tab are-",
       "options": [
         "Picture",
         "Clip Art",
@@ -1753,6 +2079,7 @@
     },
     {
       "questionText": "स्क्रीन के बॉटम में स्थित ...... टैब पर प्रदर्शित बटन पर क्लिक करके प्रेजेंटेशन व्यू को बदल सकते हैं।",
+      "questionTextEn": "By clicking the buttons on the ..... tab at the bottom of the screen, you can change the presentation view.",
       "options": [
         "Title Bar",
         "Menu Bar",
@@ -1766,6 +2093,7 @@
     },
     {
       "questionText": "जो विकल्प आपको लाइन का चयन करने, वक्र, फ्रीफॉर्म और स्क्रिबल टूल्स के लिए अनुमति देता है?",
+      "questionTextEn": "Which option allows you to select lines, curves, freeform, and scribble tools?",
       "options": [
         "Create Effect",
         "Insert Motion Path",
@@ -1779,6 +2107,7 @@
     },
     {
       "questionText": "ऑब्जेक्ट जो स्लाइड पर टेक्स्ट को रखता है कहा जाता है-",
+      "questionTextEn": "The object that holds text on a slide is called-",
       "options": [
         "Placeholder",
         "Object Holder",
@@ -1792,11 +2121,18 @@
     },
     {
       "questionText": "एम.एस.पावरपॉइंट 2010 में स्लाइड ट्रांजिशन और एनीमेशन इफेक्ट के बीच मूल अंतर क्या है?",
+      "questionTextEn": "What is the main difference between slide transition and animation effect in MS PowerPoint 2010?",
       "options": [
-        "स्लाइड ट्रांजिशन को पूरी स्लाइड पर लागू किया जाता है जबकि एनीमेशन प्रभाव केवल स्लाइड पर ऑब्जेक्ट (पाठ, आकृति, चित्र आदि) पर लागू होते हैं / Slide transitions apply to the entire slide, whereas animation effects apply only to objects (text, shapes, images, etc.) on a slide",
-        "एनीमेशन प्रभाव पूरे स्लाइड पर लागू होते हैं जबकि स्लाइड ट्रांजिशन ऑब्जेक्ट पर लागू होते हैं / Animation effects apply to the entire slide while transitions apply to objects",
-        "स्लाइड ट्रांजिशन स्लाइड शो के दौरान दिखाए जाते हैं जबकि एनीमेशन प्रभाव नहीं / Transitions are shown during slide show but animation effects are not",
-        "स्लाइड ट्रांजिशन स्लाइड शो के दौरान नहीं दिखाए जाते जबकि एनीमेशन प्रभाव दिखाए जाते हैं / Transitions are not shown during slide show but animation effects are"
+        "स्लाइड ट्रांजिशन को पूरी स्लाइड पर लागू किया जाता है जबकि एनीमेशन प्रभाव केवल स्लाइड पर ऑब्जेक्ट (पाठ, आकृति, चित्र आदि) पर लागू होते हैं",
+        "एनीमेशन प्रभाव पूरे स्लाइड पर लागू होते हैं जबकि स्लाइड ट्रांजिशन ऑब्जेक्ट पर लागू होते हैं",
+        "स्लाइड ट्रांजिशन स्लाइड शो के दौरान दिखाए जाते हैं जबकि एनीमेशन प्रभाव नहीं",
+        "स्लाइड ट्रांजिशन स्लाइड शो के दौरान नहीं दिखाए जाते जबकि एनीमेशन प्रभाव दिखाए जाते हैं"
+      ],
+      "optionsEn": [
+        "Slide transitions apply to the entire slide, whereas animation effects apply only to objects (text, shapes, images, etc.) on a slide",
+        "Animation effects apply to the entire slide while transitions apply to objects",
+        "Transitions are shown during slide show but animation effects are not",
+        "Transitions are not shown during slide show but animation effects are"
       ],
       "correctOptionIndex": 0,
       "explanation": "The core distinction: Transitions apply to whole slides (as they change), while Animation effects apply to individual objects within a slide.",
@@ -1805,6 +2141,7 @@
     },
     {
       "questionText": "एक फाईल जिसमें पूर्वनिर्धारित सेटिंग्स का प्रयोग सामान्य प्रेजेंटेशन बनाने में किया जाता है, ___ कहलाता है।",
+      "questionTextEn": "A file with predefined settings used to create a standard presentation is called...",
       "options": [
         "Pattern",
         "Model",
@@ -1818,6 +2155,7 @@
     },
     {
       "questionText": "MS PowerPoint में अधिकतम Zoom कितना प्रतिशत हो सकता है?",
+      "questionTextEn": "What is the maximum zoom percentage in MS PowerPoint?",
       "options": [
         "100%",
         "200%",
@@ -1831,6 +2169,7 @@
     },
     {
       "questionText": "निम्न में से कौनसा view PowerPoint में नहीं है?",
+      "questionTextEn": "Which of the following views is not in PowerPoint?",
       "options": [
         "Normal View",
         "Reading View",
@@ -1844,6 +2183,7 @@
     },
     {
       "questionText": "पॉवर प्वाइंट प्रस्तुतीकरण में निम्नलिखित में से कौन-सा प्रयोग किया जा सकता है-",
+      "questionTextEn": "Can be used in PowerPoint presentation",
       "options": [
         "Hyperlink",
         "Smart Art",
@@ -1857,6 +2197,7 @@
     },
     {
       "questionText": "'एम.एस.पॉवरपॉइंट' में 'रेडी-टू-यूज' का तात्पर्य क्या है?",
+      "questionTextEn": "In MS PowerPoint, 'Ready-to-Use' refers to-",
       "options": [
         "Art",
         "Word Art",
@@ -1870,6 +2211,7 @@
     },
     {
       "questionText": "किसी Slide Master का Element है-",
+      "questionTextEn": "Which of the following is an element of Slide Master?",
       "options": [
         "Background",
         "Logo",
@@ -1883,6 +2225,7 @@
     },
     {
       "questionText": "यदि आप पॉवरपॉइंट में सम्मिलित की गयी किसी इमेज को संपादित करते हैं तो क्या होता है?",
+      "questionTextEn": "If you edit an image inserted in PowerPoint, what happens?",
       "options": [
         "The original inserted file does not change",
         "The original inserted file changes",
@@ -1896,6 +2239,7 @@
     },
     {
       "questionText": "Animation Effects हैं-",
+      "questionTextEn": "Animation effects are-",
       "options": [
         "Appear, Fade, Split, Wipe",
         "Darken, Lightpen, Font colour, Brush colour",
@@ -1909,6 +2253,7 @@
     },
     {
       "questionText": "Find, Select, Replace आदि कमाण्ड Home Tab के किस ग्रुप में होते हैं?",
+      "questionTextEn": "Find, Select, Replace commands are in which group of Home Tab?",
       "options": [
         "Drawing",
         "Editing",
@@ -1922,6 +2267,7 @@
     },
     {
       "questionText": "स्लाइड लेआउट में कौनसा सेक्शन मौजूद होता है?",
+      "questionTextEn": "Which section is present in Slide Layout?",
       "options": [
         "Animations",
         "Titles",
@@ -1935,6 +2281,7 @@
     },
     {
       "questionText": "किसी भी स्लाइड में पिक्चर इंसर्ट करने का विकल्प किस में होता है?",
+      "questionTextEn": "Which tab contains the option to insert picture in any slide?",
       "options": [
         "Insert Tab",
         "Home Tab",
@@ -1948,6 +2295,7 @@
     },
     {
       "questionText": "स्लाइड Number इंसर्ट करने का कमाण्ड Insert Tab के किस ग्रुप में होता है?",
+      "questionTextEn": "Command to insert Slide Number is in which group of Insert Tab?",
       "options": [
         "Tables",
         "Images",
@@ -1961,6 +2309,7 @@
     },
     {
       "questionText": "स्लाइड शो को कैसे चलाना है, इसे कंट्रोल करने वाले टूल्स .......टैब में होते हैं।",
+      "questionTextEn": "Tools to control how to run a slide show are in the .......tab.",
       "options": [
         "Design",
         "Slide Show",
@@ -1974,6 +2323,7 @@
     },
     {
       "questionText": "पॉवरपॉइंट एक प्रकार का .............है जिसे PPT भी कहा जाता है।",
+      "questionTextEn": "PowerPoint is a type of ........., also called PPT",
       "options": [
         "Application Software",
         "System Software",
@@ -1987,6 +2337,7 @@
     },
     {
       "questionText": "किस व्यू में स्लाइड की छोटी तस्वीरें नजर आती हैं?",
+      "questionTextEn": "In which view are small thumbnails of slides visible?",
       "options": [
         "Slide Sorter View",
         "Normal View",
@@ -2000,6 +2351,7 @@
     },
     {
       "questionText": "पावर प्वाइंट प्रस्तुतीकरण में न्यूनतम स्लाइड की संख्या कितनी होनी चाहिए?",
+      "questionTextEn": "Minimum number of slides in a PowerPoint presentation",
       "options": [
         "There must be one slide",
         "Two slides",
@@ -2013,6 +2365,7 @@
     },
     {
       "questionText": "शुरू से स्लाइड शो शुरू करने के लिए शॉर्टकट कुंजी",
+      "questionTextEn": "Shortcut key to start slide show from beginning",
       "options": [
         "F5",
         "Shift+F5",
@@ -2026,6 +2379,7 @@
     },
     {
       "questionText": "एम एस पॉवर पॉइंट 2010 में प्रत्येक स्लाइड की छोटी इमेज निम्न रूप में दिखाई जाती है-",
+      "questionTextEn": "In MS PowerPoint 2010, the small image of each slide appears in-",
       "options": [
         "Normal View",
         "Outline View",
@@ -2039,6 +2393,7 @@
     },
     {
       "questionText": "कौन सी key को दबाने पर स्लाइड शो समाप्त हो जाता है?",
+      "questionTextEn": "Which key ends the slide show?",
       "options": [
         "Esc Key",
         "Shift Key",
@@ -2052,6 +2407,7 @@
     },
     {
       "questionText": "प्रेजेंटेशन में स्लाइड के नोट्स से सम्बन्धित सत्य वाक्य-",
+      "questionTextEn": "The following statements about slide notes in a presentation are correct-",
       "options": [
         "Notes are included in each slide of the presentation",
         "Notes can be printed on each slide",
@@ -2065,6 +2421,7 @@
     },
     {
       "questionText": "स्लाइड शो शुरू करने हेतु प्रयुक्त Slide Show tab की कमाण्ड का सही विकल्प है-",
+      "questionTextEn": "The correct command under Slide Show tab to start a slide show is-",
       "options": [
         "From Beginning",
         "From Current Slide",
@@ -2078,6 +2435,7 @@
     },
     {
       "questionText": "पॉवर-पॉइंट में टेक्स्ट के मध्य न्यूनतम एवं अधिकतम स्पेस होता है-",
+      "questionTextEn": "The minimum and maximum spacing in text is-",
       "options": [
         "1,1000",
         "0,1000",
@@ -2091,6 +2449,7 @@
     },
     {
       "questionText": "MS PowerPoint में सभी स्लाइडों को एक साथ एक स्क्रीन पर देखने के लिए उपयोग करते हैं",
+      "questionTextEn": "Which option is used to view all slides together on one screen in MS PowerPoint?",
       "options": [
         "View >> Master",
         "View >> Slide Sorter",
@@ -2104,6 +2463,7 @@
     },
     {
       "questionText": "वर्तमान डॉक्यूमेंट के एक स्थान से अन्य डॉक्यूमेंट या वेबसाइट के बीच होने वाला सम्पर्क।",
+      "questionTextEn": "Link between current document and other document or website is called-",
       "options": [
         "Hyerlink",
         "Hypolink",
@@ -2117,6 +2477,7 @@
     },
     {
       "questionText": "एम.एस.पॉवरपॉइंट में Ready to Use का तात्पर्य होता है-",
+      "questionTextEn": "Ready to Use in PowerPoint means-",
       "options": [
         "Word Art",
         "Unique Art",
@@ -2130,6 +2491,7 @@
     },
     {
       "questionText": "एमएस पॉवरपॉइंट 2010 में सजावटी पाठ सम्मिलित करने के लिए कौन सा विकल्प प्रयोग किया जाता है?",
+      "questionTextEn": "Used in MS PowerPoint 2010 to insert decorative text",
       "options": [
         "Word Clip",
         "Word Art",
@@ -2143,6 +2505,7 @@
     },
     {
       "questionText": "पॉवर प्वाइंट प्रस्तुतीकरण में हाइपरलिंक डालने के लिए शॉर्टकट कुंजी",
+      "questionTextEn": "Shortcut key to insert hyperlink in PowerPoint presentation",
       "options": [
         "Ctrl+J",
         "Ctrl+K",
@@ -2156,6 +2519,7 @@
     },
     {
       "questionText": "पॉवरपॉइंट में कंटेंट को बदले बिना अलग-अलग ऑब्जेक्ट की कलर बदलने के लिए आप कौनसी कमांड का इस्तेमाल करेंगे?",
+      "questionTextEn": "Which command is used to change the color of different objects without altering the content in PowerPoint?",
       "options": [
         "Design Template",
         "Object Color",
@@ -2169,10 +2533,11 @@
     },
     {
       "questionText": "किसी स्लाइड में 'नोट्स' को इन्सर्ट किस व्यू से कर सकते हैं?",
+      "questionTextEn": "From which view can you insert 'Notes' in a slide?",
       "options": [
         "Normal View",
         "Notes Page View",
-        "और b दोनों / Both a and b",
+        "a और b दोनों / Both a and b",
         "Slide Sorter View"
       ],
       "correctOptionIndex": 2,
@@ -2182,6 +2547,7 @@
     },
     {
       "questionText": "PowerPoint में न्यूनतम व अधिकतम करेक्टर स्पेस दिया जा सकता है-",
+      "questionTextEn": "In PowerPoint, the minimum and maximum character spacing that can be given is-",
       "options": [
         "100Pt,1000Pt",
         "0Pt,1000Pt",
@@ -2195,11 +2561,12 @@
     },
     {
       "questionText": "MS PowerPoint में निम्नलिखित में से कौनसा फाइल फॉर्मेट जोड़ा जाना संभव है-",
+      "questionTextEn": "Which of the following file formats can be inserted in MS PowerPoint?",
       "options": [
         ".jpg, .wav",
         ".docx, .html",
         ".bmp, .gif",
-        "& b दोनों / both a and b"
+        "a & b दोनों / both a and b"
       ],
       "correctOptionIndex": 3,
       "explanation": "Per the book, both media files (.jpg/.wav) and linked document types (.docx/.html via embedding or hyperlink) are considered 'addable' in a broad sense in this exam's framing.",
@@ -2208,6 +2575,7 @@
     },
     {
       "questionText": "किसी स्लाइड के नोट्स में चार्ट, पिक्चर, टेबल आदि किस व्यू में नहीं इंसर्ट कर सकते हैं?",
+      "questionTextEn": "In which view can charts, pictures, tables etc. not be inserted in slide notes?",
       "options": [
         "Normal View",
         "Notes Page View",
@@ -2221,6 +2589,7 @@
     },
     {
       "questionText": "किसी स्लाइड्स पर लागू किए गए नोट्स किस व्यू में दिखाई नहीं देते हैं?",
+      "questionTextEn": "In which view do the notes applied to slides not appear?",
       "options": [
         "Slide Sorter View",
         "Normal View",
@@ -2234,6 +2603,7 @@
     },
     {
       "questionText": "संपूर्ण Presentation का कलर बदलने के लिए किस टैब का प्रयोग किया जाता है?",
+      "questionTextEn": "Which tab is used to change the color of the entire presentation?",
       "options": [
         "File",
         "Home",
@@ -2247,6 +2617,7 @@
     },
     {
       "questionText": "यदि आप स्लाइड में केवल text देखना चाहते हैं तो आप इनमें से कौनसा tab use करेंगे?",
+      "questionTextEn": "If you want to see only text in a slide, which tab will you use?",
       "options": [
         "Task Pane",
         "Thumbnails",
@@ -2260,6 +2631,7 @@
     },
     {
       "questionText": "........उपयोग के लिए तैयार पिक्चर प्रदान करता है।",
+      "questionTextEn": "........provides ready-to-use pictures.",
       "options": [
         "Word Art",
         "Clip Art",
@@ -2273,6 +2645,7 @@
     },
     {
       "questionText": "कौनसे टैब द्वारा PowerPoint में Sound insert कर सकते हैं?",
+      "questionTextEn": "Which tab is used to insert sound in PowerPoint?",
       "options": [
         "Insert Tab",
         "Home Tab",
@@ -2286,6 +2659,7 @@
     },
     {
       "questionText": "MS PowerPoint में फॉन्ट की न्यूनतम साइज हो सकती है-",
+      "questionTextEn": "The minimum font size in MS PowerPoint can be-",
       "options": [
         "10",
         "1",
@@ -2299,6 +2673,7 @@
     },
     {
       "questionText": "MS PowerPoint में फॉन्ट की अधिकतम साइज हो सकती है-",
+      "questionTextEn": "The maximum font size in MS PowerPoint can be-",
       "options": [
         "96",
         "1000",

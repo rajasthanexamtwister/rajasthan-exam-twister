@@ -24,6 +24,10 @@ export const QuizImportQuestionSchema = z
       .string()
       .min(1, "Question text cannot be empty")
       .max(2000, "Question text cannot exceed 2000 characters"),
+    questionTextEn: z
+      .string()
+      .max(2000, "English question text cannot exceed 2000 characters")
+      .optional(),
     options: z
       .array(
         z
@@ -33,6 +37,16 @@ export const QuizImportQuestionSchema = z
       )
       .min(2, "Each question must have at least 2 options")
       .max(6, "Each question cannot have more than 6 options"),
+    optionsEn: z
+      .array(
+        z
+          .string()
+          .min(1, "English option text cannot be empty")
+          .max(500, "English option text cannot exceed 500 characters")
+      )
+      .min(2, "English options must have at least 2 options")
+      .max(6, "English options cannot have more than 6 options")
+      .optional(),
     correctOptionIndex: z
       .number({ invalid_type_error: "correctOptionIndex must be a number" })
       .int("correctOptionIndex must be an integer")
@@ -56,6 +70,13 @@ export const QuizImportQuestionSchema = z
     {
       message: "correctOptionIndex must be less than options.length",
       path: ["correctOptionIndex"],
+    }
+  )
+  .refine(
+    (data) => !data.optionsEn || data.optionsEn.length === data.options.length,
+    {
+      message: "optionsEn must have the exact same number of options as options",
+      path: ["optionsEn"],
     }
   );
 
@@ -108,7 +129,13 @@ export type UpdateQuizSettingsInput = z.infer<typeof UpdateQuizSettingsSchema>;
 export const UpdateQuizQuestionSchema = z
   .object({
     questionText: z.string().min(1).max(2000).optional(),
+    questionTextEn: z.string().max(2000).optional(),
     options: z
+      .array(z.string().min(1).max(500))
+      .min(2)
+      .max(6)
+      .optional(),
+    optionsEn: z
       .array(z.string().min(1).max(500))
       .min(2)
       .max(6)
@@ -128,6 +155,18 @@ export const UpdateQuizQuestionSchema = z
     {
       message: "correctOptionIndex must be within options range",
       path: ["correctOptionIndex"],
+    }
+  )
+  .refine(
+    (data) => {
+      if (data.options !== undefined && data.optionsEn !== undefined) {
+        return data.optionsEn.length === data.options.length;
+      }
+      return true;
+    },
+    {
+      message: "optionsEn must match options length",
+      path: ["optionsEn"],
     }
   );
 
