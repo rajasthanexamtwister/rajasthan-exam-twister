@@ -12,6 +12,7 @@ export interface IQuiz extends Document {
   examTags: string[];
   difficulty: QuizDifficulty;
   attemptCount: number;
+  contentFingerprint?: string;
   status: ContentStatus;
   timeLimitSeconds?: number | null;
   shuffleQuestions: boolean;
@@ -63,6 +64,12 @@ const QuizSchema = new Schema<IQuiz>(
       type: Number,
       default: 0,
       min: 0,
+    },
+    contentFingerprint: {
+      type: String,
+      index: true,
+      sparse: true,
+      trim: true,
     },
     status: {
       type: String,

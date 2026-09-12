@@ -167,6 +167,7 @@ export class QuizRepository {
     categoryId?: string | null;
     examTags?: string[];
     difficulty?: QuizDifficulty;
+    contentFingerprint?: string;
     status?: ContentStatus;
     timeLimitSeconds?: number | null;
     shuffleQuestions?: boolean;
@@ -185,6 +186,7 @@ export class QuizRepository {
     const quiz = new Quiz({
       ...data,
       slug,
+      contentFingerprint: data.contentFingerprint,
       examTags: data.examTags || [],
       difficulty: data.difficulty || "medium",
       attemptCount: 0,

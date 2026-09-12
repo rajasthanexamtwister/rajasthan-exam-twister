@@ -18,6 +18,8 @@ import {
 
 import { QuizDifficulty, Quiz } from "@/server/models/Quiz";
 
+import crypto from "crypto";
+
 export interface PublicQuizQuestion {
   id: string;
   order: number;
@@ -25,6 +27,34 @@ export interface PublicQuizQuestion {
   options: string[];
   marks?: number;
   negativeMarks?: number;
+}
+
+/**
+ * Computes a boundary fingerprint (SHA-256) of the first 50 lines and last 50 lines
+ * of deterministic question content (questionText + options).
+ */
+export function computeQuizContentFingerprint(
+  questions: { questionText: string; options: string[] }[]
+): string {
+  const lines: string[] = [];
+  for (const q of questions) {
+    lines.push(sanitizePlainText(q.questionText));
+    for (const opt of q.options) {
+      lines.push(sanitizePlainText(opt));
+    }
+  }
+
+  let sampledLines: string[];
+  if (lines.length <= 100) {
+    sampledLines = lines;
+  } else {
+    const first50 = lines.slice(0, 50);
+    const last50 = lines.slice(-50);
+    sampledLines = [...first50, ...last50];
+  }
+
+  const contentToHash = sampledLines.join("\n");
+  return crypto.createHash("sha256").update(contentToHash, "utf-8").digest("hex");
 }
 
 export interface PublicQuizDetail {
@@ -86,6 +116,7 @@ export class QuizService {
     const cleanTitle = sanitizePlainText(validated.quizTitle);
     const cleanSubject = validated.subject ? sanitizePlainText(validated.subject) : undefined;
     const cleanExamTags = (validated.examTags || []).map((t) => sanitizePlainText(t)).filter(Boolean);
+    const contentFingerprint = computeQuizContentFingerprint(validated.questions);
 
     // Create the Quiz in DRAFT status
     const quiz = await QuizRepository.create({
@@ -93,6 +124,7 @@ export class QuizService {
       subject: cleanSubject,
       examTags: cleanExamTags,
       difficulty: validated.difficulty || "medium",
+      contentFingerprint,
       status: "DRAFT",
       defaultMarks: 1,
       defaultNegativeMarks: 0,
