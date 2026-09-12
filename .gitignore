@@ -43,3 +43,6 @@ next-env.d.ts
 scripts/smart-import-report.json
 scripts/pre-import-scan-report.json
 
+
+# Local uploaded media files (served via Cloudinary in production)
+public/uploads/
