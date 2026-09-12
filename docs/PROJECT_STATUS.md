@@ -1,7 +1,7 @@
 # PROJECT_STATUS.md — Rajasthan Exam Twister
 ## Master Handoff Document — Read This Completely Before Touching Any Code
 
-**Last updated:** 2026-09-12 — Post-audit cleanup complete (unauthorized in-memory visitor presence feature and unsafe smart-import.ts removed; official import-local-notes.ts documented). Final verification gate passed (119/119 tests across 22 test files, 86 routes, clean typecheck and build). This file is the single source of truth for what has
+**Last updated:** 2026-09-12 — Post-audit cleanup complete, official `scripts/import-local-quizzes.ts` CLI tool added and verified. Final verification gate passed (125/125 tests across 23 test files, 86 routes, clean typecheck and build). This file is the single source of truth for what has
 been built, what is verified, what is broken/unconfirmed, and what is
 still pending. If you are a coding agent picking up this project, read
 this file FIRST, then cross-check the claims below against the actual
@@ -226,6 +226,8 @@ Jakarta Sans (body), loaded via `next/font`.
   `npx tsx scripts/pre-import-scan.ts <folder-path>` — pre-flight scanner that checks all HTML files against MongoDB for slug collisions and content hash duplicates without writing anything.
 - **Direct Local Notes Importer (Official CLI):**
   `npm run notes:import` (or `npx tsx scripts/import-local-notes.ts`) — traverses local `notes/` directory, filters stubs, and invokes canonical `ImportService.processBatch()` with full `server/lib/sanitize.ts` sanitization and `ImportJob`/`ImportLog` audit trail creation. All notes land in `DRAFT` status.
+- **Bulk Local Quizzes Importer (Official CLI):**
+  `npm run quizzes:import -- <folder-path>` (or `npx tsx scripts/import-local-quizzes.ts <folder-path>`) — recursively scans target directory for AI-generated `.json` quiz files, validates against canonical `QuizImportJSONSchema`, performs duplicate check against MongoDB (by title/slug), calls `QuizService.importQuizJson()` to create Quiz + QuizQuestions as `DRAFT`, and moves successfully imported files into `<folder>/imported/` (non-destructive move, never deletes). Tested via `tests/unit/quiz-local-import.test.ts`.
 
 ---
 
