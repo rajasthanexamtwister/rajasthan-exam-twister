@@ -1,0 +1,454 @@
+{
+  "quizTitle": "DBMS Database Design",
+  "subject": "DBMS",
+  "examTags": [
+    "BCI",
+    "Computer Science",
+    "Information Assistant"
+  ],
+  "difficulty": "medium",
+  "questions": [
+    {
+      "questionText": "[खराब ई-आर डिज़ाइन का पता लगाने में आपकी मदद कर सकता है।]",
+      "options": [
+        "EXR design process",
+        "Relational Schema",
+        "Functional Dependencies",
+        "Database Design Process"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Functional Dependencies help identify problems like partial and transitive dependencies, which directly indicate poor E-R design. They are the foundation of normalization — the primary tool to detect and eliminate design anomalies.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[कौन सा डेटा बुनियादी वितरण रणनीति से संबंधित नहीं है?]",
+      "options": [
+        "Centralized",
+        "Replicated",
+        "Partitioned",
+        "Duplicated"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The three standard data distribution strategies are: Centralized (single site), Replicated (copies at multiple sites), and Partitioned (fragments at different sites). 'Duplicated' is not a standard formal term in data distribution strategy — it is a common word sometimes used loosely but is NOT one of the three recognized strategies.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "E-R Model के सम्बन्ध में सत्य statement है- [Which is the correct/true statement about E-R Model?]",
+      "options": [
+        "E-R model को S-R diagram कहा जाता है।",
+        "E-R model को E-R diagram कहा जाता है।",
+        "E-R model को R-R diagram कहा जाता है।",
+        "उपरोक्त सभी"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Entity-Relationship model is graphically represented using an E-R Diagram (Entity-Relationship Diagram). It was introduced by Peter Chen in 1976. S-R and R-R are not valid terms in DBMS.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किसी E-R Diagram में, किसी विद्यार्थी का नाम तथा पता क्या माना जाएगा? [In an E-R Diagram, a student's name and address will be considered as?]",
+      "options": [
+        "Relationship (रिलेशनशिप)",
+        "Entity (एंटिटी)",
+        "Attribute (एट्रिब्यूट)",
+        "दोनों A और B"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Name and address are properties/characteristics of a student entity. In an E-R Diagram, such properties are called Attributes. The student itself is the Entity; name and address describe it.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[यदि एक बहु-मूल्यवान निर्भरता होती है और संबंधित कार्यात्मक निर्भरता से निहित नहीं होती है, तो यह आमतौर पर निम्नलिखित स्रोतों में से एक से उत्पन्न होती है।]",
+      "options": [
+        "A one-to-many relationship set",
+        "A many-to-many relationship set",
+        "A multivalued attribute of an entity set",
+        "Both b and c"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Multivalued dependencies (MVDs) arise from two sources: (1) Many-to-many relationships, where one entity relates to multiple instances of another, and (2) Multivalued attributes, where one entity can have multiple values for a single attribute (e.g., a person with multiple phone numbers). These are the standard sources per Silberschatz DBMS textbook.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[निम्नलिखित में से किसके पास प्रत्येक संबंधित इकाई सेट की अपनी स्कीमा है और संबंध सेट के लिए एक अतिरिक्त स्कीमा है।]",
+      "options": [
+        "A multivalued attribute of an entity set",
+        "A one-to-many relationship set",
+        "A many-to-many relationship set",
+        "All above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In a many-to-many relationship, each participating entity set gets its own schema/table, AND an additional (junction/bridge) table is created for the relationship set itself. For one-to-many, a foreign key in the 'many' side is sufficient — no extra schema is needed.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[सेकेंडरी स्टोरेज पर फाइल के रिकॉर्ड को फिजिकली अरेंज करने की कौन सी तकनीक है?]",
+      "options": [
+        "Data distribution",
+        "Normalization",
+        "Centralization",
+        "File organization"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "File Organization refers to the technique of physically arranging records of a file on secondary storage. Common file organization methods include: Sequential, Indexed Sequential (ISAM), Direct/Hashed, and Clustered organization.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "E-R Diagram में Entity का Set किसके द्वारा व्यक्त किया जाता है? [In an E-R Diagram, a set of entities is represented by?]",
+      "options": [
+        "Rectangle (आयत)",
+        "Ellipse (परवलय)",
+        "Diamond box (डायमण्ड बॉक्स)",
+        "Circle (वृत्त)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In E-R Diagrams: Rectangle = Entity Set, Ellipse = Attribute, Diamond = Relationship Set, Double Ellipse = Multivalued Attribute, Dashed Ellipse = Derived Attribute, Double Rectangle = Weak Entity Set.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[निम्न में से किसमें उस विशेषता और इकाई सेट की प्राथमिक कुंजी सम्मिलकर एक अलगस्कीमा बनाया जाता है।]",
+      "options": [
+        "A one-to-many relationship set",
+        "A many-to-many relationship set",
+        "A multivalued attribute of an entity set",
+        "All above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "When an entity has a multivalued attribute (e.g., a person with multiple phone numbers), a separate schema (table) is created containing that multivalued attribute and the primary key of the entity set. This avoids repeating rows and maintains 1NF.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "E-R Diagram __ को प्रदर्शित करने का ग्राफिकल तरीका है- [E-R Diagram is the graphical way to represent?]",
+      "options": [
+        "Primary key और उसका आपस में सम्बन्ध",
+        "Primary key और उनका instance से सम्बन्ध",
+        "Entity classes और उनका आपस में सम्बन्ध",
+        "Entity classes और उनका Primary key से सम्बन्ध"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "An E-R Diagram (Entity-Relationship Diagram) is a graphical representation of entity classes (entity sets) and the relationships between them. It shows entities, their attributes, and how entities relate to each other.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "E-R Diagram में, Attributes __ के द्वारा प्रदर्शित किए जाते हैं- [In E-R Diagram, Attributes are represented by?]",
+      "options": [
+        "दो स्तरों",
+        "चार स्तरों",
+        "तीन स्तरों",
+        "एक स्तर"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In E-R Diagrams, attributes are represented by ovals/ellipses. There are three levels/types of attribute representation: Simple Attribute (single oval), Multivalued Attribute (double oval), and Derived Attribute (dashed oval). Hence 'three levels' refers to these three forms of attribute representation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[मानलीजिए कि उपयोगकर्ता को एक रिलेशनल स्कीमा में रूम नंबर और फोन नंबर के उपयोग का पता चलता है तो भ्रम होता है। यहा ऐसे कम हो जाता है?]",
+      "options": [
+        "Role integral assignment",
+        "Unique-role assumption",
+        "Unique-key assignment",
+        "None"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Unique-Role Assumption states that each attribute name in a schema has a unique meaning/role. When confusion arises from similar attribute names (like 'number' for room and phone), the unique-role assumption resolves ambiguity by ensuring each attribute plays a distinct, uniquely named role in the schema.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[कौन सा डेटा बुनियादी वितरण रणनीति से संबंधित है?]",
+      "options": [
+        "Replicated",
+        "Partitioned",
+        "Centralized",
+        "All above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "All three — Replicated, Partitioned, and Centralized — are valid data distribution strategies. Centralized: single site stores all data. Replicated: data is copied at multiple sites. Partitioned: data is split into fragments at different sites.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[भौतिक डेटाबेस डिजाइन का ___ घटक डेटा की शुद्धता और स्थिरता को संदर्भित करता है?]",
+      "options": [
+        "Integrity constraints",
+        "Relationship",
+        "Normalization",
+        "Data distribution strategy"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Integrity Constraints are rules defined in a database to ensure the correctness (accuracy) and consistency of data. Types include: Entity Integrity (no null primary keys), Referential Integrity (valid foreign keys), Domain Integrity (valid data types/ranges), and User-Defined Integrity.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "E-R Diagram में एक Entity को किसके द्वारा दर्शाया जाता है? [In an E-R Diagram, an Entity is represented by?]",
+      "options": [
+        "आयताकार Box (Rectangle)",
+        "वर्गाकार Box (Square)",
+        "दीर्घचतुर्भज Box (Parallelogram)",
+        "वृत्ताकार Box (Circle)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In E-R Diagrams, an Entity (or Entity Set) is represented by a Rectangle. This is a fundamental E-R notation rule established by Peter Chen (1976).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[बड़े डेटाबेस में विशेषताओं का प्रतिनिधित्व करने का सबसे अच्छा तरीका क्या है?]",
+      "options": [
+        "Dot representation",
+        "Concatenation",
+        "Relational-and",
+        "All above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In large databases, concatenation is the best way to represent composite/combined attributes. Concatenation joins multiple attribute values into one meaningful combined value (e.g., First Name + Last Name = Full Name). This reduces redundancy and improves data organization in large-scale databases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[डिजाइनर समय-महत्वपूर्ण संचालन का समर्थन करने के लिए सिस्टम के प्रदर्शन को टमन करने के लिए निम्न में से किसका उपयोग करते हैं?]",
+      "options": [
+        "Redundant optimization",
+        "Optimization",
+        "Denormalization",
+        "E-R Realization"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Denormalization is the intentional process of adding redundancy to a normalized database to improve read performance for time-critical operations. It trades data redundancy for faster query execution, especially in OLAP and data warehousing scenarios.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "E-R Data Model किसके द्वारा दिया गया था? [E-R Data Model was given by?]",
+      "options": [
+        "Pascal",
+        "C.S. Date",
+        "Dr. Edgar F. Codd",
+        "दोनों a व b"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Note: The E-R Model was actually created by Peter Chen (1976). Dr. Edgar F. Codd created the Relational Data Model (1970). Since Peter Chen is not in the options, (c) is marked as book answer. Students must know BOTH: Codd→Relational Model, Chen→E-R Model.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[आवश्यक डेटाबेस की प्रारंभिक जांच को कहा जाता है?]",
+      "options": [
+        "Data flow diagram",
+        "Feasibility study",
+        "Both a and b",
+        "None"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A Feasibility Study is the preliminary investigation conducted before database development. It assesses whether the proposed database system is technically, economically, and operationally viable. It is the first step in the database design lifecycle.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[डेटाबेस के लिए संभावित इनपुट किसके द्वारा एकत्र किए जाते हैं?]",
+      "options": [
+        "Decision tree",
+        "Decision table",
+        "Feasibility study",
+        "Data analysis"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data Analysis is the process of collecting and examining possible inputs for the database. It involves studying existing data, user requirements, and data flows to determine what data needs to be stored and processed.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Dr. E.F. Codd ने ___ नियमों का प्रतिनिधित्व किया जिनका पालन एक डेटाबेस द्वारा किया जाना चाहिए, अगर यह सही मायने में रिलेशनल माना जाता है। [Dr. E.F. Codd proposed ___ rules that a database must follow to be considered truly relational.]",
+      "options": [
+        "10",
+        "8",
+        "12",
+        "6"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Dr. E.F. Codd proposed 12 rules (Codd's 12 Rules) that a database must satisfy to be considered a truly relational database management system (RDBMS). These are numbered Rule 0 through Rule 12, making 13 total rules but referred to as '12 rules' since Rule 0 is the foundation rule.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[जात कारक क्या हैं जिन्हें भाज में रखा जाता है?]",
+      "options": [
+        "Feasibility study",
+        "Project planning",
+        "Data flow diagram",
+        "Requirement analysis"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Requirement Analysis identifies cost factors in database development by determining the scope, complexity, resources, and constraints needed. It examines what users need, which directly impacts the cost, time, and technology requirements of the project.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[भौतिक डेटाबेस डिजाइन की अखंडता बाधा घटकों का दूसरा रूप है?]",
+      "options": [
+        "Specialization",
+        "Normalization",
+        "Data distribution",
+        "Data protection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Integrity Constraints in physical database design are considered another form of Normalization. Both aim to ensure data accuracy, eliminate anomalies, and maintain data consistency. Normalization achieves this through schema decomposition; integrity constraints enforce it through rules at runtime.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[हाइब्रिड वितरण में किस प्रकार का टुकड़ा केवल एक साइट पर संग्रहीत किया जाता है?]",
+      "options": [
+        "Critical fragment",
+        "Noncritical fragment",
+        "Large fragment",
+        "None"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In Hybrid Distribution, data is divided into fragments. Critical (important/frequently accessed) fragments are replicated across multiple sites for availability. Non-critical fragments (less important/less accessed) are stored at only one site to save storage and avoid unnecessary replication.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक ER मॉडल में ......अपने डेटा को संग्रहित करके डेटाबेख में वर्णित करता है- [In an ER model, ___ stores its own data and is described in the database.]",
+      "options": [
+        "Entity",
+        "Attribute",
+        "Relationship",
+        "Notation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In an ER Model, an Entity is an object in the real world that can be distinctly identified. Each entity has its own data (attributes) and is described in the database. For example: Student, Employee, Product — each stores its own data (name, ID, etc.).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "......डेटाबेस स्टोर या सिस्टम के बारे में टेबल स्टोर जानकारी देता है- [___ stores table information about the database store or system.]",
+      "options": [
+        "SQL",
+        "Nested",
+        "System",
+        "None of these"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The System Catalog (also called Data Dictionary or System Tables) stores metadata about the database — including table names, column definitions, indexes, constraints, and other system-level information. It is the 'database about the database.'",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[डेटा विश्लेषण में कौन-से उपकरण शामिल हैं?]",
+      "options": [
+        "Data Flow Diagram",
+        "Decision tree",
+        "Requirement analysis",
+        "Both a and b"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data analysis uses both Data Flow Diagrams (DFDs) to model how data flows through a system, and Decision Trees to model logical decisions and conditions. Together they help analysts understand data requirements and process logic.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक सारणी जो डेटा अनावश्यकता प्रदर्शित करती है ___ विसंगतियाँ उत्पन्न करती है- [A table that displays data redundancy produces ___ anomalies.]",
+      "options": [
+        "Insertion",
+        "Deletion",
+        "Update",
+        "उपर्युक्त सभी (All of the above)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data redundancy (unnormalized tables) causes three types of anomalies: (1) Insertion Anomaly — cannot insert data without unrelated data, (2) Deletion Anomaly — deleting one fact accidentally deletes another, (3) Update Anomaly — updating one record requires updates in many places. All three are consequences of redundancy.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल मॉडल इस कान्सेप्ट पर आधारित है कि डाटा two dimensional table, जिन्हें ..... कहा जाता है में आर्गेनाइज एवं स्टोर रहता है- [The relational model is based on the concept that data is organized and stored in two-dimensional tables, called _____.]",
+      "options": [
+        "Fields",
+        "Records",
+        "Relations",
+        "Keys"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The Relational Model organizes data in 2D tables called 'Relations.' The name 'Relational Database' comes from these 'relations.' Records are rows within a relation, not the tables themselves.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[वस्तु और उनके बीच संबंधों की पहचान करने की प्रक्रिया को क्या कहा जाता है?]",
+      "options": [
+        "Data flow diagram",
+        "E-R diagram",
+        "Data modeling",
+        "Both b and c"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Data Modeling is the process of identifying real-world objects (entities), their properties (attributes), and the relationships between them. E-R Diagram is one OUTPUT/TOOL of data modeling, not the process itself. The PROCESS is called Data Modeling.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Weak Entity को दर्शित करने हेतु ER Model कौनसे symbol का प्रयोग करता है? [Which symbol does the ER Model use to represent a Weak Entity?]",
+      "options": [
+        "Dotted rectangle",
+        "Diamond",
+        "Doubly outlined rectangle",
+        "None of the Mentioned"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A Weak Entity (one that cannot be uniquely identified by its own attributes alone and depends on a strong entity) is represented by a Double Rectangle (doubly outlined rectangle) in an E-R Diagram. Its identifying relationship is shown by a Double Diamond.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The ingredient of data modeling is ___ डेटा मॉडलिंग का संघटक ___ है? [The ingredient/component of data modeling is?]",
+      "options": [
+        "Attributes",
+        "Classes",
+        "Relationship",
+        "Both a and c"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data modeling has two primary ingredients: (1) Attributes — the properties/characteristics of entities, and (2) Relationships — the associations between entities. Together with Entities themselves, Attributes and Relationships form the core components of data modeling.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[ई-आर आरेख में इकाई को ___ दर्शाया गया है।]",
+      "options": [
+        "Circle",
+        "Diamond",
+        "Rectangular box",
+        "Filled diamond"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Entity is represented by a Rectangle/Rectangular box in E-R Diagram. This is a repeat of Q8 and Q15, confirming it is a high-frequency exam question.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "[एट्रिब्यूट को E-R डायग्राम में ___ द्वारा दर्शाया जाता है?]",
+      "options": [
+        "Diamond",
+        "Oval",
+        "Circle",
+        "None of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In an E-R Diagram, Attributes are represented by Ovals (or Ellipses). This is a fundamental E-R notation. Different types of ovals indicate different attribute types: single oval (simple attribute), double oval (multivalued), dashed oval (derived attribute).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    }
+  ]
+}

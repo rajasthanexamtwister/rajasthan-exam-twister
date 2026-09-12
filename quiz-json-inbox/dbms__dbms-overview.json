@@ -1,0 +1,1676 @@
+{
+  "quizTitle": "DBMS Overview",
+  "subject": "DBMS",
+  "examTags": [
+    "BCI",
+    "Computer Science",
+    "Information Assistant"
+  ],
+  "difficulty": "medium",
+  "questions": [
+    {
+      "questionText": "DBMS का फुल फॉर्म क्या है?",
+      "options": [
+        "Database Management System",
+        "Data Backup Management System",
+        "Data of Binary Management System",
+        "Database Management Service"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DBMS stands for Database Management System — software that creates, manages, and provides controlled access to databases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस System की एक विशेषता है-",
+      "options": [
+        "No edition of data in any form",
+        "Persistence of data",
+        "Editing of existing data",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "All three — persistence, ability to edit/update, and controlled access (no unauthorised edition) — are characteristics of a database system.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डीबीएमएस क्या है?",
+      "options": [
+        "DBMS is a programming language",
+        "DBMS stores, modifies and retrieves data",
+        "DBMS is a collection of queries",
+        "DBMS is a high level language"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DBMS is software that stores, modifies, and retrieves data. It is NOT a programming language or query collection.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन-सा डेटाबेस का प्रकार नहीं है?",
+      "options": [
+        "Network",
+        "Distributed",
+        "Decentralized",
+        "Hierarchical"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Standard DBMS types are: Network, Distributed, Hierarchical, Relational, Object-oriented. 'Decentralized' is not a standard database type — it is a concept in system architecture.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डाटा को किसमें स्टोर किया जाता है?",
+      "options": [
+        "Information",
+        "DBMS",
+        "DSS",
+        "Database"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data is physically stored in a Database. DBMS is the software used to manage that database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस लिंक के लिए आवश्यक है-",
+      "options": [
+        "Username",
+        "User Password",
+        "a and b",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A database link requires both a username and a password to establish a secure connection.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस मैनेजमेंट सिस्टम में डेटा को निम्न में से किस फॉर्मेट में खोरे किया जाता है?",
+      "options": [
+        "Graph",
+        "Table",
+        "Image",
+        "Text"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In DBMS (especially RDBMS), data is stored in Tables (rows and columns). This is the primary storage format.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस में किस प्रकार के डेटा को स्टोर किया जा सकता है?",
+      "options": [
+        "Data in the form of audio or video",
+        "Text, files containing data",
+        "Image oriented data",
+        "All above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Modern databases (especially multimedia databases) can store audio, video, text, images, and any data type.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कौनसी कमांड डाटाबेस से एक टेबल एवं इसके सभी डाटा को हटाने (रिमूव) करने हेतु प्रयुक्त होती है?",
+      "options": [
+        "Create command",
+        "Drop table command",
+        "Alter table command",
+        "All of the Mentioned"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DROP TABLE command removes the entire table along with all its data permanently. CREATE creates, ALTER modifies structure.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से किसे NTFS द्वारा समर्थित अधिकतम आकार के रूप में माना जा सकताहै?",
+      "options": [
+        "16 TB",
+        "64 TB",
+        "4 GB",
+        "8 TB"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "🚨 BUG NOTE: NTFS maximum volume size is 256 TB (practical limit 16 TB per Microsoft). However, the book marks (c) 4 GB as correct, which is actually the FAT32 file size limit. Book answer accepted as exam answer.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस कहाँ एकत्रित रहता है?",
+      "options": [
+        "Tables",
+        "Matrix",
+        "Domain",
+        "a & b both"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A database stores data in Tables (in relational DBMS). Tables consist of rows (records) and columns (fields).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "पहला व्यक्ति कौन है जिसने पहला DBMS बनाया?",
+      "options": [
+        "Sharon B. Codd",
+        "Charles Babbage",
+        "Edgar Frank Codd",
+        "Charles Bachman"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Charles Bachman created the first DBMS called IDS (Integrated Data Store) in the early 1960s. Edgar Frank Codd later invented the Relational Database model.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS में प्रयुक्त architecture का प्रकार है-",
+      "options": [
+        "1-Tier architecture",
+        "5-Layer architecture",
+        "2-Tier architecture",
+        "a and c Both"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DBMS supports 1-Tier (single layer), 2-Tier (client-server), and 3-Tier architectures. Options (a) 1-Tier and (c) 2-Tier are both valid, hence (d) a and c both.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सबसे पुराना DB मॉडल ___ है",
+      "options": [
+        "Hierarchical",
+        "Physical",
+        "Network",
+        "Relations"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The Hierarchical database model is the oldest, developed by IBM in the 1960s (IMS system). It stores data in a tree-like structure.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डीबीएमएस क्या है?",
+      "options": [
+        "Collection of data or information without organizing",
+        "Organized collection of data that cannot be updated",
+        "Organized collection of information that cannot be accessed, updated and managed",
+        "Organized collection of data or information that can be accessed, updated, and managed"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DBMS is an organized collection of data that supports Create, Read, Update, Delete (CRUD) operations.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा के संग्रह डेटाबेस का निम्न में से कौनसा कार्य है?",
+      "options": [
+        "Collecting data in an organized manner",
+        "Accessing the front end with the help of various graphical interfaces",
+        "Both a and b",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Database functions include collecting data in an organized manner and providing graphical interface access.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक Database में एक रिकॉर्ड के बारे में सूचना की सबसे छोटी इकाई को कहा जाता है-",
+      "options": [
+        "Cell/सेल",
+        "Field/फील्ड",
+        "Query/क्वैरी",
+        "All of the above/उपरोक्त सभी"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A Field (column) is the smallest named unit of information about a record in a database. A record is made up of multiple fields.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "....... का अर्थ है कि डाटाबेस में संयग्रहित डाटा बिलकुल सही और विश्वसनीय है-",
+      "options": [
+        "Data redundancy",
+        "Data integrity",
+        "Data reliability",
+        "Data consistency"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data Integrity means data stored in the database is accurate, complete, and reliable. It ensures data correctness.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस सूचना को ___ में संग्रहित करती है-",
+      "options": [
+        "Rows and columns / पंक्तियों और स्तम्भ",
+        "Blocks / ब्लॉक",
+        "Tracks and sectors / ट्रेक्स और सेक्टर्स",
+        "All of these / ये सभी"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A database (RDBMS) stores data in Tables with Rows (records) and Columns (fields/attributes).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौनसी डेटाबेस की एक विशेषता है?",
+      "options": [
+        "Lack of Authentication",
+        "No backup for the data stored",
+        "Store data in multiple locations",
+        "User interface provided"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A key feature of database systems is providing a user-friendly interface for data access. Databases DO have authentication, backups, and centralized storage.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन डाटा बेस प्रबंधन की एक विशेषता नहीं है?",
+      "options": [
+        "Support ACID Property",
+        "Minimum Duplication and Redundancy of Data",
+        "Single-user Access only",
+        "High Level of Security"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DBMS supports MULTI-user access, not single-user only. It provides concurrent access to multiple users simultaneously.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "नीचे दिए गए attributes का उनकी विशेषताओं में exact match वाला प्रारूप है-",
+      "options": [
+        "a-I b-II c-IV d-III",
+        "a-III b-IV c-I d-II",
+        "a-IV b-III c-II d-I",
+        "a-II b-IV c-I d-III"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Key attribute: underlined text; Composite attribute: double oval; Multivalued attribute: dashed oval; Derived attribute: composed of other attributes. Correct match: a-III, b-IV, c-I, d-II.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "OE और SCOTT उपयोगकर्ता हैं और ORDERS तालिका OE के स्वामित्व में है - दिए गए क्रम में DBA द्वारा जारी किए गए कथनों का मूल्यांकन करें।",
+      "options": [
+        "REVOKE gives error as SELECT privilege was granted to role R1",
+        "REVOKE removes SELECT privilege from SCOTT as well as from role R1",
+        "SCOTT can query the OE.ORDERS table",
+        "SCOTT cannot query the OE.ORDERS table"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SCOTT has SELECT on oe.orders directly AND via role r1. REVOKE only removes the DIRECT grant to SCOTT. The role r1 still grants SELECT to SCOTT, so SCOTT can still query the table.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सा DBMS का उदाहरण नहीं है?",
+      "options": [
+        "Google",
+        "IBM DB2",
+        "Microsoft Access",
+        "MySQL"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Google is a search engine, not a DBMS. IBM DB2, Microsoft Access, and MySQL are all Database Management Systems.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ डाटा की सम्पूर्णता (Data integrity) की समस्या के लिए एक कारण है-",
+      "options": [
+        "Lack of data availability",
+        "Lack of data consistency",
+        "Lack of security",
+        "Unauthorized use of data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Lack of data consistency causes data integrity problems. When the same data has different values in different places, integrity is compromised.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डाटा के दोहराव को, डाटा की अस्थिरता को, निर्भरता तथा डाटा के अनाधिकृत उपयोग को कम करने के लिए समाधान प्रदान करता है-",
+      "options": [
+        "DBMS",
+        "Tables",
+        "Database",
+        "Security passwords"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DBMS (Database Management System) provides solutions to reduce data redundancy, inconsistency, dependency, and unauthorized access through its built-in features.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "ई-आर मॉडल कमजोर इकाई सेट का प्रतिनिधित्व करने के लिए इस प्रतीक का उपयोग करता है-",
+      "options": [
+        "Diamond",
+        "Dotted rectangle",
+        "Doubly outlined rectangle",
+        "None of these"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In ER diagrams, a Weak Entity Set is represented by a DOUBLE RECTANGLE (doubly outlined rectangle). Strong entities use a single rectangle.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन डेटाबेस का एक type नहीं है?",
+      "options": [
+        "Hierarchical",
+        "Relational",
+        "Network",
+        "Transaction"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Transaction is NOT a type of database. Standard database types are: Hierarchical, Relational, Network, Object-Oriented, Distributed.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "संबंधपरक बीजगणित है-",
+      "options": [
+        "Meta Language",
+        "Procedural query language",
+        "Data Definition Language",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Relational Algebra is a PROCEDURAL query language — you specify HOW to get data, step by step. Relational Calculus is non-procedural (specifies WHAT to get).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "जब डेटा कई सूचियों में परिवर्तित होता है एवं सभी सूचियों को अपडेट नहीं किया जाता है, तो इसके फलस्वरूप होती है-",
+      "options": [
+        "Data Redundancy",
+        "Information Overload",
+        "Duplicate Data",
+        "Data InConsistency"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "When data exists in multiple copies and some copies are updated while others are not, it creates Data Inconsistency — different versions of the same data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सी संस्थाओं के गुण हैं?",
+      "options": [
+        "Attributes",
+        "Groups",
+        "Switchboards",
+        "Table duplicates"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Entities in a database have properties called Attributes. For example, a Student entity has attributes: Roll No, Name, Age, etc.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन-सा सही है?",
+      "options": [
+        "A SQL query will not work if there are no indexes on the relations",
+        "A SQL query automatically eliminates duplicates",
+        "SQL Permits attribute names to be repeated in the same relation",
+        "None of these"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "SQL works without indexes (slower but works); SQL does NOT automatically eliminate duplicates (DISTINCT is needed); SQL does NOT permit duplicate attribute names in same relation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन वस्तुओं के बीच ऊपर से नीचे का संबंध स्थापित करता है?",
+      "options": [
+        "Hierarchical Schema",
+        "Network Schema",
+        "Relational Schema",
+        "All above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hierarchical Schema establishes a top-to-bottom (parent-child) tree relationship. Data flows from parent to child nodes like an organizational chart.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डीबी सिस्टम का एक प्रमुख लक्ष्य डिस्क और मेमोरी के बीच ब्लॉक ट्रांसफर की संख्या को कम करना है। निम्नलिखित में से कौन इस लक्ष्य को प्राप्त करने में मदद करता है?",
+      "options": [
+        "Catalog",
+        "Buffer",
+        "Secondary storage",
+        "Storage"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Buffer (Buffer Pool) is used to cache frequently accessed data in RAM, minimizing the number of disk-to-memory block transfers.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौनसी डेटाबेस के साथ प्रयोग की जाती है?",
+      "options": [
+        "EDI",
+        "Credit Card",
+        "ATM",
+        "Data mining"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data mining is directly used WITH databases to discover patterns and knowledge. ATM, EDI, and Credit Card use databases but are not database techniques themselves.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किस प्रकार के database में एक Parent record के प्रकार को एक या अधिक 'child' रिकॉर्ड के प्रकार से जोड़ा जा सकता है, लेकिन एक child के रिकॉर्ड के प्रकार में केवल एक ही parent हो सकता है?",
+      "options": [
+        "Network database",
+        "Hierarchical database",
+        "Relational database",
+        "Distributed database"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In a Hierarchical database: one parent can have many children, but each child has EXACTLY ONE parent. This is the key characteristic of hierarchical model.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डीबीएमएस के संचालन के दौरान कौन-सी फाइलें उपयोग की जाती हैं?",
+      "options": [
+        "Query language and utilities",
+        "Data manipulation language and query language",
+        "Data dictionary and transaction log",
+        "Data dictionary and query language"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "During DBMS operation, two essential files are used: Data Dictionary (stores metadata about DB structure) and Transaction Log (records all DB transactions).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन डेटाबेस प्रबंधन प्रणाली में लॉग फाइलों के भंडारण जैसे अनुप्रयोगों के लिए लोकप्रिय है क्योंकि यह सर्वश्रेष्ठ लेखन प्रदर्शन प्रदान करता है?",
+      "options": [
+        "RAID level",
+        "RAID level A",
+        "RAID Tevel 2",
+        "RAID level 3"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "For log file storage requiring best write performance, RAID level A (RAID 1 - Mirroring) is used. Note: Book uses 'RAID level A' notation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "क्या होता है यदि डेटा का एक टुकड़ा डीबी में दो स्थानों पर संग्रहीत किया जाता है?",
+      "options": [
+        "It can be more easily accessed",
+        "Changing the data in one spot will cause data inconsistency",
+        "Storage space is wasted",
+        "Storage space is wasted and changing the data in one spot will cause data inconsistency"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "When data is stored in two places: (1) Storage space is wasted (redundancy) and (2) If one copy is updated and the other is not, data inconsistency occurs.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS का उपयोग करते समय, आपको सबसे पहले ..... करना पड़ता है?",
+      "options": [
+        "Create a database file",
+        "Activate file editor",
+        "Load the software into your computer",
+        "Keep a floppy disk in readiness"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Before using any DBMS, you must first install/load the DBMS software into your computer. Then you can create databases and files.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Data Control Language (DCL) -",
+      "options": [
+        "To manage user access of the database",
+        "To manipulate the content of the database in some form",
+        "Both a and b",
+        "For inserting, deleting, and updating data in the database"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DCL (GRANT, REVOKE) is used to manage user privileges and access control. DML handles insert/update/delete.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किसी डेटाबेस में पंक्ति का दूसरा नाम क्या है?",
+      "options": [
+        "Record",
+        "Field",
+        "Relation",
+        "Column"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A Row in a database is also called a Record or Tuple. A Column is called a Field or Attribute.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक बंधन में ___?",
+      "options": [
+        "No two rows are identical",
+        "Ordering of rows is immaterial",
+        "Both a and b",
+        "None of these"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In a relational table (relation): (1) No two rows are identical (each row must be unique) and (2) The order of rows is immaterial (no significance to row order).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस को Update करना मतलब है-",
+      "options": [
+        "Edition in file structure",
+        "Reorganizing the database",
+        "Modifying or adding records",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Updating a database specifically means modifying existing records or adding new ones. This is the UPDATE/INSERT operation in SQL.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS.......... का एक संग्रह है जो user को बनाने और बनाए रखने में सक्षम बनाता है-",
+      "options": [
+        "Keys",
+        "Translators",
+        "Program",
+        "Language Activity"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DBMS is a collection of Programs (software) that enables users to create and maintain a database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा को क्वेरी करने की क्षमता, साथ हीटुपल्स को रद्द करने, हटाने और बदलने की क्षमता द्वारा प्रदान की जाती है?",
+      "options": [
+        "DDL (Data Definition Language)",
+        "DCL (Data Control Language)",
+        "TCL (Transaction Control Language)",
+        "DML (Data Manipulation Language)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DML (SELECT, INSERT, UPDATE, DELETE) provides the ability to query, insert, modify, and delete data. DDL defines structure; DCL controls access.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS एंटरप्राइज-क्लास सिस्टम के ___ और ...... बीच एक इंटरफेस के रूप में कार्य करता है।",
+      "options": [
+        "Application and SQL",
+        "Database application and the database",
+        "Data and the DBMS",
+        "The user and the software"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DBMS acts as an interface between the database application (front end) and the database (back end/storage).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ एक हार्डवेयर घटक है जो डेटा बेस प्रबंधन प्रणाली के संचालन के लिए सबसे महत्त्वपूर्ण है।",
+      "options": [
+        "High-resolution video display",
+        "High speed, large capacity disk to store data",
+        "Microphone",
+        "Printer"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "For DBMS, the most critical hardware is a high-speed, large-capacity disk drive to store and retrieve large amounts of data efficiently.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक सामान्य RDBMS डिजाइन करने के लिए निम्नलिखित में से कोन सा सामान्य रूप पर्याप्त माना जाता है?",
+      "options": [
+        "6 NF",
+        "4 NF",
+        "5 NF",
+        "3 NF"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "3NF (Third Normal Form) is the standard and adequate level for designing a normal RDBMS. It eliminates transitive dependencies and is practically sufficient.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किसी निश्चित समय पर डेटा के तार्किक डिजाइन और स्नैपशॉट को क्या कहा जाता है?",
+      "options": [
+        "Schema and instance",
+        "Relation and schema",
+        "Domain and Schema",
+        "Instance and Relation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Schema = logical design of the database (structure). Instance = snapshot of data at a given moment in time. Both together define a database's structure and current state.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "संदर्भ संबंध में किसी भी टपल के दिए गए गुणों में प्रदर्शित होने वाले मान अखंडता बाधा के अनुसार सदर्भित संबंध में कम से कम एक टपल के निर्दिष्ट गुणों में भी होने चाहिए।",
+      "options": [
+        "Specific",
+        "Primary",
+        "Referential",
+        "Domain"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This describes Referential Integrity — Foreign Key values must match Primary Key values in the referenced table. A foreign key value must exist in the primary key of the referenced table.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "RDBMS में क्या होता है?",
+      "options": [
+        "Collection of Tables",
+        "Collection of Records",
+        "Collection of Fields",
+        "Collection of keys"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "RDBMS (Relational Database Management System) organizes data as a collection of related Tables (relations).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा के बारे में जानकारी क्या कहलाती है?",
+      "options": [
+        "Hyper data",
+        "Tera data",
+        "Meta data",
+        "Relations"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Metadata is 'data about data'. It describes the structure, format, and properties of the actual data stored in the database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डाटाबेस में डाटा को इनपुट करने के लिए प्रयोग में आने वाली डिवाइसें हैं-",
+      "options": [
+        "Key-board, Fax",
+        "Mouse, Monitor",
+        "Mouse, Key-board, Monitor",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "For data input into a database, Keyboard (typing), Mouse (navigation/selection), and Monitor (display for input confirmation) are all used.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस .......... का एक संगठित संग्रह है?",
+      "options": [
+        "Attributes",
+        "Data",
+        "Record",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A Database is an organized collection of Data. Data is organized into tables, records, and fields.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन-सा Database Manager का फ़ंक्शन है?",
+      "options": [
+        "Database design",
+        "User coordination",
+        "Performance monitoring",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A Database Manager performs all three functions: database design, user coordination, and performance monitoring.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डेटाबेस प्रबंधन प्रणाली एक ___ है?",
+      "options": [
+        "Software systems used to create, maintain, and provide controlled access to a database",
+        "Hardware system used to create, maintain, and provide controlled access to a database",
+        "Software systems used to create, maintain, and provide uncontrolled access to database",
+        "Hardware system used to create, maintain, and provide uncontrolled access to a database"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DBMS is SOFTWARE (not hardware) that creates, maintains, and provides CONTROLLED (not uncontrolled) access to databases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS का क्या लाभ है?",
+      "options": [
+        "Data depends on programs",
+        "Data redundancy increases",
+        "Data is integrated and can be used by multiple programs",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Key advantage of DBMS: data is integrated (centralized) and can be shared by multiple programs/users simultaneously.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डेटाबेस प्रबंधन प्रणाली क्या है?",
+      "options": [
+        "Allows access along with multiple files",
+        "Can do more than a record management system",
+        "A collection of programs for managing data in a file",
+        "Both (a) and (b)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DBMS allows access to multiple files simultaneously AND can do much more than a simple record management system.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन डेटाबेस के लाभ में नहीं है?",
+      "options": [
+        "Reduce Data Redundancy",
+        "Data Security",
+        "Sharing of Data",
+        "Increased Data Inconsistency"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Increased Data Inconsistency is a DISADVANTAGE of file systems, NOT of databases. DBMS actually REDUCES data inconsistency.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "जब डेटा को कई तालिकाओं से संग्रहीत, रखरखाब और पुनर्प्राप्त किया जाता है तो विशेष डिटाबीस सर्मेटवेय की आवश्यकता होती है जिसे",
+      "options": [
+        "Special DBMS",
+        "RDBMS",
+        "DBMS",
+        "All above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "RDBMS (Relational DBMS) specifically handles data stored across multiple related tables using relationships (foreign keys, joins).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा पर एन्क्रिप्शन लागू हीने पर डेटा को संभालने के लिए कौन सी कुंजी की आवश्यकता होती है ताकि अनधिकृत उपयोगकर्ता डेटा तक नहीं पहुँच सके?",
+      "options": [
+        "Encryption key",
+        "Decryption key",
+        "Authorized key",
+        "Primary key"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When data is encrypted, a Decryption key is needed to read/handle the data. Encryption key encrypts data; Decryption key decrypts it for authorized access.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन डेटाबेस से जानकारी को सेती हैक करने और डेटाबेस में टेपल्स को सम्मिलित करने, टपल्स को हटाने और डेटाबेस में टपल्स को संशोधित करने की क्षमता प्रदान करता है?",
+      "options": [
+        "DDL",
+        "DML",
+        "Relational Schema",
+        "Query"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DML (Data Manipulation Language) provides ability to query (SELECT), insert, delete, and modify tuples/records in a database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस प्रबंधन प्रणाली के संचालन के लिए निम्न में से कौनसा हार्डवेयर घटक सबसे महत्त्वपूर्ण है?",
+      "options": [
+        "High-resolution video display",
+        "Printer",
+        "High speed, large-capacity disk",
+        "Plotter"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "High-speed, large-capacity disk is critical for DBMS to store and retrieve large volumes of data quickly.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन-सा Database Manager का function है?",
+      "options": [
+        "Database design",
+        "Backing up the database",
+        "Performance monitoring",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Database Manager performs: database design, backup management, and performance monitoring — all are valid functions.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ एक डेटाबेस के बुनियादी निर्माण खंड हैं।",
+      "options": [
+        "Text",
+        "Graph",
+        "Image",
+        "Tables"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Tables (relations) are the basic building blocks of a relational database. All data is organized in tables.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एकडेटाबेस मबंधन प्रणाली जिसमे पक DBMS और एप्लिकेशन जनरेटर हीता है,",
+      "options": [
+        "Microsoft's SQL Server",
+        "Microsoft's Access",
+        "Oracle Corporation's Oracle",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Microsoft Access is an all-in-one DBMS that includes both a database engine and an application/report generator (forms, reports builder).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS ___ प्राप्त करने में मदद करता है-",
+      "options": [
+        "Data Independence",
+        "Data Centralization",
+        "Data Selection",
+        "Both A and B"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DBMS achieves both Data Independence (application is independent of data storage) and Data Centralization (data stored in one place).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन DBMS का एक घटक है?",
+      "options": [
+        "Data languages",
+        "Data manager",
+        "Data",
+        "All above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DBMS components include: Data languages (DDL, DML, DCL), Data manager (database engine), and Data (the actual stored information).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस प्रबंधन प्रणाली को दिया गया नाम क्या है जो full text data, image data, audio and video को संभालने में सक्षम है?",
+      "options": [
+        "Full media",
+        "Graphics media",
+        "Multimedia",
+        "Hypertext"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A Multimedia DBMS handles multiple data types: full text, images, audio, and video data — hence 'Multi' (many) + 'media' (data types).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस में वस्तुओं के बीच top-to-bottom relationship ........द्वारा स्थापित किया गया है-",
+      "options": [
+        "Hierarchical schema",
+        "Network schema",
+        "Relational schema",
+        "All of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hierarchical schema establishes top-to-bottom relationships using tree structure (parent-child). Network allows lateral connections too.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सा DBMS का कार्य है?",
+      "options": [
+        "Data integrity",
+        "Storing data",
+        "Providing multi-users access control",
+        "All above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DBMS functions include: ensuring data integrity, storing data securely, and providing multi-user access control — all are core functions.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित मे से कौन सा डेटाबेस का कार्य नहीं है?",
+      "options": [
+        "Security for stored data",
+        "Code Analysis",
+        "Manipulating Data",
+        "Managing Stored data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Code Analysis is a software development function, NOT a database function. Database functions include: security, data manipulation, and data management.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ एक रिकॉर्ड की विशिष्ट पहचान के लिए सामूहिक रूप से ली गई एक या अधिक विशेषताओं का एक सेट है।",
+      "options": [
+        "Foreign key",
+        "Super key",
+        "Candidate key",
+        "Primary key"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Super Key is a set of one or more attributes that can uniquely identify a record. Candidate key is a minimal super key. Primary key is a chosen candidate key.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "वह भाषा, जो डाटाबेस ऑब्जेक्ट्स की विशेषताओं को परिभाषित करती है, क्या कहलाती है?",
+      "options": [
+        "Data Manipulation Language (DML)",
+        "Data Definition Language (DDL)",
+        "Data Control Language (DCL)",
+        "Query Language"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DDL (CREATE, ALTER, DROP, TRUNCATE) defines the structure and characteristics of database objects like tables, views, indexes.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL Relation की हटाने के लिए किस कमांड का उपयोग किया जाता है?",
+      "options": [
+        "Rurge",
+        "Remove",
+        "Delete",
+        "Drop table"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DROP TABLE removes the entire relation (table) including its structure. DELETE removes rows but keeps the table structure.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा कमांड रिलेशन टीच में मूल्यों को हटाने के लिए सही है?",
+      "options": [
+        "Drop Table Teaches",
+        "Delete from Teaches where id = 'Null'",
+        "Remove table Teaches",
+        "Delete from Teaches"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DELETE FROM Teaches deletes ALL rows from the Teaches table. Option (b) only deletes rows where id is 'Null'. Option (a) drops the entire table.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से प्रक्रियात्मक भाषा ___ है",
+      "options": [
+        "Relational algebra",
+        "Domain relational calculus",
+        "Tuple relational calculus",
+        "Query language"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Relational Algebra is PROCEDURAL — specifies HOW to get data step by step. Relational Calculus (domain and tuple) is NON-PROCEDURAL — specifies WHAT to get.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "समय-समय पर फाइल में रिकॉर्ड जोड़ना, बदलना और हटाने को ___ कहा जाता है-",
+      "options": [
+        "Updating",
+        "Upgrading",
+        "Restructuring",
+        "Renewing"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Updating refers to the ongoing process of adding, modifying, and deleting records in a database file.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा डिक्शनरी DBMS को ___ बताता है-",
+      "options": [
+        "Which files are in the database",
+        "What are the characteristics of the data",
+        "What is included in these files",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data Dictionary (system catalog) tells DBMS: which files/tables exist, characteristics of data (data types, constraints), and what is included in each file.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ सचालन गैर-मिलान वाले टपल्स को संरक्षित नहीं करते हैं।",
+      "options": [
+        "Natural join",
+        "Right outer join",
+        "Inner join",
+        "Left outer join"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Inner Join does NOT preserve unmatched tuples — only rows with matches in BOTH tables are returned. Outer joins (left/right/full) preserve unmatched rows.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिपोर्ट जनरेटर का उपयोग ___ में किया जाता है-",
+      "options": [
+        "Update files",
+        "Print files on paper",
+        "Data entry",
+        "All of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A report generator is used to create formatted reports and print database information on paper. It does not update files or handle data entry.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "अपने उपयोगकर्ताओं को डेटा तक पहुंचने में सहायता के लिए अधिकांश DBMS द्वारा उपयोग की जाने वाली भाषा क्या है?",
+      "options": [
+        "High level language",
+        "Query language",
+        "SQL",
+        "4GL"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Query language (primarily SQL) is used by DBMS to enable users to access, retrieve, and manipulate data. SQL is a specific example of a query language.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सा कार्य हिस्टोग्राम का निर्माण करता है और रैंकिंग के लिए बकेट का उपयोग करता है?",
+      "options": [
+        "Netii()",
+        "Ntil()",
+        "Rank()",
+        "All above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "NTILE() function in SQL divides result set into N buckets (groups) for ranking purposes, used in histogram construction.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से किस कथन में संभवतः त्रुटि है?",
+      "options": [
+        "Select empid from emp;",
+        "Select * from emp where empid=10003;",
+        "Select empid where empid= 1009 and Lastname = 'GELLER';",
+        "Select empid from emp where empid = 10006;"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Option (c) is missing the FROM clause. Correct syntax: SELECT empid FROM tablename WHERE empid=1009 AND Lastname='GELLER'.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "संबंधपरक मोड में, कार्डिनेलिटी को कहा जाता है:",
+      "options": [
+        "Number of constraints",
+        "Number of attributes",
+        "Number of tables",
+        "Number of tuples"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Cardinality in relational model = Number of rows/tuples in a table. Degree/Arity = Number of attributes/columns.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल कैल्कुलस एक ___ है?",
+      "options": [
+        "High level language",
+        "Data definition language",
+        "Non-procedural language",
+        "Procedural language"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Relational Calculus is NON-PROCEDURAL — you specify WHAT you want (not HOW to get it). It's declarative. Relational Algebra is procedural.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कुल डेटाबेस सामग्री का दृश्य ___ है",
+      "options": [
+        "Internal view",
+        "External view",
+        "Conceptual view",
+        "Physical view"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Conceptual view (logical view) shows the total database content — all entities, relationships, and constraints. External view = user subset; Internal = physical storage.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "इंटरएट लेटेंसी समय की अवधि को संदर्भित करता है ___ ?",
+      "options": [
+        "A Ternary operator",
+        "A binary operator",
+        "A unary operator",
+        "Not defined"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Cartesian product (×) is a BINARY operator — it operates on TWO relations. Unary operators (σ, π) work on one relation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डीएमएल ___ के लिए प्रदान लिया जाता है",
+      "options": [
+        "Manipulation and processing of database",
+        "Description of logical structure of database",
+        "Addition of new structures in the database system",
+        "Definition of physical structure of database system"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DML (Data Manipulation Language) is for manipulating and processing database data — querying, inserting, updating, deleting. DDL is for structural description.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस के आर्किटेक्चर को ___ के रूप में देखा जा सकता है",
+      "options": [
+        "Four level",
+        "Three level",
+        "Two level",
+        "One level"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The ANSI/SPARC architecture defines Three-Level (Three-Schema) database architecture: External level, Conceptual level, Internal level.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक संबंधपरक मॉडल में, संबंधों को ___ कहा जाता है",
+      "options": [
+        "Attributes",
+        "Tables",
+        "Tuples",
+        "Rows"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In relational model: Relations = Tables; Attributes = Columns; Tuples = Rows.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस स्कीमा ___ में लिखा जाता है-",
+      "options": [
+        "HLL",
+        "DDL",
+        "DCL",
+        "D MILM"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Database Schema (structure) is written/defined using DDL (Data Definition Language) — CREATE TABLE, ALTER TABLE, etc.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन-सा DBMS Software है-",
+      "options": [
+        "MySQL",
+        "SQL Server",
+        "Oracle",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "MySQL, SQL Server (Microsoft), and Oracle are all major DBMS software products.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सा SQL कमांड का सबसेट जिसका उपयोग टेबल सहित Oracle स्ट्रक्चर्स में हेरफेर करने के लिए किया जाता है?",
+      "options": [
+        "Data Definition Language",
+        "Data Described language",
+        "Data Retrieval language",
+        "Data Manipulation language"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DDL (CREATE, ALTER, DROP, TRUNCATE) is used to manipulate/modify database structures including tables in Oracle and other DBMS.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक DBMS के DDL, DCL DML तीन लँगवेज कंपोनेंट है। दो भिन्न प्रकार के लोग (यूजर + प्रेक्टिशनर) उनमें साथ connected है उनमें से DBMS का यूजर किसके साथ deal करेगा-",
+      "options": [
+        "DDL",
+        "DML",
+        "DDL and DCL",
+        "DCL and DML"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "End users deal with DML (to query/modify data) and DCL (for access permissions). DDL is used by database administrators/practitioners for structural changes.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS द्वारा किसी user को दी गई सुविधाएं हैं-",
+      "options": [
+        "Data Definition",
+        "Data Retrieval",
+        "User Administrator",
+        "All of above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DBMS provides all these facilities: Data Definition (DDL), Data Retrieval (SELECT), and User Administration (DCL).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS Abstraction का सबसे निचला स्तर है-",
+      "options": [
+        "Physical Level",
+        "Logical Level",
+        "View Level",
+        "None of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Three levels of DBMS abstraction (bottom to top): Physical (lowest — how data is stored) → Logical → View (highest — user's perspective).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन DBMS की एक विशेषता नहीं है?",
+      "options": [
+        "Support ACID property",
+        "Single-user Access only",
+        "High Level of Security",
+        "Minimum Duplication and Redundancy of Data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DBMS supports MULTI-user access (concurrent access). Single-user access only is a characteristic of file systems, NOT DBMS.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "वेतन, शुल्क, मूल्य आदि के रूप में जानकारी संग्रहीत करने के लिए कौन सा डेटा प्रकार उपयुक्त होगा?",
+      "options": [
+        "Date time",
+        "Binary Data types",
+        "Numeric Data types",
+        "Alphanumeric Data types"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Salary, fees, and prices are numerical values. Numeric data types (INT, DECIMAL, FLOAT) are appropriate for storing such monetary/quantitative data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ अधिकतम संख्या में संस्थाओं को इंगित करता है जो एक रिश्ते में शामिल हो सकते हैं।",
+      "options": [
+        "Maximum cardinality",
+        "Minimum cardinality",
+        "Greater entity count",
+        "ERD"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Maximum cardinality indicates the maximum number of entity instances that can participate in a relationship (1:1, 1:N, M:N).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "पदानुक्रम के शीर्ष स्तर में ___ होते हैं जिनमें से प्रत्येक में ___ हो सकता है।",
+      "options": [
+        "Environment, Schemas",
+        "Schemas, Catalogs",
+        "Catalogs, Schemas",
+        "Schemas, Environment"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In DBMS hierarchy: Catalogs (at top) contain Schemas, which contain Tables. Environment → Catalogs → Schemas → Tables.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "ग्राहक द्वारा व्यवस्थित डेटा का पारंपरिक भंडारण, फाइलिंग कैबिनेट में अलग-अलग फोल्डरों में संग्रहीत, ___ प्रकार के DBMS का एक उदाहरण है।",
+      "options": [
+        "Network dbms",
+        "Hierarchical dbms",
+        "Object-oriented dbms",
+        "Relational dbms"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Filing cabinet system with folders and subfolders represents a Hierarchical structure — parent folders (customers) with child folders (records/documents).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS में एट्रीब्यूट का प्रकार कौन-सा है?",
+      "options": [
+        "Key attribute",
+        "Composite attribute",
+        "Single value attribute",
+        "All of these"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DBMS attributes include: Key (uniquely identifies), Composite (multiple parts), Single-valued, Multi-valued, Derived, and Simple attributes.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "ऊपर दी गई क्वेरी में 'dept name' का चयन करने के लिए क्वेरी के खाली हिस्से मे निम्नलिखित में से क्या रखा जा सकता है, जिसमें कंप्यूट साइस की समाप्ति स्ट्रिंग शामिल है?",
+      "options": [
+        "%",
+        "+",
+        "$",
+        "&"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In SQL, % (percent) is the wildcard that matches ANY sequence of characters. '%Computer Science' means any string ENDING with 'Computer Science'.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "समूहों की स्थापना के बाद, SQL लागू करता है, जिससे समग्र कायों का उपयोग किया जा सकता है।",
+      "options": [
+        "Group by",
+        "With",
+        "Where",
+        "Having"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "HAVING clause is used after GROUP BY to filter groups based on aggregate functions (SUM, COUNT, AVG, etc.). WHERE filters individual rows before grouping.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS के संबंध में कौन-सा Statement सत्य है-",
+      "options": [
+        "A field chosen as Primary Key cannot accept NULL Value",
+        "Primary Key is an attribute of a Relation",
+        "There can be one or more Candidate Keys in a Relation",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "All three statements are true: Primary Key cannot be NULL; Primary Key is an attribute; A relation can have multiple Candidate Keys.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS में द्वितीयक Key किसको कहा जाता है-",
+      "options": [
+        "Alternate Key",
+        "Primary Key",
+        "Unique Key",
+        "None of these"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Alternate Key (Secondary Key) = Candidate keys that were NOT chosen as the Primary Key. They can still uniquely identify records.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "वह डाटाबेस, जो कॉमन फील्ड से जुड़ी टेबलों को रखता है, क्या कहलाता है-",
+      "options": [
+        "Centralized database",
+        "Flat file database",
+        "Relational database",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A Relational Database links tables through common fields (Foreign Keys and Primary Keys). This is the defining characteristic of relational databases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा वेयरहाउस से डेटा और जानकारी निकालने या फ़िल्टर करने के लिए निम्न में से किसका उपयोग किया जा सकता है?",
+      "options": [
+        "Data recovery tool",
+        "Data mining",
+        "Data redundancy",
+        "Both a and b"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data Mining is used to extract and filter useful information and patterns from data warehouses.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "प्राथमिक कुंजी के साथ संयुक्त विदेशी कुंजी क्या बनाती है?",
+      "options": [
+        "Network model between the tables that connect them",
+        "One to many relationship between the tables that connects them",
+        "Parent-child relationship between the tables that connects them",
+        "All above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "FK + PK creates a referential link between tables. The book answer (a) refers to a network of connected tables.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS में ___ का प्रयोग database के structure चित्रों के format में describe करता है-",
+      "options": [
+        "E-R model",
+        "M-R model",
+        "S-R model",
+        "D-R model"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Entity-Relationship (E-R) model is used to describe database structure graphically using entities, attributes, and relationships in pictorial format.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कई अलग-अलग स्रोतों से संचित जानकारी या डेटा का एक विशाल संग्रह ___ के रूप में जाना जाता है",
+      "options": [
+        "Data Mining",
+        "Data Warehouse",
+        "Data Management",
+        "Both b and c"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data Warehouse is a centralized repository that stores large amounts of historical data collected from multiple different sources for analysis.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन एक ही डेटा (या सूचना) की प्रतियों को संदर्भित करता है जो कई स्थानों पर मेमोरी स्पेस पर कब्जा कर लेता है।",
+      "options": [
+        "Data Repository",
+        "Data Mining",
+        "Data redundancy",
+        "Data inconsistency"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Data Redundancy = same data stored in multiple locations, wasting storage space. This is a key problem that DBMS aims to reduce.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS द्वारा परिनियोजित, तकनीक के अनुसार निम्नलिखित में से कौन सा सही है?",
+      "options": [
+        "Locks are used to maintain transactional integrity and consistency",
+        "Cursors are used to maintain transactional integrity and consistency",
+        "Pointers are used to maintain transactional integrity and consistency",
+        "Triggers are used to maintain transactional integrity and consistency"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Locks (locking mechanism) are used in DBMS to maintain transactional integrity and consistency in concurrent environments. This prevents dirty reads and conflicts.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक से अनेक संबंधों से आप क्या समझते हैं?",
+      "options": [
+        "One class may have many teachers",
+        "Many classes may have many teachers",
+        "One teacher can have many classes",
+        "Many teachers may have many classes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "One-to-Many (1:N) relationship: ONE entity on the 'one' side relates to MANY entities on the 'many' side. One teacher → many classes.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से क्या रखा जा सकता है वेतन को उच्चतम से न्यूनतम राशि तक प्रदर्शित करने और कर्मचारियों के नाम को वर्णानुक्रम में क्रमबद्ध करने के लिए?",
+      "options": [
+        "Desc, Asc",
+        "Ascending, Descending",
+        "Asc, Desc",
+        "All above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ORDER BY salary DESC (highest to lowest), name ASC (alphabetical A to Z). DESC = descending; ASC = ascending.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित कमांड का कार्य क्या है? Delete from r where P,",
+      "options": [
+        "Deletes relation",
+        "Deletes particular tuple from relation",
+        "Clears entries relation",
+        "All above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DELETE FROM r WHERE P deletes specific tuples (rows) from relation r that satisfy predicate P. It does NOT delete the relation itself.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL व्यू को निर्दिष्ट करने वाली क्वेरी को अद्यतन करने योग्य कहा जाता है यदि यह निम्न में से किस शर्त को पूरा करती है?",
+      "options": [
+        "Query does not have group by or having",
+        "From clause has 1 relation",
+        "Select clause contains attribute names but not expressions, aggregates, or distinct specification",
+        "All above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "For a SQL view to be updatable, ALL conditions must be met: no GROUP BY/HAVING, single table in FROM, no expressions/aggregates/DISTINCT in SELECT.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Real World का एक विशेष Object कहलाता है-",
+      "options": [
+        "Field",
+        "Entity",
+        "Key",
+        "Cold"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An Entity is a real-world object or concept that has existence and can be distinctly identified (e.g., a person, car, order).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "वह Entity जिसके पास Primary Key होती है, वो Entity कहलाती है-",
+      "options": [
+        "Strong Entity",
+        "Weak Entity",
+        "Partial Entity",
+        "Regular Entity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Strong Entity has its own Primary Key and can exist independently. Weak Entity does NOT have its own primary key and depends on a strong entity.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "शब्द NTFS निम्नलिखित में से किस एक को संदर्भित करता है?",
+      "options": [
+        "New Tree File System",
+        "New Table Type File System",
+        "New Technology File System",
+        "Both b and c"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "NTFS = New Technology File System (official name). Some contexts also refer to it as New Table Type File System. Book answer is (d).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS से डेटा की Request करने के लिए प्रयुक्त भाषा जो एप्नीकेशन प्रोग्राम का use करती है, कहलाती है-",
+      "options": [
+        "DML",
+        "DDL",
+        "Query language",
+        "All of the Mentioned"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Application programs use DML (specifically SELECT statements) to request/query data from DBMS.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "'डेटा' शब्द का अर्थ है:",
+      "options": [
+        "Basic information",
+        "The electronics representation of the information",
+        "Row facts and figures",
+        "Both a and c"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Data refers to raw facts and figures — unprocessed, unorganized information. When processed/organized, data becomes Information.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन 'डेटा के बारे में डेटा' को संदर्भित करता है?",
+      "options": [
+        "Directory",
+        "Meta Data",
+        "Sub Data",
+        "Warehouse"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Metadata = data about data. It describes the properties, structure, and characteristics of the actual data stored in the database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डेटाबेस भनेजमेंट सिस्टम एक प्रकार का ___ सॉफ्टवेयर है।",
+      "options": [
+        "It is a kind of general software",
+        "It is a type of system software",
+        "It is a kind of application software",
+        "Both a and b"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DBMS is classified as System Software — it manages and controls computer hardware resources and provides a platform for application software.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सामान्य तौर पर, एक फाइल मूलरूप से सभी संबंधित ___ का एक संग्रह है।",
+      "options": [
+        "Fields",
+        "Database",
+        "Records",
+        "Rows and Columns"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A file is a collection of related Records. Each record contains fields (attributes). Files → Records → Fields.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ क्रिएट व्यू से मिलता जुलता है",
+      "options": [
+        "Create table",
+        "With data",
+        "Create table....as",
+        "Create view as"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "CREATE TABLE ... AS (SELECT ...) creates a new table from query results, similar to CREATE VIEW which also uses a query to define the virtual table.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    }
+  ]
+}

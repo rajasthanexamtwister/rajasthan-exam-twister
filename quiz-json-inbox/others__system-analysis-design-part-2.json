@@ -1,0 +1,739 @@
+{
+  "quizTitle": "OTHERS - System Analysis Design (Part 2)",
+  "subject": "System Analysis & Design",
+  "examTags": [
+    "BCI",
+    "Computer Science"
+  ],
+  "difficulty": "medium",
+  "questions": [
+    {
+      "questionText": "The requirements report includes-",
+      "options": [
+        "hierarchy chart showing the top-level modules",
+        "list of alternative solutions considered",
+        "data flow diagram describing the proposed new system.",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is a composite view of what a thorough requirements deliverable should contain.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The context diagram is also known as ___.",
+      "options": [
+        "Level-0 DFD",
+        "Level-1 DFD",
+        "Level-2 DFD",
+        "All above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This directly connects to Q34's earlier fact that Level 0 is the highest/most abstract DFD level.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ includes review of the existing procedures and information flow.",
+      "options": [
+        "Feasibility study",
+        "Feasibility report",
+        "System analysis",
+        "System design"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Duplicate concept of Q29, phrased identically.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "During the system study, analysts determine manager's information needs by ___.",
+      "options": [
+        "conducting tours of a nearby computer center",
+        "asking questions",
+        "showing samples of computer reports",
+        "teaching short courses in programming languages"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This reinforces the interview-based fact-finding approach established in Q2/Q56/Q136.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "जब कंडीशन अधिक और जटिल (complex) होती है तो किस स्ट्रक्चर्ड टूल का प्रयोग किया जाता है-",
+      "options": [
+        "Decision table",
+        "Structured English",
+        "Pseudo code",
+        "Flow chart"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Decision Tables organize many conditions systematically in rows/columns, making them ideal for complex condition-action logic (unlike Structured English, which becomes unwieldy with many conditions).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से Gantt chart किसके द्वारा डेवलप किया गया-",
+      "options": [
+        "Larry Breed",
+        "Donald Becker",
+        "Henry Gantt",
+        "Tim burners lee"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is a well-known historical attribution fact - the chart's name itself is a strong hint toward its creator.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A feasibility study ___.",
+      "options": [
+        "समस्याओं का एक कथन शामिल है / includes a statement of the problems",
+        "एकल समाधान पर विचार करता है / considers single solutions",
+        "दोनों (a) और (b) / both (a) and (b)",
+        "वैकल्पिक समाधान की एक सूची / a list of alternative solution considered"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Per the book's key, the core content emphasized here is the PROBLEM STATEMENT itself, not solution enumeration (which is a separate/additional component per Q253).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A directed arc or line in DFD represents ___.",
+      "options": [
+        "Data Flow",
+        "Data Process",
+        "Data Store",
+        "All above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This completes the DFD symbol review: Rectangle=Entity, Circle=Process, Open Rectangle=Store, Arrow/Line=Data Flow.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is true about Software Verification?",
+      "options": [
+        "Verifications concentrates on the design and system specifications",
+        "Verifications ensures the product being developed is according to design specifications",
+        "Both a and b",
+        "None of above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Verification is the 'are we building the product right?' check (against design specs), distinct from Validation ('are we building the right product?' against user needs - see Q271).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is (are) the characteristic(s) of a system?",
+      "options": [
+        "organization",
+        "Interaction",
+        "Interdependence",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This synthesizes multiple systems-theory terms tested individually elsewhere in this exam into one composite recognition question.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक EDP Organization को मैनेज करने का काम ___ करता है-",
+      "options": [
+        "System analyst",
+        "EDP manager",
+        "Programmer",
+        "User"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is a direct role-title match question testing recognition of the EDP Manager's specific organizational responsibility.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "RAD stands for ___.",
+      "options": [
+        "Rapid Application Disposition",
+        "Rapid Application Developers",
+        "Required Application Development",
+        "Rapid Application Development"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is a fixed, well-known acronym with a clear, correct expansion.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A graphic representation of an information system is called ___.",
+      "options": [
+        "flow chart",
+        "pictogram",
+        "data flow diagram",
+        "histogram"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is a direct definitional match, consistent with DFD's role throughout this chapter.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "In data-flow diagrams, an originator or receiver of the data is usually designated by ___.",
+      "options": [
+        "an arrow",
+        "circle",
+        "square box",
+        "rectangle"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is yet another confirmation of the core DFD symbol convention tested repeatedly throughout this exam.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किसी system को develop करने हेतु प्रयुक्त Planning के आयाम (dimension) होते हैं-",
+      "options": [
+        "Managerial",
+        "Operational Planning",
+        "and B both",
+        "None of these"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This reflects the dual nature of planning: high-level managerial direction combined with operational/tactical execution planning.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक Systems analyst में कौनसी विशेषता का होना आवश्यक है-",
+      "options": [
+        "Q-factor",
+        "Innovation",
+        "Trouble Shooting",
+        "All of these"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This adds to the broader analyst-attributes discussion (Q189, Q190, Q195) with additional traits beyond just organizational/interpersonal skills.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "To which phase of SDLC, is file conversion related?",
+      "options": [
+        "System Implementation",
+        "System analysis",
+        "System development",
+        "System design"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is consistent with the general understanding that data/file migration happens during system rollout/implementation, not earlier analysis or design phases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is a function of CASE Tool?",
+      "options": [
+        "Checking whether DFDs are balanced or not",
+        "Maintaining the data dictionary",
+        "Supporting Structured analysis and design",
+        "None of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "CASE tools provide a suite of capabilities (DFD balance checking, data dictionary maintenance, etc.) that collectively support the structured analysis/design methodology - option (c) captures this holistically.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is not true about Software Validation?",
+      "options": [
+        "Validation is carried out at the end of the SDLC",
+        "Valication emphasizes on user requirements",
+        "Validation do not emphasizes on user requirements",
+        "Validation ensure the product under development is as per the user requirements"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This directly contrasts with Verification (Q261, which focuses on DESIGN specs); Validation's defining trait is its focus on USER REQUIREMENTS - making option (c)'s denial of this the correct 'not true' answer.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The goal of requirement engineering is to develop and maintain sophisticated and descriptive ___ document.",
+      "options": [
+        "System requirements specification",
+        "Software requirement validation",
+        "Requirement gathering",
+        "Feasibility study"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is a direct definitional match for requirement engineering's core deliverable.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "It is the process in which developers discuss with the client and end users and know their expectations from the software-",
+      "options": [
+        "Documentation",
+        "Negotiation & discussion",
+        "Organizing requirements",
+        "Requirements gathering"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is a direct definitional match, distinct from documentation (recording) or negotiation (resolving conflicts).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is not considered as a tool at the system design phase?",
+      "options": [
+        "plechart",
+        "data-flow diagram",
+        "decision table",
+        "systems flowchart"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This tests recognizing a made-up/non-standard term among otherwise legitimate structured design tools.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A Decision table-",
+      "options": [
+        "represents the information flow",
+        "documents rules, that select one or more actions, based on one or more conditions, from a set of possible conditions.",
+        "gets an accurate picture of the system",
+        "shows the decision paths"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is consistent with the Decision Table definition established in Q63/Q82 (conditions mapped to actions in tabular format).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सिस्टम के लिए जरूरी जानकारियों को इकट्ठा करना कहलाता है-",
+      "options": [
+        "Data transfer",
+        "Data gathering",
+        "Data Embedding",
+        "Data Request"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Direct duplicate of Q37's concept in Hindi phrasing.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "When multiple modules share common data structure and work on different part of it, it is called ___.",
+      "options": [
+        "Stamp coupling",
+        "Data coupling",
+        "Share coupling",
+        "Common coupling"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This distinguishes Common Coupling (shared global data structure) from Stamp Coupling (passing a data structure as a parameter) - related but distinct coupling types.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The process to gather the software requirements from client, analyze and document them is known as",
+      "options": [
+        "System requirements specification",
+        "Requirement Gathering",
+        "Feasibility study",
+        "Requirement engineering"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This distinguishes the broader Requirement Engineering discipline (gather+analyze+document) from its narrower component activity, Requirement Gathering (Q273).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is correct software metrics?",
+      "options": [
+        "Process Metrics",
+        "Quality Metrics",
+        "Complexity Metrics",
+        "All above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is a composite recognition question covering standard software metrics classification.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which are the tools not used for System Analysis?",
+      "options": [
+        "System - test data",
+        "Decision table",
+        "Data Flow Diagram",
+        "Flowcharts"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Direct repeat of Q200's concept.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The code used for the validation purpose is known ___.",
+      "options": [
+        "Self checking code",
+        "Sequence code",
+        "Alpha numeric code",
+        "Group classification code"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This distinguishes Self-Checking Code (built for validation/error-detection) from other code types (Sequence, Alphanumeric, Group Classification) that don't specifically serve validation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Problem analysis is done during ___.",
+      "options": [
+        "system design phase",
+        "systems analysis phase",
+        "before system test",
+        "All of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Direct duplicate of Q81's concept.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ रिपोर्ट cost benefit report कहलाती है-",
+      "options": [
+        "System Analysis",
+        "Feasibility Study",
+        "System Analyst",
+        "System Design"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Direct reinforcement of Q123's fact about feasibility study's cost-benefit focus.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following defines the degree of intra-dependability within elements of a module?",
+      "options": [
+        "Design Verification",
+        "Coupling",
+        "Cohesion",
+        "None of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This precisely distinguishes Cohesion (within-module unity) from Coupling (between-module dependency, Q74) - a classic paired concept in structured design.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "What is the major drawback of using RAD Model?",
+      "options": [
+        "Encourages customer/client feedback",
+        "Increases reusability of components",
+        "Highly specialized & skilled developers/designers are required",
+        "Increases reusability of components, Highly specialized and skilled developers/designers are required"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This tests recognizing that customer feedback encouragement and component reusability are RAD's benefits, not its drawbacks; the real limitation is the skill/specialization requirement.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Size Metrics denoted by-",
+      "options": [
+        "ZLOC",
+        "GLOC",
+        "KLOC",
+        "LOC"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "KLOC is the widely-used standard size metric abbreviation in software engineering (as opposed to fabricated terms like ZLOC/GLOC).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A data dictionary has consolidated list of data contained in-",
+      "options": [
+        "and (iii)",
+        "and (ii)",
+        "and (iv)",
+        "and (iv)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data Dictionaries catalog the data elements that appear WITHIN data flows and data stores in a DFD - this is their core, defining scope per standard SAD teaching.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following are valid step in SDLC framework?",
+      "options": [
+        "Software Design",
+        "System Analysis",
+        "Requirement Gathering (reconstructed - OCR incomplete)",
+        "All of the above (reconstructed - OCR incomplete)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "🚨 OCR LIMITATION: Options (c) and (d) were cut off/not fully captured in the source scan (page break between 311 and 312). Options (a) 'Software Design' and (b) 'System Analysis' were captured, but the remaining options are reconstructed based on this document's typical answer patterns and are NOT verified against the original text.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सॉफ्टवेयर डिजाइन में कितने प्रकार के सामंजस्य (cohesion) होते हैं?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is a specific, well-established software engineering fact - the 7-type cohesion spectrum from best (Functional) to worst (Coincidental).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A data dictionary is useful as-",
+      "options": [
+        "and (ii)",
+        "and (iv)",
+        ", (ii) and (iii)",
+        "and (iv)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "🚨 OCR ISSUE: Options (b) and (d) both read '(i) and (iv)' in the source text - this is very likely a printing or OCR duplication error. The more substantively complete and commonly expected answer would be option (c) '(i), (ii) and (iii)', since data dictionaries genuinely serve as documentation aids, assist in designing input forms, AND contain all application data including temporary process data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "By metadata we mean-",
+      "options": [
+        "very large data",
+        "data about data",
+        "data dictionary",
+        "meaningful data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is the standard, universal definition of metadata in information systems and databases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which one of the following is a functional requirement?",
+      "options": [
+        "Reliability",
+        "Business needs",
+        "Portability",
+        "Maintainability"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "🚨 ANSWER KEY BUG DETECTED! Reliability, Portability, and Maintainability are textbook examples of Non-Functional Requirements (NFRs) in nearly every software engineering source. The book's key selecting 'Maintainability' (d) as a FUNCTIONAL requirement contradicts standard SE classification. 'Business needs' (b) is the option most consistent with functional requirements (defining what the system should DO), making it the more technically correct choice.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is the first step in SDLC framework?",
+      "options": [
+        "System Analysis",
+        "Communication",
+        "Requirement Gathering",
+        "Feasibility Study"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "🚨 Note: This differs from the 'Problem/Opportunity Identification' first-step answer given in Q91/Q186/Q213 elsewhere in this same exam - this suggests the book may be referencing a DIFFERENT SDLC model/framework specifically for this question (e.g., a generic software engineering process model rather than the classical SDLC used elsewhere), or this represents an internal inconsistency in the source material.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is not an Advantage of modularization?",
+      "options": [
+        "Smaller components are easier to maintain",
+        "Concurrent execution can be made possible",
+        "Program cannot be divided based on functional aspects",
+        "Desired level of abstraction can be brought in the program"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is a double-negative-style question: modularization's whole point is enabling functional division, so a statement denying this capability is clearly the false/non-advantage option.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "What are the types of requirement in Quality Function Deployment (QFD)?",
+      "options": [
+        "Normal, Expected, Exciting",
+        "Functional, Non-Functional",
+        "User, Developer",
+        "Known, Unknown, Undreamed"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is distinct from the generic Functional/Non-Functional split (option b) - QFD uses this specific 3-tier customer-satisfaction-oriented classification instead.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which type of integration testing uses stubs?",
+      "options": [
+        "Bottom up testing",
+        "Top down testing",
+        "Both a and b",
+        "System testing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This distinguishes Top-Down testing (uses Stubs for lower modules) from Bottom-Up testing (uses 'Drivers' for higher/calling modules) - a classic paired distinction in integration testing.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Why is Requirements Elicitation a difficult task?",
+      "options": [
+        "Problem of understanding",
+        "Problem of scope",
+        "Problem of volatility",
+        "All above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is a composite view of the classic requirements elicitation challenges taught in software engineering.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A data dictionary is usually developed-",
+      "options": [
+        "At requirements specification phase",
+        "During feasibility analysis",
+        "When DFD is developed",
+        "When a database is designed"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This ties the Data Dictionary's creation timing directly to DFD development, consistent with its role in cataloging DFD-related data elements (Q287).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सिस्टम एनालिस्ट इनमें से कौनसा कार्य करता है-",
+      "options": [
+        "Problem Identication",
+        "System Design",
+        "System Analysis",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This reinforces the wide-ranging analyst responsibilities established throughout this chapter (Q127, Q144, Q185, Q188).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक कम्प्यूटर इंस्टीट्यूट में कम्प्यूटर खरीदने की Cost किस प्रकार की Cost कहलाती है-",
+      "options": [
+        "Fixed Cost",
+        "Variable Cost",
+        "Intangible Cost",
+        "All of these"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "🚨 Note: In standard cost accounting, purchasing computers (a one-time capital expenditure) would typically be classified strictly as a Fixed/Tangible cost, NOT Variable or Intangible - the book's 'All of these' answer is unusual and may reflect a generalized/loosely-worded question rather than precise cost classification theory.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is not correct model in Software Development Paradigm?",
+      "options": [
+        "Spiral Model",
+        "model",
+        "Waterfall Model",
+        "P Model"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This tests recognizing a fabricated model name among legitimate, well-known SDLC/SE paradigms.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Software design yields ___ levels of results.",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is a specific, book-defined fact about software design's output granularity.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A data dictionary has information about ___.",
+      "options": [
+        "every data element in a data flow",
+        "only key data element in a data flow",
+        "only important data elements in a data flow",
+        "only numeric data elements in a data flow"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is consistent with the Data Dictionary's comprehensive documentation role (Q290's broader definition too).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "In the maintenance phase the product must be tested against previous test cases. This is known as ___ testing.",
+      "options": [
+        "Integration",
+        "Regression",
+        "Unit",
+        "Acceptance"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Regression testing is specifically designed to catch unintended side-effects of changes during maintenance, by re-running prior test cases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "What is the major drawback of CORE?",
+      "options": [
+        "Role of analysis is passive",
+        "NFRs are not given enough importance",
+        "Requirements are comprehensive",
+        "All of them"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is a specific, somewhat specialized requirement-engineering-methodology fact rather than a general SAD concept.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A data element in a data dictionary may have-",
+      "options": [
+        "only integer value",
+        "no value",
+        "only real value",
+        "only decimal value"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This tests recognizing that data dictionary elements aren't type-restricted to a single numeric format; they can represent various types, including potentially null/empty values.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Waterfall model is not suitable for ___.",
+      "options": [
+        "Maintenance projects",
+        "Accommodating changes",
+        "Complex projects",
+        "Small projects"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is the classic, widely-taught Waterfall Model weakness: lack of flexibility for evolving/changing requirements mid-project.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Build & Fix Model is suitable for programming exercises of ___ LOC (Line of Code).",
+      "options": [
+        "100-200",
+        "300-400",
+        "600-700",
+        "More than 800"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is a specific, quantitative fact about the Build & Fix Model's limited scale suitability - it doesn't scale to large or complex projects.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    }
+  ]
+}

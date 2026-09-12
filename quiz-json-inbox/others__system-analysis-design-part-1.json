@@ -1,0 +1,3261 @@
+{
+  "quizTitle": "OTHERS - System Analysis Design (Part 1)",
+  "subject": "System Analysis & Design",
+  "examTags": [
+    "BCI",
+    "Computer Science"
+  ],
+  "difficulty": "medium",
+  "questions": [
+    {
+      "questionText": "___ प्रबंधन सूचना प्रणाली का एक महत्वपूर्ण कारक है।",
+      "options": [
+        "System",
+        "Data",
+        "Process",
+        "All"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "System, Data, and Process are all foundational pillars of any MIS; none alone is sufficient.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से Information gathering tool कौनसी है ___।",
+      "options": [
+        "On-site observation",
+        "Interviews",
+        "Review Literature Procedures and Forms",
+        "उपरोक्त सभी (All)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "All three listed methods are recognized fact-finding techniques in SDLC's requirement gathering phase.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से Feasibility analysis का प्रकार नहीं है ___।",
+      "options": [
+        "Economic feasibility",
+        "Social feasibility",
+        "Legal feasibility",
+        "Data feasibility"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "'Data feasibility' is not part of the standard feasibility taxonomy (TELOS: Technical, Economic, Legal, Operational, Schedule).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "बुद्धिशीलता (Brainstorming) में कितने चरण होते हैं?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Standard SAD textbooks describe brainstorming as a 3-phase group technique for requirement elicitation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "शीर्ष प्रबंधन के उपयोग के लिए रणनीतिक स्तर पर ___ स्तर की आपूर्ति की जानकारी देता है।",
+      "options": [
+        "Operational",
+        "Environmental",
+        "Competitive",
+        "Tactical"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Operational level handles day-to-day transactions; Tactical level aggregates and reports to Strategic/top management.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक DFD में बाहरी संस्थाओं (external entities) को ___ द्वारा दर्शाया जाता है।",
+      "options": [
+        "Rectangle",
+        "Ellipse",
+        "Diamond shaped box",
+        "Circle"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is a fixed DFD notation convention taught in every SAD syllabus.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "अनुक्रमिक संख्याओं (Serial numbers) का उपयोग कोड के रूप में किया जाता है, ये हैं-",
+      "options": [
+        "and ii",
+        "and iii",
+        "and iv",
+        "and iii"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "(i) Concise and (iii) Expandable are true properties of serial codes; (ii) Meaningful and (iv) Comprehensive are not.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ को डेटा के रूप में परिभाषित किया जा सकता है जिसे एक ऐसे रूप में संसाधित किया गया है जो प्राप्तकर्ता के लिए सार्थक है।",
+      "options": [
+        "System",
+        "Information",
+        "Technology",
+        "Service"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data = raw facts; Information = processed, meaningful, decision-relevant data. This is the classic Davis & Olson definition.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किस प्रकार की Feasibility में hardware के configuration पर system के लिए अधिक महत्व दिया जाता है?",
+      "options": [
+        "Social feasibility",
+        "Technical feasibility",
+        "Time feasibility",
+        "Social feasibility"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Technical feasibility directly examines hardware/software capability and configuration requirements.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Operational Feasibility का मुख्य सम्बन्ध किससे है-",
+      "options": [
+        "Human, organizational and political",
+        "Data Structure",
+        "Data Collection",
+        "Giving more importance to hardware in evaluation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "It examines organizational culture, staff willingness, political resistance, and human factors around adoption.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक System है-",
+      "options": [
+        "आपस में dependent units का समूह",
+        "किसी विशेष लक्ष्य की प्राप्ति हेतु विभिन्न Components जोड़ना",
+        "System विभिन्न Components से मिलकर बना होता है",
+        "उपरोक्त सभी"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Standard systems theory: interdependence + component integration + goal orientation are all defining traits.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Block codes हैं-",
+      "options": [
+        "and ii",
+        "and iii",
+        "and iv",
+        "and iii"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "(ii) Meaningful and (iii) Expandable correctly describe block codes; they are not necessarily the most 'Concise' or 'Comprehensive' among coding types.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से flow chart का प्रकार नहीं है-",
+      "options": [
+        "Bar chart",
+        "Line chart",
+        "Pie chart",
+        "Square chart"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is a straightforward elimination question — 'Square chart' does not exist as a standard chart classification.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Relation तथा Speed को diagram में प्रदर्शित करने के लिए किसका उपयोग करते हैं-",
+      "options": [
+        "Box",
+        "Chart",
+        "Flow data",
+        "Square"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Charts visually represent relationships and trends (like speed of change) between data points.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "पुरानी प्रणाली की तरह ही नई प्रणाली का उपयोग करके परिणामों की तुलना करने के लिए इसे ___ के रूप में जाना जाता है।",
+      "options": [
+        "Procedure Writing",
+        "Simultaneous processing",
+        "Parallel Operation",
+        "File Conversion"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is one of the four system conversion strategies: Direct, Parallel, Pilot, and Phased.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Design चरण के बाद तैयार किए गए दस्तावेज़ को ___ के रूप में जाना जाता है।",
+      "options": [
+        "system specification",
+        "performance specification",
+        "design specification",
+        "None of these"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Each SDLC phase produces a matching-named specification document (requirement specification, design specification, etc.).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न कॉलम A व कॉलम B का मिलान कीजिए- a.Technical Feasibility, b.Operational Feasibility, c.Economic Feasibility, d.Social Feasibility",
+      "options": [
+        "ii, b-iii, c-i, d-iv",
+        "ii, b-iii, c-iv, d-i",
+        "iii, b-i, c-ii, d-iv",
+        "i, b-ii, c-iv, d-iii"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Each feasibility type is matched to its defining concern as per standard SAD theory.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कौनसी Feasibility में Cost/benefit analysis किया जाता है-",
+      "options": [
+        "Economic feasibility",
+        "Operational feasibility",
+        "Time feasibility",
+        "Social feasibility"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Economic feasibility = quantifying and comparing costs vs. benefits of the proposed system.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक System में डेटाबेस बनाने का कार्य कौन करता है-",
+      "options": [
+        "Analyst",
+        "Programmer",
+        "EDP manager",
+        "User"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Analysts design logical structures; Programmers implement/build the actual database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Economic feasibility का मुख्य उपयोग क्या है-",
+      "options": [
+        "and ii",
+        "and iii",
+        "i, ii and iii",
+        "i, ii, iii and iv"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Statement (iv), about being done by 'a small group of people', describes Operational feasibility, not Economic, so it is excluded.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किस प्रकार की feasibility में यह देखा जाता है कि प्रस्तावित Project उस सामान्य व्यक्ति को स्वीकार्य हो या नहीं-",
+      "options": [
+        "Social feasibility",
+        "Management feasibility",
+        "Legal feasibility",
+        "Time feasibility"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is the definitional focus of Social feasibility — user/public acceptance, distinct from legal compliance or management approval.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "समूह वर्गीकरण कोड (Group classification codes) हैं-",
+      "options": [
+        "and iii",
+        "i, ii and iii",
+        "and iv",
+        "i, iii and iv"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Per the answer key, options ii and iv (Meaningful and Comprehensive) are the defining traits selected for this code type.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक Data flow कर सकता है ___।",
+      "options": [
+        "Only emanate from an external entity",
+        "Only terminate in an external entity",
+        "May emanate and terminate in an external entity",
+        "May either emanate or terminate in an external entity but not both"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This mirrors the DFD rule that data cannot flow directly between two external entities either — flows to/from entities are one-directional per arrow.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ को कंप्यूटर की समस्याओं को हल करने के लिए सबसे हालिया और शायद सबसे व्यापक तकनीक के रूप में परिभाषित किया जा सकता है।",
+      "options": [
+        "System Analysis",
+        "System Data",
+        "System Procedure",
+        "System Record"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is a definitional statement directly associated with the discipline of System Analysis.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SDLC का अर्थ ___ है।",
+      "options": [
+        "System Development Life Cycle",
+        "Structure Design Life Cycle",
+        "System Design Life Cycle",
+        "Structure development Life Cycle"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is a fixed, well-known acronym with no ambiguity.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सूचना की विशेषता है/हैं?",
+      "options": [
+        "Accuracy and Relevance",
+        "Form of information and Timeliness",
+        "Completeness and Purpose",
+        "All a, b & c"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Standard SAD/MIS texts list these as the core quality dimensions of 'good information'.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The data Flow Diagram किस system का मूल घटक है।",
+      "options": [
+        "Conceptual",
+        "Logical",
+        "Physical",
+        "None of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Logical DFDs describe business processes/data flow abstractly; Physical DFDs (a separate concept) add implementation details like devices and file formats.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ में मौजूदा प्रक्रियाओं और सूचना प्रवाह की समीक्षा शामिल है।",
+      "options": [
+        "Feasibility Study",
+        "Feasibility report",
+        "System Design",
+        "System analysis"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Feasibility Study is the early SDLC stage that examines the existing system's workflow before deciding to proceed.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Organization chart ___ का एक प्रकार है।",
+      "options": [
+        "basic chart",
+        "IPO chart",
+        "Hierarchical chart",
+        "step chart"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Org charts represent superior-subordinate structure — inherently hierarchical in nature.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित कॉलम A या कॉलम B का सही से मिलान कीजिए- a.Management Feasibility, b.Legal Feasibility, c.Social Feasibility(i), d.Social Feasibility(ii)",
+      "options": [
+        "ii, b-iii, c-i, d-iv",
+        "ii, b-iii, c-iv, d-i",
+        "i, b-iii, c-ii, d-iv",
+        "i, b-ii, c-iii, d-iv"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The source table appears to duplicate 'Social Feasibility' as both category c and d — likely an OCR/print duplication of what should be two distinct feasibility types (e.g., one may actually be 'Economic Feasibility').",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Data दो Data stores के बीच प्रवाहित नहीं हो सकता क्योंकि ___?",
+      "options": [
+        "it is not allowed in DFD",
+        "data store is a passive repository of data",
+        "data can get corrupted",
+        "they will get merged"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Since data stores have no active behavior (they just hold data), any transfer between them must go through a Process, which is why direct store-to-store flow is disallowed.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Logical DFD's के लिए सत्य कथन है-",
+      "options": [
+        "True, false",
+        "False, false",
+        "True, true",
+        "False, true"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Logical DFD = 'what' the business does with data (true for i); it does NOT address implementation/how it's applied in the system (so ii is false).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से उच्चतम level का Data flow diagram कौनसा है-",
+      "options": [
+        "Level 0",
+        "Level 1",
+        "Level 2",
+        "Level 3"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DFD numbering works opposite to intuition: Level 0 is the topmost/most abstract, and each increasing level number means MORE detail/lower abstraction.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "अच्छी तरह से डिजाइन किए गए सिस्टम की विशेषताएँ निम्नलिखित में से हैं-",
+      "options": [
+        "A, B, C and D",
+        "A, C, D and E",
+        "A, B, C, D and E",
+        "A, B, C, D, E and F"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Standard SAD texts list these six qualities together as hallmarks of good system design.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "संरचित चार्ट (Structured charts) ___ का उत्पाद हैं?",
+      "options": [
+        "requirements gathering",
+        "requirements analysis",
+        "design",
+        "coding"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Structured design translates data-flow/logical analysis into a hierarchical module structure represented by structure charts.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ सिस्टम प्रोजेक्ट से संबंधित जानकारी के संग्रह को संदर्भित करता है।",
+      "options": [
+        "Data transfer",
+        "Data gathering",
+        "Data Embedding",
+        "Data Request"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is a direct terminology-matching question.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ किसी कंपनी या कार्यों की श्रृंखला के माध्यम से डेटा के प्रवाह को परिभाषित करता है जो कंप्यूटरीकृत प्रसंस्करण का प्रतिनिधित्व कर सकते हैं या नहीं भी कर सकते हैं।",
+      "options": [
+        "System process",
+        "System flowchart",
+        "System design",
+        "Structured System"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This distinguishes System Flowcharts (org-level, can include manual steps) from Program Flowcharts (purely computerized logic).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Management Feasibility का कार्य क्या है-",
+      "options": [
+        "and ii",
+        "and iii",
+        "i, ii and iii",
+        "उपरोक्त सभी"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "All listed statements describe legitimate facets of how management approval/attitude affects feasibility assessment.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System design का मुख्य कार्य क्या है-",
+      "options": [
+        "System में आवश्यक सुधार, सुरक्षा व नियंत्रण की Design बनाना",
+        "समस्त data flow को बनाया जाता है",
+        "System में input क्या होंगे, उनका flow क्या होगा",
+        "उपरोक्त सभी"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "System design translates analysis output into a concrete blueprint covering control, data flow, and input/output specification.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "तार्किक design जो कागज के ऊपर तैयार किया जाता है, उसे वास्तविक कार्यशील रूप में ढालना-",
+      "options": [
+        "Logical Design",
+        "Physical Design",
+        "Access Design",
+        "Data Design"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Logical Design = 'what' on paper; Physical Design = 'how' it actually gets implemented/built.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किस प्रक्रिया द्वारा पता लगाया जाता है कि Project सभी अधिनियमों एवं Legal rules को follow कर रहा है या नहीं-",
+      "options": [
+        "Time feasibility",
+        "Legal feasibility",
+        "Management feasibility",
+        "Social feasibility"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is the definitional purpose of Legal feasibility in the TELOS framework.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System test plan कब निर्दिष्ट किया जाता है?",
+      "options": [
+        "जब अंतिम विनिर्देश तैयार किए जाते हैं / when the final specifications are drawn up",
+        "व्यवहार्यता अध्ययन के दौरान / during feasibility study",
+        "आवश्यकताओं विनिर्देशों चरण के दौरान / during requirements specifications stage",
+        "सिस्टम अध्ययन चरण के दौरान / during system study stage"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "You can only define a meaningful test plan after you know exactly what the final system is supposed to do — hence it follows final specification finalization.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ का अर्थ है समन्वित प्रयास, लिखित रूप में सिस्टम की जानकारी को संप्रेषित करना।",
+      "options": [
+        "System documentation",
+        "Resource required",
+        "Development schedule",
+        "User Document"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This matches the general definition of documentation as a formal record/communication vehicle throughout SDLC.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Analysis चरण में, ___ का विकास होता है, जो परियोजना के लक्ष्यों और उद्देश्यों का एक स्पष्ट विवरण है।",
+      "options": [
+        "documentation",
+        "flowchart",
+        "program specification",
+        "design"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is a defined output artifact of the Analysis phase per the standard SDLC breakdown used in this syllabus.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Actual programming of software code किस SDLC चरण के दौरान किया जाता है?",
+      "options": [
+        "Maintenance and Evaluation",
+        "Design",
+        "Analysis",
+        "Development and Documentation"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This SDLC model groups coding together with documentation as a single combined phase, distinct from Design (planning) and Analysis (requirements).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Enhancements, upgrades, और bug fixes किस SDLC चरण में किए जाते हैं?",
+      "options": [
+        "Maintenance and Evaluation",
+        "Problem/Opportunity Identification",
+        "Design",
+        "Development and Documentation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Maintenance is the phase after implementation, dealing with the system's operational life, including corrections and improvements.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक rectangle DFD में क्या दर्शाता है?",
+      "options": [
+        "process",
+        "An input unit",
+        "An external entity",
+        "data store"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This reinforces standard DFD symbol conventions taught throughout the chapter.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "जिस कोड को किसी वस्तु के मापने योग्य गुणों के साथ विकसित किया जाता है, उसे ___ कहा जाता है।",
+      "options": [
+        "Group classification code",
+        "Self checking code",
+        "Significant digit code",
+        "Numeric code"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Unlike serial or block codes, each digit/portion of a significant digit code carries real measurable meaning about the item it represents.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ किसी संगठन की संरचना को निर्दिष्ट करता है।",
+      "options": [
+        "Organization chart",
+        "DFD",
+        "Flowchart",
+        "IPO chart"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is a direct, unambiguous definitional match.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Structured Analysis के प्रमुख लक्ष्य कौनसे हैं-",
+      "options": [
+        "and ii",
+        "and iii",
+        "and iii",
+        "i, ii and iii"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This combines communication clarity, abstraction separation, and visual documentation as joint objectives of structured analysis.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Structured tools का मुख्य उद्देश्य क्या है-",
+      "options": [
+        "Data flow diagram",
+        "Data dictionary",
+        "Decision forces and decision tables",
+        "All of above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "These three are the classic 'structured tools' trio taught together in SAD.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System design में efficiency में क्या देखा जाता है-",
+      "options": [
+        "and ii",
+        "i, ii and iii",
+        "i, ii and iv",
+        "ii, iii and iv"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "'Strong' is a vague, non-technical term inserted as a distractor - not part of the standard efficiency criteria list.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Functional decomposition में Module को किसके द्वारा दर्शाया जाता है-",
+      "options": [
+        "आयत (Rectangle)",
+        "वर्ग (Square)",
+        "वर्त (Circle)",
+        "लादन"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This mirrors general convention where boxes represent discrete functional units/modules in hierarchy diagrams.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Advantages of system flowcharts ....................",
+      "options": [
+        "Effective communication",
+        "Effective analysis",
+        "Queasier group or relationships",
+        "All A,B,C"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "System flowcharts are valued mainly for making data/process flow easy to communicate to non-technical stakeholders.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Information requirements of an organization can be determined by ___?",
+      "options": [
+        "interviewing managers and users and arriving at requirements based on consensus",
+        "finding out what similar organizations do",
+        "telling organization what they need based on your experience",
+        "sending a questionnaire to all employees of the organization"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Options b, c, and d represent poor/unreliable practices (mimicry, analyst bias, blanket questionnaires without follow-up) compared to consensus-based interviewing.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "To create a vehicle of information to provide evidence in the development process and to monitor the process - this is one objective of ___.",
+      "options": [
+        "Analysis",
+        "Design",
+        "Development",
+        "Documentation"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Documentation exists precisely to serve as the traceable record/evidence trail across the SDLC.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किसी भी input record या किसी system पर अपने original source पर वापस की गयी process का पता लगाना क्या कहलाता है-",
+      "options": [
+        "Audit trial",
+        "Conversion",
+        "Batch processing",
+        "Report generation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Audit trails allow verification and accountability by linking outputs back to their originating inputs.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Decision table का उपयोग क्यों करते हैं-",
+      "options": [
+        "Information data को tabular form में displayed करने के लिए",
+        "Decision path को displayed करने के लिए",
+        "System के सही diagram को प्राप्त करने के लिए",
+        "None of above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Per the key, the tabular-display purpose (option a) is chosen over the decision-path display, which is more characteristic of a Decision Tree.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Cost benefit analysis क्या है-",
+      "options": [
+        "Hardware तथा software की cost को estimate करना",
+        "Cost को benefit के साथ compare करना",
+        "Tangible तथा intangible घटकों का मूल्यांकन करना",
+        "All of above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Note: many textbooks would prefer option (b) or (d) as the fuller definition of cost-benefit analysis; this book's key selects (a) specifically.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DFD का मुख्य रूप से उपयोग में लिया जाता है-",
+      "options": [
+        "Requirement specification को विस्तार से न्यूनतम level तक functionally रूप में अपघटित करता है",
+        "यह Design phase का प्रारम्भिक बिन्दु है",
+        "DFD रेखाओं के Bubbles की श्रेणी में बनाता है",
+        "उपरोक्त सभी"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is a composite summary of DFD's multiple functions across analysis and design phases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Data Flow Diagram में संकेत चिह्नों का मिलान कीजिए: a.Square, b.Straight line, c.Circle, d.Open Rectangle",
+      "options": [
+        "ii, b-i, c-iii, d-iv",
+        "i, b-ii, c-iii, d-iv",
+        "ii, b-i, c-iv, d-iii",
+        "i, b-ii, c-iv, d-iii"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This reflects standard DFD notation: Square/Rectangle=External Entity, Line=Data Flow (with arrow), Circle=Process, Open-ended rectangle=Data Store.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ is a tabular method for describing the logic of the decisions to be taken.",
+      "options": [
+        "Decision tables",
+        "Decision tree",
+        "Decision Method",
+        "Decision Data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This directly matches the standard SAD definition of Decision Tables.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The approach used in top-down analysis and design is:",
+      "options": [
+        "to identify the top level functions by combining many smaller components into a single entity",
+        "to prepare flow charts after programming has been completed",
+        "to identify a top level function and then create a hierarchy of lower-level modules and components.",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Option (a) describes bottom-up composition, which is the reverse process; top-down decomposes rather than combines.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Prototyping में उपयोग लिए जाते हैं-",
+      "options": [
+        "BASIC",
+        "COBOL",
+        "GLs",
+        "System is documented"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "4GLs (e.g., SQL-based report generators, RAD tools) are specifically designed to speed up prototype building, which is why they're favored in prototyping methodology.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Interaction का अर्थ क्या है-",
+      "options": [
+        "Unit system के components एक साथ मिल जुलकर काम करते हैं",
+        "System को order में व्यवस्थित करना",
+        "Organization के component एक-दूसरे पर निर्भर रहना",
+        "System के सभी component बिना जुड़े अपना अलग-अलग कार्य करें"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This distinguishes 'Interaction' (components working together) from 'Interdependence' (components depending on each other, option c) - related but distinct system concepts.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से acceptance testing कब किया जाता है-",
+      "options": [
+        "Running the system with live data by the actual user.",
+        "Testing change made in an existing or a new program",
+        "Is checking the logic of one or making program in the candidate system.",
+        "उपरोक्त सभी"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is a broad, book-specific composite definition of acceptance testing covering multiple testing activities.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System Analysis में निम्न में से documentation कब prepared किया जाता है-",
+      "options": [
+        "सभी stages में",
+        "System designing में",
+        "System analysis में",
+        "System development में"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This reinforces the concept from Q44/Q71 - documentation happens continuously throughout the lifecycle.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किसी सॉफ्टवेयर कोड की वास्तविक प्रोग्रामिंग (Actual Programming) SDLC के किस चरण (step) में पूरी की जाती है-",
+      "options": [
+        "Maintenance and Evaluation",
+        "Design",
+        "Feasibility study",
+        "Development and Documentation"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Same underlying fact as Q46 - duplicate concept, different phrasing.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "प्रोसेस SDLC के किस स्टेप में Enhancement, Update और Bug Fix प्रोसेस पूरी की जाती है-",
+      "options": [
+        "Initial investigation",
+        "Analysis",
+        "Design",
+        "Maintenance and Evaluation"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Same underlying fact as Q47 - duplicate concept, different phrasing.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Documentation is prepared .............",
+      "options": [
+        "at every stage",
+        "at system design",
+        "at system analysis",
+        "at system development"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is essentially a third repeat of the same continuous-documentation concept.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Decision tree uses ...............",
+      "options": [
+        "pictorial depictation of alternate conditions",
+        "nodes and branches",
+        "consequences of various depicted alternates",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Decision trees combine graphical structure (nodes/branches) with logical representation (conditions/consequences).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Physical DFD क्या-क्या दर्शाता है-",
+      "options": [
+        "इस बात पर केंद्रित रहता है कि वास्तव में dataflow, system में किस प्रकार लागू हुआ है",
+        "Current system में सम्मिलित वास्तविक devices departments को दर्शाता है",
+        "यह सुनिश्चित करता है कि Current system को अच्छी तरह समझ लिया जाये",
+        "उपरोक्त सभी"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This contrasts with Logical DFD (Q28/Q33/Q80), which is abstract/business-focused; Physical DFD is implementation-focused.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Coupling किसे कहा जाता है-",
+      "options": [
+        "एक module का दूसरे module से सम्बन्ध",
+        "एक module का दूसरे module पर निर्भरता",
+        "Module को छोटे-छोटे modules में विभाजित करना",
+        "उपरोक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Option (a) 'relationship' is too vague/general; (b) 'dependency' precisely captures the technical definition of coupling.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The problem statement includes the ___ which lists specific input numbers a program would typically expect the user to enter and precise output values that a perfect program would return for those input values.",
+      "options": [
+        "testing plan",
+        "error handler",
+        "IPO cycle",
+        "input-output specification"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Listing expected inputs and correct corresponding outputs is fundamentally a basis for testing/verification of the program.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ System is no more than idea.",
+      "options": [
+        "Conceptual",
+        "Logical",
+        "Physical",
+        "All of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This distinguishes Conceptual (idea-stage) from Logical (structured design) and Physical (implemented) system types.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक ऐसा program जो Coupling व Cohesion के मापदण्डों को पूरा करता है-",
+      "options": [
+        "Hierarchy chart",
+        "Called",
+        "Calling",
+        "Module"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Hierarchy/structure charts are specifically designed following good coupling (low) and cohesion (high) principles.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "..... एक ग्राफिकल तकनीक है जो कंडीशन और एक्शन (Condition and action) को एक के बाद एक सीक्वेंस में प्रस्तुत करती है-",
+      "options": [
+        "Decision tree",
+        "Data Dictionary",
+        "Data flow diagram",
+        "None of these"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This reinforces the graphical, sequential nature of decision trees (vs. tabular decision tables).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Project Schedule को चित्रित (represent) करने के लिए किस चार्ट का प्रयोग किया जाता है-",
+      "options": [
+        "Pie chart",
+        "Line chart",
+        "Area chart",
+        "Gantt chart"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Gantt charts specifically map project activities/tasks over time, making them the natural fit for schedule representation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कौनसा DFDs System में data के flow तथा System के process पर केंद्रित रहता है-",
+      "options": [
+        "Physical DFD",
+        "Logical DFD",
+        "Access DFD",
+        "Open DFD"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Repeats the core Logical vs Physical DFD distinction across multiple questions in this exam.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Problem analysis is done during ___.",
+      "options": [
+        "system design phase",
+        "systems analysis phase",
+        "before system test",
+        "All of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This aligns with the standard SDLC ordering: Analysis (identify problem) → Design (plan solution) → Development → Testing.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A decision table facilitates conditions to be related to ___?",
+      "options": [
+        "Actions",
+        "Programs",
+        "Tables",
+        "Operation"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is the fundamental building block of decision tables: condition-rows mapped to action-columns (or vice versa).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौनसा data file, multiple data file को contain करता है-",
+      "options": [
+        "Sequential file",
+        "Index file",
+        "Inverted file",
+        "Index-sequential file"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This hybrid file organization uses both an index (for direct access) and sequential storage (for ordered access) together.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित file में से least file कौनसा है-",
+      "options": [
+        "Working file",
+        "Program file",
+        "Master file",
+        "Transaction file"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Master files hold permanent core data, transaction files record ongoing activity, but working files are the most temporary of the group.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A ___ is an outline of a process that develops successful information systems.",
+      "options": [
+        "System Development Life Cycle",
+        "CASE tool",
+        "Phased Conversion",
+        "Success Factors"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is the textbook definition of SDLC itself.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The problem statement should include all of the following EXCEPT.",
+      "options": [
+        "input",
+        "output",
+        "processing",
+        "storage"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Problem statements focus on functional requirements (I-P-O), while storage/architecture decisions come later in design.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "By an external entity we mean a ___.",
+      "options": [
+        "Unit outside the system being designed which can be controlled by an analyst.",
+        "Unit outside the system whose behavior is independent of the system being designed",
+        "unit external to the system being designed",
+        "unit which is not part of a DFD"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Options (a) and (b) add extra (incorrect) qualifiers - analysts don't 'control' external entities, and their behavior isn't necessarily fully independent; (c) is the cleanest correct definition.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "An appraisal of a system's performance after it has been installed is called ___.",
+      "options": [
+        "planning",
+        "review",
+        "maintenance",
+        "batch Processing"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This aligns with the broader Maintenance & Evaluation phase of SDLC discussed elsewhere (Q47, Q70).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "An example of a hierarchical data structure is ___?",
+      "options": [
+        "Array",
+        "Linked list",
+        "Tree",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Hierarchical structures have branching parent-child relationships, which only a Tree exhibits among the given options.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Database system का क्या लाभ है-",
+      "options": [
+        "Data सभी application share कर सकते हैं",
+        "Data redundancy कम हो जाती है",
+        "Database में उपस्थित data को हम आसानी से access कर सकते हैं",
+        "उपरोक्त सभी"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "These are the three classic textbook advantages of centralized database systems over traditional file systems.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SDLC का first step कौनसा है-",
+      "options": [
+        "Design",
+        "Analysis",
+        "Documentation",
+        "Problem identification"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This matches the standard first phase named in other questions (e.g., Q47's 'Problem/Opportunity Identification').",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is not a characteristic of good test data?",
+      "options": [
+        "users do not participate at this preliminary stage",
+        "should be comprehensive",
+        "every statement should be executed",
+        "All of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Comprehensive coverage and executing every statement (path coverage) ARE genuine good test data traits; excluding users is the flawed/negative trait being asked for.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "In the system concepts, term Integration ___.",
+      "options": [
+        "implies structure and order",
+        "refers to the manner in which each component functions with other components of the system.",
+        "means that parts of the computer system depend on one another.",
+        "refers to the holism of system"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This distinguishes Integration (holism concept) from Interaction (b, components functioning together) and Interdependence (c, mutual reliance) as related but separate system concepts.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Birth to Mature की प्रोसेस कहलाती है-",
+      "options": [
+        "System death",
+        "System design",
+        "System envelop",
+        "System signal"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This maps the conceptual growth journey of a system onto the design phase, where the system takes concrete shape.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SDLC की प्रोसेस में Enhancement का अर्थ है-",
+      "options": [
+        "सिस्टम को बढ़ाना (Increase the system)",
+        "सिस्टम को घटाना (Decrease the system)",
+        "सिस्टम को सटाना (Remove the system)",
+        "इनमें से कोई नहीं"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is a straightforward vocabulary-based question; 'enhance' = improve/increase, not decrease or remove.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System का मुख्य कार्य क्या है-",
+      "options": [
+        "एक या उससे अधिक उद्देश्यों को प्राप्त किया जा सके",
+        "यह विभिन्न तत्वों का एक समूह होता है",
+        "एक organized समूह के सभी घटकों को एक function unit में जोड़ना",
+        "उपरोक्त सभी"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This composite view aligns with the general systems-theory definition used throughout this chapter (see Q12).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Translating the algorithm into a programming language occurs at the ___ step of the PDLC.",
+      "options": [
+        "Debugging",
+        "Coding",
+        "Testing and Documentation",
+        "Algorithm Development"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "PDLC steps typically flow: Problem definition → Algorithm development → Coding → Testing/Documentation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Error report is an example of ___.",
+      "options": [
+        "Output process",
+        "Input process",
+        "Process",
+        "None of these"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Reports (error reports, summary reports, etc.) are classic outputs of information systems.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The rules to follow in constructing decision tables is (are):",
+      "options": [
+        "decision should be given a name",
+        "the logic of the table is independent of the sequence in which conditions rules are written, but the action takes place in the order in which the events occur.",
+        "Standardized language must be used consistently.",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "These rules ensure decision tables remain consistent, unambiguous, and easy to maintain.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ एक संगठित परिवर्तन प्रक्रिया में आदानों को स्वीकार करके और आउटपुट का उत्पादन करके एक सामान्य लक्ष्य की दिशा में एक साथ काम करने वाले इच्छुक घटकों का एक समूह है।",
+      "options": [
+        "System",
+        "Network",
+        "Team",
+        "System Unit"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Matches the general system definition seen in Q12/Q96 (interdependent components + common goal + transformation).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "समस्या कथन को प्रोग्राम को क्या करना चाहिए इसका वर्णन करने वाले क्रमिक चरणों की एक श्रृंखला में अनुवाद करना ___ के रूप में जाना जाता है।",
+      "options": [
+        "coding",
+        "debugging",
+        "creating the algorithm",
+        "writing documentation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This precedes Coding (Q97) - algorithm creation is the logic-design step, coding is the language-translation step.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DFD में डेटा स्टोर दर्शाता है-",
+      "options": [
+        "sequential file",
+        "disk store",
+        "repository of data",
+        "random access memory"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DFD data stores are logical/abstract representations, not bound to any specific technology like disk or RAM.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DFD में एक आयत ___ दर्शाता है?",
+      "options": [
+        "process",
+        "data store",
+        "an external entity",
+        "an input unit"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Third repetition of this exact concept in the exam - very high-yield fact.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System का मुख्य उद्देश्य क्या है-",
+      "options": [
+        "व (ii) दोनों",
+        "केवल (ii)",
+        "केवल (i)",
+        "दोनों में से कोई नहीं"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Systems are designed both to achieve outcomes AND to maintain internal coordination between parts.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक संक्षिप्त कोड (concise code) अनिवार्य रूप से है-",
+      "options": [
+        "Precise",
+        "Meaningful",
+        "Comprehensive",
+        "Difficult"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This tests vocabulary precision: 'concise' = short/precise, a direct synonym match, distinct from 'meaningful' or 'comprehensive' code properties.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "External Entities may be-",
+      "options": [
+        "Source of input data only",
+        "Source of input data or destination of results",
+        "Destination of results only",
+        "Repository of data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This complements Q24's rule that a data flow to/from an entity is one-directional per flow, but the entity itself can play either role across different flows.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The major goal of requirement determination phase of information system development is?",
+      "options": [
+        "determine whether information is needed by an organization",
+        "determine what information is needed by an organization",
+        "determine how information needed by an organization can be provided",
+        "determine when information is to be given"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This phase focuses on content/scope of information needs, distinct from delivery mechanism (design phase) or timing (implementation).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "It is necessary to prioritize information requirements of an organization at the requirements determination phase as-",
+      "options": [
+        "it is always good to prioritize",
+        "there are conflicting demands from users",
+        "there are constraints on budgets, available time, human resource and requirement",
+        "all good organization do it"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Resource constraints are the practical, concrete reason prioritization matters - not just 'good practice' (a) or unrelated conflicting demands alone (b).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डिबगिंग है:",
+      "options": [
+        "प्रोग्राम कोड बनाना / creating program code",
+        "प्रोग्राम कोड में त्रुटियों को ढूँढना और सुधारना / finding and correcting errors in the program code",
+        "कम्प्यूटरीकृत किए जाने वाले कार्य की पहचान करना / identifying the task to be computerized",
+        "एल्गोरिद्म बनाना / creating the algorithm"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is a direct definitional match with no ambiguity.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "फीचर ओरिएंटेड डोमेन एनालिसिस (FODA) में कितने चरण शामिल हैं?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is a specific methodology fact tied to domain engineering approaches referenced in the SAD syllabus.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ system में programs, data files और documentation शामिल हैं।",
+      "options": [
+        "Conceptual",
+        "Logical",
+        "Physical",
+        "None of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This distinguishes the three system-development stages: Conceptual (idea) → Logical (design) → Physical (real, implemented with actual files/programs).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक आवश्यकता विनिर्देश तैयार करने वाले सिस्टम विश्लेषक की भूमिका किसके समान है?",
+      "options": [
+        "architect designing a building",
+        "structural engineer designing a building",
+        "contractor constructing a building",
+        "the workers who construct a building"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is a classic analogy used in SAD teaching to explain the analyst's planning (not implementation) role.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Open या Close System की प्रमुख विशेषता है-",
+      "options": [
+        "1,2 व 3",
+        "व 3",
+        "व 2",
+        "व 4"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Entropy (tendency toward disorder) and Equifinality (reaching the same end state via different paths) are classic systems-theory concepts often discussed together for open/closed systems.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "ऐसा कोई real object जो operation की दृष्टि से static या dynamic हो ___ कहलाता है-",
+      "options": [
+        "Physical system",
+        "Open system",
+        "Close system",
+        "Running system"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This defines 'Physical system' as the real-world counterpart to abstract/conceptual systems, regardless of its static or dynamic nature.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ is the process of translating a task into a series of commands that a computer will use to perform that task.",
+      "options": [
+        "Project design",
+        "Installation",
+        "Systems analysis",
+        "Programming"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is a direct, unambiguous definitional match.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ is a good example of deterministic system.",
+      "options": [
+        "Life cycle",
+        "Computer Program",
+        "Software Program",
+        "None of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Deterministic systems have fully predictable behavior, which is the defining trait of standard computer program execution.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "आवश्यकता विनिर्देश तैयार करते समय निम्नलिखित से परामर्श करना आवश्यक है?",
+      "options": [
+        "only top managers",
+        "only top and middle management",
+        "only top, middle and operational managers",
+        "top, middle and operational managers and also all who will use the system"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This reflects best-practice requirement gathering: comprehensive stakeholder engagement across all organizational levels plus end-users.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Structured analysis में उपयोग ली जाने वाली chart तकनीक कौन-कौनसी हैं-",
+      "options": [
+        "व (iv)",
+        "व (ii)",
+        "व (iii)",
+        ", (ii) व (iii)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This aligns with Q14's earlier fact that 'Square chart' isn't a real chart type, reinforcing why option combinations including (iv) are wrong.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Bubble Chart का अन्य नाम है-",
+      "options": [
+        "Data Flow Design",
+        "Data Flow Diagram",
+        "Double Flow Diagram",
+        "Double Flow Design"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is a well-known nickname for DFDs due to their circular process symbols.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "In order to understand the working of an organization for which a computer based system is being designed, an analyst must ___?",
+      "options": [
+        "look at only current work and document flow in the organization",
+        "discuss with top level and middle level management only",
+        "interview top, middle line managers and also clerks who will enter data and use the System",
+        "only clerical and middle level staff who have long experience in the organization and will be users of the system"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Comprehensive fact-finding requires input from every stakeholder level, similar to the logic in Q118.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ manages the system development, assign staff, manage the budget and reporting, and ensure that deadlines are met.",
+      "options": [
+        "Project managers",
+        "Network engineers",
+        "Graphic designers",
+        "Systems analysts"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This differentiates Project Manager (administrative/managerial oversight) from Systems Analyst (requirements/design focus, see Q127, Q144).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The main ingredient of the report documenting the ........... is benefit analysis.",
+      "options": [
+        "System Analysis",
+        "Feasibility Study",
+        "System Analyst",
+        "System Design"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This connects to Economic Feasibility's cost-benefit focus (see Q19, Q21, Q60).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A feasibility study is carried out ___?",
+      "options": [
+        "after final requirements specifications are drawn up",
+        "during the period when requirements specifications are drawn up",
+        "before the final requirements specifications are drawn up",
+        "at any time"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This establishes the correct SDLC ordering: Feasibility Study → Requirements Specification → Design → etc.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The main objective of feasibility study is ___.",
+      "options": [
+        "to assess whether it is possible to meet the requirements specifications",
+        "to assess if it is possible to meet the requirements specified subject to constraints of budget, human resource and hardware",
+        "to assist the management in implementing the desired system",
+        "to remove bottlenecks in implementing the desired system"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Option (a) is too simplistic (ignoring constraints); (b) captures the full, realistic scope of feasibility assessment.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System Study में शामिल होता है-",
+      "options": [
+        "मौजूदा प्रणाली का अध्ययन (Study of an existing system)",
+        "मौजूदा प्रणाली का डॉक्यूमेंटेशन (Documentation of existing system)",
+        "मौजूदा प्रणाली की कमियों को पहचानना (Identifying current deficiencies)",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is consistent with Feasibility Study's review scope described earlier (Q29).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ spend most of their time in the beginning stages of the SDLC, talking with end-users, gathering information, documenting systems, and proposing solutions.",
+      "options": [
+        "Systems analysts",
+        "Project managers",
+        "Network engineers",
+        "Database administrators"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This complements Q122's distinction - Analysts focus on requirements/solutions, while Project Managers handle budget/staffing/deadlines.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A data flow can-",
+      "options": [
+        "Only a data store",
+        "Only leave a data store",
+        "Enter or leave a data Store",
+        "Either enter or leave a data store but not both"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This reinforces the general DFD convention that individual data flow arrows represent one-directional movement only.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System designing हेतु प्रयुक्त SDLC का Second step कौनसा होता है-",
+      "options": [
+        "इनिशियल इन्वेस्टीगेशन",
+        "सिस्टम एनालिसिस",
+        "सिस्टम टेस्टिंग",
+        "फिज़िबिलिटी स्टडी"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This SDLC sequence is: Initial Investigation → System Analysis → Design → Development → Testing → Implementation → Maintenance (per this book's model).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Changing the relationship with and services provided to customers in such a way that they will not think of changing suppliers is called ___.",
+      "options": [
+        "Lock in customers",
+        "Lock out customers",
+        "Lock in competitors",
+        "Lock out competitors"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is a strategic information systems concept about building customer loyalty/dependency through improved services.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ को डेटा के रूप में परिभाषित किया जा सकता है जिसे एक ऐसे रूप में संसाधित किया गया है जो प्राप्तकर्ता के लिए सार्थक है और वर्तमान या संभावित निर्णयों में वास्तविक या अनुमानित मूल्य का है।",
+      "options": [
+        "Information",
+        "Data collection",
+        "Internal data",
+        "Sample data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Duplicate concept of Q9, phrased identically.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "It is necessary to carry out a feasibility study as ___.",
+      "options": [
+        "top management cannot ensure that a project is feasible before calling a system analyst",
+        "top management is not sure what they want from the system",
+        "even though top management is in favour of the system, technology may not be mature for implementation",
+        "all organizations do it"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This highlights the analyst's essential role in objectively validating feasibility, which management cannot self-certify.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Feasibility study is carried out by ___?",
+      "options": [
+        "managers of the organization",
+        "system analyst in consultation with managers of the organization",
+        "users of the proposed system",
+        "systems designers in consultation with prospective users of the system"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This reflects the analyst's central role in feasibility assessment, informed by management input (consistent with Q132's reasoning).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सिस्टम डिफाइनिंग में प्रयुक्त ऐसा सिस्टम जो अपने बाहर के वातावरण (Environment) से interact नहीं करता ... सिस्टम कहलाता है-",
+      "options": [
+        "Close",
+        "Open",
+        "Abstract",
+        "Physical"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is the standard systems-theory contrast with Open systems (Q135), which do interact with their environment.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "ऐसा सिस्टम जो अपने बाहर के वातावरण (environment) से इंटैक्ट करता है ___ सिस्टम कहलाता है-",
+      "options": [
+        "Open system",
+        "Physical system",
+        "Abstract system",
+        "None of these"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This completes the Open vs Closed systems pairing taught together in this syllabus.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Fact finding process के लिए निम्न में से कौनसी तकनीक इस्तेमाल की जाती है-",
+      "options": [
+        "Review of written Document",
+        "Onsite observation",
+        "Interview",
+        "All of these"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This repeats Q2's concept about standard fact-finding/information-gathering techniques.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ design and implement database structures.",
+      "options": [
+        "Programmers",
+        "Project managers",
+        "Technical writers",
+        "Database administrators"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This refines Q20's earlier answer (Programmer builds database) by introducing the more specific DBA role for structural design/implementation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Increased volume of sales किस Benefit का उदाहरण है। Reduction of bad debts किसका उदाहरण है?",
+      "options": [
+        "Tangible, Intangible",
+        "Tangible, Tangible",
+        "Intangible, Tangible",
+        "Intangible, Intangible"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "🚨 Potentially debatable: standard SAD texts often classify 'increased sales volume' and 'reduced bad debts' as Tangible benefits since they CAN be measured in monetary terms (unlike goodwill or employee morale, which are truly intangible). This book's key marking both as Intangible is non-standard.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "....... फिजिबिलिटी में अनुमानित लाभों (Estimated profit) की तुलना अनुमानित लागत (estimated cost) से की जाती है-",
+      "options": [
+        "Economic",
+        "Technical",
+        "Operational",
+        "Schedule"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Consistent with Q19/Q21/Q60/Q123's repeated theme of Economic feasibility being about cost-benefit comparison.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Initial requirements specification is ___.",
+      "options": [
+        "not changed till the end of the project",
+        "continuously changed during project implementation",
+        "only a rough indication of the requirement",
+        "changed and finalized after feasibility study"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This distinguishes an early 'rough draft' requirement from the FINAL specification (which comes after feasibility study, per Q149).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सिस्टम से जुड़ी सभी बातें एक अरेंज फॉर्म में .... लिखी जाती हैं-",
+      "options": [
+        "Operational Manual",
+        "User Manual",
+        "System Manual",
+        "None of these"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is broader than a User Manual (end-user focused) or Operational Manual (operations-focused) - the System Manual covers everything about the system.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित System testing का उद्देश्य क्या है-",
+      "options": [
+        "Online response",
+        "Volume",
+        "Stress testing",
+        "All of these"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "These represent different non-functional testing aspects (performance, capacity, resilience) all falling under System Testing's broad scope.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Final specifications are drawn up by ___.",
+      "options": [
+        "system analyst in consultation with the management of the organization",
+        "the managers of user organization",
+        "system analyst in consultation with programmers",
+        "system designers along with users"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This matches the pattern from Q133 (feasibility study) - the analyst consistently works WITH management, not alone or with just programmers/users.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System user से बात करके जानकारी इकट्ठा करना, डॉक्यूमेंटेशन करना, सिस्टम डिजाईन तैयार करना आदि कार्य कौन करता है-",
+      "options": [
+        "Project managers",
+        "Network engineers",
+        "Systems analysts",
+        "Data administrators"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is a third confirmation (with Q113, Q127) of the Systems Analyst's broad responsibility across the requirement/design lifecycle.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Technical writers generally provide the ___ for the new system.",
+      "options": [
+        "programs",
+        "network",
+        "analysis",
+        "documentation"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is a role-specific definitional question distinguishing technical writers from programmers/analysts/network engineers.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A data cannot flow between a store and (i) a store (ii) a process (iii) an external entity",
+      "options": [
+        "and ii",
+        "and iii",
+        "and iii",
+        "ii"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This extends Q32's rule: not only store-to-store, but also store-to-entity direct flows are disallowed; only Process can mediate data movement to/from a store.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "EDP का फुल फॉर्म क्या है-",
+      "options": [
+        "Electric data processing",
+        "Electronic data procedure",
+        "Electronic data processing",
+        "Electronic data practice"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is a fixed, well-known acronym with a clear, correct expansion.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The main goal of arriving at a final specification is ___.",
+      "options": [
+        "to tell the organization's managers how the system will function",
+        "to tell the organization's managers what the proposed system will achieve in a language understood by them",
+        "to compute the cost of implementing the system",
+        "to assist in designing the system"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This distinguishes a business-facing final specification (achievement/outcomes, in accessible language) from a technical design document (which covers 'how').",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The final specifications are arrived at ___.",
+      "options": [
+        "after feasibility study",
+        "during feasibility study",
+        "just before implementation phase",
+        "when the system is being designed"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is the direct complement of Q124 and Q140 - once feasibility confirms viability, final specs can be locked in.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System approval criteria are specified ___.",
+      "options": [
+        "when the final specifications are drawn up",
+        "during feasibility study",
+        "during the requirements specifications stage",
+        "during system study stage"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is logical: you can't set concrete approval criteria until you know exactly what the final system specification defines.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The ___ project should go forward, determines whether the...",
+      "options": [
+        "व्यवहार्यता मूल्यांकन / feasibility assessment",
+        "अवसर पहचान / opportunity identification",
+        "प्रणाली मूल्यांकन / system evaluation",
+        "कार्यक्रम विनिर्देश / program specification"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This reinforces feasibility study's role as the go/no-go decision point in SDLC.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "In ISR which field indicates the purpose of job.",
+      "options": [
+        "Objective",
+        "Anticipated benefits",
+        "Output description",
+        "None of these"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is a straightforward form-field terminology question.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Hardware study is required ___.",
+      "options": [
+        "to find out cost of computer system needed",
+        "to determine the type of computer system and software tools needed to meet the final system specification",
+        "to make sure that the system does not become obsolete",
+        "to find how to implement the system"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is a broader, more complete purpose than merely calculating cost (option a) - the study covers full technical suitability.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Hardware study is carried out ___.",
+      "options": [
+        "after the final system is specified",
+        "at the requirement specification stage",
+        "before the requirements are specified",
+        "whenever management decides it is necessary"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This parallels the logic of Q43/Q150 - certain planning activities require final specs to be meaningful.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Structured English का प्रयोग किया जाता है-",
+      "options": [
+        "प्रोग्राम को कैसे लिखा जाए (how programs are to be written)",
+        "DFD की प्रक्रियाओं को सटीक ढंग से समझाना (processes in a DFD in a reasonably precise manner)",
+        "DFD में डाटा प्रोसेसिंग कैसे की जाए (how DFD are used in data processing)",
+        "DFD में डाटा फ्लो बताने के लिए (Data Flows in DFD)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is a specific structured-tools technique for explaining process logic clearly, distinct from actual programming syntax.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "PDLC का फुल फॉर्म क्या है-",
+      "options": [
+        "Personal system development life cycle",
+        "Program definition life cycle",
+        "Program development life cycle",
+        "None of these"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is a fixed acronym with a clear, correct expansion.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System design is carried out ___.",
+      "options": [
+        "as soon as system requirements are determined",
+        "whenever a system analyst feels it is urgent",
+        "after final system specifications are approved by the organization",
+        "whenever the user management feels it should be done"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This maintains the strict SDLC sequencing pattern: Feasibility → Final Specs → Approval → Design.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The make-or-buy decision is associated with the ___ step in the SDLC.",
+      "options": [
+        "Problem / Opportunity Identification",
+        "Design",
+        "Analysis",
+        "Development and Documentation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is a standard system design decision point regarding whether to develop in-house or acquire existing software.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "After Development प्रेपेर्ड is known as-",
+      "options": [
+        "Program specification",
+        "Design specification",
+        "System specification",
+        "None of these"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This differs from earlier questions (Q17: after Design = Design specification; Q172: after Study = System specification), showing this syllabus's naming pattern varies by phase.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The primary objective of system design is to ___.",
+      "options": [
+        "design the programs, databases and test plan",
+        "design only user interfaces",
+        "implement the system",
+        "find out how the system will perform"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This aligns with the composite view of system design from Q40 (security/control + data flow + input design).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Feed Back क्या है-",
+      "options": [
+        "Input देने की विधि (Method of input)",
+        "Data store करने की विधि (data storage method)",
+        "Output को मापने का तरीका (Method of output measurement)",
+        "None of these"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Feedback loops use output measurement to inform corrective input adjustments, a core systems-control concept.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Pie chart का प्रयोग क्यों किया जाता है-",
+      "options": [
+        "दो सीरीज के बीच तुलना करने के लिए",
+        "दो से ज्यादा सीरीज के बीच तुलना करने के लिए",
+        "आंकड़ों (figure) को प्रतिशत में दिखाने के लिए",
+        "इनमें से कोई नहीं"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This matches standard data visualization knowledge - pie charts specifically show proportional/percentage breakdowns.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The primary objectives of system implementation are-",
+      "options": [
+        "and iii",
+        "i, ii and iii",
+        "and iii",
+        "and iv"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Statement (i) 'build a prototype' belongs more to a Prototyping methodology stage, and (iii) is a partial restatement already captured better by (iv); the book's key selects (ii) and (iv) as the core implementation objectives.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The final step in the System development life cycle (SDLC) is-",
+      "options": [
+        "Analysis",
+        "Operational",
+        "Development",
+        "Design"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is consistent with the general pattern that Maintenance/Operational use is the last, ongoing phase of the SDLC.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "In DFD which symbol represents the process?",
+      "options": [
+        "Circle",
+        "Rectangle",
+        "Square",
+        "Open ended rectangle"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This completes the full DFD symbol set tested repeatedly: Rectangle=Entity, Circle=Process, Open Rectangle=Store, Line=Flow.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "During system implementation the following are done",
+      "options": [
+        "and iii",
+        "and iii",
+        "and iv",
+        "I, II and iv"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Statement (i) 'programs written and tested with operational data' and (iii) 'programmers recruited and trained' are treated as belonging to earlier phases (Development) rather than Implementation specifically, per this book's key selection of (ii) and (iv).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक सिस्टम में डेटाबेस क्यों बनाया जाता है-",
+      "options": [
+        "पुनरावृत्ति से बचाव (Safety from redundancy)",
+        "डाटा की पुन: प्राप्ति (Recovery of data)",
+        "डाटा की शुद्धता और अखंडता (Accuracy and integrity)",
+        "All of these"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This complements Q90's database advantages (sharing, reduced redundancy, easy access) with additional benefits (recovery, integrity).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से ___ को system recovery planning में शामिल नहीं किया जाता-",
+      "options": [
+        "एक आपात योजना (A contingency plan)",
+        "बैकअप योजना (a backup plan)",
+        "रिकवरी योजना (A recovery plan)",
+        "फिजिबिलिटी योजना (a feasibility plan)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Recovery planning is entirely about restoring operations after failure; feasibility planning is a completely separate, earlier-stage activity.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System evaluation is carried out ___.",
+      "options": [
+        "after the system has been operational for a reasonable time",
+        "during system implementation",
+        "whenever managers of user organization want it",
+        "whenever operational staff want it"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Evaluating too early (during implementation) wouldn't yield meaningful operational performance insights - hence the 'reasonable time' requirement.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The main objective of system evaluation is ___.",
+      "options": [
+        "to see whether the system met specification",
+        "to improve the system based on operational experience for a period",
+        "to remove bugs in the programs",
+        "to asses the efficiency of the system"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This ties directly to Q169's timing rationale - evaluation uses accumulated operational experience to drive improvements.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The organized process or set of steps needed to be followed to develop information system is known as the ___.",
+      "options": [
+        "analytical cycle",
+        "design cycle",
+        "program specification",
+        "system development life cycle"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Duplicate concept of Q85's SDLC definition.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The document prepared after study phase known as ___.",
+      "options": [
+        "Performance specification",
+        "Design specification",
+        "System specification",
+        "None of these"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Compare with Q17 (after Design phase → Design specification) and Q159 (after Development → System specification per this book) - this syllabus uses somewhat overlapping naming across phases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Whenever systems are modified then ___.",
+      "options": [
+        "user's requirements change",
+        "new computers are introduced in the market",
+        "new software tools become available in the market",
+        "other similar organization modify these system"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This aligns with Q176's finding that system modification's main goal is meeting the user's new/changed needs.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "जानकारियों को इकट्ठा करने हेतु कौनसी तकनीक का इस्तेमाल किया जाता है-",
+      "options": [
+        "Onsite Observation",
+        "After Program Development",
+        "After System Design",
+        "Before Program Development"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This tests recognition that options b, c, d describe WHEN something happens, not a gathering TECHNIQUE - only (a) is an actual technique.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System modification का मुख्य उद्देश्य है-",
+      "options": [
+        "नवीनतम सॉफ्टवेयर उपकरण का उपयोग करने के लिए",
+        "उपयोगकर्ता की नई और बदली जरूरतों को पूरा करने के लिए",
+        "नवीनतम हार्डवेयर का उपयोग करने के लिए",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is the Hindi-phrased duplicate of Q176, reinforcing the same core concept.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The main objective of system modification is-",
+      "options": [
+        "to use the latest software tools",
+        "to meet the user's new/changed needs",
+        "to use the latest hardware",
+        "to have the most modern system"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is the direct English-language repeat of Q175's Hindi question.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "To easily modify the existing system it is necessary to ___?",
+      "options": [
+        "use good software tools",
+        "use the best hardware available",
+        "design the system which can be changed at low cost",
+        "keep the programming team happy"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This reflects the maintainability design principle: build flexibility/low-cost-of-change into the architecture from the start.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "It is necessary to design an information system to easily accommodate change, because ___?",
+      "options": [
+        "new computers are introduced every year",
+        "new computer languages become popular every year",
+        "Organizations' requirements change over a period of time",
+        "systems need continuous debugging"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This reinforces the consistent theme (Q173, Q175, Q176) that USER/ORGANIZATIONAL requirement change is the core driver of system evolution.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Changing an operational information system is ___.",
+      "options": [
+        "impossible",
+        "expensive and done selectively",
+        "never required",
+        "usually done"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This reflects the practical reality that operational system changes carry real cost and risk, requiring careful prioritization.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System modeling के लिए सत्य कथन है-",
+      "options": [
+        "i, ii व iii",
+        "व iii",
+        "व ii",
+        "केवल i"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "System modeling typically DOES rely on graphical structures (DFDs, flowcharts, etc.), making statement (iii) false and excluded from the correct answer.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Most modern software applications enable you to customize and automate various features using small custom-built 'miniprograms' called ___!",
+      "options": [
+        "macros",
+        "code",
+        "routines",
+        "subroutines"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is standard software terminology - 'macro' is the widely recognized term for these mini-automation programs.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "In which activity the management approves the requirements of the customer?",
+      "options": [
+        "Study phase report",
+        "Study phase review",
+        "Feasibility study",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This distinguishes the REPORT (a document, option a) from the REVIEW (an approval activity, option b) - the review is where actual sign-off/approval happens.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "UML के लिए सत्य कथन है-",
+      "options": [
+        "व iii",
+        "व iii",
+        "व ii",
+        "उपरोक्त सभी"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "UML is explicitly a MODELING language used for visualizing/designing systems, not a language for writing executable code, which is why statement (ii) is false.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System analysts have to interact with-",
+      "options": [
+        "i, ii iii व iv",
+        "व iii",
+        "व ii",
+        "केवल i"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is consistent with the broad stakeholder-engagement theme established in Q118/Q121 (consult all levels including operational staff).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The primary responsibility of a systems analyst is to ___.",
+      "options": [
+        "Specify an information system which meets the requirements of an organization",
+        "write programs to meet specifications",
+        "maintain the system",
+        "meet managers of the organization regularly"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This distinguishes the analyst's specification/design role from the programmer's coding role and maintenance staff's upkeep role.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The first step in the systems development life cycle (SDLC) is ___.",
+      "options": [
+        "विश्लेषण / Analysis",
+        "डिजाइन / Design",
+        "समस्या/अवसर की पहचान / Problem/ Opportunity Identification",
+        "विकास और प्रलेखन / Development and Documentation"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Direct repeat of Q91's concept in bilingual form.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "In study phase activities, which activity filled the ISR by user",
+      "options": [
+        "User review",
+        "User need",
+        "Initial investigation",
+        "System review"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This connects to Q152's ISR context - the ISR captures user needs/objectives as its starting input.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The responsibilities of a system analyst include ___.",
+      "options": [
+        "and ii",
+        "i, ii and iv",
+        "i, ii, iii and iv",
+        "i, ii and iii"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This composite view combines the full scope of analyst duties described piecemeal in earlier questions (Q127, Q144, Q185).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The most important attribute of a systems analyst is ___.",
+      "options": [
+        "excellent programming skills",
+        "very good hardware designing skills",
+        "very good technical management skills",
+        "very good writing skills"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This aligns with the analyst's broad coordinating/managerial role (interacting with managers, users, programmers - Q184) rather than being purely a technical coder.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Among the attributes of a good systems analyst the following are essential",
+      "options": [
+        "and ii",
+        "i, ii and iii",
+        "i, ii, and iv",
+        "i, iii and iv"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This slightly de-emphasizes pure mathematical skill in favor of organizational knowledge, analytical thinking, and communication - consistent with the analyst's coordinator role (Q189).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "UML diagram के प्रकार हैं-",
+      "options": [
+        "Activity diagram",
+        "Sequence diagram",
+        "Class diagram",
+        "All of above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "UML includes many diagram types (structural and behavioral); these three are commonly cited examples.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Software is considered to be collection of ...............",
+      "options": [
+        "Associated libraries",
+        "Programming code",
+        "Documentations",
+        "All above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is the standard software engineering definition: Software = Programs + Data + Documentation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The process of developing a software product using software engineering principles and methods is referred to as ___.",
+      "options": [
+        "System models",
+        "Software Engineering",
+        "Software evolution",
+        "Software models"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is a direct, circular-but-correct definitional match.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "UML Diagrams में उपयोग आने वाला Symbol है-",
+      "options": [
+        "*",
+        "%",
+        "/",
+        "&"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "🚨 Note: Standard UML notation typically uses +, -, #, ~ (for public/private/protected/package visibility) rather than '%'. This question and its options appear non-standard or possibly OCR-corrupted; treat with significant caution.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Among the attributes of a systems analyst the following are most important",
+      "options": [
+        "i, iii and iv",
+        "and iii",
+        "i, ii and iv",
+        "i, ii and iii"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This aligns with Q190's pattern - the book consistently favors interpersonal/organizational knowledge over narrow technical specializations like accountancy.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Managers in organizations should not design their own systems as ___.",
+      "options": [
+        "systems have to interact with other systems",
+        "they do not have the special skills necessary to design systems",
+        "it is not their job",
+        "they are always very busy"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This reinforces why specialized roles (Systems Analyst) exist - design requires specific expertise that general managers typically don't possess.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ घटकों का एक समूह है जो एक निश्चित उद्देश्य के लिए इंटरैक्ट करता है-",
+      "options": [
+        "System",
+        "Network",
+        "Team",
+        "None of these"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Fourth repetition of the core 'System = interacting components + purpose' definition across this exam.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "How many steps are in the systems development life cycle (SDLC)?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "10"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is a book-specific count; other sources may define SDLC with 5 or 7 phases depending on the model used, but this exam's key specifies 6.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Lehman has given laws for software evolution and he divided the software into different categories.",
+      "options": [
+        "6",
+        "2",
+        "3",
+        "5"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is a specific, well-known software engineering fact about Lehman's categorization scheme.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौनसा tool सिस्टम एनालिसिस के लिए प्रयोग नहीं होता-",
+      "options": [
+        "System - text data",
+        "Decision table",
+        "Data Flow Diagram",
+        "Decision tree"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is essentially the inverse of Q52's 'structured tools' trio - here, the odd-one-out that ISN'T a real tool is being tested.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is the best type of module cohesion?",
+      "options": [
+        "Sequential Cohesion",
+        "System Cohesion",
+        "Temporal Cohesion",
+        "Functional Cohesion"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The cohesion spectrum runs from worst (Coincidental) to best (Functional), with Temporal and Sequential falling in between.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किसी special purpose के लिए विभिन्न घटकों (Components) के मध्य सम्बन्ध को क्या कहा जाता है-",
+      "options": [
+        "Relation chart",
+        "Start",
+        "System",
+        "Duration"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is essentially a restated system definition question, connecting components + purpose = System.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Systems analyst को ___ के रूप में अपने काम में सॉफ्टवेयर टूल्स का उपयोग करना चाहिए।",
+      "options": [
+        "सभी विश्लेषक उनका उपयोग करते हैं / all analysts use them",
+        "वे सिस्टम के व्यवस्थित डिजाइन में सहायता करते हैं / they assist in systematic design of systems",
+        "वे सस्ती हैं / they are inexpensive",
+        "वे आसानी से उपलब्ध हैं / they are easily available"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is a reasoning-quality question - the BEST justification relates to genuine design benefits, not superficial factors like cost or popularity.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the model is used for system components?",
+      "options": [
+        "PERT chart",
+        "Gantt chart",
+        "Organizational hierarchy chart",
+        "DFD"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This distinguishes system-component modeling tools (DFD) from project-management tools (PERT/Gantt, used for scheduling, not system structure).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following does not occur in phase-4 of the SDLC?",
+      "options": [
+        "conduct interviews",
+        "train users",
+        "acquire hardware and software",
+        "test the new system"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Interviews are typically an early-phase (Analysis/Requirement gathering) activity, not part of a later implementation-focused phase like phase-4 in this book's SDLC model.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System testing का कार्य किया जाता है-",
+      "options": [
+        "Before Program Development",
+        "After making plan",
+        "After Program Development",
+        "After system design"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This maintains the standard SDLC sequence: Design → Development (coding) → Testing.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System development की process के प्रयुक्त कारक हैं-",
+      "options": [
+        "सिस्टम विश्लेषण (System Analysis)",
+        "सिस्टम डिजाइन (system Design)",
+        "सिस्टम ब्रेक (System Break)",
+        "व B दोनों"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This composite question recognizes both Analysis and Design as core, complementary factors in system development.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The structure chart is-",
+      "options": [
+        "document of what has to be accomplished",
+        "statement of information processing requirement",
+        "hierarchical partitioning of the program",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This matches the module-hierarchy concept from Q54, Q77 - structure charts visually show top-down module breakdown.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Programmers use ___ to organize and summarize the results of their problem analysis.",
+      "options": [
+        "Flowcharts",
+        "Input charts",
+        "HIPO",
+        "Output charts"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "HIPO combines a hierarchy chart with IPO charts, making it well-suited for organizing analysis summaries (see Q228, Q238, Q248 for more HIPO details).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Changes made periodically to a system, after its implementation, is known as system.",
+      "options": [
+        "Analysis",
+        "design",
+        "development",
+        "maintenance"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This reinforces the well-established Maintenance phase definition (Q47, Q70, Q164) throughout this exam.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The primary tool used in structured design is a ___.",
+      "options": [
+        "structure chart",
+        "program flowchart",
+        "module",
+        "none of above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is a direct definitional match consistent with Q208's structure chart definition.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is not considered laws for E-Type software evolution?",
+      "options": [
+        "Self-regulation",
+        "Increasing complexity",
+        "Continuing change",
+        "Continuing quality"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Lehman's actual laws include concepts like Continuing Growth and Conservation of Familiarity (not 'Continuing quality') - this distractor mimics real law names but isn't accurate.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The first step in systems Development Life Cycle is ___.",
+      "options": [
+        "database design",
+        "system design",
+        "preliminary investigation and analysis",
+        "graphical user interface"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This slightly rephrases the same first-step concept using different terminology ('preliminary investigation and analysis' instead of 'Problem/Opportunity Identification').",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Bug क्या है-",
+      "options": [
+        "Virus",
+        "Antivirus",
+        "Coding error in a computer program",
+        "Error finding process"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is a fundamental, unambiguous software terminology definition.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "In Design phase, which is the primary area of concern?",
+      "options": [
+        "Interface",
+        "Data",
+        "Architecture",
+        "All above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This matches the broad system design scope established in Q40/Q160 (security/control + data flow + input, and programs/databases/test plans).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Graphic representation of the control logic of processing functions or modules representing a system is known as ___.",
+      "options": [
+        "Structured analysis",
+        "Structured chart",
+        "Structured English",
+        "System Flow chart"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Confirms the Structure Chart definition already established in Q54/Q77/Q208/Q211.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "An open rectangle-",
+      "options": [
+        "defines a source or destination of system data",
+        "identifies data flow",
+        "represents a process that transforms incoming data flow(s) into outgoing data flows",
+        "is a data store-data at rest, or a temporary repository of data"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This reinforces the complete DFD symbol set tested throughout the chapter.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Study involves",
+      "options": [
+        "एक मौजूदा प्रणाली का अध्ययन /study of an existing system",
+        "मौजूदा प्रणाली का दस्तावेजीकरण/ System documenting the existing system",
+        "मौजूदा कमियों की पहचान करना और नए लक्ष्य स्थापित करना /identifying current deficiencies and establishing new goals",
+        "उपर्युक्त सभी /All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Direct repeat of Q126's concept, slightly rephrased.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following laws for E-Type says 'E-type software system must continue to adapt to real world changes, else it becomes progressively less useful'?",
+      "options": [
+        "Self-regulation",
+        "Conservation familiarity",
+        "Continuing growth",
+        "Continuing change"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This directly matches the stated law's description with its correct name.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एल्गोरिथम को प्रोग्रामिंग लैंग्वेज में बदलना कहलाता है-",
+      "options": [
+        "Debugging",
+        "Coding",
+        "Testing and Documentation",
+        "Algorithm Development"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Direct repeat of Q97's concept in Hindi.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which tool is used for structured designing?",
+      "options": [
+        "Module Chart",
+        "Structure Chart",
+        "Program Chart",
+        "All above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Direct repeat of the structure chart's role as the key structured-design tool.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Difference between Decision-Tables and Decision Trees is (are) ___.",
+      "options": [
+        "value to end user",
+        "form of representation",
+        "one shows the logic while other shows the process",
+        "All of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This matches the Table (tabular) vs Tree (graphical/branching) distinction established in Q59/Q63/Q72/Q78.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System documentation का अर्थ है-",
+      "options": [
+        "प्रोग्राम के रिकॉर्ड को एकत्र (collect) करना",
+        "प्रोग्राम के रिकॉर्ड को मैनेज करना",
+        "प्रोग्राम की वर्किंग प्रोसेस को लिखना",
+        "उपरोक्त सभी"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is consistent with the broad documentation definition established in Q44 (coordinated written communication about the system).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ बताता है कि प्रोजेक्ट को आगे बढ़ाना (continue), postpone करना है या बंद (terminate) करना है-",
+      "options": [
+        "Opportunity identification",
+        "Feasibility assessment",
+        "System evaluation",
+        "Program specification"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Direct repeat of Q151's concept in more detailed Hindi phrasing.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Coding and testing are done in a ___.",
+      "options": [
+        "top-down manner",
+        "bottom-up manner",
+        "ad hoc manner",
+        "cross sectional manner"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is consistent with the top-down design philosophy established earlier, extended to the coding/testing sequence.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The first step in the problem-solving process is to ___.",
+      "options": [
+        "Plan the algorithm",
+        "Analyze the problem",
+        "Desk-check the algorithm",
+        "Evaluate and modify (if necessary) the program"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This mirrors general SDLC logic: understand/analyze first (Analysis), then design/plan (Algorithm), then implement, then evaluate.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is the worst type of module coupling?",
+      "options": [
+        "Control Coupling",
+        "Content Coupling",
+        "External Coupling",
+        "Stamp Coupling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The coupling spectrum runs from best (Data coupling) to worst (Content coupling), with Control/Stamp/External falling in between.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "HIPO model was developed by-",
+      "options": [
+        "AT&T Labs",
+        "Microsoft",
+        "IBM",
+        "Oracle"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is a specific historical/attribution fact about HIPO's origin.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Sequence numbering of records is used to",
+      "options": [
+        "and ii",
+        "i, ii and iii",
+        "i, ii, iii and iv",
+        "and iv"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is a broader view of sequential/serial codes than Q8's narrower properties list (concise, expandable) - here focusing on functional USES rather than code PROPERTIES.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is the Characteristics of good software?",
+      "options": [
+        "Maintenance",
+        "Operational",
+        "Transitional",
+        "All above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This composite view captures multiple quality dimensions of good software beyond just correctness.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "All of the following tools are used for process descriptions except.",
+      "options": [
+        "structured english",
+        "decision tables",
+        "pseudocode",
+        "data dictionaries"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This distinguishes process-description tools (mini-specs: Structured English, Decision Tables, Pseudocode) from data-cataloging tools (Data Dictionary).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Choose the option that does not define Function Oriented Software Design.",
+      "options": [
+        "Modules support functional abstraction",
+        "Modules represent data abstraction",
+        "It consists of module definitions",
+        "None of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This tests the distinction between Function-Oriented (behavior/function-centric) and Object-Oriented (data/object-centric) design paradigms.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following is not a component in DFD?",
+      "options": [
+        "Entities",
+        "Attributes",
+        "Process Data flow",
+        "Data Flow"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This distinguishes DFD's process-oriented components from ER diagram's data-attribute-oriented components, which are different modeling tools.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "System design aid should primarily-",
+      "options": [
+        "help analyse both data and activities",
+        "help in documentation",
+        "help in programming",
+        "generate code"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This distinguishes the primary analytical purpose of design aids from secondary benefits (documentation, code generation).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "In significant codes some or all parts of the code ___।",
+      "options": [
+        "are meaningful",
+        "are usable",
+        "are significant",
+        "represent values"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "As established in Q49, a significant digit code embeds actual measurable characteristics (values) into the code digits themselves - this matches option (d), not the circular definition in option (c).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Where there is a need of Software Engineering?",
+      "options": [
+        "To reduce cost",
+        "For large software",
+        "Software quality management",
+        "All above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is a composite recognition question with well-supported complementary reasons.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Mistakes made in the system analysis stage show up in ___.",
+      "options": [
+        "implementation",
+        "system design",
+        "system developments",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This reflects why early-stage accuracy (in Analysis) is critical - mistakes cascade through all subsequent phases if not caught early.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "HIPO means-",
+      "options": [
+        "is a forms-driven technique in which standard forms are used to document the information",
+        "consists of a hierarchy chart and an associated set of input/process/output charts",
+        "captures the essence of top down decomposition",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This combines multiple defining characteristics of HIPO (Q209, Q228, Q248) into one comprehensive picture.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Significant codes are-",
+      "options": [
+        "and ii",
+        "i, ii and iii",
+        "ii, iii and iv",
+        "i, ii and iv"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This contrasts with Serial codes (Q8: concise+expandable) and Block codes (Q13: meaningful+expandable) - Significant codes trade away conciseness for meaningful, comprehensive value representation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "The reason for software bugs and failures is due to ___.",
+      "options": [
+        "Software companies",
+        "Software developers",
+        "Both a and b",
+        "None of above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This reflects that bugs arise from both systemic organizational issues (rushed timelines, poor processes) and individual developer errors - a shared responsibility view.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "What is DFD stands for?",
+      "options": [
+        "Data Flow Depicts",
+        "Depict Flow Diagram",
+        "Data Flow Diagram",
+        "Data Flowchart Diagram"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is a fixed, well-known acronym with no ambiguity.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which type of DFD concentrates on the system process, and flow of data in the system?",
+      "options": [
+        "Flowchart DFD",
+        "System DFD",
+        "Physical DFD",
+        "Logical DFD"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is the fifth occurrence of this exact Logical vs Physical DFD distinction in this exam - extremely high-yield fact.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A Flow chart डिसीजन मेकिंग के लिए कौनसा सिंबल प्रयोग होता है-",
+      "options": [
+        "Rectangle",
+        "Diamond",
+        "Circle",
+        "Oval"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This is standard flowchart symbol convention: Rectangle=Process, Diamond=Decision, Oval=Start/End, Circle=Connector.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक सिस्टम जिसे डेवलप किया जा रहा है उसे .............कहते हैं-",
+      "options": [
+        "Developing system",
+        "Abstract system",
+        "Candidate system",
+        "Physical system"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is standard SAD vocabulary distinguishing the CURRENT/existing system from the PROPOSED/candidate system being built.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Efficiency in a software product does not include ___?",
+      "options": [
+        "Memory utilization",
+        "Responsiveness",
+        "Licensing",
+        "Processing time"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This tests recognizing that Licensing is a business/legal concept, not a performance/efficiency metric.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "ऐसे इनपुट जो डाटा एंट्री के समय कम्प्यूटर द्वारा मांगे जाने पर बीच-बीच में दिए जाते हैं ....... कहलाते हैं-",
+      "options": [
+        "Interactive input",
+        "Input From Inside",
+        "Input From Outside",
+        "None of these"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This describes the classic dialog-based/prompted data entry mode, correctly termed 'Interactive Input'.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Which of the following activities does not belong to the Implementation phase of the SDLC?",
+      "options": [
+        "File conversion",
+        "Program testing",
+        "User training",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "🚨 Note: This is an unusually phrased question - since File conversion, Program testing, and User training are all legitimately part of Implementation, selecting 'All of the above' as the answer to 'which does NOT belong' is logically odd (implying none belong, which contradicts standard SDLC knowledge). This may reflect a phrasing/key issue in the source; flagged for awareness.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "HIPO stand for-",
+      "options": [
+        "Hierarchical Input Process Output",
+        "Hierarchical Input Provide Output",
+        "High Input Provide Output",
+        "High Input Process Output"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This confirms the correct acronym expansion used consistently across Q209, Q228, Q238.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "UML diagram के प्रकार हैं-",
+      "options": [
+        "Activity diagram",
+        "Sequence diagram",
+        "Class diagram",
+        "All of above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Direct duplicate question of Q191.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "During what phase, the requirement analysis is performed?",
+      "options": [
+        "system design phase",
+        "system development phase",
+        "system analysis phase",
+        "system investigation phase"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This reinforces the consistent placement of requirement/problem analysis activities within the Analysis phase of SDLC.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Software का चुनाव करते समय किस बात का विशेष ध्यान रखा जाता है-",
+      "options": [
+        "Reliability",
+        "Functionality",
+        "Usability",
+        "All of these"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "This is a composite view of standard software quality/selection criteria.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "What are attributes of good software?",
+      "options": [
+        "Software maintainability",
+        "Software development",
+        "Software functionality",
+        "Both b and c"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "🚨 Note: Standard software engineering texts commonly cite Maintainability, Reliability, Efficiency, and Usability as core software QUALITY attributes; 'Software development' (a process, not a quality attribute) being selected as part of the answer is unusual/non-standard phrasing - flagged for awareness.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    }
+  ]
+}

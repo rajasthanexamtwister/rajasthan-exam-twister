@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "db:seed": "tsx scripts/seed.ts",
     "notes:import": "tsx scripts/import-local-notes.ts",
-    "quizzes:import": "tsx scripts/import-local-quizzes.ts"
+    "quizzes:import": "tsx scripts/import-local-quizzes.ts",
+    "question-bank:convert": "tsx scripts/convert-question-bank.ts"
   },
   "dependencies": {
     "@tiptap/extension-image": "^3.31.3",

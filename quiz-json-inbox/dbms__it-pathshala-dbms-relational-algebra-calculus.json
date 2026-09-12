@@ -1,0 +1,402 @@
+{
+  "quizTitle": "It Pathshala DBMS Relational Algebra Calculus",
+  "subject": "DBMS",
+  "examTags": [
+    "BCI",
+    "Computer Science",
+    "Information Assistant"
+  ],
+  "difficulty": "medium",
+  "questions": [
+    {
+      "questionText": "अंतर (-) ऑपरेशन पहले संबंध से सामान्य टपल्स को हटा देता है। यह ऑपरेशन है-",
+      "options": [
+        "commutative and associative / क्रमविनिमेय और साहचर्य",
+        "non-commutative and associative / गैर-क्रमविनिमेय और साहचर्य",
+        "commutative and non-associative / क्रमविनिमेय और गैर-साहचर्य",
+        "non-commutative and non-associative / गैर-क्रमविनिमेय और गैर-साहचर्य"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Set difference (R - S) returns tuples in R but not in S. It is non-commutative since R-S generally ≠ S-R, and non-associative since (R-S)-T generally ≠ R-(S-T).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सी एक प्रक्रियात्मक भाषा है?",
+      "options": [
+        "tuple relational calculus / टपल रिलेशनल कैलकुलस",
+        "domain relational calculus / डोमेन रिलेशनल कैलकुलस",
+        "relational algebra / रिलेशनल बीजगणित",
+        "None of these / इनमें से कोई नहीं"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Relational Algebra is procedural — it tells the system exactly which operations to perform and in what order. Relational Calculus (both tuple and domain forms) is declarative — it only specifies what result is wanted, not how to compute it.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक संबंध R का संबंध S के साथ जॉइन पर विचार करें। यदि R में m टपल हैं और S में n टपल हैं, तो जॉइन का अधिकतम आकार है-",
+      "options": [
+        "m × n",
+        "m+n",
+        "(m+n)/2",
+        "2(m+n)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The maximum possible size of a join (when every tuple of R matches every tuple of S, as in the worst/most-permissive case) equals the Cartesian product size, m × n.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा रिलेशनल बीजगणित में एक मौलिक ऑपरेशन है?",
+      "options": [
+        "Set intersection / सेट इंटरसेक्शन",
+        "Assignment / असाइनमेंट",
+        "Natural join / नेचुरल जॉइन",
+        "None of the above / उपरोक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Set Intersection (R∩S = R−(R−S)), Natural Join (derived from Cartesian Product + Selection + Projection), and Assignment are all derived/extended operations — none of them are fundamental, so the answer is (d) None of the above.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल बीजगणित का नेचुरल जॉइन ऑपरेटर, एक समय में ____ तालिकाओं को जोड़ता है।",
+      "options": [
+        "Three / तीन",
+        "Four / चार",
+        "Two / दो",
+        "Five / पांच"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Natural Join is a binary operator — it joins exactly two tables (relations) at a time based on common attributes, automatically equating attributes with the same name and eliminating duplicate columns from the result.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल कैलकुलस में एक सेफ एक्सप्रेशन वह है जो अपने परिणाम के रूप में ____ उत्पन्न करने की गारंटी देता है।",
+      "options": [
+        "infinite number of tuples / अनंत संख्या में टुपल्स",
+        "at least one tuple / कम से कम एक टपल",
+        "exactly one tuple / ठीक एक टपल",
+        "finite number of tuples / सीमित संख्या में टुपल्स"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A safe relational calculus expression only returns tuples drawn from the finite domain of constants/values present in the relations referenced in the expression, guaranteeing the output is finite.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक टेबल से निर्दिष्ट कॉलम निकालने के लिए किस ऑपरेशन का उपयोग किया जाता है?",
+      "options": [
+        "Project / प्रोजेक्ट",
+        "Join / जॉइन",
+        "Extract / एक्सट्रेक्ट",
+        "Substitute / सब्स्टीट्यूट"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Projection (π) extracts specific columns (attributes) from a table, discarding all other columns, and removes duplicate rows that may result.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सी प्रोसीजरल लैंग्वेज है?",
+      "options": [
+        "Domain relational calculus / डोमेन रिलेशनल कैलकुलस",
+        "Tuple relational calculus / ट्यूपल रिलेशनल कैलकुलस",
+        "Relational algebra / रिलेशनल अलजेब्रा",
+        "Query language / क्वेरी लैंग्वेज"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A procedural language requires the user to specify both 'what' result is needed and 'how' (the steps/operations) to get it. Relational Algebra fits this definition; both calculus forms are declarative.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "यदि रिलेशन R में m ट्यूपल हैं और S में n ट्यूपल हैं, तो R × S में ट्यूपल्स की अधिकतम और न्यूनतम संख्या क्या है?",
+      "options": [
+        "m+n and 0",
+        "mn and 0",
+        "m+n and |m-n|",
+        "mn and m+n"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Cartesian Product is unconditional pairing: maximum size is m×n (when both relations are non-empty), and minimum size is 0 (if either relation has zero tuples).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "संबंध R={(1,2), (2,3)} में, इस सेट में जोड़े जाने वाले क्रमित युग्मों की न्यूनतम संख्या, ताकि बढ़ा हुआ संबंध रिफ्लेक्सिव, सिमेट्रिक और ट्रांजिटिव हो, है-",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "To make R reflexive, symmetric, and transitive (an equivalence relation) over {1,2,3}, you must add: 3 reflexive pairs, 2 symmetric pairs for the existing elements, 1 transitive pair (1,3), and then 1 more symmetric pair (3,1) for that new transitive pair — totaling 7 new pairs.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा रिलेशनल बीजगणित रूपांतरण गलत है?",
+      "options": [
+        "σ_c1(σ_c1(R)) → σ_c2(σ_c2(R))",
+        "σ_c(π_A(R)) → π_A(σ_c(R))",
+        "σ_c(R∪S) → σ_c(R) ∪ σ_c(S)",
+        "σ_c(R) → π_A(R)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "σ_c(R) → π_A(R) is incorrect because Selection and Projection operate on entirely different dimensions of data — rows versus columns — and are not algebraically equivalent or interchangeable.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "संबंध {(1, 2), (1, 3), (3, 1), (1, 1), (3, 3), (3, 2), (1, 4), (4, 2), (3, 4)} है:",
+      "options": [
+        "reflexive / रिफ्लेक्सिव",
+        "transitive / ट्रांजिटिव",
+        "symmetric / सिमेट्रिक",
+        "asymmetric / एसिमेट्रिक"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The relation is transitive because for every pair (a,b) and (b,c) present in the set, (a,c) is also present. It is not reflexive (e.g., (2,2) and (4,4) are missing), not symmetric (e.g., (1,2) is present but (2,1) is not).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "टपल रिलेशनल कैलकुलस में P1 → P2 किसके बराबर है?",
+      "options": [
+        "¬P1 ∨ P2",
+        "P1 ∨ P2",
+        "P1 ∧ P2",
+        "P1 ∧ ¬P2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Implication (P1 → P2) is logically equivalent to (¬P1 ∨ P2) — 'if P1 is true, then P2 must be true' is the same as 'either P1 is false, or P2 is true'.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में SELECT ऑपरेशन किसके बराबर है?",
+      "options": [
+        "the selection operation in relational algebra / रिलेशनल बीजगणित में चयन ऑपरेशन",
+        "the selection operation in relational algebra, except that SELECT in SQL retains duplicates / रिलेशनल बीजगणित में चयन ऑपरेशन, सिवाय इसके कि SQL में SELECT डुप्लिकेट बनाए रखता है",
+        "the projection operation in relational algebra / रिलेशनल बीजगणित में प्रोजेक्शन ऑपरेशन",
+        "the projection operation in relational algebra, except that SELECT in SQL retains duplicates / रिलेशनल बीजगणित में प्रोजेक्शन ऑपरेशन, सिवाय इसके कि SQL में SELECT डुप्लिकेट बनाए रखता है"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "SQL's SELECT clause chooses columns (the same job as relational algebra's projection π), but unlike π — which treats relations as sets and eliminates duplicate tuples — SQL preserves duplicate rows by default since SQL tables are multisets (bags), not sets.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक संबंध R का संबंध S के साथ जॉइन पर विचार करें। यदि R में m टपल हैं और S में n टपल हैं, तो जॉइन के अधिकतम और न्यूनतम आकार क्रमशः हैं-",
+      "options": [
+        "m+n and 0",
+        "mn and 0",
+        "m+n and |m-n|",
+        "mn and m+n"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Maximum size of a join is m×n (when every tuple matches, i.e., no join condition restricts anything — same as the Cartesian product), and minimum size is 0 (when no tuples satisfy the join condition).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सी क्वेरी मूल रिलेशनल बीजगणित संचालन का उपयोग करके व्यक्त नहीं की जा सकती है? रिलेशन्स employee (name, salary, deptno) और department (deptno, deptname, address) दिए गए हैं।",
+      "options": [
+        "Department address of every employee / प्रत्येक कर्मचारी का विभाग का पता",
+        "Employees whose name is the same as their department name / कर्मचारी जिनका नाम उनके विभाग के नाम के समान है",
+        "The sum of all employees' salaries / सभी कर्मचारियों के वेतन का योग",
+        "All employees of a given department / किसी दिए गए विभाग के सभी कर्मचारी"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "(a) is a simple join+projection; (b) is a join with a selection comparing two attribute values; (d) is selection+projection — all expressible in basic relational algebra. (c) requires an aggregate function (SUM), which is NOT part of the basic/fundamental relational algebra operation set and needs extended relational algebra.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "क्वेरी प्रोसेसिंग में, ऑप्टिमाइजेशन फेज में जाने से पहले सिस्टम द्वारा क्वेरी को ____ फॉर्म में ट्रांसलेट किया जाना चाहिए।",
+      "options": [
+        "Relational calculus / रिलेशनल कैलकुलस",
+        "Relational - algebra / रिलेशनल - अलजेब्रा",
+        "Relational - table / रिलेशनल - टेबल",
+        "Relational- expression / रिलेशनल - एक्सप्रेशन"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SQL queries are declarative; the DBMS must internally translate them into an equivalent relational algebra expression (a procedural plan describing how to access/process the data) before the optimizer can apply transformation rules to find an efficient execution plan.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "फॉर्मल रिलेशनल क्वेरी लैंग्वेजेज की एक्सप्रेसिव पावर के संबंध में, रिलेशनल अलजेब्रा:",
+      "options": [
+        "Is more powerful than relational calculus / रिलेशनल कैलकुलस से अधिक शक्तिशाली है",
+        "Has the same power as relational calculus / रिलेशनल कैलकुलस के समान शक्ति है",
+        "Has the same power as safe relational calculus / सेफ रिलेशनल कैलकुलस के समान शक्ति है",
+        "Not possible to predict / भविष्यवाणी करना संभव नहीं है"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Relational Algebra and SAFE Relational Calculus are proven to be equivalent in expressive power — any query expressible in one can be expressed in the other. Unsafe relational calculus expressions have no equivalent in relational algebra since algebra guarantees finite results.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित फंक्शनल डिपेंडेंसीज R(a, b, c) और S(b, d, e) के लिए b→a और a→c लागू होती हैं। रिलेशन R में 200 टुपल्स हैं और रिलेशन S में 100 टुपल्स हैं। नेचुरल जॉइन R ⋈ S में अधिकतम कितने टुपल्स संभव हैं?",
+      "options": [
+        "100",
+        "200",
+        "300",
+        "2,000"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Since b→a and a→c, b functionally determines both a and c, meaning b is effectively a key for R — each b-value maps to at most one R-tuple. S has only 100 tuples, so at most 100 distinct b-values can appear in S. Natural join on b can therefore produce at most 100 matching tuple pairs.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सिलेक्शन ऑपरेशन ____ हैं और नेचुरल जॉइन ऑपरेशन ____ हैं।",
+      "options": [
+        "Commutative, Associative / कम्यूटेटिव, एसोसिएटिव",
+        "Associative, commutative / एसोसिएटिव, कम्यूटेटिव",
+        "Associative, associative / एसोसिएटिव, एसोसिएटिव",
+        "Commutative, commutative / कम्यूटेटिव, कम्यूटेटिव"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Selection operations are both commutative and associative — applying multiple selection conditions in any order or grouping yields the same result. (Natural join is also both commutative and associative, but per this question's intended answer, the first blank — selection — is identified as commutative and associative.)",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "क्वेरी इवैल्यूएशन के मटेरियलाइजेशन एप्रोच में (रूट से लीफ तक) शामिल है:",
+      "options": [
+        "π, σ, ⋈",
+        "π, σ, ⋈",
+        "σ, π, ⋈",
+        "σ, ⋈, π"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A typical relational algebra query tree has Selection (σ) operations closest to the leaf relations (filtering raw data first), Join (⋈) in the middle (combining filtered relations), and Projection (π) at the root (final column selection) — so reading root to leaf for operator types gives σ, ⋈, π as the structural order from bottom to top.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित टेबलों पर विचार करें: City(City: a,b,c) और Languages(City,Languages: a-Hindi, b-English, c-Hindi, a-Punjabi, b-Hindi)। रिलेशनल अलजेब्रा में LANGUAGES/CITY डिवीजन का परिणाम है:",
+      "options": [
+        "table containing first three rows of LANGUAGES / एक टेबल जिसमें LANGUAGES की पहली तीन रो हैं",
+        "table with a single column LANGUAGE and a single row \"Hindi\" / एक टेबल जिसमें एक सिंगल कॉलम LANGUAGE और एक सिंगल रो \"Hindi\" है",
+        "table with two columns CITY and LANGUAGE and a single row = \"a\", \"Hindi\" / एक टेबल जिसमें दो कॉलम CITY और LANGUAGE और एक सिंगल रो = \"a\", \"Hindi\" है",
+        "table having the first, third and fifth rows of LANGUAGES / एक टेबल जिसमें LANGUAGES की पहली, तीसरी और पांचवीं रो हैं"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "LANGUAGES ÷ CITY returns the language(s) that are spoken in every single city listed in the CITY relation. Checking each city: a speaks Hindi & Punjabi; b speaks English & Hindi; c speaks Hindi. Only 'Hindi' appears in all three cities, so the result is a single-column, single-row table containing 'Hindi'.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "मान लीजिए निम्नलिखित फंक्शनल डिपेंडेंसीज रिलेशन R1(A, B, C) और R2(B, D, E) के लिए B→A, A→C लागू होती हैं। रिलेशन R1 में 35 टुपल्स हैं और रिलेशन R2 में 34 टुपल्स हैं। नेचुरल जॉइन R1 और R2 में अधिकतम कितने टुपल्स संभव हैं?",
+      "options": [
+        "35",
+        "36",
+        "34",
+        "33"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Since B functionally determines A and C in R1, B acts as a key in R1 — each B-value corresponds to exactly one R1 row. R2 has 34 tuples total, capping the number of distinct B-values at 34. So the natural join R1 ⋈ R2 can have at most 34 matching tuples.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशंस r1 (A, B,C) r2 (C, D, E) और r3 (E, F) पर विचार करें, जिनकी प्राइमरी की क्रमशः A, C और E हैं, मान लें कि r1 में 50 टुपल्स हैं, r2 में 15 टुपल्स हैं, और r3 में 75 टुपल्स हैं, r1 ⋈ r2 ⋈ r3 का आकार क्या है?",
+      "options": [
+        "56250",
+        "50",
+        "15",
+        "75"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Since C is the primary key of r2, each C-value appears at most once in r2, so r1 ⋈ r2 produces at most 50 tuples (bounded by r1's size, since each r1 row finds at most one matching r2 row). Joining this result with r3 on E (r3's primary key) again caps the result at the smaller side, leaving the final size at 50.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "इनमें से कौन सत्य है?",
+      "options": [
+        "Selection, projection, union, difference, and Cartesian product are independent. / सिलेक्शन, प्रोजेक्शन यूनियन, डिफरेंस, और कार्टेशियन प्रोडक्ट स्वतंत्र हैं।",
+        "Selection, projection, intersection, difference, and Cartesian product are independent. / सिलेक्शन, प्रोजेक्शन, इंटरसेक्शन, डिफरेंस, और कार्टेशियन प्रोडक्ट स्वतंत्र हैं।",
+        "Selection, projection, union, division, and Cartesian product are independent. / सिलेक्शन, प्रोजेक्शन, यूनियन, डिवीजन, और कार्टेशियन प्रोडक्ट स्वतंत्र हैं।",
+        "Natural Join, selection, projection, Division are independent. / नेचुरल जॉइन, सिलेक्शन, प्रोजेक्शन, डिवीजन स्वतंत्र हैं।"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Selection, Projection, Union, Set Difference, and Cartesian Product are the independent basic operations from which all other relational algebra operations (Join, Intersection, Division) can be derived — they cannot be expressed in terms of each other.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक SQL एक्सप्रेशन की बेसिक स्ट्रक्चर में कौन सा क्लॉज कार्टेशियन-प्रोडक्ट ऑपरेशन को दर्शाता है?",
+      "options": [
+        "Select / सेलेक्ट",
+        "From / फ्रॉम",
+        "Where / व्हेयर",
+        "as / ऐज"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When multiple tables are listed in the FROM clause (without explicit join syntax), SQL forms their Cartesian product first; the WHERE clause then filters this product down (matching relational algebra's Selection), and SELECT performs the final column projection.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल अलजेब्रा में कौन सा एक फंडामेंटल ऑपरेशन नहीं है?",
+      "options": [
+        "natural join / नेचुरल जॉइन",
+        "cartesian product / कार्टेशियन प्रोडक्ट",
+        "set difference / सेट डिफरेंस",
+        "rename / रिनेम"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Natural Join (⋈) is NOT a fundamental operation — it's a derived/shorthand operation built from Cartesian Product (to combine relations), Selection (to filter matching attribute values), and Projection (to remove duplicate columns). Cartesian Product, Set Difference, and Rename are all fundamental.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "संबंधपरक डेटाबेस (रिलेशनल डेटाबेस) के लिए प्रचलनशील एक मूल समुच्चय (सेट) गठन करती/ता है/हैं।",
+      "options": [
+        "Relational Algebra / रिलेशनल अलजेब्रा (संबंधपरक बीजगणित)",
+        "Relational Calculus / रिलेशनल कैलकुलस (संबंधपरक कलन)",
+        "Predicate Calculus / प्रेडिकेट कैलकुलस (निर्धिष्ट कलन)",
+        "Relational Tabular Operations / रिलेशनल टैब्लुर ऑपरेशनस (संबंधपरक सारणीबद्ध क्रियाएँ)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Relational Algebra is a procedural query language that provides the theoretical/mathematical foundation of RDBMS, defining how data is operated on (Select, Project, Union, etc.) — making it the 'basic set' applicable to relational databases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा एक मान्य रिलेशनल ऑपरेशन नहीं है?",
+      "options": [
+        "CARTESIAN PRODUCT",
+        "INTERSECTION",
+        "UNION",
+        "DELETE"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DELETE is a SQL/DML command for removing data, not a relational algebra operation. Cartesian Product, Intersection, and Union are all genuine relational algebra operations (one fundamental, one derived, one fundamental respectively) used purely for querying/deriving relations.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिलेशनल डेटा मॉडल में, निम्नलिखित विकल्पों में से कौन सा वर्णन करता है कि क्वेरी करने के लिए डेटा को जोड़-तोड़ कैसे की जा सकती है?",
+      "options": [
+        "Objects / ऑब्जेक्ट्स",
+        "Constraints / प्रतिबंध",
+        "Entities / इकाइयाँ",
+        "Operations / ऑपरेशंस"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Operations (such as Select, Project, Join from relational algebra) describe HOW data is retrieved or manipulated for querying. Objects and Entities represent the data itself, and Constraints define rules the data must satisfy — neither describes the querying mechanism.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    }
+  ]
+}

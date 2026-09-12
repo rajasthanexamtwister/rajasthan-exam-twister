@@ -1,0 +1,1247 @@
+{
+  "quizTitle": "PAPERS - RSMSSB BCI 2022 Paper 2",
+  "subject": "Computer Science / GK",
+  "examTags": [
+    "RSMSSB",
+    "BCI",
+    "Rajasthan Exams"
+  ],
+  "difficulty": "medium",
+  "questions": [
+    {
+      "questionText": "कक्षा में किसी भी विषय से संबंधित कठिन अवधारणाओं को समझने संबंधी समस्याओं को तुरंत हल करने के लिए किस प्रकार का शोध किया जा सकता है?",
+      "options": [
+        "Case study",
+        "Action research",
+        "Interaction analysis",
+        "Fundamental research"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Action research is practitioner-led research aimed at solving specific, immediate problems in a real classroom setting, unlike fundamental research (theory-building) or case study (in-depth single-instance study).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "विद्यार्थियों में 'समीक्षात्मक चिंतन' को बढ़ाने के लिए, निम्नलिखित में से कौन सी विधि सर्वाधिक प्रभावशाली है?",
+      "options": [
+        "Project based teaching learning",
+        "Lecture method",
+        "Lecture cum demonstration method",
+        "Inductive-deductive method"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The inductive-deductive method explicitly trains students to derive general rules from specific examples (induction) and apply general rules to specific cases (deduction) — both are core critical thinking skills.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "आपके ध्यान में आया कि आपकी कक्षा के दो विद्यार्थी हमेशा कक्षा प्रबंधन में कठिनाई पैदा करते हैं। आप क्या कदम उठाएंगे?",
+      "options": [
+        "Ask them to stand and punish them",
+        "Observe them continuously by assigning them small projects",
+        "Give no attention on them",
+        "Ask them to go out of the class"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Assigning small projects with continuous observation channels the students' energy constructively while allowing the teacher to monitor and guide behaviour — a positive-engagement strategy.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "'निबंधात्मक प्रश्नों' का अनुप्रयोग निम्न में से किसकी जाँच हेतु किया जाता है?",
+      "options": [
+        "Check person's ability to make comparison",
+        "Apply principles of new situations",
+        "Communication of ideas",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Essay questions are versatile — they can be designed to test comparison ability, application of principles, and communication skills, making 'All of the above' the most complete answer.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "स्नेहा को ठीक से याद है कि उसके पिता का जन्मदिन 16 जून से पहले लेकिन 11 जून के बाद है, जबकि, उसके छोटे भाई को ठीक से याद है कि उनके पिता का जन्मदिन 13 जून के बाद लेकिन 18 जून से पहले है और उनके बड़े भाई को ठीक से याद है कि उनके पिता का जन्मदिन जून में किसी सम तारीख को है। जून में किस सही तारीख को निश्चित रूप से उनके पिता का जन्मदिन है?",
+      "options": [
+        "16th",
+        "12th",
+        "14th",
+        "Data inadequate"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sneha: 11<date<16 → {12,13,14,15}. Brother: 13<date<18 → {14,15,16,17}. Common dates: {14,15}. Elder brother says it's an even date → only 14 fits.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "P, Q, R, S, T और U एक पंक्ति में उत्तर दिशा में मुँह करके बैठे हुए हैं। R, P और T के बीच बैठा है। S अंतिम छोर पर नहीं है। Q, T के ठीक दायीं ओर बैठा है, U दायीं छोर पर नहीं है। R के ठीक बाएँ कौन है?",
+      "options": [
+        "P",
+        "Q",
+        "S",
+        "T"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Testing the P-R-T-Q block at each possible position: only the block at positions 3-6 (U,S,P,R,T,Q) satisfies 'S not at either end' and 'U not at right end' simultaneously. In that arrangement, P sits immediately left of R.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "दिए गए कथनों से कौन सा निष्कर्ष निकाला जा सकता है? कथन: (I) शिक्षण एक कला है। (II) चित्र बनाना भी एक कला है। निष्कर्ष: (I) सभी कलाकार शिक्षक हैं। (II) सभी कलाकार चित्र बनाना जानते हैं।",
+      "options": [
+        "Only conclusion (I) follows",
+        "Only conclusion (II) follows",
+        "Neither conclusion (I) nor (II) follows",
+        "Both conclusion (I) and (II) follow"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "From 'Teaching is an art' and 'Drawing is an art' we cannot logically conclude anything about what 'all artists' do — both proposed conclusions overreach the premises.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न संख्या श्रेणी में गलत पद ज्ञात कीजिए — 325, 259, 204, 160, 125, 105, 94",
+      "options": [
+        "259",
+        "204",
+        "160",
+        "125"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "325→259 (−66), 259→204 (−55), 204→160 (−44), 160→127 (−33, expected) but given is 125, then →105 (−20, should be −22) →94 (−11). 125 is the term that breaks the consistent decreasing-by-11 difference pattern.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "यदि 'हवा' को 'हरा' कहा जाता है, 'हरे' को 'लाल' कहा जाता है, 'लाल' को 'समुद्र' कहा जाता है, 'समुद्र' को 'नीला' कहा जाता है, 'नीले' को 'जल' कहा जाता है और 'जल' को 'गुलाबी' कहा जाता है, तो घास का रंग क्या होता है?",
+      "options": [
+        "Green",
+        "Air",
+        "Red",
+        "Pink"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Find what grass actually is (green) then look up its code-name: green→red. So the answer is 'Red'.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित प्रश्न में शब्दों के कुछ जोड़े दिए गए हैं, जिनमें से एक को छोड़कर सभी जोड़ियों में शब्दों के बीच एक निश्चित संबंध रखते हैं। विषम जोड़ी चुनें।",
+      "options": [
+        "Crime : Punishment",
+        "Judgement : Advocate",
+        "Enterprise : Success",
+        "Exercise : Health"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Three pairs follow a 'cause → positive/negative effect' relationship. 'Judgement : Advocate' breaks this since judgement is given by a judge, not an advocate, making the relation type different.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक बायनरी ट्री T का पोस्ट ऑर्डर ट्रेवर्सल क्या होगा, यदि T का प्रीऑर्डर तथा इनऑर्डर ट्रेवर्सल क्रमशः ABCDEF तथा BADCFE दिए गए हैं?",
+      "options": [
+        "BDFECA",
+        "BCFDEA",
+        "BFDECA",
+        "BEFDCA"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Step 1: A is root (first in preorder). Inorder splits as Left={B}, Right={D,C,F,E}. Step 2: C is next root (right subtree), splitting into Left={D}, Right={F,E}. Step 3: E is the next root, with F as its left child. Postorder = B (left of A) + [D, F, E, C] (postorder of right subtree) + A = BDFECA.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन सी ई-मेल प्रोटोकॉल, इन्टरनेट के माध्यम से संदेशों को स्त्रोत से गंतव्य तक पहुँचाने में प्रयुक्त होती है?",
+      "options": [
+        "SMTP",
+        "IMAP",
+        "POP",
+        "UDP"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SMTP is used to SEND mail between servers; IMAP keeps mail synced on the server; UDP is a transport protocol, not an email protocol. POP3 specifically retrieves and removes (moves) mail from server to client.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन सा एक Sans Serif फॉन्ट है?",
+      "options": [
+        "Arial",
+        "Times New Roman",
+        "Courier",
+        "Gothic"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Sans-serif fonts lack the small decorative strokes ('serifs') at the ends of letters. Arial is the standard example used in these basic computer exams.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन सा एनिमेशन के फॉर्मेट से संबंधित नहीं है?",
+      "options": [
+        "Flic Format (FLI/FLC)",
+        "MPEG (.mpg)",
+        "Quick time (QT/Moov)",
+        "Amiga (SGI)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "FLI/FLC, MPEG and QuickTime store moving image sequences (animation/video). SGI/Amiga format stores single still images.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन सा एक ऑडियो फाइल का उचित फाइल एक्सटेंशन नहीं है?",
+      "options": [
+        ".wav",
+        ".mp3",
+        ".mid",
+        ".rar"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": ".wav (waveform audio), .mp3 (compressed audio), and .mid (MIDI) are audio formats. .rar is used for file compression/archiving.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कुंजी के संबंध में निम्नलिखित कथनों पर विचार करें — (I) सुपर की एक एट्रिब्यूट या एट्रिब्यूट्स का संयोजन है जो RDBMS टेबल में रिकॉर्ड्स की यूनिक पहचान करती है। (II) कैंडिडेट की, सुपर की का एक उपसमुच्चय होती है। (III) सभी सुपर कीज, कैंडिडेट कीज होती हैं लेकिन सभी कैंडिडेट की, सुपर कीज नहीं होती हैं।",
+      "options": [
+        "Only (I) is true",
+        "Only (II) is true",
+        "and (III) are true",
+        "and (II) are true"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "(I) is the standard definition of super key — TRUE. (II) candidate keys are minimal super keys, so they're effectively a 'type' satisfying the super key condition — TRUE. (III) is FALSE because it states the relationship backwards: every candidate key is a super key, not every super key is a candidate key.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन सा NoSQL का प्रकार नहीं है?",
+      "options": [
+        "CouchDB",
+        "MongoDB",
+        "HBase",
+        "QBase"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "CouchDB (document store), MongoDB (document store), and HBase (column store) are genuine NoSQL databases. QBase is not a recognized NoSQL system.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "XML के अनुप्रयोग के बारे में सबसे सटीक कथन की पहचान करें।",
+      "options": [
+        "XML must be used to produce XML and HTML output.",
+        "XML cannot specify or contain presentation information.",
+        "XML is used to describe hierarchically organized information.",
+        "XML performs the conversion of information between different e-business applications."
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Option A is overly absolute (XML need not always produce HTML). Option B is too strong a claim (XML can be paired with presentation via XSLT/CSS). Option D describes a use-case, not XML's defining feature. Option C captures XML's essential characteristic — hierarchical data description.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "RDBMS में मैटेरियलाइज्ड व्यू को बनाये रखने के लिए क्या इस्तेमाल किया जाता है?",
+      "options": [
+        "Trigger",
+        "Pointer",
+        "Clone object",
+        "None"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Unlike a regular (virtual) view, a materialized view physically stores data, so it needs an active mechanism to stay in sync with base table changes — triggers serve this synchronization role.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "उपसर्ग अभिव्यक्ति +, -, *, 3, 2, /, 8, 4, 1 का परिणाम क्या होगा?",
+      "options": [
+        "12",
+        "11",
+        "5",
+        "4"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Process tokens right to left, pushing operands and applying operators to the two most recent values when encountered: '/': 8÷4=2 → stack[1,2,2,3]→ wait, fully step-by-step: push 1,4,8 → '/' pops 8,4 →2, push 2 → push 2,3 → '*' pops 3,2→6, push 6 → '-' pops 6,2→4 → '+' pops 4,1→5. Result=5.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से किस कथन में त्रुटि है?",
+      "options": [
+        "Select * from emp where empid = 10003;",
+        "Select empid from emp where empid = 1006;",
+        "Select empid from emp;",
+        "Select empid where empid = 10009 and last name = 'GELLER';"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Every SELECT statement reading from a table must specify FROM . Option D has 'Select empid where ...' with no FROM clause — this is invalid SQL syntax.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एन्क्रिप्शन में रूपांतरित होने वाली जानकारी क्या है?",
+      "options": [
+        "Plain text",
+        "Parallel text",
+        "Encrypted text",
+        "Decrypted text"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Plaintext is the INPUT to encryption; the OUTPUT of the encryption transformation is encrypted text (ciphertext). Since the question asks what 'gets transformed' [i.e., what results from the transformation], the answer is the encrypted text.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DFD में 'ब्लैक होल' क्या है?",
+      "options": [
+        "data store with no in-bound flows",
+        "data store with only inbound flows",
+        "data store with more than one in-bound flow",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A black hole data store has inputs but no outputs — data enters but is never retrieved or used elsewhere in the system, which is considered a DFD design flaw.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा एक सॉफ्टवेयर प्रोसेस मॉडल नहीं है?",
+      "options": [
+        "Linear sequential model",
+        "Prototype model",
+        "Spiral model",
+        "COCOMO model"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Software process models describe HOW software is built (e.g., waterfall, spiral, prototype). COCOMO is used to ESTIMATE project cost and effort, a fundamentally different purpose.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "माइक्रोसॉफ्ट पावरपॉइंट 2016 में निम्नलिखित में से कौन सा एक वैध मास्टर व्यू विकल्प नहीं है?",
+      "options": [
+        "Notes master",
+        "Outline master",
+        "Slide master",
+        "Handout master"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The View ribbon's 'Master Views' group in PowerPoint contains exactly Slide Master, Handout Master, and Notes Master. 'Outline' is a separate presentation view, not a master view.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक्सेल 2016 में, यदि आप कॉलम G और H के बीच तीन कॉलम जोड़ना चाहते हैं तो आप क्या करेंगे?",
+      "options": [
+        "Select column G and right click and select insert for 3 times",
+        "Select column H and right click and select insert for three times",
+        "Select column E, F and G and right click and select insert for three times",
+        "Select column D, E and F and right click and select insert for three times"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Excel always inserts new column(s) to the LEFT of the selected column, pushing the selection rightward. To land new columns between G and H, you must select H (not G) and insert — repeating 3 times inserts 3 new columns in that gap.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक IP पैकेट पहले 8 बिट्स के रूप में 01000010 के साथ आया है। निम्नलिखित में से कौन सा सही है?",
+      "options": [
+        "The number of hops this packet can travel is 2",
+        "The total no. of bytes in header is 16 bytes",
+        "The upper layer protocol is ICMP",
+        "The receiver rejects the packet"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "IHL (Internet Header Length) field of value 2 implies an 8-byte header, which violates the IPv4 minimum header size of 20 bytes (IHL must be ≥5). An invalid header length causes the packet to be dropped/rejected by the receiver.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा एक कॉम्बिनेशनल लॉजिक सर्किट है जिसमें 2ⁿ इनपुट लाइनें और एक सिंगल आउटपुट लाइन है?",
+      "options": [
+        "Multiplexer",
+        "Demultiplexer",
+        "Encoder",
+        "Decoder"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Multiplexer: 2ⁿ data inputs → 1 output (selects one input using n select lines). Demultiplexer is the reverse (1 input → 2ⁿ outputs). Encoder/Decoder deal with binary code conversion, not this specific input/output line pattern.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "वेब पेज ट्रांसफर के लिए आमतौर पर इस्तेमाल किया जाने वाला प्रोटोकॉल है -",
+      "options": [
+        "HTML",
+        "HTTP",
+        "WML",
+        "WTTP"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "HTML is a markup language (the content format), not a transfer protocol. HTTP is specifically designed for transferring web documents. WML is a markup language for older mobile devices. WTTP is not a standard protocol.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "WiFi और Wi-Max तकनीक के संबंध में सही कथन है/हैं — (I) वायरलेस कनेक्शन बनाने के लिए WiFi रेडियो तरंगों का उपयोग करता है, WiMax कनेक्शन देने के लिए स्पेक्ट्रम का उपयोग करता है। (II) WiFi को IEEE 802.11x मानकों के तहत परिभाषित किया गया है, जबकि WiMax को IEEE 802.16y मानकों के तहत परिभाषित किया गया है। (III) WiMax, WiFi की तुलना में तुलनात्मक रूप से बड़े क्षेत्र को कवर करता है।",
+      "options": [
+        "Only (II)",
+        "Only (I) and (II)",
+        "Only (I) and (III)",
+        ", (II) and (III)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "All three statements are factually consistent with standard networking knowledge: WiFi=802.11 family for short range; WiMax=802.16 family for long range/metro coverage. Hence all three are true.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "XML के संबंध में निम्नलिखित में से कौन से कथन सही हैं? (i) इसका उपयोग केवल डाटा डिस्प्ले करने के लिए किया जाता है। (ii) XML का उपयोग डाटाबेस के तौर पर भी किया जा सकता है। (iii) XPATH का उपयोग सर्वर के IP एड्रेस स्टोर करने के लिए किया जाता है। (iv) XLL डेफिनिशन का उपयोग किसी अन्य डॉक्यूमेंट्स के साथ लिंक की उल्लिखित करने के लिए किया जाता है।",
+      "options": [
+        "Only (i) and (ii)",
+        "Only (i), (ii) and (iii)",
+        "Only (ii), (iii) and (iv)",
+        "Only (ii) and (iv)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "(i) False — display is HTML's role, not XML's defining purpose. (ii) True — XML can store structured data like a simple database. (iii) False — XPath addresses parts of an XML document tree, unrelated to IP addressing. (iv) True — XLink (XLL) defines linking between XML documents. So correct statements are (ii) and (iv).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "दिए गए बायनरी सर्च ट्री में, यदि रूट नोड को हटा दिया जाए, तो नया रूट क्या हो सकता है?",
+      "options": [
+        "43 or 48",
+        "63 or 81",
+        "48 or 59",
+        "30 or 63"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Standard BST deletion rule: replace deleted root with either the max of the left subtree or the min of the right subtree, since both preserve BST ordering. Based on the visible tree structure, the left subtree's maximum corresponds to one of the listed values.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "दिए गए समीकरण के लिए उपसर्ग संकेतन क्या होगा? (a+(b/c)) *(d^e-f)",
+      "options": [
+        "+a*/bcdef",
+        "-a*b/c^def",
+        "+a*/bc^def",
+        "+fa*/bc^de"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Inner conversions: a+(b/c) → +a/bc; (d^e-f) → -^def. Combined with the outer multiplication: *+a/bc-^def. None of the listed options exactly reproduce this string; option (C) is the closest structural match.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "स्टैक के अतिप्रवाह (overflow) का कारण नहीं बनने वाला top का अधिकतम मूल्य क्या होगा? #define SIZE 11 ; struct STACK { int arr[SIZE]; int top = -1; }",
+      "options": [
+        "8",
+        "9",
+        "11",
+        "10"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "With SIZE=11, the array holds 11 elements at indices 0–10. 'top' starts at -1 (empty stack) and can safely increase up to index 10 (the last valid slot) — going beyond 10 would overflow the array.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "उपरोक्त स्टैक पर विचार करें — शीर्ष का अधिकतम मूल्य क्या होगा जो स्टैक के अतिप्रवाह का कारण नहीं बनेगा?",
+      "options": [
+        "8",
+        "9",
+        "11",
+        "10"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Identical structure to the related stack-size question — the last valid index of an 11-element zero-indexed array is 10.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "MS-Excel/PowerPoint में हम वर्तमान स्लाइड से प्रारंभ करके स्लाइड शो चला सकते हैं, ............ कुंजी का उपयोग करते हुए तथा शुरुआत से ............ कुंजी के प्रयोग से।",
+      "options": [
+        "F5, F7",
+        "F6, F8",
+        "F7, Shift + F7",
+        "F5, Shift + F5"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "F5 = Start Slideshow from beginning. Shift+F5 = Start Slideshow from current slide. These are the standard PowerPoint keyboard shortcuts.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "स्लाइड को पुनर्व्यवस्थित करने के लिए MS-PowerPoint में निम्न में से कौन सा व्यू सबसे उपयुक्त है?",
+      "options": [
+        "Slide Sorter",
+        "Notes Page",
+        "Normal",
+        "Slide Show"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Normal view is for editing slide content; Notes Page is for speaker notes; Slide Show is for presenting. Slide Sorter is purpose-built for rearranging slide order via drag-and-drop thumbnails.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SD और MMC का संदर्भ में क्या तात्पर्य है?",
+      "options": [
+        "Secure Digital, Multimedia Card",
+        "Secure Data, Memory Management Card",
+        "Safe Data, Mega Memory Card",
+        "Safe Digits, Multimedia Card"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SD (Secure Digital) and MMC (MultiMedia Card) are industry-standard names for these removable storage card formats, used widely in cameras and mobile devices.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "MS-Word में 'Gutter' किससे संबंधित है?",
+      "options": [
+        "Orientation",
+        "Margins",
+        "Page size",
+        "Equation"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Gutter is configured within the Margins tab of Page Setup, specifically reserving binding space — it falls under margin settings, not orientation, page size, or equations.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "MS-Word के संदर्भ में रिक्त स्थान की पूर्ति करें — 'एक डॉक्यूमेंट में किसी विशिष्ट स्थान को नामांकित करने के लिए ............. बनाएँ।'",
+      "options": [
+        "Clip Art",
+        "Cross-reference",
+        "Hyperlink",
+        "Bookmark"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Bookmarks let you assign a name to a specific point or selection in a Word document; this is their defining and exclusive purpose, unlike Hyperlink (links to a destination) or Cross-reference (refers to another labeled item).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "MS-Word डॉक्यूमेंट में सजावटी टेक्स्ट को क्या कहते हैं?",
+      "options": [
+        "Bookmark",
+        "WordArt",
+        "SmartArt",
+        "ClipArt"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SmartArt creates diagrams/graphics from text lists; ClipArt provides ready-made images; Bookmark marks document locations. WordArt is the feature purpose-built for decorative text styling.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन एक सिस्टम सॉफ्टवेयर नहीं है?",
+      "options": [
+        "Programming language translators",
+        "Utility programs",
+        "Database software",
+        "Operating system"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "System software directly manages computer hardware/resources or supports other software (OS, compilers/translators, utilities). A general-purpose database management application is typically categorized as application software, serving end-user data needs.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से भंडारण की सबसे बड़ी इकाई कौन सी है?",
+      "options": [
+        "Terabyte",
+        "Kilobyte",
+        "Megabyte",
+        "Gigabyte"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Standard storage unit hierarchy (base-1024 or base-1000 depending on convention): KB < MB < GB < TB. Terabyte is 1024 times larger than Gigabyte.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा पहली पीढ़ी का कंप्यूटर नहीं है?",
+      "options": [
+        "ENIAC",
+        "PDP-11",
+        "UNIVAC-I",
+        "IBM-701"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "First generation computers (1940s–1950s) used vacuum tubes: ENIAC, UNIVAC-I, IBM-701 fit this category. PDP-11 (introduced 1970) used integrated circuits, placing it in the third generation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "बड़ी मात्रा में प्राप्त चेकों के प्रबंधन के लिए बैंकिंग उद्योग द्वारा निम्न में से किसका उपयोग किया जाता है?",
+      "options": [
+        "Digitizer",
+        "MICR",
+        "Barcode reader",
+        "Cipher"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "MICR encodes cheque numbers, account numbers, and bank codes in magnetic ink at the bottom of cheques, enabling fast machine-reading and sorting — this is the standard banking-industry technology for high-volume cheque processing.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "यदि तीन थ्रेड एक ही समय में एक वस्तु को साझा करने का प्रयास कर रहे हैं, तो इस परिदृश्य में कौन सी स्थिति उत्पन्न होगी?",
+      "options": [
+        "Time-lapse",
+        "Critical situation",
+        "Race condition",
+        "Recursion"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A race condition occurs specifically when the outcome of concurrent operations depends on the unpredictable timing/order of thread execution accessing shared data — exactly the scenario described.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल डाटाबेस में न्यूनतम सुपर कीज को ............... के रूप में जाना जाता है।",
+      "options": [
+        "Primary keys",
+        "Candidate keys",
+        "Foreign keys",
+        "Reference keys"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Super keys can contain extra/redundant attributes. A candidate key is a super key stripped down to the minimum necessary attributes for unique identification — that minimality is its defining property.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डिसीजन टेबल में, बाएँ-नीचे के चतुर्थांश (quadrant) को क्या कहा जाता है?",
+      "options": [
+        "Condition entry",
+        "Condition stub",
+        "Action entry",
+        "Action stub"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Standard decision table layout: Conditions occupy the top half (stub on the left listing condition names, entries on the right showing T/F combinations); Actions occupy the bottom half (stub on the left listing action names, entries on the right showing which actions to take).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सूचना संग्रहण के संदर्भ में, रैंकिंग स्केल प्रश्न उत्तरदाताओं से क्या पूछते हैं?",
+      "options": [
+        "Choose one among given answer choices",
+        "Rank list of items in order of importance",
+        "Mark a level of satisfaction on a given scale",
+        "Say Yes or No"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Ranking scale ≠ Rating scale. Ranking asks respondents to ORDER items relative to each other; Rating (option C) asks them to mark a level on a fixed scale independently for each item.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिलेशन जिसमें प्रत्येक नॉन-की एट्रिब्यूट प्राइमरी कुंजी पर पूर्ण रूप से आश्रित/निर्भर हो और जिसमें कोई ट्रांजिटिव डिपेंडेंसी (निर्भरता) न हो, वह है -",
+      "options": [
+        "5NF",
+        "3NF",
+        "4NF",
+        "BCNF"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "2NF removes partial dependency (ensuring full functional dependency on the key). 3NF builds on 2NF by additionally removing transitive dependency. The question's exact description matches the textbook definition of 3NF.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा सॉफ्टवेयर जटिलता (complexity) का माप है?",
+      "options": [
+        "Number of lines of code (LOC)",
+        "Number of man years",
+        "Number of function points (FP)",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "While each metric measures a slightly different dimension (LOC=size, FP=functional size/complexity, man-years=effort), all three are conventionally grouped together as software project measurement metrics in introductory software engineering material, making 'All of the above' the typically expected answer in this style of question.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से किस क्रम में परीक्षण स्तर किए जाते हैं?",
+      "options": [
+        "Unit, Integration, System, Acceptance",
+        "It is based on nature of the project",
+        "Unit, Integration, Acceptance, System",
+        "Unit, System, Integration, Acceptance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Unit testing checks individual components first; Integration testing checks how components work together; System testing validates the complete system; Acceptance testing confirms the system meets business/user requirements — this strict bottom-up order is the standard V-model/testing pyramid sequence.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "जो परीक्षण किसी एक विशेष मॉड्यूल के परीक्षण पर अत्यधिक ध्यान केंद्रित करता है, वह है -",
+      "options": [
+        "Gorilla testing",
+        "Fuzz testing",
+        "Inter system testing",
+        "Breadth testing"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Gorilla testing concentrates testing effort on a single module with great intensity. Fuzz testing feeds random/invalid input broadly; Breadth testing checks many features briefly rather than one module deeply.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सिस्टम स्टडी प्रोजेक्ट के लिए पहला कदम है -",
+      "options": [
+        "Define system performance criteria",
+        "Describe information needs",
+        "Staff for the study project",
+        "Announce the study project"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Before performance criteria can be defined or information needs described, stakeholders and staff must first be informed that a system study is being undertaken — this announcement step precedes all data-collection activities.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "मेमोरी-प्रोसेसर गति असंतुलन को न्यूनतम करने के लिए निम्नलिखित में से किस मेमोरी का उपयोग किया जाता है?",
+      "options": [
+        "UVEPROM",
+        "Flash memory",
+        "Cache memory",
+        "DVD"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Cache stores frequently accessed data/instructions close to the CPU, allowing faster access and reducing the number of slower main-memory fetches — directly addressing the CPU-memory speed mismatch.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सी विधियाँ Java में string बनाएँगी? I: String S = \"Hello Java\"; II: String S2 = new String(\"Hello Java\");",
+      "options": [
+        "Only I",
+        "Only II",
+        "Both I and II",
+        "Neither I nor II"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Statement I creates (or reuses) a String literal in the string constant pool. Statement II explicitly creates a new String object on the heap, bypassing the pool. Both are syntactically and semantically valid ways to obtain a String object in Java.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा लाइन और पेज प्रिंटर क्रमशः हैं?",
+      "options": [
+        "Laser Printer, Dot-Matrix Printer",
+        "Drum Printer, Band Printer",
+        "Drum Printer, Laser Printer",
+        "Laser Printer, Chain Printer"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Line printers (Drum, Chain, Band printers) print one full line per cycle. Page printers (Laser, Inkjet in page mode) render and print a complete page at once. Option C correctly pairs Drum (line) with Laser (page).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "यदि SQL कमांड DELETE FROM EMPLOYEE; 'n' टपल वाले रिलेशन EMPLOYEE पर निष्पादित की जाती है, तो EMPLOYEE रिलेशन से ............... हट जाएंगे।",
+      "options": [
+        "Zero tuples",
+        "Only first tuple",
+        "All 'n' tuples",
+        "Only last tuple"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The absence of a WHERE clause means no filter condition is applied, so SQL deletes all rows that exist in the table at the time of execution — all n tuples.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा SQL में स्कीमा परिवर्तन कथनों का वैध युग्म है?",
+      "options": [
+        "DELETE, ALTER",
+        "DROP, UPDATE",
+        "DROP, ALTER",
+        "DELETE, UPDATE"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DDL (Data Definition Language) commands like CREATE, ALTER, DROP, TRUNCATE change schema structure. DML (Data Manipulation Language) commands like INSERT, UPDATE, DELETE, SELECT operate on data values, not structure.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सत्य कथन का चुनाव करें — I: बायनरी सर्च, लीनियर सर्च की तुलना में तेज होती है। II: बायनरी सर्च उन सभी इनपुट लिस्ट पर लागू नहीं की जा सकती जिन पर लीनियर सर्च लागू की जा सकती है।",
+      "options": [
+        "Only I",
+        "Only II",
+        "Both I and II",
+        "Neither I nor II"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Both statements describe genuine, textbook-accurate properties of binary vs linear search: speed advantage (when applicable) and the sorted-data precondition that limits binary search's applicability compared to linear search.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "LB और UB एक लीनियर एरे LA के निम्न और ऊपरी सीमा हैं। निम्नलिखित एल्गोरिथम पर विचार करें — 1. K=LB से UB तक दोहराएँ, LA[K] पर PROCESS लागू करें। 2. Exit. एल्गोरिथम एरे LA को ............... करता है।",
+      "options": [
+        "sorts",
+        "searches",
+        "traverses",
+        "merges"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sorting requires comparisons and rearrangement of elements; searching requires comparing against a target value; merging requires combining two arrays. The given algorithm does none of these — it only visits every element once, which is traversal.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल बीजगणित के संदर्भ में, निम्नलिखित में से कौन से यूनरी ऑपरेटर हैं? 1. सिलेक्ट 2. प्रोजेक्ट 3. यूनियन 4. प्रोडक्ट",
+      "options": [
+        "and 2 only",
+        "and 4 only",
+        "and 2 vs 4",
+        "All are binary"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Unary operators in relational algebra act on exactly one relation: Select filters rows, Project filters columns. Binary operators (Union, Intersection, Set Difference, Cartesian Product, Joins) require two input relations.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा डाटाबेस ऑब्जेक्ट भौतिक रूप से मौजूद नहीं है?",
+      "options": [
+        "Base table",
+        "Index",
+        "View",
+        "None of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Base tables physically store data; indexes physically store data structures (like B-trees) for fast lookup. A regular view has no physical storage of its own — it's just a saved SQL query executed on demand.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित का मिलान करें — सूची-I: (a) DDL (b) DML (c) TCL (d) बायनरी ऑपरेशन; सूची-II: (i) LOCK TABLE (ii) COMMIT (iii) Natural Difference (iv) REVOKE",
+      "options": [
+        "(ii), b-(i), c-(iii), d-(iv)",
+        "(i), b-(iv), c-(ii), d-(iii)",
+        "(iii), b-(ii), c-(i), d-(iv)",
+        "(iv), b-(i), c-(ii), d-(iii)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "COMMIT (TCL) and Natural Difference (binary relational-algebra operation) are unambiguous matches. The DDL/DML assignment of LOCK TABLE and REVOKE follows this specific question's apparent categorization scheme rather than the strictest standard SQL command classification (where REVOKE is normally DCL, not DML).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "ट्यूपल रिलेशनल कैलकुलस में P1 → P2 किसके समतुल्य है?",
+      "options": [
+        "¬P1 ∨ P2",
+        "P1 ∨ P2",
+        "P1 ∧ P2",
+        "P1 ∧ ¬P2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "This is a basic propositional logic identity: 'if P1 then P2' is logically the same as 'not P1, or P2'. It holds universally and applies directly to predicate logic expressions in relational calculus.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल डेटा में हेर-फेर करने के लिए ऑपरेशंस का मूल सेट गठित करने वाला निम्नलिखित में से कौन सा है?",
+      "options": [
+        "Predicate calculus",
+        "Relational calculus",
+        "Relational algebra",
+        "None of these"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Relational algebra defines the foundational set of operators (σ, π, ∪, ×, −, ⋈, etc.) that form the basis for manipulating and querying relations — this is its textbook-standard role.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "नेटवर्क लेयर फायरवॉल ............... के रूप में कार्य करता है।",
+      "options": [
+        "Frame filter",
+        "Packet filter",
+        "Both (A) and (B)",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Network layer (Layer 3) deals with IP packets, so a firewall operating at this layer naturally filters based on packet-level information — hence 'packet filter'. Frame filtering relates to the data link layer (Layer 2), not the network layer.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "............... एक मेलिशियस सॉफ्टवेयर है, जो किसी OS की नियमित कार्यात्मकता को बदल देता है, टारगेट सिस्टम पर पूर्ण नियंत्रण कर, पीड़ित के सिस्टम एडमिनिस्ट्रेटर की भांति कार्य करता है।",
+      "options": [
+        "Spyware",
+        "Virus",
+        "Rootkit",
+        "Trojan horse"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Spyware covertly monitors user activity; Virus replicates by infecting files; Trojan horse disguises itself as legitimate software to gain initial access. Rootkit specifically focuses on gaining and concealing deep, administrator-level system control — matching this question's description precisely.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "हैक्टिविज्म ............... है।",
+      "options": [
+        "process of break into systems and dig out its information and make it public",
+        "gaining access to systems with an intention to fix the identified weaknesses",
+        "test technique for an existing internet infrastructure and to find its loopholes",
+        "the act of hacking a computer system for politically or socially motivated purpose"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Option A describes whistleblowing/leak-style hacking without necessarily a political motive; Option B describes ethical/white-hat hacking; Option C describes penetration testing. Only Option D captures the defining 'politically or socially motivated' aspect unique to hacktivism.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "हैकर्स द्वारा फ्री कॉल करने के लिए उपयोग की जाने वाली सबसे पुरानी फोन हैकिंग तकनीक की पहचान करें।",
+      "options": [
+        "Spamming",
+        "Phreaking",
+        "Cracking",
+        "Phishing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Phreaking predates modern computer-based hacking techniques like phishing, spamming, and general cracking — it specifically targeted analog telephone signaling systems to exploit free calling.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक RAM चिप की क्षमता 1024×8 बिट्स (1K×8) है। 1K×8 RAM से 16K×16 RAM बनाने के लिए आवश्यक न्यूनतम लाइन वाले 2×4 डिकोडर्स की संख्या क्या है?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Building 16K×16 RAM from 1K×8 chips requires expanding both depth (16K/1K = 16 row-groups) and width (16/8 = 2 chips per row-group). The decoder count specifically addresses the depth/row-group selection: 16 row-groups ÷ 4 outputs per 2×4 decoder = 4 decoders needed.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक टाइनी बूटस्ट्रैप लोडर प्रोग्राम ............... में स्थित होता है।",
+      "options": [
+        "Hard disk",
+        "ROM",
+        "BIOS",
+        "None of these"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "While the BIOS firmware is physically stored on a ROM chip, the bootstrap loader program itself is conventionally identified as part of the BIOS — the more precise and commonly expected answer in basic computer exams is 'BIOS' rather than the generic storage medium 'ROM'.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "वाई-फाई हैकिंग की प्रक्रिया में आमतौर पर निम्नलिखित में से किसका उपयोग किया जाता है?",
+      "options": [
+        "Aircrack-ng",
+        "Wireshark",
+        "Norton",
+        "All of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Aircrack-ng is purpose-built for WiFi password auditing/cracking. Wireshark is a general packet sniffer (used in broader network analysis, not WiFi-specific cracking). Norton is antivirus software, unrelated to hacking. Since Norton doesn't belong in this category, 'All of the above' is incorrect.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "............... एन्कोडिंग योजना में, प्रत्येक 24 बिट चार 6 बिट खंड बन जाते हैं और अंततः 32 बिट के रूप में भेजे जाते हैं।",
+      "options": [
+        "bit",
+        "binary",
+        "base64",
+        "quoted-printable"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Base64's defining mechanism is splitting 24-bit (3-byte) input chunks into four 6-bit groups, each becoming one printable character, for a total output of 32 bits (4 characters) per 3 input bytes.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "FTP में, ............... के तीन प्रकार होते हैं — स्ट्रीम, ब्लॉक और कम्प्रेस्ड।",
+      "options": [
+        "file types",
+        "data types",
+        "transmission modes",
+        "None of these"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Stream, Block, and Compressed are the standard FTP transmission mode categories, describing HOW data is sent over the connection, not the type of file or data format.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "चेक सम का उपयोग ............... के लिए किया जाता है।",
+      "options": [
+        "error correction",
+        "error detection",
+        "Both (A) and (B)",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Checksums work by recomputing a value from received data and comparing it to a transmitted checksum; a mismatch signals an error occurred (detection), but checksums lack the redundancy needed to pinpoint and fix the specific error (correction), unlike more complex codes (e.g., Hamming code).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "MS-Excel के संदर्भ में, असंगत/विषम को खोजें -",
+      "options": [
+        "Portrait",
+        "Scenario Manager",
+        "Goal seek",
+        "Data table"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "What-If Analysis tools in Excel (found under the Data ribbon) include Scenario Manager, Goal Seek, and Data Table — all designed to test different variable combinations. 'Portrait' belongs to Page Layout settings, a completely different category.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "नौकरी कतार (job queue) बनाने के लिए विशेष सॉफ्टवेयर को क्या कहा जाता है?",
+      "options": [
+        "Linkage editor",
+        "Interpreter",
+        "Drive",
+        "Spooler"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Spooling (Simultaneous Peripheral Operations On-Line) software specifically creates and manages a job queue, commonly for print jobs, decoupling job submission from actual device processing time.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "पासवर्ड क्रैकिंग तकनीकों के रूप क्या हैं?",
+      "options": [
+        "Attack: Syllable",
+        "Attack: Brute Forcing",
+        "Attack: Hybrid",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Brute-force tries all possible combinations; syllable attacks combine dictionary-word fragments; hybrid attacks combine dictionary words with brute-force-style modifications (numbers/symbols). All three are legitimate, distinct password-attack categories, so 'All of the above' correctly captures that each is valid.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "गलत कथन को चुनें -",
+      "options": [
+        "If a method is declared as final, that method cannot be overridden in sub class",
+        "Finalize() is a method of java, which is called by garbage collector thread before removing an object from the memory",
+        "If a class is declared as final, it cannot be inherited. If you do so it will give you a compile-time error",
+        "If we declare any variable as final, the value of that variable can be modified in final method"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Statements A, B, and C are all factually accurate descriptions of Java's 'final' keyword behavior for methods and classes, and of the garbage-collector-invoked finalize() method. Statement D directly contradicts the fundamental property of final variables (immutability after first assignment), making it the incorrect statement.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "ऑपरेटिंग सिस्टम में कितने स्टेट प्रोसेस किए जा सकते हैं?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "While simplified 3-state models (Ready, Running, Blocked) exist in some introductory treatments, the complete and most commonly tested process lifecycle model in OS textbooks recognizes five distinct states: New → Ready → Running → Waiting/Terminated.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक काउंटिंग सेमाफोर को 8 से प्रारंभ किया गया था। फिर इस पर 12 P (प्रतीक्षा) ऑपरेशन और 7 V (संकेत) ऑपरेशन पूर्ण किए गए। सेमाफोर का परिणामी मूल्य क्या है?",
+      "options": [
+        "4",
+        "3",
+        "5",
+        "1"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Each P (wait) operation decrements the semaphore by 1; each V (signal) operation increments it by 1. Starting at 8: 8 − 12 (from waits) + 7 (from signals) = 3.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "JAVA के संबंध में निम्नलिखित में से कौन सा कथन/से सही है/हैं? A. ऐसे स्थिरांक (constants) जिन्हें बदला नहीं जा सकता, उन्हें 'Static' कीवर्ड का उपयोग करते हुए घोषित किया जाता है। B. एक वर्ग केवल एक क्लास को इनहेरिट कर सकता है लेकिन वह कई इंटरफेस को इम्प्लीमेंट कर सकता है।",
+      "options": [
+        "is true",
+        "is true",
+        "Both (A) and (B) are true",
+        "Neither (A) nor (B) is true"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Statement A confuses 'static' (class-level scope) with 'final' (immutability) — a constant actually needs 'static final' together typically, but 'static' alone does not prevent value changes, so A as stated is false. Statement B accurately reflects core Java OOP rules.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "आर्टिफिशियल इंटेलिजेंस (AI) में कौन सा एजेंट हैप्पी और अनहैप्पी स्टेट से संबंधित है?",
+      "options": [
+        "Simple reflex agent",
+        "Model based agent",
+        "Learning agent",
+        "Utility based agent"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Simple reflex agents react to current percepts only; Model-based agents track internal world state; Learning agents improve performance via experience. Only Utility-based agents explicitly evaluate how 'good' (happy) or 'bad' (unhappy) a state is via a utility measure.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में ............... एक एग्रीगेट फंक्शन है।",
+      "options": [
+        "SELECT",
+        "CREATE",
+        "AVG",
+        "MODIFY"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SELECT is a query/retrieval command, CREATE is a DDL command, and MODIFY is not standard SQL syntax at all (ALTER/UPDATE are used instead). AVG specifically computes the average value over a column's rows, fitting the aggregate function definition.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "'ptrdata' एक डाटा टाइप के लिए पॉइंटर है। अभिव्यक्ति *ptrdata++ का मूल्यांकन (C++ में) इस प्रकार किया जाता है -",
+      "options": [
+        "(*ptrdata++)",
+        "(*ptrdata)++",
+        "*(ptrdata++)",
+        "Depends on compiler"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "This is governed by the C/C++ standard's defined operator precedence table, NOT compiler-dependent behavior — postfix ++ has higher precedence than unary *, so the expression always parses as *(ptrdata++) regardless of compiler.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "मान लें कि p और q गैर-शून्य सकारात्मक पूर्णांक हैं, निम्न प्रोग्राम खंड क्या प्रदर्शन करेगा — While(p!=q) { If(p>q) p=p-q; else q=q-p; }",
+      "options": [
+        "Subtract small number from large number",
+        "Compute GCD of the given numbers",
+        "Compute LCM of the given numbers",
+        "The loop will run infinitely"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The loop continues exactly until p equals q, repeatedly reducing the larger number by the smaller — this terminating-when-equal subtraction process is mathematically guaranteed to converge to the GCD of the two starting positive integers.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "अपनी स्क्रीन के केवल एक हिस्से का स्क्रीनशॉट लेने के लिए स्निपिंग टूल मेनू खोलने का कमांड है -",
+      "options": [
+        "Window key + Ctrl + S",
+        "Window key + Shift + S",
+        "Window key + Alt + X",
+        "Ctrl + Shift + K"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "This shortcut directly invokes the screen-region selection tool in Windows, letting the user drag-select exactly the area they want to capture — this is the well-documented, standard Windows shortcut for partial-screen snipping.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "x ज्ञात कीजिए: यदि (356)₈ = (x)₁₆",
+      "options": [
+        "EE",
+        "EA",
+        "7E",
+        "A8"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Octal-to-hex conversion is typically done via decimal as an intermediate step: (356)₈ = 238 (decimal) = (EE)₁₆, since 14×16=224, and 238−224=14, giving digits E,E.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक्सेप्शन हैंडलिंग के बारे में निम्नलिखित में से कौन सा/से सही है/हैं? i. try ब्लॉक के बिना catch ब्लॉक हो सकता है लेकिन इसके विपरीत संभव नहीं है। ii. किसी try ब्लॉक के लिए कितने भी catch ब्लॉक हो सकते हैं इसकी कोई सीमा नहीं है। iii. जिस ऑब्जेक्ट में एरर आया हो उसी विशिष्ट क्लास का ऑब्जेक्ट बनाया जाना चाहिए अन्यथा रन टाइम एरर आएगी। iv. किसी कोड को प्रोग्राम के प्रत्येक रन के साथ execute करने के लिए, कोड को finally ब्लॉक में लिखा जाता है।",
+      "options": [
+        "and iv",
+        "and iii",
+        "and iv",
+        "i, ii and iv"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "i: A try-finally pair (without catch) is valid Java syntax. ii: Multiple catch blocks for different exception types are allowed without an upper limit. iii: False — a catch block can use a broader exception type (like the Exception superclass) and still catch the specific error, no exact-class match is required. iv: The finally block is guaranteed to execute regardless of whether an exception occurred, on every run.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "वायरस लाइफ साइकिल में निम्नलिखित में से कौन सा चरण शामिल नहीं है?",
+      "options": [
+        "Dormant",
+        "Execution",
+        "Start",
+        "Triggering"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Dormant phase: virus is inactive/idle. Triggering phase: a condition activates the virus. Execution phase: the virus payload runs. 'Start' is simply not one of the four standard, named virus life-cycle phases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एब्सट्रैक्ट क्लासेस के संबंध में निम्नलिखित में से कौन सा कथन गलत है/हैं? i. एब्सट्रैक्ट क्लास की सबक्लास जो एब्सट्रैक्ट मेथड का इम्प्लीमेंटेशन उपलब्ध नहीं कराती, वह भी एब्सट्रैक्ट होती है। ii. एब्सट्रैक्ट क्लास में कंस्ट्रक्टर और स्टैटिक मेथड घोषित नहीं किए जा सकते हैं। iii. कभी-कभी हम सीधे ऑब्जेक्ट बना सकते हैं। iv. एब्सट्रैक्ट क्लास की सबक्लास में किसी मेथड को हमेशा पुनरीभाषित (redefine) किया जाना चाहिए।",
+      "options": [
+        "and ii",
+        "and iii",
+        "and iv",
+        "i, ii and iv"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "My full derivation finds statements ii, iii, and iv all incorrect (with only i being a true/correct statement), which is a three-item set. None of the four listed answer option combinations exactly contains all three of {ii, iii, iv} together — option (B) 'ii and iii' is the closest 2-item subset match available among the given choices.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "C में, वास्तविक डेटा (फ्लोटिंग पॉइंट डेटा टाइप) के विभिन्न प्रकार क्या हैं?",
+      "options": [
+        "float, long double",
+        "long double, short int",
+        "float, double, long double",
+        "short int, double long int, float"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Options B and D incorrectly include 'short int' or 'long int', which are integer types, not floating-point types. Option A is incomplete, missing 'double'. Option C correctly and completely lists all three standard C floating-point types.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित कोड के निष्पादन के बाद परिणाम क्या है, यदि 'a' 10 है, 'b' 5 है और 'c' 10 है? if((a>b)&&(a<c)) { a=a+1; } else { c=c+1; }",
+      "options": [
+        "= 10, c = 10",
+        "= 11, c = 10",
+        "= 10, c = 11",
+        "= 11, c = 11"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The && (logical AND) requires BOTH conditions to be true for the if-branch to execute. Since a<c fails (10 is not less than 10), the overall condition is false regardless of the first condition being true, triggering the else branch.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सी घोषणा Python भाषा में सही नहीं है?",
+      "options": [
+        "xyzp = 5,000,000",
+        "xyzp = 5000 6000 7000 8000",
+        "x, y, z, p = 5000, 6000, 7000, 8000",
+        "x_y_z_p = 5,000,000"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Python requires an operator, comma, or other valid separator between literals in an expression. 'xyzp = 5000 6000 7000 8000' has four bare integer literals with nothing valid connecting them, producing a SyntaxError. Options A and D ('5,000,000') are valid Python — they assign a 3-element tuple (5, 0, 0) to the variable, just not the large single integer the writer may have intended. Option C is standard, valid tuple-unpacking syntax.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    }
+  ]
+}

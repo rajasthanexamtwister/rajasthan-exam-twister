@@ -1,0 +1,337 @@
+{
+  "quizTitle": "It Pathshala DBMS Data Models Er",
+  "subject": "DBMS",
+  "examTags": [
+    "BCI",
+    "Computer Science",
+    "Information Assistant"
+  ],
+  "difficulty": "medium",
+  "questions": [
+    {
+      "questionText": "निम्नलिखित में से कौन सी रिलेशनल DBMS की विशेषता नहीं है?",
+      "options": [
+        "Tables / टेबल",
+        "Tree-like structures / पेड़-जैसी संरचनाएं",
+        "Complex logical relationships / जटिल तार्किक संबंध",
+        "Records / रिकॉर्ड"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "रिलेशनल DBMS (RDBMS) डेटा को टेबल (संबंधों) में स्टोर करता है। पेड़-जैसी संरचनाएं (Tree-like structures) पदानुक्रमित (Hierarchical) डेटाबेस मॉडल की विशेषता हैं, न कि रिलेशनल मॉडल की।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा रिकॉर्ड-आधारित डेटा मॉडल नहीं है?",
+      "options": [
+        "Relational model / रिलेशनल मॉडल",
+        "Hierarchical model / पदानुक्रमित मॉडल",
+        "R model / E-R मॉडल",
+        "Network model / नेटवर्क मॉडल"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "E-R (एंटिटी-रिलेशनशिप) मॉडल एक वैचारिक (conceptual) या उच्च-स्तरीय डेटा मॉडल है। रिकॉर्ड-आधारित मॉडल में रिलेशनल, पदानुक्रमित, नेटवर्क शामिल हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डेटा मॉडल किसका वर्णन करने के लिए वैचारिक उपकरणों का एक संग्रह है?",
+      "options": [
+        "Data and data relationship / डेटा और डेटा संबंध",
+        "Data semantics and consistency constraints / डेटा सिमेंटिक्स और स्थिरता बाधाएं",
+        "Data, data relationship, data semantics and consistency constraints / डेटा, डेटा संबंध, डेटा सिमेंटिक्स और स्थिरता बाधाएं",
+        "None of the above / उपरोक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "एक डेटा मॉडल एक संपूर्ण संरचना प्रदान करता है जो बताता है कि डेटा को कैसे स्टोर, व्यवस्थित और एक्सेस किया जाता है। इसमें डेटा, उनके बीच के संबंध, डेटा का अर्थ (सिमेंटिक्स), और स्थिरता बाधाएं शामिल होती हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DFDs के माध्यम से क्या वर्णित किया गया है जैसा कि पहले अध्ययन किया गया था और बीजगणितीय रूप में दर्शाया गया है?",
+      "options": [
+        "Data flow / डेटा प्रवाह",
+        "Data storage / डेटा भंडारण",
+        "Data Structures / डेटा संरचनाएं",
+        "Data elements / डेटा तत्व"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DFD (डेटा फ्लो डायग्राम) का मुख्य उद्देश्य एक सिस्टम के माध्यम से डेटा के प्रवाह (Data flow) को दर्शाना है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिकसिंव संबंध एक एंटिटी और ........ के बीच का संबंध है।",
+      "options": [
+        "Itself / स्वयं",
+        "subtype entity / एक सबटाइप एंटिटी",
+        "An archetype entity / एक आर्कटाइप एंटिटी",
+        "An instance entity / एक इंस्टेंस एंटिटी"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "एक रिकर्सिव (Recursive) या यूनरी (Unary) संबंध वह होता है जिसमें एक एंटिटी सेट के इंस्टेंस उसी एंटिटी सेट के अन्य इंस्टेंस से संबंधित होते हैं (जैसे, Employee 'Manages' Employee)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "उपरोक्त डेटाबेस में, MANUFACTURER और PRODUCT के बीच संबंध को सबसे अच्छी तरह वर्णित किया गया है ______।",
+      "options": [
+        "One-to-many, with MANUFACTURER as the 'one'",
+        "One-to-many, with MANUFACTURER as the 'many'",
+        "Many-to-many / अनेक-से-अनेक",
+        "Not allowed. If primary key and a foreign key overlap, they must be identical."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "एक सामान्य व्यावसायिक परिदृश्य में, एक मैन्युफैक्चरर (Manufacturer) कई प्रोडक्ट्म (Products) बनाता है। यह एक-से-अनेक (One-to-many) संबंध है, जिसमें MANUFACTURER 'एक' (one) साइड है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक विशेष एंटिटी प्रकार की एंटिटी को एक एंटिटी सेट में समूहीकृत किया जाता है, जिसे एंटिटी प्रकार का ______ भी कहा जाता है।",
+      "options": [
+        "Extension / एक्सटेंशन",
+        "Arity / एरिटी",
+        "Degree / डिग्री",
+        "Intension / इंटेंशन"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "E-R मॉडल में, एक एंटिटी टाइप (Entity Type) एक टेम्पलेट या स्कीमा (जैसे 'Student') है। उस प्रकार की सभी एंटिटी का संग्रह उस समय विशेष पर एंटिटी टाइप का एक्सटेंशन (Extension) कहलाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "उपरोक्त ER आरेख में Weight एक ____ है।",
+      "options": [
+        "Entity / एंटिटी",
+        "Relation / संबंध",
+        "Context / संदर्भ",
+        "Attribute / एट्रिब्यूट"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "E-R डायग्राम में, एंटिटी (जैसे MAN) की विशेषताओं या गुणों (जैसे Age, Weight, Income) को एट्रिब्यूट (Attribute) कहा जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डेटा प्रवाह आरेख में, एक वृत्त/बब्बल दर्शाता है-",
+      "options": [
+        "Data flow / डेटा प्रवाह",
+        "External entity / बाहरी एंटिटी",
+        "Data store / डेटा स्टोर",
+        "Process / प्रक्रिया"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DFD में, एक प्रोसेस (Process) जो इनपुट डेटा को आउटपुट डेटा में बदलता है, उसे एक वृत्त (circle) या गोल आयत (बब्बल) द्वारा दर्शाया जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "ER आरेख में कार्डिनेलिटी क्या है?",
+      "options": [
+        "Relationship between two data stores / दो डेटा स्टोर के बीच संबंध",
+        "Relationship between two entity sets / दो एंटिटी सेट के बीच संबंध",
+        "Relationship between two attributes / दो एट्रिब्यूट के बीच संबंध",
+        "Relationship between two processes / दो प्रक्रियाओं के बीच संबंध"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "कार्डिनेलिटी यह निर्दिष्ट करता है कि एक एंटिटी सेट की कितनी एंटिटी दूसरे एंटिटी सेट की एंटिटी से एक relationship के माध्यम से संबंधित हो सकती है (जैसे 1:1, 1:N, M:N)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन से कथन सत्य हैं? (I. Context diagram को सिस्टम को एक बुलबुले के रूप में दर्शाना चाहिए। II. DFDs के सभी स्तरों पर बाहरी एंटिटी को स्पष्ट रूप से पहचाना जाना चाहिए। III. नियंत्रण जानकारी को DFD में प्रस्तुत नहीं किया जाना चाहिए। IV. एक डेटा स्टोर को दूसरे डेटा स्टोर या एक बाहरी एंटिटी से जोड़ा जा सकता है।)",
+      "options": [
+        "and IV",
+        "and III",
+        "and III",
+        "I, II and III"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Context diagram एक high-level DFD होता है जिसमें पूरा सिस्टम एक ही प्रोसेस (या बुलबुला) के रूप में दिखाया जाता है (Statement I: सही)। DFD केवल डेटा फ्लो को दर्शाता है, कंट्रोल फ्लो को नहीं (Statement III: सही)। Data store को सीधे दूसरे data store या external entity से कनेक्ट नहीं किया जा सकता (Statement IV: गलत)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक ER आरेख में एक कमजोर एंटिटी सेट के सहायक अनेक-एक संबंध का प्रतिनिधित्व करने के लिए निम्नलिखित में से किसका उपयोग किया जाता है?",
+      "options": [
+        "Diamonds with double bold border / दोहरी/बोल्ड सीमा वाले हीरे",
+        "Rectangles with double bold border / दोहरी/बोल्ड सीमा वाले आयत",
+        "Ovals with double bold border / दोहरी/बोल्ड सीमा वाले अंडाकार",
+        "Ovals that contain underlined identifiers / रेखांकित पहचानकर्ता वाले अंडाकार"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ER Diagram में: Weak Entity Set को दर्शाने के लिए double rectangle का प्रयोग किया जाता है। इस identifying relationship को double diamond (दोहरी सीमा वाला हीरा) से दर्शाया जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डेटाबेस के ER मॉडल में एंटिटी प्रकार A और B होते हैं। ये एक संबंध R से जुड़े होते हैं जिसका अपना कोई एट्रिब्यूट नहीं होता है। निम्नलिखित में से किस स्थिति में, R के लिए रिलेशनल तालिका को A के साथ विलय किया जा सकता है?",
+      "options": [
+        "Relationship R is one-to-many and the participation of A in R is total / संबंध R एक-से-अनेक है और R में A की भागीदारी कुल है",
+        "Relationship R is one-to-many and the participation of A in R is partial / संबंध R एक-से-अनेक है और R में A की भागीदारी आंशिक है",
+        "Relationship R is many-to-one and the participation of A in R is total / संबंध R अनेक-से-एक है और R में A की भागीदारी कुल है",
+        "Relationship R is many-to-one and the participation of A in R is partial / संबंध R अनेक-से-एक है और R में A की भागीदारी आंशिक है"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "ER मॉडल में यदि many-to-one संबंध है (A → B), और A की total participation है, तो R का अलग से table बनाना जरूरी नहीं होता। B की primary key को A में foreign key के रूप में जोड़ कर ही relationship को represent किया जा सकता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "मूल ER और रिलेशनल मॉडल दिए गए हैं, निम्नलिखित में से कौन सा गलत है?",
+      "options": [
+        "An attribute of an entity can have more than one value / एक एंटिटी के एट्रिब्यूट के एक से अधिक मान हो सकते हैं",
+        "An attribute of an entity can be composite / एक एंटिटी का एट्रिब्यूट कम्पोजिट हो सकता है",
+        "In a row of a relational table, an attribute can have more than one value / एक रिलेशनल तालिका की एक पंक्ति में, एक एट्रिब्यूट के एक से अधिक मान हो सकते हैं",
+        "In a row of a relational table, an attribute can have exactly one value or a NULL value / एक रिलेशनल तालिका की एक पंक्ति में, एक एट्रिब्यूट का ठीक एक मान या एक NULL मान हो सकता है"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Relational Model का एक मूल सिद्धांत है — atomicity (1NF का नियम): किसी भी relational table की हर row में हर attribute का मान सिर्फ एक atomic value होना चाहिए। Relational Model में एक attribute में एक ही value होती है — multiple values allowed नहीं है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS में, नेटवर्क मॉडल आधारित है-",
+      "options": [
+        "Linked list / लिंक्ड लिस्ट",
+        "Graph / ग्राफ",
+        "Tree / ट्री",
+        "Queue / क्यू"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Network Model एक डेटा मॉडल है जो entities और उनके बीच के relationships को ग्राफ के रूप में दर्शाता है। यह model hierarchical model से ज्यादा flexible होता है क्योंकि इसमें एक child के multiple parents हो सकते हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "E-R आरेख को इसमें बदला जा सकता है-",
+      "options": [
+        "Objects and classes / ऑब्जेक्ट और क्लास",
+        "Tables / टेबल",
+        "Arrays / ऐरे",
+        "None of these / इनमें से कोई नहीं"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "E-R Diagram का उपयोग डेटाबेस की संरचना (structure) को डिज़ाइन करने के लिए किया जाता है। इसे बाद में Relational Model में बदला जाता है: Entities → Tables, Attributes → Columns, Relationships → Foreign Keys।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक कमजोर एंटिटी सेट है-",
+      "options": [
+        "Entity set whose existence depends on another weak entity set / एंटिटी सेट जिसका अस्तित्व दूसरे कमजोर एंटिटी सेट पर निर्भर करता है",
+        "Entity set whose existence depends on another strong entity set / एंटिटी सेट जिसका अस्तित्व दूसरे मजबूत एंटिटी सेट पर निर्भर करता है",
+        "Entity set whose existence dependency does not matter / एंटिटी सेट जिसकी अस्तित्व निर्भरता कोई मायने नहीं रखती",
+        "None of these / इनमें से कोई नहीं"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Weak Entity Set एक ऐसा entity set होता है जिसका स्वतंत्र रूप से अस्तित्व नहीं होता। इसे uniquely पहचानने के लिए किसी Strong Entity Set की जरूरत होती है। इसमें अपना पूरा primary key नहीं होता।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा बेस का वैचारिक डिजाइन किसकी मदद से किया जाता है?",
+      "options": [
+        "Data marts / डेटा मार्ट",
+        "Data models / डेटा मॉडल",
+        "DFD",
+        "Flowchart / फ्लोचार्ट"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Conceptual Design एक डेटाबेस डिजाइन प्रक्रिया का पहला चरण होता है। इस पूरे वैचारिक (conceptual) डिजाइन को दर्शाने के लिए उपयोग किया जाता है: Data Models, विशेष रूप से ER (Entity-Relationship) Model।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किस प्रकार का DBMS एक ही एंटिटी के कई संस्करणों को बनाए रखने के लिए समर्थन प्रदान करता है?",
+      "options": [
+        "Relational Data Base Management Systems / रिलेशनल डेटा बेस मैनेजमेंट सिस्टम",
+        "Hierarchical / पदानुक्रमित",
+        "Object Oriented Data Base Management Systems / ऑब्जेक्ट ओरिएंटेड डेटा बेस मैनेजमेंट सिस्टम",
+        "Network / नेटवर्क"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Object Oriented DBMS (OODBMS) एक ऐसा डेटाबेस मॉडल है जो ऑब्जेक्ट ओरिएंटेड प्रोग्रामिंग की अवधारणाओं को अपनाता है, जिसमें Versioning (संस्करण बनाना और बनाए रखना) शामिल है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "छात्रों और कोर्सेस के बीच संबंध है-",
+      "options": [
+        "One-One",
+        "One-Many",
+        "Many-Many",
+        "None / कोई नहीं"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "एक छात्र कई कोर्स कर सकता है, और एक कोर्स कई छात्रों द्वारा किया जा सकता है। इसलिए यह संबंध होता है: Many-to-Many (कई से कई)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "ER डायग्राम में निम्नलिखित में से कौन सा एक सही नोटेशन है?",
+      "options": [
+        "Entities are oval / एंटिटीज ओवल होती हैं",
+        "Relationships are rectangles / रिलेशनशिप रेक्टेंगल होते हैं",
+        "Attributes are diamonds / एट्रिब्यूट्स डायमंड होते हैं",
+        "Weak entities are double rectangles / वीक एंटिटीज डबल रेक्टेंगल होती हैं"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "ER Diagram में: Entities → Rectangles, Attributes → Ovals, Relationships → Diamonds, Weak Entities → Double Rectangles. Options A, B, C सभी गलत हैं। केवल D सही है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "P, S, Q, R1, R2 को दर्शाने के लिए आवश्यक टेबलों की न्यूनतम संख्या है- (ER diagram: P, Q, S weak entity with R1 and R2 relationships)",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "P → 1 table, Q → 1 table, S (weak entity) → अपनी अलग table बनती है, R1 (binary, many-to-many) → 1 table, R2 (weak relationship) → S में merge होती है। कुल टेबल: 4।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "ER डायग्राम में एंटिटीज के बीच संबंध और संबंध के एट्रिब्यूट को दर्शाया जाता है:",
+      "options": [
+        "Rectangle box and ellipse / रेक्टेंगल बॉक्स और एलिप्स",
+        "Ellipse and rectangle box / एलिप्स और रेक्टेंगल बॉक्स",
+        "Diamond box and ellipse / डायमंड बॉक्स और एलिप्स",
+        "Ellipse and diamond box / एलिप्स और डायमंड बॉक्स"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "ER Diagram में: Entities → rectangle, Attributes → ellipse, Relationships → diamond, और relationship के attributes को भी ellipse में जोड़ा जाता है जो diamond से जुड़े होते हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक एंटिटी है:",
+      "options": [
+        "collection of items in an application / एक एप्लीकेशन में आइटम्स का संग्रह",
+        "distinct real world item in an application / एक एप्लीकेशन में एक विशिष्ट वास्तविक दुनिया का आइटम",
+        "An inanimate object in an application / एक एप्लीकेशन में एक निर्जीव वस्तु",
+        "data structure in DBMS / DBMS में एक डेटा स्ट्रक्चर"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Entity का अर्थ है एक ऐसा वास्तविक दुनिया का ऑब्जेक्ट जिसे हम डेटाबेस में पहचानते और स्टोर करते हैं। यह कोई व्यक्ति, स्थान, वस्तु, घटना आदि हो सकता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एंटिटी सेट 'Transaction' में एट्रिब्यूट ट्रांजैक्शन नंबर, डेट, अमाउंट हैं। एंटिटी सेट 'Account' में एट्रिब्यूट अकाउंट नंबर, कस्टमर नेम, बैलेंस हैं। वीक एंटिटी के डिस्क्रिमिनेटर और प्राइमरी की को पहचानें:",
+      "options": [
+        "Account number, account number / अकाउंट नंबर, अकाउंट नंबर",
+        "Transaction number, {account number, transaction number} / ट्रांजैक्शन नंबर, {अकाउंट नंबर, ट्रांजैक्शन नंबर}",
+        "(account number, date), (account number, date)",
+        "Date {transaction number, date} / डेट {ट्रांजैक्शन नंबर, डेट}"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Transaction एक weak entity है। Discriminator: transaction number (weak entity के अंदर partially identify करता है)। Primary Key: account number + transaction number (owner's PK + discriminator)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    }
+  ]
+}

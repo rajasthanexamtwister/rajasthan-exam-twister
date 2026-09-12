@@ -1,0 +1,662 @@
+{
+  "quizTitle": "DBMS Manipulating Data",
+  "subject": "DBMS",
+  "examTags": [
+    "BCI",
+    "Computer Science",
+    "Information Assistant"
+  ],
+  "difficulty": "medium",
+  "questions": [
+    {
+      "questionText": "(एक रिश्ते की पंक्तियों को ___ के रूप में जाना जाता है।)",
+      "options": [
+        "Fields",
+        "Database",
+        "Rows and Columns",
+        "Records"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In a relational database, rows are called Records (also known as Tuples). Columns are called Fields or Attributes. The term 'Records' is used because each row holds a complete data entry/record for one entity.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(निम्न में से कौन-सा एक प्रकार का डेटा मैनिपुलेशन कमांड है?)",
+      "options": [
+        "Delete",
+        "Alter",
+        "Create",
+        "All above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DML (Data Manipulation Language) commands operate on data: SELECT, INSERT, UPDATE, DELETE. ALTER and CREATE are DDL (Data Definition Language) commands that modify structure, not data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(निम्न में से कौन सा कमांड SQL डेटाबेस से रिलेशन बनाने (या डिलीट करने) के लिए प्रयोग किया जाता है?)",
+      "options": [
+        "Remove",
+        "Drop",
+        "Delete",
+        "All above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DROP is a DDL command used to completely remove a table (relation) or database from the system. DELETE removes rows (data) from a table but the table itself remains. REMOVE is not a valid SQL command.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(Conceptual Level Schema के बारे में सत्य statement है-)",
+      "options": [
+        "It is also called Logical Level Schema",
+        "It describes the Structure of the complete Database",
+        "It is the Database administrator level",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The Conceptual (Logical) Schema describes the complete logical structure of the database. It is maintained by the Database Administrator (DBA) and is also called the Logical Level Schema. All three statements are true.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(कॉलम में मानों की संख्या ज्ञात करने के लिए निम्नलिखित में से किस कीवर्ड का उपयोग किया जाता है?)",
+      "options": [
+        "Add",
+        "Total",
+        "Sum",
+        "Count"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "COUNT() is an SQL aggregate function that returns the number of rows/values in a column. SUM() adds numeric values. ADD and Total are not SQL functions. Example: SELECT COUNT(*) FROM students;",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(एक डेटाबेस भाषा जो सम्पूर्ण डेटाबेस स्ट्रक्चर एवं स्कीम की परिभाषा से संदर्भित है-)",
+      "options": [
+        "DCL",
+        "DML",
+        "DDL",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DDL (Data Definition Language) is used to define, create, modify, and delete database structures and schemas. Commands: CREATE, ALTER, DROP, TRUNCATE. DML manipulates data; DCL controls access.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(कौनसी Key अनेक NULL Values को accept कर सकती है-)",
+      "options": [
+        "Foreign key",
+        "Unique key",
+        "Primary key",
+        "None of above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A Foreign Key can accept multiple NULL values unless constrained otherwise. A Primary Key cannot have NULL values at all. A Unique Key can accept only ONE NULL value (in most RDBMS). Foreign Keys reference a primary key in another table and can be NULL if the relationship is optional.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(निम्न में से क्या सभी रिकॉर्ड प्रबंधन प्रणालियों के लिए सामान्य आदिम संचालन में शामिल है?)",
+      "options": [
+        "Print",
+        "Sort",
+        "Look-up",
+        "All of the above (उपर्युक्त सभी)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "All three — Print, Sort, and Look-up — are considered basic primitive operations in record management systems. Look-up retrieves records, Sort orders them, and Print outputs them.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(Physical Schema को कहा जाता है-)",
+      "options": [
+        "Internal Schema",
+        "External Schema",
+        "Logical Schema",
+        "None of these"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In ANSI/SPARC Three-Schema Architecture: Physical/Internal Schema = lowest level (how data is physically stored). Conceptual/Logical Schema = middle level (structure). External Schema = highest level (user views).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(डेटाबेस के समग्र डिजाइन को परिभाषित करने के लिए आसतौर पर निम्नलिखित में से किसका उपयोग किया जाता है?)",
+      "options": [
+        "Schema",
+        "Source code",
+        "Data definition language",
+        "Application program"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A Schema defines the overall design/structure of the database — what tables exist, what columns they have, and how they relate. It is the blueprint of the database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(Three Schema Architecture में कितने level होते हैं-)",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The ANSI/SPARC Three-Schema Architecture has exactly 3 levels: (1) External/View Level, (2) Conceptual/Logical Level, (3) Internal/Physical Level. This architecture provides data independence.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(निम्नलिखित में से किस कमांड का प्रयोग टेबल के अंदर कॉलम को संशोधित करने के लिए किया जाता है?)",
+      "options": [
+        "Update",
+        "Drop",
+        "Set",
+        "Alter"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "ALTER is a DDL command used to modify the structure of an existing table — add, remove, or modify columns. UPDATE is a DML command that modifies data values inside rows, not the column structure itself.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(निम्न में से कौन-सा कमांड डेटा डेफिनिशन लैंग्वेज कमांड का एक प्रकार है?)",
+      "options": [
+        "Merge",
+        "Delete",
+        "Update",
+        "Create"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "CREATE is a DDL command that creates new database objects (tables, indexes, views). DELETE and UPDATE are DML commands. MERGE is a DML command combining INSERT/UPDATE/DELETE.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(डेटाबेस में किसी भी ट्रांजेक्शन को स्थायी रूप से सेव करो के लिए निम्न में से किस कमांड का उपयोग किया जाता है?)",
+      "options": [
+        "Rollback",
+        "Commit",
+        "Savepoint",
+        "None of above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "COMMIT permanently saves all changes made during a transaction to the database. ROLLBACK undoes all changes since the last COMMIT. SAVEPOINT creates a point within a transaction to partially rollback to.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(एक Oracle table का स्ट्रक्चर प्राप्त करने हेतु प्रयुक्त कमाण्ड है-)",
+      "options": [
+        "STRUCTURE [TableName]",
+        "DESCRIBE [TableName]",
+        "DESCRIBE STRUCTURE [TableName]",
+        "DESC TABLE [TableName]"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In Oracle SQL, DESCRIBE (or DESC) [TableName] shows the structure of a table — column names, data types, and NULL constraints. The short form 'DESC TableName' also works. Options (a), (c), (d) are invalid syntax.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(कौनसी key bydefault clustered index किएट करती है-)",
+      "options": [
+        "Foreign key",
+        "Unique key",
+        "Primary key",
+        "None of above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A Primary Key automatically creates a clustered index by default in most RDBMS (SQL Server, MySQL InnoDB). A clustered index determines the physical order of data in the table. A Unique Key creates a non-clustered index.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(निम्नलिखित में से कौन सा टॉप-डाउन दृष्टिकोण है जिसमें इकाई के उच्च स्तर को दो निम्न उप-संस्थाओं में विभाजित किया जा सकता है?)",
+      "options": [
+        "Specialization",
+        "Generalization",
+        "Aggregation",
+        "All above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Specialization is a top-down approach in ER modeling where a higher-level entity is broken into more specific lower-level sub-entities (e.g., Employee → Manager, Technician). Generalization is the opposite (bottom-up). Aggregation combines entities into a relationship.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(निम्नलिखित में से किस एक में, एक उच्च-स्तरीय इकाई बनाने के लिए कई निचली संस्थाओं को एक साथ समूहीकृत (संयुक्त) किया जाता है?)",
+      "options": [
+        "Aggregation",
+        "Generalization",
+        "Specialization",
+        "None of above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Generalization is a bottom-up approach where multiple lower-level entities are grouped to form a higher-level entity. Example: Car + Truck + Bus → Vehicle. It is the reverse of Specialization.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(लॉग-इन के लिए एक कंप्यूटर सुरक्षा प्रोटोकॉल को सूचना प्रणाली के ___ संजुएवक के उदाहरण के रूप में माना जा सकता है।)",
+      "options": [
+        "Software",
+        "Procedure",
+        "Hardware",
+        "Data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The 5 components of an Information System are: Hardware, Software, Data, People, and Procedures. A security protocol for logging in is a set of rules/steps = Procedure. Software is the program; Protocol/Rules are Procedures.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(निम्न में से कौन-सा Logical Database Structure नहीं है?)",
+      "options": [
+        "Tree",
+        "Relational",
+        "Network",
+        "Chain"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The three main logical database models are: Hierarchical (tree structure), Network, and Relational. 'Chain' is not a recognized logical database structure model.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(डेटाबेस प्रबंधन प्रणाली को ___ के संग्रह के रूप में माना जा सकता है जो हमें डेटाबेस बनाने और बनाए रखने में सक्षम बनाता है।)",
+      "options": [
+        "Programs",
+        "Keys",
+        "Translators",
+        "Language activity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A DBMS is a collection of programs (software) that enables users to create, maintain, and manage databases. It provides an interface between the user and the physical database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(प्रत्येक विशेषता में कुछ पूर्वनिर्धारित वैल्यू क्षेत्र होता है जिसे कहा जाता है-)",
+      "options": [
+        "Tuple",
+        "Tables",
+        "Attribute domain",
+        "Relation schema"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "An Attribute Domain is the set of allowable/predefined values that an attribute can take. For example, the domain of 'Gender' attribute could be {Male, Female, Other}. Domain constrains valid values.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(निम्न में से किस स्तर को अंतिम उपयोग कला का की लिए बंद स्तर माना जाता है?)",
+      "options": [
+        "External level",
+        "Physical level",
+        "Internal level",
+        "Conceptual level"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The External Level (View Level) is the highest level of abstraction closest to end users. It describes how data is viewed by individual users (user views/subschemas). Users only see what they are allowed to see.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(DCL का पूर्ण मतलब है-)",
+      "options": [
+        "Data Control Language",
+        "Data Console Language",
+        "Data Console Level",
+        "Data Control Level"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DCL stands for Data Control Language. It includes commands like GRANT and REVOKE that control access permissions to database objects. It manages who can do what in the database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(___ key एक minimal super key है-)",
+      "options": [
+        "Primary",
+        "Foreign",
+        "Candidate",
+        "Non-prime"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A Candidate Key is a minimal super key — it uniquely identifies records but has no unnecessary attributes. A Super Key may have extra attributes; a Candidate Key is the minimal version. One Candidate Key is chosen as the Primary Key.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(डेटाबेस को अंतिम प्रतिबद्ध स्थिति में पुनर्स्थापित करने के लिए निम्न में से किस कमांड का उपयोग किया जाता है?)",
+      "options": [
+        "Rollback",
+        "Commit",
+        "Savepoint",
+        "Both a and c"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ROLLBACK restores the database to the last COMMIT point, undoing all uncommitted changes. COMMIT saves changes permanently. SAVEPOINT sets a checkpoint within a transaction.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(TCL का मतलब है-)",
+      "options": [
+        "Transaction control languages",
+        "Transaction command languages",
+        "Transaction connect languages",
+        "None of the Mentioned"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "TCL = Transaction Control Language. It manages transactions in a database. Commands: COMMIT, ROLLBACK, SAVEPOINT. It ensures data integrity during transactions.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(एक रिलेशन डेटाबेस में, फील्ड में विभाजित प्रत्येक टपल्स को ___ के रूप में जाना जाता है।)",
+      "options": [
+        "Domains",
+        "Relations",
+        "Queries",
+        "All above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In a relational database, each tuple (row) is divided into fields (columns). Each field has a domain — the set of valid values. When a tuple is divided into fields, each field value belongs to an attribute domain.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(निम्नलिखित में से कौन डेटाबेस सामग्री के कुल दृश्य को संदर्भित करता है?)",
+      "options": [
+        "Internal view",
+        "External view",
+        "Conceptual view",
+        "Physical view"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The Conceptual View (Logical Level) represents the total content of the database — what data is stored, relationships, constraints. External view = user subsets. Internal view = physical storage. Conceptual = complete community view.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(रिलेशन कैल्कुलस क्या है?)",
+      "options": [
+        "It is high-level language",
+        "It is kind of procedural language",
+        "It is a non-procedural language",
+        "It is Data Definition language"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Relational Calculus is a non-procedural (declarative) query language — you specify WHAT data you want, not HOW to get it. Relational Algebra is procedural. SQL is based on Relational Calculus concepts.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(शब्द 'ओडीबीसी' ___ के लिए है?)",
+      "options": [
+        "Open Database Connectivity",
+        "Object Database Connectivity",
+        "Oral Database Connectivity",
+        "Oracle Database Connectivity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ODBC = Open Database Connectivity. It is a standard API for accessing database management systems, allowing applications to connect to any database using a common interface regardless of the DBMS.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(निम्नलिखित में से कौन एक विशिष्ट समय पर डेटाबेस में संगहीत जानकारी के संग्रह को सदर्भित करता है?)",
+      "options": [
+        "Schema",
+        "Instance of the database",
+        "Data domain",
+        "Independence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A Database Instance is a snapshot of the database at a particular moment in time — the actual data stored. Schema is the structure/design (permanent). Instance changes with every INSERT/UPDATE/DELETE.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(किस प्रकार के attribute में एक entity के लिए बहुत सारी values होती है-)",
+      "options": [
+        "Multivalued attribute",
+        "Composite attribute",
+        "Single value attribute",
+        "None of these"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A Multivalued Attribute can have multiple values for a single entity. Example: Phone numbers of a person — one person can have multiple phone numbers. Composite attributes have sub-parts. Single-valued attributes have exactly one value.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(निम्नलिखित में से कौन सा कमांड किसी टेबल में मौजूद पंक्ति को हटाने के लिए उपयोग किया जाता है?)",
+      "options": [
+        "Update",
+        "Disert",
+        "Delete",
+        "None of above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DELETE is the DML command used to remove existing rows from a table. UPDATE modifies existing row data. 'Disert' is not a valid SQL command (possibly a typo of 'Discard'). DROP removes the entire table.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(Hierarchical model में डेटा को organise किया जाता है-)",
+      "options": [
+        "Logical structure",
+        "Physical structure",
+        "Tree-like structure",
+        "None of them"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The Hierarchical Database Model organizes data in a tree-like (parent-child) structure. Each parent can have multiple children but each child has only one parent. It was used in IBM's IMS (Information Management System).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(डीएमएल किस उद्देश्य के लिए प्रदान किया जाता है?)",
+      "options": [
+        "Definition of the physical structure of the database system",
+        "Addition of new structure in the database",
+        "Manipulation and processing of the database",
+        "All above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DML (Data Manipulation Language) is provided for manipulating and processing data in the database — inserting, updating, deleting, and querying data. DDL handles structure definition. DML handles data operations.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(किस प्रकार के architecture में user सीधे DBMS का प्रयोग कर सकता है?)",
+      "options": [
+        "2-Tier architecture",
+        "1-Tier architecture",
+        "3-Tier architecture",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In 1-Tier Architecture, the user directly interfaces with the DBMS on the same machine. There is no separation between client and server. This is used for local development/testing. 2-Tier has client-server separation. 3-Tier adds a middle application layer.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(निम्न में से किस कुंजी का प्रयोग सामान्यतः तालिकाओं के बीच संबंधों को दर्शाने के लिए किया जाता है?)",
+      "options": [
+        "Foreign key",
+        "Primary key",
+        "Secondary key",
+        "None of above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A Foreign Key is used to establish and enforce relationships between two tables. It references the Primary Key of another table, creating a referential integrity constraint. Example: Orders table has CustomerID as foreign key referencing Customers table.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(शब्द 'टीसीएल' ___ के लिए है?)",
+      "options": [
+        "Transmission control language",
+        "Transaction control language",
+        "Ternary control language",
+        "Transaction central language"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "TCL = Transaction Control Language. It manages database transactions. Commands: COMMIT (save permanently), ROLLBACK (undo), SAVEPOINT (set checkpoint). Not to be confused with Transmission Control Language (networking term).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(___ कॉलम्स में अनुमत मानों के नियमों को परिभाषित करता है, और डेटाबेस Integrity को लागू करने के मानक Mechanism है-)",
+      "options": [
+        "Column",
+        "Constraint",
+        "Index",
+        "Trigger"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Constraints define rules for allowable values in columns and enforce database integrity. Types: NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, DEFAULT. Triggers enforce rules through procedures; Indexes speed up searching.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(संबंधपरक तालिका में, निम्नलिखित में से किसे 'विशेषता' शब्द द्वारा भी दर्शाया जा सकता है?)",
+      "options": [
+        "Column",
+        "Row",
+        "Entity",
+        "Both a and b"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In relational databases, 'Attribute' and 'Column' and 'Field' are synonymous terms. An attribute represents a property/characteristic of an entity. Row = Tuple = Record. Column = Attribute = Field.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(निम्नलिखित में से कान संबंध में विशेषताओं की संख्या को संदर्भित करता है?)",
+      "options": [
+        "Row",
+        "Column",
+        "Degree",
+        "All above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Degree of a relation = number of attributes (columns) in a relation/table. Cardinality of a relation = number of tuples (rows). Students often confuse these two important relational terms.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(शब्द 'डेटा स्वतंत्रता' ___ को संदर्भित करता है?)",
+      "options": [
+        "Programs are not dependent on the physical attributes of the data",
+        "Data is defined separately and not included in the program",
+        "Programs are not dependent on the logical attributes of the data",
+        "Both a and c"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data Independence has two types: (1) Physical Data Independence — programs are not affected by changes in physical storage. (2) Logical Data Independence — programs are not affected by changes in logical schema. Both together define Data Independence.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(डेटाबेस प्रबंधन क्वेरी भाषा आम तौर पर ___ के लिए डिज़ाइन की गई है?)",
+      "options": [
+        "Specifying the structure of the database",
+        "Support in the development of complex application software",
+        "Support end users who use English commands",
+        "All above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Database Management Query Language (e.g., SQL) is designed for: (a) Defining/specifying DB structure (DDL), (b) Supporting complex application development, and (c) Providing user-friendly English-like commands. SQL fulfills all three purposes.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(रिलेशन मॉडल में, रिलेशन को आम तौर पर ___ कहा जाता है?)",
+      "options": [
+        "Tables",
+        "Rows",
+        "Attributes",
+        "Tuples"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In the Relational Model, a Relation = Table. Attributes = Columns. Tuples = Rows. The relational model organizes data into two-dimensional tables (relations).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(डेटाबेस के आर्किटेक्चर के किस स्तर में डेटाबेस की पूर्ण संरचना होती है-)",
+      "options": [
+        "Internal level (आन्तरिक स्तर में)",
+        "Conceptual level (विचार सम्बन्धी स्तर)",
+        "External level (बाहरी स्तर में)",
+        "None of these (इनमें से कोई नहीं)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The Conceptual Level contains the total/complete structure of the database — all entities, attributes, relationships, and constraints. Internal level = storage details. External level = user views (subsets).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(डेटाबेस प्रबंधन प्रणाली से डेटा का अनुरोध करने के लिए एप्लिकेशन प्रोग्राम में निम्न में से किसका उपयोग किया जाता है?)",
+      "options": [
+        "Data Control Language",
+        "Data Manipulation Language",
+        "Data Definition Language",
+        "All above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Application programs use DML (Data Manipulation Language) — specifically SELECT — to request/retrieve data from the DBMS. DDL is for structure. DCL is for access control. DML's SELECT is the primary data retrieval mechanism.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(Primary Key जो अनेक attributes से मिलकर बनी होती है कहलाती है-)",
+      "options": [
+        "Composite Primary Key",
+        "Addition Primary Key",
+        "Unique Key",
+        "All of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A Composite Primary Key consists of two or more attributes (columns) that together uniquely identify a record. No single attribute alone is sufficient. Example: (StudentID + CourseID) as composite key in an Enrollment table.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(डेटाबेस के आर्किटेक्चर को ___ के रूप में देखा जा सकता है?)",
+      "options": [
+        "One-Level",
+        "Two-Level",
+        "Three Level",
+        "Four-Level"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The standard database architecture (ANSI/SPARC) is Three-Level: External Level (user views), Conceptual Level (logical structure), Internal Level (physical storage). This three-level architecture supports data independence.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "(एक की जो ऐसे एक या अधिक कॉलम्स का समूह है जो एक रिकॉर्ड को Uniquely आइडेन्टिफाई कर सकते हैं-)",
+      "options": [
+        "Natural key",
+        "Candidate key",
+        "Not Null key",
+        "Alternate key"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A Candidate Key is a set of one or more columns that can uniquely identify every record in a table. It is a minimal super key. Multiple candidate keys may exist; the one chosen becomes the Primary Key; the remaining become Alternate Keys.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    }
+  ]
+}

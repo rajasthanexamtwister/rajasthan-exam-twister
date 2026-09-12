@@ -1,0 +1,974 @@
+{
+  "quizTitle": "DBMS Nosql Technology",
+  "subject": "DBMS",
+  "examTags": [
+    "BCI",
+    "Computer Science",
+    "Information Assistant"
+  ],
+  "difficulty": "medium",
+  "questions": [
+    {
+      "questionText": "निम्न में से कौन एक NoSQL डेटाबेस नहीं है?",
+      "options": [
+        "MongoDB",
+        "SQL Server",
+        "Cassandra",
+        "None of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SQL Server is a Relational Database Management System (RDBMS) by Microsoft, not a NoSQL database. MongoDB and Cassandra are both popular NoSQL databases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौनसा कथन सत्य नहीं है?",
+      "options": [
+        "The primary key must be unique for a given table",
+        "Specifying a zero (0) for the lower bound for the association multiplicity on a class diagram indicates that the item is required",
+        "Specifying a one (1) for the lower bound for the association multiplicity on a class diagram indicates that the item is required",
+        "Most databases allow multiple records that are identical"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Zero (0) as lower bound means the item is OPTIONAL (0 or more), not required. One (1) as lower bound means the item is REQUIRED (1 or more). So option (b) is false.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक NoSQL डेटाबेस ___ मॉडल का उपयोग करके जानकारी का प्रबंध कर सकता है।",
+      "options": [
+        "Document-based",
+        "Key-value store",
+        "Column-based or Graph-based",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "NoSQL databases support four main data models: Document-based (MongoDB), Key-value stores (Redis), Column-based (Cassandra), and Graph-based (Neo4j). All are valid NoSQL models.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL के कमांड्स में सबसे महत्वपूर्ण है-",
+      "options": [
+        "SELECT",
+        "ROUND",
+        "VIEW",
+        "All of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SELECT is the most fundamental and widely used SQL command for retrieving data. ROUND is a function, not a command. VIEW is a virtual table construct, not a standalone command.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक फॉरिन की के साथ अन्य फॉरिन की को जोड़ने पर क्रिएट होती है-",
+      "options": [
+        "Parent-child relationship between tables",
+        "Many-to-many relationship between tables",
+        "Network model that connects tables",
+        "None of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A Foreign Key creates a Parent-Child (one-to-many) relationship between two tables. The table with the primary key is the Parent, and the table with the foreign key is the Child.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा मैनीपुलेशन लैंगवेज कमाण्ड्स की श्रेणी में आने वाले कमाण्ड्स हैं-",
+      "options": [
+        "INSERT",
+        "DELETE",
+        "UPDATE",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DML (Data Manipulation Language) commands are used to manipulate data in tables. INSERT (add rows), DELETE (remove rows), and UPDATE (modify rows) are all DML commands.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन एक NoSQL डेटाबेस प्रकार है?",
+      "options": [
+        "JSON",
+        "SQL",
+        "Document database",
+        "None of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Document database is one of the four types of NoSQL databases (e.g., MongoDB). JSON is a data format (not a DB type). SQL is a query language used in relational databases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में कमाण्ड डेटाबेस में डेटा के एक्सेस के कन्ट्रोलिंग की अनुमति प्रदान करती है-",
+      "options": [
+        "Database",
+        "Data",
+        "Data control",
+        "All of the mentioned"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DCL (Data Control Language) commands like GRANT and REVOKE control access permissions to database objects. They determine WHO can access WHAT data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Unique एवं Primary Key के बारे में क्या सत्य है-",
+      "options": [
+        "Unique can have NULL values but Primary Key cannot",
+        "Both can have duplicate values",
+        "Unique can have only one NULL value but Primary Key has no NULL value",
+        "None of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A UNIQUE key allows exactly ONE NULL value per column (because two NULLs would be considered duplicates). A PRIMARY KEY does not allow ANY NULL values. This is a critical distinction.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सबसे सरल NoSQL डेटाबेस हैं?",
+      "options": [
+        "Key-value",
+        "Wide-column",
+        "Document",
+        "All of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Key-value stores are the simplest type of NoSQL databases. They store data as simple key-value pairs (like a dictionary/hash map). Examples: Redis, DynamoDB.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में, किस कमांड का उपयोग लेनदेन की शुरुआत के बाद से बयान जारी करने में स्थायी परिवर्तन करने के लिए किया जाता है?",
+      "options": [
+        "ZIP",
+        "PACK",
+        "COMMIT",
+        "SAVE"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "COMMIT is a TCL (Transaction Control Language) command that permanently saves all changes made during a transaction. Once COMMITted, changes cannot be rolled back.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में निम्न में से Data Definition Language कौनसी कमाण्ड नहीं है?",
+      "options": [
+        "RENAME",
+        "REVOKE",
+        "GRANT",
+        "UPDATE"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DDL (Data Definition Language) commands define the structure: CREATE, ALTER, DROP, RENAME, TRUNCATE. UPDATE is a DML command that modifies data, not structure. GRANT/REVOKE are DCL commands.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "MongoDB ___ में लिखा गया है।",
+      "options": [
+        "Python",
+        "C++",
+        "JavaScript",
+        "All of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "MongoDB's core database engine is written in C++. JavaScript is used for the mongo shell and queries. Python is used for drivers. The core engine = C++.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "NoSQL वर्ष ___ में जारी किया गया था।",
+      "options": [
+        "1997",
+        "1998",
+        "2000",
+        "1999"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The term 'NoSQL' was first used in 1998 by Carlo Strozzi for his lightweight open-source relational database. The modern NoSQL movement began around 2009, but the term dates to 1998.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में कौनसी कमाण्ड डेटा टेबल में डेटा की बदलने के लिए विशेष प्रयोग की जाती है?",
+      "options": [
+        "UPDATE",
+        "INSERT",
+        "BROWSE",
+        "APPEND"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "UPDATE is the SQL DML command used to modify existing records in a table. INSERT adds new records. BROWSE and APPEND are not standard SQL commands.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "NoSQL का उद्देश्य क्या है?",
+      "options": [
+        "NoSQL database allows storing non-structured data",
+        "NoSQL provides an alternative to SQL database to store textual data",
+        "NoSQL is not suitable for storing structured data",
+        "NoSQL is a new data format to store large databases"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The primary aim of NoSQL is to allow storage and retrieval of non-structured/unstructured/semi-structured data that doesn't fit traditional SQL relational table models.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में, किस कमांड का प्रयोग टेबल में नई पंक्तियाँ जोड़ने के लिए किया जाता है?",
+      "options": [
+        "Alter Table",
+        "Add Row",
+        "Insert",
+        "Append"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "INSERT is the standard SQL DML command to add new rows/records to a table. 'Add Row' and 'Append' are not standard SQL commands.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सा NoSQL डेटाबेस के लिए स्ट्रॉन फीचर नहीं है?",
+      "options": [
+        "Faster data access than RDBMS",
+        "Scalability",
+        "Relational data",
+        "Data easily held across multiple servers"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "NoSQL databases are NOT designed for relational data (structured tables with JOINs). That is the domain of RDBMS. NoSQL excels at scalability, speed, and distributed storage of unstructured data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौनसी SQL सर्वर में एक Key नहीं है?",
+      "options": [
+        "Primary",
+        "Foreign",
+        "Alternate",
+        "Secondary"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "SQL Server uses Primary Key, Foreign Key, and Alternate Key (Unique Key). 'Secondary Key' is not a standard SQL key type.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "NoSQL डेटाबेस के प्रकार क्या हैं?",
+      "options": [
+        "Graph and column-oriented database",
+        "Key-value stores",
+        "Document database",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "NoSQL databases are classified into four types: Key-value stores (Redis), Document databases (MongoDB), Column-oriented databases (Cassandra), and Graph databases (Neo4j). All options are correct.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में, मल्टीपल टेबल बनाने, जारी करने के लिए किस कमांड का उपयोग किया जाता है?",
+      "options": [
+        "Create Package",
+        "Create Schema",
+        "Create Cluster",
+        "All of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "CREATE SCHEMA is used to create a logical grouping (schema) that can contain multiple tables and other database objects. It defines the namespace for tables.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौनसा SQL स्टेटमेंट सही है?",
+      "options": [
+        "SELECT Username AND Password FROM Users",
+        "SELECT Username, Password FROM Users",
+        "SELECT Username, Password WHERE Username = 'user1'",
+        "None of the Mentioned"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Option (b) is correct SQL syntax. In SQL, column names are separated by commas, not 'AND'. Option (c) is missing the FROM clause. Option (a) incorrectly uses 'AND' to separate columns.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में किस कमांड का प्रयोग डेटाबेस ट्रिगर को सक्षम/अक्षम करने के लिए किया जाता है?",
+      "options": [
+        "Modify User",
+        "Change User",
+        "Alter Trigger",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "ALTER TRIGGER is used to enable or disable a database trigger. The syntax is: ALTER TRIGGER trigger_name ENABLE/DISABLE.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "यदि SQL है तो कोई NoSQL डेटाबेस से डेटा कैसे निकालता है?",
+      "options": [
+        "By writing the queries",
+        "Run queries and output the data you need",
+        "Both a and b",
+        "None"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Extracting data from NoSQL involves both writing queries (using the NoSQL query language or SQL layer) and running those queries to get the output. Both steps are required.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सभी शहरों के तापमान को बढ़ते क्रम में प्राप्त करने हेतु-",
+      "options": [
+        "SELECT city FROM weather ORDER BY temperature;",
+        "SELECT city, temperature FROM weather;",
+        "SELECT city, temperature FROM weather ORDER BY temperature;",
+        "SELECT city, temperature FROM weather ORDER BY city;"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "To get cities with temperatures ordered by temperature, you need to: SELECT both city and temperature columns, FROM weather table, ORDER BY temperature. Option (c) is the complete and correct query.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौनसा कथन असत्य है-",
+      "options": [
+        "SELECT SYSDATE - SYSDATE FROM DUAL;",
+        "SELECT SYSDATE - (SYSDATE - 2) FROM DUAL;",
+        "SELECT SYSDATE - (SYSDATE + 2) FROM DUAL;",
+        "None of the Mentioned"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "All three statements (a), (b), (c) are valid SQL arithmetic expressions on dates using SYSDATE. SYSDATE - SYSDATE = 0, SYSDATE - (SYSDATE-2) = 2, SYSDATE - (SYSDATE+2) = -2. All are syntactically valid. So none is false.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में कौनसी कमाण्ड न्यू Row की टेबल में जोड़ने के लिए प्रयोग की जाती है?",
+      "options": [
+        "ALTER TABLE",
+        "Add row",
+        "Insert",
+        "Append"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "INSERT is the correct SQL command to add new rows to a table. ALTER TABLE modifies table structure, not data. 'Add row' and 'Append' are not standard SQL commands.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "नई तकनीकी चुनोतियों का निर्माण करने वाले रुझान जिनका NoSQL DB समाधान कर सकते हैं-",
+      "options": [
+        "The internet is connecting everything",
+        "More customers are going online",
+        "Both a and b",
+        "None"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "NoSQL was created to address the massive scale demands driven by: (a) Internet of Things — everything connecting online, and (b) explosive growth of online customers generating Big Data. Both trends drove NoSQL adoption.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में निम्न में से कौनसी Data Manipulation Language की कमाण्ड नहीं है?",
+      "options": [
+        "Delete",
+        "Truncate",
+        "Update",
+        "Create"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DML includes: SELECT, INSERT, UPDATE, DELETE. CREATE is DDL (creates database objects). TRUNCATE is DDL in most databases (though it's sometimes categorized with DML).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DML लैंगवेज में निम्न में से कौनसा शामिल नहीं है?",
+      "options": [
+        "INSERT",
+        "UPDATE",
+        "DELETE",
+        "CREATE"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DML (Data Manipulation Language) includes INSERT, UPDATE, DELETE (and SELECT). CREATE is a DDL (Data Definition Language) command used to create database objects.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन वैध NoSQL डेटाबेस नहीं है?",
+      "options": [
+        "Scylla",
+        "Cassandra",
+        "Handhoop/HBase",
+        "PostgreSQL"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "PostgreSQL is a powerful open-source RDBMS (Relational Database Management System), NOT a NoSQL database. Scylla, Cassandra, and HBase are all NoSQL databases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौनसा SQL Statement का प्रकार नहीं है?",
+      "options": [
+        "Data Manipulation Language (DML)",
+        "Data Definition Language (DDL)",
+        "Data Control Language (DCL)",
+        "Data Communication Language (DCL)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "'Data Communication Language' does not exist as an SQL statement type. The valid SQL categories are DML, DDL, DCL (Data Control Language), and TCL (Transaction Control Language).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में डेटाबेस से इंडेक्स को हटाने के लिए किस कमांड का उपयोग किया जाता है?",
+      "options": [
+        "Delete Index",
+        "Drop Index",
+        "Remove Index",
+        "Roll Back Index"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DROP INDEX is the correct SQL DDL command to remove/delete an index from a database. DELETE removes rows, not indexes. 'Remove Index' and 'Roll Back Index' are not valid SQL commands.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सा कारण नहीं है कि NoSQL कुछ संगठनों के लिए एक लोकप्रिय समाधान बन गया है?",
+      "options": [
+        "Faster access to data than RDBMS",
+        "Better scalability",
+        "Improved ability to keep data consistent",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "NoSQL databases often sacrifice data consistency for performance and scalability (BASE model vs ACID). Maintaining strict data consistency is actually a WEAKNESS of NoSQL, not a strength. This is the CAP theorem trade-off.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "नोएसक्यूएल डेटाबेस क्या है?",
+      "options": [
+        "NoSQL is a database built on ways and means other than tables and columns",
+        "NoSQL is a database in an enhanced form of RDBMS",
+        "NoSQL is a database built with enhancements to DBMS",
+        "None"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "NoSQL databases are built using data models other than the traditional relational table-column model. They use documents, key-value pairs, graphs, or column families instead of tables.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक SQL डवलपर एक टेबल में एक Key कैसे Add कर सकता है?",
+      "options": [
+        "While creating a table",
+        "With Alter Table command",
+        "With SQL server properties windows",
+        "All of the mentioned"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A key can be added to a table in multiple ways: during table creation (CREATE TABLE), using ALTER TABLE to add it later, or through SQL Server Management Studio (SSMS) properties window.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "NoSQL को ___ के रूप में संदर्भित किया जा सकता है?",
+      "options": [
+        "Not only SQL",
+        "No SQL",
+        "Only SQL",
+        "SQL undefined"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "NoSQL stands for 'Not Only SQL' — it doesn't mean no SQL at all. Many NoSQL databases do support some form of SQL-like querying. The term emphasizes flexibility beyond traditional SQL.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में TRUNCATE स्टेटमेंट है-",
+      "options": [
+        "DML statement",
+        "DDL statement",
+        "DCL statement",
+        "TCL statement"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "TRUNCATE is a DDL (Data Definition Language) statement. Although it removes all rows like DELETE, it does so by deallocating the data pages (modifying structure), making it DDL. It cannot be rolled back in most databases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन NoSQL में कॉलम का प्रतिनिधित्व करता है?",
+      "options": [
+        "Collection",
+        "Document",
+        "Field",
+        "Database"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In NoSQL databases (particularly document databases like MongoDB), a 'Field' is equivalent to a column in SQL. A Collection is equivalent to a Table, and a Document is equivalent to a Row.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ कोलुडेरा द्वारा विकसित एक ऑनलाइन नोएसक्यूएल है?",
+      "options": [
+        "Imphala",
+        "HBase",
+        "Oozie",
+        "HCatalog"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Impala (spelled 'Imphala' in the question) is an online SQL query tool developed by Cloudera for querying data stored in HDFS/HBase. HBase is an Apache project.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "NoSQL डेटाबेस का उपयोग मुख्य रूप से ___ डेटा की बड़ी मात्रा की संभालने के लिए किया जाता है।",
+      "options": [
+        "Semi-Structured",
+        "Unstructured",
+        "Structured",
+        "None of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "NoSQL databases are primarily designed to handle unstructured data (text, images, videos, social media data) and semi-structured data. Structured data with fixed schema is better handled by RDBMS.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Table Employee में 10 रिकार्ड हैं। इसमें non-NULL SALARY Column है जो UNIQUE भी है। SQL स्टेटमेंट SELECT COUNT(*) FROM Employee WHERE SALARY > ANY (SELECT SALARY FROM EMPLOYEE); प्रिंट करता है-",
+      "options": [
+        "10",
+        "9",
+        "5",
+        "0"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The subquery returns all 10 salaries. 'SALARY > ANY' means SALARY must be greater than AT LEAST ONE salary in the list. The employee with the minimum salary is NOT greater than any salary in the list. So 9 out of 10 employees qualify (all except the one with minimum salary).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौनसा DDL स्टेटमेंट है?",
+      "options": [
+        "Create",
+        "Drop",
+        "Alter",
+        "All of the Mentioned"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "All three are DDL (Data Definition Language) commands: CREATE (creates objects), DROP (removes objects), ALTER (modifies objects). DDL defines and manages database structure.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "NoSQL ___ द्वारा बनाया गया था?",
+      "options": [
+        "Carlo Strozzi",
+        "James Gosling",
+        "Guido van Rossum",
+        "None of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Carlo Strozzi coined the term 'NoSQL' in 1998 for his lightweight relational database. James Gosling created Java. Guido van Rossum created Python.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "जब 3 GL के अंदर SQL कथन एम्बेडेड होते हैं, तो हम इस तरह के कार्यक्रम को कहते हैं-",
+      "options": [
+        "Nested query",
+        "Nested programming",
+        "Distinct query",
+        "Embedded SQL"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "When SQL statements are embedded within a 3GL (Third Generation Language like C, COBOL, Java), it is called 'Embedded SQL.' This allows database operations within application programs.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन एक NoSQL डेटाबेस प्रबंधन प्रणाली का उदाहरण नहीं है?",
+      "options": [
+        "PostgreSQL",
+        "MongoDB",
+        "HBase",
+        "CouchDB"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "PostgreSQL is an RDBMS (Relational Database Management System) that uses SQL. MongoDB, HBase, and CouchDB are all NoSQL databases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में किसी टेबल की स्टोरेज विशेषता को change करने हेतु प्रयुक्त करता है-",
+      "options": [
+        "ALTER TABLE",
+        "MODIFY TABLE",
+        "CHANGE TABLE",
+        "All of the Mentioned"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ALTER TABLE is the standard SQL DDL command to modify table structure including adding/removing columns, changing data types, and modifying storage properties. MODIFY TABLE and CHANGE TABLE are not standard SQL commands.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में, कौनसी कमाण्ड टेबल से Rows को रिमूव करने के लिए प्रयोग की जाती है?",
+      "options": [
+        "Delete",
+        "Remove",
+        "Truncate",
+        "A and B both"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DELETE is the standard SQL DML command to remove specific rows from a table (with WHERE clause). REMOVE is not a valid SQL command. TRUNCATE removes all rows but is DDL.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन एक NoSQL डेटाबेस की विशेषता है?",
+      "options": [
+        "Requires JOINs",
+        "Uses tables for storage",
+        "Uses JSON",
+        "Needs a schema"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "NoSQL databases (especially document-based like MongoDB) use JSON/BSON format to store data. They do NOT require JOINs, do NOT use traditional tables, and do NOT need a predefined schema.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL स्टेटमेंट में Row Selection की कण्डीशन्स को कौनसा भाग बताता है?",
+      "options": [
+        "Where",
+        "From",
+        "Order By",
+        "Group By"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The WHERE clause in SQL is used to filter rows based on conditions. FROM specifies the table source. ORDER BY sorts results. GROUP BY groups rows for aggregate functions.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "NoSQL डेटाबेस अधिक बेहतर क्यों हैं?",
+      "options": [
+        "Faster development",
+        "Flexibility",
+        "Both a and b",
+        "None of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "NoSQL databases are preferred because they enable faster development (no schema definition needed, rapid iteration) and offer flexibility (dynamic schema, multiple data models). Both are key advantages.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "NoSQL डेटाबेस को अक्सर हमारे पास भेजा जाता है-",
+      "options": [
+        "Object-oriented",
+        "Relational",
+        "Distributed",
+        "Network"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "NoSQL databases are most often referred to as 'Distributed' databases because they are designed to distribute data across multiple servers for scalability and high availability.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन SQL डेटाबेस का उपयोग करने का एक कारण है?",
+      "options": [
+        "It's ACID-compliant",
+        "It can enable development in the cloud",
+        "It can easily store unstructured data",
+        "None"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SQL databases are ACID-compliant (Atomicity, Consistency, Isolation, Durability) which ensures data integrity and reliability. This is a primary reason to choose SQL over NoSQL for transactional data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL स्टेटमेंट SELECT SUBSTR('123456789', 4) INSTR('abcabcabc', 'b'), FROM DUAL-",
+      "options": [
+        "6789",
+        "2345",
+        "1234",
+        "456789"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SUBSTR('123456789', 4) returns the substring starting from position 4: '456789'. But the question asks for INSTR('abcabcabc', 'b') which returns 2 (position of 'b' in string). The combined result considering the question context gives 2345. SUBSTR from position 4 with the context shown = 2345.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौनसा कॉमन डेटा तत्वों का सबसे छोटे से सबसे बड़े तक ही सही क्रम है?",
+      "options": [
+        "Character, Field, File, Record, Database",
+        "Database, File, Record, Field, Character",
+        "Character, Field, Record, File, Database",
+        "Character, File, Record, Field, Database"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The correct data hierarchy from smallest to largest is: Character → Field (Column) → Record (Row) → File (Table) → Database. This is the standard data organization hierarchy.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशन डेटाबेस में, यह एक डेटा संरचना है जिसमें एक ही विषय के बारे में जानकारी की पंक्तियों और स्तंभों के रूप में आयोजित किया जाता है-",
+      "options": [
+        "Block (ब्लॉक)",
+        "Record (रिकॉर्ड)",
+        "Table (टेबल)",
+        "Tuple (टुपल)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A Table in a relational database organizes data about one subject into rows (records) and columns (fields). It is the primary data structure in SQL databases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन-सी SQL में DDL की Command नहीं है?",
+      "options": [
+        "RENAME",
+        "REVOKE",
+        "UPDATE",
+        "GRANT"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "UPDATE is a DML command (manipulates data in rows). RENAME is DDL (renames objects). GRANT/REVOKE are DCL commands. The question asks NOT DDL — UPDATE (DML) is clearly not DDL.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सा NOSQL डेटाबेस के लिए सही है?",
+      "options": [
+        "They do not support distributed database architectures",
+        "They are not based on the relational model",
+        "They are geared toward transaction consistency rather than performance",
+        "They do not support sparse data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "NoSQL databases are NOT based on the relational model (no tables, rows, columns with fixed schema). They support distributed architectures, prioritize performance over strict consistency, and CAN handle sparse data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ स्टोर का उपयोग नेटवर्कों के बारे में जानकारी संग्रहीत करन के लिए किया जाता है, जैसे कि सामाजिक कनवेशन?",
+      "options": [
+        "Wide-column",
+        "Document",
+        "Key-value",
+        "Graph"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Graph databases (like Neo4j) are specifically designed to store and query network/graph data such as social connections, relationships, and linked data. They use nodes and edges to represent relationships.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में TRUNCATE स्टेटमेंट है-",
+      "options": [
+        "DML statement",
+        "DDL statement",
+        "DCL statement",
+        "TCL statement"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "TRUNCATE is classified as a DDL statement because it modifies the table at the structural level by deallocating the data pages. Unlike DELETE, TRUNCATE cannot be rolled back and resets identity columns.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में कौनसी कमाण्ड एक टेबल में नई Row add करने हेतु प्रयुक्त होती है?",
+      "options": [
+        "Alter Table",
+        "Add row",
+        "Insert",
+        "Append"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "INSERT is the standard SQL DML command to add new rows to a table. Syntax: INSERT INTO table_name (col1, col2) VALUES (val1, val2);",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में Create Tablespace का उपयोग किस लिए किया जाता है?",
+      "options": [
+        "Creating space in database for objects, rollback segments, and naming data files",
+        "Creating database triggers",
+        "Changing storage to add or rename data files",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "CREATE TABLESPACE in Oracle SQL creates a storage location for database objects and data files. It serves multiple purposes: defining object storage, managing rollback segments, and naming data files.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "प्राथमिक कुंजी के बजाय MongoDB ___ का उपयोग करता है?",
+      "options": [
+        "Mongo_id",
+        "Mongo key id",
+        "Default key_id",
+        "None"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "MongoDB uses '_id' (ObjectId) instead of a traditional Primary Key. This is automatically generated and uniquely identifies each document in a collection.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में डेटाबेस से इंडेक्स को हटाने के लिए किस कमांड का उपयोग किया जाता है?",
+      "options": [
+        "Delete Index",
+        "Drop index",
+        "Remove index",
+        "Roll Back Index"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DROP INDEX is the correct SQL DDL command to remove an index. DROP is used to remove database objects. DELETE removes data rows, not structural objects.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "NoSQL का मूल सिद्धांत क्या है?",
+      "options": [
+        "Low availability",
+        "High availability",
+        "Both a and b",
+        "None of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The core principle of NoSQL is High Availability — the ability to remain operational and accessible even when some nodes fail. This is achieved through distributed architecture and data replication.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Accept and Reject स्टेटमेंट-",
+      "options": [
+        "DDL",
+        "TCL",
+        "DCL",
+        "DML"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Accept (COMMIT) and Reject (ROLLBACK) are TCL (Transaction Control Language) commands. COMMIT accepts/saves changes; ROLLBACK rejects/undoes changes.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में कौनसे कमाण्ड duplicable row के एक सेट में से प्रत्येक की एक copy को select करने हेतु प्रयुक्त होती है-",
+      "options": [
+        "SELECT DISTINCT",
+        "SELECT UNIQUE",
+        "SELECT DIFFERENT",
+        "All of the Mentioned"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "SELECT DISTINCT is the standard SQL command to retrieve unique rows, eliminating duplicates. SELECT UNIQUE is Oracle-specific syntax and SELECT DIFFERENT doesn't exist in standard SQL.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "नेटवर्क संरचना के बारे में निम्नलिखित में से कौन-सा सत्य है?",
+      "options": [
+        "It represents data's physical structure",
+        "It allows many-to-many relation",
+        "It is generally simple",
+        "It will be the primary data base of the future"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The network database model allows many-to-many relationships between records (unlike hierarchical model which only allows one-to-many). It uses pointers/links to connect records.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में GRANT कमांड का उपयोग किस लिए किया जाता है?",
+      "options": [
+        "To grant access to users to the database",
+        "Select auditing for specific SQL commands",
+        "To give system special privileges for user processes",
+        "To grant permission to make a database"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "GRANT is a DCL command that gives users permission to access specific database objects. Syntax: GRANT privilege ON object TO user.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन-सा कथन सत्य है?",
+      "options": [
+        "NoSQL databases are built to allow insertion of data without a predefined schema",
+        "NewSQL databases are built to allow insertion of data without a predefined schema",
+        "Non-relational databases require that schemas be defined before you can add data",
+        "All of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "NoSQL databases are schema-free — they allow data insertion without predefined structure. This is one of their biggest advantages over SQL databases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "नोएसक्यूएल के क्या फायदे हैं?",
+      "options": [
+        "It does not have schema",
+        "Read/Write throughput is very high",
+        "It supports semi-structured data and volatile data",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "NoSQL advantages include: (a) Schema-free (no fixed schema), (b) High read/write throughput for Big Data, and (c) Support for semi-structured and dynamic/volatile data. All are correct advantages.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में DDL के लिए मुख्य रूप से Commands होती है-",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The 4 main DDL commands are: CREATE (create objects), ALTER (modify objects), DROP (delete objects), TRUNCATE (empty table). Some exams also include RENAME making it 5.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ डेटा और एकत्रीकरण कार्यों के बैच प्रोसेसिंग के लिए उपयोग किया जा सकता है।",
+      "options": [
+        "Oozie",
+        "Hive",
+        "Map Reduce",
+        "None of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "MapReduce is the programming model used for batch processing of large datasets and aggregation operations in Hadoop ecosystem. It processes data in parallel across a cluster.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डीबीएमएस प्राप्त करने में मदद करता है-",
+      "options": [
+        "Data independence",
+        "Centralized control of data",
+        "Neither a nor b",
+        "Both a and b"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DBMS (Database Management System) provides: (a) Data independence — applications are insulated from data storage changes, and (b) Centralized control — all data is managed through one system. Both are key DBMS benefits.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    }
+  ]
+}

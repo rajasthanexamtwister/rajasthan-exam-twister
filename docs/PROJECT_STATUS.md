@@ -1,7 +1,7 @@
 # PROJECT_STATUS.md — Rajasthan Exam Twister
 ## Master Handoff Document — Read This Completely Before Touching Any Code
 
-**Last updated:** 2026-09-12 — Post-audit cleanup complete, official `scripts/import-local-quizzes.ts` CLI tool (with dry-run, boundary fingerprint duplicate matching, and duplicate folder moving) added and verified. Final verification gate passed (129/129 tests across 23 test files, 86 routes, clean typecheck and build). This file is the single source of truth for what has
+**Last updated:** 2026-09-12 — Post-audit cleanup complete, official `scripts/import-local-quizzes.ts` and `scripts/convert-question-bank.ts` CLI tools added and verified. Final verification gate passed (142/142 tests across 24 test files, 86 routes, clean typecheck and build). This file is the single source of truth for what has
 been built, what is verified, what is broken/unconfirmed, and what is
 still pending. If you are a coding agent picking up this project, read
 this file FIRST, then cross-check the claims below against the actual
@@ -228,6 +228,8 @@ Jakarta Sans (body), loaded via `next/font`.
   `npm run notes:import` (or `npx tsx scripts/import-local-notes.ts`) — traverses local `notes/` directory, filters stubs, and invokes canonical `ImportService.processBatch()` with full `server/lib/sanitize.ts` sanitization and `ImportJob`/`ImportLog` audit trail creation. All notes land in `DRAFT` status.
 - **Bulk Local Quizzes Importer (Official CLI):**
   `npm run quizzes:import -- <folder-path> [--dry-run]` (or `npx tsx scripts/import-local-quizzes.ts <folder-path> [--dry-run]`) — recursively scans target directory for AI-generated `.json` quiz files, validates against canonical `QuizImportJSONSchema`, computes boundary content-fingerprint (SHA-256 of first 50 + last 50 lines), performs dual duplicate check against MongoDB (by `contentFingerprint` and `slug`), creates Quiz + QuizQuestions as `DRAFT` via `QuizService.importQuizJson()`, and moves files non-destructively (`imported/` for success, `duplicate/` for duplicate, untouched for failed). Full `--dry-run` flag support. Verified via `tests/unit/quiz-local-import.test.ts`.
+- **Question Bank Adapter Converter (Official CLI):**
+  `npm run question-bank:convert` (or `npx tsx scripts/convert-question-bank.ts [source-folder] [destination-folder]`) — 100% read-only/non-destructive adapter script that parses legacy question banks (top-level arrays, bilingual Hindi-first text, object options, letter answer keys, JS comment wrappers), resolves exact 0-based `correctOptionIndex` without guessing (excludes unresolvable questions), chunks >300-question banks into Parts, and outputs canonical `QuizImportJSONSchema` compliant files into `./quiz-json-inbox/`. Verified via `tests/unit/quiz-converter.test.ts`.
 
 ---
 

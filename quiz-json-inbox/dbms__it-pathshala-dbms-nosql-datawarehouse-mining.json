@@ -1,0 +1,752 @@
+{
+  "quizTitle": "NoSQL Database Technologies / DBMS - Data Warehouse, Data Mining, NoSQL",
+  "subject": "DBMS",
+  "examTags": [
+    "BCI",
+    "Computer Science",
+    "Information Assistant"
+  ],
+  "difficulty": "medium",
+  "questions": [
+    {
+      "questionText": "__________ में जानकारी होती है जो उपयोगकर्ताओं को डेटा वेयरहाउस में संग्रहीत जानकारी का आसानी से समझने योग्य परिप्रेक्ष्य देती है।",
+      "options": [
+        "Business metadata / बिजनेस मेटाडेटा",
+        "Technical metadata / टेक्निकल मेटाडेटा",
+        "Operational metadata / ऑपरेशनल मेटाडेटा",
+        "Financial metadata / फाइनेंशियल मेटाडेटा"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Business Metadata उपयोगकर्ताओं को सरल और व्यावसायिक दृष्टिकोण से डेटा को समझने में मदद करता है। यह बताता है कि डेटा का अर्थ क्या है, उसका प्रयोग कहाँ होता है और उपयोगकर्ता इसे कैसे समझ सकते हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "लोड और इंडेक्स है-",
+      "options": [
+        "process to upgrade the quality of data before it is moved into a data warehouse. / डेटा को डेटा वेयरहाउस में ले जाने से पहले उसकी गुणवत्ता को अपग्रेड करने की एक प्रक्रिया।",
+        "process to upgrade the quality of data after it is moved into a data warehouse. / डेटा को डेटा वेयरहाउस में ले जाने के बाद उसकी गुणवत्ता को अपग्रेड करने की एक प्रक्रिया।",
+        "process to reject data from the data warehouse and to create the necessary indexes. / डेटा वेयरहाउस से डेटा को अस्वीकार करने और आवश्यक इंडेक्स बनाने की एक प्रक्रिया।",
+        "process to load the data in the data warehouse and to create the necessary indexes. / डेटा वेयरहाउस में डेटा लोड करने और आवश्यक इंडेक्स बनाने की एक प्रक्रिया।"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Load and Index का मतलब है: डेटा को डेटा वेयरहाउस में लोड करना और फिर उस पर इंडेक्स बनाना, जिससे डेटा पर query जल्दी और efficiently चले। यह प्रक्रिया डेटा लोड होने के बाद की जाती है ताकि performance बेहतर हो।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "थ्री-टियर डेटा वेयरहाउस के संबंध में निम्नलिखित में से कौन सा सत्य है-",
+      "options": [
+        "Once created, the data marts will keep on being updated from the data warehouse at periodic times. / एक बार बन जाने के बाद, डेटा मार्ट्स को समय-समय पर डेटा वेयरहाउस से अपडेट किया जाता रहेगा।",
+        "Once created, the data marts will directly receive their new data from the operational database. / एक बार बन जाने के बाद, डेटा मार्ट्स सीधे ऑपरेशनल डेटाबेस से अपना नया डेटा प्राप्त करेंगे।",
+        "The data marts are different groups of tables in the data warehouse. / डेटा मार्ट्स डेटा वेयरहाउस में टेबल के विभिन्न समूह हैं।",
+        "data mart becomes a data warehouse when it reaches a critical size. / एक डेटा मार्ट एक क्रिटिकल साइज तक पहुंचने पर डेटा वेयरहाउस बन जाता है।"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Three-tier data warehouse architecture में: Operational database से डेटा सबसे पहले Data Warehouse में आता है, फिर वहाँ से Data Marts में ट्रांसफर होता है जो विशेष विभागों (जैसे बिक्री, मार्केटिंग) के लिए बने होते हैं। यह ट्रांसफर नियमित अंतराल पर होता है (periodically)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा वेयरहाउस को रिफ्रेश करने के बारे में निम्नलिखित में से कौन सा कथन सत्य नहीं है-",
+      "options": [
+        "It is a process of managing timing differences between the updating of data sources and the related data warehouse objects. / यह डेटा स्रोतों के अपडेशन और संबंधित डेटा वेयरहाउस ऑब्जेक्ट्स के बीच समय के अंतर को प्रबंधित करने की एक प्रक्रिया है।",
+        "Updates to dimension tables may occur at different times than the fact table. / डायमेंशन टेबल में अपडेट फैक्ट टेबल से अलग समय पर हो सकते हैं।",
+        "The data warehouse administrator has more control over the load time lag than the valid time lag. / डेटा वेयरहाउस एडमिनिस्ट्रेटर का वैलिड टाइम लैग की तुलना में लोड टाइम लैग पर अधिक नियंत्रण होता है।",
+        "None of these / इनमें से कोई नहीं"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "आमतौर पर डेटा वेयरहाउस एडमिनिस्ट्रेटर को लोड टाइम लैग (जब डेटा स्रोत से वेयरहाउस में जाता है) पर अधिक नियंत्रण होता है, जबकि वैलिड टाइम लैग (जब वास्तविक घटना होती है) पर कम।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "OLAP का मतलब है-",
+      "options": [
+        "Online analytical processing / ऑनलाइन एनालिटिकल प्रोसेसिंग",
+        "Online analysis processing / ऑनलाइन एनालिसिस प्रोसेसिंग",
+        "Online transaction processing / ऑनलाइन ट्रांजैक्शन प्रोसेसिंग",
+        "Online aggregate processing / ऑनलाइन एग्रीगेट प्रोसेसिंग"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "OLAP का पूरा नाम है: Online Analytical Processing / ऑनलाइन एनालिटिकल प्रोसेसिंग। यह डेटा एनालिसिस और रिपोर्टिंग के लिए इस्तेमाल होने वाली तकनीक है जो यूजर्स को मल्टी-डायमेंशनल व्यू में डेटा को क्वेरी और एनालाइज करने की सुविधा देती है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन डेटा ऑब्जेक्ट्स का संग्रह है जो एक ही समूह के भीतर एक दूसरे के समान हैं?",
+      "options": [
+        "Data source / डेटा सोर्स",
+        "Grid / ग्रिड",
+        "Cluster / क्लस्टर",
+        "Table / टेबल"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "जब डेटा ऑब्जेक्ट्स का एक ऐसा समूह होता है जिसमें सभी ऑब्जेक्ट्स आपस में एक-दूसरे के समान (similar) होते हैं, तो उसे कहा जाता है: Cluster / क्लस्टर। यह शब्द खासतौर पर डेटा माइनिंग और मशीन लर्निंग में प्रयोग होता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "हम किस स्तर पर डायमेंशनल मॉडल बना सकते हैं?",
+      "options": [
+        "Business requirements level / बिजनेस रिक्वायरमेंट्स लेवल",
+        "Architecture models level / आर्किटेक्चर मॉडल्स लेवल",
+        "Detailed models level / डिटेल्ड मॉडल्स लेवल",
+        "Implementation level / इम्प्लीमेंटेशन लेवल"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Dimensional modeling मुख्य रूप से उपयोगकर्ताओं की जरूरतों और व्यावसायिक विश्लेषण पर आधारित होता है। इसे तब डिजाइन किया जाता है जब यह स्पष्ट हो कि बिजनेस को किस प्रकार की रिपोर्टिंग और एनालिसिस चाहिए।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "OLAP के बारे में निम्नलिखित में से कौन सा सत्य नहीं है?",
+      "options": [
+        "OLAP can deal with transactional data. / OLAP ट्रांजैक्शनल डेटा से निपट सकता है।",
+        "In OLAP storage size can vary from 100 GB upto 1 TB. / OLAP में स्टोरेज साइज 100 GB से 1 TB तक हो सकता है।",
+        "OLAP can access Millions of records. / OLAP लाखों रिकॉर्ड एक्सेस कर सकता है।",
+        "Dimensional view of data is flat relational view in OLAP. / OLAP में डेटा का डायमेंशनल व्यू फ्लैट रिलेशनल व्यू है।"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "OLAP मुख्य रूप से summarized, historical, analytical data पर काम करता है। यह transactional systems में आने वाले डेटा के processed form पर निर्भर करता है। इसे आमतौर पर fully false नहीं माना जाता, पर (d) की तुलना में यह ज़्यादा स्वीकार्य है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा माइनिंग प्रक्रियाओं की शुरुआत में डेटासेट में पैटर्न खोजने के लिए किस तकनीक का उपयोग किया जाता है?",
+      "options": [
+        "Kohenen map / कोहेनन मैप",
+        "Visualisation / विजुअलाइजेशन",
+        "OLAP / ओएलएपी",
+        "SQL / एसक्यूएल"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "डेटा माइनिंग की शुरुआत में, जब हम डेटा में पैटर्न, ट्रेंड या आउटलाइयर्स ढूंढते हैं, तब सबसे पहले उपयोग की जाने वाली तकनीक होती है: Visualization (विजुअलाइजेशन)। यह तकनीक डेटा को ग्राफ्स, चार्ट्स, प्लॉट्स के रूप में दिखाकर हमें समझने में मदद करती है कि डेटा में क्या छिपा हुआ पैटर्न हो सकता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "नेम नोड में वह फाइल जो डेटा ब्लॉक लोकेशन को फाइल नाम के साथ मैप करने वाली जानकारी संग्रहीत करती है, है:",
+      "options": [
+        "dfs image / डीएफएस इमेज",
+        "name image / नेम इमेज",
+        "fs image / एफएस इमेज",
+        "image / इमेज"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Hadoop Distributed File System (HDFS) में, NameNode सिस्टम की metadata को संभालता है — जैसे कि कौन सा फाइल किस डेटा ब्लॉक में है और वह डेटा ब्लॉक क्लस्टर में कहाँ स्थित है। इस metadata को दो प्रमुख फाइलों में स्टोर किया जाता है: 1. fsimage: यह एक स्थायी (persistent) फाइल है जो फाइल सिस्टम के संरचना (structure) और metadata को स्टोर करती है — यानी फाइल नाम और उसके डेटा ब्लॉक्स की mapping। 2. edits log: इसमें हाल की सभी परिवर्तनशील गतिविधियाँ (transactions) लॉग होती हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Hadoop में हमारी एप्लीकेशन के अनुसार जिन मुख्य फंक्शन्स को ओवरराइट करने की आवश्यकता है, वे हैं:",
+      "options": [
+        "Map and partition / मैप और पार्टीशन",
+        "Map and combine / मैप और कंबाइन",
+        "Map and reduce / मैप और रिड्यूस",
+        "Map and synchronize / मैप और सिंक्रोनाइज"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Hadoop में जब हम MapReduce प्रोग्रामिंग मॉडल का उपयोग करते हैं, तो दो मुख्य फंक्शन्स को override (ओवरराइड) करना आवश्यक होता है: 1. Map() — इनपुट डेटा को key-value pairs में बदलने के लिए। 2. Reduce() — map से आए डेटा को aggregate करने के लिए। यह दोनों फंक्शन्स एप्लिकेशन के अनुसार कस्टमाइज किए जाते हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Hadoop में स्लेव नोड को कहा जाता है:",
+      "options": [
+        "Name node / नेम नोड",
+        "Data node / डेटा नोड",
+        "Kernel node / कर्नल नोड",
+        "Watch Dog / वॉच डॉग"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Hadoop में: NameNode → Master node होता है, जो metadata को manage करता है। DataNode → Slave node होता है, जो असली डेटा को स्टोर और प्रोसेस करता है। इसलिए, Hadoop का slave node कहलाता है: DataNode।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा माइनिंग का तात्पर्य है:",
+      "options": [
+        "Retrieving a record from a large database. / एक बड़े डेटाबेस से एक रिकॉर्ड पुनःप्राप्त करना।",
+        "Retrieving similar records from a large database. / एक बड़े डेटाबेस से समान रिकॉर्ड पुनःप्राप्त करना।",
+        "To find out whether a particular pattern exists among the records. / यह पता लगाना कि क्या रिकॉर्ड्स के बीच कोई विशेष पैटर्न मौजूद है।",
+        "Analyzing large databases to find useful patterns. / उपयोगी पैटर्न खोजने के लिए बड़े डेटाबेस का विश्लेषण करना।"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data Mining का उद्देश्य होता है — बड़े डेटा सेट्स में से छिपे हुए उपयोगी पैटर्न को खोजना, जिनसे निर्णय लेने में मदद मिल सके। इसका फोकस सिर्फ रिकॉर्ड निकालने पर नहीं, बल्कि उनमें से इनसाइट्स निकालने पर होता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा वेयरहाउस __________ स्रोत (स्रोतों) से एकत्र की गई जानकारी का एक भंडार है, जिसे __________ स्कीमा के तहत, __________ साइट (साइटों) पर संग्रहीत किया जाता है:",
+      "options": [
+        "single, unified, a single / एक सिंगल, यूनिफाइड, एक सिंगल",
+        "Multiple, unified, a single / मल्टीपल, यूनिफाइड, एक सिंगल",
+        "Multiple, unified, multiple / मल्टीपल, यूनिफाइड, मल्टीपल",
+        "single, uniform, multiple / एक सिंगल, यूनिफार्म, मल्टीपल"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data Warehouse एक विशेष प्रकार का डेटाबेस है जो विभिन्न स्रोतों (Multiple sources) से डेटा एकत्र करता है। यह डेटा एक unified schema (एकीकृत ढांचे) में रूपांतरित किया जाता है ताकि उसका विश्लेषण आसानी से किया जा सके। इस सभी डेटा को आमतौर पर एक ही साइट (single site) पर संग्रहित किया जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा स्क्रबिंग को इस प्रकार परिभाषित किया गया है-",
+      "options": [
+        "process to reject data from the data warehouse and to create the necessary indexes. / डेटा वेयरहाउस से डेटा को अस्वीकार करने और आवश्यक इंडेक्स बनाने की एक प्रक्रिया।",
+        "process to load the data in the data warehouse and to create the necessary indexes. / डेटा वेयरहाउस में डेटा लोड करने और आवश्यक इंडेक्स बनाने की एक प्रक्रिया।",
+        "process to upgrade the quality of data after it is moved into a data warehouse. / डेटा को डेटा वेयरहाउस में ले जाने के बाद उसकी गुणवत्ता को अपग्रेड करने की एक प्रक्रिया।",
+        "process to upgrade the quality of data before it is moved into a data warehouse. / डेटा को डेटा वेयरहाउस में ले जाने से पहले उसकी गुणवत्ता को अपग्रेड करने की एक प्रक्रिया।"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data Scrubbing (या Data Cleansing) एक प्रक्रिया है जिसमें डेटा को सुधारने, त्रुटियों को हटाने, और गुणवत्ता को बेहतर बनाने का काम किया जाता है — ताकि डेटा विश्वसनीय और विश्लेषण योग्य हो। यह प्रक्रिया डेटा को डेटा वेयरहाउस में लोड करने से पहले की जाती है, ताकि गलत, अधूरा, या डुप्लिकेट डेटा सिस्टम में न जाए।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित का मिलान करें: A-उद्यम (Enterprise Warehouse), B-डेटा मार्ट, C-वर्चुअल",
+      "options": [
+        "(i), B-(ii), C-(iii)",
+        "(iii), B-(ii), C-(i)",
+        "(iii), B-(i), C-(ii)",
+        "(i), B-(iii), C-(ii)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Enterprise Warehouse: यह होता है एक संपूर्ण संगठन के लिए जानकारी का केंद्रीय भंडार। Data Mart: यह एक छोटा हिस्सा होता है डेटा वेयरहाउस का, जो किसी विशेष समूह (जैसे Sales टीम) के लिए होता है। Virtual Warehouse: यह कोई फिजिकल डेटा स्टोरेज नहीं है, बल्कि केवल views होते हैं जो ऑपरेशनल डेटाबेस पर आधारित होते हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित का मिलान करें: A-वर्गीकरण (Classification), B-प्रतिगमन (Regression), C-क्लस्टरिंग",
+      "options": [
+        "(i), B-(ii), C-(iii)",
+        "(ii), B-(iii), C-(i)",
+        "(iii), B-(ii), C-(i)",
+        "(i), B-(iii), C-(ii)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Classification: इसका उद्देश्य होता है categorical data की भविष्यवाणी करना (जैसे: spam या non-spam)। Regression: इसमें continuous values की भविष्यवाणी की जाती है (जैसे: price prediction)। Clustering: इसमें डेटा को समान समूहों (clusters) में बाँटा जाता है — यानी data objects का analysis।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "विषम को पहचानें (Clustering methods में): K-Mean, Self-Organizing Feature Map, K-Nearest Neighbor, Agglomerative",
+      "options": [
+        "K-Mean method / के-मीन मेथड",
+        "Self-organizing feature map method / सेल्फ-ऑर्गनाइजिंग फीचर मैप मेथड",
+        "K-nearest neighbor method / के-नियरेस्ट नेबर मेथड",
+        "Agglomerative method / एग्लोमेरेटिव मेथड"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "K-Means Method: यह एक unsupervised clustering algorithm है। Self-Organizing Feature Map (SOFM): यह भी एक unsupervised neural network-based clustering method है। K-Nearest Neighbor (KNN): यह एक supervised classification algorithm है, न कि clustering method! Agglomerative Method: यह एक hierarchical clustering technique है — unsupervised learning का हिस्सा। K-nearest neighbor method यह अकेला supervised learning method है, जबकि बाकी सभी unsupervised clustering techniques हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा क्लस्टरिंग के लिए किस एप्रोच का उपयोग किया जाता है?",
+      "options": [
+        "Single layer perception / सिंगल लेयर परसेप्शन",
+        "Self-organization map / सेल्फ-ऑर्गनाइजेशन मैप",
+        "Multilayer perception / मल्टीलेयर परसेप्शन",
+        "Radial basis functions / रेडियल बेसिस फंक्शन्स"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Single Layer Perceptron: यह एक supervised learning तकनीक है, जो classification के लिए उपयोग होती है। Self-Organizing Map (SOM): यह एक unsupervised neural network है, जिसका उपयोग data clustering और dimensionality reduction में किया जाता है। Multilayer Perceptron: यह भी supervised learning का हिस्सा है, जिसका उपयोग regression या classification में होता है। Radial Basis Functions (RBF): ये भी एक supervised learning तकनीक हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा स्टेप डेटा माइनिंग में शामिल नहीं है?",
+      "options": [
+        "Knowledge extraction / नॉलेज एक्सट्रेक्शन",
+        "Data archaeology / डेटा आर्कियोलॉजी",
+        "Data exploration / डेटा एक्सप्लोरेशन",
+        "Data transformation / डेटा ट्रांसफॉर्मेशन"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "डेटा माइनिंग की प्रक्रिया में आमतौर पर निम्नलिखित स्टेप्स शामिल होते हैं: 1.Data Cleaning, 2.Data Integration, 3.Data Selection, 4.Data Transformation, 5.Data Mining (Pattern discovery), 6.Pattern Evaluation, 7.Knowledge Presentation / Extraction. 'Data Archaeology' इस प्रक्रिया का कोई मानक (standard) चरण नहीं है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "वेब एनालिटिक्स, माइनिंग टूल्स और सेवाएं क्या करती हैं?",
+      "options": [
+        "Simply report which pages were clicked and how long a visitor stayed there. / बस यह रिपोर्ट करें कि किन पेजों पर क्लिक किया गया और एक विजिटर वहां कितनी देर रुका।",
+        "Offer advanced functions that help marketers decide which products to promote, and merchandisers achieve a better understanding of the nature of demand. / उन्नत फंक्शन प्रदान करते हैं जो मार्केटर्स को यह तय करने में मदद करते हैं कि किन उत्पादों को बढ़ावा देना है।",
+        "Are used to redesign Web sites quickly and on the fly. / वेब साइटों को जल्दी और ऑन द फ्लाई रीडिजाइन करने के लिए उपयोग किया जाता है।",
+        "Provide information to update website. / वेबसाइट अपडेट करने के लिए जानकारी प्रदान करें।"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Web Analytics, Mining Tools और Services का उद्देश्य केवल क्लिक रिपोर्ट करना नहीं होता, बल्कि ये: गहराई से यूजर बिहेवियर का विश्लेषण करते हैं, जिससे मार्केटर्स यह समझ पाते हैं कि कौन-से उत्पाद प्रचार के लिए उपयुक्त हैं, और मर्चेंडाइजर यह जान सकते हैं कि ग्राहकों की डिमांड की प्रकृति क्या है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "मल्टीडायमेंशनल डेटा पर निम्नलिखित में से कौन सा एक मान्य OLAP ऑपरेशन नहीं है?",
+      "options": [
+        "Roll-up / रोल-अप",
+        "Drill-down / ड्रिल-डाउन",
+        "Slice / स्लाइस",
+        "Dice / डाइस",
+        "Retrieve / रिट्रीव"
+      ],
+      "correctOptionIndex": 4,
+      "explanation": "OLAP (Online Analytical Processing) में चार मुख्य operations होते हैं जो मल्टीडायमेंशनल डेटा पर किए जाते हैं: 1.Roll-up: डेटा को higher level पर summarize करना। 2.Drill-down: डेटा को lower/detail level पर ले जाना। 3.Slice: किसी एक dimension पर एक fixed value लेकर उसका subset बनाना। 4.Dice: एक या अधिक dimensions पर ranges या values का उपयोग कर subset बनाना। 'Retrieve' कोई OLAP operation नहीं है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सी एक सुपरवाइज्ड डेटा डिस्क्रीटाइजेशन तकनीक है?",
+      "options": [
+        "Binning / बिनिंग",
+        "Histogram analysis / हिस्टोग्राम एनालिसिस",
+        "Entropy-based discretization / एंट्रॉपी-बेस्ड डिस्क्रीटाइजेशन",
+        "Cluster analysis / क्लस्टर एनालिसिस",
+        "Discretization by intuitive partitioning / इंट्यूटिव पार्टीशनिंग द्वारा डिस्क्रीटाइजेशन"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Data Discretization का अर्थ है — continuous data को कुछ finite intervals (bins) या categories में विभाजित करना। यह दो प्रकार की होती है: 1.Unsupervised Discretization: इसमें class labels का उपयोग नहीं किया जाता। उदाहरण: Binning, Histogram Analysis, Cluster Analysis, Intuitive Partitioning। 2.Supervised Discretization: इसमें class label (target variable) को ध्यान में रखकर interval बनाए जाते हैं। उदाहरण: Entropy-based Discretization (Information Gain पर आधारित)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा ट्रांसफॉर्मेशन के लिए निम्नलिखित में से किस तकनीक का उपयोग नहीं किया जाता है?",
+      "options": [
+        "Clustering / क्लस्टरिंग",
+        "Smoothing / स्मूथिंग",
+        "Aggregation / एग्रीगेशन",
+        "Generalization / जनरलाइजेशन",
+        "Normalization / नॉर्मलाइजेशन"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Data Transformation का उद्देश्य होता है — डेटा को एक उपयुक्त और समान रूप (format) में बदलना ताकि उसे data mining या analysis के लिए तैयार किया जा सके। Data Transformation में उपयोग की जाने वाली प्रमुख तकनीकें: 1.Smoothing (स्मूथिंग), 2.Aggregation (एग्रीगेशन), 3.Generalization (जनरलाइजेशन), 4.Normalization (नॉर्मलाइजेशन)। Clustering डेटा माइनिंग की एक तकनीक है, न कि डेटा ट्रांसफॉर्मेशन की।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "FP-ग्रोथ मेथड का उपयोग करके फ्रीक्वेंट आइटम सेट जेनरेट करने के लिए डेटा सेट स्कैन की संख्या है:",
+      "options": [
+        "One / एक",
+        "Two / दो",
+        "Three / तीन",
+        "Same as the number of transactions in the data set. / डेटा सेट में ट्रांजैक्शन की संख्या के समान।",
+        "Same as the number of items in the dataset. / डेटासेट में आइटम्स की संख्या के समान।"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "FP-Growth (Frequent Pattern Growth) एल्गोरिदम, association rule mining में एक बहुत कुशल तरीका है जो Apriori algorithm की तरह बार-बार पूरे डेटासेट को स्कैन नहीं करता। FP-Growth में डेटा स्कैन की प्रक्रिया: 1.पहला स्कैन: डेटासेट को एक बार स्कैन किया जाता है ताकि सभी items की frequency (support count) निकाली जा सके। 2.दूसरा स्कैन: डेटासेट को दूसरी बार स्कैन किया जाता है ताकि FP-Tree बनाया जा सके। इसके बाद FP-tree से frequent item sets recursive mining द्वारा निकाले जाते हैं — इस चरण में कोई और dataset scan नहीं होता।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सी एक डेटा वेयरहाउस की अन्य डेटा रिपॉजिटरी से अलग करने वाली विशेषता नहीं है?",
+      "options": [
+        "Time-variant / टाइम-वेरिएंट",
+        "Integrated / इंटीग्रेटेड",
+        "Subject-oriented / सब्जेक्ट-ओरिएंटेड",
+        "Structured / स्ट्रक्चर्ड",
+        "Nonvolatile / नॉनवोलेटाइल"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data Warehouse की चार प्रमुख विशिष्ट विशेषताएं हैं (Inmon के अनुसार): 1.Subject-Oriented (विषय-उन्मुख): डेटा को किसी विषय (जैसे ग्राहक, बिक्री, उत्पाद) के आधार पर संगठित किया जाता है। 2.Integrated (एकीकृत): विभिन्न स्रोतों से डेटा को एक समान रूप में एकीकृत किया जाता है। 3.Time-variant (समय-संवेरी): डेटा ऐतिहासिक (historical) होता है — यानी समय के साथ परिवर्तन को ट्रैक करता है। 4.Non-volatile (नॉनवोलेटाइल): डेटा स्थिर रहता है; इसे बार-बार अपडेट या डिलीट नहीं किया जाता। 'Structured' इनमें से नहीं है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "मैनेजमेंट इनफॉर्मेशन सिस्टम (MIS):",
+      "options": [
+        "Create and share documents that support day-to-day office activities. / दिन-प्रतिदिन के कार्यालय की गतिविधियों का समर्थन करने वाले दस्तावेज़ बनाते और साझा करते हैं।",
+        "Process business transactions (e.g., time cards, payments, orders, etc.). / व्यावसायिक लेनदेन (जैसे, टाइम कार्ड, भुगतान, ऑर्डर, आदि) को प्रोसेस करते हैं।",
+        "Capture and reproduce the knowledge of an expert problem solver. / एक विशेषज्ञ समस्या समाधानकर्ता के ज्ञान को कैप्चर और रीप्रोड्यूस करते हैं।",
+        "Use the transaction data to produce information needed by managers to run the business. / बिजनेस चलाने के लिए प्रबंधकों द्वारा आवश्यक जानकारी का उत्पादन करने के लिए ट्रांजैक्शन डेटा का उपयोग करते हैं।"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Management Information System (MIS) एक ऐसा सिस्टम होता है जो: Transaction-level डेटा को प्रोसेस करता है, उसे सारांश रिपोर्ट्स और विश्लेषणात्मक सूचनाओं में बदलता है, जिससे managers को planning, decision-making और control में मदद मिलती है। इसका मुख्य उद्देश्य है: सही जानकारी, सही समय पर, सही लोगों तक पहुंचाना।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक्टिव डेटा वेयरहाउस आर्किटेक्चर में निम्नलिखित में से क्या शामिल है?",
+      "options": [
+        "At least one data mart. / कम से कम एक डेटा मार्ट।",
+        "Data that can be extracted from numerous internal and external sources. / डेटा जिसे कई आंतरिक और बाहरी स्रोतों से निकाला जा सकता है।",
+        "Near real-time updates. / नियर रियल-टाइम अपडेट।",
+        "All the given options. / दिए गए सभी विकल्प।"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Active Data Warehouse Architecture एक ऐसा advanced डेटा वेयरहाउस मॉडल है जिसमें: 1.At least one data mart: Data marts छोटे, विशिष्ट उद्देश्य वाले डेटा स्टोर्स होते हैं। 2.Data from multiple internal and external sources: ERP सिस्टम, CRM, web logs आदि। 3.Near real-time updates: इसका सबसे महत्वपूर्ण पहलू है कि डेटा warehouse को लगभग रियल-टाइम में अपडेट किया जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा माइनिंग के एक लक्ष्य में निम्नलिखित में से क्या शामिल है?",
+      "options": [
+        "To explain some observed event or condition. / किसी देखी गई घटना या स्थिति की व्याख्या करना।",
+        "To confirm that data exists. / यह पुष्टि करना कि डेटा मौजूद है।",
+        "To analyze data for expected relationships. / अपेक्षित संबंधों के लिए डेटा का विश्लेषण करना।",
+        "To create a new data warehouse. / एक नया डेटा वेयरहाउस बनाना।"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Data Mining का मुख्य उद्देश्य होता है: बड़े डेटा सेट्स में छिपे हुए patterns, trends, correlations और relationships को पहचानना, ताकि हम किसी observed behavior या event की व्याख्या कर सकें या भविष्यवाणी कर सकें।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक स्नोफ्लेक स्कीम निम्नलिखित में से किस प्रकार की टेबल है?",
+      "options": [
+        "Fact / फैक्ट",
+        "Dimension / डायमेंशन",
+        "Helper / हेल्पर",
+        "All given / दिए गए सभी"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Snowflake Schema एक डेटा वेयरहाउस स्कीमा है जिसमें dimension tables को further normalize कर दिया जाता है — यानी कि एक dimension table को छोटे-छोटे sub-dimension tables में तोड़ दिया जाता है। इसका मुख्य उद्देश्य storage space बचाना और redundancy को कम करना होता है। यह dimension tables पर लागू होता है, न कि fact tables पर।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "जेनेरिक टू-लेवल डेटा वेयरहाउस आर्किटेक्चर में निम्नलिखित में से क्या शामिल है?",
+      "options": [
+        "At least one data mart. / कम से कम एक डेटा मार्ट।",
+        "Data that can be extracted from numerous internal and external sources. / डेटा जिसे कई आंतरिक और बाहरी स्रोतों से निकाला जा सकता है।",
+        "Near real-time updates. / नियर रियल-टाइम अपडेट।",
+        "All the given options. / दिए गए सभी विकल्प।"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Generic Two-Level Data Warehouse Architecture में आमतौर पर दो मुख्य स्तर होते हैं: 1.Data Warehouse Layer, 2.Data Mart Layer। इस आर्किटेक्चर में निम्नलिखित शामिल हो सकते हैं: (a) At least one data mart, (b) Data from multiple internal and external sources, (c) Near real-time updates।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "फैक्ट टेबल्स निम्नलिखित में से क्या हैं?",
+      "options": [
+        "Completely denormalized / पूरी तरह से डीनॉर्मलाइज्ड",
+        "Partially denormalized / आंशिक रूप से डीनॉर्मलाइज्ड",
+        "Completely normalized / पूरी तरह से नॉर्मलाइज्ड",
+        "Partially normalized / आंशिक रूप से नॉर्मलाइज्ड"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Fact Tables: डेटा वेयरहाउस में मात्रात्मक डेटा (quantitative data) संग्रहित करते हैं (जैसे: Sales amount, Revenue, Quantity)। इन्हें तेज़ query performance के लिए design किया जाता है। इसलिए इन्हें अक्सर denormalized रखा जाता है, ताकि joins कम हों और रिपोर्टिंग तेज़ हो। Denormalization का उद्देश्य: डेटा redundancy को स्वीकार कर performance बढ़ाना, जटिल joins से बचना।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा ट्रांसफॉर्मेशन में निम्नलिखित में से क्या शामिल है?",
+      "options": [
+        "process to change data from a detailed level to a summary level. / डेटा को डिटेल्ड लेवल से समरी लेवल में बदलने की एक प्रक्रिया।",
+        "process to change data from a summary level to a detailed level. / डेटा को समरी लेवल से डिटेल्ड लेवल में बदलने की एक प्रक्रिया।",
+        "Joining data from one source into various sources of data. / एक स्रोत से डेटा को विभिन्न डेटा स्रोतों में जोड़ना।",
+        "Separating data from one source into various sources of data. / एक स्रोत से डेटा को विभिन्न डेटा स्रोतों में अलग करना।"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Data Transformation एक महत्वपूर्ण चरण है ETL (Extract, Transform, Load) प्रक्रिया में, जिसका उद्देश्य: डेटा को एक उपयुक्त रूप में बदलना, जिससे उसे data warehouse में लोड किया जा सके या विश्लेषण के लिए उपयोग किया जा सके। Data Transformation में डेटा को detailed level से summary level में बदलना प्राथमिक रूपांतरण है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "मिन-मैक्स नॉर्मलाइजेशन एक __________ तकनीक है।",
+      "options": [
+        "Data cleaning / डेटा क्लीनिंग",
+        "Data integration / डेटा इंटीग्रेशन",
+        "Data transformation / डेटा ट्रांसफॉर्मेशन",
+        "Outlier mining / आउटलायर माइनिंग"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Min-Max Normalization एक ऐसी तकनीक है जिसमें डेटा के मूल्यों को एक निश्चित रेंज (आमतौर पर 0 से 1 के बीच) में लाया जाता है। यह प्रक्रिया डेटा ट्रांसफॉर्मेशन (Data Transformation) का हिस्सा होती है, क्योंकि इसमें डेटा के स्केल को बदला जाता है ताकि अलग-अलग फीचर्स तुलनीय हो सकें।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "KDD (डेटाबेस से ज्ञान की खोज) प्रक्रिया में, 'डेटा माइनिंग' स्टेप के बाद निम्नलिखित में से कौन सा स्टेप आता है?",
+      "options": [
+        "Data cleaning / डेटा क्लीनिंग",
+        "Data integration / डेटा इंटीग्रेशन",
+        "Data transformation / डेटा ट्रांसफॉर्मेशन",
+        "Pattern evaluation / पैटर्न इवैल्यूएशन",
+        "Data selection / डेटा सिलेक्शन"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "KDD (Knowledge Discovery from Databases) प्रक्रिया में विभिन्न चरण होते हैं, जिनका सामान्य क्रम इस प्रकार है: 1.Data Selection, 2.Data Cleaning, 3.Data Integration, 4.Data Transformation, 5.Data Mining, 6.Pattern Evaluation, 7.Knowledge Presentation (ज्ञान प्रस्तुति)। इस प्रक्रिया में 'Data Mining' चरण के बाद आता है: 'Pattern Evaluation', जिसमें निकाले गए patterns की उपयोगिता, वैधता और रोचकता का मूल्यांकन किया जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डिस्क्रिप्टिव डेटा समराइजेशन के लिए निम्नलिखित में से कौन सा एक होलिस्टिक (holistic) माप है?",
+      "options": [
+        "Sum",
+        "Mean",
+        "Count",
+        "Max",
+        "Median"
+      ],
+      "correctOptionIndex": 4,
+      "explanation": "Descriptive Data Summarization में मापों को तीन प्रकारों में बांटा जाता है: 1.Scalar (simple): जैसे — count, sum, min, max। 2.Algebraic: जैसे — mean (जिसे count और sum से निकाला जा सकता है)। 3.Holistic: ऐसे माप जिनके लिए पूरे डेटा को देखा जाना आवश्यक होता है और जिन्हें सरल गणनाओं से नहीं निकाला जा सकता। Median (माध्यिका) एक holistic measure है क्योंकि इसे निकालने के लिए पूरे डेटा को sort करना होता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा क्लस्टरिंग मेथड डेंसिटी-बेस्ड एप्रोच का पालन करता है?",
+      "options": [
+        "CLARA",
+        "BIRCH",
+        "DBSCAN",
+        "OPTICS",
+        "Both DBSCAN and OPTICS / DBSCAN और OPTICS दोनों"
+      ],
+      "correctOptionIndex": 4,
+      "explanation": "Density-Based Clustering ऐसे एल्गोरिदम होते हैं जो डेटा के घनत्व (density) के आधार पर क्लस्टर्स बनाते हैं। DBSCAN (Density-Based Spatial Clustering of Applications with Noise): घनत्व के आधार पर क्लस्टर बनाता है, आउटलायर्स को पहचानता है, arbitrary shape के क्लस्टर बना सकता है। OPTICS (Ordering Points To Identify the Clustering Structure): DBSCAN का विस्तार है, density-based है लेकिन multiscale clustering को बेहतर तरीके से संभाल सकता है। CLARA = Partitioning-based (K-Medoids का extension). BIRCH = Hierarchical clustering।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "BIRCH क्लस्टरिंग एल्गोरिदम का फुल-फॉर्म क्या है?",
+      "options": [
+        "Balanced Iterative Reducing and Clustering Using Hierarchies",
+        "Biased Iterative Reducing and Clustering Using Hierarchies",
+        "Balanced Iterative Removing and Clustering Using Hierarchies",
+        "Biased Iterative Removing and Clustering Using Hierarchies",
+        "Balanced Independent Reducing and Clustering Using Hierarchies"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "BIRCH का पूरा नाम है: Balanced Iterative Reducing and Clustering Using Hierarchies। यह एक प्रभावशाली क्लस्टरिंग एल्गोरिदम है जो बड़े डेटा सेट्स के लिए डिज़ाइन किया गया है। इसमें hierarchical clustering और डेटा को संक्षिप्त रूप में संरक्षित करने के लिए एक विशेष tree structure (CF Tree - Clustering Feature Tree) का उपयोग किया जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से किस स्कीमा में कई फैक्ट टेबल्स होती हैं?",
+      "options": [
+        "Star / स्टार",
+        "Snowflake / स्नोफ्लेक",
+        "Fact constellation / फैक्ट कांस्टेलेशन",
+        "ER diagram / ER डायग्राम",
+        "DFD"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Fact Constellation Schema (जिसे Galaxy Schema भी कहा जाता है) एक ऐसा स्कीमा है जिसमें: एक से अधिक Fact Tables होती हैं, ये Fact Tables कई common Dimension Tables को share कर सकती हैं, यह complex data warehousing scenarios के लिए उपयुक्त होता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कौन सा OLAP ऑपरेशन नहीं है?",
+      "options": [
+        "Drill up / ड्रिल अप",
+        "Drill down / ड्रिल डाउन",
+        "Drill forward / ड्रिल फॉरवर्ड",
+        "Slice & Dice / स्लाइस एंड डाइस",
+        "Rotate / रोटेट"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "OLAP (Online Analytical Processing) ऑपरेशन्स का उपयोग मल्टी-डायमेंशनल डेटा एनालिसिस के लिए किया जाता है। मान्य OLAP ऑपरेशन्स: 1.Drill Down — अधिक डिटेल में जाना। 2.Drill Up (Roll-up) — कम डिटेल सारांश स्तर पर जाना। 3.Slice & Dice — डेटा का विशेष भाग निकालना या कोण बदलकर देखना। 4.Rotate (Pivot) — डेटा के डायमेंशन को घुमाना या बदलना। 'Drill Forward' — यह कोई मान्य OLAP ऑपरेशन नहीं है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा माइनिंग में, एक डेटा क्यूब को परिभाषित करने वाले लैटिस में सभी क्यूबॉइड्स की गणना को कहा जाता है:",
+      "options": [
+        "No materialization / नो मटेरियलाइजेशन",
+        "Full materialization / फुल मटेरियलाइजेशन",
+        "Partial materialization / पार्शियल मटेरियलाइजेशन",
+        "Major materialization / मेजर मटेरियलाइजेशन",
+        "Minor materialization / माइनर मटेरियलाइजेशन"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data Cube एक मल्टीडायमेंशनल संरचना होती है जिसका उपयोग डेटा वेयरहाउसिंग और डेटा माइनिंग में विभिन्न डायमेंशन्स के साथ डेटा को एनालाइज करने के लिए किया जाता है। Cuboid: प्रत्येक संभव डायमेंशन का combination एक cuboid बनाता है। Lattice of Cuboids: सभी संभव cuboids का एक lattice structure बनता है। Full Materialization: सभी संभव cuboids की pre-computation की जाती है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "बिग डेटा एनालिसिस में, फ्रीक्वेंट आइटमसेट्स को खोजने के लिए एक एल्गोरिदम जो स्पेस और टाइम दोनों के साथ एफर्ट-इंटेंसिव है, वह है:",
+      "options": [
+        "Page Rank algorithm / पेज रैंक एल्गोरिदम",
+        "Trust Rank algorithm / ट्रस्ट रैंक एल्गोरिदम",
+        "Apriori algorithm / अप्रियरी एल्गोरिदम",
+        "SON algorithm / SON एल्गोरिदम"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Apriori Algorithm: यह एक लोकप्रिय एल्गोरिदम है जो frequent itemsets खोजने के लिए उपयोग किया जाता है। लेकिन यह: बार-बार डेटाबेस स्कैन करता है, और बहुत से candidate itemsets जेनरेट करता है। इसलिए यह space और time दोनों में heavy (effort-intensive) होता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा बेसिक OLAP ऑपरेशन्स को सपोर्ट करता है, जिसमें स्लाइस-एंड-डाइस, ड्रिल-डाउन, रोल-अप और पिवोटिंग शामिल हैं?",
+      "options": [
+        "Information processing / इनफार्मेशन प्रोसेसिंग",
+        "Analytical processing / एनालिटिकल प्रोसेसिंग",
+        "Transaction processing / ट्रांजेक्शन प्रोसेसिंग",
+        "Data mining / डेटा माइनिंग"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Analytical Processing, विशेष रूप से OLAP (Online Analytical Processing): बेसिक OLAP ऑपरेशन्स को सपोर्ट करता है जैसे: Slice-and-Dice, Drill-down, Roll-up, Pivoting (Rotation)। यह डेटा को मल्टी-डायमेंशनल तरीके से analyze करने के लिए इस्तेमाल होता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डिस्क्रीटाइजेशन तकनीक में, यदि डिस्क्रीटाइजेशन प्रक्रिया क्लास इनफार्मेशन का उपयोग करती है तो यह है:",
+      "options": [
+        "Top-down discretization / टॉप-डाउन डिस्क्रीटाइजेशन",
+        "Bottom-up discretization / बॉटम-अप डिस्क्रीटाइजेशन",
+        "Supervised discretization / सुपरवाइज्ड डिस्क्रीटाइजेशन",
+        "Un-supervised discretization / अन-सुपरवाइज्ड डिस्क्रीटाइजेशन"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Supervised Discretization: जब discretization प्रक्रिया में class labels (क्लास इनफार्मेशन) का उपयोग किया जाता है, तो उसे Supervised Discretization कहा जाता है। इसका उद्देश्य होता है ऐसे intervals बनाना जो class को बेहतर ढंग से अलग कर सकें।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से किस डेटा ट्रांसफॉर्मेशन में निम्न-स्तरीय या प्रिमिटिव (रॉ) डेटा को कांसेप्ट हायरार्की के उपयोग के माध्यम से उच्च-स्तरीय कांसेप्ट्स द्वारा प्रतिस्थापित किया जाता है?",
+      "options": [
+        "Smoothing / स्मूथिंग",
+        "Aggregation / एग्रीगेशन",
+        "Normalization / नार्मलाइजेशन",
+        "Generalization / जनरलाइजेशन"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Generalization: यह एक data transformation तकनीक है जिसमें: Low-level (primitive/raw) data को High-level concepts में बदला जाता है। इसके लिए concept hierarchies का उपयोग किया जाता है। उदाहरण: 'city' → 'state'. Generalization का मतलब है कि एक मॉडल नए और अनदेखे डेटा (new instances) पर कितनी सही भविष्यवाणी कर सकता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "ट्रेनिंग सेट पर प्रशिक्षित एक मॉडल नए इंस्टांसेज के लिए सही आउटपुट का कितनी अच्छी तरह अनुमान लगाता है, यह कहलाता है:",
+      "options": [
+        "Specialization / स्पेशलाइजेशन",
+        "Generalization / जनरलाइजेशन",
+        "Modularization / मॉड्यूलराइजेशन",
+        "Optimization / ऑप्टिमाइजेशन"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Generalization: इसका मतलब है कि एक मॉडल नए और अनदेखे डेटा (new instances) पर कितनी सही भविष्यवाणी कर सकता है। यह मॉडल की असली उपयोगिता को दर्शाता है — सिर्फ training data पर अच्छा प्रदर्शन करना काफी नहीं होता। अच्छे generalization का मतलब है: Model overfitting नहीं कर रहा है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक मैनेजमेंट सिस्टम में डिसीजन-सपोर्ट डेटाबेस सिस्टम बनाने, उपयोग करने और मैनेज करने की सीमाएं क्या हैं?",
+      "options": [
+        "and 2 only / केवल 1 और 2",
+        "and 3 only / केवल 1 और 3",
+        "and 3 only / केवल 2 और 3",
+        "1, 2 and 3 / 1, 2 और 3"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Decision-Support Database Systems (DSS) का उद्देश्य है बिजनेस निर्णयों में सहायता करना, विशेषकर large, complex, और analytical data पर। लेकिन इन सिस्टम्स को develop, use और manage करने में कुछ limitations होती हैं: 1.Lack of sophistication / परिष्कार की कमी, 2.Database layout limitations / डेटाबेस लेआउट सीमाएं, 3.Inability to handle large analytical data / बड़ी मात्रा में डेटा प्रोसेस करने में कठिनाई।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "स्नोफ्लेक स्कीमा से संबंधित निम्नलिखित में से कौन सा सत्य है?",
+      "options": [
+        "Each dimension is represented by a single dimensional table. / प्रत्येक डायमेंशन को एक सिंगल डायमेंशनल टेबल द्वारा दर्शाया जाता है।",
+        "Maintenance efforts are less. / मेंटेनेंस एफर्ट्स कम हैं।",
+        "Dimension tables are normalised. / डायमेंशन टेबल नॉर्मलाइज्ड होती हैं।",
+        "It is not an extension of star schema. / यह स्टार स्कीमा का एक्सटेंशन नहीं है।"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Snowflake Schema: यह Star Schema का एक एक्सटेंशन है। इसमें dimension tables को normalize किया जाता है, यानी: बड़े dimension को छोटे उप-टेबल्स में तोड़ दिया जाता है। इससे data redundancy कम होती है। Option A False: Star Schema में एक dimension → एक table। Snowflake में एक dimension → multiple normalized tables। Option B False: Maintenance ज़्यादा होती है (complex joins)। Option D False: Snowflake IS an extension of Star.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन से एस्टिमेट्स एक एट्रिब्यूट के बॉक्स-प्लॉट में दर्शाए जाते हैं?",
+      "options": [
+        "Mean, Mode, and Median",
+        "Mean, Mode, Median, Min and Max",
+        "Min, Max, quartiles Q1, Q2 and Q3",
+        "Only quartiles Q1, Q2 and Q3"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A Box Plot (या Box-and-Whisker Plot) निम्नलिखित पाँच-सांख्यिकीय सारांश (five-number summary) को दर्शाता है: 1.Minimum — सबसे छोटा मान, 2.Q1 (First Quartile) — 25% डेटा इस मान से नीचे होता है, 3.Q2 (Median / Second Quartile) — 50% डेटा इस मान से नीचे होता है, 4.Q3 (Third Quartile) — 75% डेटा इस मान से नीचे होता है, 5.Maximum — सबसे बड़ा मान।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा डेटा वेयरहाउस में मेंटेन किए गए डेटा कलेक्शन की विशेषता नहीं है?",
+      "options": [
+        "Integrated / इंटीग्रेटेड",
+        "Subject oriented / सब्जेक्ट ओरिगेंटेड",
+        "Volatile / वोलेटाइल",
+        "Time-variant / टाइम-वेरिएंट"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "डेटा वेयरहाउस की मुख्य विशेषताएं: 1.Subject-Oriented (विषय-आधारित): डेटा व्यापार विषयों (जैसे sales, customers) के अनुसार संगठित होता है। 2.Integrated (एकीकृत): विभिन्न स्रोतों से आए डेटा को एक सामान्य फॉर्मेट में बदला जाता है। 3.Time-Variant (समय-परिवर्ती): डेटा समय के साथ change को track करता है (historical data शामिल होता है)। 4.Non-Volatile (गैर-वोलेटाइल): डेटा वेयरहाउस में डेटा बार-बार अपडेट नहीं होता, यह read-only होता है। 'Volatile' (C) DW की विशेषता नहीं है — यह OLTP की विशेषता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "दिए गए विकल्पों में से कौन सा निम्नलिखित कथनों की सच्चाई का सबसे अच्छा वर्णन करता है? i. क्लस्टरिंग एक सुपरवाइज्ड तकनीक है। ii. क्लस्टरिंग ऑब्जेक्ट्स को समूहों में विभाजित करता है ताकि एक समूह के भीतर ऑब्जेक्ट्स 'समान' हों और अन्य समूहों के ऑब्जेक्ट्स के 'असमान' हों।",
+      "options": [
+        "True, (ii) - True / (i) - सत्य, (ii) - सत्य",
+        "True, (ii) - False / (i) - सत्य, (ii) - असत्य",
+        "False, (ii) - True / (i) - असत्य, (ii) - सत्य",
+        "False, (ii) - False / (i) - असत्य, (ii) - असत्य"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "क्लस्टरिंग एक Unsupervised Learning Technique है। इसमें डेटा को बिना किसी predefined label के समूहों में बाँटा जाता है। Supervised techniques में labelled data की जरूरत होती है (जैसे classification)। क्लस्टरिंग का उद्देश्य होता है: समान (similar) ऑब्जेक्ट्स को एक साथ रखा जाए, और असमान (dissimilar) ऑब्जेक्ट्स को अलग समूहों में।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "हम तिमाही द्वारा सारांशित डेटा स्केल्स पर OLAP ऑपरेशन लागू कर सकते हैं ताकि महीने द्वारा सारांशित डेटा देख सकें।",
+      "options": [
+        "Drill down / ड्रिल डाउन",
+        "Pivot / पिवट",
+        "Roll Up / रोल अप",
+        "Slice / स्लाइस"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Drill Down (OLAP Operation): Drill Down का उपयोग तब किया जाता है जब हम डेटा को अधिक विस्तार (detailed level) पर देखना चाहते हैं। उदाहरण: यदि डेटा Quarter (तिमाही) के अनुसार summarized है, और हम उसे Month (महीने) के अनुसार देखना चाहते हैं, तो हम Drill Down ऑपरेशन लागू करते हैं। Quarter → Month = More detail = Drill Down।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा डेटा वेयरहाउस की प्रमुख विशेषता नहीं है?",
+      "options": [
+        "Subject-oriented / सब्जेक्ट-ओरिएंटेड",
+        "Distributed / डिस्ट्रिब्यूटेड",
+        "Time-variant / टाइम-वेरिएंट",
+        "Non-volatile / नॉन-वोलेटाइल"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "डेटा वेयरहाउस की प्रमुख विशेषताएं (Inmon के अनुसार): 1.Subject-Oriented (विषय-आधारित) — डेटा व्यापार के विषयों (जैसे ग्राहक, बिक्री) के अनुसार संगठित होता है। 2.Time-Variant (समय-परिवर्ती) — डेटा का ऐतिहासिक दृष्टिकोण होता है। 3.Non-Volatile (गैर-वोलेटाइल) — एक बार डेटा लोड हो गया, तो वह बदला नहीं जाता (read-only)। 4.Integrated (एकीकृत) — विभिन्न स्रोतों से आए डेटा को एकीकृत किया जाता है। 'Distributed' इनमें से नहीं है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "मल्टी-डायमेंशनल डेटा मॉडल में, क्यूबॉइड जो समराइजेशन के निम्नतम स्तर को रखता है, उसे __________ क्यूबॉइड कहा जाता है।",
+      "options": [
+        "Base / बेस",
+        "Apex / एपेक्स",
+        "Root / रूट",
+        "Leaf / लीफ"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Base Cuboid: मल्टी-डायमेंशनल डेटा मॉडल में, जब हम सभी डायमेंशन्स पर सबसे डिटेल स्तर का डेटा रखते हैं, तो उसे Base Cuboid कहा जाता है। यह वह स्तर होता है जहाँ कोई भी summarization नहीं होती — यानी raw or detailed data। Apex Cuboid = सबसे ऊपर = सबसे ज़्यादा summarized (सबसे कम detail)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "स्टार स्कीमा डेटा मॉडल में, डेटा वेयरहाउस में एक बड़ी सेंट्रल टेबल होती है, जिसे __________ टेबल कहा जाता है।",
+      "options": [
+        "Dimension / डायमेंशन",
+        "Fact / फैक्ट",
+        "Dummy / डमी",
+        "Virtual / वर्चुअल"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Star Schema में: एक बड़ी सेंट्रल टेबल होती है, जिसे Fact Table कहा जाता है। यह टेबल quantitative data (जैसे sales amount, quantity) को स्टोर करती है। इसके चारों ओर Dimension Tables होती हैं जो context (जैसे समय, स्थान, उत्पाद) देती हैं। इसलिए स्टार स्कीमा में डेटा वेयरहाउस की मुख्य टेबल — Fact Table।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा डेटा वेयरहाउस के लिए एक मान्य डेटा मॉडल नहीं है?",
+      "options": [
+        "Star schema / स्टार स्कीमा",
+        "Entity-Relationship (ER) schema / एंटिटी-रिलेशनशिप (ER) स्कीमा",
+        "Snowflake schema / स्नोफ्लेक स्कीमा",
+        "Fact constellation schema / फैक्ट कांस्टेलेशन स्कीमा"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "डेटा वेयरहाउस में उपयोग होने वाले मान्य डेटा मॉडल: 1.Star Schema — Central fact table + surrounding dimension tables। 2.Snowflake Schema — Normalized version of star schema। 3.Fact Constellation Schema — Multiple fact tables sharing dimension tables (also called galaxy schema)। Entity-Relationship (ER) Schema — यह OLTP/transactional database design के लिए उपयोग होता है, डेटा वेयरहाउस के लिए नहीं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    }
+  ]
+}

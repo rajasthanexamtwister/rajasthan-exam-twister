@@ -1,0 +1,830 @@
+{
+  "quizTitle": "It Pathshala DBMS Basics",
+  "subject": "DBMS",
+  "examTags": [
+    "BCI",
+    "Computer Science",
+    "Information Assistant"
+  ],
+  "difficulty": "medium",
+  "questions": [
+    {
+      "questionText": "डेटाबेस में एब्स्ट्रैक्शन के तीन स्तर होते हैं:-",
+      "options": [
+        "Logical, Physical and View level / लॉजिकल, फिजिकल और व्यू स्तर",
+        "Physical, Structure and View level / फिजिकल, स्ट्रक्चर और व्यू स्तर",
+        "Logical, Structure and View level / लॉजिकल, स्ट्रक्चर और व्यू स्तर",
+        "None of these / इनमें से कोई नहीं"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "डेटाबेस में तीन मुख्य एब्स्ट्रैक्शन लेवल होते हैं: 1. Physical Level – डेटा वास्तव में स्टोरेज में कैसे स्टोर होता है। 2. Logical Level – डेटा कैसे टेबल्स, रिलेशनशिप आदि के रूप में व्यवस्थित है। 3. View Level – यूज़र को एक सिंपल व्यू देता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL को समर्थन देने के लिए विकसित किया गया है-",
+      "options": [
+        "Hierarchical database / पदानुक्रमित डेटाबेस",
+        "Relational database / रिलेशनल डेटाबेस",
+        "Network database / नेटवर्क डेटाबेस",
+        "simple data file / एक साधारण डेटा फ़ाइल"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "SQL को विशेष रूप से Relational Database Management Systems (RDBMS) के लिए विकसित किया गया है। SQL का उपयोग डेटा को insert, retrieve, update, और delete करने के लिए किया जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डेटाबेस किसके कारण असंगत हो सकता है?",
+      "options": [
+        "Atomicity / एटोमिसिटी",
+        "Redundancy / रिडंडेंसी",
+        "Efficiency / एफिशिएंसी",
+        "All options are correct / सभी विकल्प सही हैं"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "डेटाबेस में असंगति (Inconsistency) तब होती है जब एक ही डेटा के अलग-अलग संस्करण डेटाबेस में मौजूद होते हैं जो आपस में मेल नहीं खाते। इसका सबसे मुख्य कारण है: Redundancy (डेटा की अनावश्यक दोहराव)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डेटाबेस फ़ाइल को निम्नलिखित गुणों को सुनिश्चित करना चाहिए",
+      "options": [
+        "Data consistency / डेटा कंसिस्टेंसी",
+        "Data integrity / डेटा इंटीग्रिटी",
+        "Both (Data consistency) and (Data integrity) / दोनों (डेटा कंसिस्टेंसी) और (डेटा इंटीग्रिटी)",
+        "None of these / इनमें से कोई नहीं"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Data Consistency का अर्थ है डेटाबेस हमेशा valid state में रहना चाहिए। Data Integrity का अर्थ है कि डेटा सटीक, पूर्ण और विश्वसनीय हो। एक डेटाबेस फाइल को दोनों गुण बनाए रखने चाहिए।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डेटाबेस को हमेशा आवश्यकता होती है-",
+      "options": [
+        "Secondary storage device / सेकेंडरी स्टोरेज डिवाइस",
+        "Only primary storage device / केवल प्राइमरी स्टोरेज डिवाइस",
+        "DMA controller / DMA कंट्रोलर",
+        "None of these / इनमें से कोई नहीं"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "डेटाबेस सिस्टम को लंबे समय तक डेटा को संग्रहीत (store) करने के लिए secondary storage devices की आवश्यकता होती है जैसे HDD और SSD। Primary memory (RAM) अस्थायी होती है और सिस्टम बंद होते ही डेटा मिट जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS में, डेटा के बारे में डेटा संग्रहीत किया जाता है",
+      "options": [
+        "Hard Disk / हार्ड डिस्क",
+        "Data Dictionary / डेटा डिक्शनरी",
+        "RAM / रैम",
+        "None of these / इनमें से कोई नहीं"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data Dictionary वह स्थान होता है जहाँ डेटा के बारे में डेटा (Metadata) को संग्रहित किया जाता है। यह जानकारी रखता है कि डेटाबेस में कौन-कौन सी टेबल्स हैं, उनके attributes (columns) क्या हैं, कौन-कौन से constraints लागू हैं, और keys व indexes क्या हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "लॉजिकल स्कीमा के डिज़ाइन के लक्ष्यों में शामिल हैं:",
+      "options": [
+        "Avoiding data inconsistency / डेटा असंगति से बचना",
+        "Being able to construct queries easily / आसानी से क्वेरी बनाने में सक्षम होना",
+        "Being able to access data efficiently / कुशलतापूर्वक डेटा तक पहुँचने में सक्षम होना",
+        "All of these / ये सभी"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Logical Schema डेटाबेस का वह स्तर है जहाँ यह परिभाषित किया जाता है कि डेटा कैसे व्यवस्थित और एक-दूसरे से संबंधित होगा। इसके डिज़ाइन के लक्ष्यों में तीनों शामिल हैं: डेटा असंगति से बचना, आसान क्वेरी निर्माण, और कुशल डेटा एक्सेस।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS को डिज़ाइन करने में अपनाई जाने वाली सीक्वेंस है:",
+      "options": [
+        "Physical, conceptual, logical model / फिजिकल, कांसेप्चुअल, लॉजिकल मॉडल",
+        "Logical, physical, conceptual model / लॉजिकल, फिजिकल, कांसेप्चुअल मॉडल",
+        "Conceptual, logical, physical model / कांसेप्चुअल, लॉजिकल, फिजिकल मॉडल",
+        "Conceptual, physical, logical model / कांसेप्चुअल, फिजिकल, लॉजिकल मॉडल"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DBMS डिज़ाइन करते समय मॉडलिंग की प्रक्रिया ऊँचे स्तर (abstract) से नीचे स्तर (implementation) की ओर जाती है। सही क्रम: 1. Conceptual Model, 2. Logical Model, 3. Physical Model।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस ______ जो डेटाबेस का लॉजिकल डिज़ाइन है और डेटाबेस ______ जो किसी दिए गए समय पर डेटाबेस में डेटा का स्नैपशॉट है:",
+      "options": [
+        "Instance, schema / इंस्टेंस, स्कीमा",
+        "Schema, Relation / स्कीमा, रिलेशन",
+        "Domain, Relation / डोमेन, रिलेशन",
+        "Schema, Instance / स्कीमा, इंस्टेंस"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Schema: डेटाबेस की logical structure/design को दर्शाता है (जैसे टेबल्स, कॉलम्स, रिलेशनशिप्स आदि)। यह स्थायी (permanent) होता है। Instance: किसी निश्चित समय पर डेटाबेस में जो वास्तविक डेटा मौजूद होता है, वह इसका instance कहलाता है (यानी एक स्नैपशॉट)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "मेटाडेटा जानकारी का प्रबंधन किसके द्वारा किया जाता है:",
+      "options": [
+        "File-organisation module / फ़ाइल-ऑर्गनाइज़ेशन मॉड्यूल",
+        "Logical file system / लॉजिकल फ़ाइल सिस्टम",
+        "Basic file system / बेसिक फ़ाइल सिस्टम",
+        "Application programs / एप्लिकेशन प्रोग्राम"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Metadata का मतलब होता है 'डेटा के बारे में जानकारी' जैसे: फाइल का नाम, उसका आकार, टाइप, लोकेशन, एक्सेस परमिशन आदि। इस जानकारी का प्रबंधन Logical File System द्वारा किया जाता है, जो फ़ाइल सिस्टम का वह हिस्सा है जो यूज़र और फाइल सिस्टम के बीच इंटरफेस का काम करता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "लॉजिकल स्कीमा के डिज़ाइन के लक्ष्यों में शामिल हैं:",
+      "options": [
+        "Avoiding data inconsistency / डेटा इनकंसिस्टेंसी से बचना",
+        "Being able to construct queries easily / आसानी से क्वेरी बनाने में सक्षम होना",
+        "Being able to access data efficiently / डेटा को कुशलतापूर्वक एक्सेस करने में सक्षम होना",
+        "Decrease physical storage space / फिजिकल स्टोरेज स्पेस कम करना"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Logical Schema Design का मुख्य उद्देश्य होता है डेटा को इस तरह से संरचित करना कि: डेटा सुसंगत (consistent) बना रहे, क्वेरियों को आसानी से लिखा और समझा जा सके, डेटा को कुशलतापूर्वक (efficiently) एक्सेस किया जा सके। Physical storage को कम करना logical design का प्राथमिक उद्देश्य नहीं है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सी प्रक्रिया है जिसके द्वारा डेटाबेस में उपयोगकर्ताओं के विशेषाधिकारों का पता लगाया जाता है?",
+      "options": [
+        "Authentication / ऑर्थेंटिकेशन",
+        "Authorization / ऑथराइज़ेशन",
+        "Access control / एक्सेस कंट्रोल",
+        "Login / लॉगिन"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Authentication: यह प्रक्रिया यह जांचने की होती है कि उपयोगकर्ता कौन है। Authorization: यह प्रक्रिया यह तय करती है कि उपयोगकर्ता को क्या करने की अनुमति है, यानी उनके privileges (विशेषाधिकार) क्या हैं। Access control: authentication और authorization दोनों को शामिल करती है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "थ्री-स्कीमा DBMS आर्किटेक्चर में, निम्नलिखित में से कौन सा स्कीमा डेटाबेस की फिजिकल स्टोरेज स्ट्रक्चर का वर्णन करता है?",
+      "options": [
+        "Internal schema / इंटरनल स्कीमा",
+        "Conceptual schema / कांसेप्चुअल स्कीमा",
+        "External schema / एक्सटर्नल स्कीमा",
+        "Both conceptual and external schema / कांसेप्चुअल और एक्सटर्नल स्कीमा दोनों"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Three-Schema Architecture में DBMS को तीन स्तरों में विभाजित किया जाता है: 1. Internal Schema (इंटरनल स्कीमा): यह डेटा के फिजिकल स्टोरेज स्ट्रक्चर को दर्शाता है (जैसे indexes, file organisation)। 2. Conceptual Schema: पूरे डेटाबेस का लॉजिकल व्यू। 3. External Schema: यूज़र्स या एप्लिकेशन के लिए कस्टम व्यूज़।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा मॉडल के बारे में निम्नलिखित में से कौन सा सत्य नहीं है?",
+      "options": [
+        "It is an abstraction of a real-world object / यह एक वास्तविक दुनिया की वस्तु का एब्स्ट्रैक्शन है",
+        "Simplifies structure / स्ट्रक्चर को सरल बनाता है",
+        "Represents data structures, relations / डेटा स्ट्रक्चर, रिलेशन को दर्शाता है",
+        "It is a non-iterative process / यह एक नॉन-इटरेटिव प्रक्रिया है"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data Model एक तरीका है जिससे वास्तविक दुनिया की वस्तुओं और उनके संबंधों (relations) को abstract और represent किया जाता है। यह डेटा संरचना को सरल (simplify) करता है और डेटा के बीच के रिलेशनशिप को दर्शाता है। यह एक iterative process है जिसमें बार-बार refinement और feedback के साथ बेहतर बनाया जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "1960-1970 के दशक के दौरान विकसित पहला डेटा मॉडल कौन सा है?",
+      "options": [
+        "File system / फ़ाइल सिस्टम",
+        "Relational / रिलेशनल",
+        "Object oriented / ऑब्जेक्ट ओरिएंटेड",
+        "Hybrid XML / हाइब्रिड एक्सएसएमएल"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1960 और 1970 के दशक में पहला डेटा मॉडल जो विकसित हुआ, वह था File System-based Data Model। यह बहुत प्रारंभिक और सरल था, जहाँ डेटा को फाइल्स में स्टोर किया जाता था। इसके बाद Hierarchical और Network Models आए, और फिर Relational Model 1970 में E.F. Codd ने पेश किया।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "पूरे डेटाबेस का कांसेप्चुअल संगठन, जैसा कि डेटाबेस एडमिनिस्ट्रेटर द्वारा देखा जाता है, ______ से संबंधित है",
+      "options": [
+        "schema / स्कीमा",
+        "sub-schema / सब-स्कीमा",
+        "DML / डीएमएल",
+        "DDL / डीडीएल"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Schema डेटाबेस की conceptual structure को परिभाषित करता है — जैसे कि टेबल्स, फील्ड्स, रिलेशनशिप्स आदि। Database Administrator (DBA) के दृष्टिकोण से, स्कीमा पूरे डेटाबेस का एक overview होता है। Sub-schema — यूज़र या एप्लिकेशन के दृष्टिकोण से आंशिक व्यू होता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा विकल्प डेटाबेस के एब्स्ट्रैक्ट या कांसेप्चुअल डिज़ाइन का वर्णन करता है?",
+      "options": [
+        "Modular design / मॉड्यूलर डिज़ाइन",
+        "Physical design / फिजिकल डिज़ाइन",
+        "Logical design / लॉजिकल डिज़ाइन",
+        "Mapped design / मैप्ड डिज़ाइन"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Logical Design डेटाबेस का abstract या conceptual view होता है, जिसमें डेटा की entities, attributes, और relationships को परिभाषित किया जाता है बिना फिजिकल स्टोरेज की जानकारी के। यह डिज़ाइन आमतौर पर ER मॉडल या Relational Schema के रूप में किया जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा डिक्शनरी में होता है- (i) name/नाम (ii) width/विड्थ (iii) data type / डेटा टाइप",
+      "options": [
+        "and ii",
+        "and iii",
+        "and iii",
+        "i, ii and iii"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data Dictionary एक विशेष डेटाबेस होता है जो डेटाबेस के metadata को संग्रहित करता है। इसमें आमतौर पर निम्नलिखित जानकारी होती है: (i) नाम (Name) – यानी कॉलम या फील्ड का नाम, (ii) विड्थ (Width) – यानी फील्ड की अधिकतम लंबाई, (iii) डेटा टाइप (Data Type) – जैसे कि INTEGER, VARCHAR, DATE आदि।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से परमानेंट डेटाबेस ऑब्जेक्ट को पहचानें (i) व्यू, (ii) टेबल, (iii) इंडेक्स",
+      "options": [
+        "i, ii and iii",
+        "and ii",
+        "and iii",
+        "and iii"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "डेटाबेस में परमानेंट ऑब्जेक्ट्स (Permanent Database Objects) वे होते हैं जो डेटाबेस में स्थायी रूप से संग्रहित रहते हैं। View एक virtual table होती है, जो रनटाइम पर क्वेरी के अनुसार बनती है। यह डेटा स्टोर नहीं करती, इसलिए इसे परमानेंट नहीं कहा जाता। टेबल और इंडेक्स दोनों परमानेंट ऑब्जेक्ट हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "मेटाडेटा में कम से कम होता है:",
+      "options": [
+        "The structure of the data / डेटा की स्ट्रक्चर",
+        "The algorithms used for summarization / समराइज़ेशन के लिए उपयोग किए जाने वाले एल्गोरिदम",
+        "The mapping from the operational environment to the data warehouse / ऑपरेशनल एनवायरनमेंट से डेटा वेयरहाउस तक मैपिंग",
+        "All of these / ये सभी"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Metadata का अर्थ होता है 'data about data'। डेटा वेयरहाउसिंग में, मेटाडेटा में आमतौर पर तीनों चीज़ें शामिल होती हैं: डेटा की structure, summarization के लिए algorithms, और operational environment से data warehouse तक mapping।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा डिक्शनरी की सामग्री है-",
+      "options": [
+        "DML Commands / डीएमएल कमांड्स",
+        "DDL Commands / डीडीएल कमांड्स",
+        "Indexes to user data / यूज़र डेटा के लिए इंडेक्स",
+        "Metadata / मेटाडेटा"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data Dictionary एक विशेष डेटाबेस है जो डेटा के बारे में जानकारी (Metadata) रखता है — यानी: टेबल्स के नाम, कॉलम्स के नाम और डेटा टाइप, इंडेक्सेस, रिलेशनशिप्स, कंस्ट्रेंट्स आदि। यह user data नहीं, बल्कि उसके बारे में विवरण संग्रहित करता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सेंट्रलाइज्ड डेटाबेस:",
+      "options": [
+        "Is best for security and management / सुरक्षा और प्रबंधन के लिए सबसे अच्छा है",
+        "Has all or part of the database copied at 2 or more computers / 2 या अधिक कंप्यूटरों पर डेटाबेस का पूरा या आंशिक हिस्सा कॉपी किया होता है",
+        "Is dispersed among multiple computer systems / कई कंप्यूटर सिस्टमों में फैला हुआ है",
+        "Has problem of keeping all up to date data / सभी डेटा को अप टू डेट रखने की समस्या है"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Centralized Database की विशेषता: यह एक सिंगल लोकेशन (single computer server) पर स्थित होता है। इसके कारण security और management की नियंत्रित करना आसान होता है, क्योंकि सब कुछ एक ही जगह है। यह distributed systems या replicated databases की नरह फैला हुआ नहीं होता।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रेप्लिकेटेड डेटाबेस का नुकसान है:",
+      "options": [
+        "Contention among multiple processors attempting to access data simultaneously / एक साथ डेटा एक्सेस करने का प्रयास कर रहे कई प्रोसेसरों के बीच विरोध",
+        "Slow response time / धीमा रिस्पांस टाइम",
+        "High storage cost / हाई स्टोरेज कॉस्ट",
+        "All processors lose access to data during disk failure / डिस्क विफलता के दौरान सभी प्रोसेसर डेटा तक पहुँच खो देते हैं"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Replicated Database में डेटा की कई copies अलग-अलग locations पर रखी जाती हैं। इसके नुकसान हैं: कई प्रोसेसरों के बीच concurrency conflict, high storage cost, और consistency बनाए रखने की चुनौती। Option D गलत है क्योंकि replication का फायदा यह है कि एक disk fail होने पर भी अन्य copies से access मिलती रहती है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डिस्ट्रीब्यूटेड डेटा प्रोसेसिंग की डिज़ाइन और एन्हांसमेंट के लिए कौन सी आवश्यकता महत्वपूर्ण है?",
+      "options": [
+        "Availability / अवेलेबिलिटी",
+        "Performance / परफॉर्मेंस",
+        "Connectivity / कनेक्टिविटी",
+        "All of the options / उपरोक्त सभी विकल्प"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Distributed Data Processing Systems के डिज़ाइन और एन्हांसमेंट के लिए कई आवश्यकताएं महत्वपूर्ण होती हैं: Availability (system हमेशा चलता रहे), Performance (तेज़ प्रोसेसिंग), और Connectivity (सभी distributed components का आपस में communicate करना)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक फिजिकल DFD निर्दिष्ट करता है-",
+      "options": [
+        "What processes will be used / किन प्रक्रियाओं का उपयोग किया जाएगा",
+        "Who generates data and who processes it / कौन डेटा उत्पन्न करता है और कौन इसे प्रोसेस करता है",
+        "What each person in an organization does / एक संगठन में प्रत्येक व्यक्ति क्या करता है",
+        "Which data will be generated / कौन सा डेटा उत्पन्न होगा"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Physical DFD (Data Flow Diagram) यह दिखाता है कि system कैसे कार्य करेगा, यानी: वास्तविक प्रक्रियाएं (कौन-सी होंगी), डेटा कैसे process होगा, कौन व्यक्ति या system कौन-सा डेटा जनरेट करता है या प्रोसेस करता है। इसमें implementation details जैसे file names, hardware आदि शामिल होते हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस का एक व्यू जो एक एप्लिकेशन प्रोग्राम को दिखाई देता है, उसे क्या कहा जाता है?",
+      "options": [
+        "Schema / स्कीमा",
+        "Subschema / सबस्कीमा",
+        "Virtual table / वर्चुअल टेबल",
+        "None of these / इनमें से कोई नहीं"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "डेटाबेस आर्किटेक्चर में: Schema: पूरी डेटाबेस का लॉजिकल स्ट्रक्चर। Subschema: डेटाबेस का एक आंशिक व्यू, जो किसी application program को दिखाई देता है। Virtual table: यह आमतौर पर view को कहा जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित दो कथनों पर विचार करें: I. फिजिकल डेटा इंडिपेंडेंस की तुलना में लॉजिकल डेटा इंडिपेंडेंस हासिल करना आसान है। II. डेटाबेस में व्यूज़ वर्चुअल होते हैं। निम्नलिखित में से कौन सा सत्य है?",
+      "options": [
+        "Both are true / दोनों सत्य हैं",
+        "Both are false / दोनों असत्य हैं",
+        "Only I is true / केवल I सत्य है",
+        "Only II is true / केवल II सत्य है"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Statement I (गलत): Physical data independence को हासिल करना ज्यादा आसान होता है, जबकि logical data independence को हासिल करना कठिन होता है क्योंकि यह स्कीमा और एप्लिकेशन के बीच ज्यादा tight coupling से जुड़ा होता है। Statement II (सही): Views वास्तव में टेबल की तरह दिखाई देते हैं लेकिन ये stored data नहीं रखते। ये virtual tables होते हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS के थ्री-स्कीमा आर्किटेक्चर में, कांसेप्चुअल स्कीमा को बदले बिना इंटरनल स्कीमा को बदलने की क्षमता को क्या कहा जाता है?",
+      "options": [
+        "Physical data independence / फिजिकल डेटा इंडिपेंडेंस",
+        "Logical data independence / लॉजिकल डेटा इंडिपेंडेंस",
+        "Schema mapping / स्कीमा मैपिंग",
+        "Data reorganization / डेटा रीऑर्गेनाइज़ेशन",
+        "View definition / व्यू डेफिनिशन"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Three-schema architecture में: Physical Data Independence: Internal Schema (फिजिकल स्टोरेज) को बदलने की क्षमता बिना Conceptual Schema को बदले। Logical Data Independence: Conceptual Schema को बदलने की क्षमता बिना External Schemas (application views) को बदले।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "हॉरिजॉन्टल फ्रेगमेंटेशन रिलेशनल अलजेब्रा में ______ ऑपरेशन पर आधारित है।",
+      "options": [
+        "Select / सेलेक्ट",
+        "Project / प्रोजेक्ट",
+        "Join / जॉइन",
+        "Division / डिवीजन"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "हॉरिजॉन्टल फ्रेगमेंटेशन का कार्य है किसी रिलेशन (टेबल) की rows (पंक्तियाँ) को कुछ विशेष conditions के आधार पर टेबल में से कुछ rows अलग करना। यह कार्य SELECT ऑपरेशन की मदद से किया जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "वह डेटाबेस जो कई डिस्कों में पार्टिशन्ड है और पैरेलल प्रोसेसिंग एक विशिष्ट कार्य के भीतर होती है जो डेटा के विभिन्न सेटों के खिलाफ विभिन्न प्रोसेसरों पर समवर्ती रूप से की जाती है, वह है:",
+      "options": [
+        "Vertical parallelism / वर्टीकल पैरेलिज्म",
+        "Horizontal parallelism / हॉरिजॉन्टल पैरेलिज्म",
+        "Inter-query parallelism / इंटर-क्वेरी पैरेलिज्म",
+        "Intra-query parallelism / इंट्रा-क्वेरी पैरेलिज्म"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Intra-query Parallelism: इसमें एक ही क्वेरी को कई प्रोसेसरों पर एक साथ चलाया जाता है। डेटाबेस को कई डिस्कों में partition (विभाजित) किया जाता है, ताकि अलग-अलग प्रोसेसर डेटा के अलग-अलग हिस्सों पर समानांतर (parallel) रूप से कार्य कर सकें।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS का उपयोग करने का लाभ यह है कि यह डेटा इंडिपेंडेंस प्रदान करता है जो इसके माध्यम से प्राप्त किया जाता है:",
+      "options": [
+        "Data abstraction / डेटा एब्स्ट्रैक्शन",
+        "Exceptional handling / एक्सेप्शनल हैंडलिंग",
+        "Data hiding / डेटा हाइडिंग",
+        "Transaction / ट्रांजैक्शन"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DBMS में data independence का मतलब है: डेटे के structure को बदले बिना एप्लिकेशन को चलाते रहना। यह संभव होता है क्योंकि DBMS data को अलग-अलग स्तरों पर represent करता है: Physical level, Logical level, View level। इन levels के बीच separation को data abstraction कहते हैं, और इसी कारण data independence मिलती है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा एक मान्य फ़ाइल ऑर्गनाइज़ेशन मेथड नहीं है?",
+      "options": [
+        "Sequential access / सीक्वेंशियल एक्सेस",
+        "Circular Access / सर्कुलर एक्सेस",
+        "Direct Access / डायरेक्ट एक्सेस",
+        "Indexed Sequential Access / इंडेक्सड सीक्वेंशियल एक्सेस"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "मान्य फ़ाइल ऑर्गनाइज़ेशन मेथड्स: 1. Sequential Access (सीक्वेंशियल एक्सेस) – डेटा को एक-के-बाद-एक क्रम में एक्सेस किया जाता है। 2. Direct Access (डायरेक्ट एक्सेस) – डेटा को सीधे एक्सेस किया जा सकता है (जैसे हार्ड डिस्क पर)। 3. Indexed Sequential Access (इंडेक्सड सीक्वेंशियल एक्सेस) – इंडेक्स और सीक्वेंशियल एक्सेस दोनों का मिश्रण। 'Circular Access' कोई मानक विधि नहीं है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डेटाबेस में यूज़र के व्यू को यह भी कहा जाता है-",
+      "options": [
+        "External view / एक्सटर्नल व्यू",
+        "Conceptual view / कांसेप्चुअल व्यू",
+        "Internal view / इंटर्नल व्यू",
+        "Contextual view / कांटेक्सटुअल व्यू"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "डेटाबेस आर्किटेक्चर में तीन लेवल्स होते हैं: 1. Internal View (इंटरनल व्यू) – स्टोरेज और डेटा के फिजिकल ऑर्गनाइज़ेशन को दर्शाता है। 2. Conceptual View (कांसेप्चुअल व्यू) – पूरी डेटाबेस की लॉजिकल संरचना को दर्शाता है। 3. External View (एक्सटर्नल व्यू) – यूज़र के नज़रिए से डेटा का व्यू, यानी यूज़र को जो डेटा दिखाया जाता है, वह External View कहलाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिलेशनल डेटाबेस एनवायरनमेंट में निम्नलिखित सभी कॉम्पोनेंट्स होते हैं, सिवाय-",
+      "options": [
+        "Users / यूज़र्स",
+        "Separate files / सेपरेट फाइल्स",
+        "Database / डेटाबेस",
+        "Query language / क्वेरी लैंग्वेज"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "एक Relational Database Environment में मुख्यतः ये घटक (components) होते हैं: 1. Database (डेटाबेस) — डेटा का संगठित संग्रह। 2. Users (यूज़र्स) — जो डेटा को एक्सेस या मैनेज करते हैं। 3. Query Language (क्वेरी लैंग्वेज) — जैसे SQL, डेटा को क्वेरी करने और संशोधित करने के लिए। 'Separate files' RDBMS का हिस्सा नहीं है — यह पुराने File System का लक्षण है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कांसेप्चुअल स्कीमा में परिवर्तनों के प्रति एक्सटर्नल स्कीमा (या एप्लिकेशन प्रोग्राम) की इम्यूनिटी को कहा जाता है:",
+      "options": [
+        "Physical Data Independence / फिजिकल डेटा इंडिपेंडेंस",
+        "Logical Data Independence / लॉजिकल डेटा इंडिपेंडेंस",
+        "Both (a) and (b) / (a) और (b) दोनों",
+        "None of the above / उपरोक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Logical Data Independence का अर्थ है: यदि conceptual schema (जैसे कि टेबल्स की संरचना, रिलेशनशिप आदि) में कोई परिवर्तन किया जाए, तो उससे external schemas (या एप्लिकेशन प्रोग्राम्स) प्रभावित नहीं होने चाहिए। यह क्षमता एक अच्छे DBMS की महत्वपूर्ण विशेषता होती है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा एक डेटा मैनिपुलेशन ऑपरेशन नहीं है?",
+      "options": [
+        "Encryption of information stored in the database / डेटाबेस में संग्रहीत जानकारी का एन्क्रिप्शन",
+        "Insertion of new information into the database / डेटाबेस में नई जानकारी का इमर्जन",
+        "Deletion of information from the database / डेटाबेस से जानकारी का डिलीशन",
+        "Modification of information stored in the database / डेटाबेस में संग्रहीत जानकारी का मॉडिफिकेशन"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "डेटा मैनिपुलेशन ऑपरेशन (Data Manipulation Operations) वे ऑपरेशन होते हैं जो डेटाबेस में डेटा को जोड़ने (Insert), हटाने (Delete) या संशोधित करने (Update/Modify) से संबंधित होते हैं। Encryption (एन्क्रिप्शन) डेटा की सुरक्षा (Security) से संबंधित एक प्रक्रिया है, जो Data Manipulation का हिस्सा नहीं है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "______ विधि का उपयोग सामान्यतः डेटा की इंटीग्रिटी (Integrity) को वेरिफाई करने के लिए किया जाता है।",
+      "options": [
+        "Duplication / डुप्लिकेशन",
+        "Hashing / हैशिंग",
+        "Compression / कंप्रेशन",
+        "Caching / कैशिंग"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "हैशिंग (Hashing): यह एक ऐसी प्रक्रिया है जिसमें किसी भी आकार के डेटा को एक फिक्स्ड-साइज़ (निश्चित आकार) की स्ट्रिंग में बदला जाता है, जिसे हैश या 'डाइजेस्ट' कहते हैं। यदि डेटा में थोड़ा सा भी बदलाव होता है, तो उसका हैश कोड पूरी तरह बदल जाता है। इसीलिए इसका उपयोग यह सत्यापित करने के लिए किया जाता है कि डेटा ट्रांसमिशन के दौरान बदला तो नहीं गया है (Integrity)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "______ आंकड़ा शुद्धता की समस्याओं का एक कारण है।",
+      "options": [
+        "Data redundancy / डेटा अतिरेक",
+        "Data inconsistency / डेटा असंगति",
+        "Security constraints / सुरक्षा बाधाएं",
+        "Unauthorized access of data / डेटा की अनधिकृत पहच"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Data Redundancy (डेटा रिडंडेंसी): इसका अर्थ है डेटा का सामान्य (Duplication) जब एक ही डेटा डेटाबेस में कई जगहों पर संग्रहित होता है, तो इसे रिडंडेंसी कहते हैं। समस्या: यदि डेटा एक जगह अपडेट किया जाए और दूसरी जगह नहीं, तो डेटा में असंगति (Inconsistency) पैदा होती है, जो डेटा इंटीग्रिटी को खत्म करती है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन-सी DBMS का उदाहरण नहीं है?",
+      "options": [
+        "SQL Server",
+        "MySQL",
+        "Microsoft Outlook",
+        "Microsoft Access"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Microsoft Outlook: यह एक पर्सनल इनफॉर्मेशन मैनेजर और ईमेल क्लाइंट है, न कि कोई डेटाबेस मैनेजमेंट सिस्टम। DBMS के उदाहरण: Microsoft Access, MySQL, SQL Server, Oracle, SQLite आदि सभी लोकप्रिय DBMS सॉफ्टवेयर हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस प्रबंधन की संरचना को किस रूप में देखा जा सकता है?",
+      "options": [
+        "Two levels / दो स्तरों",
+        "Four levels / चार स्तरों",
+        "Three levels / तीन स्तरों",
+        "One level / एक स्तर पर"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "ANSI/SPARC मॉडल के अनुसार, DBMS आर्किटेक्चर के तीन स्तर होते हैं: 1. External Level (View Level): यह वह स्तर है जो यूज़र को दिखाई देता है। 2. Conceptual Level (Logical Level): यह बताता है कि डेटाबेस में क्या डेटा स्टोर है और उनके बीच क्या संबंध है। 3. Internal Level (Physical Level): यह बताता है कि डेटा वास्तव में स्टोरेज डिवाइस पर कैसे स्टोर किया गया है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "______ का अर्थ है कि डेटाबेस में रखा डेटा यथार्थ है और विश्वसनीय है।",
+      "options": [
+        "Data redundancy / डेटा रिडंडेंसी",
+        "Data integrity / डेटा इंटीग्रिटी",
+        "Data reliability / डेटा रिलायबिलिटी",
+        "Data consistency / डेटा कंसिस्टेंसी"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data Integrity: इसका मतलब है डेटा की सटीकता (Accuracy), पूर्णता (Completeness) और विश्वसनीयता (Reliability)। यह सुनिश्चित करता है कि डेटाबेस में कोई invalid या अवैध डेटा प्रवेश न करे। Data Consistency: इसका मतलब है कि डेटाबेस के विभिन्न हिस्सों में डेटा एक समान होना चाहिए।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डेटाबेस में रिकॉर्ड के बारे में जानकारी की सबसे छोटी इकाई को कहते हैं:",
+      "options": [
+        "Cell / सेल",
+        "Field / फील्ड",
+        "Record / रिकॉर्ड",
+        "Query / क्वेरी"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "डेटा पदानुक्रम (Hierarchy): Bit → Byte → Field (Attribute) → Record (Tuple) → File (Table) → Database। Field: यह डेटा की सबसे छोटी तार्किक इकाई है (जैसे सिर्फ 'Name' या 'Age')। Record: कई फील्ड्स मिलकर एक रिकॉर्ड बनाते हैं (जैसे एक पूरे छात्र की जानकारी)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस क्या है?",
+      "options": [
+        "Organized collection of information that cannot be accessed, updated and managed / सूचना के संगठित संग्रह तक पहुँच अक्षम और प्रबंधन नहीं किया जा सकता है",
+        "Organized collection of data or information that can be accessed, updated and managed / डेटा या सूचना का संगठित संग्रह जिसे एक्सेस अपडेट और प्रबंधन किया जा सकता है",
+        "Organized collection of data that cannot be updated / ऐसे डेटा का संगठित संग्रह जिसे अद्यतन नहीं किया जा सकता",
+        "More than one of the above / उपर्युक्त में से एक से अधिक",
+        "None of the above / उपर्युक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "डेटाबेस का मुख्य उद्देश्य डेटा को व्यवस्थित करना है ताकि उसे आसानी से रिट्रीव (प्राप्त), अपडेट और मैनेज किया जा सके। यह अनव्यवस्थित डेटा (Unorganized data) को सूचना (Information) में बदलने में मदद करता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस में किस प्रकार का डेटा संग्रहित किया जा सकता है?",
+      "options": [
+        "Image-oriented data / छवि-उन्मुख डेटा",
+        "Text, files containing data / पाठ, डेटा युक्त फाइलें",
+        "Data in the form of audio or video / ऑडियो या वीडियो के रूप में डेटा",
+        "More than one of the above / उपर्युक्त में से एक से अधिक",
+        "None of the above / उपर्युक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "आधुनिक डेटाबेस (जैसे Oracle, SQL Server, MongoDB) विभिन्न प्रकार के डेटा को स्टोर कर सकते हैं: Text (अक्षर, शब्द), Numbers (संख्याएं), Images, Audio, Video (BLOB - Binary Large Object के रूप में)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सा डेटाबेस का एक प्रकार नहीं है?",
+      "options": [
+        "Network",
+        "Distributed",
+        "Decentralized",
+        "More than one of the above / उपर्युक्त में से एक से अधिक",
+        "None of the above / उपर्युक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "पारंपरिक डेटाबेस वर्गीकरण में Network, Hierarchical, Relational, और Distributed डेटाबेस होते हैं। 'Decentralized' (विकेंद्रीकृत) शब्द आमतौर पर ब्लॉकचेन तकनीक या डिस्ट्रीब्यूटेड सिस्टम के संदर्भ में आता है; इसे सीधे तौर पर 'डेटाबेस का प्रकार' (जैसे Relational या Network) नहीं माना जाता।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सा DBMS का उदाहरण नहीं है?",
+      "options": [
+        "Microsoft Access",
+        "IBM Db2",
+        "Google",
+        "More than one of the above / उपर्युक्त में से एक से अधिक",
+        "None of the above / उपर्युक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Google: यह एक सर्च इंजन और टेकनोलॉजी कंपनी है। यह DBMS सॉफ्टवेयर नहीं है (हालांकि गूगल अपने internal काम के लिए BigTable जैसे डेटाबेस का उपयोग करता है)। IBM Db2 और Microsoft Access प्रसिद्ध DBMS सॉफ्टवेयर हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सी DBMS की विशेषता नहीं है?",
+      "options": [
+        "Minimum duplication and redundancy of data / डेटा की न्यूनतम दोहराव और अतिरेक",
+        "Single user access only / केवल एकल उपयोगकर्ता पहुँच",
+        "Support ACID property / एसिड गुण का समर्थन",
+        "More than one of the above / उपर्युक्त में से एक से अधिक",
+        "None of the above / उपर्युक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DBMS की एक प्रमुख विशेषता Multi-user environment (बहु-उपयोगकर्ता वातावरण) है, जहाँ कई यूज़र एक साथ डेटाबेस को एक्सेस कर सकते हैं (Concurrency)। 'Single user access only' फाइल सिस्टम की सीमा हो सकती है, DBMS की नहीं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सा डेटाबेस का कार्य नहीं है?",
+      "options": [
+        "Manipulating data",
+        "Security for stored data",
+        "Analysing code",
+        "More than one of the above / उपर्युक्त में से एक से अधिक",
+        "None of the above / उपर्युक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DBMS के मुख्य कार्य हैं: डेटा स्टोर करना, डेटा मैनिपुलेशन (Insert, Update, Delete), डेटा सिक्योरिटी, और ट्रांजैक्शन मैनेजमेंट। 'Analysing code': कोड का विश्लेषण करना Compiler या Interpreter का काम है, डेटाबेस का नहीं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा के बारे में जानकारी क्या कहलाती है?",
+      "options": [
+        "Teradata",
+        "Metadata",
+        "Relations",
+        "More than one of the above / उपर्युक्त में से एक से अधिक",
+        "None of the above / उपर्युक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Metadata: इसे 'Data about Data' कहा जाता है। उदाहरण के लिए, एक टेबल में डेटा है (राम, 25 वर्ष), लेकिन यह जानकारी कि कॉलम का नाम Name है और उसका टाइप Varchar है, मेटाडेटा है। इसे Data Dictionary में स्टोर किया जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS एक एंटरप्राइज-क्लास सिस्टम के ______ और ______ के बीच एक इंटरफेस के रूप में कार्य करता है।",
+      "options": [
+        "data, the DBMS",
+        "database application, the database",
+        "the user, the software",
+        "More than one of the above / उपर्युक्त में से एक से अधिक",
+        "None of the above / उपर्युक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DBMS एक मध्यस्थ (Interface) सॉफ्टवेयर है। यूज़र सीधे हार्ड डिस्क पर रखे डेटाबेस से बात नहीं करता। यूज़र 'एप्लिकेशन' का उपयोग करता है, एप्लिकेशन 'DBMS' से बात करती है, और DBMS 'डेटाबेस' (Data files) से डेटा निकालता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सा DBMS का प्रकार नहीं है?",
+      "options": [
+        "Relational DBMS",
+        "Object-Oriented DBMS",
+        "Sequential DBMS",
+        "More than one of the above / उपर्युक्त में से एक से अधिक",
+        "None of the above / उपर्युक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "'Sequential' (क्रमिक) मूल रूप से फाइल एक्सेस करने की एक विधि है (जैसे टेप ड्राइव में), न कि कोई मानक DBMS मॉडल। DBMS के मुख्य प्रकार हैं: Relational (RDBMS) जैसे MySQL, Hierarchical (पेड़ जैसी संरचना), Network (ग्राफ जैसी संरचना), और Object-Oriented।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सा वितरित डेटाबेस सिस्टम का उपयोग करने का नुकसान है?",
+      "options": [
+        "Improved data accessibility / बेहतर डेटा पहुँच",
+        "Increased data security / बढ़ी हुई डेटा सुरक्षा",
+        "Data inconsistency / डेटा असंगतता",
+        "More than one of the above / उपर्युक्त में से एक से अधिक",
+        "None of the above / उपर्युक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "डिस्ट्रीब्यूटेड डेटाबेस में डेटा कई अलग-अलग जगहों (सर्वर) पर होता है। सभी जगहों पर डेटा को एक जैसा (Consistent) बनाए रखना कठिन होता है। Data inconsistency इसका मुख्य नुकसान है। Data sharing और reliability फायदों में शामिल हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस का एक उदाहरण (Instance) क्या है?",
+      "options": [
+        "The state of the database system at any given time / किसी भी समय डेटाबेस सिस्टम की स्थिति",
+        "The entire set of attributes of the Database together in a single relation / डेटाबेस की विशेषताओं का सम्पूर्ण समूह एक ही संबंध में एक साथ",
+        "The initial values inserted into the Database immediately after its creation / डेटाबेस के निर्माण के बाद इसमें डाले गए प्रारंभिक मान",
+        "More than one of the above / उपर्युक्त में से एक से अधिक",
+        "None of the above / उपर्युक्त में से कोई नहीं"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Schema: यह डेटाबेस का लॉजिकल डिज़ाइन है (जो बार-बार नहीं बदलता)। Instance: किसी विशेष क्षण (Time T) पर डेटाबेस में मौजूद डेटा (Values) को 'इन्सटांस' कहते हैं। जैसे ही डेटा बदलता है, instance बदल जाता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "फ्लैट फाइल डेटाबेस में, प्लेन-टेक्स्ट फाइल की हर लाइन में सिर्फ एक रिकॉर्ड होता है। इन रिकॉर्ड्स को ______ नाम के डिलिमिटर का इस्तेमाल करके अलग किया जाता है।",
+      "options": [
+        "Backslashes / बैकस्लैश",
+        "Asterisks / एस्टेरिस्क",
+        "Paragraph marks / पैराग्राफ मार्क्स",
+        "Tabs / टैब"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Flat File: यह एक सादी टेक्स्ट फाइल होती है (जैसे .txt, .csv)। इसमें डेटा को अलग करने के लिए किसी Delimiter (विभाजक) की जरूरत होती है। सामान्य Delimiters: Comma (,) [CSV फाइलों में], Tab (\\t) [TSV फाइलों में], या Space। प्रश्न के संदर्भ में Tab सही है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "बाहरी डीबीएमएस (DBMS) के लिए एक उदाहरण है:",
+      "options": [
+        "Operating system",
+        "Microsoft Excel",
+        "Oracle",
+        "Microsoft Word"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Oracle: यह एक शक्तिशाली RDBMS सॉफ्टवेयर है जो बड़े स्तर पर डेटा मैनेज करता है। OS (Operating System): यह कंप्यूटर को चलाता है, डेटाबेस नहीं। Excel/Word: ये एप्लिकेशन सॉफ्टवेयर हैं, इन्हें पूर्ण DBMS नहीं माना जाता (हालांकि Excel में डेटा रखा जा सकता है, पर वह DBMS के नियमों का पालन नहीं करता)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "आई.टी. में .......... का अर्थ है कि डेटाबेस में उपलब्ध डेटा सही और संगत पूर्ण है।",
+      "options": [
+        "Data Security / डाटा सिक्योरिटी",
+        "Data Availability / डाटा अवेलेबिलिटी",
+        "Data Binding / डाटा बाइंडिंग",
+        "Data Integrity / डाटा इंटीग्रिटी"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data Integrity का अर्थ है डेटाबेस में उपलब्ध डेटा सही (Accurate) और सुसंगत (Consistent) होना चाहिए। Data Security: डेटा को unauthorized access से बचाना। Data Availability: डेटा हमेशा accessible होना। Data Binding: programming concept (UI और data का link)।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "परस्पर संबंधित डेटा और उस डेटा तक पहुँचने के लिए प्रोग्राम्स के एक सेट के एक संग्रह को क्या कहा जाता है?",
+      "options": [
+        "Computer Network / कंप्यूटर नेटवर्क",
+        "Class / क्लास",
+        "Database Management System / डेटाबेस मैनेजमेंट सिस्टम",
+        "Data Structure / डेटा स्ट्रक्चर"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DBMS की परिभाषा: परस्पर संबंधित डेटा (Interrelated data) और उस डेटा तक पहुँचने के लिए प्रोग्राम्स के एक सेट का संग्रह। यह डेटा को संगठित रूप से स्टोर करता है और उसे efficiently access करने की सुविधा देता है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कंप्यूटर एप्लिकेशन को बनाने के लिए प्रयुक्त डी. बी. एम. एस. किसको कहते हैं?",
+      "options": [
+        "Database Micro System / डेटाबेस माइक्रो सिस्टम",
+        "Database Machine System / डेटाबेस मशीन सिस्टम",
+        "Database Maintenance System / डेटाबेस मेंटेनेंस सिस्टम",
+        "Database Management System / डेटाबेस मैनेजमेंट सिस्टम"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "किसी भी डेटा-आधारित कंप्यूटर एप्लिकेशन (जैसे बैंकिंग ऐप, रेलवे रिजर्वेशन) के बैकएंड (Backend) को संभालने के लिए DBMS का ही उपयोग होता है। DBMS = Database Management System।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "इनमें कौन-सा DBMS सॉफ्टवेयर नहीं है?",
+      "options": [
+        "ORACLE / ओरैकल",
+        "SYBASE / साइबेस",
+        "COBOL / कोबोल",
+        "SQL Server / SQL सर्वर"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "COBOL (Common Business Oriented Language): यह एक पुरानी प्रोग्रामिंग भाषा (Programming Language) है, डेटाबेस सॉफ्टवेयर नहीं। Oracle, Sybase, SQL Server: ये सभी DBMS हैं।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा विकल्प डेटाबेस प्रबंधक का कार्य नहीं है?",
+      "options": [
+        "Database design / डेटाबेस डिज़ाइन",
+        "Data recovery / डेटा रिकवरी",
+        "Obtaining a DBMS / डी.बी.एम.एस. प्राप्त करना",
+        "Maintaining system security / सिस्टम सुरक्षा को बनाए रखना"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Database Manager एक सॉफ्टवेयर घटक (Component) या एडमिनिस्ट्रेटर है। इसके कार्य हैं: डेटाबेस डिज़ाइन करना, बैकअप लेना, सुरक्षा (Security) बनाए रखना। 'DBMS प्राप्त करना' (बाजार से खरीदना या डाउनलोड करना) प्रबंधन का कार्य नहीं है, यह एक खरीद प्रक्रिया है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा डेटाबेस सॉफ्टवेयर का एक उदाहरण है?",
+      "options": [
+        "Oracle RDBMS / ओरेकल आर.डी.बी.एम.एस.",
+        "Tally / टैली",
+        "Thunderbird / थंडरबर्ड",
+        "Zoho Books / ज़ोहो बुक्स"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Oracle: यह एक बहुत लोकप्रिय RDBMS है। Tally: एकाउंटिंग सॉफ्टवेयर है। Thunderbird: ईमेल क्लाइंट है। Zoho Books: ऑनलाइन एकाउंटिंग सॉफ्टवेयर है।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Microsoft Access डेटाबेस में कौन मा विकल्प लक्ष्य (ऑब्जेक्ट) को इंगित नहीं करता है?",
+      "options": [
+        "Table / टेबल",
+        "Forms / रूप",
+        "Modules / भाग",
+        "Worksheet / कार्य-पत्रक"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "MS Access Objects: Table, Query, Form, Report, Macro, Module। 'Worksheet' शब्द MS Excel का है। MS Access में 'Worksheet' कोई ऑब्जेक्ट नहीं होता।",
+      "marks": 1,
+      "negativeMarks": 0.33
+    }
+  ]
+}

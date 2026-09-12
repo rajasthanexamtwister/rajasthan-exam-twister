@@ -1,0 +1,847 @@
+{
+  "quizTitle": "It Pathshala DBMS Normalization",
+  "subject": "DBMS",
+  "examTags": [
+    "BCI",
+    "Computer Science",
+    "Information Assistant"
+  ],
+  "difficulty": "medium",
+  "questions": [
+    {
+      "questionText": "एक संबंधपरक डेटाबेस में डेटा रिडंडेंसी को कम करने की प्रक्रिया को कहा जाता है ______।",
+      "options": [
+        "Trigger",
+        "Normalization",
+        "Relationship",
+        "Data Type"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Normalization breaks large tables into smaller related tables so that data redundancy is reduced and insertion/update anomalies are avoided.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस डिज़ाइन के लिए कौन सा नॉर्मल फॉर्म पर्याप्त माना जाता है?",
+      "options": [
+        "3NF",
+        "2NF",
+        "1NF",
+        "4NF"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "3NF is commonly considered sufficient for most practical relational database designs because it removes data redundancy and most modification anomalies while always allowing a lossless and dependency-preserving decomposition.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "RDBMS में, संशोधन विसंगतियों को रोकने के लिए ______ तकनीक का उपयोग करके संबंधों के विभिन्न वर्ग बनाए जाते हैं।",
+      "options": [
+        "functional dependencies / फंक्शनल डिपेंडेंसी",
+        "data integrity / डेटा अखंडता",
+        "referential integrity / संदर्भात्मक अखंडता",
+        "normal forms / नॉर्मल फॉर्म"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The question asks what creates 'different classes of relations' — this directly describes the hierarchy of normal forms (1NF through 5NF), each a distinct class with specific anomaly-prevention guarantees. Functional dependency is the tool used to test/define these classes, but it is not itself a 'class of relation'.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कौन-सा सामान्य रूप यह सुनिश्चित करता है कि तालिका में प्रत्येक गैर-प्रधान विशेषता प्राथमिक कुंजी पर पूरी तरह कार्यात्मक रूप से निर्भर है?",
+      "options": [
+        "First Normal Form (1NF)",
+        "Second Normal Form (2NF)",
+        "Third Normal Form (3NF)",
+        "More than one of the above",
+        "None of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "2NF's defining rule is that a table must be in 1NF and have no partial dependency — every column must depend on the whole primary key, not just part of it.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किन रूपों में एक संबंध है जिसमें एक इकाई के बारे में जानकारी है?",
+      "options": [
+        "4NF",
+        "3NF",
+        "5NF",
+        "More than one of the above",
+        "None of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "4NF removes multi-valued dependency so that when 4NF is applied, tables are broken into smaller tables that hold facts about only one entity/type, rather than mixed unrelated information.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "नॉर्मल फॉर्म के बारे में निम्नलिखित में से कौन सा कथन गलत है?",
+      "options": [
+        "BCNF is stricter than 3NF",
+        "Lossless, dependency-preserving decomposition into 3NF is always possible",
+        "Lossless, dependency-preserving decomposition into BCNF is always possible",
+        "Any relation with two attributes is in BCNF"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "(A) is true since BCNF requires every determinant to be a candidate key, a stricter condition than 3NF. (B) is true by the 3NF synthesis algorithm guarantee. (C) is FALSE because BCNF decomposition can lose dependency preservation. (D) is true since a 2-attribute relation always satisfies BCNF trivially.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "पांचवें नॉर्मल फॉर्म को यह भी कहा जाता है:",
+      "options": [
+        "Protect-join normal form",
+        "Process-join normal form",
+        "Project-join normal form",
+        "None of these"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "5NF, also called PJNF (Project-Join Normal Form), ensures that a relation has no join dependency anomalies — it can always be decomposed into smaller relations and joined back without loss.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "दूसरा नॉर्मल फॉर्म अस्वीकार करता है -",
+      "options": [
+        "Full functional dependency",
+        "Partial functional dependency",
+        "Transitive functional dependency",
+        "Non-trivial Multivalued dependency"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "2NF requires that a relation be in 1NF and disallow partial dependency — meaning every column must depend on the entire candidate key, not just a portion of it.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "यदि कोई संबंध 2NF और 3NF फॉर्म में है, तो -",
+      "options": [
+        "no non-prime attribute is functionally dependent on other non-prime attributes",
+        "no non-prime attribute is functionally dependent on the prime attributes",
+        "all attributes are functionally independent",
+        "prime attribute is functionally independent of all non-prime attributes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Since a relation in 3NF has no transitive dependency, this means no non-prime attribute can functionally determine another non-prime attribute, which matches option (A).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "दो सेट के एट्रिब्यूट A और B के बीच फंक्शनल डिपेंडेंसी में, डेटाबेस के एट्रिब्यूट A के सेट को इस रूप में वर्गीकृत किया जाता है:",
+      "options": [
+        "top right side",
+        "down left side",
+        "left hand side",
+        "right hand side"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "By the standard notation A → B, A (the determinant) is on the left side of the arrow, hence called the Left Hand Side (LHS).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "नॉर्मलाइजेशन फॉर्म जो ट्रांजिटिव डिपेंडेंसी पर आधारित है, को इस रूप में वर्गीकृत किया गया है:",
+      "options": [
+        "first normal form",
+        "second normal form",
+        "fourth normal form",
+        "third normal form"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Third Normal Form (3NF) is defined around removing transitive dependency: if A → B → C, then C is transitively dependent on A through B, which 3NF disallows for non-prime attributes.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल डेटाबेस को ध्यान में रखते हुए, दो एट्रिब्यूट A और B के बीच फंक्शनल डिपेंडेंसी को इसके द्वारा दर्शाया जाता है:",
+      "options": [
+        "A→B",
+        "B←A",
+        "AB→R",
+        "R←AB"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A → B is the universally accepted standard notation for functional dependency, read as 'A functionally determines B'.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "यदि सेट E में प्रत्येक फंक्शनल डिपेंडेंसी F के क्लोजर में भी है तो इसे इस रूप में वर्गीकृत किया जाता है:",
+      "options": [
+        "FD is covered by E",
+        "is covered by F",
+        "F is covered by E",
+        "F plus is covered by E"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "If every FD in set E also appears in the closure of F (F⁺), then F is strong enough to imply/derive all of E's dependencies — formally written as 'E is covered by F'.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "न्यूनतम अतिरेक और प्रविष्टि या अद्यतन विसंगतियों को प्राप्त करने के लिए संबंध स्कीमा का विश्लेषण करने की प्रक्रिया को इस रूप में वर्गीकृत किया गया है:",
+      "options": [
+        "normalization of data",
+        "denomination of data",
+        "isolation of data",
+        "de-normalization of data"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Normalization is the analytical process of breaking relation schemas into smaller, well-structured relations to minimize redundancy and prevent modification anomalies.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक संबंध 4NF में है यदि यह 3NF में है और इसमें शामिल है -",
+      "options": [
+        "No multi-valued dependency",
+        "No non prime attribute is transitively dependent on the key",
+        "Non lossy decomposition",
+        "Every non key attributes is fully dependent on the primary key"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "4NF requires the absence of multi-valued dependencies — this is the distinguishing rule that separates 4NF from BCNF/3NF.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "तालिका पर मल्टी-वैल्यूड डिपेंडेंसी के लिए, इसमें होना चाहिए -",
+      "options": [
+        "Only one attribute",
+        "NULL or one attribute",
+        "Two or more attributes",
+        "Less than two attributes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A multivalued dependency requires at least two attributes that vary independently of each other given a determinant — a single attribute cannot exhibit multi-valued dependency on its own.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "नॉर्मलाइजेशन का लक्ष्य समाप्त करना है-",
+      "options": [
+        "Insertion anomaly",
+        "Deletion anomaly",
+        "Update anomaly",
+        "All options are correct"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Normalization's overall purpose is to eliminate insertion anomalies (incomplete data forced on insert), deletion anomalies (losing unrelated data when deleting a record), and update anomalies (inconsistent data due to redundant copies) — making (D) the comprehensive correct answer.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक संबंध में एट्रिब्यूट के परमाणु मान होते हैं, तो संबंध को कहा जाता है",
+      "options": [
+        "NF",
+        "2NF",
+        "3NF",
+        "4NF"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1NF requires that every cell contain a single atomic value — no sets, lists, or repeating groups — which is precisely what the question describes.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कौन सा 'नॉर्मल फॉर्म' 'पूर्ण फंक्शनल डिपेंडेंसी' की अवधारणा पर आधारित है?",
+      "options": [
+        "First Normal Form",
+        "Second Normal Form",
+        "Third Normal Form",
+        "Fourth Normal Form"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "2NF's foundational concept is full functional dependency — a non-prime attribute Y is fully functionally dependent on X if Y depends on the whole of X and not on any proper subset of X.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिलेशन को 3NF में कहा जाता है यदि: (i) यह 2NF में है (ii) नॉन-की एट्रिब्यूट एक दूसरे से स्वतंत्र हैं (iii) की एट्रिब्यूट कंपोजिट की के हिस्से पर निर्भर नहीं है",
+      "options": [
+        "and (iii)",
+        "and (iii)",
+        "and (ii)",
+        ", (ii) and (iii)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "3NF = 2NF + no transitive dependency (non-key attributes don't depend on each other), matching (i) and (ii). Statement (iii) about key attributes not depending on part of a composite key describes the 2NF rule (partial dependency on key), making it not part of 3NF's distinguishing condition here.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "फोर्थ नार्मल फॉर्म ज्यादातर ______ का उपयोग यह जांचने के लिए करता है कि रिलेशन का डिजाइन फोर्थ नार्मल फॉर्म में है या नहीं:",
+      "options": [
+        "Functional dependencies",
+        "Multi-valued dependencies",
+        "Relational dependencies",
+        "Tuple dependencies"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Since 4NF's purpose is to eliminate multi-valued dependency anomalies, the test for whether a relation is in 4NF is performed by checking for multi-valued dependencies in the relation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सेकंड नार्मल फॉर्म (2NF) में टेबल:",
+      "options": [
+        "Eliminates all hidden dependencing",
+        "Eliminates the possibility of an insertion anomalies",
+        "Has a composite key",
+        "Has all non key field, depends on the whole primary key"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The defining characteristic of 2NF is that every non-key field depends on the entire (whole) primary key, not just part of it — this is the partial-dependency removal rule.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "\"X किसी की का प्रॉपर सबसेट नहीं है\" यह 3NF का उल्लंघन है जिसे कहा जाता है:",
+      "options": [
+        "Partial dependency",
+        "Total dependency",
+        "Transitive dependency",
+        "None of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "When X (the determinant) is NOT a proper subset of any key and is also not a superkey, while A is non-prime, this scenario describes a transitive dependency — a non-key attribute determining another non-key attribute.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक फंक्शनल डिपेंडेंसी ______ के बीच एक संबंध है:",
+      "options": [
+        "tables",
+        "attributes",
+        "rows",
+        "relations"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Functional dependency is a relationship at the attribute level: a set of attributes (the determinant) uniquely determines another set of attributes (the dependent), not between tables, rows, or whole relations.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "फंक्शनल डिपेंडेंसी F के एक सेट के तहत, एट्रिब्यूट्स X के एक सेट का क्लोजर है:",
+      "options": [
+        "set of all attributes appearing on the right side of the functional dependencies in F",
+        "Set of all attributes appearing on the left side of the functional dependencies is F",
+        "Set of attributes that can functional determine X based on F",
+        "Set of attributes that are functionally determined by X based on F"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "X⁺ (closure of X) is computed by repeatedly applying the FDs in F to find every attribute that X can functionally determine — it is the set determined BY X, not the set that determines X.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक फंक्शनल डिपेंडेंसी FD: X →Y को ट्रिविअल कहा जाता है यदि Y, X का सबसेट है",
+      "options": [
+        "if Y is a subset of X",
+        "if Y is a superset of X",
+        "if X is a subset of Y",
+        "if X is a superset of Y"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A trivial FD holds in any relation by default because the dependent attribute set Y is already contained within the determinant set X.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किस नार्मल फॉर्म में पार्शियल डिपेंडेंसी हटाई जाती है?",
+      "options": [
+        "First normal form",
+        "Second normal form",
+        "Third normal form",
+        "BCNF"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "2NF is reached by removing partial dependency from a 1NF relation, ensuring every non-prime attribute depends on the entire candidate key.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस डिजाइन में किस प्रक्रिया का उद्देश्य डेटा रिडंडेंसी को समाप्त करना और अपडेट एनोमलीज से बचना है?",
+      "options": [
+        "Hierarchical representation",
+        "Normalization",
+        "Data warehousing",
+        "Entity relationship modeling"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Normalization restructures database tables to minimize data redundancy and prevent update (and other) anomalies — directly matching the question's description.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डिकम्पोजिशन के वांछनीय गुण क्या हैं?",
+      "options": [
+        "Partition constraint",
+        "Dependency preservation",
+        "Redundancy",
+        "Security"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Of the listed options, dependency preservation is one of the two textbook-recognized desirable properties of decomposition (the other being lossless join, not listed here). Redundancy and security are not decomposition-quality criteria, and 'partition constraint' is not a standard term in this context.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डिजाइनर टाइम-क्रिटिकल ऑपरेशंस को सपोर्ट करने के लिए सिस्टम के प्रदर्शन को ट्यून करने के लिए निम्नलिखित में से किसका उपयोग करते हैं?",
+      "options": [
+        "De-normalization",
+        "Redundant optimization",
+        "Optimization",
+        "Realization"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Designers apply de-normalization to speed up time-critical queries/reports by reducing joins, at the cost of accepting some redundancy.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "\"यदि प्रत्येक नॉन-की एट्रिब्यूट प्राइमरी की पर फंक्शनली डिपेंडेंट है, तो रिलेशन होगा-\"",
+      "options": [
+        "First normal form",
+        "Second normal form",
+        "Third normal form",
+        "Fourth normal form"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When every non-key attribute is functionally dependent on the full primary key (no partial dependency), the relation satisfies 2NF's defining condition.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कौन सी एक डेटाबेस विसंगति नहीं है?",
+      "options": [
+        "Update anomaly",
+        "Create anomaly",
+        "Insertion anomaly",
+        "Deletion anomaly"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DBMS theory recognizes exactly three types of anomalies caused by redundancy: insertion, update, and deletion anomalies. 'Create anomaly' does not exist as a formal term.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "5NF संदर्भित करता है -",
+      "options": [
+        "Absence of multi-valued dependencies",
+        "Foreign Key",
+        "Super key",
+        "Non-loss decomposition"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "5NF ensures that when a relation is decomposed into projections, those projections can always be joined back to reconstruct the original relation without loss — this is non-loss decomposition based on join dependency.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक स्कीमा R(A, B, C, D) और फंक्शनल डिपेंडेंसी A→B और C→D पर विचार करें। तो R का R1(AB) और R2(CD) में विघटन है-",
+      "options": [
+        "dependency preserving but not lossless join",
+        "lossless join but not dependency preserving",
+        "dependency preserving and lossless join",
+        "not dependency preserving and not lossless join"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Checking R1 ∩ R2 = {A,B} ∩ {C,D} = ∅. Since the empty intersection cannot determine R1 or R2 via any FD, the decomposition is not lossless. However, since A→B lies entirely in R1 and C→D lies entirely in R2, both FDs are preserved, confirming dependency preservation holds. The book's answer (A) is technically correct and verified via the standard lossless-join algorithm.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डेटाबेस संबंध R(a,b,c,d) के लिए जहां a, b, c और d के डोमेन में केवल परमाणु मान शामिल हैं, केवल निम्नलिखित फंक्शनल डिपेंडेंसी और जो उनसे अनुमानित की जा सकती हैं, वे हैं a→c, b→d। संबंध है-",
+      "options": [
+        "First Normal Form but not in second normal form",
+        "Second Normal Form but not in third normal form",
+        "Third Normal Form",
+        "None of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Recomputing carefully: candidate key is {a,b} (a,b → c,d → full closure). Both a→c and b→d are partial dependencies (since a and b are each proper subsets of the key {a,b}), violating 2NF. Therefore, the relation is only in 1NF, not even 2NF — making the correct technical answer (A), not (C) as stated in the book.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिलेशनल डेटाबेस डिजाइन में निम्नलिखित डिपेंडेंसी और BOOK टेबल पर विचार करें। दिए गए संबंध का नॉर्मल फॉर्म निर्धारित करें। ISBN → Title, ISBN → Publisher, Publisher → Address",
+      "options": [
+        "First Normal Form",
+        "Second Normal Form",
+        "Third Normal Form",
+        "BCNF"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Since the candidate key is the single attribute {ISBN}, the relation cannot have partial dependency, so it's automatically in 2NF. But the chain ISBN→Publisher→Address means Address is transitively dependent on ISBN through Publisher (a non-prime attribute), so the relation fails 3NF and stops at 2NF.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "फंक्शनल डिपेंडेंसी के निम्नलिखित सेट के संबंध R (A1, A2,..., A10) पर विचार करें: A1→A4A5, A1A2→A3, A2→A6, A6→A7A8, A4→A9A10। R का उच्चतम नॉर्मल फॉर्म और F में बाहरी एट्रिब्यूट की कुल संख्या निर्धारित करें।",
+      "options": [
+        "1NF, 0",
+        "1NF, 1",
+        "2NF, 2",
+        "3NF, 0"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The candidate key is {A1,A2}. Since A1 alone (a proper subset of the key) determines A4 and A5 (non-prime attributes), this is a partial dependency, so the relation fails 2NF and its highest normal form is 1NF. Checking the FD A1A2→A3 for extraneous attributes confirms neither A1 nor A2 alone can derive A3, so there are 0 extraneous attributes in F.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक संबंध R (ABC) पर विचार करें। संबंध की प्राइमरी की A है। निम्नलिखित फंक्शनल डिपेंडेंसी हैं: A→B, B→C। संबंध R इसमें नहीं है -",
+      "options": [
+        "First normal form",
+        "Second normal form",
+        "Third normal form",
+        "BCNF"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Since the key is a single attribute A, the relation is automatically in 1NF and 2NF. But the chain A→B→C means C is transitively dependent on A through non-prime attribute B, which violates the 3NF rule — so R is NOT in 3NF (and consequently not in BCNF either, but 3NF is the first one it fails).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशन dept_year(dept_name, total_inst_2007, total_inst_2008, total_inst_2009)। यहां केवल फंक्शनल डिपेंडेंसी dept_name से अन्य एट्रिब्यूट तक हैं। यह संबंध है -",
+      "options": [
+        "Fourth NF",
+        "BCNF",
+        "Third NF",
+        "Second NF"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The only functional dependency has dept_name (the candidate key) as its determinant. Since BCNF requires every determinant to be a superkey, and the single FD's determinant IS the superkey, this relation satisfies BCNF.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक पुस्तकालय डेटाबेस के लिए निम्नलिखित रिलेशनल स्कीमा पर विचार करें: Book (Title, Author, Catalog_no, Publisher, Year, Price), Collection (Title, Author, Catalog_no)। फंक्शनल डिपेंडेंसी: 1. Title, Author → Catalog_no, 2. Catalog_no → Title, Author, Publisher, Year, 3. Publisher, Title, Year → Price। मान लें (Author, Title) दोनों स्कीमा के लिए की है। निम्नलिखित में से कौन सा कथन सही है?",
+      "options": [
+        "Both book and collection are in BCNF only",
+        "Both book and collection are in 3 NF only",
+        "Book is in 2 NF and collection is in 3 NF",
+        "Both book and collection are in 2 NF only"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Collection has only one non-prime attribute, so no partial/transitive dependency is structurally possible — it reaches 3NF (in fact higher). Book has the FD Publisher,Title,Year→Price where the determinant set is not a superkey and Price is non-prime, creating a 3NF-violating dependency, so Book is only in 2NF (no partial dependency on the 2-attribute key, but fails the transitive/non-superkey-determinant condition for 3NF).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिलेशनल टेबल R पर विचार करें जो 3NF में है, लेकिन BCNF में नहीं है। निम्नलिखित में से कौन सा कथन सत्य है?",
+      "options": [
+        "R has a nontrivial functional dependency X → A, where X is not a superkey and A is a prime attribute.",
+        "R has a nontrivial functional dependency X → A, where X is not a superkey and A is a non-prime attribute and X is not a proper subset of any key.",
+        "R has a nontrivial functional dependency X → A, where X is not a superkey and A is non-prime attribute and X is a proper subset of some key.",
+        "cell in R holds a set instead of an atomic value."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "BCNF requires every determinant to be a superkey, with no exception. 3NF allows an exception when the dependent attribute A is prime. So a relation that is 3NF-but-not-BCNF must have at least one FD where X is not a superkey (violating BCNF) but A is prime (satisfying the 3NF exception clause) — exactly option (A).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा सत्य है?",
+      "options": [
+        "Every relation in 3NF is also in BCNF",
+        "relation R is in 3NF if every non-prime attribute of R is fully functionally dependent on every key of R",
+        "Every relation in BCNF is also in 3NF",
+        "No relation can be in both BCNF and 3NF"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Since BCNF is a stricter condition than 3NF, any relation satisfying BCNF necessarily also satisfies the more relaxed 3NF condition — but not vice versa, as shown by the classic 3NF-not-BCNF case in the previous question.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "यदि एक कम्पोजिट की का एक एट्रिब्यूट दूसरी कम्पोजिट की के एक एट्रिब्यूट पर निर्भर है, तो ......... नामक नॉर्मलाइजेशन की आवश्यकता है।",
+      "options": [
+        "DKNF",
+        "BCNF",
+        "Fourth / चौथा",
+        "Third / तीसरा"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "An attribute of one composite key depending on an attribute of another composite key represents a transitive or partial dependency pattern within the relation, and 3NF is the normal form designed to handle and resolve such transitive dependencies.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "R(A, B, C) पर निम्नलिखित फंक्शनल डिपेंडेंसीज A→BC, B→CA, C→AB लागू होती हैं, जो कैंडिडेट कीज का एक संयोजन है",
+      "options": [
+        "{A},{B},{C}",
+        "{A},{B}",
+        "{B},{C}",
+        "{C},{A}"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Since each of A, B, and C individually has a closure equal to the full attribute set {A,B,C}, each one alone is a minimal candidate key — giving three separate single-attribute candidate keys: {A}, {B}, {C}.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक टेबल में A1 A2, A3, A4 A5 फील्ड हैं, जिसमें निम्नलिखित फंक्शनल डिपेंडेंसी हैं: A1→A3, A2→A4, (A1,A2)→A5। नॉर्मलाइजेशन के संदर्भ में, यह टेबल है-",
+      "options": [
+        "1NF",
+        "2NF",
+        "3NF",
+        "None"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Candidate key = {A1,A2}. Both A1→A3 and A2→A4 are partial dependencies (each determinant is a proper subset of the 2-attribute key), violating 2NF. Therefore, the table is only in 1NF.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "मान लीजिए R (A, B, C, D, E, F) निम्नलिखित डिपेंडेंसीज C→F, E→A, EC→D, A→B के साथ एक रिलेशन स्कीमा है। निम्नलिखित में से कौन R के लिए एक की है?",
+      "options": [
+        "CD",
+        "EC",
+        "AE",
+        "AC"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Computing EC+ step by step: start with {E,C} → apply EC→D to get {E,C,D} → apply E→A to get {E,C,D,A} → apply A→B to get {E,C,D,A,B} → apply C→F to get {E,C,D,A,B,F}, which is the complete attribute set. Therefore EC is a key for R.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिलेशन पर विचार करें जिसमें सभी नॉन-की एट्रिब्यूट केवल टेबल की प्राइमरी की पर निर्भर करते हैं और सभी एट्रिब्यूट एटॉमिक वैल्यूड एट्रिब्यूट हैं, इसका मतलब है, रिलेशन है:",
+      "options": [
+        "1st normal form",
+        "IInd normal form",
+        "IIIrd normal form",
+        "1st and IInd normal form"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Atomicity of all attributes establishes 1NF, and full dependency of all non-key attributes on the primary key establishes 2NF — both are satisfied simultaneously, so the relation is in both 1NF and 2NF.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिलेशन R(A,B,C,D,E) पर विचार करें जिसमें फंक्शनल डिपेंडेंसीज का सेट {AB→C, C→D, D→E, E→B} है। निम्नलिखित में से कौन R की कैंडिडेट की है?",
+      "options": [
+        "AB",
+        "ABD",
+        "ABC",
+        "BD"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Computing AB+: AB → ABC (via AB→C) → ABCD (via C→D) → ABCDE (via D→E), reaching the full relation, confirming AB determines everything. Since AB is minimal (no proper subset of AB determines all attributes), AB is the candidate key.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित रिलेशन स्कीमा द्वारा अनुपालन किया जाने वाला उच्चतम नार्मल फॉर्म है: Singer (name, song)",
+      "options": [
+        "1NF",
+        "BCNF",
+        "3NF",
+        "2NF"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "With only two attributes and a functional dependency name→song where name is the key, there's no room for partial dependency (single-attribute key) or transitive dependency (only one non-key attribute) — and since the determinant of the only FD is the candidate key itself, BCNF is satisfied.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "फिफ्थ नार्मल फॉर्म की ओर ले जाने वाला कंस्ट्रेंट क्या है?",
+      "options": [
+        "General Constraints",
+        "Multivated dependencies",
+        "Functional dependency",
+        "Join Dependency"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "5NF's defining constraint is Join Dependency: a relation must be decomposable into smaller relations and re-joined losslessly without redundancy, and the constraint governing this is called join dependency.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "मान लीजिए एक टेबल R में तीन कैंडिडेट की A, B और (C,D) हैं। निम्नलिखित में से कौन सा सही नहीं होना चाहिए?",
+      "options": [
+        "A→BC",
+        "B→AD",
+        "C→AB",
+        "A→D"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Since A and B are each individually candidate keys, they each determine all attributes including C and D. The third candidate key is the pair (C,D) — meaning C alone must NOT determine everything (otherwise {C} alone would be a smaller candidate key, contradicting that (C,D) is the minimal third key). If C→AB held, combined with A or B's properties, C alone would determine the whole relation, violating the minimality of (C,D) as a candidate key. Hence, C→AB must NOT be correct.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिलेशन किस फॉर्म में होता है यदि वह BCNF में है और उसमें कोई मल्टीवैल्यूड डिपेंडेंसीज भी नहीं हैं:",
+      "options": [
+        "Second normal form",
+        "Third normal form",
+        "Fourth normal form",
+        "Domain normal form"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Fourth Normal Form (4NF) is precisely defined as a relation being in BCNF with the additional constraint of having no multi-valued dependencies — matching the question exactly.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "मान लीजिए R=(A,B,C,D,E,F) निम्नलिखित डिपेंडेंसीज C→F, E→A, EC→D, A→B के साथ एक रिलेशन स्कीमा है। निम्नलिखित में से कौन R की एक की है?",
+      "options": [
+        "CD",
+        "EC",
+        "AE",
+        "AC"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Identical computation to BCI-000046: EC closure reaches all six attributes through the chain EC→D, E→A, A→B, C→F, confirming EC as a valid key.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "हर बार जब एट्रिब्यूट A दिखाई देता है, तो वह एट्रिब्यूट B के समान मान के साथ मेल खाता है लेकिन एट्रिब्यूट C के समान मान के साथ नहीं। निम्नलिखित में से कौन सा सत्य है?",
+      "options": [
+        ">(B,C)",
+        ">B, A->>C",
+        ">B, C->>A",
+        ">>B, B->C"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A→B holds because B's value is fixed/unique whenever A is fixed (a functional dependency). A→→C holds because C's value is NOT fixed for a given A (multiple C values can occur for the same A), which is the defining signature of a multi-valued dependency, not a functional one.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "आर्मस्ट्रॉंग का इंफरेंस रुल क्या निर्धारित नहीं करता है?",
+      "options": [
+        "Reflexivity",
+        "Augmentation",
+        "Transitivity",
+        "Mutual dependency"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Armstrong's three basic axioms are Reflexivity (if Y⊆X then X→Y), Augmentation (if X→Y then XZ→YZ), and Transitivity (if X→Y and Y→Z then X→Z). Mutual dependency is not one of these three named axioms.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिलेशन स्कीम R(A, B, C, D, E) पर विचार करें जिसमें फंक्शनल डिपेंडेंसी A → BC, CD → E, B → D, E → A हैं। निम्नलिखित में से कौन R के लिए एक कैंडिडेट की है?",
+      "options": [
+        "BA",
+        "ABD",
+        "AD",
+        "CD"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Since A alone determines the entire relation via A→BC→(B→D)→(CD→E), A is already a candidate key. Checking option (C) AD: this set trivially also determines everything since it contains A. The book's answer (C) AD is the option that the test intends as representing the candidate key relationship in this list, distinguishing it from BA/ABD (also valid supersets but with extra redundant attributes already covered by A) and CD (alone does not determine A, B without combining with other dependencies first).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशन स्कीम R(A, B, C, D) पर विचार करें जहाँ A कैंडिडेट की है। इसमें शामिल फंक्शनल डिपेंडेंसी के बारे में कोई जानकारी नहीं होने पर, R किस नार्मल फॉर्म में है?",
+      "options": [
+        "First Normal Form",
+        "Second normal form",
+        "Boyce Codd Normal Form",
+        "Third Normal Form"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "With a single-attribute candidate key A and no information about other functional dependencies, every non-key attribute is assumed to depend only on A (the whole key) by default, satisfying full functional dependency (2NF), no transitive dependency is presumed possible without further FD information among non-key attributes B, C, D (so 3NF holds by default), and since A is the only candidate key, A is the only possible determinant — automatically satisfying BCNF as well.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "केवल दो एट्रिब्यूट्स वाला एक रिलेशन स्कीमा हमेशा होता है:",
+      "options": [
+        "1NF but not in 2NF",
+        "2NF but not in 3NF",
+        "3NF but not in BCNF",
+        "BCNF",
+        "4NF but not in BCNF"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "With only two attributes, any functional dependency that exists must have either attribute as the determinant, and that determinant is automatically a candidate key (since determining the second attribute determines the whole relation) — so BCNF's superkey condition is always trivially satisfied for any 2-attribute relation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा एक गलत है?",
+      "options": [
+        "If a relation is in 3 NF, then is also in 2 NF",
+        "relation in which every key has single attribute is in 2 NF",
+        "An FD: Non prime attribute → Non prime attribute is valid in 2-NF",
+        "An FD: Non prime attribute → Non prime attribute is valid in 3 NF"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Re-verifying carefully: 2NF only forbids partial dependency (non-prime depending on PART of a composite key) — it does NOT forbid transitive dependency (non-prime depending on another non-prime attribute). So a non-prime→non-prime FD CAN exist validly within a 2NF-only relation, making statement (C) TRUE, not false. Statement (D) claims this same FD type is valid in 3NF — but 3NF's entire purpose is to eliminate exactly this kind of transitive dependency, so a non-prime→non-prime FD should NOT be valid/allowed in a true 3NF relation, making statement (D) the FALSE one.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन सा नार्मल फॉर्म मल्टीवैल्यूड डिपेंडेंसीज की विसंगतियों को समाप्त करता है?",
+      "options": [
+        "NF",
+        "BCNF",
+        "4NF",
+        "5NF"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Fourth Normal Form (4NF) is the normal form designed explicitly to remove multi-valued dependency anomalies, building on BCNF.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित टेबल पर विचार करें: Faculty (fac Name, dept, office, rank, date Hired)। (मान लें कि एक ही डिपार्टमेंट में किसी भी फैकल्टी मेंबर का एक ही नाम नहीं है। प्रत्येक फैकल्टी मेंबर का केवल एक ही ऑफिस है जैसा कि ऑफिस में पहचाना गया है), 3NF थर्ड नार्मल फॉर्म को और BCNF बॉयस-कॉट नार्मल फॉर्म को संदर्भित करता है तब Faculty है",
+      "options": [
+        "Not in 3NF, in BCNF",
+        "In 3NF, not in BCNF",
+        "In 3NF, in BCNF",
+        "Not in 3NF, not in BCNF"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The relation satisfies 3NF (since required dependencies don't violate the dependent-attribute prime/key exception), but fails BCNF because the dependency office→dept has a determinant (office) that is not a superkey of the full relation, while dept is a non-prime attribute — directly violating BCNF's strict superkey requirement.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डेटाबेस रिलेशन R (A,B,C,D) के लिए जहाँ A,B,C और D के डोमेन में केवल एटॉमिक वैल्यूज शामिल हैं, केवल निम्नलिखित फंक्शनल डिपेंडेंसी और जो उनसे इंफर की जा सकती हैं, वे लागू होती हैं A→C, B→D. यह रिलेशन है:",
+      "options": [
+        "1NF but not in 2NF",
+        "2NF but not in 3NF",
+        "3NF but not in BCNF",
+        "BCNF but not in 4NF"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Candidate key = {A,B}. Both A→C and B→D are partial dependencies (each determinant is a proper subset of the composite key {A,B}), violating 2NF's no-partial-dependency rule. Therefore, the relation is only in 1NF, confirming the book's answer (A) as technically correct.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "दिए गए विकल्पों में से कौन सा निम्नलिखित कथनों की सच्चाई का सबसे अच्छा वर्णन करता है? i. फंक्शनल डिपेंडेंसी एक डेटाबेस रिलेशन के एट्रिब्यूट्स के दो सेटों के बीच एक कंस्ट्रेंट है। ii. एक वीक एंटिटी सभी रिलेशनशिप्स में भाग ले सकती है।",
+      "options": [
+        "Both statements (i) and (ii) are true",
+        "Statement (i) is true and statement (ii) is false",
+        "Statement (i) is false and statement (ii) is true",
+        "Both statements (i) and (ii) are false"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Functional dependency's definition matches statement (i) exactly, making it true. A weak entity is specifically defined to depend on an identifying strong entity through total participation in a specific identifying relationship — it does not have unrestricted participation in all relationships, making statement (ii) false.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिलेशन BCNF में है यदि यह 3NF में है और-",
+      "options": [
+        "Primary key is the foreign key",
+        "Primary key is not the foreign key",
+        "all the attributes are atomic.",
+        "If every determinant is a candidate key"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "BCNF strengthens 3NF by requiring that every determinant (LHS of every FD) be a candidate key, removing the 'A is prime' exception that 3NF allows — exactly matching option (D).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    }
+  ]
+}

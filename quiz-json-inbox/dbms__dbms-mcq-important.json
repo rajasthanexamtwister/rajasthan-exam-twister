@@ -1,0 +1,1494 @@
+{
+  "quizTitle": "DBMS Mcq Important",
+  "subject": "DBMS",
+  "examTags": [
+    "BCI",
+    "Computer Science",
+    "Information Assistant"
+  ],
+  "difficulty": "medium",
+  "questions": [
+    {
+      "questionText": "DDL का पूर्ण रूप है-",
+      "options": [
+        "Data Definition Language",
+        "Data Description Language",
+        "Data Derivation Language",
+        "Detailed Descriptive Language"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DDL stands for Data Definition Language. It is used to define and manage the structure of the database such as CREATE, ALTER, DROP, TRUNCATE commands.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कौनसी कमाण्ड SQL में टेबल के कॉलम की redefine करने के लिए प्रयोग की जाती है?",
+      "options": [
+        "ALTER TABLE",
+        "DEFINE TABLE",
+        "MODIFY TABLE",
+        "ये सभी / All of these"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ALTER TABLE command is used in SQL to modify the structure of an existing table — including adding, deleting, or redefining (modifying) columns.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "इण्टी के प्राप्त Primary Key (प्राइमरी 'की') क्या कहलाती है?",
+      "options": [
+        "Primary key",
+        "Strong entities",
+        "Weak entities",
+        "ये सभी / All of these"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An entity that has its own Primary Key is called a Strong Entity. The primary key itself uniquely identifies each record/tuple in a table.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "इनमें से कौनसा Database का Element नहीं है?",
+      "options": [
+        "सारणी / Table",
+        "क्वैरी / Query",
+        "फॉर्म / Form",
+        "ट्यूपल / Tuple"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In MS Access database context, the main elements/objects are Tables, Queries, Forms, Reports, Macros, and Modules. A Tuple is a row/record inside a table — it is part of relational theory terminology, not a standalone database object/element.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौनसा DBMS सॉफ्टवेयर नहीं है?",
+      "options": [
+        "DBASE",
+        "FOXPRO",
+        "ORACLE",
+        "DATABASE 2000"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DBASE, FoxPro, and Oracle are all real DBMS software. 'DATABASE 2000' is not a real DBMS product. Note: IBM's DB2 exists but 'DATABASE 2000' is fictitious.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "समय-समय पर, किसी फाइल में डाटा को जोड़ना, डाटा को बदलना तथा डाटा को मिटाना, फाइल का ___ कहलाता है?",
+      "options": [
+        "अपडेशन / Updation",
+        "अपग्रेडिंग / Upgrading",
+        "रिस्ट्रक्चरिंग / Restructuring",
+        "रिन्यू / Renew"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "File maintenance includes adding, modifying, and deleting records — collectively called Updation (file updating). This is a core database operation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सेट (Set) कान्सेप्ट कहाँ इस्तेमाल किया जाता है?",
+      "options": [
+        "नेटवर्क मॉडल में / Network Model",
+        "हाइरारकिकल मॉडल में / Hierarchical Model",
+        "रिलेशनल मॉडल में / Relational Model",
+        "उपरोक्त सभी में / All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In the Relational Model, data is organized as sets of tuples (rows). Relations (tables) are based on the mathematical concept of sets. Set theory is the foundation of relational databases.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किसी सारणी में केवल एक ___ हो सकती है?",
+      "options": [
+        "प्राइमरी कुंजी / Primary Key",
+        "अल्टरनेट कुंजी / Alternate Key",
+        "कैन्डिडेट कुंजी / Candidate Key",
+        "ये सभी / All of these"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A table can have only ONE Primary Key (though it can be composite). However, a table can have multiple Candidate Keys and multiple Alternate Keys. The one selected as primary is the Primary Key.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DML क्या है?",
+      "options": [
+        "Data Magic Language",
+        "Data Manipulation Language",
+        "Data Marfing Language",
+        "Data Monitor Language"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DML stands for Data Manipulation Language. It includes SQL commands like SELECT, INSERT, UPDATE, DELETE that manipulate data within tables.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "इनमें से किस कुंजी (Key) के जरिए किसी सारणी में किसी पंक्ति को खोजा जा सकता है?",
+      "options": [
+        "प्राइमरी कुंजी / Primary Key",
+        "अल्टरनेट कुंजी / Alternate Key",
+        "कैन्डिडेट कुंजी / Candidate Key",
+        "ये सभी / All of these"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "All three key types — Primary Key, Alternate Key, and Candidate Key — can uniquely identify a row in a table. All candidate keys have the property of unique row identification.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस में एट्रिब्यूट क्या होता है?",
+      "options": [
+        "स्तम्भ / Column",
+        "पंक्ति / Row",
+        "सारणी / Table",
+        "ये सभी / All of these"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In database terminology, an Attribute corresponds to a Column (field) in a table. It represents a property or characteristic of an entity.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन-सा ऑब्जेक्ट प्रिंट आउट के फॉर्मेट में होता है?",
+      "options": [
+        "सारणी / Table",
+        "क्वैरी / Query",
+        "फॉर्म / Form",
+        "रिपोर्ट / Report"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In MS Access and database systems, a Report is designed specifically for printing data in a formatted, readable layout. Reports are the database objects meant for printout.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किसी क्वैरी के उत्तर में जो सूचनाएँ या रिकॉर्ड निकाले जाते हैं उसे उस क्वैरी का ..... कहते हैं?",
+      "options": [
+        "रिजल्ट / Result",
+        "डायनासेट / Dynaset",
+        "आउटपुट / Output",
+        "सारणी / Table"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In MS Access, the result set returned by a query is called a Dynaset. It is a dynamic set of records that reflects the current state of the underlying table data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "....... डेटाबेस में डेटा को वृक्ष के रूप में नोड्स के माध्यम से व्यवस्थित किया जाता है?",
+      "options": [
+        "नेटवर्क / Network",
+        "हाइरारकिकल / Hierarchical",
+        "रिलेशनल / Relational",
+        "दोनों A व B / Both A and B"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In the Hierarchical Database Model, data is organized in a tree-like structure with nodes (parent-child relationships). Each parent can have multiple children but each child has only one parent.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "टेबल के एक स्तम्भ को कहते हैं-",
+      "options": [
+        "Database",
+        "Attribute",
+        "Tuple",
+        "Data"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A column in a relational table is called an Attribute (or Field). Each attribute represents a specific property of the entity being stored.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "यह डेटाबेस की लॉजिकल संरचना है-",
+      "options": [
+        "एंटिटी / Entity",
+        "एट्रिब्यूट / Attribute",
+        "इन्स्टेन्स / Instance",
+        "स्कीमा / Schema"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Schema is the logical structure/blueprint of the database. It defines how data is organized — the tables, columns, data types, relationships, constraints. Schema ≠ actual data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किसी सिंगल एंटिटी सम्बन्धी डाटा का व्यवस्थित कलेक्शन है-",
+      "options": [
+        "फाइलें / Files",
+        "लाइब्रेरी / Library",
+        "डाटाबेस / Database",
+        "डिक्शनरी / Dictionary"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A database is an organized, structured collection of related data about entities. It allows efficient storage, retrieval, and management of data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में कौन एक डाटाबेस में एक एकल एंटिटी जैसे कि व्यक्ति, स्थान या वस्तु आदि के बारे में सूचना संग्रहित करता है-",
+      "options": [
+        "क्वैरी / Query",
+        "फॉर्म / Form",
+        "रिकॉर्ड / Record",
+        "सारणी / Table"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A Record (Row/Tuple) stores all information about a single entity (e.g., one student's complete data). A table stores multiple records.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक प्रोग्राम, जिसका इंटरफेस उपयोगकर्ता के लिए DBMS में ज्यादा अनुकूल होता है, क्या कहलाता है?",
+      "options": [
+        "फ्रण्ट एण्ड / Front End",
+        "बैक एण्ड / Back End",
+        "रिपॉजिटर / Repository",
+        "फॉर्म / Form"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In database context, a Form provides a user-friendly interface for data entry and viewing. Forms make DBMS interaction more accessible to end users who don't know SQL.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक कम्प्यूटर उपयोग करने देने से पहले यूजरनेम और पासवर्ड के ___ की जाँच करता है-",
+      "options": [
+        "वेबसाइट / Website",
+        "नेटवर्क / Network",
+        "बैक-अप फाइल / Back-up File",
+        "डाटाबेस / Database"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Username and password credentials are stored and verified against a database. The authentication system checks the database to validate login credentials.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एंटिटी सेट, जिसमें प्राइमरी की बनाने के लिए पर्याप्त फील्ड नहीं होते हैं, क्या कहलाता है?",
+      "options": [
+        "स्ट्रांग एंटिटी सेट / Strong Entity Set",
+        "वीक एंटिटी सेट / Weak Entity Set",
+        "सिम्पल एंटिटी सेट / Simple Entity Set",
+        "प्राइमरी एंटिटी सेट / Primary Entity Set"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A Weak Entity Set does not have sufficient attributes to form its own primary key. It depends on a Strong Entity for identification and uses a partial key + owner entity's primary key.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल डाटाबेस में, एक डाटा स्ट्रक्चर जो एक विषय के बारे में सभी सूचनाओं को पंक्तियों तथा स्तम्भ के रूप में व्यवस्थित करता है-",
+      "options": [
+        "ब्लॉक / Block",
+        "रिकॉर्ड / Record",
+        "ट्यूपल / Tuple",
+        "सारणी / Table"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In relational databases, a Table (Relation) organizes data in a 2D structure of rows (tuples/records) and columns (attributes/fields). It is the fundamental data structure.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिकॉर्ड का एक विशेष फील्ड, जो प्रत्येक रिकॉर्ड को विशिष्ट रूप से पहचान दिलाता है-",
+      "options": [
+        "कुंजी फील्ड / Key Field",
+        "प्राइमरी फील्ड / Primary Field",
+        "मास्टर फील्ड / Master Field",
+        "ऑर्डर फील्ड / Order Field"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A Key Field (Primary Key) is a special field that uniquely identifies each record in a table. No two records can have the same key field value.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डाटा आइटम के संग्रहण के लिए ___ की आवश्यकता होती है?",
+      "options": [
+        "फील्ड / Field",
+        "फीड / Feed",
+        "डाटाबेस / Database",
+        "फैच / Fetch"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In the data hierarchy, a Field is the smallest named unit that stores a single data item (e.g., a student's name, age). Database is the top level containing all data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "IR Diagram में रिलेशनशिप टाइप को .... द्वारा प्रदर्शित किया जाता है?",
+      "options": [
+        "दीर्घवृत्ताकार बॉक्स / Ellipse",
+        "धाराशायी दीर्घवृत्ताकार बॉक्स / Dashed Ellipse",
+        "आयताकार बॉक्स / Rectangle",
+        "डायमण्ड बॉक्स / Diamond"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In ER Diagrams: Rectangle = Entity, Ellipse = Attribute, Diamond = Relationship, Double Rectangle = Weak Entity, Dashed Ellipse = Derived Attribute.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कुंजी, जिसका प्रयोग दो सारणियों के बीच सम्बन्ध को प्रदर्शित करने के लिए किया जाता है, कहलाती है-",
+      "options": [
+        "प्राइमरी कुंजी / Primary Key",
+        "सेकेण्डरी कुंजी / Secondary Key",
+        "फॉरेन कुंजी / Foreign Key",
+        "कम्पोजिट कुंजी / Composite Key"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A Foreign Key is an attribute in one table that references the Primary Key of another table, establishing a relationship (link) between the two tables.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "..... का अर्थ है एक तथ्य को एक से अधिक जगह स्टोर करना-",
+      "options": [
+        "प्रोपर्टीज / Properties",
+        "सोर्टिंग / Sorting",
+        "रिडनडेन्सी / Redundancy",
+        "होल्डिंग / Holding"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Data Redundancy means storing the same data in multiple locations. DBMS is designed to minimize redundancy to avoid data inconsistency and wasted storage.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में डेटाबेस से Table को Remove करने के लिए कमाण्ड का उपयोग किया जाता है?",
+      "options": [
+        "Delete Table",
+        "Erase Table",
+        "Drop Table",
+        "Unattach Table"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DROP TABLE is the SQL DDL command used to permanently remove a table (structure + data) from the database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक बड़ी कम्प्यूटर सूचना प्रणाली कई अलग-अलग Computer फाइलों को बनाए रखती है। परंतु उनमें से किसे Computer का Original फाइल कहा जाता है?",
+      "options": [
+        "Specialized file",
+        "Log file",
+        "Master file",
+        "Update file"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The Master File is the main/permanent/original file that contains the most current and authoritative version of data. Transaction files update the master file.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से one-to-many relationship के साथ तार्किक डेटा संरचना है?",
+      "options": [
+        "network",
+        "tree",
+        "chain",
+        "relational"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A Tree structure supports one-to-many relationships where one parent node can have multiple children but each child has only one parent. This is the basis of the Hierarchical model.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से क्या होता है जब आप किसी फॉर्म में जानकारी दर्ज करना समाप्त करते हैं?",
+      "options": [
+        "टेम्पलेट डेटा फाइल में लिखी जाती है / Template data file is written",
+        "फॉर्म की सामग्री डेटा फाइल में लिखी जाती है / Form content is written to data file",
+        "फॉर्म की सामग्री मुद्रित की जा सकती है / Form content can be printed",
+        "उपरोक्त सभी / All of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When a form is submitted/completed, the entered data is saved/written to the underlying data file (table). Forms are the interface; data is stored in tables.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक सूची में last names, first names, addresses और pin codes होते हैं। यदि सूची में सभी लोगों के पास एक ही अंतिम और एक ही पिन Code होता है, तो कौनसी उपयोगी कुंजी होगी?",
+      "options": [
+        "pin code",
+        "last name",
+        "a compound key consisting of the first name and the last name",
+        "उपरोक्त सभी / All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Since all records have the same last name AND same pin code, these alone cannot uniquely identify records. A compound (composite) key of first name + last name would be more unique.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कई संबंधित रिकॉर्ड को एक इकाई के रूप में माना जाता है जिसे ___ कहते हैं?",
+      "options": [
+        "file",
+        "field",
+        "data",
+        "batch"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A File is a collection of related records treated as a unit. Data hierarchy: Field → Record → File → Database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन relational database नहीं है?",
+      "options": [
+        "DBASE IV",
+        "4th Dimension",
+        "FoxPro",
+        "Reflex"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DBASE IV, 4th Dimension, and FoxPro are relational database systems. Reflex is a flat-file database system, not a relational database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "......एक relationship की संरचना को परिभाषित करता है जिसमें विशेषता-डोमेन का एक निश्चित सेट होता है?",
+      "options": [
+        "Instance",
+        "Schema",
+        "Program",
+        "Super Key"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Schema is the structural definition of a database/relation, specifying attribute names, their domains (data types), and constraints.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक फॉर्म परिभाषित करता है-",
+      "options": [
+        "where data is placed on the screen",
+        "the width of each field",
+        "both (a) and (b)",
+        "उपरोक्त सभी / All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A database form defines both the layout (where data appears on screen) and field properties like width. Forms control the visual representation of data input.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा संगठन की hierarchy में highest level को क्या कहा जाता है?",
+      "options": [
+        "data bank",
+        "database",
+        "data file",
+        "data record"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Data Hierarchy: Bit → Byte/Character → Field → Record → File → Database. Database is the highest level in this hierarchy.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "......... खंड एक अतिरिक्त filter है जो परिणाम पर लागू होता है?",
+      "options": [
+        "Select",
+        "Group-by",
+        "Having",
+        "Order by"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "HAVING clause is used to filter the results of GROUP BY. It's like WHERE but applied AFTER grouping. HAVING = additional filter on grouped results.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक Logical Schema ___ है?",
+      "options": [
+        "संपूर्ण डेटाबेस है / Entire database",
+        "सुलभ भाग में जानकारी व्यवस्थित करने का एक मानक तरीका / A standard way to organize info in accessible part",
+        "वर्णन करता है कि वास्तव में डिस्क पर डेटा कैसे संग्रहीत किया जाता है / Describes how data is stored on disk",
+        "उपरोक्त सभी / All of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Logical Schema defines how the database appears to the users — the logical organization of data (tables, relationships, constraints) independent of physical storage. It's the conceptual/logical level of the 3-schema architecture.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "क्रिएट टेबल में कौनसी कमाण्ड इसके कॉलम एवं इन्टिग्रिटी कन्स्ट्रेंट को परिभाषित करती है?",
+      "options": [
+        "Create command",
+        "Drop table command",
+        "Alter table command",
+        "All of the Mentioned"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The CREATE TABLE command defines the table structure including column names, data types, and integrity constraints (PRIMARY KEY, NOT NULL, UNIQUE, FOREIGN KEY, CHECK).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Tables के बीच Relations का प्रतिनिधित्व करने की कुंजी को किसे कहा जाता है?",
+      "options": [
+        "primary key",
+        "secondary key",
+        "foreign key",
+        "none of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Foreign Key is used to establish and represent the relationship (link) between two tables. It references the Primary Key of another table.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ डीबीएमएस प्राप्त करने में मदद करता है?",
+      "options": [
+        "alter",
+        "update",
+        "set",
+        "create"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ALTER command helps modify existing database objects (tables, columns) to obtain the desired DBMS structure.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": ".....डेटाबेस का प्रयोग सभी डेटाबेस के लिए टेम्पलेट बनाने के लिए किया जाता है?",
+      "options": [
+        "Master",
+        "Model",
+        "Tempdb",
+        "इनमें से कोई नहीं / None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In SQL Server, the Model database serves as the template for all new databases. When you create a new database, SQL Server copies the Model database structure.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS के तहत सीधे अखंडता जांच को केंद्रीकृत करना डुप्लिकेशन और डेटाबेस की स्थिरता और वैधता सुनिश्चित करता है .... करता है?",
+      "options": [
+        "Increases",
+        "Skips",
+        "Does not reduce",
+        "Reduces"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DBMS centralizes integrity constraints, which REDUCES data duplication and ensures consistency. This is one of the major advantages of DBMS over file systems.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DDL statements निम्नलिखित में से कौन-सा है?",
+      "options": [
+        "create",
+        "drop",
+        "alter",
+        "उपर्युक्त सभी / All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "DDL (Data Definition Language) statements include: CREATE, DROP, ALTER, TRUNCATE, RENAME, COMMENT. All three options — create, drop, alter — are DDL statements.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Snapshot में ___ part ओरेकल बताता है कि रीफ्रेश के बीच कितना इंतजार करना है?",
+      "options": [
+        "Complete",
+        "Force",
+        "Next",
+        "Refresh"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In Oracle Snapshots (Materialized Views), the REFRESH clause specifies when and how the snapshot should be refreshed. The interval between refreshes is specified in the REFRESH clause.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक पहलू जिसे अखंडता उपप्रणाली द्वारा निपटाया जाना है, यह सुनिश्चित करना है कि प्रत्येक डेटा आइटम को केवल वैध मान assign किए जा सकें। इसे किस रूप में जाना जाता है?",
+      "options": [
+        "Data Security",
+        "Domain access",
+        "Data Control",
+        "Domain Integrity"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Domain Integrity ensures that every value in a column belongs to a valid set/range (domain). It enforces valid data types, ranges, and formats for each attribute.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सिस्टम वैरिएवल $ date $ के लिए निम्न में से कौन-सा सत्य है?",
+      "options": [
+        "एक वैश्विक चर को allot किया जा सकता है / Can be allotted to a global variable",
+        "केवल डिजाइन समय के दौरान किसी भी क्षेत्र में assign किया जा सकता है / Can only be assigned during design time",
+        "रन समय के दौरान किसी भी चर या क्षेत्र को allot किया जा सकता है / Can be allotted to any variable at runtime",
+        "एक स्थानीय चर के लिए allot किया जा सकता है / Can be allotted to a local variable"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The system variable $date$ (in 4D/database systems) can only be assigned to fields during design time, not at runtime.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ ऑपरेटर मूल रूप से पहले relation के गुणों पर एक परियोजना के बाद एक जुड़ाव है?",
+      "options": [
+        "Join",
+        "Semi-join",
+        "Full Join",
+        "Inner Join"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Semi-join is a join followed by a projection on the attributes of the first relation. It returns only the rows from the first relation that have matching rows in the second relation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस प्रबंधन प्रणाली के संचालन के लिए निम्न में से कौनसा हार्डवेयर घटक सबसे महत्वपूर्ण है?",
+      "options": [
+        "high-resolution video display",
+        "printer",
+        "high speed, large-capacity disk",
+        "plotter"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A high-speed, large-capacity disk (storage) is the most critical hardware for DBMS as databases store massive amounts of data that must be accessed quickly from secondary storage.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कौन-सी प्रॉपर्टी किसी तालिका की विशेषता को एकाधिक मानों में नहीं रख सकती है?",
+      "options": [
+        "First Normal Form (1NF)",
+        "Second Normal Form (2NF)",
+        "Third Normal Form (3NF)",
+        "Fourth Normal Form (4NF)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "1NF (First Normal Form) requires that all attributes contain ATOMIC (single) values — no multi-valued attributes or repeating groups are allowed.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक करके स्ट्रिंग के निर्दिष्ट हिस्से को वापस करने के लिए कौनसा करेक्टर फंक्शन उपयोग किया जा सकता है?",
+      "options": [
+        "INSTR",
+        "SUBSTRING",
+        "SUBSTR",
+        "POS"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SUBSTR (or SUBSTRING) extracts a specified portion of a string. SUBSTR(string, start, length) returns the substring. INSTR finds the position of a substring.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "ट्रिगर्स में विभिन्न घटनाएं कौन-सी है?",
+      "options": [
+        "Define, Create",
+        "Drop, Comment",
+        "Insert, Update, Delete",
+        "Select, Commit"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Database triggers fire (execute automatically) on DML events: INSERT, UPDATE, DELETE. These are the three events that can activate a trigger on a table.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस Table में मौजूदा डेटा को संशोधित करने के लिए निम्न में से कौन-सी SQL कमाण्ड का उपयोग किया जा सकता है?",
+      "options": [
+        "Modify",
+        "Update",
+        "Change",
+        "New"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "UPDATE is the SQL DML command used to modify existing records in a table. Syntax: UPDATE table SET column=value WHERE condition.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "वह कौन-सी है जिसमें Table में पंक्तियों को विशेष रूप से पहचानने के लिए एक से अधिक गुण होते हैं?",
+      "options": [
+        "Composite key",
+        "Candidate key",
+        "Primary key",
+        "Foreign key"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A Composite Key consists of more than one attribute (column) combined to uniquely identify rows in a table. No single column is unique enough alone.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस management दृष्टिकोण का एक फायदा है?",
+      "options": [
+        "डेटा कार्यक्रमों पर निर्भर है / Data is dependent on programs",
+        "डेटा रिडंडेंसी बढ़ जाती है / Data redundancy increases",
+        "डेटा एकीकृत है और कई कार्यक्रमों द्वारा पहुंचा जा सकता है / Data is integrated and accessible by many programs",
+        "उपर्युक्त में से कोई नहीं / None of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A major advantage of DBMS is data integration and shared access — data is centralized and can be accessed by multiple programs/users simultaneously, reducing redundancy.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक विशेष पल में डेटाबेस में संग्रहित जानकारी का संग्रह के रूप में माना जाता है?",
+      "options": [
+        "schema",
+        "instance of the database",
+        "data domain",
+        "independence"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An Instance (or database state/snapshot) is the collection of information stored in a database at a particular moment in time. Schema is the structure; instance is the actual data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "data Independence का मतलब है?",
+      "options": [
+        "डेटा को अलग से परिभाषित किया गया है और कार्यक्रमों में शामिल नहीं है / Data is defined separately and not embedded in programs",
+        "प्रोग्राम डेटा के भौतिक विशेषताओं पर निर्भर नहीं है / Programs do not depend on physical characteristics of data",
+        "प्रोग्राम डेटा के तार्किक विशेषताओं पर निर्भर नहीं है / Programs do not depend on logical characteristics of data",
+        "(b) और (c) दोनों / Both (b) and (c)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data Independence has two types: Physical Independence (programs don't depend on physical storage) and Logical Independence (programs don't depend on logical structure changes).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किसी Table में Column की value बदलने के लिए ......... कमाण्ड का उपयोग किया जा सकता है?",
+      "options": [
+        "create",
+        "insert",
+        "alter",
+        "update"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "UPDATE command changes/modifies existing column values in a table. ALTER changes the TABLE STRUCTURE (columns). UPDATE changes DATA VALUES in columns.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Database Management System में DDL का पूरा रूप है?",
+      "options": [
+        "Dynamic Data Language",
+        "Detailed Data Language",
+        "Data Definition Language",
+        "Data Derivation Language"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DDL = Data Definition Language. It defines the structure of the database. Key DDL commands: CREATE, ALTER, DROP, TRUNCATE.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "अन्य उपयोगकर्ता को दिए गए विशेषाधिकारों को पारित करने के लिए ......... खंड का उपयोग किया जाता है?",
+      "options": [
+        "create option",
+        "grant option",
+        "update option",
+        "select option"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "GRANT OPTION (WITH GRANT OPTION in SQL) allows a user to pass/transfer the privileges they received to other users. Example: GRANT SELECT ON table TO user WITH GRANT OPTION.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक Entity Relationship diagram में 'Double Rectangle' का प्रतिनिधित्व कौन करता है?",
+      "options": [
+        "Relationship Set",
+        "Weak Entity Sets",
+        "Derived Attributes",
+        "Multi-valued Attributes Relationship Set"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In ER Diagrams: Double Rectangle = Weak Entity Set, Single Rectangle = Strong Entity, Diamond = Relationship, Ellipse = Attribute, Double Ellipse = Multi-valued Attribute, Dashed Ellipse = Derived Attribute.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस डिजाइनर द्वारा candidate key के सेट से चुनी गई key को किस नाम से बुलाया जाता है?",
+      "options": [
+        "Primary key",
+        "Secondary Key",
+        "Foreign key",
+        "Super key"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "From all Candidate Keys (minimal superkeys), the database designer selects ONE as the Primary Key. The rest become Alternate Keys.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस सिस्टम के रिलेशनल मॉडल के 'CODD Rule' में कितने नियम हैं?",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Dr. E.F. Codd proposed 12 rules (Rules 0-12, actually 13 total rules with Rule 0) for a fully relational DBMS. The commonly cited count is 12 rules (Rules 1-12).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Degree of Relationship है?",
+      "options": [
+        "रिश्ते में टेबल्स की संख्या / Number of tables in the relationship",
+        "रिश्तों में संस्थाओं की संख्या / Number of entities in relationships",
+        "रिश्ते में पंक्ति और कॉलम की संख्या / Number of rows and columns in relationship",
+        "रिश्ते में भाग लेने वाली संस्थाओं की संख्या / Number of entities participating in relationship"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The Degree of a Relationship is the number of entity sets that participate in that relationship. Unary=1, Binary=2, Ternary=3, N-ary=N entities.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन-सा attributes हैं जो किसी भी candidate key का हिस्सा नहीं है?",
+      "options": [
+        "sub-prime attributes",
+        "non-prime attributes",
+        "sub-candidate key",
+        "non-candidate key"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Non-prime attributes are those that do NOT form part of any candidate key. Prime attributes = attributes that are part of at least one candidate key.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "super key का न्यूनतम सेट कहा जाता है?",
+      "options": [
+        "Primary key",
+        "Secondary key",
+        "Candidate key",
+        "Foreign key"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A Candidate Key is a minimal Super Key — it has the minimum number of attributes needed to uniquely identify rows. Super Key may have extra attributes; Candidate Key is stripped to minimum.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से किस रिलेशनशिप में जिसमें कोई आंशिक निर्भरता नहीं है, जिसमें सामान्य रूप है?",
+      "options": [
+        "First",
+        "Second",
+        "Third",
+        "BCNF"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "2NF (Second Normal Form) requires: 1) Table is in 1NF, AND 2) No partial dependency (non-prime attributes must be fully functionally dependent on the ENTIRE primary key, not just part of it).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन अनुवर्ती संबंधों की डिग्री नहीं है?",
+      "options": [
+        "single",
+        "Binary",
+        "Ternary",
+        "n-ary"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Degrees of relationship: Unary (1 entity), Binary (2 entities), Ternary (3 entities), N-ary (N entities). 'Single' is not the standard term; 'Unary' is.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन-सा लॉक जो एक ही तालिका के विभिन्न पंक्तियों तक पहुचने के समवर्ती लेनदेन की अनुमति देता है?",
+      "options": [
+        "Field-level lock",
+        "Database-level lock",
+        "Table-level lock",
+        "Row-level lock"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Row-level lock allows concurrent transactions to access different rows of the same table, providing maximum concurrency while maintaining consistency.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक प्रकार की क्वेरी जो किसी अन्य क्वेरी के WHERE या HAVING क्लॉज के भीतर रखी जाती है उसे कहा जाता है?",
+      "options": [
+        "Super query",
+        "Sub query",
+        "Master query",
+        "Multi-query"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A Sub-query (also called nested query or inner query) is a query placed within the WHERE or HAVING clause of another (outer) query. It executes first and its result is used by the outer query.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "........ विकास चरण के बजाय, क्वेरी को निष्पादन समय के रूप में दर्ज करने के विकल्प प्रदान करता है?",
+      "options": [
+        "PL/SQL",
+        "SQL*Plus",
+        "SQL",
+        "Dynamic SQL"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Dynamic SQL allows SQL statements to be constructed and executed at runtime (execution time) rather than being hard-coded during development. This provides flexibility for variable queries.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक पंक्ति के लिए RDBMS शब्दावली ___?",
+      "options": [
+        "tuple",
+        "relation",
+        "attribute",
+        "domain"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In RDBMS terminology: Row = Tuple/Record, Column = Attribute/Field, Table = Relation, Set of valid values for column = Domain.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "दो या दो से अधिक गैर-महत्वपूर्ण विशेषताओं के बीच कि एक कार्यात्मक निर्भरता कहा जाता है?",
+      "options": [
+        "Transitive dependency",
+        "Partial transitive dependency",
+        "Functional dependency",
+        "Partial functional dependency"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Transitive dependency occurs when a non-key attribute (A) depends on another non-key attribute (B), which in turn depends on the primary key. A→B→PK creates a transitive dependency, which 3NF eliminates.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किसी उपयोगकर्ता द्वारा कार्य करने के लिए आवश्यक डेटा के कुछ हिस्सों का तार्किक विवरण कहा जाता है?",
+      "options": [
+        "System View",
+        "User View",
+        "Logical View",
+        "Data View"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A User View (or External Schema) is the logical description of the portion of the database that a specific user or application needs. Different users may have different views.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक लेनदेन पूरा किया जाता है जिसे ___ कहा जाता है?",
+      "options": [
+        "Saved",
+        "Loaded",
+        "Rolled",
+        "Committed"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A transaction that successfully completes all its operations and permanently saves changes to the database is said to be COMMITTED. If it fails, it is ROLLED BACK.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से किसमें एक रिपोर्ट जेनरेटर का उपयोग किया जाता है?",
+      "options": [
+        "update files",
+        "print files on paper",
+        "data entry",
+        "उपरोक्त सभी / All of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A Report Generator is specifically used to format and print data in a readable, organized format on paper or as printable documents.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "यदि रिकॉर्ड प्रबंधन प्रणाली डिस्क पर रिकार्ड किए जाने से पहले मानों को संपादित करने की अनुमति देती है, तो आप कर सकते हैं?",
+      "options": [
+        "रिकॉर्ड किए जाने से पहले सही वर्तनी परिवर्तन / Correct spelling before recording",
+        "एक क्षेत्र का नाम बदलें / Rename a field",
+        "एक क्षेत्र की चौड़ाई बदलो / Change field width",
+        "उपरोक्त सभी / All of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "If you can edit values before recording, you can correct spelling errors in the data. Renaming fields and changing field width are structural changes, not data editing.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "प्रत्येक डेटा फाइलों में एक ___ होता है जो फाइल में डेटा संग्रहित करने का तरीका बताता है?",
+      "options": [
+        "File structure",
+        "Records",
+        "Fields",
+        "Database"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A File Structure defines the organization and format of data within a file — how records are arranged, field order, data types, etc.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "......में आपके रिकॉर्ड के बाद, कई डेटा प्रबंधन वातावरण के लिए आपको अपने द्वारा किए गए परिवर्तनों को सहेजने के लिए कमाण्ड जारी करने की आवश्यकता होती है?",
+      "options": [
+        "Delete",
+        "Update",
+        "Sort key",
+        "Index"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "UPDATE command is used to save changes made to records in a database table. After modifying data, UPDATE persists those changes.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "अपने उपयोगकर्ताओं को डेटा तक पहुंचने में सहायता के लिए अधिकांश DBMS द्वारा उपयोग की जाने वाली भाषा क्या है?",
+      "options": [
+        "High level language",
+        "Query language",
+        "SQL",
+        "4GL"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "SQL (Structured Query Language) is the standard language used by most DBMS for data access, manipulation, and definition.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "द्वितीयक चरण डिवाइस पर संग्रहीत फाइलें डेटा के hierarchy से बनी हैं। फाइल रिकॉर्ड में क्या होता है?",
+      "options": [
+        "Bits",
+        "Characters",
+        "Data field",
+        "Schema"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "File records consist of Data Fields. Data hierarchy: Bits → Characters/Bytes → Data Fields → Records → Files → Database. A record is a collection of related data fields.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटा प्रबंधन विशेषताओं में कौन-सी डेटा विशेषता शामिल है?",
+      "options": [
+        "punctuation",
+        "language",
+        "spelling",
+        "width"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "In data management, width (field width/length) is a key data characteristic that defines how much data a field can hold. Punctuation, language, and spelling are linguistic properties, not data management characteristics.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "समय-समय पर फाइल रिकॉर्डे जोड़ना, बदलना और हटाने को क्या कहा जाता है?",
+      "options": [
+        "Updating",
+        "upgrading",
+        "Restructuring",
+        "renewing"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "File updating (maintenance) involves three operations: adding records (insertion), changing records (modification), and deleting records (deletion).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "जेनरेटर्स को सॉर्ट/रिपोर्ट करें?",
+      "options": [
+        "सूचकांक/रिपोर्ट जेनरेटर से तेज हैं / Faster than index/report generators",
+        "सूचकांक/रिपोर्ट जेनरेटर की तुलना में अधिक डिस्क स्थान की आवश्यकता है / Require more disk space than index/report generators",
+        "रिपोर्ट बनाने से पहले क्रमबद्ध करने की आवश्यकता नहीं है / Do not need to sort before creating report",
+        "(a) और (b) दोनों / Both (a) and (b)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sort/Report generators require more disk space because they need to sort the data before generating reports, requiring temporary storage for sorted data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "CODASYL बिनिर्देशों में एक मालिक-सदस्य सेट हो सकता है?",
+      "options": [
+        "केवल एक मालिक लेकिन कई मालिक घटनाएं / Only one owner but many owner occurrences",
+        "केवल एक सदस्य लेकिन कई सदस्य घटना / Only one member but many member occurrences",
+        "एक से अधिक सदस्य लेकिन प्रति सदस्य केवल एक घटन / More than one member but only one occurrence per member",
+        "उपरोक्त सभी / All of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In CODASYL network database model, a SET type has exactly one owner record type but can have multiple member record types. An owner can have many member occurrences (one-to-many).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "SQL में, किस command का उपयोग लेन-देल की शुरुआत के बाद से बयान जारी करने में स्थायी परिवर्तन करने के लिए किया जाता है?",
+      "options": [
+        "ZIP",
+        "PACK",
+        "COMMIT",
+        "SAVE"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "COMMIT permanently saves all changes made during the current transaction. After COMMIT, changes cannot be rolled back. It marks the successful end of a transaction.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ में एक Entity होती है जिसे Root कहा जाता है?",
+      "options": [
+        "Network Model",
+        "Relational Model",
+        "Hierarchical Model",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In the Hierarchical Model, the tree structure has a single topmost entity called the ROOT. All other entities are children/descendants of the root in a parent-child hierarchy.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Storage Manager में Data को जल्दी अर्थात् तत्परता से प्राप्त करने हेतु ___ प्रयुक्त होता है?",
+      "options": [
+        "Data File",
+        "File Access",
+        "Indices",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Indices (Index structures like B-trees, Hash indexes) are used by the Storage Manager for fast data retrieval. Indices allow direct access to records without scanning entire files.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौन-सा Query Processor का Element है?",
+      "options": [
+        "DDL",
+        "DML",
+        "Query Evaluation Engine",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The Query Processor includes DDL interpreter, DML compiler/interpreter, and Query Evaluation Engine. Together they parse, optimize, and execute queries.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Relation में Tuples की कुल संख्या कहलाती है?",
+      "options": [
+        "Tupple total",
+        "Sum tupple",
+        "Cardinality",
+        "Degree"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Cardinality = total number of tuples (rows) in a relation. Degree = total number of attributes (columns). These are two important measures of a relation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS में Attributes की कुल संख्या कहलाती है ___?",
+      "options": [
+        "रिलेशन की डिग्री / Degree of the relation",
+        "रिलेशन का संबंध / Relation of the relation",
+        "रिलेशन का कोड / Code of the relation",
+        "None of these"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Degree of a Relation = total number of attributes (columns). Cardinality = total number of tuples (rows). These are fundamental relational database concepts.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किस Key हेतु चुना गया Field NULL Value स्वीकार नहीं कर सकता?",
+      "options": [
+        "Unique Key",
+        "Primary Key",
+        "A & B Both",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Primary Key has two properties: NOT NULL and UNIQUE. It cannot ever be NULL. Unique Key only ensures uniqueness but ALLOWS null values.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Relational Database में दो सारणियों के बीच Link प्रदान करती है?",
+      "options": [
+        "Unique Key",
+        "Foreign Key",
+        "Composite Primary Key",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Foreign Key provides the link/relationship between two tables. It references the Primary Key of another table to establish referential integrity.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "RDBMS के सम्बन्ध में true statement है?",
+      "options": [
+        "यह Relational प्रकार का DBMS है / It is a Relational type of DBMS",
+        "RDBMS, DBMS का advance version है / RDBMS is an advanced version of DBMS",
+        "RDBMS में प्रत्येक Table दूसरी Table से संबंध बनाए रखती है / Each table maintains relationship with other tables",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "All three statements are true: RDBMS is a relational DBMS, it's an advanced version of DBMS with additional relational features, and it maintains relationships between tables via foreign keys.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "E-R Diagram में Entity को दर्शित करने हेतु प्रयुक्त होता है?",
+      "options": [
+        "Rectangle (आयत)",
+        "Triangle (त्रिभुज)",
+        "Circle (वृत्त)",
+        "Line (लाइन)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In ER Diagram: Rectangle = Entity (strong), Double Rectangle = Weak Entity, Diamond = Relationship, Ellipse/Circle = Attribute, Diamond = Relationship type.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Entity सेट में एक Entity का समान प्रकार की दूसरी Entity से अन्तर करने हेतु प्रयुक्त होता है?",
+      "options": [
+        "Differences",
+        "Attribute",
+        "Entity Divider",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Attributes (specifically key attributes/primary key) are used to distinguish one entity from another of the same type. Each entity has unique attribute values.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "E-R डायग्राम में प्रयुक्त Entity का प्रकार है?",
+      "options": [
+        "Weak Entity",
+        "Strong Entity",
+        "Other Entity",
+        "A & B Both"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "ER Diagrams use both Weak Entities (without own primary key) and Strong Entities (with own primary key). Both types are fundamental to ER modeling.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Weak Entity को दर्शाने हेतु प्रयुक्त होता है?",
+      "options": [
+        "Simple rectangle",
+        "Bold rectangle",
+        "Circle",
+        "Triangle"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Weak Entity is represented by a Double Rectangle (also called Bold/thick rectangle) in ER diagrams. Strong Entity = single rectangle.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Weak Entity किस पर निर्भर करती है?",
+      "options": [
+        "Primary Key पर",
+        "Parent Entity पर",
+        "A & B Both",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A Weak Entity depends on its Parent/Owner (Strong) Entity for identification. It cannot exist independently and uses the parent entity's primary key combined with its own partial key.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DBMS के अन्तर्गत entities के मध्य relationship दर्शाने हेतु प्रयुक्त Model है?",
+      "options": [
+        "E-R Model",
+        "R-R Model",
+        "Entity relationship model",
+        "A & C Both"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The E-R Model (Entity Relationship Model) is used to show relationships between entities. options (a) and (c) refer to the same model.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "E-R Model के main component है?",
+      "options": [
+        "Entity",
+        "Relationship",
+        "Attribute",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The three main components of E-R Model are: Entities (represented by rectangles), Attributes (represented by ellipses), and Relationships (represented by diamonds).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Entity के मध्य Relationship किसके द्वारा दर्शायी जाती है?",
+      "options": [
+        "Rectangle",
+        "Diamond",
+        "Circle",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In ER Diagrams, Relationships between entities are represented by Diamonds (rhombus shapes). Rectangles = Entities, Ellipses/Circles = Attributes.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक Entity की Property को describe करने हेतु प्रयुक्त होता है?",
+      "options": [
+        "Entity Group",
+        "Record",
+        "Attribute",
+        "Advance"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "An Attribute describes a property/characteristic of an entity. For example, Student entity has attributes: Name, Age, Roll Number, etc.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Abstraction का highest level है?",
+      "options": [
+        "External Schema",
+        "View Level Schema",
+        "Logical Schema",
+        "A & B Both"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Three levels of abstraction (from highest to lowest): External/View Level (highest) → Conceptual/Logical Level → Internal/Physical Level (lowest). External Schema = highest level = what users see.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Database Life Cycle के Step हैं?",
+      "options": [
+        "Database Analysis",
+        "Database Design",
+        "Operation and Maintenance",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Database Life Cycle includes: Requirements Analysis → Design → Implementation → Testing → Operation & Maintenance → Evolution. All given steps are part of the DBLC.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Stack को कहा जाता है?",
+      "options": [
+        "First in First Out (FIFO)",
+        "Last in First Out (LIFO)",
+        "First in Last Out (FILO)",
+        "First Come First Served (FCFS)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Stack follows LIFO = Last In First Out, which is equivalent to FILO = First In Last Out. Both describe the same behavior. FIFO = Queue. Stack = LIFO = FILO.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक टेबल जो डाटा रिडेन्डेन्सी जैसी विसंगतियाँ प्रदर्शित करती है-",
+      "options": [
+        "Update",
+        "Insertion",
+        "Deletion",
+        "All of the Mentioned"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Data redundancy leads to three types of anomalies: Update Anomaly (changing data in one place doesn't update all), Insertion Anomaly (can't add data without other data), Deletion Anomaly (deleting data removes other needed data).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक क्वेरी का प्रकार जो किसी अन्य Query के WHERE या HAVING clause में रखी जाती है, कहलाता है?",
+      "options": [
+        "Master query",
+        "Sub query",
+        "Super query",
+        "Multi-query"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Sub-query (nested query) is placed within the WHERE or HAVING clause of another (outer) query. Same as Q71.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक ट्रांजिशन पूर्ण होने पर इसका execution कहलाता है?",
+      "options": [
+        "Committed",
+        "Aborted",
+        "Rolled back",
+        "Failed"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A successfully completed transaction is COMMITTED. An unsuccessful transaction is ABORTED/ROLLED BACK. Failed = aborted transaction.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DCL ......... की तरह कार्य करने की कमाण्ड उपलब्ध कराता है?",
+      "options": [
+        "Change The Structure of Tables",
+        "Insert, Update or Delete Records And Data Values",
+        "Authorizing Access and Other Control Over Database",
+        "None of the Mentioned"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DCL = Data Control Language. It controls access to database. Commands: GRANT (give privileges) and REVOKE (remove privileges). DCL is for authorization and access control.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डेटाबेस में आपको डाटा को एक्सेस या मैन्टेन करने की अनुमति प्रदान करने वाली Language है?",
+      "options": [
+        "DCL",
+        "DML",
+        "DDL",
+        "All of the mentioned"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DCL (Data Control Language) provides commands (GRANT, REVOKE) to control access permissions for database users.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्न में से कौनसा की-वर्ड Data Control Language (DCL) में प्रयुक्त होता है?",
+      "options": [
+        "SELECT",
+        "INSERT",
+        "DELETE",
+        "GRANT"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "GRANT is a DCL command that gives privileges to users. SELECT, INSERT, DELETE are DML commands. GRANT and REVOKE are the two main DCL commands.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "..... Clause एक एडिशनल फिल्टर है जो किसी Result पर apply किया जाता है?",
+      "options": [
+        "Select",
+        "Group-by",
+        "Having",
+        "Order by"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "HAVING clause is an additional filter applied to GROUP BY results. WHERE filters rows before grouping; HAVING filters groups after grouping. Same as Q38.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    }
+  ]
+}

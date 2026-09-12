@@ -1,0 +1,935 @@
+{
+  "quizTitle": "DBMS Rdbms",
+  "subject": "DBMS",
+  "examTags": [
+    "BCI",
+    "Computer Science",
+    "Information Assistant"
+  ],
+  "difficulty": "medium",
+  "questions": [
+    {
+      "questionText": "एक RDBMS का संग्रह होता है-",
+      "options": [
+        "Tables",
+        "Records",
+        "Keys",
+        "Fields"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An RDBMS (Relational Database Management System) consists of a collection of Tables (also called relations). Each table holds data in rows (tuples) and columns (attributes).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एट्री यूट एक टेबल के __________ को संदर्भित करता है।",
+      "options": [
+        "Column",
+        "Tuple",
+        "Record",
+        "Key"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In the relational model: Attribute = Column, Tuple = Row. So 'attribute' refers to a Column of the table.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल मॉडल में टेबल की रो को कहा जाता है-",
+      "options": [
+        "Entity field",
+        "Tuple",
+        "Attribute",
+        "Entity field"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In the relational model, a ROW of a table is called a TUPLE. A column is called an Attribute. The table itself is called a Relation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल मॉडल का सबंध किससे है?",
+      "options": [
+        "Data Manipulation",
+        "Data Structure and Data Integrity",
+        "Both a and b",
+        "None of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "The relational model concerns Data Structure, Data Integrity, and Data Manipulation — making 'Both a and b' the most comprehensive correct option available.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "किसी व्यक्ति का पता क्षेत्र प्राथमिक कुंजी का हिस्सा नहीं होना चाहिए, क्योंकि यह ___ होने की संभावना है?",
+      "options": [
+        "Too long",
+        "Changed",
+        "Dependent",
+        "Not Changed"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A primary key must be stable (not change over time). An address can change (people move), so it should NOT be a primary key. Primary keys must be unique, not null, and STABLE.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "संबंधित इकाई सेट की प्राथमिक कुंजी का संघ संबंध का ___ बन जाता है?",
+      "options": [
+        "Primary key",
+        "Foreign key",
+        "Super key",
+        "Candidate key"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When two entities are related (e.g., in a relationship set), the union of their primary keys forms a Foreign Key in the resulting relation. This is how relationships are represented in relational schema.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Relation के प्रत्येक रिकॉर्ड को कहा जाता है-",
+      "options": [
+        "Attribute",
+        "Tuple",
+        "Client",
+        "Field"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In relational model: each record (row) = Tuple. Each field (column) = Attribute. The table = Relation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस में वस्तुओं के बीच एक शीर्ष से नीचे संबंध ___ द्वारा स्थापित किया गया है-",
+      "options": [
+        "Hierarchical schema",
+        "Network schema",
+        "Relational Schema",
+        "All of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A Relational Schema defines the structure of a relation (table), including attribute names and their domains. It represents the logical design of a database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "छात्र (आईडी, नाम, विभाग का नाम, tot_cred) इस प्रश्न में प्राथमिक कुंजी कौन सी विशेषता है?",
+      "options": [
+        "Name",
+        "Dept",
+        "ID",
+        "Tot_cred"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In Student(ID, name, dept_name, tot_cred), the attribute ID forms the primary key because it uniquely identifies each student.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल डेटाबेस किस प्रकार के रिलेशन होते हैं-",
+      "options": [
+        "Consolidated",
+        "Normalized",
+        "Flat",
+        "Diagonal"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Relational databases use Normalized relations to eliminate redundancy and maintain integrity through Normal Forms (1NF, 2NF, 3NF).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A ___ व्यक्तिगत टुपल्स के बजाय संपूर्ण संबंध की एक संपत्ति है जिसमे प्रत्येक टपल अद्वितीय है।",
+      "options": [
+        "Attribute",
+        "Fields",
+        "Rows",
+        "Key"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A Key is a property of the entire relation (table), not of individual tuples. It ensures that each tuple in the relation is unique — no two rows can have the same key value.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "DFD का पूरा नाम क्या है?",
+      "options": [
+        "Data Flow Document",
+        "Data File Diagram",
+        "Data Flow Diagram",
+        "None of the above"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DFD stands for Data Flow Diagram. It is a graphical representation showing how data flows through an information system.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सी एक प्रक्रियात्मक भाषा है?",
+      "options": [
+        "Query language",
+        "Domain relational calculus",
+        "Tuple relational calculus",
+        "Relational algebra"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Relational Algebra is a PROCEDURAL language — it specifies HOW to retrieve data (step by step operations: select, project, join, etc.). Relational Calculus (both tuple and domain) is NON-PROCEDURAL — it specifies WHAT data to retrieve.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "उपयोगकर्ता किस भाषा का उपयोग करके डेटाबेस से जानकारी का अनुरोध कर सकता है?",
+      "options": [
+        "Structural",
+        "Compiler",
+        "Query",
+        "Relational"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A Query Language (like SQL — Structured Query Language) is used to request/retrieve information from a database. SQL is the most popular query language for RDBMS.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ ऑपरेशन टपल्स के युग्मों को मर्ज करके दो संबंधों के संयोजन की अनुमति देता है, प्रत्येक संबंध से एक, एक एकल टपल में।",
+      "options": [
+        "Join",
+        "Union",
+        "Select",
+        "Entity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The JOIN operation combines tuples from two relations based on a common attribute, merging them into a single tuple. It is the most powerful binary operation in relational algebra.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक ___ अखंडता बाधा की आवश्यकता है कि संदर्भित संबंध में किसी भी टुपल की निर्दिष्ट विशेषताओं में आने वाले मान संदर्भित संबंध में कम से कम एक टपल की निर्दिए विशेषताओ में भी दिखाई दें।",
+      "options": [
+        "Specific",
+        "Entity",
+        "Referential",
+        "Primary"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Referential Integrity Constraint ensures that a foreign key value in a referencing table must match a primary key value in the referenced table (or be NULL). This maintains consistency between related tables.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "परिणाम जो ऑपरेशन में दो संबंधों से टुपल्स के सभी जोड़े शामिल होते हैं, भले ही उनकी विशेषता मान मेल खाते हों।",
+      "options": [
+        "Intersection",
+        "Set difference",
+        "Join",
+        "Cartesian product"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Cartesian Product (×) combines ALL tuples from relation R with ALL tuples from relation S regardless of matching attributes. If R has m tuples and S has n tuples, result has m×n tuples.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ वह है जो एक संबंध की प्राथमिक कुंजी का उपयोग दूसरे संबंध में सामान्य विशेषता के रूप में किया जाता है।",
+      "options": [
+        "Referenced relation",
+        "Referential relation",
+        "Referred relation",
+        "Referencing relation"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Referencing Relation: contains the foreign key (PK of another table used as normal attribute). Referenced Relation: the table whose PK is being referenced.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "संबंध से टपल के एक सेट को प्रक्षेपित करने के लिए संबंधपरक बीजगणित में सबसे अधिक इस्तेमाल किया जाने वाला ऑपरेशन है?",
+      "options": [
+        "Projection",
+        "Select",
+        "Union",
+        "Join"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The SELECT operation (σ) is used to retrieve/project a set of TUPLES (rows) from a relation based on a condition. PROJECTION (π) is used for columns (attributes).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिलेशनल स्कीमा में, प्रत्येक Tuple को फ़ील्ड में विभाजित किया जाता है जिसे ___ कहते हैं-",
+      "options": [
+        "Relations",
+        "Domains",
+        "Queries",
+        "All of the above"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Each tuple in a relational schema is divided into fields, and each field has a set of permitted values called its DOMAIN. A domain defines the data type and valid values for an attribute.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ ऑपरेटर दो प्रश्नों के परिणाम लेता है और केवल उन पंक्तियों को लौटाता है जो दोनों परिणाम सेट में दिखाई देती हैं।",
+      "options": [
+        "Projection",
+        "Difference",
+        "Union",
+        "Intersect"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "INTERSECT returns only the rows that are common to both query results (appear in BOTH sets). UNION returns all rows from both. DIFFERENCE returns rows in one but not the other.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "विशेषता के साथ संबंध जो प्राथमिक कुंजी है उसे दूसरे संबंध में संदर्भित किया जाता है। वह संबंध जिसमें प्राथमिक कुंजी के रूप में विशेषता होती है, कहलाती है-",
+      "options": [
+        "Referencing relation",
+        "Referred relation",
+        "Referential relation",
+        "Referenced relation"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The relation whose primary key is used by another table is called the Referenced Relation (parent/master table).",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक ___ एक डेटाबेस के स्कीमा का एक सचित्र चित्रण है जो डेटाबेस में संबंधों, उनकी विशेषताओं और प्राथमिक कुंजियों और विदेशी कुंजियों को दर्शाता है।",
+      "options": [
+        "Relational algebra",
+        "Database diagram",
+        "Schema flow",
+        "Schema diagram"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A Schema Diagram is a visual/pictorial representation of a database schema showing all relations (tables), their attributes, primary keys, and foreign key relationships.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ संचालन का एक सेट प्रदान करता है जो एक या एक से अधिक संबंधों को इनपुट में रूप में लेता है और एक संबंध को आउटपुट के रूप में लौटाता है।",
+      "options": [
+        "Relation flow",
+        "Relational algebra",
+        "Schematic representation",
+        "Schema diagram"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Relational Algebra is a procedural query language that takes relations as input, applies operations (select, project, join, union, etc.) and returns a relation as output. This closure property is fundamental.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिलेशनल डेटाबेस डेवलपर किसे रिकॉर्ड के रूप में संदर्भित करता है?",
+      "options": [
+        "a criteria",
+        "a relation",
+        "a tuple",
+        "an attribute"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In relational database terminology, a developer refers to a record (row) as a TUPLE. A relation is the table; an attribute is the column; a tuple is the row/record.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक संबंध में एक विशेषता एक विदेशी कुंजी है यदि एक संबंध की ___ कुंजी का उपयोग उस संबंध में एक विशेषता के रूप में किया जाता है।",
+      "options": [
+        "Primary (Rijmary)",
+        "Super",
+        "Sub",
+        "Candidate"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A Foreign Key is created when the Primary Key of one relation is used as a normal attribute in another relation. This creates a link between the two tables.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "_____ कीवर्ड का उपयोग कॉलम में मानों की संख्या खोजने के लिए किया जाता है-",
+      "options": [
+        "Total",
+        "Count",
+        "Add",
+        "Sum"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "COUNT() is a SQL aggregate function used to count the number of values (rows) in a column. SUM() adds values. AVG() finds average. COUNT(*) counts all rows including NULLs.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक ___ डेटाबेस के समग्र डिजाइन को परिभाषित करने के लिए प्रयोग किया जाता है-",
+      "options": [
+        "schema",
+        "application program",
+        "data definition language",
+        "code"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A Schema is the logical design/blueprint of a database — it defines tables, columns, data types, constraints, relationships, and indexes. It is the overall structure.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से किसका प्रयोग संबंध की संरचना को परिभाषित करने, संबंधों को हटाने और संबंधित स्कीमा को परिभाषित करने के लिए किया जाता है?",
+      "options": [
+        "Data Definition Language",
+        "Data Manipulation Language",
+        "Relational Schema",
+        "Query"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DDL (Data Definition Language) is used to define, modify, and delete the structure of database objects. DDL commands: CREATE, ALTER, DROP, TRUNCATE, RENAME.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से किसे प्राथमिक कुंजी के रूप में नहीं लिया जा सकता है?",
+      "options": [
+        "Dept_id",
+        "Street",
+        "Register number",
+        "Id"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Street (address field) cannot be a primary key because: (1) Multiple people can live on the same street, (2) It can change over time, (3) It is not unique. Primary keys must be unique, stable, and not NULL.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन डेटाबेस से जानकारी को क्वेरी करने और डेटाबेस में टुपल्स की सम्मिलित करने, टुपल्स को हटाने और डेटाबेस में टुपल्स को संशोधित करने की क्षमता प्रदान करता है?",
+      "options": [
+        "Data Definition Language",
+        "Data Manipulation Language",
+        "Relational Schema",
+        "Query (implied)"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "DML (Data Manipulation Language) provides commands to query (SELECT), insert (INSERT INTO), delete (DELETE), and modify (UPDATE) data in the database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "A ___ व्यक्तिगत टुपल्स के बजाय संपूर्ण संबंध की एक संपत्ति है जिसमे प्रत्येक टपल अद्वितीय है।",
+      "options": [
+        "Attribute",
+        "Fields",
+        "Rows",
+        "Key"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Key is a relation-level property ensuring uniqueness of all tuples. Rows are individual data instances.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सी विशेषता को प्राथमिक कुंजी के रूप में लिया जा सकता है?",
+      "options": [
+        "Id",
+        "Department",
+        "Name",
+        "Street"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "ID (Identification number) is the best choice for a primary key — it is unique per record, stable (doesn't change), not NULL, and typically short/numeric. Department, Name, and Street can all repeat or change.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Relation database में Rows (रोज) क्या कहलाती है-",
+      "options": [
+        "Relation",
+        "Tuples",
+        "Data Structure",
+        "Entity"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rows in a relational database = Tuples. This is repeated multiple times in this exam — very important concept.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Relationship की degree का प्रकार है-",
+      "options": [
+        "Binary degree",
+        "Ternary degree",
+        "N-ary degree",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Relationship degrees: Binary (between 2 entities), Ternary (3 entities), N-ary (N entities). All are valid.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "विभाग और कर्मचारी यहाँ dept_name विशेषता दोनों संबंधों में प्रकट होती है। यहाँ संबंध स्कीमा में सामान्य विशेषताओं का उपयोग करना ___ संबंधों को जोड़ने का एक तरीका है।",
+      "options": [
+        "Attributes of distinct",
+        "Tuple of distinct",
+        "Tuple of common",
+        "Attributes of common"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When two relations share a common attribute (like dept_name), it creates a link between them. This shared attribute acts as a foreign key, connecting tuples from distinct/different relations.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "...... डेटाबेस की का एक अवैध प्रकार है-",
+      "options": [
+        "Structured primary key",
+        "Atomic primary key",
+        "Primary key",
+        "Composite primary key"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Structured primary key is not a valid/recognized type. Valid types include Atomic, Composite, and Surrogate primary keys.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "........... एक फाइल की प्राइमरी कुंजी होती है जो दूसरी फाइल में भी उपस्थित होती है- (A key that appears in another file/table)",
+      "options": [
+        "Physical key (फिजिकल कुंजी)",
+        "Primary key (प्राइमरी कुंजी)",
+        "Foreign key (फॉरेन कुंजी)",
+        "Logical key (लॉजिकल कुंजी)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A Foreign Key is the primary key of one relation/file that appears in another relation/file. It creates referential integrity between two tables.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से असत्य कथन कौन-सा है?",
+      "options": [
+        "A name relation is variable",
+        "A view is a named derived table",
+        "A view is a named relation and is virtual",
+        "None"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "All three statements (a), (b), (c) are TRUE — a named relation IS variable (its content changes), a view IS a named derived table (derived from base tables), and a view IS a named virtual relation. So 'None' of the options is false.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Relationship के प्रकार हैं-",
+      "options": [
+        "One to one",
+        "One to Many",
+        "Many to one",
+        "All of the above"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Relationship cardinality types: One-to-One (1:1), One-to-Many (1:N), Many-to-One (N:1), and Many-to-Many (M:N). The question lists three of four valid types, so All of the above is correct.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डाटा, रिलेशनशिप, सिमेंटिक्स (Semantics) और Constraints का वर्णन करने के लिए प्रयोग किए जाने वाले टूल (tool) को क्या कहते हैं-",
+      "options": [
+        "E-R Model",
+        "Database",
+        "Data Model",
+        "DBMS"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A Data Model is a conceptual tool used to describe data, relationships between data, data semantics (meaning), and data constraints. The ER model is one type of data model.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "समय के साथ संबंध के रूप में बदल सकती है ___",
+      "options": [
+        "Retrieved",
+        "Updated",
+        "Time",
+        "Domain"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A relation INSTANCE is the actual data at a specific point in time. As data is inserted, deleted, or updated, the instance changes. The SCHEMA remains constant while instances change.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल मॉडल में, ___ को कार्डिनेलिटी कहते हैं-",
+      "options": [
+        "Total number of tuples (ट्यूपल्स की कुल संख्या)",
+        "Total number of attributes (एट्रिब्यूट्स की कुल संख्या)",
+        "Total number of rows (सारणियों की कुल संख्या)",
+        "Total number of constraints (कन्स्ट्रेड्स की कुल संख्या)"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "CARDINALITY = Total number of TUPLES (rows) in a relation. DEGREE = Total number of ATTRIBUTES (columns). These are two fundamental measures of a relation's size.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक DBMS में डेटाबेस संरचना फाइलों के संग्रह के रूप में संगृहीत की जाती है-",
+      "options": [
+        "True",
+        "False",
+        "Neither a nor b",
+        "None"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In a DBMS, the database is physically stored as a collection of files on disk. The DBMS manages these files and presents them logically as tables to users.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "रिलेशनल डेटाबेस ____________ का उपयोग करके संबंधों का प्रतिनिधित्व करता है।",
+      "options": [
+        "Key",
+        "Row",
+        "Entry",
+        "Column"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In a relational database, relationships between tables are represented through ROWS (tuples) containing foreign key values that match primary key values in related tables.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "अधिक भाषा में केस स्ट्रक्चर को ___ स्टेटमेंट कहा जाता है।",
+      "options": [
+        "Switch",
+        "Selective",
+        "Branch",
+        "Jump"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In programming languages like C, Java, and JavaScript, the 'case' structure is implemented as the SWITCH statement. Switch-case allows multi-way branching.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "आरडीबीएमएस का फुल फॉर्म क्या है?",
+      "options": [
+        "Route Database Management System",
+        "Rapid Database Management System",
+        "Relational Database Management System",
+        "Right Database Management System"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "RDBMS = Relational Database Management System. It manages data organized in relational tables with support for SQL, ACID properties, and referential integrity.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ ऑपरेशन दो 'समान रूप से संरचित' टेबल का एक सेट यूनियन करता है।",
+      "options": [
+        "Join",
+        "Union",
+        "Intersect",
+        "Product"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "The UNION operation combines tuples from two compatible (similarly structured — same number of attributes with compatible domains) relations, eliminating duplicates.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "संबंध की प्रत्येक विशेषता के लिए, अनुमत मानों का एक सेट होता है, जिसे उस विशेषता का ___ कहा जाता है।",
+      "options": [
+        "Set",
+        "Relation",
+        "Domain",
+        "Schema"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "DOMAIN is the set of permitted/valid values for an attribute. For example, the domain of a 'grade' attribute might be {A, B, C, D, F}. The domain constrains what values can be stored.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Relational Model कुछ अपरिचित शब्दावली का उपयोग करता है। एक Tuple एक के बराबर है-",
+      "options": [
+        "record",
+        "field",
+        "file",
+        "database"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Relational Model vs Traditional file system terminology: Tuple = Record, Attribute = Field, Relation = File/Table, Database = Collection of files.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक रिलेशनल डेटाबेस में एक रेफरेशियल इंटीग्रिटी कंस्ट्रवैन कैब की मदद से निदिर्ष किया जा सकता है?",
+      "options": [
+        "foreign key",
+        "secondary key",
+        "Primary key",
+        "None"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Referential Integrity Constraint is enforced through the FOREIGN KEY constraint. When you define a foreign key, the DBMS ensures that values in that column must exist as primary key values in the referenced table.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक तालिका रिश्तों का एक संग्रह है, ___ की अवधारणाओं के बीच एक करीबी पत्राचार है।",
+      "options": [
+        "Tables and Entries",
+        "Tables and instances",
+        "Table and relations",
+        "Table and variables"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A table in SQL corresponds to a relation in the relational model. A table is a physical/implementation concept; a relation is the mathematical/theoretical concept. They have a direct correspondence.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कोर्स (course_id, sec_id, सेमेस्टर) यहां course_id, sec_id और सेमेस्टर ___ हैं और कोर्स ___ है।",
+      "options": [
+        "Attributes, Relation",
+        "Tuple, Relation",
+        "Tuple, Attributes",
+        "Relations, Attribute"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "In Course(course_id, sec_id, semester): course_id, sec_id, semester are ATTRIBUTES (columns) and Course is the RELATION (table name). This is standard schema notation.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "प्राथमिक कुंजी को इस प्रकार चुना जाना चाहिए कि उसके गुण मान कभी भी ___ न हों?",
+      "options": [
+        "Dependent",
+        "Changed",
+        "Updated",
+        "None"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Primary key values should NEVER be changed. A PK must be: (1) Unique, (2) Not NULL, (3) Stable (not changed). Changing a PK would break referential integrity with all related foreign keys.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "एक डोमेन एक परमाणु है यदि डोमेन के तत्त्वों को ___ इकाइयाँ माना जाता है?",
+      "options": [
+        "Constant",
+        "Divisible",
+        "Indivisible",
+        "Different"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A domain is ATOMIC if its elements are INDIVISIBLE (cannot be broken down further). This is a requirement for First Normal Form (1NF). For example, a phone number stored as single value is atomic; a set of phone numbers is not.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "___ ऑपरेशन टपल्स के जोड़े को मर्ज करके दो संबंधों के संयोजन की अनुमति देता है, प्रत्येक संबंध से एक, एक एकल टपल में।",
+      "options": [
+        "Union",
+        "Join",
+        "Select",
+        "Intersection"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "JOIN combines tuples from two relations into single tuples. This question is repeated from Q15 — high exam priority topic.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "संबंध की टपल्स लिखकाने के सकते हैं।",
+      "options": [
+        "Sorted",
+        "Constant",
+        "Any",
+        "Same"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In the relational model, tuples in a relation have NO specific ordering — they can be in ANY order. This is because a relation is a mathematical SET, and sets are unordered. (ORDER BY in SQL is a display-level operation.)",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "मिनिमल सुपरकीज कहलाती हैं-",
+      "options": [
+        "Candidate key",
+        "Unique key",
+        "Primary key",
+        "Super key"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A CANDIDATE KEY is a MINIMAL SUPERKEY — a superkey with no redundant attributes. From all candidate keys, one is selected as the PRIMARY KEY. Super key may have extra attributes; candidate key is the minimal version.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "डेटाबेस के तार्किक डिजाइन को ___ के रूप में जाना जाता है?",
+      "options": [
+        "Database Schema",
+        "Database Instance",
+        "Database relation",
+        "Database entity"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "DATABASE SCHEMA = logical design/structure of the database (table names, column names, data types, constraints). DATABASE INSTANCE = the actual data stored at a particular point in time.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "कौन सा ऑपरेटर है, जो दो प्रश्नों के परिणाम लेता है और केवल उन पंक्तियों को लौटाता है जो दोनों परिणाम सेट में दिखाई देती है?",
+      "options": [
+        "Intersect",
+        "Difference",
+        "Projection",
+        "Union"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "INTERSECT returns ONLY the rows common to BOTH query results. Same as Q21 — this topic is extremely important and tested repeatedly.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "प्रश्न भाषा एक ऐसी भाषा है जिसमें उपयोगकर्ता ___?",
+      "options": [
+        "Stores",
+        "Requests",
+        "Response",
+        "Represents"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A Query Language is a language in which a user REQUESTS information from a database. The user makes a request (query), and the DBMS responds with the matching data.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Related फाइल्स का समूह क्या कहलाता है-",
+      "options": [
+        "Character (करैक्टर)",
+        "Field (फील्ड)",
+        "Database (डेटाबेस)",
+        "Record (रिकॉर्ड)"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A DATABASE is an organized collection of related data/files. It stores interrelated data in a structured manner for easy access and management.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सा एक रिकॉर्ड की विशिष्ट पहचान के लिए सामूहिक रूप से ली गई एक या अधिक विशेषताओं का एक समूह है?",
+      "options": [
+        "Foreign key",
+        "Sub key",
+        "Candidate key",
+        "Super key"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A SUPER KEY is a set of one or more attributes that, taken collectively, can uniquely identify a record in a relation. It may contain extra attributes beyond the minimum needed. Candidate key is the minimal super key.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "Relational model के मुख्य आधारभूत कार्य हैं- (Core fundamental operations of relational model are?)",
+      "options": [
+        "Select",
+        "Joint",
+        "Project",
+        "All of the above (ये सभी)"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "The fundamental operations of the Relational Model are: SELECT (σ) — filter rows, PROJECT (π) — filter columns, JOIN (⋈) — combine tables. All are core relational algebra operations.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "सुपर-की का उपसमुच्चय किस स्थिति में उम्मीदवार कुंजी है?",
+      "options": [
+        "Subset is a super key",
+        "No proper subset is a super key",
+        "Each subset is a super key",
+        "All subsets are super keys"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A subset of a super key is a CANDIDATE KEY if and only if no proper subset of it is also a super key — i.e., it is MINIMAL. Removing any attribute from a candidate key would make it no longer able to uniquely identify tuples.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "विशेषताएँ ID, CITY और NAME पर विचार करें, इनमें से किसे सुपर कुंजी माना जा सकता है?",
+      "options": [
+        "CITY, ID",
+        "ID",
+        "CITY",
+        "NAME"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "ID alone can uniquely identify each record — it is a minimal super key (= candidate key). CITY and NAME are not unique identifiers. CITY+ID is also a super key but not minimal. ID alone is the best answer as it is the minimal super key.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "RDBMS में Object table में बनी छोटी-छोटी entities कहलाती है-",
+      "options": [
+        "NULL value",
+        "Field",
+        "Column",
+        "None of these"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "In RDBMS object tables, small entities (atomic data units) stored in cells are called FIELDS. A field is the smallest unit of data in a database.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "प्रथम Commercial RDBMS माना जाता है-",
+      "options": [
+        "Oracle",
+        "SQL",
+        "MySQL",
+        "All of the above"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Oracle (released in 1979 by Relational Software Inc., now Oracle Corporation) is considered the first commercially available RDBMS. It was the first to implement SQL on a commercial scale.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "अभ्यास में प्रयुक्त प्रश्न भाषा में शामिल हैं?",
+      "options": [
+        "Fields",
+        "Tuples",
+        "Elements",
+        "Instances"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "In practical query languages (like SQL), the basic units being queried and returned are elements — individual data values in the result set. SQL queries operate on and return result sets composed of elements.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "RDBMS निर्माण हेतु सर्वाधिक महत्वपूर्ण Object है-",
+      "options": [
+        "Table",
+        "Circle",
+        "Square",
+        "Column"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The TABLE is the most fundamental object in RDBMS. All data is stored in tables. All other objects (views, indexes, stored procedures) are based on or serve the tables.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    },
+    {
+      "questionText": "निम्नलिखित में से कौन-सा एक रिकॉर्ड की विशिष्ट पहचान के लिए सामूहिक रूप से ली गई एक या अधिक विशेषताओं का एक समूह है?",
+      "options": [
+        "Foreign key",
+        "Sub key",
+        "Candidate key",
+        "Super key"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Super key = set of one or more attributes that uniquely identifies a tuple. Same as Q63 — this topic appears TWICE confirming it is extremely important for BCI exam.",
+      "marks": 1,
+      "negativeMarks": 0.33
+    }
+  ]
+}
