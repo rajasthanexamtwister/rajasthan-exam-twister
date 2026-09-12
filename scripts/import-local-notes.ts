@@ -1,3 +1,24 @@
+/**
+ * scripts/import-local-notes.ts
+ *
+ * Official CLI tool for batch-importing legacy .html notes from the local `notes/` directory.
+ *
+ * How it works:
+ *   1. Scans `notes/` directory recursively for .html files.
+ *   2. Filters out redirect stubs (e.g. meta refresh files).
+ *   3. Calls canonical `ImportService.processBatch(htmlFiles, [], { dryRun: false })`.
+ *   4. Runs content through `server/lib/sanitize.ts` (sanitizeContentHtml).
+ *   5. Creates an official `ImportJob` and granular `ImportLog` records for audit & rollback.
+ *   6. Creates all valid notes in `DRAFT` status with `importJobId` attached.
+ *
+ * Usage:
+ *   npm run notes:import
+ *   or: npx tsx scripts/import-local-notes.ts
+ *
+ * Requirements:
+ *   - DATABASE_URL in .env
+ */
+
 import "dotenv/config";
 import fs from "fs";
 import path from "path";

@@ -24,7 +24,6 @@ import {
   Users,
 } from "lucide-react";
 import clsx from "clsx";
-import { LivePresenceBadge } from "@/components/public/live-presence-badge";
 
 export const revalidate = 60;
 
@@ -160,7 +159,6 @@ export default async function HomePage() {
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />
                 <span>Rajasthan Competitive Exam Study Hub</span>
               </div>
-              <LivePresenceBadge variant="hero" />
             </div>
 
             <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">

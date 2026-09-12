@@ -1,7 +1,7 @@
 # PROJECT_STATUS.md — Rajasthan Exam Twister
 ## Master Handoff Document — Read This Completely Before Touching Any Code
 
-**Last updated:** 2026-09-11 — 13D/13E complete, final gate passed (119/119 tests, 84 routes, exit 0 all three checks). This file is the single source of truth for what has
+**Last updated:** 2026-09-12 — Post-audit cleanup complete (unauthorized in-memory visitor presence feature and unsafe smart-import.ts removed; official import-local-notes.ts documented). Final verification gate passed (119/119 tests across 22 test files, 86 routes, clean typecheck and build). This file is the single source of truth for what has
 been built, what is verified, what is broken/unconfirmed, and what is
 still pending. If you are a coding agent picking up this project, read
 this file FIRST, then cross-check the claims below against the actual
@@ -202,6 +202,7 @@ Jakarta Sans (body), loaded via `next/font`.
 
 ## 7. HOW TO IMPORT THE USER'S REAL LEGACY HTML NOTES (do this once §5 items 1-3 are resolved)
 
+### Method A: Web UI Import
 1. Put all `.html` files in one folder. If any reference images via
    relative path (not base64), include those image files in the same
    upload batch — filename-matched resolution.
@@ -219,6 +220,12 @@ Jakarta Sans (body), loaded via `next/font`.
 7. If an import batch goes wrong, use the Rollback action on that
    specific `ImportJob` (only removes untouched drafts, never anything
    edited/published since).
+
+### Method B: Official CLI Import Tooling
+- **Pre-Import Scan (100% Read-Only):**
+  `npx tsx scripts/pre-import-scan.ts <folder-path>` — pre-flight scanner that checks all HTML files against MongoDB for slug collisions and content hash duplicates without writing anything.
+- **Direct Local Notes Importer (Official CLI):**
+  `npm run notes:import` (or `npx tsx scripts/import-local-notes.ts`) — traverses local `notes/` directory, filters stubs, and invokes canonical `ImportService.processBatch()` with full `server/lib/sanitize.ts` sanitization and `ImportJob`/`ImportLog` audit trail creation. All notes land in `DRAFT` status.
 
 ---
 
