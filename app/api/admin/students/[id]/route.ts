@@ -20,7 +20,7 @@ export async function DELETE(
 
     const { id } = params;
     if (!mongoose.Types.ObjectId.isValid(id)) {
-      return errorResponse("BAD_REQUEST", "Invalid student ID", 400);
+      return errorResponse("VALIDATION_ERROR", "Invalid student ID", 400);
     }
 
     await connectToDatabase();
