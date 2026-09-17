@@ -210,9 +210,9 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+      <article className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10 space-y-6 sm:space-y-8 min-w-0">
         {/* Structured Breadcrumbs */}
-        <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-2 text-xs text-slate-500 font-medium print:hidden">
+        <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-1.5 sm:gap-2 text-xs text-slate-500 font-medium print:hidden">
           <Link href="/" className="hover:text-amber-700 transition-colors">
             Home
           </Link>
@@ -232,7 +232,7 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
             </>
           )}
           <span className="text-amber-300">/</span>
-          <span className="text-slate-800 font-bold truncate max-w-xs sm:max-w-md">
+          <span className="text-slate-800 font-bold truncate max-w-[140px] sm:max-w-md">
             {note.title}
           </span>
         </nav>
@@ -360,7 +360,7 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
 
         {/* Main Text Content via Shared ContentRenderer */}
         {note.content && (
-          <section className="bg-white rounded-3xl p-6 sm:p-10 border border-amber-200/80 shadow-xs study-sheet-content">
+          <section className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 border border-amber-200/80 shadow-xs study-sheet-content min-w-0 max-w-full">
             <ContentRenderer content={note.content} />
           </section>
         )}

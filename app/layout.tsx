@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora, Plus_Jakarta_Sans, Noto_Sans_Devanagari } from "next/font/google";
 import { getSiteUrl } from "@/server/lib/seo";
+import { PublicSessionProvider } from "@/components/providers/session-provider";
 import "./globals.css";
 
 const headingFont = Sora({
@@ -133,7 +134,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-        {children}
+        <PublicSessionProvider>
+          {children}
+        </PublicSessionProvider>
       </body>
     </html>
   );

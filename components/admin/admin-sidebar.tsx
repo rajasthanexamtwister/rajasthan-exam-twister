@@ -22,6 +22,7 @@ const navigation = [
   { name: "Blogs", href: "/admin/blogs", icon: FileText, exact: false },
   { name: "Notes", href: "/admin/notes", icon: BookOpen, exact: false },
   { name: "Quizzes", href: "/admin/quizzes", icon: CheckSquare, exact: false },
+  { name: "Quiz Submissions", href: "/admin/quizzes/submissions", icon: FileText, exact: false },
   { name: "Import HTML", href: "/admin/notes/import", icon: UploadCloud, exact: false },
   { name: "Media Library", href: "/admin/media", icon: ImageIcon, exact: false },
   { name: "Categories", href: "/admin/categories", icon: FolderTree, exact: false },
