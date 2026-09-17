@@ -145,3 +145,24 @@ Before writing any code:
 
 Start with Batch 1.
 ```
+
+---
+
+## 17. Live Active Visitor System
+
+A production-safe, privacy-focused real-time visitor presence system integrated into the Admin Dashboard.
+
+- **Definition of "Live User":** An anonymous visitor whose heartbeat was recorded within the last **90 seconds**.
+- **Heartbeat Interval:** Client presence component sends heartbeats approximately every **30 seconds** when the browser tab is active/visible (`visibilityState === "visible"`).
+- **Admin Polling:** Admin Live Users card polls `GET /api/admin/presence` every **12 seconds** when tab is active.
+- **Database Presence Model:** Uses `Presence` Mongoose schema indexed with a 5-minute TTL (`expireAfterSeconds: 300`) on `lastSeenAt` to cleanly purge stale records.
+- **Privacy & Security:**
+  - Zero PII (no IP, email, or user names recorded or exposed).
+  - Session tracking uses random UUIDs stored in secure, `httpOnly` `ret_sid` client cookies.
+  - Crawler/bot user-agents (`Googlebot`, `bingbot`, `curl`, etc.) and `/admin` routes are automatically filtered and excluded from visitor counts.
+  - `POST /api/presence/heartbeat` is rate-limited (max 10 requests per 30s per `sessionId:ip`).
+  - Live visitor count is displayed strictly in the Admin Dashboard, not on the public site.
+- **API Endpoints:**
+  - `POST /api/presence/heartbeat` (Public heartbeat recorder)
+  - `GET /api/admin/presence` (Admin-only authenticated live visitor summary)
+

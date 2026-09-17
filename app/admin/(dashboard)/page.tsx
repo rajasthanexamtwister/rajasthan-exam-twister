@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AdminLiveUsersCard } from "@/components/admin/admin-live-users-card";
 import {
   FileText,
   BookOpen,
@@ -11,6 +12,7 @@ import {
 } from "lucide-react";
 
 export default function AdminDashboardPage() {
+
   // Empty state stats for Batch 1 Foundation shell
   const stats = [
     {
@@ -199,7 +201,11 @@ export default function AdminDashboardPage() {
 
         {/* Quick Actions & System Status Column */}
         <div className="space-y-6">
+          {/* Live Active Users Card */}
+          <AdminLiveUsersCard />
+
           <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+
             <h2 className="text-lg font-bold text-slate-900 mb-1">Quick Actions</h2>
             <p className="text-xs text-slate-500 mb-4">Frequently used management tools</p>
 
