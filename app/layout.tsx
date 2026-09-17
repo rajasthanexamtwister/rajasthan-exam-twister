@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Sora, Plus_Jakarta_Sans, Noto_Sans_Devanagari } from "next/font/google";
+import { getSiteUrl } from "@/server/lib/seo";
 import "./globals.css";
 
 const headingFont = Sora({
@@ -41,9 +42,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Rajasthan Exam Twister Team" }],
   icons: {
-    icon: "/brand/logo.png",
-    shortcut: "/brand/logo.png",
-    apple: "/brand/logo.png",
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/apple-icon.png",
   },
   openGraph: {
     type: "website",
@@ -76,12 +77,62 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const siteUrl = getSiteUrl();
+
+  // Organization + WebSite JSON-LD for Google Knowledge Panel & brand discoverability
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        name: "Rajasthan Exam Twister",
+        url: siteUrl,
+        logo: {
+          "@type": "ImageObject",
+          url: `${siteUrl}/brand/logo.png`,
+          width: 512,
+          height: 512,
+        },
+        sameAs: [
+          "https://t.me/+9lJuoxlqJdsxMDY1",
+          "https://www.instagram.com/examtwister/",
+          "https://x.com/examtwister",
+          "https://www.youtube.com/@ExamTwister",
+        ],
+        description:
+          "Rajasthan Exam Twister — Comprehensive GK revision handbooks, exam notes, current affairs blogs, and mock quizzes for REET, RPSC, CET, Police SI, and Rajasthan state competitive exams.",
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "Rajasthan Exam Twister",
+        publisher: { "@id": `${siteUrl}/#organization` },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${siteUrl}/search?q={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
+        inLanguage: ["hi", "en"],
+      },
+    ],
+  };
+
   return (
     <html
       lang="hi"
       className={`${headingFont.variable} ${bodyFont.variable} ${devanagariFont.variable} h-full`}
     >
       <body className="min-h-full flex flex-col font-sans antialiased bg-[#FAF8F5] text-slate-900 selection:bg-amber-200 selection:text-amber-950">
+        {/* Site-wide Organization + WebSite structured data for Google brand recognition */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         {children}
       </body>
     </html>
