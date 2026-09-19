@@ -16,11 +16,26 @@ interface SubjectBrowsePageProps {
   };
 }
 
+import { getSiteUrl } from "@/server/lib/seo";
+
 export async function generateMetadata({ params }: SubjectBrowsePageProps): Promise<Metadata> {
+  const siteUrl = getSiteUrl();
   const subjectName = decodeURIComponent(params.subjectSlug).replace(/-/g, " ");
+  const title = `${subjectName} Practice Tests & Quizzes`;
+  const description = `Practice topic-wise MCQs and test series for ${subjectName} in Rajasthan competitive exams with instant grading and detailed explanations.`;
+  const canonicalUrl = `${siteUrl}/subject/${params.subjectSlug}`;
+
   return {
-    title: `${subjectName} Practice Tests & Quizzes — Rajasthan Exam Twister`,
-    description: `Practice topic-wise MCQs and test series for ${subjectName} in Rajasthan competitive exams with instant grading and detailed explanations.`,
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${subjectName} Practice Tests & Quizzes — Rajasthan Exam Twister`,
+      description,
+      url: canonicalUrl,
+    },
   };
 }
 

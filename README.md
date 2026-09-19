@@ -166,3 +166,23 @@ A production-safe, privacy-focused real-time visitor presence system integrated 
   - `POST /api/presence/heartbeat` (Public heartbeat recorder)
   - `GET /api/admin/presence` (Admin-only authenticated live visitor summary)
 
+---
+
+## 18. Student Quiz Submissions & Admin Reuse Workflow
+
+A production-safe feature allowing students to submit and manage AI-generated Quiz JSON files, and enabling admins to convert student submissions into Quiz DRAFTS.
+
+- **QuizSubmission Model:** Mongoose entity storing `userId`, `userEmail`, `userName`, `originalFileName`, `quizTitle`, `subject`, `questionCount`, `jsonData`, `status` (`DRAFT | VALID | REJECTED | USED`), `createdAt`, and `updatedAt`.
+- **Authentication & Security:**
+  - `POST /api/quiz-tools/submissions` requires authenticated student session (`getStudentSession()`). Unauthenticated requests return HTTP 401.
+  - Server-side validation parses payload against `QuizImportJSONSchema` and enforces 2MB body size guard.
+  - Client-provided user identities (`userId`, `email`, etc.) are never trusted; session user ID is attached on the server.
+  - Student ownership isolation: Students can strictly ONLY view (`GET /api/quiz-tools/submissions/[id]`) and list their own submissions. Cross-student access is blocked with HTTP 403 Forbidden.
+- **Student UI & Reuse:**
+  - `/quiz-tools/create`: Interactive tool for prompt copying, JSON editing, and uploading. Prompts for Google Sign In if unauthenticated. Supports loading past submissions for editing via `?reuseId=123` into local state without mutating original records.
+  - `/quiz-tools/submissions`: Student submission list and safe JSON viewer.
+- **Admin Workflow & Quiz Draft Creation:**
+  - `/admin/quiz-submissions`: Admin dashboard page to list, filter, search, and view original JSON.
+  - `POST /api/admin/quiz-submissions/[id]/create-quiz`: Admin action that clones `jsonData` into a **NEW** `Quiz` document with `status: "DRAFT"` via `QuizService.importQuizJson()`, and marks submission `status: "USED"`. The original student `jsonData` remains completely immutable.
+- **Private Route & Technical SEO:**
+  - Private routes (`/quiz-tools/submissions`, `/quiz-tools/submissions/[id]`, `/admin/quiz-submissions`) export `robots: { index: false, follow: false }` and are excluded from `sitemap.xml`.

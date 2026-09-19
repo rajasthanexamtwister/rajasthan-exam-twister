@@ -5,12 +5,23 @@ import { QuizAttemptRepository } from "@/server/repositories/quiz-attempt";
 import { Trophy, Medal, Award, Flame, Target, CheckCircle2, User, ArrowRight } from "lucide-react";
 import clsx from "clsx";
 
+import { getSiteUrl } from "@/server/lib/seo";
+
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Student Leaderboard & Top Scorers — Rajasthan Exam Twister",
+  title: "Student Leaderboard & Top Scorers",
   description:
     "Check top-ranking students across Rajasthan competitive exam mock tests and quizzes. Practice daily and climb the Rajasthan Exam Twister leaderboard!",
+  alternates: {
+    canonical: `${getSiteUrl()}/leaderboard`,
+  },
+  openGraph: {
+    title: "Student Leaderboard & Top Scorers — Rajasthan Exam Twister",
+    description:
+      "Check top-ranking students across Rajasthan competitive exam mock tests and quizzes. Practice daily and climb the Rajasthan Exam Twister leaderboard!",
+    url: `${getSiteUrl()}/leaderboard`,
+  },
 };
 
 interface LeaderboardPageProps {

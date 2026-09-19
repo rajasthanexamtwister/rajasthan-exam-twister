@@ -39,7 +39,8 @@ export async function generateMetadata({ params }: NoteDetailPageProps): Promise
     };
   }
 
-  const title = `${note.title} — Rajasthan Exam Twister`;
+  const title = note.title;
+  const ogTitle = `${note.title} | Rajasthan Exam Twister`;
   const description = generateMetaDescription(
     note.content,
     null,
@@ -58,7 +59,7 @@ export async function generateMetadata({ params }: NoteDetailPageProps): Promise
       canonical: canonicalUrl,
     },
     openGraph: {
-      title,
+      title: ogTitle,
       description,
       url: canonicalUrl,
       type: "article",

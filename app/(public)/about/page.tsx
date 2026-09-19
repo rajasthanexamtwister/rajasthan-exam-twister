@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "About Us — Rajasthan Exam Twister",
+  title: "About Us",
   description:
     "Rajasthan Exam Twister provides comprehensive, high-yield revision notes, infographics, and exam preparation blogs for RAS, REET, CET, Police, and state competitive exams.",
   alternates: {

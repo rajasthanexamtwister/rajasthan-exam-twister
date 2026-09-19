@@ -13,6 +13,8 @@ import {
   HelpCircle,
 } from "lucide-react";
 
+import { getSiteUrl } from "@/server/lib/seo";
+
 export const dynamic = "force-dynamic";
 
 interface QuizPageProps {
@@ -22,27 +24,91 @@ interface QuizPageProps {
 }
 
 export async function generateMetadata({ params }: QuizPageProps): Promise<Metadata> {
+  const siteUrl = getSiteUrl();
   const quiz = await QuizService.getPublicQuizBySlug(params.slug);
   if (!quiz) {
     return {
-      title: "Quiz Not Found — Rajasthan Exam Twister",
+      title: "Quiz Not Found",
     };
   }
 
+  const title = `${quiz.title} — Online Mock Test`;
+  const description = `Take the ${quiz.title} mock test (${quiz.questionCount} questions). Test your exam readiness with authentic scoring and explanations.`;
+  const canonicalUrl = `${siteUrl}/quizzes/${quiz.slug}`;
+
   return {
-    title: `${quiz.title} — Online Mock Test | Rajasthan Exam Twister`,
-    description: `Take the ${quiz.title} mock test (${quiz.questionCount} questions). Test your exam readiness with authentic scoring and explanations.`,
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${quiz.title} — Online Mock Test | Rajasthan Exam Twister`,
+      description,
+      url: canonicalUrl,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${quiz.title} — Online Mock Test | Rajasthan Exam Twister`,
+      description,
+    },
   };
 }
 
 export default async function QuizIntroPage({ params }: QuizPageProps) {
+  const siteUrl = getSiteUrl();
   const quiz = await QuizService.getPublicQuizBySlug(params.slug);
   if (!quiz) {
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Mock Quizzes",
+            item: `${siteUrl}/quizzes`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: quiz.title,
+            item: `${siteUrl}/quizzes/${quiz.slug}`,
+          },
+        ],
+      },
+      {
+        "@type": "LearningResource",
+        name: quiz.title,
+        description: `Online mock test with ${quiz.questionCount} MCQs for Rajasthan competitive exams.`,
+        url: `${siteUrl}/quizzes/${quiz.slug}`,
+        provider: {
+          "@type": "Organization",
+          name: "Rajasthan Exam Twister",
+          url: siteUrl,
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="max-w-3xl mx-auto space-y-8">
         {/* Structured Breadcrumbs */}
         <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-2 text-xs text-slate-500 font-medium">

@@ -28,16 +28,18 @@ import clsx from "clsx";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Rajasthan Exam Twister — Master Revision Guides & Exam Notes",
+  title: {
+    absolute: "Rajasthan Exam Twister — Rajasthan GK, Notes, Quizzes & Current Affairs",
+  },
   description:
-    "High-yield Rajasthan GK revision notes, current affairs blogs, infographic handbooks, and interactive mock quizzes for REET, RPSC, CET, Police SI, and state exams.",
+    "High-yield Rajasthan GK, Rajasthan notes, current affairs blogs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, and Rajasthan Police exam preparation on Rajasthan Exam Twister.",
   alternates: {
     canonical: getSiteUrl(),
   },
   openGraph: {
-    title: "Rajasthan Exam Twister — Master Revision Guides & Exam Notes",
+    title: "Rajasthan Exam Twister — Rajasthan GK, Notes, Quizzes & Current Affairs",
     description:
-      "High-yield GK handbooks, current affairs blogs, and fast revision sheets for Rajasthan competitive exams.",
+      "High-yield Rajasthan GK revision notes, current affairs blogs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, and Rajasthan Police exam preparation.",
     url: getSiteUrl(),
     type: "website",
     images: [
@@ -48,6 +50,13 @@ export const metadata: Metadata = {
         alt: "Rajasthan Exam Twister - Sawaal Seedha Nahi, Soch Tedhi Karo",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rajasthan Exam Twister — Rajasthan GK, Notes, Quizzes & Current Affairs",
+    description:
+      "High-yield Rajasthan GK revision notes, current affairs blogs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, and Rajasthan Police exam preparation.",
+    images: ["/brand/banner.png"],
   },
 };
 
@@ -162,11 +171,11 @@ export default async function HomePage() {
             </div>
 
             <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
-              Master Revision Guides & Exam Notes for Rajasthan Aspirants
+              Rajasthan Exam Twister — Master Revision Guides & Exam Preparation
             </h1>
 
             <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              Rajasthan GK notes, exam prep blogs, and current affairs — all in one place. Handcrafted for REET, RPSC, CET, Police SI, and state exams.
+              High-yield Rajasthan GK revision notes, current affairs blogs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, Rajasthan Police, and other Rajasthan competitive exams.
             </p>
 
             {/* Prominent Search Bar */}

@@ -119,7 +119,6 @@ describe("Robots & Sitemap Configuration", () => {
     expect(urls.some((u) => u.endsWith("/notes"))).toBe(true);
     expect(urls.some((u) => u.endsWith("/categories"))).toBe(true);
     expect(urls.some((u) => u.endsWith("/quizzes"))).toBe(true);
-    expect(urls.some((u) => u.endsWith("/quiz-tools/create"))).toBe(true);
     expect(urls.some((u) => u.endsWith("/search"))).toBe(true);
     expect(urls.some((u) => u.endsWith("/about"))).toBe(true);
 
@@ -128,9 +127,10 @@ describe("Robots & Sitemap Configuration", () => {
     expect(urls.some((u) => u.includes("/notes/rajasthan-forts-revision"))).toBe(true);
     expect(urls.some((u) => u.includes("/quizzes/rajasthan-history-mock-1"))).toBe(true);
 
-    // No admin routes in sitemap
+    // No admin or private routes in sitemap
     expect(urls.some((u) => u.includes("/admin"))).toBe(false);
     expect(urls.some((u) => u.includes("/api"))).toBe(false);
+    expect(urls.some((u) => u.includes("/quiz-tools"))).toBe(false);
   });
 });
 

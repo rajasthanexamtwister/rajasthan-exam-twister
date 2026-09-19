@@ -30,7 +30,8 @@ import { getSiteUrl } from "@/server/lib/seo";
 export async function generateMetadata({ searchParams }: SearchPageProps): Promise<Metadata> {
   const siteUrl = getSiteUrl();
   const query = searchParams.q?.trim() || "";
-  const title = query ? `Search results for "${query}" — Rajasthan Exam Twister` : "Search Exam Notes & Blogs — Rajasthan Exam Twister";
+  const title = query ? `Search results for "${query}"` : "Search Exam Notes & Blogs";
+  const ogTitle = query ? `Search results for "${query}" — Rajasthan Exam Twister` : "Search Exam Notes & Blogs — Rajasthan Exam Twister";
   const description = "Search comprehensive revision handbooks, GK articles, and diagrams for Rajasthan competitive exams.";
   const canonicalUrl = query ? `${siteUrl}/search?q=${encodeURIComponent(query)}` : `${siteUrl}/search`;
 
@@ -41,7 +42,7 @@ export async function generateMetadata({ searchParams }: SearchPageProps): Promi
       canonical: canonicalUrl,
     },
     openGraph: {
-      title,
+      title: ogTitle,
       description,
       url: canonicalUrl,
     },

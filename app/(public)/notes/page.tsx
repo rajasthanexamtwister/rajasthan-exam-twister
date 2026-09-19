@@ -10,13 +10,13 @@ import { getSiteUrl } from "@/server/lib/seo";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Rajasthan Exam Revision Notes & Handbooks — Rajasthan Exam Twister",
+  title: "Revision Notes & Handbooks",
   description: "Comprehensive revision notes, infographics, and PDF handbooks for Rajasthan competitive exams (RAS, REET, CET, Patwar, Police).",
   alternates: {
     canonical: `${getSiteUrl()}/notes`,
   },
   openGraph: {
-    title: "Rajasthan Exam Revision Notes & Handbooks — Rajasthan Exam Twister",
+    title: "Revision Notes & Handbooks — Rajasthan Exam Twister",
     description: "Comprehensive revision notes, infographics, and PDF handbooks for Rajasthan competitive exams.",
     url: `${getSiteUrl()}/notes`,
   },

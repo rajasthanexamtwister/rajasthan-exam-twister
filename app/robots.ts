@@ -1,16 +1,17 @@
 import { MetadataRoute } from "next";
+import { getSiteUrl } from "@/server/lib/seo";
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rajasthanexamtwister.com";
+  const siteUrl = getSiteUrl();
 
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin/", "/api/"],
+        disallow: ["/admin/", "/api/", "/quiz-tools/"],
       },
     ],
-    sitemap: `${siteUrl.replace(/\/$/, "")}/sitemap.xml`,
+    sitemap: `${siteUrl}/sitemap.xml`,
   };
 }

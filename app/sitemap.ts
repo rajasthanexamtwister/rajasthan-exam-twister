@@ -3,13 +3,14 @@ import { connectToDatabase } from "@/server/lib/mongodb";
 import { Blog } from "@/server/models/Blog";
 import { Note } from "@/server/models/Note";
 import { Quiz } from "@/server/models/Quiz";
+import { getSiteUrl } from "@/server/lib/seo";
 
 export const revalidate = 60;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://rajasthanexamtwister.com").replace(/\/$/, "");
+  const siteUrl = getSiteUrl();
 
-  // Static routes
+  // Static routes (Only public, indexable production pages)
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${siteUrl}`,
@@ -40,12 +41,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/quiz-tools/create`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
     },
     {
       url: `${siteUrl}/search`,

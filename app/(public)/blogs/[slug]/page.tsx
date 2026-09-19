@@ -26,7 +26,8 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
     };
   }
 
-  const title = blog.metaTitle || `${blog.title} — Rajasthan Exam Twister`;
+  const title = blog.metaTitle ? { absolute: blog.metaTitle } : blog.title;
+  const ogTitle = blog.metaTitle || `${blog.title} | Rajasthan Exam Twister`;
   const description = generateMetaDescription(blog.content, blog.metaDescription, blog.excerpt);
   const canonicalUrl = blog.canonicalUrl || `${siteUrl}/blogs/${blog.slug}`;
   
@@ -40,7 +41,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
       canonical: canonicalUrl,
     },
     openGraph: {
-      title,
+      title: ogTitle,
       description,
       url: `${siteUrl}/blogs/${blog.slug}`,
       type: "article",

@@ -5,12 +5,23 @@ import { CategoryService } from "@/server/services/category-service";
 import { CheckSquare, Clock, Award, Trophy, ArrowRight, Zap, Target, BookOpen } from "lucide-react";
 import clsx from "clsx";
 
+import { getSiteUrl } from "@/server/lib/seo";
+
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Mock Tests & Practice Quizzes — Rajasthan Exam Twister",
+  title: "Mock Tests & Practice Quizzes",
   description:
     "Practice free online mock tests, previous year exam papers, and MCQs for Rajasthan competitive exams including REET, RPSC, CET, Police SI, and Patwari with detailed explanations.",
+  alternates: {
+    canonical: `${getSiteUrl()}/quizzes`,
+  },
+  openGraph: {
+    title: "Mock Tests & Practice Quizzes — Rajasthan Exam Twister",
+    description:
+      "Practice free online mock tests and MCQs for Rajasthan competitive exams including REET, RPSC, CET, and Police SI.",
+    url: `${getSiteUrl()}/quizzes`,
+  },
 };
 
 interface QuizzesPageProps {

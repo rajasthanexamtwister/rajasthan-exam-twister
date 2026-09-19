@@ -10,7 +10,7 @@ import { FolderTree, BookOpen, FileText, ArrowRight, ChevronRight } from "lucide
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Exam Categories & Subjects — Rajasthan Exam Twister",
+  title: "Exam Categories & Subjects",
   description:
     "Browse Rajasthan competitive exam notes, study guides, and current affairs categorized by subject and syllabus topics.",
   alternates: {

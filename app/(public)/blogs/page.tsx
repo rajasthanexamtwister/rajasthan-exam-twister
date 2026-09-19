@@ -10,7 +10,7 @@ import { getSiteUrl } from "@/server/lib/seo";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Blogs & Current Affairs — Rajasthan Exam Twister",
+  title: "Blogs & Current Affairs",
   description: "Latest exam updates, GK articles, and preparation strategies for Rajasthan competitive examinations.",
   alternates: {
     canonical: `${getSiteUrl()}/blogs`,

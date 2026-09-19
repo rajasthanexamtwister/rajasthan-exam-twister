@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora, Plus_Jakarta_Sans, Noto_Sans_Devanagari } from "next/font/google";
 import { getSiteUrl } from "@/server/lib/seo";
+import { OFFICIAL_SOCIAL_URLS } from "@/server/lib/social-links";
 import { PublicSessionProvider } from "@/components/providers/session-provider";
 import "./globals.css";
 
@@ -26,19 +27,22 @@ const devanagariFont = Noto_Sans_Devanagari({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://rajasthanexamtwister.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://rajasthanexamtwister.vercel.app"),
   title: {
-    default: "Rajasthan Exam Twister — Master Rajasthan GK & Competitive Exam Revision",
+    default: "Rajasthan Exam Twister — Rajasthan GK, Notes, Quizzes & Current Affairs",
     template: "%s | Rajasthan Exam Twister",
   },
   description:
-    "Master Rajasthan GK revision notes, exam prep blog articles, current affairs, and mock quizzes for REET, RPSC, CET, Rajasthan Police, and state recruitment exams.",
+    "High-yield Rajasthan GK revision notes, current affairs blogs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, Rajasthan Police, and state exam preparation.",
   keywords: [
+    "Rajasthan Exam Twister",
     "Rajasthan GK Notes",
     "RPSC Exam Prep",
     "REET Level 1 Level 2",
     "Rajasthan Current Affairs",
     "CET Rajasthan Mock Test",
+    "RSSB Exam Prep",
+    "Rajasthan Police Constable SI",
     "Rajasthan History Culture Geography",
   ],
   authors: [{ name: "Rajasthan Exam Twister Team" }],
@@ -52,9 +56,9 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: "/",
     siteName: "Rajasthan Exam Twister",
-    title: "Rajasthan Exam Twister — Master Rajasthan GK & Revision",
+    title: "Rajasthan Exam Twister — Rajasthan GK, Notes, Quizzes & Current Affairs",
     description:
-      "Comprehensive notes, blogs, and master revision guides for REET, RPSC, CET, Rajasthan Police, and state competitive exams.",
+      "High-yield Rajasthan GK revision notes, current affairs blogs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, Rajasthan Police, and state competitive exams.",
     images: [
       {
         url: "/brand/banner.png",
@@ -66,9 +70,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rajasthan Exam Twister — Master Rajasthan GK & Revision",
+    title: "Rajasthan Exam Twister — Rajasthan GK, Notes, Quizzes & Current Affairs",
     description:
-      "Comprehensive notes, blogs, and master revision guides for REET, RPSC, CET, Rajasthan Police, and state competitive exams.",
+      "High-yield Rajasthan GK revision notes, current affairs blogs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, Rajasthan Police, and state competitive exams.",
     images: ["/brand/banner.png"],
   },
 };
@@ -95,14 +99,9 @@ export default function RootLayout({
           width: 512,
           height: 512,
         },
-        sameAs: [
-          "https://t.me/+9lJuoxlqJdsxMDY1",
-          "https://www.instagram.com/examtwister/",
-          "https://x.com/examtwister",
-          "https://www.youtube.com/@ExamTwister",
-        ],
+        sameAs: OFFICIAL_SOCIAL_URLS,
         description:
-          "Rajasthan Exam Twister — Comprehensive GK revision handbooks, exam notes, current affairs blogs, and mock quizzes for REET, RPSC, CET, Police SI, and Rajasthan state competitive exams.",
+          "Rajasthan Exam Twister — High-yield Rajasthan GK revision notes, current affairs blogs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, Rajasthan Police, and state competitive exams.",
       },
       {
         "@type": "WebSite",

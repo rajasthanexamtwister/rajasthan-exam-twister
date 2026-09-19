@@ -3,7 +3,7 @@
  */
 
 export function getSiteUrl(): string {
-  const url = process.env.NEXT_PUBLIC_SITE_URL || "https://rajasthanexamtwister.com";
+  const url = process.env.NEXT_PUBLIC_SITE_URL || "https://rajasthanexamtwister.vercel.app" || "https://rajasthanexamtwister.com";
   return url.replace(/\/$/, "");
 }
 
@@ -43,12 +43,12 @@ export function generateMetaDescription(
   }
 
   if (!content) {
-    return "Rajasthan Exam Twister — High-yield GK handbooks, revision notes, and exam articles for Rajasthan competitive examinations.";
+    return "Rajasthan Exam Twister — High-yield Rajasthan GK revision notes, current affairs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, and Rajasthan Police exam preparation.";
   }
 
   const plainText = stripHtml(content);
   if (!plainText) {
-    return "Rajasthan Exam Twister — High-yield GK handbooks, revision notes, and exam articles for Rajasthan competitive examinations.";
+    return "Rajasthan Exam Twister — High-yield Rajasthan GK revision notes, current affairs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, and Rajasthan Police exam preparation.";
   }
 
   if (plainText.length <= maxLength) {

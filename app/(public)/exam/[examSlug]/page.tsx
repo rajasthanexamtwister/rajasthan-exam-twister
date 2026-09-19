@@ -17,11 +17,26 @@ interface ExamBrowsePageProps {
   };
 }
 
+import { getSiteUrl } from "@/server/lib/seo";
+
 export async function generateMetadata({ params }: ExamBrowsePageProps): Promise<Metadata> {
+  const siteUrl = getSiteUrl();
   const examName = decodeURIComponent(params.examSlug).replace(/-/g, " ").toUpperCase();
+  const title = `${examName} Mock Tests & Practice Quizzes`;
+  const description = `Practice free online mock tests and previous year questions for ${examName} with instant answer key, negative marking, and detailed explanations.`;
+  const canonicalUrl = `${siteUrl}/exam/${params.examSlug}`;
+
   return {
-    title: `${examName} Mock Tests & Practice Quizzes — Rajasthan Exam Twister`,
-    description: `Practice free online mock tests and previous year questions for ${examName} with instant answer key, negative marking, and detailed explanations.`,
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: `${examName} Mock Tests & Practice Quizzes — Rajasthan Exam Twister`,
+      description,
+      url: canonicalUrl,
+    },
   };
 }
 
