@@ -7,21 +7,21 @@ import "./globals.css";
 
 const headingFont = Sora({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
+  weight: ["600", "700", "800"],
   variable: "--font-heading",
   display: "swap",
 });
 
 const bodyFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   variable: "--font-sans",
   display: "swap",
 });
 
 const devanagariFont = Noto_Sans_Devanagari({
   subsets: ["devanagari"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   variable: "--font-devanagari",
   display: "swap",
 });

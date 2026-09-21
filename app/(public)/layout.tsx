@@ -120,9 +120,9 @@ export default async function PublicLayout({
 
             {/* Column 2: Quick Links */}
             <div className="space-y-3">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-amber-400">
                 Quick Navigation
-              </h4>
+              </h3>
               <ul className="space-y-2 text-xs">
                 <li>
                   <Link href="/" className="text-slate-300 hover:text-amber-300 transition-colors">
@@ -159,9 +159,9 @@ export default async function PublicLayout({
 
             {/* Column 3: Categories */}
             <div className="space-y-3">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-amber-400">
                 Exam Categories
-              </h4>
+              </h3>
               {topCategories.length > 0 ? (
                 <ul className="space-y-2 text-xs">
                   {topCategories.map((cat) => (
@@ -185,15 +185,15 @@ export default async function PublicLayout({
                   </li>
                 </ul>
               ) : (
-                <p className="text-slate-500 text-xs">Categories loading...</p>
+                <p className="text-slate-400 text-xs">Categories loading...</p>
               )}
             </div>
 
             {/* Column 4: Information & Search */}
             <div className="space-y-3">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-amber-400">
                 Information & Portal
-              </h4>
+              </h3>
               <ul className="space-y-2 text-xs">
                 <li>
                   <Link href="/about" className="text-slate-300 hover:text-amber-300 transition-colors">

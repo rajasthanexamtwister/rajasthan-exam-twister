@@ -153,7 +153,7 @@ export default async function HomePage() {
           {/* Banner Graphic Frame with high-priority next/image */}
           <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-amber-400/40 bg-slate-950 aspect-[21/9] sm:aspect-[2.8/1] w-full">
             <Image
-              src="/brand/banner.png"
+              src="/brand/banner.webp"
               alt="Rajasthan Exam Twister - Sawaal Seedha Nahi, Soch Tedhi Karo - Exam Preparation Banner"
               fill
               priority
@@ -451,7 +451,7 @@ export default async function HomePage() {
                   </div>
 
                   <div className="pt-4 border-t border-amber-100 mt-4 flex items-center justify-between text-xs">
-                    <span className="text-[11px] text-slate-400">
+                    <span className="text-[11px] text-slate-600 font-medium">
                       {note.publishedAt
                         ? new Date(note.publishedAt).toLocaleDateString("en-IN", {
                             day: "numeric",
@@ -462,6 +462,7 @@ export default async function HomePage() {
                     </span>
                     <Link
                       href={`/notes/${note.slug}`}
+                      aria-label={`Study revision note: ${note.title}`}
                       className="font-bold text-amber-700 hover:text-amber-800 flex items-center gap-1 group-hover:translate-x-0.5 transition-all"
                     >
                       <span>Study Note</span>
@@ -511,14 +512,14 @@ export default async function HomePage() {
                 className="bg-white rounded-2xl border border-amber-200/70 p-6 shadow-xs hover:shadow-md hover:border-amber-400 transition-all flex flex-col justify-between group"
               >
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between text-xs text-slate-400">
-                    <span className="flex items-center gap-1 font-medium text-slate-500">
+                  <div className="flex items-center justify-between text-xs text-slate-600 font-medium">
+                    <span className="flex items-center gap-1 font-semibold text-slate-700">
                       <Clock className="w-3.5 h-3.5 text-amber-600" />
                       {blog.readingTime || 1} min read
                     </span>
                     {blog.publishedAt && (
                       <span className="flex items-center gap-1">
-                        <Calendar className="w-3.5 h-3.5" />
+                        <Calendar className="w-3.5 h-3.5 text-amber-600" />
                         {new Date(blog.publishedAt).toLocaleDateString("en-IN", {
                           day: "numeric",
                           month: "short",
@@ -543,9 +544,10 @@ export default async function HomePage() {
                 </div>
 
                 <div className="pt-4 border-t border-amber-100 mt-4 flex items-center justify-between text-xs">
-                  <span className="text-slate-500 font-medium">{blog.author || "Admin"}</span>
+                  <span className="text-slate-600 font-semibold">{blog.author || "Admin"}</span>
                   <Link
                     href={`/blogs/${blog.slug}`}
+                    aria-label={`Read article: ${blog.title}`}
                     className="font-bold text-amber-700 hover:text-amber-800 flex items-center gap-1 group-hover:translate-x-0.5 transition-all"
                   >
                     <span>Read Article</span>
