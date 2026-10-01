@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Sora, Plus_Jakarta_Sans, Noto_Sans_Devanagari } from "next/font/google";
 import { getSiteUrl } from "@/server/lib/seo";
 import { OFFICIAL_SOCIAL_URLS } from "@/server/lib/social-links";
@@ -127,6 +128,15 @@ export default function RootLayout({
       lang="hi"
       className={`${headingFont.variable} ${bodyFont.variable} ${devanagariFont.variable} h-full`}
     >
+      <head>
+        {/* Google AdSense Script */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8986858563387447"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans antialiased bg-[#FAF8F5] text-slate-900 selection:bg-amber-200 selection:text-amber-950">
         {/* Site-wide Organization + WebSite structured data for Google brand recognition */}
         <script
