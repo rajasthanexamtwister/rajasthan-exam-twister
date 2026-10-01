@@ -3,7 +3,7 @@
  */
 
 export function getSiteUrl(): string {
-  const url = process.env.NEXT_PUBLIC_SITE_URL || "https://rajasthanexamtwister.vercel.app" || "https://rajasthanexamtwister.com";
+  const url = process.env.NEXT_PUBLIC_SITE_URL || "https://rajasthanexamtwister.in";
   return url.replace(/\/$/, "");
 }
 

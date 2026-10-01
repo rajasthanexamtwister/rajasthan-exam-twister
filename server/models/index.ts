@@ -14,3 +14,5 @@ export * from "./Student";
 export * from "./Bookmark";
 export * from "./Presence";
 export * from "./QuizSubmission";
+export * from "./BlogAutomationJob";
+export * from "./BlogResearch";

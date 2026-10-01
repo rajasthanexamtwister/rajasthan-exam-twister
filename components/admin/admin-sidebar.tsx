@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard,
+  Sparkles,
   FileText,
   BookOpen,
   UploadCloud,
@@ -19,6 +20,7 @@ import clsx from "clsx";
 
 const navigation = [
   { name: "Dashboard", href: "/admin", icon: LayoutDashboard, exact: true },
+  { name: "AI Automation", href: "/admin/blog-automation", icon: Sparkles, exact: false },
   { name: "Blogs", href: "/admin/blogs", icon: FileText, exact: false },
   { name: "Notes", href: "/admin/notes", icon: BookOpen, exact: false },
   { name: "Quizzes", href: "/admin/quizzes", icon: CheckSquare, exact: true },
