@@ -52,7 +52,7 @@ export default function TermsPage() {
             <p>
               By accessing or using <strong>Rajasthan Exam Twister</strong> ({" "}
               <a href={siteUrl} className="text-amber-700 underline font-semibold">
-                {siteUrl}
+                https://www.rajasthanexamtwister.in
               </a>
               ), you agree to comply with and be bound by these Terms and Conditions. If you do not agree, please refrain from using the platform.
             </p>

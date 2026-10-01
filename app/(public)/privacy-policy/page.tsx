@@ -53,7 +53,7 @@ export default function PrivacyPolicyPage() {
             <p>
               At <strong>Rajasthan Exam Twister</strong> (accessible at{" "}
               <a href={siteUrl} className="text-amber-700 underline font-semibold">
-                {siteUrl}
+                https://www.rajasthanexamtwister.in
               </a>
               ), we respect the privacy of our students, educators, and visitors. This Privacy Policy details the types of information we collect, how it is used, and the security measures in place to safeguard your data.
             </p>
