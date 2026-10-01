@@ -10,14 +10,14 @@ import { Note } from "@/server/models/Note";
 import { Quiz } from "@/server/models/Quiz";
 import { getSiteUrl } from "@/server/lib/seo";
 
-describe("Sitemap & Domain Isolation (https://rajasthanexamtwister.in)", () => {
+describe("Sitemap & Domain Isolation (https://www.rajasthanexamtwister.in)", () => {
   beforeEach(() => {
     vi.restoreAllMocks();
   });
 
-  it("should resolve production canonical site URL to https://rajasthanexamtwister.in", () => {
+  it("should resolve production canonical site URL to https://www.rajasthanexamtwister.in", () => {
     const siteUrl = getSiteUrl();
-    expect(siteUrl).toBe("https://rajasthanexamtwister.in");
+    expect(siteUrl).toBe("https://www.rajasthanexamtwister.in");
   });
 
   it("should strictly include only PUBLISHED blogs in sitemap and exclude DRAFT automation items", async () => {
@@ -50,8 +50,8 @@ describe("Sitemap & Domain Isolation (https://rajasthanexamtwister.in)", () => {
 
     const blogUrls = sitemapEntries.map((e) => e.url);
 
-    // Verify published URL is present with https://rajasthanexamtwister.in
-    expect(blogUrls).toContain("https://rajasthanexamtwister.in/blogs/published-rajasthan-gk");
+    // Verify published URL is present with https://www.rajasthanexamtwister.in
+    expect(blogUrls).toContain("https://www.rajasthanexamtwister.in/blogs/published-rajasthan-gk");
 
     // Verify draft / unapproved / scheduled items are never in sitemap
     expect(blogUrls.some((u) => u.includes("draft"))).toBe(false);

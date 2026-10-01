@@ -27,7 +27,7 @@ const devanagariFont = Noto_Sans_Devanagari({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.rajasthanexamtwister.in"),
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default: "Rajasthan Exam Twister — Rajasthan GK, Notes, Quizzes & Current Affairs",
     template: "%s | Rajasthan Exam Twister",

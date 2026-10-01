@@ -3,7 +3,10 @@
  */
 
 export function getSiteUrl(): string {
-  const url = process.env.NEXT_PUBLIC_SITE_URL || "https://rajasthanexamtwister.in";
+  let url = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.rajasthanexamtwister.in").trim();
+  if (!url.startsWith("http://") && !url.startsWith("https://")) {
+    url = `https://${url}`;
+  }
   return url.replace(/\/$/, "");
 }
 
