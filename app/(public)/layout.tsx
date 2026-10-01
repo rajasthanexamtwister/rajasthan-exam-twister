@@ -189,49 +189,68 @@ export default async function PublicLayout({
               )}
             </div>
 
-            {/* Column 4: Information & Search */}
+            {/* Column 4: Information & Legal */}
             <div className="space-y-3">
               <h3 className="text-xs font-bold uppercase tracking-wider text-amber-400">
-                Information & Portal
+                Information & Legal
               </h3>
               <ul className="space-y-2 text-xs">
                 <li>
                   <Link href="/about" className="text-slate-300 hover:text-amber-300 transition-colors">
-                    About Rajasthan Exam Twister
+                    About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/search" className="text-slate-300 hover:text-amber-300 transition-colors">
-                    Search Notes & MCQs
+                  <Link href="/contact" className="text-slate-300 hover:text-amber-300 transition-colors">
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy-policy" className="text-slate-300 hover:text-amber-300 transition-colors">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="text-slate-300 hover:text-amber-300 transition-colors">
+                    Terms & Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/disclaimer" className="text-slate-300 hover:text-amber-300 transition-colors">
+                    Disclaimer & Editorial Policy
                   </Link>
                 </li>
                 <li>
                   <Link href="/feed.xml" className="text-slate-300 hover:text-amber-300 transition-colors">
-                    RSS Feed (Syndication)
-                  </Link>
-                </li>
-                <li className="pt-2">
-                  <span className="text-[11px] text-slate-400 block mb-1">Need study guidance or help?</span>
-                  <Link
-                    href="/about"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0B132B] bg-amber-400 hover:bg-amber-300 px-3 py-1.5 rounded-lg transition-colors shadow-sm"
-                  >
-                    <Mail className="w-3.5 h-3.5" />
-                    <span>Contact Team</span>
+                    RSS Feed
                   </Link>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Bottom Copyright & Disclaimer */}
+          {/* Bottom Copyright & Legal links */}
           <div className="border-t border-slate-800 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
             <p>
               &copy; {new Date().getFullYear()} Rajasthan Exam Twister. All rights reserved.
             </p>
-            <p className="text-center sm:text-right">
-              Dedicated study material & test series for Rajasthan Competitive Examinations.
-            </p>
+            <div className="flex items-center gap-4 flex-wrap text-slate-400">
+              <Link href="/privacy-policy" className="hover:text-amber-300 transition-colors">
+                Privacy Policy
+              </Link>
+              <span>•</span>
+              <Link href="/terms" className="hover:text-amber-300 transition-colors">
+                Terms
+              </Link>
+              <span>•</span>
+              <Link href="/disclaimer" className="hover:text-amber-300 transition-colors">
+                Disclaimer
+              </Link>
+              <span>•</span>
+              <Link href="/contact" className="hover:text-amber-300 transition-colors">
+                Contact
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
