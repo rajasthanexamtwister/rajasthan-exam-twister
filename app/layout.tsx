@@ -47,6 +47,9 @@ export const metadata: Metadata = {
     "Rajasthan History Culture Geography",
   ],
   authors: [{ name: "Rajasthan Exam Twister Team" }],
+  other: {
+    "google-adsense-account": "ca-pub-8986858563387447",
+  },
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
