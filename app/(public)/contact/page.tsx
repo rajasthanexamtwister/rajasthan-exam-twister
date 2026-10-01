@@ -55,10 +55,10 @@ export default function ContactPage() {
               <p className="text-xs text-slate-500 mt-1">For student queries, editorial feedback & technical support.</p>
             </div>
             <a
-              href="mailto:contact@rajasthanexamtwister.in"
+              href="mailto:officalmarshal@gmail.com"
               className="text-xs font-bold text-amber-800 hover:underline block pt-1"
             >
-              contact@rajasthanexamtwister.in
+              officalmarshal@gmail.com
             </a>
           </div>
 

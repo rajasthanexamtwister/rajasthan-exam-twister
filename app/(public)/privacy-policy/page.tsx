@@ -113,8 +113,8 @@ export default function PrivacyPolicyPage() {
             </h2>
             <p>
               You retain full control over your student data. You may sign out or request account/notebook deletion at any time by contacting our editorial team at{" "}
-              <a href="mailto:contact@rajasthanexamtwister.in" className="text-amber-700 font-bold underline">
-                contact@rajasthanexamtwister.in
+              <a href="mailto:officalmarshal@gmail.com" className="text-amber-700 font-bold underline">
+                officalmarshal@gmail.com
               </a>
               .
             </p>
@@ -131,8 +131,8 @@ export default function PrivacyPolicyPage() {
               <Mail className="w-5 h-5 text-amber-700 shrink-0" />
               <div>
                 <span className="font-bold text-slate-900 block text-xs">Official Support Email</span>
-                <a href="mailto:contact@rajasthanexamtwister.in" className="text-amber-800 font-bold text-xs underline">
-                  contact@rajasthanexamtwister.in
+                <a href="mailto:officalmarshal@gmail.com" className="text-amber-800 font-bold text-xs underline">
+                  officalmarshal@gmail.com
                 </a>
               </div>
             </div>
