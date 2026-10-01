@@ -165,7 +165,7 @@ describe("Security & Rate Limiting", () => {
   });
 });
 
-describe("CSRF Defense-in-Depth", () => {
+describe("CSRF Defense-in-Depth & Domain Canonicalization Middleware", () => {
   it("should validate ret-admin and XMLHttpRequest custom headers and reject absent headers", async () => {
     const { validateCsrfHeader } = await import("@/server/lib/csrf");
 
@@ -189,5 +189,25 @@ describe("CSRF Defense-in-Depth", () => {
     } as any;
     expect(validateCsrfHeader(missingReq)).toBe(false);
   });
+
+  it("should permanently redirect (301) non-www and legacy Vercel domain requests to www.rajasthanexamtwister.in", async () => {
+    const { middleware } = await import("@/middleware");
+    const { NextRequest } = await import("next/server");
+
+    const nonWwwReq = new NextRequest("https://rajasthanexamtwister.in/blogs/rajasthan-gk", {
+      headers: { host: "rajasthanexamtwister.in" },
+    });
+    const nonWwwRes = await middleware(nonWwwReq);
+    expect(nonWwwRes.status).toBe(301);
+    expect(nonWwwRes.headers.get("location")).toBe("https://www.rajasthanexamtwister.in/blogs/rajasthan-gk");
+
+    const vercelReq = new NextRequest("https://rajasthanexamtwister.vercel.app/notes/forts", {
+      headers: { host: "rajasthanexamtwister.vercel.app" },
+    });
+    const vercelRes = await middleware(vercelReq);
+    expect(vercelRes.status).toBe(301);
+    expect(vercelRes.headers.get("location")).toBe("https://www.rajasthanexamtwister.in/notes/forts");
+  });
 });
+
 

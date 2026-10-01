@@ -3,10 +3,17 @@ import { verifyAdminToken, AUTH_COOKIE_NAME } from "./server/lib/token";
 import { validateCsrfHeader, csrfErrorResponse } from "./server/lib/csrf";
 
 export async function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const { pathname, search } = request.nextUrl;
   const method = request.method.toUpperCase();
+  const host = (request.headers.get("host") || "").split(":")[0];
 
-  // 1. CSRF Defense-in-depth for mutating admin API routes only (POST, PUT, PATCH, DELETE)
+  // 1. Canonical domain redirect: non-www and legacy Vercel domain redirect permanently (301) to www.rajasthanexamtwister.in
+  if (host === "rajasthanexamtwister.in" || host === "rajasthanexamtwister.vercel.app") {
+    const canonicalUrl = new URL(`https://www.rajasthanexamtwister.in${pathname}${search}`);
+    return NextResponse.redirect(canonicalUrl, { status: 301 });
+  }
+
+  // 2. CSRF Defense-in-depth for mutating admin API routes only (POST, PUT, PATCH, DELETE)
   // Only /api/admin/* requires the custom CSRF header — student routes and NextAuth routes are excluded
   if (pathname.startsWith("/api/admin/")) {
     const isMutating = ["POST", "PUT", "PATCH", "DELETE"].includes(method);
@@ -18,7 +25,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // 2. Only run auth guards on /admin routes
+  // 3. Only run auth guards on /admin routes
   if (!pathname.startsWith("/admin")) {
     return NextResponse.next();
   }
@@ -42,6 +49,8 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/api/:path*"],
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|brand/|assests/|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+  ],
 };
 
