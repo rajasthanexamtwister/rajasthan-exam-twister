@@ -1,4 +1,5 @@
 import { BlogRepository } from "@/server/repositories/blog";
+import { getSiteUrl } from "@/server/lib/seo";
 
 export interface PublishedContent {
   id: string;
@@ -22,7 +23,7 @@ export class ContentService {
     const plainText = blog.content ? blog.content.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim() : "";
     const plainSummary = blog.excerpt || plainText.slice(0, 160);
 
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+    const siteUrl = getSiteUrl();
     const coverMedia = blog.coverImageId as unknown as { url?: string };
     const images = coverMedia?.url ? [coverMedia.url] : [];
 
@@ -45,7 +46,7 @@ export class ContentService {
   static async listRecentPublished(limit: number = 10): Promise<PublishedContent[]> {
     const { blogs } = await BlogRepository.list({ pageSize: limit }, false);
 
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+    const siteUrl = getSiteUrl();
 
     return blogs.map((blog) => {
       const plainText = blog.content ? blog.content.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim() : "";

@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
 import { BlogService } from "@/server/services/blog-service";
+import { getSiteUrl } from "@/server/lib/seo";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://rajasthanexamtwister.in";
+  const baseUrl = getSiteUrl();
 
   let blogs: any[] = [];
   try {
