@@ -19,6 +19,7 @@ import {
   Loader2,
   BookMarked,
 } from "lucide-react";
+import { BookmarkButton } from "@/components/public/bookmark-button";
 import clsx from "clsx";
 
 interface AttemptQuestionBreakdown {
@@ -222,6 +223,27 @@ export default function QuizResultPage() {
             </div>
           </div>
 
+          {/* RPSC/RSSB Diagnostic Performance & Readiness Analysis */}
+          <div className="p-6 bg-gradient-to-r from-slate-900 to-[#0B132B] text-white border-t border-slate-800 space-y-2">
+            <div className="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
+              <TrendingUp className="w-4 h-4" />
+              <span>Exam Readiness Analysis (परीक्षोपयोगी विश्लेषण)</span>
+            </div>
+            {result.percentage >= 80 ? (
+              <p className="text-xs text-slate-200 leading-relaxed">
+                🎯 <strong className="text-emerald-400">उत्कृष्ट प्रदर्शन (Excellent Preparedness)!</strong> आपकी तैयारी RPSC/REET स्तर के अनुसार बहुत मजबूत है। अपने प्रदर्शन को बनाए रखने के लिए अन्य मॉक टेस्ट भी हल करें।
+              </p>
+            ) : result.percentage >= 50 ? (
+              <p className="text-xs text-slate-200 leading-relaxed">
+                ⚖️ <strong className="text-amber-400">संतोषजनक प्रदर्शन (Moderate Preparedness)!</strong> आपके मौलिक विचार स्पष्ट हैं, लेकिन गलत उत्तरों पर पुनः ध्यान देने की आवश्यकता है। गलत प्रश्नों को ⭐ <strong>Notebook में सेव</strong> करके रिवीज़न करें।
+              </p>
+            ) : (
+              <p className="text-xs text-slate-200 leading-relaxed">
+                ⚠️ <strong className="text-rose-400">गहन पुनरावृत्ति की आवश्यकता (Needs Revision)!</strong> इस विषय के बुनियादी सिद्धांतों का पुनः अध्ययन करें। हमारे <strong>Exam Revision Notes</strong> सेक्शन से नोट्स पढ़कर पुनः टेस्ट दें।
+              </p>
+            )}
+          </div>
+
           {/* Retake & Explore Actions */}
           <div className="p-6 bg-white border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 flex-wrap">
             <div className="flex items-center gap-2 w-full sm:w-auto">
@@ -373,32 +395,19 @@ export default function QuizResultPage() {
                     </div>
 
                     <div className="flex items-center gap-2">
-                      {session?.user && (
-                        <button
-                          type="button"
-                          onClick={() => handleToggleBookmark(q.questionId)}
-                          disabled={togglingBookmarkId === q.questionId}
-                          title={bookmarkedIds.has(q.questionId) ? "Remove Bookmark" : "Bookmark Question"}
-                          className={clsx(
-                            "inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all border",
-                            bookmarkedIds.has(q.questionId)
-                              ? "bg-amber-100 text-amber-900 border-amber-300 hover:bg-amber-200"
-                              : "bg-slate-50 text-slate-600 border-slate-200 hover:bg-amber-50 hover:text-amber-800"
-                          )}
-                        >
-                          {togglingBookmarkId === q.questionId ? (
-                            <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                          ) : bookmarkedIds.has(q.questionId) ? (
-                            <BookmarkCheck className="w-3.5 h-3.5 text-amber-700 fill-amber-700" />
-                          ) : (
-                            <Bookmark className="w-3.5 h-3.5" />
-                          )}
-                          <span className="hidden sm:inline">
-                            {bookmarkedIds.has(q.questionId) ? "Bookmarked" : "Bookmark"}
-                          </span>
-                        </button>
-                      )}
-
+                      <BookmarkButton
+                        item={{
+                          id: q.questionId,
+                          type: "quiz_question",
+                          title: q.questionText,
+                          url: `/quizzes/${slug}`,
+                          category: result.quizTitle,
+                          questionText: q.questionText,
+                          options: q.options,
+                          correctOptionIndex: q.correctOptionIndex,
+                          explanation: q.explanation,
+                        }}
+                      />
                       <span
                         className={clsx(
                           "text-xs font-bold px-2.5 py-1 rounded-lg border",

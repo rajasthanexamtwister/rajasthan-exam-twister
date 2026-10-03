@@ -4,6 +4,9 @@ import Image from "next/image";
 import { NoteRepository } from "@/server/repositories/note";
 import { ContentRenderer } from "@/components/content/content-renderer";
 import { TelegramBannerCard } from "@/components/public/telegram-banner-card";
+import { AudioSummaryPlayer } from "@/components/public/audio-summary-player";
+import { BookmarkButton } from "@/components/public/bookmark-button";
+import { BrandedPdfDownloader } from "@/components/public/branded-pdf-downloader";
 import { generateMetaDescription, getSiteUrl } from "@/server/lib/seo";
 import { SocialShare } from "@/components/public/social-share";
 import { PrintNoteButton } from "@/components/public/print-note-button";
@@ -255,8 +258,20 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
               )}
             </div>
 
-            {/* Print Note Action Button */}
-            <PrintNoteButton noteTitle={note.title} />
+            {/* Action Buttons: PDF Download + Bookmark */}
+            <div className="flex items-center gap-2 flex-wrap">
+              <BookmarkButton
+                item={{
+                  id: String(note._id || note.slug),
+                  type: "note",
+                  title: note.title,
+                  url: `/notes/${note.slug}`,
+                  excerpt: note.content?.slice(0, 150),
+                  category: categoryDoc?.name || note.subject,
+                }}
+              />
+              <BrandedPdfDownloader noteTitle={note.title} />
+            </div>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0B132B] tracking-tight leading-tight">
@@ -359,6 +374,14 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
             ))}
           </section>
         )}
+
+        {/* Audio AI Voice Summary Player */}
+        <div className="print:hidden">
+          <AudioSummaryPlayer
+            textToRead={note.content || note.title}
+            title={`${note.title} — Audio Summary`}
+          />
+        </div>
 
         {/* Main Text Content via Shared ContentRenderer */}
         {note.content && (

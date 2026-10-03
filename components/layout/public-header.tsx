@@ -19,12 +19,14 @@ import {
 } from "lucide-react";
 import clsx from "clsx";
 import { SOCIAL_LINKS } from "@/server/lib/social-links";
+import { DailyStreakBadge } from "@/components/public/daily-streak-badge";
 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Blogs", href: "/blogs" },
   { name: "Notes", href: "/notes" },
   { name: "Quizzes", href: "/quizzes" },
+  { name: "Notebook", href: "/notebook" },
   { name: "Leaderboard", href: "/leaderboard" },
   { name: "Categories", href: "/categories" },
   { name: "AI Quiz Tool", href: "/quiz-tools/create", highlight: true },
@@ -165,6 +167,11 @@ export function PublicHeader() {
                 >
                   <Youtube className="w-4 h-4" />
                 </a>
+              </div>
+
+              {/* Daily Study Streak Badge */}
+              <div className="hidden sm:block">
+                <DailyStreakBadge />
               </div>
 
               <Link
