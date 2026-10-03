@@ -7,8 +7,11 @@ export async function middleware(request: NextRequest) {
   const method = request.method.toUpperCase();
   const host = (request.headers.get("host") || "").split(":")[0];
 
-  // 1. Canonical domain redirect: non-www and legacy Vercel domain redirect permanently (301) to www.rajasthanexamtwister.in
-  if (host === "rajasthanexamtwister.in" || host === "rajasthanexamtwister.vercel.app") {
+  // 1. Canonical domain redirect: any non-www domain (e.g. rajasthanexamtwister.in, *.vercel.app) 301 redirects to www.rajasthanexamtwister.in
+  const isCustomCanonical = host === "www.rajasthanexamtwister.in";
+  const isLocalDev = host.includes("localhost") || host.includes("127.0.0.1");
+
+  if (host && !isCustomCanonical && !isLocalDev) {
     const canonicalUrl = new URL(`https://www.rajasthanexamtwister.in${pathname}${search}`);
     return NextResponse.redirect(canonicalUrl, { status: 301 });
   }

@@ -199,7 +199,7 @@ export class BlogEngineClient {
       contentHtml,
       category: cleanCategory,
       tags: ["Rajasthan GK", "Exam Preparation", "Competitive Exams", "Study Notes"],
-      metaTitle: `${topic} - Rajasthan Exam Twister`,
+      metaTitle: `${topic} | Rajasthan Exam Twister`,
       metaDescription: `${topic} के प्रमुख बिंदु, विस्तृत नोट्स और वस्तुनिष्ठ प्रश्नों का संपूर्ण संकलन। राजस्थान प्रतियोगी परीक्षाओं हेतु उपयोगी।`,
       author: "Rajasthan Exam Twister Editorial",
       featured: false,
@@ -234,7 +234,7 @@ export class BlogEngineClient {
           focusKeywords: [topic, "Rajasthan GK", "Exam Notes"],
           secondaryKeywords: ["RAS notes", "REET preparation", "Rajasthan competitive exams"],
           searchIntent: "Informational & Exam Study Guide",
-          metaTitleSuggestion: `${topic} - Full Guide & Notes`,
+          metaTitleSuggestion: `${topic} | Full Guide & Notes`,
           metaDescriptionSuggestion: `Complete study guide on ${topic} for Rajasthan state exams.`,
         },
         internalLinks: [

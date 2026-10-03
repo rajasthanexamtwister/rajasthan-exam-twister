@@ -38,7 +38,7 @@ export async function GET() {
   const rssXml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rajasthan Exam Twister — RSS Feed</title>
+    <title>Rajasthan Exam Twister: RSS Feed</title>
     <link>${baseUrl}</link>
     <description>Latest exam prep blogs, Rajasthan GK revision notes, and current affairs for REET, RPSC, CET, and state exams.</description>
     <language>hi-IN</language>

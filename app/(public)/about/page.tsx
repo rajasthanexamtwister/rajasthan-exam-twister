@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: `${getSiteUrl()}/about`,
   },
   openGraph: {
-    title: "About Us — Rajasthan Exam Twister",
+    title: "About Us | Rajasthan Exam Twister",
     description:
       "High-yield revision notes, infographics, and GK handbooks for Rajasthan competitive exams.",
     url: `${getSiteUrl()}/about`,
