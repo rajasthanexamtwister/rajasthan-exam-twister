@@ -97,7 +97,7 @@ export function PublicHeader() {
             </Link>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
               {navItems.map((item) => {
                 const isActive =
                   item.href === "/"
@@ -109,11 +109,11 @@ export function PublicHeader() {
                     key={item.name}
                     href={item.href}
                     className={clsx(
-                      "px-3 py-1.5 rounded-xl text-xs font-semibold transition-all",
+                      "px-2.5 py-1.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap",
                       item.highlight
-                        ? "text-amber-900 bg-amber-100/80 hover:bg-amber-200/80 border border-amber-300 font-bold shadow-xs"
+                        ? "text-amber-950 bg-amber-100/90 hover:bg-amber-200 border border-amber-300 font-extrabold shadow-2xs"
                         : isActive
-                        ? "bg-[#0B132B] text-amber-300 shadow-sm"
+                        ? "bg-[#0B132B] text-amber-300 font-bold shadow-xs"
                         : "text-slate-700 hover:text-amber-700 hover:bg-amber-50/60"
                     )}
                   >
@@ -123,64 +123,20 @@ export function PublicHeader() {
               })}
             </nav>
 
-            {/* Right Controls: Social Links, Search & Student Auth */}
-            <div className="hidden sm:flex items-center gap-2.5">
-              {/* Social Channels Strip */}
-              <div className="flex items-center gap-1 pr-2 border-r border-amber-200/60">
-                <a
-                  href={SOCIAL_LINKS.telegram.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-1.5 text-slate-600 hover:text-sky-600 hover:bg-sky-50 rounded-lg transition-colors"
-                  title="Join Telegram Channel"
-                  aria-label="Telegram"
-                >
-                  <Send className="w-4 h-4" />
-                </a>
-                <a
-                  href={SOCIAL_LINKS.instagram.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-1.5 text-slate-600 hover:text-pink-600 hover:bg-pink-50 rounded-lg transition-colors"
-                  title="Follow on Instagram"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-4 h-4" />
-                </a>
-                <a
-                  href={SOCIAL_LINKS.twitter.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-1.5 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors font-mono text-xs"
-                  title="Follow on X (Twitter)"
-                  aria-label="X (Twitter)"
-                >
-                  𝕏
-                </a>
-                <a
-                  href={SOCIAL_LINKS.youtube.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-1.5 text-slate-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                  title="Subscribe on YouTube"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="w-4 h-4" />
-                </a>
-              </div>
-
+            {/* Right Controls: Streak, Search & Student Auth */}
+            <div className="hidden sm:flex items-center gap-2">
               {/* Daily Study Streak Badge */}
-              <div className="hidden sm:block">
+              <div className="hidden xl:block">
                 <DailyStreakBadge />
               </div>
 
               <Link
                 href="/search"
-                className="inline-flex items-center gap-2 px-3 py-1.5 text-xs text-slate-700 hover:text-[#0B132B] bg-amber-50/60 hover:bg-amber-100/70 rounded-xl transition-all border border-amber-200/80 font-medium shadow-xs"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-slate-700 hover:text-[#0B132B] bg-amber-50/60 hover:bg-amber-100/70 rounded-xl transition-all border border-amber-200/80 font-medium shadow-xs whitespace-nowrap"
                 title="Search Rajasthan GK notes, topics, and blogs"
               >
                 <Search className="w-3.5 h-3.5 text-amber-700" />
-                <span>Search GK...</span>
+                <span className="hidden md:inline">Search GK...</span>
               </Link>
 
               {/* Student Auth: Google Sign-in / User Dropdown */}
