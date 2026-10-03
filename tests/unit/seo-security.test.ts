@@ -56,6 +56,17 @@ describe("SEO Utilities & Metadata Generation", () => {
     const text = "<p>Rajasthan &amp; Mewar &lt;History&gt; &quot;Guide&quot;</p>";
     expect(stripHtml(text)).toBe('Rajasthan & Mewar <History> "Guide"');
   });
+
+  it("should safely resolve getSiteUrl and fallback to production domain if env contains literal NEXT_PUBLIC_SITE_URL placeholder", () => {
+    const originalEnv = process.env.NEXT_PUBLIC_SITE_URL;
+    process.env.NEXT_PUBLIC_SITE_URL = "https://NEXT_PUBLIC_SITE_URL";
+    expect(getSiteUrl()).toBe("https://www.rajasthanexamtwister.in");
+
+    process.env.NEXT_PUBLIC_SITE_URL = "NEXT_PUBLIC_SITE_URL";
+    expect(getSiteUrl()).toBe("https://www.rajasthanexamtwister.in");
+
+    process.env.NEXT_PUBLIC_SITE_URL = originalEnv;
+  });
 });
 
 describe("Robots & Sitemap Configuration", () => {

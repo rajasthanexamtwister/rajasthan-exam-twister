@@ -3,10 +3,17 @@
  */
 
 export function getSiteUrl(): string {
-  let url = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.rajasthanexamtwister.in").trim();
+  let url = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+
+  // Guard against missing, empty, or literal placeholder env strings
+  if (!url || url.includes("NEXT_PUBLIC_SITE_URL") || url === "undefined" || url === "null") {
+    url = "https://www.rajasthanexamtwister.in";
+  }
+
   if (!url.startsWith("http://") && !url.startsWith("https://")) {
     url = `https://${url}`;
   }
+
   return url.replace(/\/$/, "");
 }
 
