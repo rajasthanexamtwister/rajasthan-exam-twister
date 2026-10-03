@@ -135,12 +135,25 @@ export default function RootLayout({
       className={`${headingFont.variable} ${bodyFont.variable} ${devanagariFont.variable} h-full`}
     >
       <head>
-        {/* Google AdSense Script */}
+        {/* Resource Preconnect Hints & LCP Hero Banner Preload */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        <link
+          rel="preload"
+          as="image"
+          href="/brand/banner.webp"
+          type="image/webp"
+          // @ts-ignore
+          fetchPriority="high"
+        />
+
+        {/* Google AdSense Script (Non-render-blocking lazyOnload) */}
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8986858563387447"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
       </head>
       <body className="min-h-full flex flex-col font-sans antialiased bg-[#FAF8F5] text-slate-900 selection:bg-amber-200 selection:text-amber-950">
