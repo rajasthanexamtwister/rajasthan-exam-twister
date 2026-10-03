@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { PresenceHeartbeat } from "@/components/analytics/presence-heartbeat";
+import { TelegramStickyBar } from "@/components/public/telegram-sticky-bar";
 
 export const revalidate = 60;
 
@@ -27,6 +28,7 @@ export default async function PublicLayout({
   return (
     <>
       <PresenceHeartbeat />
+      <TelegramStickyBar />
       <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-slate-900 selection:bg-amber-200 selection:text-amber-950">
 
         {/* Top Dismissible Announcement Bar */}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { BlogRepository } from "@/server/repositories/blog";
 import { ContentRenderer } from "@/components/content/content-renderer";
+import { TelegramBannerCard } from "@/components/public/telegram-banner-card";
 import { generateMetaDescription, getSiteUrl } from "@/server/lib/seo";
 import { SocialShare } from "@/components/public/social-share";
 import { Clock, Calendar, ArrowLeft, User, Sparkles, BookOpen, ArrowRight, Layers, RefreshCw } from "lucide-react";
@@ -287,6 +288,9 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
         <section className="bg-white rounded-3xl p-6 sm:p-10 border border-amber-200/70 shadow-xs">
           <ContentRenderer content={blog.content} />
         </section>
+
+        {/* High-Converting Telegram Channel Lead Magnet */}
+        <TelegramBannerCard />
 
         {/* More in Category Section (Internal Linking Hub) */}
         {relatedBlogs.length > 0 && categoryDoc && (

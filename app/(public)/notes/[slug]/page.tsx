@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { NoteRepository } from "@/server/repositories/note";
 import { ContentRenderer } from "@/components/content/content-renderer";
+import { TelegramBannerCard } from "@/components/public/telegram-banner-card";
 import { generateMetaDescription, getSiteUrl } from "@/server/lib/seo";
 import { SocialShare } from "@/components/public/social-share";
 import { PrintNoteButton } from "@/components/public/print-note-button";
@@ -365,6 +366,14 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
             <ContentRenderer content={note.content} />
           </section>
         )}
+
+        {/* High-Converting Telegram Channel Lead Magnet */}
+        <div className="print:hidden">
+          <TelegramBannerCard
+            title="राजस्थान प्रतियोगी परीक्षाओं के संपूर्ण PDF नोट्स पाने के लिए जुड़ें"
+            description="REET, RPSC, CET, Patwar व Rajasthan Police परीक्षा हेतु डेली 10 फ्री क्विज़ पोल, हस्तलिखित नोट्स व मॉडल पेपर्स टेलीग्राम पर प्राप्त करें।"
+          />
+        </div>
 
         {/* More in Category Section (Internal Linking Hub) */}
         {relatedNotes.length > 0 && categoryDoc && (
