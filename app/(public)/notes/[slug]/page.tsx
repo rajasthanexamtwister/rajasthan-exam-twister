@@ -43,8 +43,10 @@ export async function generateMetadata({ params }: NoteDetailPageProps): Promise
     };
   }
 
-  const title = note.title;
-  const ogTitle = `${note.title} | Rajasthan Exam Twister`;
+  const rawTitle = note.title;
+  // High-CTR Bracket Hook & Power Verb Optimization (GSC AI Playbook Prompt 01/05)
+  const title = rawTitle.includes("[") ? rawTitle : `${rawTitle} [Free PDF & Notes 2026]`;
+  const ogTitle = `${title} | Rajasthan Exam Twister`;
   const description = generateMetaDescription(
     note.content,
     null,
@@ -203,6 +205,27 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
           "@type": "WebPage",
           "@id": `${siteUrl}/notes/${note.slug}`,
         },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: `How to download ${note.title} revision notes PDF?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `You can view, read, and download the full high-yield PDF revision handbook for ${note.title} for free on Rajasthan Exam Twister.`,
+            },
+          },
+          {
+            "@type": "Question",
+            name: `Is ${note.title} relevant for RPSC RAS, REET, and CET exams?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `Yes, ${note.title} is specifically curated according to the official syllabus for RPSC RAS, REET Level 1 & 2, CET, RSMSSB, and Rajasthan Police exams.`,
+            },
+          },
+        ],
       },
     ],
   };

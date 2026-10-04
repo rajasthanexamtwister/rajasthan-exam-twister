@@ -27,8 +27,9 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
     };
   }
 
-  const title = blog.metaTitle ? { absolute: blog.metaTitle } : blog.title;
-  const ogTitle = blog.metaTitle || `${blog.title} | Rajasthan Exam Twister`;
+  const rawTitle = blog.metaTitle || blog.title;
+  const title = rawTitle.includes("[") ? rawTitle : `${rawTitle} [2026 Strategy & Guide]`;
+  const ogTitle = blog.metaTitle || `${title} | Rajasthan Exam Twister`;
   const description = generateMetaDescription(blog.content, blog.metaDescription, blog.excerpt);
   const canonicalUrl = blog.canonicalUrl || `${siteUrl}/blogs/${blog.slug}`;
   
@@ -171,6 +172,27 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           "@type": "WebPage",
           "@id": `${siteUrl}/blogs/${blog.slug}`,
         },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: `What is covered in ${blog.title}?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: description,
+            },
+          },
+          {
+            "@type": "Question",
+            name: `Is ${blog.title} relevant for RPSC, REET & CET 2026 exams?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: `Yes, this article is specifically curated according to the latest syllabus for RPSC RAS, REET, CET, RSSB, and Rajasthan Police recruitment exams.`,
+            },
+          },
+        ],
       },
     ],
   };
