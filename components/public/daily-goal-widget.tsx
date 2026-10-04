@@ -106,10 +106,10 @@ export function DailyGoalWidget() {
             <Target className="w-3.5 h-3.5 text-amber-400" />
             <span>Daily Quiz Target & Streak</span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-black text-white leading-tight font-devanagari">
+          <h2 className="text-xl sm:text-2xl font-black text-white leading-tight font-devanagari">
             आपका दैनिक अध्ययन लक्ष्य (Daily Quiz Goal)
-          </h3>
-          <p className="text-xs text-slate-300">
+          </h2>
+          <p className="text-xs text-slate-200 font-medium">
             दैनिक लक्ष्य पूरा करके अपनी स्टडी स्ट्राइक 🔥 बनाए रखें एवं लीडरबोर्ड पर आगे बढ़ें।
           </p>
         </div>
@@ -123,7 +123,7 @@ export function DailyGoalWidget() {
               className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 target === num
                   ? "bg-amber-500 text-[#0B132B] shadow-md"
-                  : "text-slate-400 hover:text-white hover:bg-slate-800"
+                  : "text-slate-200 hover:text-white hover:bg-slate-800 font-bold"
               }`}
             >
               {num} {num === 1 ? "Quiz" : "Quizzes"}/Day
@@ -136,7 +136,7 @@ export function DailyGoalWidget() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
         <div className="md:col-span-2 space-y-3">
           <div className="flex items-center justify-between text-xs font-bold">
-            <span className="text-slate-200">
+            <span className="text-slate-100">
               आज की प्रगति (Today's Progress): <strong className="text-amber-400">{completedToday}</strong> / {target} Quizzes
             </span>
             <span className="text-amber-400 font-mono text-sm">{progressPercent}%</span>
@@ -159,8 +159,8 @@ export function DailyGoalWidget() {
               <span>🎉 बधाई हो! आज का दैनिक लक्ष्य पूरा हो गया है। Streak 1 Day से बढ़ गई है!</span>
             </div>
           ) : (
-            <p className="text-[11px] text-slate-400">
-              लक्ष्य पूरा करने के लिए केवल <strong className="text-amber-300">{target - completedToday}</strong> और क्विज़ हल करें।
+            <p className="text-xs text-slate-300 font-medium">
+              लक्ष्य पूरा करने के लिए केवल <strong className="text-amber-300 font-bold">{target - completedToday}</strong> और क्विज़ हल करें।
             </p>
           )}
         </div>
@@ -173,14 +173,14 @@ export function DailyGoalWidget() {
           <div className="flex items-center justify-between gap-1 pt-1">
             {weekDays.map((wd, i) => (
               <div key={i} className="flex flex-col items-center gap-1.5">
-                <span className="text-[10px] text-slate-400 font-bold uppercase">{wd.dayName}</span>
+                <span className="text-[10px] text-slate-300 font-bold uppercase">{wd.dayName}</span>
                 <div
                   className={`w-7 h-7 rounded-xl text-[11px] font-bold flex items-center justify-center transition-all ${
                     wd.status === "completed"
                       ? "bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/30"
                       : wd.status === "partial"
                       ? "bg-amber-500 text-slate-950"
-                      : "bg-slate-900 text-slate-600 border border-slate-800"
+                      : "bg-slate-900 text-slate-400 border border-slate-700 font-semibold"
                   }`}
                   title={`${wd.dateStr}: ${wd.status}`}
                 >

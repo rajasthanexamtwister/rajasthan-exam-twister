@@ -90,12 +90,12 @@ export default async function PublicCategoriesPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
         {/* Breadcrumb Navigation */}
-        <nav className="flex items-center gap-2 text-xs text-slate-500 font-medium">
+        <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-slate-600 font-semibold">
           <Link href="/" className="hover:text-amber-700 transition-colors">
             Home
           </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-amber-300" />
-          <span className="text-slate-900 font-bold">Categories</span>
+          <ChevronRight className="w-3.5 h-3.5 text-amber-600" />
+          <span className="text-slate-950 font-extrabold">Categories</span>
         </nav>
 
         {/* Header Banner */}
@@ -119,7 +119,7 @@ export default async function PublicCategoriesPage() {
               <FolderTree className="w-6 h-6" />
             </div>
             <h2 className="text-base font-bold text-slate-900">No categories found</h2>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-600">
               Subject categories and syllabus streams will be listed here as study materials are published.
             </p>
           </div>
@@ -143,9 +143,9 @@ export default async function PublicCategoriesPage() {
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
+                    <h2 className="text-lg font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
                       {cat.name}
-                    </h3>
+                    </h2>
 
                     <div className="flex items-center gap-3 text-xs text-slate-500 pt-1">
                       <span className="flex items-center gap-1 font-medium">

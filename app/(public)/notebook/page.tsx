@@ -113,20 +113,20 @@ export default function PersonalNotebookPage() {
           </div>
           <div className="space-y-1">
             <h2 className="text-lg font-bold text-slate-900">आपका नोटबुक खाली है</h2>
-            <p className="text-xs text-slate-500 max-w-sm mx-auto">
+            <p className="text-xs text-slate-600 font-medium max-w-sm mx-auto">
               क्वििज़ या नोट्स पढ़ते समय ⭐ **Save to Notebook** पर क्लिक करें ताकि कठिन प्रश्न यहाँ इकट्ठा हों।
             </p>
           </div>
           <div className="flex justify-center gap-3 pt-2">
             <Link
               href="/quizzes"
-              className="px-4 py-2 text-xs font-bold text-white bg-amber-600 hover:bg-amber-500 rounded-xl transition-all shadow-xs"
+              className="px-4 py-2 text-xs font-extrabold text-white bg-amber-700 hover:bg-amber-800 rounded-xl transition-all shadow-xs"
             >
               Explore Quizzes
             </Link>
             <Link
               href="/notes"
-              className="px-4 py-2 text-xs font-bold text-slate-800 bg-amber-100 hover:bg-amber-200 rounded-xl transition-all"
+              className="px-4 py-2 text-xs font-extrabold text-slate-900 bg-amber-100 hover:bg-amber-200 border border-amber-300 rounded-xl transition-all"
             >
               Browse Notes
             </Link>

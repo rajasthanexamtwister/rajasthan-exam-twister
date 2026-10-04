@@ -71,7 +71,7 @@ export default async function PublicNotesPage({ searchParams }: NotesPageProps) 
 
       {/* Category Browsing Chips */}
       <div className="space-y-2">
-        <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
+        <div className="flex items-center gap-2 text-xs font-bold text-slate-600 uppercase tracking-wider">
           <Filter className="w-3.5 h-3.5" />
           <span>Browse Notes by Exam Category</span>
         </div>
@@ -108,7 +108,7 @@ export default async function PublicNotesPage({ searchParams }: NotesPageProps) 
         {/* Active Filter Indicator */}
         {(activeCategory || activeTag || activeSubject) && (
           <div className="flex items-center gap-2 pt-1 text-xs">
-            <span className="text-slate-500">Filtered by:</span>
+            <span className="text-slate-600 font-medium">Filtered by:</span>
             {activeCategory && (
               <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 font-medium">
                 Category: {activeCategory}
@@ -136,7 +136,7 @@ export default async function PublicNotesPage({ searchParams }: NotesPageProps) 
             <BookOpen className="w-6 h-6" />
           </div>
           <h2 className="text-base font-bold text-slate-900">No revision notes found</h2>
-          <p className="text-xs text-slate-500 max-w-sm mx-auto">
+          <p className="text-xs text-slate-600 max-w-sm mx-auto">
             {activeCategory || activeTag || activeSubject
               ? "No notes match the current filter. Try selecting another category or clear filters."
               : "Exam notes and visual handbooks are being compiled. Please check back shortly!"}
@@ -170,12 +170,12 @@ export default async function PublicNotesPage({ searchParams }: NotesPageProps) 
                     {/* Badges / Subject / Category */}
                     <div className="flex flex-wrap items-center gap-2">
                       {note.subject && (
-                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase bg-blue-50 text-blue-700 border border-blue-200">
+                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase bg-blue-50 text-blue-800 border border-blue-200">
                           {note.subject}
                         </span>
                       )}
                       {categoryDoc?.name && (
-                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-slate-100 text-slate-700">
+                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-800">
                           {categoryDoc.name}
                         </span>
                       )}
@@ -183,22 +183,22 @@ export default async function PublicNotesPage({ searchParams }: NotesPageProps) 
 
                     <Link
                       href={`/notes/${note.slug}`}
-                      className="block font-bold text-lg text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2 leading-snug"
+                      className="block font-bold text-lg text-slate-900 group-hover:text-amber-700 transition-colors line-clamp-2 leading-snug"
                     >
                       {note.title}
                     </Link>
 
                     {/* Meta stats: Infographics count, PDF attach, Tags */}
-                    <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500 pt-1">
+                    <div className="flex flex-wrap items-center gap-3 text-xs text-slate-600 pt-1">
                       {images.length > 0 && (
-                        <span className="flex items-center gap-1 font-medium text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md">
-                          <ImageIcon className="w-3.5 h-3.5" />
+                        <span className="flex items-center gap-1 font-semibold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/60">
+                          <ImageIcon className="w-3.5 h-3.5 text-amber-700" />
                           <span>{images.length} {images.length === 1 ? "infographic" : "infographics"}</span>
                         </span>
                       )}
                       {hasPdf && (
-                        <span className="flex items-center gap-1 font-medium text-blue-700 bg-blue-50 px-2 py-0.5 rounded-md">
-                          <FileText className="w-3.5 h-3.5" />
+                        <span className="flex items-center gap-1 font-semibold text-blue-800 bg-blue-50 px-2 py-0.5 rounded-md border border-blue-200/60">
+                          <FileText className="w-3.5 h-3.5 text-blue-700" />
                           <span>PDF Available</span>
                         </span>
                       )}
@@ -209,13 +209,13 @@ export default async function PublicNotesPage({ searchParams }: NotesPageProps) 
                         {tagDocs.slice(0, 3).map((tag) => (
                           <span
                             key={tag._id?.toString() || tag.name}
-                            className="text-[10px] text-slate-500 bg-slate-50 border border-slate-200 px-2 py-0.5 rounded-md"
+                            className="text-[10px] text-slate-600 font-medium bg-slate-50 border border-slate-200 px-2 py-0.5 rounded-md"
                           >
                             #{tag.name}
                           </span>
                         ))}
                         {tagDocs.length > 3 && (
-                          <span className="text-[10px] text-slate-400 self-center">
+                          <span className="text-[10px] text-slate-500 font-medium self-center">
                             +{tagDocs.length - 3} more
                           </span>
                         )}
@@ -224,8 +224,8 @@ export default async function PublicNotesPage({ searchParams }: NotesPageProps) 
                   </div>
 
                   <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-xs text-slate-400 flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5" />
+                    <span className="text-xs text-slate-600 font-medium flex items-center gap-1">
+                      <Calendar className="w-3.5 h-3.5 text-amber-700" />
                       {note.publishedAt
                         ? new Date(note.publishedAt).toLocaleDateString("en-IN", {
                             day: "numeric",
@@ -236,9 +236,9 @@ export default async function PublicNotesPage({ searchParams }: NotesPageProps) 
                     </span>
                     <Link
                       href={`/notes/${note.slug}`}
-                      className="text-xs font-semibold text-amber-600 group-hover:text-amber-700 flex items-center gap-1 group-hover:translate-x-0.5 transition-all"
+                      className="text-xs font-bold text-amber-800 hover:text-amber-900 flex items-center gap-1 group-hover:translate-x-0.5 transition-all"
                     >
-                      View Note
+                      Study Note
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>

@@ -66,7 +66,7 @@ export default async function PublicBlogsPage({ searchParams }: BlogsPageProps) 
 
       {/* Category Browsing Chips */}
       <div className="space-y-2">
-        <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-wider">
+        <div className="flex items-center gap-2 text-xs font-bold text-slate-600 uppercase tracking-wider">
           <Filter className="w-3.5 h-3.5" />
           <span>Browse by Subject / Exam Category</span>
         </div>
@@ -103,7 +103,7 @@ export default async function PublicBlogsPage({ searchParams }: BlogsPageProps) 
         {/* Active Filter Indicator */}
         {(activeCategory || activeTag) && (
           <div className="flex items-center gap-2 pt-1 text-xs">
-            <span className="text-slate-500">Filtered by:</span>
+            <span className="text-slate-600">Filtered by:</span>
             {activeCategory && (
               <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 font-medium">
                 Category: {activeCategory}
@@ -131,7 +131,7 @@ export default async function PublicBlogsPage({ searchParams }: BlogsPageProps) 
             <FileText className="w-6 h-6" />
           </div>
           <h2 className="text-base font-bold text-slate-900">No blog articles found</h2>
-          <p className="text-xs text-slate-500 max-w-sm mx-auto">
+          <p className="text-xs text-slate-600 max-w-sm mx-auto">
             {activeCategory || activeTag
               ? `No articles match the current filter. Try selecting another category or view all blogs.`
               : "New articles and current affairs are being curated. Please check back soon!"}
@@ -156,14 +156,14 @@ export default async function PublicBlogsPage({ searchParams }: BlogsPageProps) 
             >
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
-                  <div className="flex items-center justify-between text-xs text-slate-400">
+                  <div className="flex items-center justify-between text-xs text-slate-600 font-medium">
                     <span className="flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5 text-amber-600" />
+                      <Clock className="w-3.5 h-3.5 text-amber-700" />
                       {blog.readingTime || 1} min read
                     </span>
                     {blog.publishedAt && (
                       <span className="flex items-center gap-1">
-                        <Calendar className="w-3.5 h-3.5" />
+                        <Calendar className="w-3.5 h-3.5 text-amber-700" />
                         {new Date(blog.publishedAt).toLocaleDateString("en-IN", {
                           day: "numeric",
                           month: "short",
@@ -175,7 +175,7 @@ export default async function PublicBlogsPage({ searchParams }: BlogsPageProps) 
 
                   <Link
                     href={`/blogs/${blog.slug}`}
-                    className="block font-bold text-lg text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2"
+                    className="block font-bold text-lg text-slate-900 group-hover:text-amber-700 transition-colors line-clamp-2"
                   >
                     {blog.title}
                   </Link>
@@ -188,13 +188,13 @@ export default async function PublicBlogsPage({ searchParams }: BlogsPageProps) 
                 </div>
 
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-xs text-slate-500 flex items-center gap-1.5">
-                    <User className="w-3.5 h-3.5 text-slate-400" />
+                  <span className="text-xs text-slate-600 font-medium flex items-center gap-1.5">
+                    <User className="w-3.5 h-3.5 text-slate-500" />
                     {blog.author || "Admin"}
                   </span>
                   <Link
                     href={`/blogs/${blog.slug}`}
-                    className="text-xs font-semibold text-amber-600 group-hover:text-amber-700 flex items-center gap-1 group-hover:translate-x-0.5 transition-all"
+                    className="text-xs font-bold text-amber-800 hover:text-amber-900 flex items-center gap-1 group-hover:translate-x-0.5 transition-all"
                   >
                     Read Article
                     <ArrowRight className="w-3.5 h-3.5" />

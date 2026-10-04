@@ -202,8 +202,8 @@ export function QuizCreateClient() {
             <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-900 font-bold text-xs flex items-center justify-center">
               1
             </div>
-            <h3 className="text-xs font-bold text-slate-900">Copy AI Prompt</h3>
-            <p className="text-[11px] text-slate-500 leading-normal">
+            <h2 className="text-xs font-bold text-slate-900">Copy AI Prompt</h2>
+            <p className="text-[11px] text-slate-600 leading-normal">
               Click the button below to copy our strict JSON prompt template.
             </p>
           </div>
@@ -212,8 +212,8 @@ export function QuizCreateClient() {
             <div className="w-7 h-7 rounded-lg bg-blue-100 text-blue-900 font-bold text-xs flex items-center justify-center">
               2
             </div>
-            <h3 className="text-xs font-bold text-slate-900">Paste in AI Chat</h3>
-            <p className="text-[11px] text-slate-500 leading-normal">
+            <h2 className="text-xs font-bold text-slate-900">Paste in AI Chat</h2>
+            <p className="text-[11px] text-slate-600 leading-normal">
               Open ChatGPT, Claude, or Gemini. Paste the prompt + your question paper.
             </p>
           </div>
@@ -222,8 +222,8 @@ export function QuizCreateClient() {
             <div className="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-900 font-bold text-xs flex items-center justify-center">
               3
             </div>
-            <h3 className="text-xs font-bold text-slate-900">Copy Output JSON</h3>
-            <p className="text-[11px] text-slate-500 leading-normal">
+            <h2 className="text-xs font-bold text-slate-900">Copy Output JSON</h2>
+            <p className="text-[11px] text-slate-600 leading-normal">
               The AI will generate clean JSON matching our exact schema.
             </p>
           </div>
@@ -232,8 +232,8 @@ export function QuizCreateClient() {
             <div className="w-7 h-7 rounded-lg bg-purple-100 text-purple-900 font-bold text-xs flex items-center justify-center">
               4
             </div>
-            <h3 className="text-xs font-bold text-slate-900">Upload & Save</h3>
-            <p className="text-[11px] text-slate-500 leading-normal">
+            <h2 className="text-xs font-bold text-slate-900">Upload & Save</h2>
+            <p className="text-[11px] text-slate-600 leading-normal">
               Submit your JSON to save it to your account for admin review & publishing.
             </p>
           </div>
@@ -279,7 +279,7 @@ export function QuizCreateClient() {
                 <UploadCloud className="w-5 h-5 text-amber-600" />
                 <span>Upload & Save Quiz JSON</span>
               </h2>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-600">
                 Paste the AI output or upload a .json file to store in your account history.
               </p>
             </div>
@@ -367,6 +367,7 @@ export function QuizCreateClient() {
                   type="file"
                   accept=".json,application/json"
                   onChange={handleFileUpload}
+                  aria-label="Upload quiz JSON file"
                   className="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
                 />
                 <span className="inline-flex items-center gap-1.5 text-xs text-slate-600 hover:text-amber-700 font-semibold cursor-pointer">

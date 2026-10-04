@@ -208,7 +208,7 @@ export default async function HomePage() {
               <h2 className="text-xl sm:text-2xl font-black text-[#0B132B] tracking-tight">
                 Quick Access Hub
               </h2>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-600">
                 Jump directly to core study modules and active syllabus streams.
               </p>
             </div>
@@ -218,7 +218,7 @@ export default async function HomePage() {
             {/* 1: Notes */}
             <Link
               href="/notes"
-              className="p-4 rounded-2xl bg-white border border-amber-200/70 shadow-xs hover:shadow-md hover:border-amber-400 transition-all flex flex-col items-center text-center space-y-2 group"
+              className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center text-center space-y-2 group"
             >
               <div className="w-11 h-11 rounded-xl bg-amber-100/80 text-amber-900 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <BookOpen className="w-5 h-5 text-amber-700" />
@@ -226,13 +226,13 @@ export default async function HomePage() {
               <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
                 Exam Notes
               </span>
-              <span className="text-[10px] text-slate-400 font-medium">Revision Sheets</span>
+              <span className="text-xs text-slate-600 font-semibold">Revision Sheets</span>
             </Link>
 
             {/* 2: Blogs */}
             <Link
               href="/blogs"
-              className="p-4 rounded-2xl bg-white border border-amber-200/70 shadow-xs hover:shadow-md hover:border-amber-400 transition-all flex flex-col items-center text-center space-y-2 group"
+              className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center text-center space-y-2 group"
             >
               <div className="w-11 h-11 rounded-xl bg-blue-100 text-blue-900 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <FileText className="w-5 h-5 text-blue-700" />
@@ -240,13 +240,13 @@ export default async function HomePage() {
               <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
                 Articles & GK
               </span>
-              <span className="text-[10px] text-slate-400 font-medium">Current Affairs</span>
+              <span className="text-xs text-slate-600 font-semibold">Current Affairs</span>
             </Link>
 
             {/* 3: Categories */}
             <Link
               href="/categories"
-              className="p-4 rounded-2xl bg-white border border-amber-200/70 shadow-xs hover:shadow-md hover:border-amber-400 transition-all flex flex-col items-center text-center space-y-2 group"
+              className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center text-center space-y-2 group"
             >
               <div className="w-11 h-11 rounded-xl bg-purple-100 text-purple-900 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <FolderTree className="w-5 h-5 text-purple-700" />
@@ -254,13 +254,13 @@ export default async function HomePage() {
               <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
                 Categories
               </span>
-              <span className="text-[10px] text-slate-400 font-medium">Subject Directory</span>
+              <span className="text-xs text-slate-600 font-semibold">Subject Directory</span>
             </Link>
 
             {/* 4: Quizzes */}
             <Link
               href="/quizzes"
-              className="p-4 rounded-2xl bg-white border border-amber-200/70 shadow-xs hover:shadow-md hover:border-amber-400 transition-all flex flex-col items-center text-center space-y-2 group"
+              className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center text-center space-y-2 group"
             >
               <div className="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <CheckSquare className="w-5 h-5 text-emerald-700" />
@@ -268,7 +268,7 @@ export default async function HomePage() {
               <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
                 Mock Quizzes
               </span>
-              <span className="text-[10px] text-slate-400 font-medium">
+              <span className="text-xs text-slate-600 font-semibold">
                 {publishedQuizzesCount > 0 ? `${publishedQuizzesCount} Active Tests` : "Test Series"}
               </span>
             </Link>
@@ -276,7 +276,7 @@ export default async function HomePage() {
             {/* 5: AI Quiz Tool */}
             <Link
               href="/quiz-tools/create"
-              className="p-4 rounded-2xl bg-white border border-amber-200/70 shadow-xs hover:shadow-md hover:border-amber-400 transition-all flex flex-col items-center text-center space-y-2 group"
+              className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center text-center space-y-2 group"
             >
               <div className="w-11 h-11 rounded-xl bg-amber-500/15 text-amber-900 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Sparkles className="w-5 h-5 text-amber-700" />
@@ -284,13 +284,13 @@ export default async function HomePage() {
               <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
                 AI Quiz Tool
               </span>
-              <span className="text-[10px] text-slate-400 font-medium">Convert Papers</span>
+              <span className="text-xs text-slate-600 font-semibold">Convert Papers</span>
             </Link>
 
             {/* 6: Search Hub */}
             <Link
               href="/search"
-              className="p-4 rounded-2xl bg-white border border-amber-200/70 shadow-xs hover:shadow-md hover:border-amber-400 transition-all flex flex-col items-center text-center space-y-2 group"
+              className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center text-center space-y-2 group"
             >
               <div className="w-11 h-11 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Search className="w-5 h-5 text-slate-700" />
@@ -298,7 +298,7 @@ export default async function HomePage() {
               <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
                 Search Hub
               </span>
-              <span className="text-[10px] text-slate-400 font-medium">Topic Explorer</span>
+              <span className="text-xs text-slate-600 font-semibold">Topic Explorer</span>
             </Link>
           </div>
         </div>
@@ -361,7 +361,7 @@ export default async function HomePage() {
             href={SOCIAL_LINKS.telegram.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs shadow-lg shadow-sky-500/25 whitespace-nowrap transition-all hover:scale-105 active:scale-95 shrink-0"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-sky-700 hover:bg-sky-600 text-white font-bold text-xs shadow-lg shadow-sky-900/30 whitespace-nowrap transition-all hover:scale-105 active:scale-95 shrink-0"
           >
             <Send className="w-4 h-4" />
             <span>Join Official Telegram</span>
@@ -379,7 +379,7 @@ export default async function HomePage() {
                 High-Yield
               </span>
             </h2>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-600">
               High-yield visual infographics and summary sheets for state exams.
             </p>
           </div>
@@ -483,7 +483,7 @@ export default async function HomePage() {
             <h2 className="text-xl sm:text-2xl font-black text-[#0B132B] tracking-tight">
               Recent Articles & Current Affairs
             </h2>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-600">
               Exam notifications, syllabus breakdowns, and GK articles.
             </p>
           </div>

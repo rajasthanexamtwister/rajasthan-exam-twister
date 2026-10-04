@@ -149,12 +149,12 @@ export default async function LeaderboardPage({ searchParams }: LeaderboardPageP
                         </div>
                       )}
                     </div>
-                    <h4 className="font-extrabold text-slate-900 text-sm mt-1 truncate max-w-[160px]">
+                    <h3 className="font-extrabold text-slate-900 text-sm mt-1 truncate max-w-[160px]">
                       {top3[1].studentName}
-                    </h4>
+                    </h3>
                     <div className="mt-3 text-center space-y-1">
                       <div className="text-xl font-extrabold text-slate-900">{top3[1].totalScore} pts</div>
-                      <div className="text-[11px] text-slate-500 font-medium">
+                      <div className="text-[11px] text-slate-600 font-semibold">
                         {top3[1].totalAttempts} {top3[1].totalAttempts === 1 ? "Quiz" : "Quizzes"} &bull; {top3[1].accuracyPercentage}% Acc.
                       </div>
                     </div>
@@ -183,12 +183,12 @@ export default async function LeaderboardPage({ searchParams }: LeaderboardPageP
                         </div>
                       )}
                     </div>
-                    <h4 className="font-black text-[#0B132B] text-base mt-1 truncate max-w-[180px]">
+                    <h3 className="font-black text-[#0B132B] text-base mt-1 truncate max-w-[180px]">
                       {top3[0].studentName}
-                    </h4>
+                    </h3>
                     <div className="mt-3 text-center space-y-1">
-                      <div className="text-2xl font-black text-amber-600">{top3[0].totalScore} pts</div>
-                      <div className="text-xs text-slate-600 font-semibold">
+                      <div className="text-2xl font-black text-amber-800">{top3[0].totalScore} pts</div>
+                      <div className="text-xs text-slate-700 font-semibold">
                         {top3[0].totalAttempts} {top3[0].totalAttempts === 1 ? "Quiz" : "Quizzes"} &bull; {top3[0].accuracyPercentage}% Accuracy
                       </div>
                     </div>
@@ -216,12 +216,12 @@ export default async function LeaderboardPage({ searchParams }: LeaderboardPageP
                         </div>
                       )}
                     </div>
-                    <h4 className="font-extrabold text-slate-900 text-sm mt-1 truncate max-w-[160px]">
+                    <h3 className="font-extrabold text-slate-900 text-sm mt-1 truncate max-w-[160px]">
                       {top3[2].studentName}
-                    </h4>
+                    </h3>
                     <div className="mt-3 text-center space-y-1">
                       <div className="text-xl font-extrabold text-slate-900">{top3[2].totalScore} pts</div>
-                      <div className="text-[11px] text-slate-500 font-medium">
+                      <div className="text-[11px] text-slate-600 font-semibold">
                         {top3[2].totalAttempts} {top3[2].totalAttempts === 1 ? "Quiz" : "Quizzes"} &bull; {top3[2].accuracyPercentage}% Acc.
                       </div>
                     </div>
@@ -239,7 +239,7 @@ export default async function LeaderboardPage({ searchParams }: LeaderboardPageP
                     Full Leaderboard Rankings
                   </h3>
                 </div>
-                <span className="text-xs text-slate-500 font-semibold">
+                <span className="text-xs text-slate-600 font-semibold">
                   {leaderboard.length} Ranked Aspirants
                 </span>
               </div>
@@ -294,7 +294,7 @@ export default async function LeaderboardPage({ searchParams }: LeaderboardPageP
                           <p className="text-xs font-extrabold text-slate-900 truncate">
                             {student.studentName}
                           </p>
-                          <p className="text-[11px] text-slate-500 font-medium">
+                          <p className="text-[11px] text-slate-600 font-medium">
                             {student.totalAttempts} {student.totalAttempts === 1 ? "test" : "tests"} completed
                           </p>
                         </div>
@@ -303,7 +303,7 @@ export default async function LeaderboardPage({ searchParams }: LeaderboardPageP
                       {/* Right: Accuracy & Score */}
                       <div className="flex items-center gap-6 shrink-0 text-right">
                         <div className="hidden sm:block text-right">
-                          <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+                          <span className="text-[11px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
                             {student.accuracyPercentage}% Accuracy
                           </span>
                         </div>
@@ -311,7 +311,7 @@ export default async function LeaderboardPage({ searchParams }: LeaderboardPageP
                           <span className="text-sm font-black text-[#0B132B] block">
                             {student.totalScore}
                           </span>
-                          <span className="text-[10px] text-slate-400 font-semibold block uppercase tracking-wider">
+                          <span className="text-xs text-slate-600 font-bold block uppercase tracking-wider">
                             Marks
                           </span>
                         </div>

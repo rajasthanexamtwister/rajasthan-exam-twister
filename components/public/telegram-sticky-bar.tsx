@@ -8,12 +8,22 @@ export function TelegramStickyBar() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Show after 3 seconds if not dismissed in session
     const dismissed = sessionStorage.getItem("ret_telegram_bar_dismissed");
-    if (!dismissed) {
-      const timer = setTimeout(() => setIsVisible(true), 2500);
-      return () => clearTimeout(timer);
-    }
+    if (dismissed) return;
+
+    const handleScroll = () => {
+      if (window.scrollY > 350) {
+        setIsVisible(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    const timer = setTimeout(() => setIsVisible(true), 6000);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timer);
+    };
   }, []);
 
   const handleDismiss = () => {
@@ -37,11 +47,11 @@ export function TelegramStickyBar() {
             <Send className="w-5 h-5 -rotate-12 translate-x-[-1px] translate-y-[1px]" />
           </div>
           <div className="space-y-0.5 min-w-0">
-            <div className="flex items-center gap-1.5 text-sky-400 font-bold text-[11px] uppercase tracking-wider">
-              <Sparkles className="w-3 h-3 text-amber-400" />
+            <div className="flex items-center gap-1.5 text-sky-400 font-bold text-xs">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
               <span>Official Telegram Community</span>
             </div>
-            <h2 className="font-extrabold text-sm text-slate-100 truncate">
+            <h2 className="font-extrabold text-sm text-slate-100 truncate normal-case">
               राजस्थान परीक्षा फ्री PDF & क्विज़
             </h2>
             <p className="text-slate-400 text-xs truncate">

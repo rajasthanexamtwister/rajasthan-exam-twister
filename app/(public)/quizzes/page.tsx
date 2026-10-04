@@ -276,17 +276,17 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
                       </div>
 
                       {quiz.timeLimitSeconds ? (
-                        <span className="inline-flex items-center gap-1 text-[11px] font-medium text-slate-500 bg-slate-50 px-2 py-0.5 rounded-md border border-slate-200/60">
-                          <Clock className="w-3 h-3 text-slate-400" />
+                        <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-700 bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200">
+                          <Clock className="w-3 h-3 text-amber-700" />
                           {Math.round(quiz.timeLimitSeconds / 60)}m
                         </span>
                       ) : (
-                        <span className="text-[10px] font-medium text-slate-400">Untimed</span>
+                        <span className="text-xs font-semibold text-slate-600">Untimed</span>
                       )}
                     </div>
 
                     {/* Quiz Title */}
-                    <h3 className="text-base font-extrabold text-[#0B132B] group-hover:text-amber-600 transition-colors line-clamp-2 leading-snug">
+                    <h3 className="text-base font-extrabold text-[#0B132B] group-hover:text-amber-700 transition-colors line-clamp-2 leading-snug">
                       <Link href={`/quizzes/${quiz.slug}`}>{quiz.title}</Link>
                     </h3>
 
@@ -296,7 +296,7 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
                         {quiz.examTags.slice(0, 3).map((tag) => (
                           <span
                             key={tag}
-                            className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-200"
+                            className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-slate-100 text-slate-800 border border-slate-200"
                           >
                             {tag}
                           </span>
@@ -305,21 +305,21 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
                     )}
 
                     {/* Stats */}
-                    <div className="flex items-center gap-3 text-xs text-slate-500 pt-1">
-                      <span className="font-semibold text-slate-700">
+                    <div className="flex items-center gap-3 text-xs text-slate-600 font-medium pt-1">
+                      <span className="font-bold text-slate-800">
                         {quiz.questionCount || 0} Questions
                       </span>
                       <span>&bull;</span>
-                      <span className="inline-flex items-center gap-1">
-                        <Award className="w-3.5 h-3.5 text-amber-500" />
+                      <span className="inline-flex items-center gap-1 font-semibold text-slate-800">
+                        <Award className="w-3.5 h-3.5 text-amber-600" />
                         +{quiz.defaultMarks}{" "}
                         {quiz.defaultNegativeMarks > 0 ? `(-${quiz.defaultNegativeMarks})` : ""}
                       </span>
                       {quiz.attemptCount !== undefined && quiz.attemptCount > 0 && (
                         <>
                           <span>&bull;</span>
-                          <span className="inline-flex items-center gap-0.5 text-amber-800 font-semibold text-[11px]">
-                            <Zap className="w-3 h-3 text-amber-500" />
+                          <span className="inline-flex items-center gap-0.5 text-amber-900 font-bold text-[11px]">
+                            <Zap className="w-3 h-3 text-amber-600" />
                             {quiz.attemptCount} {quiz.attemptCount === 1 ? "attempt" : "attempts"}
                           </span>
                         </>
