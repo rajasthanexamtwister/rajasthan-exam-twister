@@ -6,6 +6,8 @@ export interface IStudent extends Document {
   email: string;
   name: string;
   avatarUrl?: string;
+  mobileNumber?: string;
+  targetExam?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -34,6 +36,16 @@ const StudentSchema = new Schema<IStudent>(
     avatarUrl: {
       type: String,
       trim: true,
+    },
+    mobileNumber: {
+      type: String,
+      trim: true,
+      default: null,
+    },
+    targetExam: {
+      type: String,
+      trim: true,
+      default: null,
     },
   },
   {

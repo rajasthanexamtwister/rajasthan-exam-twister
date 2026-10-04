@@ -25,6 +25,9 @@ import {
   BookMarked,
   Bookmark,
   Sparkles,
+  Send,
+  Phone,
+  Smartphone,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import clsx from "clsx";
@@ -78,6 +81,12 @@ export default function StudentProfilePage() {
   const [generatingBooster, setGeneratingBooster] = useState(false);
   const [boosterError, setBoosterError] = useState<string | null>(null);
 
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [targetExam, setTargetExam] = useState("");
+  const [savingProfile, setSavingProfile] = useState(false);
+  const [profileSavedSuccess, setProfileSavedSuccess] = useState(false);
+  const [mobileError, setMobileError] = useState<string | null>(null);
+
   const handleGenerateBooster = async () => {
     if (generatingBooster) return;
     setGeneratingBooster(true);
@@ -101,10 +110,59 @@ export default function StudentProfilePage() {
     }
   };
 
+  const handleSaveProfile = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setMobileError(null);
+    setProfileSavedSuccess(false);
+
+    if (mobileNumber && !/^[6-9]\d{9}$/.test(mobileNumber.trim())) {
+      setMobileError("Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9.");
+      return;
+    }
+
+    try {
+      setSavingProfile(true);
+      const res = await fetch("/api/student/profile", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          mobileNumber: mobileNumber.trim() || null,
+          targetExam: targetExam.trim() || null,
+        }),
+      });
+
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setProfileSavedSuccess(true);
+        if (data.student) {
+          setMobileNumber(data.student.mobileNumber || "");
+          setTargetExam(data.student.targetExam || "");
+        }
+      } else {
+        setMobileError(data.error?.message || "Failed to update profile details.");
+      }
+    } catch (err) {
+      console.error("Profile save error:", err);
+      setMobileError("Network error. Please try again.");
+    } finally {
+      setSavingProfile(false);
+    }
+  };
+
   useEffect(() => {
     if (session?.user) {
       setLoadingAttempts(true);
       setLoadingWeakTopics(true);
+
+      fetch("/api/student/profile")
+        .then((res) => (res.ok ? res.json() : null))
+        .then((data) => {
+          if (data?.student) {
+            setMobileNumber(data.student.mobileNumber || "");
+            setTargetExam(data.student.targetExam || "");
+          }
+        })
+        .catch((err) => console.error("Failed to load profile details:", err));
 
       fetch("/api/student/attempts")
         .then((res) => (res.ok ? res.json() : null))
@@ -292,6 +350,97 @@ export default function StudentProfilePage() {
             </span>
             <span className="text-[10px] text-slate-400">Highest performance achieved</span>
           </div>
+        </div>
+
+        {/* Mobile Number & Target Exam Update Card (Telegram Community Integration) */}
+        <div className="bg-white rounded-3xl border border-amber-200/80 shadow-sm p-6 sm:p-8 space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+            <div className="space-y-1">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-sky-50 text-sky-800 border border-sky-200">
+                <Send className="w-3.5 h-3.5 text-sky-600" />
+                <span>Telegram & WhatsApp PDF Updates</span>
+              </div>
+              <h2 className="text-lg sm:text-xl font-extrabold text-[#0B132B]">
+                Get Daily PDF Notes & Exam Notifications
+              </h2>
+              <p className="text-xs text-slate-500">
+                Add your 10-digit mobile number to receive daily GK revision notes, quiz notifications & instant Telegram updates.
+              </p>
+            </div>
+
+            <a
+              href="https://t.me/rajasthanexamtwister"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold text-white bg-sky-600 hover:bg-sky-500 rounded-xl transition-all shadow-sm shrink-0 self-start sm:self-center"
+            >
+              <Send className="w-4 h-4" />
+              <span>Join Official Telegram Channel</span>
+            </a>
+          </div>
+
+          <form onSubmit={handleSaveProfile} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+              <label htmlFor="mobileNumber" className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                <Phone className="w-3.5 h-3.5 text-slate-500" />
+                <span>Mobile Number (WhatsApp / Telegram)</span>
+              </label>
+              <input
+                id="mobileNumber"
+                type="tel"
+                maxLength={10}
+                placeholder="e.g. 9876543210"
+                value={mobileNumber}
+                onChange={(e) => setMobileNumber(e.target.value)}
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 font-medium focus:ring-2 focus:ring-amber-400 focus:border-amber-400 outline-none transition-all"
+              />
+            </div>
+
+            <div className="space-y-1.5">
+              <label htmlFor="targetExam" className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                <Target className="w-3.5 h-3.5 text-slate-500" />
+                <span>Target Exam</span>
+              </label>
+              <select
+                id="targetExam"
+                value={targetExam}
+                onChange={(e) => setTargetExam(e.target.value)}
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-900 font-medium focus:ring-2 focus:ring-amber-400 focus:border-amber-400 outline-none transition-all bg-white"
+              >
+                <option value="">Select Target Exam...</option>
+                <option value="RPSC RAS">RPSC RAS (Pre & Mains)</option>
+                <option value="REET Level-1">REET Level-1</option>
+                <option value="REET Level-2">REET Level-2</option>
+                <option value="CET Graduate">CET Graduate Level</option>
+                <option value="CET Sr Secondary">CET Senior Secondary</option>
+                <option value="Rajasthan Police SI">Rajasthan Police SI</option>
+                <option value="RSMSSB LDC / Patwari">RSMSSB LDC / Patwari / VDO</option>
+                <option value="Other Exams">Other Rajasthan State Exams</option>
+              </select>
+            </div>
+
+            {mobileError && (
+              <p className="text-xs font-semibold text-red-600 col-span-1 sm:col-span-2">{mobileError}</p>
+            )}
+
+            {profileSavedSuccess && (
+              <div className="p-3 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold col-span-1 sm:col-span-2 flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                <span>Profile updated successfully! You can now join our official Telegram channel above.</span>
+              </div>
+            )}
+
+            <div className="col-span-1 sm:col-span-2 flex items-center justify-end pt-1">
+              <button
+                type="submit"
+                disabled={savingProfile}
+                className="inline-flex items-center gap-1.5 px-5 py-2.5 text-xs font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl transition-all shadow-xs disabled:opacity-50"
+              >
+                {savingProfile ? <Loader2 className="w-4 h-4 animate-spin" /> : <Smartphone className="w-3.5 h-3.5" />}
+                <span>Save Profile Details</span>
+              </button>
+            </div>
+          </form>
         </div>
 
         {/* Revision Notebook & Personalized Booster Test Card (13D & 13E) */}
