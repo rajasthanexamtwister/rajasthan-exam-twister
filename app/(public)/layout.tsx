@@ -14,6 +14,7 @@ import {
 
 import { PresenceHeartbeat } from "@/components/analytics/presence-heartbeat";
 import { TelegramStickyBar } from "@/components/public/telegram-sticky-bar";
+import { PwaInstallBanner } from "@/components/public/pwa-install-banner";
 
 export const revalidate = 60;
 
@@ -29,6 +30,7 @@ export default async function PublicLayout({
     <>
       <PresenceHeartbeat />
       <TelegramStickyBar />
+      <PwaInstallBanner />
       <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-slate-900 selection:bg-amber-200 selection:text-amber-950">
 
         {/* Top Dismissible Announcement Bar */}

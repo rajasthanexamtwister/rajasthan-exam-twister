@@ -1,0 +1,42 @@
+{
+  "name": "Rajasthan Exam Twister — GK, Notes & Quizzes",
+  "short_name": "Exam Twister",
+  "description": "High-yield Rajasthan GK revision notes, current affairs blogs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, and Rajasthan Police exams.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B132B",
+  "theme_color": "#0B132B",
+  "scope": "/",
+  "categories": ["education", "books", "productivity"],
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Daily Quizzes",
+      "short_name": "Quizzes",
+      "description": "Attempt free Rajasthan GK mock tests",
+      "url": "/quizzes",
+      "icons": [{ "src": "/icon.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Revision Notes",
+      "short_name": "Notes",
+      "description": "Browse Rajasthan exam revision handbooks",
+      "url": "/notes",
+      "icons": [{ "src": "/icon.png", "sizes": "192x192" }]
+    }
+  ]
+}

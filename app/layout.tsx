@@ -135,6 +135,13 @@ export default function RootLayout({
       className={`${headingFont.variable} ${bodyFont.variable} ${devanagariFont.variable} h-full`}
     >
       <head>
+        {/* PWA Web App Manifest & Mobile App Meta Tags */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0B132B" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Exam Twister" />
+
         {/* Resource Preconnect Hints & LCP Hero Banner Preload */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
