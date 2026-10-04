@@ -181,6 +181,7 @@ export const SubmitQuizAttemptSchema = z.object({
     })
   ),
   startedAt: z.string().datetime().optional(),
+  isPracticeMode: z.boolean().optional(),
 });
 
 export type SubmitQuizAttemptInput = z.infer<typeof SubmitQuizAttemptSchema>;

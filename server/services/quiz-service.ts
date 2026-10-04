@@ -355,7 +355,7 @@ export class QuizService {
       const userSelected = answerMap.has(qIdStr) ? answerMap.get(qIdStr)! : null;
 
       const qPositiveMarks = q.marks ?? quiz.defaultMarks ?? 1;
-      const qNegativeMarks = q.negativeMarks ?? quiz.defaultNegativeMarks ?? 0;
+      const qNegativeMarks = input.isPracticeMode ? 0 : (q.negativeMarks ?? quiz.defaultNegativeMarks ?? 0);
 
       totalPossibleScore += qPositiveMarks;
 
@@ -377,7 +377,7 @@ export class QuizService {
       } else {
         // Incorrect
         incorrectCount++;
-        marksAwarded = -qNegativeMarks;
+        marksAwarded = qNegativeMarks === 0 ? 0 : -qNegativeMarks;
         score -= qNegativeMarks;
       }
 

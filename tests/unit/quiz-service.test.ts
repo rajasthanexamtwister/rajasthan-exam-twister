@@ -205,5 +205,46 @@ describe("QuizService Logic & Scoring Security", () => {
       expect(attemptResult?.totalPossibleScore).toBe(5);
       expect(attemptResult?.incorrectCount).toBe(1);
     });
+
+    it("disables negative marking when isPracticeMode is set to true", async () => {
+      const mockQuiz = {
+        _id: "65f111111111111111111111" as unknown,
+        title: "Practice Mode Test",
+        defaultMarks: 1,
+        defaultNegativeMarks: 0.5,
+      } as unknown as IQuiz;
+
+      const mockQuestions = [
+        {
+          _id: "65f222222222222222222221" as unknown,
+          order: 1,
+          questionText: "Question 1",
+          options: ["A", "B"],
+          correctOptionIndex: 0,
+          marks: 1,
+          negativeMarks: 0.5,
+        },
+      ] as unknown as IQuizQuestion[];
+
+      vi.spyOn(QuizRepository, "findById").mockResolvedValueOnce(mockQuiz);
+      vi.spyOn(QuizQuestionRepository, "findByQuizId").mockResolvedValueOnce(mockQuestions);
+      vi.spyOn(QuizAttemptRepository, "create").mockImplementationOnce((data) => {
+        return Promise.resolve({
+          _id: "65f333333333333333333333" as unknown,
+          ...data,
+          submittedAt: new Date(),
+        } as unknown as IQuizAttempt);
+      });
+
+      // User selects wrong answer in practice mode
+      const attemptResult = await QuizService.evaluateAttempt("65f111111111111111111111", {
+        answers: [{ questionId: "65f222222222222222222221", selectedOptionIndex: 1 }],
+        isPracticeMode: true,
+      });
+
+      expect(attemptResult?.score).toBe(0);
+      expect(attemptResult?.breakdown[0].marksAwarded).toBe(0);
+      expect(attemptResult?.incorrectCount).toBe(1);
+    });
   });
 });

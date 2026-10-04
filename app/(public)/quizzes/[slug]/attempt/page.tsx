@@ -48,6 +48,7 @@ export default function QuizAttemptPage() {
   const [quiz, setQuiz] = useState<PublicQuizDetail | null>(null);
   const [answers, setAnswers] = useState<Record<string, number | null>>({});
   const [language, setLanguage] = useState<"hi" | "en">("hi");
+  const [mode, setMode] = useState<"exam" | "practice">("exam");
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -113,6 +114,7 @@ export default function QuizAttemptPage() {
           body: JSON.stringify({
             answers: answersPayload,
             startedAt: startTime,
+            isPracticeMode: mode === "practice",
           }),
         });
 
@@ -133,7 +135,7 @@ export default function QuizAttemptPage() {
         setSubmitting(false);
       }
     },
-    [quiz, submitting, answers, startTime, router]
+    [quiz, submitting, answers, startTime, mode, router]
   );
 
   // Countdown timer logic
@@ -204,6 +206,42 @@ export default function QuizAttemptPage() {
           </div>
 
           <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+            {/* Mode Switcher Pill */}
+            <div
+              className="flex items-center bg-slate-100 p-0.5 rounded-xl border border-slate-200"
+              role="group"
+              aria-label="Quiz Attempt Mode"
+            >
+              <button
+                type="button"
+                onClick={() => setMode("exam")}
+                className={clsx(
+                  "px-2.5 py-1 text-xs font-bold rounded-lg transition-all flex items-center gap-1",
+                  mode === "exam"
+                    ? "bg-amber-500 text-slate-950 shadow-xs font-extrabold"
+                    : "text-slate-500 hover:text-slate-900"
+                )}
+                title="Exam Mode (Negative Marking Active)"
+              >
+                <span>🎯</span>
+                <span className="hidden sm:inline">Exam Mode</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setMode("practice")}
+                className={clsx(
+                  "px-2.5 py-1 text-xs font-bold rounded-lg transition-all flex items-center gap-1",
+                  mode === "practice"
+                    ? "bg-emerald-600 text-white shadow-xs font-extrabold"
+                    : "text-slate-500 hover:text-slate-900"
+                )}
+                title="Practice Mode (No Negative Marking)"
+              >
+                <span>⚡</span>
+                <span className="hidden sm:inline">Practice Mode</span>
+              </button>
+            </div>
+
             {/* Language Toggle Pill */}
             <div
               className="flex items-center bg-slate-100 p-0.5 rounded-xl border border-slate-200"
@@ -306,8 +344,22 @@ export default function QuizAttemptPage() {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-semibold text-slate-500 bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-200">
-                    +{q.marks || quiz.defaultMarks} / -{q.negativeMarks ?? quiz.defaultNegativeMarks} Marks
+                  <span
+                    className={clsx(
+                      "text-[11px] font-semibold px-2.5 py-1 rounded-lg border transition-colors flex items-center gap-1",
+                      mode === "practice"
+                        ? "bg-emerald-50 text-emerald-800 border-emerald-200"
+                        : "bg-slate-50 text-slate-600 border-slate-200"
+                    )}
+                  >
+                    <span>
+                      +{q.marks || quiz.defaultMarks} / -{mode === "practice" ? 0 : (q.negativeMarks ?? quiz.defaultNegativeMarks)} Marks
+                    </span>
+                    {mode === "practice" && (
+                      <span className="font-bold text-[10px] bg-emerald-200/60 text-emerald-900 px-1.5 py-0.2 rounded-md">
+                        No Negative
+                      </span>
+                    )}
                   </span>
 
                   {isAnswered && (
