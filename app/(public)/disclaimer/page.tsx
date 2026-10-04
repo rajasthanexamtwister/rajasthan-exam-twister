@@ -82,8 +82,8 @@ export default function DisclaimerPage() {
             </h2>
             <p>
               If you notice any typographical or factual discrepancy in any question, note, or current affair article, please contact us immediately at{" "}
-              <a href="mailto:officalmarshal@gmail.com" className="text-amber-800 font-bold underline">
-                officalmarshal@gmail.com
+              <a href="mailto:rajasthanexamtwister@gmail.com" className="text-amber-800 font-bold underline">
+                rajasthanexamtwister@gmail.com
               </a>{" "}
               for editorial correction.
             </p>
