@@ -3,6 +3,7 @@ import Link from "next/link";
 import { QuizService } from "@/server/services/quiz-service";
 import { CategoryService } from "@/server/services/category-service";
 import { CheckSquare, Clock, Award, Trophy, ArrowRight, Zap, Target, BookOpen } from "lucide-react";
+import { DailyGoalWidget } from "@/components/public/daily-goal-widget";
 import clsx from "clsx";
 
 import { getSiteUrl } from "@/server/lib/seo";
@@ -121,6 +122,9 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
             </Link>
           </div>
         </div>
+
+        {/* Student Daily & Weekly Goal Tracker Widget */}
+        <DailyGoalWidget />
 
         {/* Discovery Filter Section */}
         <div className="bg-white rounded-3xl border border-amber-200/80 p-5 shadow-xs space-y-4">

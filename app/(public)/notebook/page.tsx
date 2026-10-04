@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Star, Trash2, BookOpen, HelpCircle, ArrowRight, CheckCircle2, XCircle, Sparkles, Share2 } from "lucide-react";
 import { BookmarkedItem, getBookmarkedItems, saveBookmarkedItems } from "@/components/public/bookmark-button";
+import { DailyGoalWidget } from "@/components/public/daily-goal-widget";
 
 export default function PersonalNotebookPage() {
   const [items, setItems] = useState<BookmarkedItem[]>([]);
@@ -37,6 +38,9 @@ export default function PersonalNotebookPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+      {/* Student Daily & Weekly Goal Tracker */}
+      <DailyGoalWidget />
+
       {/* Header */}
       <header className="space-y-4 border-b border-amber-200/80 pb-8 text-center sm:text-left">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-200">

@@ -13,6 +13,7 @@ import {
   HelpCircle,
   RotateCcw,
 } from "lucide-react";
+import { recordQuizCompletion } from "@/components/public/daily-goal-widget";
 import clsx from "clsx";
 
 interface PublicQuestion {
@@ -117,6 +118,8 @@ export default function QuizAttemptPage() {
 
         const data = await res.json();
         if (res.ok && data.result) {
+          // Record daily goal & streak progress
+          recordQuizCompletion();
           // Store attempt result in sessionStorage for display on result page
           sessionStorage.setItem(`ret_quiz_result_${quiz.slug}`, JSON.stringify(data.result));
           router.push(`/quizzes/${quiz.slug}/result`);
