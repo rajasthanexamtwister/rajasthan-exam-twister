@@ -31,6 +31,7 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import clsx from "clsx";
+import { SOCIAL_LINKS } from "@/server/lib/social-links";
 
 interface AttemptHistoryItem {
   _id: string;
@@ -137,6 +138,10 @@ export default function StudentProfilePage() {
         if (data.student) {
           setMobileNumber(data.student.mobileNumber || "");
           setTargetExam(data.student.targetExam || "");
+        }
+        // Redirect directly to official Telegram channel invite link
+        if (typeof window !== "undefined") {
+          window.open(SOCIAL_LINKS.telegram.url, "_blank");
         }
       } else {
         setMobileError(data.error?.message || "Failed to update profile details.");
@@ -369,7 +374,7 @@ export default function StudentProfilePage() {
             </div>
 
             <a
-              href="https://t.me/rajasthanexamtwister"
+              href={SOCIAL_LINKS.telegram.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold text-white bg-sky-600 hover:bg-sky-500 rounded-xl transition-all shadow-sm shrink-0 self-start sm:self-center"
