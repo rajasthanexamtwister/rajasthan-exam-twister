@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
   Clock,
@@ -40,6 +40,10 @@ interface PublicQuizDetail {
   defaultMarks: number;
   defaultNegativeMarks: number;
   questionCount: number;
+  totalBankQuestions?: number;
+  completedQuestionsCount?: number;
+  pendingQuestionsCount?: number;
+  isTopicCompleted?: boolean;
   questions: PublicQuestion[];
 }
 
@@ -54,7 +58,9 @@ interface QuestionFeedback {
 export default function QuizAttemptPage() {
   const params = useParams();
   const router = useRouter();
+  const searchParams = useSearchParams();
   const slug = params.slug as string;
+  const limit = searchParams?.get("limit") || "";
 
   const [loading, setLoading] = useState(true);
   const [quiz, setQuiz] = useState<PublicQuizDetail | null>(null);
@@ -77,14 +83,35 @@ export default function QuizAttemptPage() {
     async function loadQuiz() {
       try {
         setLoading(true);
-        const res = await fetch(`/api/quizzes/slug/${slug}`);
+        const queryParams = new URLSearchParams();
+        if (limit) {
+          queryParams.set("limit", limit);
+        }
+
+        // Guest student local completion support
+        if (typeof window !== "undefined") {
+          const localDone = localStorage.getItem(`completed_questions_${slug}`);
+          if (localDone) {
+            try {
+              const parsed = JSON.parse(localDone);
+              if (Array.isArray(parsed) && parsed.length > 0) {
+                queryParams.set("excludeQuestionIds", parsed.join(","));
+              }
+            } catch {
+              // ignore
+            }
+          }
+        }
+
+        const queryString = queryParams.toString() ? `?${queryParams.toString()}` : "";
+        const res = await fetch(`/api/quizzes/slug/${slug}${queryString}`);
         if (res.ok) {
           const data = await res.json();
           setQuiz(data.quiz);
 
           // Initialize answer map
           const initialAnswers: Record<string, number | null> = {};
-          data.quiz.questions.forEach((q: PublicQuestion) => {
+          (data.quiz.questions || []).forEach((q: PublicQuestion) => {
             initialAnswers[q.id] = null;
           });
           setAnswers(initialAnswers);
@@ -103,7 +130,7 @@ export default function QuizAttemptPage() {
     }
 
     loadQuiz();
-  }, [slug, router]);
+  }, [slug, limit, router]);
 
   // Clean up auto-next timer on unmount
   useEffect(() => {
@@ -152,7 +179,29 @@ export default function QuizAttemptPage() {
         const data = await res.json();
         if (res.ok && data.result) {
           recordQuizCompletion();
+
+          // Save completed question IDs locally for guest progression
+          if (typeof window !== "undefined") {
+            try {
+              const prevDone = JSON.parse(
+                localStorage.getItem(`completed_questions_${quiz.slug}`) || "[]"
+              );
+              const newDone = Array.from(
+                new Set([...prevDone, ...quiz.questions.map((q) => q.id)])
+              );
+              localStorage.setItem(
+                `completed_questions_${quiz.slug}`,
+                JSON.stringify(newDone)
+              );
+            } catch {
+              // ignore
+            }
+          }
+
           sessionStorage.setItem(`ret_quiz_result_${quiz.slug}`, JSON.stringify(data.result));
+          if (limit) {
+            sessionStorage.setItem(`ret_quiz_limit_${quiz.slug}`, limit);
+          }
           router.push(`/quizzes/${quiz.slug}/result`);
         } else {
           alert(data.error?.message || "Failed to submit attempt. Please try again.");
@@ -164,7 +213,7 @@ export default function QuizAttemptPage() {
         setSubmitting(false);
       }
     },
-    [quiz, submitting, answers, startTime, mode, router]
+    [quiz, submitting, answers, startTime, mode, limit, router]
   );
 
   // Countdown timer logic for overall test
@@ -256,7 +305,46 @@ export default function QuizAttemptPage() {
     );
   }
 
-  if (!quiz || quiz.questions.length === 0) return null;
+  if (!quiz) return null;
+
+  if (quiz.questions.length === 0) {
+    return (
+      <div className="min-h-screen bg-slate-50 py-16 px-4 flex items-center justify-center">
+        <div className="max-w-md w-full bg-white border border-slate-200 shadow-xl rounded-3xl p-8 text-center space-y-6">
+          <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto text-2xl font-black">
+            🎉
+          </div>
+          <div className="space-y-2">
+            <h2 className="text-xl font-extrabold text-slate-900">Topic Bank Completed!</h2>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              You have completed all {quiz.totalBankQuestions || "available"} questions in{" "}
+              <strong>{quiz.title}</strong>.
+            </p>
+          </div>
+          <div className="pt-2 flex flex-col gap-3">
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  localStorage.removeItem(`completed_questions_${slug}`);
+                }
+                window.location.href = `/quizzes/${slug}/attempt?limit=10`;
+              }}
+              className="w-full py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs shadow-md transition-all"
+            >
+              🔄 Practice Again (Reset Topic Progress)
+            </button>
+            <Link
+              href="/quizzes"
+              className="w-full py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-colors border border-slate-200"
+            >
+              Browse Other Quizzes
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const currentQuestion = quiz.questions[currentQuestionIndex];
   const totalQuestions = quiz.questions.length;

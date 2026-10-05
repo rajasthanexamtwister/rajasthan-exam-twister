@@ -55,6 +55,8 @@ export async function generateMetadata({ params }: QuizPageProps): Promise<Metad
   };
 }
 
+import { QuizSessionSelector } from "@/components/public/quiz-session-selector";
+
 export default async function QuizIntroPage({ params }: QuizPageProps) {
   const siteUrl = getSiteUrl();
   const quiz = await QuizService.getPublicQuizBySlug(params.slug);
@@ -91,7 +93,7 @@ export default async function QuizIntroPage({ params }: QuizPageProps) {
       {
         "@type": "LearningResource",
         name: quiz.title,
-        description: `Online mock test with ${quiz.questionCount} MCQs for Rajasthan competitive exams.`,
+        description: `Online mock test with ${quiz.totalBankQuestions || quiz.questionCount} MCQs for Rajasthan competitive exams.`,
         url: `${siteUrl}/quizzes/${quiz.slug}`,
         provider: {
           "@type": "Organization",
@@ -159,30 +161,28 @@ export default async function QuizIntroPage({ params }: QuizPageProps) {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-100">
             <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
               <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">
-                Total Questions
+                Total in Topic Bank
               </span>
               <span className="text-xl font-black text-slate-900 mt-1 block">
-                {quiz.questionCount} MCQs
+                {quiz.totalBankQuestions || quiz.questionCount} MCQs
               </span>
             </div>
 
             <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
               <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">
-                Time Limit
+                Practice Mode
               </span>
               <span className="text-xl font-black text-slate-900 mt-1 block">
-                {quiz.timeLimitSeconds
-                  ? `${Math.round(quiz.timeLimitSeconds / 60)} Mins`
-                  : "Untimed"}
+                10 / 20 / 30 MCQs
               </span>
             </div>
 
             <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 col-span-2 sm:col-span-1">
               <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">
-                Total Marks
+                Marking
               </span>
               <span className="text-xl font-black text-slate-900 mt-1 block">
-                {quiz.questionCount * quiz.defaultMarks} Marks
+                +{quiz.defaultMarks} / -{quiz.defaultNegativeMarks}
               </span>
             </div>
           </div>
@@ -191,7 +191,7 @@ export default async function QuizIntroPage({ params }: QuizPageProps) {
           <div className="p-5 rounded-2xl bg-amber-50/80 border border-amber-200 space-y-2">
             <h3 className="text-xs font-bold uppercase tracking-wider text-amber-900 flex items-center gap-1.5">
               <Award className="w-4 h-4 text-amber-700" />
-              <span>Marking Scheme</span>
+              <span>Marking Scheme & Dynamic Sessions</span>
             </h3>
             <ul className="text-xs text-amber-950 space-y-1">
               <li className="flex items-center gap-2">
@@ -204,7 +204,7 @@ export default async function QuizIntroPage({ params }: QuizPageProps) {
                 deducted for each wrong answer (Negative Marking)
               </li>
               <li className="flex items-center gap-2">
-                <span className="font-bold text-slate-700">0 marks</span> for unattempted questions
+                <span className="font-bold text-slate-700">Pending Questions Tracking:</span> Each session delivers newly unattempted questions from the topic bank.
               </li>
             </ul>
           </div>
@@ -216,30 +216,18 @@ export default async function QuizIntroPage({ params }: QuizPageProps) {
             </h3>
             <ul className="text-xs text-slate-600 space-y-2 list-disc list-inside">
               <li>Each question has multiple choice options with exactly 1 correct answer.</li>
-              {quiz.timeLimitSeconds && (
-                <li>
-                  A countdown timer will run during the test. Your answers will be automatically submitted upon timer expiration.
-                </li>
-              )}
+              <li>Choose your practice size (10, 20, or 30 questions) below.</li>
               <li>Scores are computed authoritatively on the server to ensure accuracy.</li>
               <li>A complete question-by-question review with explanations is shown upon test submission.</li>
             </ul>
           </div>
 
-          {/* CTA Button */}
-          <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span className="text-xs text-slate-500 font-medium">
-              No registration required &bull; Anonymous attempt
-            </span>
-
-            <Link
-              href={`/quizzes/${quiz.slug}/attempt`}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-2xl shadow-md shadow-amber-500/20 transition-all group"
-            >
-              <span>Start Quiz Now</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
+          {/* Dynamic Session Size Selector & CTA */}
+          <QuizSessionSelector
+            slug={quiz.slug}
+            totalBankQuestions={quiz.totalBankQuestions || quiz.questionCount}
+            defaultMarks={quiz.defaultMarks}
+          />
         </div>
       </div>
     </div>

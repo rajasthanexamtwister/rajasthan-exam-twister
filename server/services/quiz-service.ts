@@ -4,7 +4,7 @@ import { QuizQuestionRepository } from "@/server/repositories/quiz-question";
 import { QuizAttemptRepository } from "@/server/repositories/quiz-attempt";
 import { IQuiz } from "@/server/models/Quiz";
 import { IQuizQuestion } from "@/server/models/QuizQuestion";
-import { IQuizAttempt } from "@/server/models/QuizAttempt";
+import { IQuizAttempt, QuizAttempt } from "@/server/models/QuizAttempt";
 import {
   QuizImportJSON,
   QuizImportJSONSchema,
@@ -59,6 +59,13 @@ export function computeQuizContentFingerprint(
   return crypto.createHash("sha256").update(contentToHash, "utf-8").digest("hex");
 }
 
+export interface PublicQuizOptions {
+  limit?: number;
+  studentId?: string;
+  excludeQuestionIds?: string[];
+  includeCompleted?: boolean;
+}
+
 export interface PublicQuizDetail {
   id: string;
   title: string;
@@ -73,6 +80,10 @@ export interface PublicQuizDetail {
   defaultNegativeMarks: number;
   maxAttempts?: number | null;
   questionCount: number;
+  totalBankQuestions: number;
+  completedQuestionsCount: number;
+  pendingQuestionsCount: number;
+  isTopicCompleted: boolean;
   questions: PublicQuizQuestion[];
 }
 
@@ -182,15 +193,68 @@ export class QuizService {
   /**
    * Get public quiz view by slug — NEVER exposes correctOptionIndex or explanation
    */
-  static async getPublicQuizBySlug(slug: string): Promise<PublicQuizDetail | null> {
+  static async getPublicQuizBySlug(
+    slug: string,
+    options?: PublicQuizOptions
+  ): Promise<PublicQuizDetail | null> {
     const quiz = await QuizRepository.findBySlug(slug);
     if (!quiz || quiz.status !== "PUBLISHED") {
       return null;
     }
 
     const rawQuestions = await QuizQuestionRepository.findByQuizId(quiz._id.toString());
+    const totalBankQuestions = rawQuestions.length;
 
-    let questionsList = rawQuestions.map((q) => ({
+    // Collect already attempted question IDs for this student / session
+    const attemptedQuestionIds = new Set<string>();
+
+    if (options?.studentId && mongoose.Types.ObjectId.isValid(options.studentId)) {
+      const pastAttempts = await QuizAttempt.find({
+        quizId: quiz._id,
+        studentId: new mongoose.Types.ObjectId(options.studentId),
+      })
+        .select("answers.questionId")
+        .lean();
+
+      for (const attempt of pastAttempts) {
+        for (const ans of attempt.answers || []) {
+          if (ans.questionId) {
+            attemptedQuestionIds.add(ans.questionId.toString());
+          }
+        }
+      }
+    }
+
+    if (options?.excludeQuestionIds && Array.isArray(options.excludeQuestionIds)) {
+      for (const id of options.excludeQuestionIds) {
+        if (id) attemptedQuestionIds.add(id.toString());
+      }
+    }
+
+    const rawQuestionIdsSet = new Set(rawQuestions.map((q) => q._id.toString()));
+    const completedQuestionsCount = Array.from(attemptedQuestionIds).filter((id) =>
+      rawQuestionIdsSet.has(id)
+    ).length;
+
+    // Determine pending questions
+    const pendingQuestions = rawQuestions.filter((q) => !attemptedQuestionIds.has(q._id.toString()));
+    const pendingQuestionsCount = pendingQuestions.length;
+    const isTopicCompleted = pendingQuestionsCount === 0 && totalBankQuestions > 0;
+
+    // Choose which subset of questions to return based on options.limit
+    let targetQuestionPool: IQuizQuestion[] = [];
+    if (options?.limit && options.limit > 0) {
+      if (pendingQuestions.length > 0) {
+        targetQuestionPool = pendingQuestions.slice(0, options.limit);
+      } else {
+        // If topic completed or options.includeCompleted, allow practicing whole bank
+        targetQuestionPool = rawQuestions.slice(0, options.limit);
+      }
+    } else {
+      targetQuestionPool = rawQuestions;
+    }
+
+    let questionsList = targetQuestionPool.map((q) => ({
       id: q._id.toString(),
       order: q.order,
       questionText: q.questionText,
@@ -221,7 +285,11 @@ export class QuizService {
       defaultMarks: quiz.defaultMarks,
       defaultNegativeMarks: quiz.defaultNegativeMarks,
       maxAttempts: quiz.maxAttempts,
-      questionCount: rawQuestions.length,
+      questionCount: questionsList.length,
+      totalBankQuestions,
+      completedQuestionsCount,
+      pendingQuestionsCount,
+      isTopicCompleted,
       questions: questionsList,
     };
   }
@@ -336,6 +404,14 @@ export class QuizService {
     const canonicalQuestions = await QuizQuestionRepository.findByQuizId(quizId);
     if (canonicalQuestions.length === 0) return null;
 
+    // For dynamic practice sessions (e.g. 10 questions out of a 141-question topic bank),
+    // evaluate against only the questions submitted in this session.
+    const submittedQuestionIds = new Set(input.answers.map((a) => a.questionId));
+    const sessionQuestions =
+      submittedQuestionIds.size > 0 && submittedQuestionIds.size < canonicalQuestions.length
+        ? canonicalQuestions.filter((q) => submittedQuestionIds.has(q._id.toString()))
+        : canonicalQuestions;
+
     // Create a map of user answers by questionId
     const answerMap = new Map<string, number | null>();
     for (const ans of input.answers) {
@@ -350,7 +426,7 @@ export class QuizService {
 
     const breakdown: AttemptQuestionBreakdown[] = [];
 
-    for (const q of canonicalQuestions) {
+    for (const q of sessionQuestions) {
       const qIdStr = q._id.toString();
       const userSelected = answerMap.has(qIdStr) ? answerMap.get(qIdStr)! : null;
 
@@ -435,7 +511,7 @@ export class QuizService {
       correctCount,
       incorrectCount,
       unattemptedCount,
-      totalQuestions: canonicalQuestions.length,
+      totalQuestions: sessionQuestions.length,
       breakdown,
       submittedAt: attempt.submittedAt,
     };
@@ -488,10 +564,60 @@ export class QuizService {
    * Determines the next published quiz in the same topic/series/subject
    */
   static async getNextQuizInSeries(
-    currentQuizId: string
-  ): Promise<{ id: string; title: string; slug: string; subject?: string } | null> {
+    currentQuizId: string,
+    studentId?: string,
+    excludeQuestionIds?: string[]
+  ): Promise<{
+    id: string;
+    title: string;
+    slug: string;
+    subject?: string;
+    isSameTopicNextBatch?: boolean;
+    pendingQuestionsCount?: number;
+  } | null> {
     const currentQuiz = await QuizRepository.findById(currentQuizId);
     if (!currentQuiz || currentQuiz.status !== "PUBLISHED") return null;
+
+    // Check if the current topic question bank still has pending questions
+    const rawQuestions = await QuizQuestionRepository.findByQuizId(currentQuizId);
+    const attemptedIds = new Set<string>();
+
+    if (studentId && mongoose.Types.ObjectId.isValid(studentId)) {
+      const pastAttempts = await QuizAttempt.find({
+        quizId: currentQuiz._id,
+        studentId: new mongoose.Types.ObjectId(studentId),
+      })
+        .select("answers.questionId")
+        .lean();
+
+      for (const attempt of pastAttempts) {
+        for (const ans of attempt.answers || []) {
+          if (ans.questionId) {
+            attemptedIds.add(ans.questionId.toString());
+          }
+        }
+      }
+    }
+
+    if (excludeQuestionIds && Array.isArray(excludeQuestionIds)) {
+      for (const id of excludeQuestionIds) {
+        if (id) attemptedIds.add(id.toString());
+      }
+    }
+
+    const pendingCount = rawQuestions.filter((q) => !attemptedIds.has(q._id.toString())).length;
+
+    // If current topic bank has remaining pending questions, return same quiz for next batch
+    if (pendingCount > 0 && rawQuestions.length > 10) {
+      return {
+        id: currentQuiz._id.toString(),
+        title: currentQuiz.title,
+        slug: currentQuiz.slug,
+        subject: currentQuiz.subject || undefined,
+        isSameTopicNextBatch: true,
+        pendingQuestionsCount: pendingCount,
+      };
+    }
 
     const query: any = {
       status: "PUBLISHED",
@@ -538,6 +664,7 @@ export class QuizService {
       title: nextQuiz.title,
       slug: nextQuiz.slug,
       subject: nextQuiz.subject || undefined,
+      isSameTopicNextBatch: false,
     };
   }
 }

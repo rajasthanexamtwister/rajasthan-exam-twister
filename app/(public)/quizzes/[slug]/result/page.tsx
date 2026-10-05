@@ -65,6 +65,8 @@ interface NextQuizInfo {
   title: string;
   slug: string;
   subject?: string;
+  isSameTopicNextBatch?: boolean;
+  pendingQuestionsCount?: number;
 }
 
 export default function QuizResultPage() {
@@ -95,7 +97,20 @@ export default function QuizResultPage() {
 
         // Fetch next quiz in series
         if (parsed.quizId) {
-          fetch(`/api/quizzes/${parsed.quizId}/next`)
+          let excludeQuery = "";
+          if (typeof window !== "undefined") {
+            const localDone = localStorage.getItem(`completed_questions_${slug}`);
+            if (localDone) {
+              try {
+                const arr = JSON.parse(localDone);
+                if (Array.isArray(arr) && arr.length > 0) {
+                  excludeQuery = `?excludeQuestionIds=${arr.join(",")}`;
+                }
+              } catch {}
+            }
+          }
+
+          fetch(`/api/quizzes/${parsed.quizId}/next${excludeQuery}`)
             .then((res) => (res.ok ? res.json() : null))
             .then((data) => {
               if (data?.nextQuiz) {
@@ -407,17 +422,25 @@ ${quizUrl}
                 <div className="p-4 rounded-2xl bg-amber-50 border border-amber-300 flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div className="space-y-0.5 text-center sm:text-left">
                     <span className="text-[10px] font-extrabold uppercase tracking-wider text-amber-800">
-                      Continue Series & Practice
+                      {nextQuiz.isSameTopicNextBatch
+                        ? `Topic Practice (${nextQuiz.pendingQuestionsCount} Questions Pending)`
+                        : "Continue Series & Practice"}
                     </span>
                     <h3 className="text-sm font-extrabold text-[#0B132B]">
-                      Next Quiz: {nextQuiz.title}
+                      {nextQuiz.isSameTopicNextBatch
+                        ? `Next Batch: ${nextQuiz.title}`
+                        : `Next Quiz: ${nextQuiz.title}`}
                     </h3>
                   </div>
                   <Link
-                    href={`/quizzes/${nextQuiz.slug}`}
+                    href={
+                      nextQuiz.isSameTopicNextBatch
+                        ? `/quizzes/${nextQuiz.slug}/attempt?limit=${(typeof window !== "undefined" && sessionStorage.getItem(`ret_quiz_limit_${slug}`)) || "10"}`
+                        : `/quizzes/${nextQuiz.slug}`
+                    }
                     className="inline-flex items-center gap-2 px-6 py-2.5 text-xs font-extrabold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl transition-all shadow-md shrink-0"
                   >
-                    <span>▶ Next Quiz</span>
+                    <span>{nextQuiz.isSameTopicNextBatch ? "▶ Next Batch" : "▶ Next Quiz"}</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
