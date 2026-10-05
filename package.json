@@ -14,6 +14,7 @@
     "notes:import": "tsx scripts/import-local-notes.ts",
     "quizzes:import": "tsx scripts/import-local-quizzes.ts",
     "question-bank:convert": "tsx scripts/convert-question-bank.ts",
+    "question-bank:automate": "tsx scripts/automate-question-bank.ts",
     "blog:automation:discover": "tsx scripts/automation-discover.ts",
     "blog:automation:batch": "tsx scripts/automation-batch.ts",
     "blog:automation:publish": "tsx scripts/automation-publish.ts",
