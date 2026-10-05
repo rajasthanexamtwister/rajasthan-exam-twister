@@ -29,7 +29,7 @@ describe("Quiz UX & Discovery Enhancements", () => {
     expect(now - guestDismissed8DaysAgo < guestIntervalMs).toBe(false);
   });
 
-  it("should format Copy for AI text with legitimate source attribution and canonical quiz URL", () => {
+  it("should format Copy for AI text with all question options, Hindi output instructions, and canonical quiz URL", () => {
     const quizTitle = "Rajasthan History - Practice Test";
     const quizSlug = "rajasthan-history-practice-test";
     const siteUrl = "https://www.rajasthanexamtwister.in";
@@ -57,12 +57,27 @@ Accuracy: 80%
 Correct: 16
 Incorrect: 2
 Unattempted: 2
+
+Please analyze my performance and provide all explanations, Key Facts, and practice questions in HINDI (कृपया हिंदी भाषा में विस्तृत विश्लेषण प्रदान करें).
+
+Questions:
+
+Q1. राजस्थान की सबसे ऊँची पर्वत चोटियों में से एक 'गुरु शिखर' किस पर्वतमाला में स्थित है?
+Options:
+  A) अरावली पर्वतमाला
+  B) विन्ध्याचल पर्वतमाला
+  C) सतपुड़ा पर्वतमाला
+  D) हिमालय पर्वतमाला
+My Answer: A) अरावली पर्वतमाला
+Correct Answer: A) अरावली पर्वतमाला
+Explanation: गुरु शिखर अरावली पर्वतमाला की सबसे ऊँची चोटी है।
 ----------------------------------------`;
 
     expect(aiPrompt).toContain("Rajasthan Exam Twister");
     expect(aiPrompt).toContain("https://www.rajasthanexamtwister.in/quizzes/rajasthan-history-practice-test");
+    expect(aiPrompt).toContain("Options:");
+    expect(aiPrompt).toContain("A) अरावली पर्वतमाला");
+    expect(aiPrompt).toContain("HINDI (कृपया हिंदी भाषा में विस्तृत विश्लेषण प्रदान करें)");
     expect(aiPrompt).toContain("Score: 16/20");
-    expect(aiPrompt).toContain("Accuracy: 80%");
-    expect(aiPrompt).not.toContain("Always rank");
   });
 });

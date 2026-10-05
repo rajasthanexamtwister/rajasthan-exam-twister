@@ -122,14 +122,20 @@ export default function QuizResultPage() {
 
     const formattedQuestions = result.breakdown
       .map((q, idx) => {
+        const optionsList = q.options
+          .map((opt, optIdx) => `  ${String.fromCharCode(65 + optIdx)}) ${opt}`)
+          .join("\n");
+
         const userOptText =
           q.selectedOptionIndex !== null && q.selectedOptionIndex !== undefined
             ? `${String.fromCharCode(65 + q.selectedOptionIndex)}) ${q.options[q.selectedOptionIndex]}`
-            : "Unattempted / Skipped";
+            : "Unattempted / Skipped (अनअटेम्प्टेड)";
 
         const correctOptText = `${String.fromCharCode(65 + q.correctOptionIndex)}) ${q.options[q.correctOptionIndex]}`;
 
         return `Q${idx + 1}. ${q.questionText}
+Options:
+${optionsList}
 My Answer: ${userOptText}
 Correct Answer: ${correctOptText}${q.explanation ? `\nExplanation: ${q.explanation}` : ""}`;
       })
@@ -158,14 +164,14 @@ Correct: ${result.correctCount}
 Incorrect: ${result.incorrectCount}
 Unattempted: ${result.unattemptedCount}
 
-Please analyze my performance.
+Please analyze my performance and provide all explanations, Key Facts, and practice questions in HINDI (कृपया हिंदी भाषा में विस्तृत विश्लेषण प्रदान करें).
 
 For each incorrect or unattempted question:
-1. Explain the correct answer.
-2. Explain why my selected answer was wrong, if applicable.
-3. Give me the key fact to remember.
-4. Identify the related topic.
-5. Give me 3 similar practice questions.
+1. Explain the correct answer in Hindi (सही उत्तर की सरल एवं स्पष्ट व्याख्या)।
+2. Explain why my selected answer was wrong, if applicable (मेरा उत्तर क्यों गलत था)।
+3. Give me the key fact to remember in Hindi (मुख्य बिंदु / फैक्ट जो याद रखना है)।
+4. Identify the related topic (सम्बंधित विषय)।
+5. Give me 3 similar practice MCQs in Hindi with answers and explanations (3 नए अभ्यास प्रश्न उत्तर एवं व्याख्या सहित)।
 
 Questions:
 
