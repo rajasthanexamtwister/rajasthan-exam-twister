@@ -11,6 +11,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
         disallow: ["/admin/", "/api/", "/quiz-tools/"],
       },
+      {
+        userAgent: ["Mediapartners-Google", "AdsBot-Google"],
+        allow: "/",
+        disallow: ["/admin/"],
+      },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,
   };

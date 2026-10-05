@@ -68,10 +68,9 @@ export function ConsentBanner() {
   };
 
   return (
-    <aside
+    <section
       aria-label="Cookie & Privacy Consent"
-      role="dialog"
-      aria-modal={showPreferences ? "true" : "false"}
+      aria-modal={showPreferences ? "true" : undefined}
       className="fixed bottom-0 inset-x-0 z-50 p-3 sm:p-4 md:p-6 pointer-events-none"
     >
       <div className="max-w-4xl mx-auto pointer-events-auto bg-[#0B132B]/95 backdrop-blur-md border border-slate-700/80 text-white rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-6 transition-all duration-300">
@@ -228,6 +227,6 @@ export function ConsentBanner() {
           </div>
         )}
       </div>
-    </aside>
+    </section>
   );
 }
