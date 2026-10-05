@@ -12,8 +12,38 @@ export function cleanOcrArtifacts(text: string): string {
   cleaned = cleaned.replace(/\s+([,.:;?!])/g, "$1");
   // Normalize hindi danda and hyphens
   cleaned = cleaned.replace(/\s*\|\s*/g, " | ");
-  cleaned = cleaned.replace(/\s*–\s*/g, "-");
-  cleaned = cleaned.replace(/\s*—\s*/g, "-");
+  // Fix common typo / OCR patterns in Hindi GK questions
+  const typoReplacements: [RegExp, string][] = [
+    [/श्रीगंगानर/g, "श्रीगंगानगर"],
+    [/गंगानर/g, "गंगानगर"],
+    [/गुजराज/g, "गुजरात"],
+    [/जगती है/g, "लगती है"],
+    [/अन्र्राष्ट्रीय/g, "अन्तर्राष्ट्रीय"],
+    [/अन्तराज्जीय/g, "अन्तर्राज्यीय"],
+    [/अन्तर्राज्जीय/g, "अन्तर्राज्यीय"],
+    [/झून्झूनु/g, "झुंझुनूं"],
+    [/झुन्झुनु/g, "झुंझुनूं"],
+    [/सीमा वोले/g, "सीमा वाले"],
+    [/चितौडगढ/g, "चित्तौड़गढ़"],
+    [/चितौड़गढ़/g, "चित्तौड़गढ़"],
+    [/राज्य सा देश/g, "राज्य या देश"],
+    [/चुरू/g, "चूरू"],
+    [/दो जिलो/g, "दो जिलों"],
+    [/दुर जिला/g, "दूर जिला"],
+    [/निमच/g, "नीमच"],
+    [/उतरप्रदेश/g, "उत्तर प्रदेश"],
+    [/उत्तरप्रदेश/g, "उत्तर प्रदेश"],
+    [/मध्यप्रदेश/g, "मध्य प्रदेश"],
+    [/उपरोक्‍त/g, "उपरोक्त"],
+    [/जैकोवाबाद/g, "जैकोबाबाद"],
+    [/भिवाणी/g, "भिवानी"],
+    [/महेन्द्रगढ़/g, "महेंद्रगढ़"],
+    [/रेवाडी/g, "रेवाड़ी"],
+  ];
+
+  for (const [pattern, replacement] of typoReplacements) {
+    cleaned = cleaned.replace(pattern, replacement);
+  }
 
   return cleaned.trim();
 }

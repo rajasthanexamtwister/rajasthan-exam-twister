@@ -117,4 +117,30 @@ describe("Batch 14 Discovery & Sub-Batch 13B Persisted Attempts", () => {
       expect(attempt.score).toBe(8);
     });
   });
+
+  describe("Canonical Exam Normalization & Deduplication", () => {
+    it("should normalize granular shifts and papers to canonical categories", async () => {
+      const { normalizeToCanonicalExam, buildExamMatcherRegex } = await import("@/server/lib/exam-canonical");
+
+      expect(normalizeToCanonicalExam("CET 2022 (Graduate) 07 January 2023 Shift-1").name).toBe(
+        "CET (Common Eligibility Test)"
+      );
+      expect(normalizeToCanonicalExam("CET 2022 (12th Level) 04 February 2023 Shift-2").name).toBe(
+        "CET (Common Eligibility Test)"
+      );
+      expect(normalizeToCanonicalExam("Rajasthan Police Constable Exam 2024 ( SHIFT - L1)").name).toBe(
+        "Rajasthan Police (Constable / SI)"
+      );
+      expect(normalizeToCanonicalExam("Asstt. Agriculture Officer Exam 2015 Paper 1").name).toBe(
+        "Agriculture Officer (AAO / AO)"
+      );
+      expect(normalizeToCanonicalExam("Sr. Teacher (Sec. Edu.) Comp. Exam-2024 (G.K. Group - A)").name).toBe(
+        "RPSC 2nd Grade (Sr. Teacher)"
+      );
+
+      const cetRegex = buildExamMatcherRegex("cet");
+      expect(cetRegex.test("CET 2022 (Graduate) 07 January 2023 Shift-1")).toBe(true);
+      expect(cetRegex.test("Common Eligibility Test 2023")).toBe(true);
+    });
+  });
 });

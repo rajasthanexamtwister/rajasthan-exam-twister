@@ -176,7 +176,8 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
                   href={buildFilterUrl({ exam: ex.name })}
                   className={clsx(
                     "px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all border inline-flex items-center gap-1.5",
-                    activeExam?.toLowerCase() === ex.name.toLowerCase()
+                    activeExam?.toLowerCase() === ex.name.toLowerCase() ||
+                    activeExam?.toLowerCase() === ex.slug.toLowerCase()
                       ? "bg-[#0B132B] text-white border-[#0B132B] shadow-xs font-bold"
                       : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-amber-50 hover:border-amber-300"
                   )}

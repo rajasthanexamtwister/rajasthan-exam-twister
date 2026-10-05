@@ -12,8 +12,10 @@ export function detectSubjectFromFolder(folderName: string): string {
     "rajasthan-art-and-culture": "Rajasthan Art & Culture",
     "rajasthan-art-culture": "Rajasthan Art & Culture",
     "rajasthan_art_and_culture": "Rajasthan Art & Culture",
-    "rajasthan-history": "Rajasthan History",
     "rajasthan-geography": "Rajasthan Geography",
+    "rajasthan_geography": "Rajasthan Geography",
+    "rajasthan-grography": "Rajasthan Geography",
+    "rajasthan_grography": "Rajasthan Geography",
     "rajasthan-polity": "Rajasthan Polity",
     "rajasthan-economy": "Rajasthan Economy",
     "rajasthan-gk": "Rajasthan GK",
@@ -255,15 +257,21 @@ export function parseLineByLineTelegramFormat(content: string, filePath: string)
 
       // Check explanation
       let explanation = "";
+      let inExplanation = false;
       while (i < lines.length) {
         const l = lines[i];
-        if (/^प्रश्न\s+\d+/i.test(l) || l.includes("Quiz")) break;
+        if (/^प्रश्न\s+\d+/i.test(l) || l.includes("Quiz") || l.includes("परिणाम") || /^\d{1,2}:\d{2}$/.test(l) || /^\d+%$/.test(l)) {
+          break;
+        }
 
         if (l.startsWith("💡") || l.includes("व्याख्या")) {
+          inExplanation = true;
           const cleanExp = l.replace(/^[💡\s]*व्याख्या\s*[:\-–]?\s*/i, "").trim();
-          if (cleanExp) explanation = cleanExp;
-        } else if (explanation && l) {
-          explanation += " " + l;
+          if (cleanExp) {
+            explanation = cleanExp;
+          }
+        } else if (inExplanation && l) {
+          explanation = explanation ? `${explanation} ${l}` : l;
         }
         i++;
       }
@@ -276,8 +284,34 @@ export function parseLineByLineTelegramFormat(content: string, filePath: string)
       questionText = cleanText;
       const finalExamTag = examTag || extractedTag;
 
-      // In this format, option A is the default verified key if not specified
-      const optIndex = 0;
+      // Resolve correct option index from explanation text matching options
+      let optIndex = 0;
+      if (explanation) {
+        // Priority 1: Check if explanation contains exact full option text
+        let matched = false;
+        for (let idx = 0; idx < options.length; idx++) {
+          const opt = options[idx].trim();
+          if (opt && opt.length >= 2 && explanation.includes(opt)) {
+            optIndex = idx;
+            matched = true;
+            // Prefer longest matching option string
+          }
+        }
+
+        // Priority 2: Keyword / number heuristics if not matched
+        if (!matched) {
+          for (let idx = 0; idx < options.length; idx++) {
+            const optWords = options[idx].split(/[\s,]+/);
+            for (const w of optWords) {
+              if (w.length >= 3 && explanation.includes(w)) {
+                optIndex = idx;
+                break;
+              }
+            }
+          }
+        }
+      }
+
       const format = detectQuestionFormat(questionText, options);
       const fingerprint = computeQuestionFingerprint(questionText, options);
 
@@ -286,7 +320,7 @@ export function parseLineByLineTelegramFormat(content: string, filePath: string)
         questionText: sanitizePlainText(questionText),
         options: options.map((o) => sanitizePlainText(o)),
         providedOptionIndex: optIndex,
-        providedAnswerKey: "A",
+        providedAnswerKey: String.fromCharCode(65 + optIndex),
         providedExplanation: explanation ? sanitizePlainText(explanation) : undefined,
         providedExamTag: finalExamTag ? sanitizePlainText(finalExamTag) : null,
         format,

@@ -4,6 +4,7 @@ import { Quiz, IQuiz, QuizDifficulty } from "@/server/models/Quiz";
 import { QuizQuestion } from "@/server/models/QuizQuestion";
 import { generateUniqueSlug } from "@/server/lib/slugify";
 import { ContentStatus } from "@/server/models/Blog";
+import { normalizeToCanonicalExam, buildExamMatcherRegex } from "@/server/lib/exam-canonical";
 
 export interface QuizFilterOptions {
   status?: ContentStatus | "ALL";
@@ -54,8 +55,7 @@ export class QuizRepository {
     }
 
     if (filter.examTag) {
-      const normalizedExam = filter.examTag.trim().replace(/-/g, " ");
-      query.examTags = { $regex: new RegExp(`^${normalizedExam}$`, "i") };
+      query.examTags = { $regex: buildExamMatcherRegex(filter.examTag) };
     }
 
     if (filter.difficulty) {
@@ -133,11 +133,26 @@ export class QuizRepository {
       { $sort: { count: -1, _id: 1 } },
     ]);
 
-    return result.map((item) => ({
-      name: item._id,
-      slug: item._id.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""),
-      count: item.count,
-    }));
+    const grouped = new Map<string, { name: string; slug: string; count: number }>();
+
+    for (const item of result) {
+      if (!item._id || typeof item._id !== "string") continue;
+      const canonical = normalizeToCanonicalExam(item._id);
+      const existing = grouped.get(canonical.slug);
+      if (existing) {
+        existing.count += item.count;
+      } else {
+        grouped.set(canonical.slug, {
+          name: canonical.name,
+          slug: canonical.slug,
+          count: item.count,
+        });
+      }
+    }
+
+    return Array.from(grouped.values()).sort(
+      (a, b) => b.count - a.count || a.name.localeCompare(b.name)
+    );
   }
 
   static async listDistinctSubjects(): Promise<DistinctTagCount[]> {
