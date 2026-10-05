@@ -23,12 +23,13 @@ describe("Google AdSense & Content Security Policy Audit", () => {
     expect(cspValue).toContain("https://googleads.g.doubleclick.net");
     expect(cspValue).toContain("https://www.google-analytics.com");
 
-    // Verify script-src contains necessary Google AdSense script domains
+    // Verify script-src contains necessary Google AdSense and Tag Manager script domains
     expect(cspValue).toContain("script-src");
     expect(cspValue).toContain("https://pagead2.googlesyndication.com");
     expect(cspValue).toContain("https://googleads.g.doubleclick.net");
     expect(cspValue).toContain("https://tpc.googlesyndication.com");
     expect(cspValue).toContain("https://www.googletagservices.com");
+    expect(cspValue).toContain("https://www.googletagmanager.com");
 
     // Verify frame-src contains necessary iframe sources
     expect(cspValue).toContain("frame-src");

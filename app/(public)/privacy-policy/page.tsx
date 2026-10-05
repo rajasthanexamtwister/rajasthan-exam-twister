@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Shield, Lock, Eye, FileText, ArrowLeft, Mail } from "lucide-react";
 import { getSiteUrl } from "@/server/lib/seo";
+import { CookieSettingsButton } from "@/components/privacy/cookie-settings-button";
 
 const siteUrl = getSiteUrl();
 
@@ -80,31 +81,46 @@ export default function PrivacyPolicyPage() {
           <section className="space-y-2">
             <h2 className="text-base sm:text-lg font-bold text-[#0B132B] flex items-center gap-2">
               <FileText className="w-4 h-4 text-amber-600" />
-              3. Google AdSense & Third-Party Cookies
+              3. Google AdSense & Google Analytics 4 (Consent Mode v2)
             </h2>
             <p>
-              Rajasthan Exam Twister uses Google AdSense and third-party advertising partners to serve relevant educational advertisements when you visit our portal.
+              Rajasthan Exam Twister uses Google Analytics 4 (GA4) to understand portal traffic and Google AdSense to serve relevant educational advertisements.
             </p>
-            <ul className="list-disc pl-5 space-y-1 text-slate-600">
+            <ul className="list-disc pl-5 space-y-1.5 text-slate-600">
               <li>
-                Google uses cookies (such as the DART cookie) to serve ads to users based on their visit to our site and other sites on the Internet.
+                <strong>Google Consent Mode v2:</strong> We adhere to Google Consent Mode v2. By default, advertising and analytics storage are strictly denied until you explicitly grant consent through our cookie preferences banner.
               </li>
               <li>
-                Users may opt-out of personalized advertising by visiting{" "}
+                <strong>Google AdSense & Cookies:</strong> Google and third-party vendors use cookies to serve ads based on your visit to our website and other sites across the web.
+              </li>
+              <li>
+                <strong>Analytics Measurement:</strong> Aggregated anonymous usage metrics are captured only when analytics consent is granted to help us enhance quiz question quality and site responsiveness.
+              </li>
+              <li>
+                <strong>Student Rights & Opt-Out:</strong> You can manage or revoke your cookie choices at any time by clicking the button below or visiting{" "}
                 <a
                   href="https://www.google.com/settings/ads"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-amber-700 underline"
+                  className="text-amber-700 underline font-medium"
                 >
                   Google Ads Settings
                 </a>
                 .
               </li>
-              <li>
-                We do not sell, trade, or transfer student email addresses or personal identities to outside third-party advertisers.
-              </li>
             </ul>
+
+            <div className="pt-2">
+              <div className="p-4 rounded-2xl bg-slate-900 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div>
+                  <span className="font-bold text-xs block text-amber-400">Your Privacy, Your Choice</span>
+                  <p className="text-[11px] text-slate-300">You can customize or change your cookie and tracking consent at any time.</p>
+                </div>
+                <CookieSettingsButton className="px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 transition-all shrink-0 cursor-pointer">
+                  Manage Cookie Preferences
+                </CookieSettingsButton>
+              </div>
+            </div>
           </section>
 
           <section className="space-y-2">

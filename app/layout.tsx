@@ -4,6 +4,8 @@ import { Sora, Plus_Jakarta_Sans, Noto_Sans_Devanagari } from "next/font/google"
 import { getSiteUrl } from "@/server/lib/seo";
 import { OFFICIAL_SOCIAL_URLS } from "@/server/lib/social-links";
 import { PublicSessionProvider } from "@/components/providers/session-provider";
+import { GoogleConsentScripts } from "@/components/privacy/google-consent-scripts";
+import { ConsentBanner } from "@/components/privacy/consent-banner";
 import "./globals.css";
 
 const headingFont = Sora({
@@ -157,6 +159,9 @@ export default function RootLayout({
 
       </head>
       <body className="min-h-full flex flex-col font-sans antialiased bg-[#FAF8F5] text-slate-900 selection:bg-amber-200 selection:text-amber-950">
+        {/* Google Consent Mode v2 & Google Analytics 4 Script */}
+        <GoogleConsentScripts />
+
         {/* Google AdSense Script */}
         <Script
           id="google-adsense"
@@ -172,6 +177,7 @@ export default function RootLayout({
         <PublicSessionProvider>
           {children}
         </PublicSessionProvider>
+        <ConsentBanner />
       </body>
     </html>
   );

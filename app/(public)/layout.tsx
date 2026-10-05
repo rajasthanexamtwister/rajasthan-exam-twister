@@ -15,6 +15,7 @@ import {
 import { PresenceHeartbeat } from "@/components/analytics/presence-heartbeat";
 import { TelegramStickyBar } from "@/components/public/telegram-sticky-bar";
 import { PwaInstallBanner } from "@/components/public/pwa-install-banner";
+import { CookieSettingsButton } from "@/components/privacy/cookie-settings-button";
 
 export const revalidate = 60;
 
@@ -225,6 +226,9 @@ export default async function PublicLayout({
                   </Link>
                 </li>
                 <li>
+                  <CookieSettingsButton />
+                </li>
+                <li>
                   <Link href="/feed.xml" className="text-slate-300 hover:text-amber-300 transition-colors">
                     RSS Feed
                   </Link>
@@ -238,9 +242,13 @@ export default async function PublicLayout({
             <p className="text-xs text-slate-400 font-medium">
               &copy; {new Date().getFullYear()} Rajasthan Exam Twister. All rights reserved.
             </p>
-            <p className="text-xs text-slate-400">
-              Curated GK & Revision Resource for Rajasthan Aspirants
-            </p>
+            <div className="flex items-center gap-4">
+              <CookieSettingsButton className="text-slate-400 hover:text-amber-300 text-xs transition-colors cursor-pointer" />
+              <span className="text-slate-600">|</span>
+              <p className="text-xs text-slate-400">
+                Curated GK & Revision Resource for Rajasthan Aspirants
+              </p>
+            </div>
           </div>
         </div>
       </footer>
