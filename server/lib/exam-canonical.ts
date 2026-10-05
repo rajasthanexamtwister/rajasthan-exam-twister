@@ -21,6 +21,11 @@ export const CANONICAL_EXAMS: CanonicalExamMapping[] = [
     matcher: /Rajasthan\s+Police|Raj\s+Police|Police\s+Constable|Police\s+SI|Sub\s+Inspector/i,
   },
   {
+    canonicalName: "Pashu Parichar (Animal Attendant)",
+    slug: "animal-attendant",
+    matcher: /Animal\s+Attendant|Pashu\s+Parichar|पशु\s*परिचर/i,
+  },
+  {
     canonicalName: "REET & 3rd Grade Teacher",
     slug: "reet-3rd-grade",
     matcher: /3rd\s+Grade|REET|Reet|Teacher\s+Gr\s*III|Primary\s+Teacher/i,
@@ -38,7 +43,7 @@ export const CANONICAL_EXAMS: CanonicalExamMapping[] = [
   {
     canonicalName: "Computer Instructor (BCI / SCI)",
     slug: "computer-instructor",
-    matcher: /Basic\s+Computer\s+Instructor|Senior\s+Computer\s+Instructor|\bBCI\b/i,
+    matcher: /Basic\s+Computer\s+Instructor|Senior\s+Computer\s+Instructor|\bBCI\b|\bSCI\b/i,
   },
   {
     canonicalName: "Information Assistant (IA)",
@@ -54,6 +59,16 @@ export const CANONICAL_EXAMS: CanonicalExamMapping[] = [
     canonicalName: "VDO (Gram Sevak)",
     slug: "vdo-gram-sevak",
     matcher: /\bVDO\b|Gram\s+Sevak|Village\s+Development\s+Officer/i,
+  },
+  {
+    canonicalName: "Rajasthan High Court LDC",
+    slug: "high-court-ldc",
+    matcher: /High\s+Court\s+LDC|HC\s+LDC|High\s+Court\s+Clerk/i,
+  },
+  {
+    canonicalName: "Jail Warder & Prahari",
+    slug: "jail-warder-prahari",
+    matcher: /Jail\s+Warder|Prahari|जेल\s*प्रहरी/i,
   },
   {
     canonicalName: "Agriculture Officer (AAO / AO)",
@@ -78,7 +93,17 @@ export const CANONICAL_EXAMS: CanonicalExamMapping[] = [
   {
     canonicalName: "Forest Guard & Vanpal",
     slug: "forest-guard",
-    matcher: /Forest\s+Guard|Vanpal|Vanrakshak/i,
+    matcher: /Forest\s+Guard|Vanpal|Vanrakshak|Forester/i,
+  },
+  {
+    canonicalName: "Lab Assistant",
+    slug: "lab-assistant",
+    matcher: /Lab\s+Assistant|प्रयोगशाला\s*सहायक/i,
+  },
+  {
+    canonicalName: "Stenographer Exam",
+    slug: "stenographer",
+    matcher: /Stenographer|Steno|आशुलिपिक/i,
   },
   {
     canonicalName: "JSA (Junior Scientific Assistant)",

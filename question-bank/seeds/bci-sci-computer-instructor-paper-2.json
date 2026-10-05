@@ -1,0 +1,1619 @@
+{
+  "title": "BCI / SCI Computer Instructor Paper-2 Mock Test",
+  "subject": "Computer Science",
+  "slug": "bci-sci-computer-instructor-paper-2",
+  "examTags": [
+    "Basic Computer Instructor Exam 2022 Paper 2",
+    "Computer Instructor",
+    "BCI",
+    "RSMSSB"
+  ],
+  "difficulty": "medium",
+  "status": "DRAFT",
+  "timeLimitSeconds": 7200,
+  "defaultMarks": 1,
+  "defaultNegativeMarks": 0.33,
+  "totalQuestions": 100,
+  "questions": [
+    {
+      "order": 1,
+      "questionText": "Binary number 1011₂ का decimal value क्या है?",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "11",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "1011₂ = 8+2+1 = 11.",
+      "topicTag": "Number System",
+      "format": "MCQ"
+    },
+    {
+      "order": 2,
+      "questionText": "Hexadecimal में A का decimal value है:",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "10",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "A=10.",
+      "topicTag": "Number System",
+      "format": "MCQ"
+    },
+    {
+      "order": 3,
+      "questionText": "1 byte में कितने bits होते हैं?",
+      "options": [
+        "4",
+        "8",
+        "16",
+        "32"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "8",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "1 byte = 8 bits.",
+      "topicTag": "Computer Fundamentals",
+      "format": "MCQ"
+    },
+    {
+      "order": 4,
+      "questionText": "CPU का कौन-सा भाग arithmetic और logical operations करता है?",
+      "options": [
+        "CU",
+        "ALU",
+        "RAM",
+        "ROM"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "ALU",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "ALU = Arithmetic Logic Unit.",
+      "topicTag": "Computer Architecture",
+      "format": "MCQ"
+    },
+    {
+      "order": 5,
+      "questionText": "RAM किस प्रकार की memory है?",
+      "options": [
+        "Volatile",
+        "Non-volatile",
+        "Optical",
+        "Permanent"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Volatile",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "RAM volatile memory है.",
+      "topicTag": "Memory",
+      "format": "MCQ"
+    },
+    {
+      "order": 6,
+      "questionText": "ROM की मुख्य विशेषता क्या है?",
+      "options": [
+        "Volatile",
+        "Non-volatile",
+        "Only cache",
+        "Temporary"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "Non-volatile",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Power off होने पर data सामान्यतः बना रहता है.",
+      "topicTag": "Memory",
+      "format": "MCQ"
+    },
+    {
+      "order": 7,
+      "questionText": "Operating System का मुख्य कार्य क्या है?",
+      "options": [
+        "केवल typing",
+        "Hardware/software resources manage करना",
+        "केवल printing",
+        "केवल browsing"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "Hardware/software resources manage करना",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "OS resource management और user interface प्रदान करता है.",
+      "topicTag": "Operating System",
+      "format": "MCQ"
+    },
+    {
+      "order": 8,
+      "questionText": "Process scheduling किसका कार्य है?",
+      "options": [
+        "OS",
+        "Compiler only",
+        "Printer",
+        "Monitor"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "OS",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "CPU scheduling OS का core function है.",
+      "topicTag": "Operating System",
+      "format": "MCQ"
+    },
+    {
+      "order": 9,
+      "questionText": "IPv4 address कितने bits का होता है?",
+      "options": [
+        "16",
+        "32",
+        "64",
+        "128"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "32",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "IPv4 = 32-bit.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 10,
+      "questionText": "IPv6 address कितने bits का होता है?",
+      "options": [
+        "32",
+        "64",
+        "128",
+        "256"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "128",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "IPv6 = 128-bit.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 11,
+      "questionText": "Router का मुख्य कार्य क्या है?",
+      "options": [
+        "Packets को networks के बीच route करना",
+        "केवल typing",
+        "Print करना",
+        "Power देना"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Packets को networks के बीच route करना",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Router अलग networks के बीच packet forwarding करता है.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 12,
+      "questionText": "Switch मुख्यतः किस address का उपयोग करता है?",
+      "options": [
+        "MAC",
+        "URL",
+        "Port only",
+        "File address"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "MAC",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Ethernet switch MAC address table का उपयोग करता है.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 13,
+      "questionText": "OSI model में कितनी layers हैं?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "7",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "OSI = 7 layers.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 14,
+      "questionText": "TCP किस प्रकार का protocol है?",
+      "options": [
+        "Connection-oriented",
+        "Connectionless",
+        "Hardware",
+        "Encryption only"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Connection-oriented",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "TCP reliable connection-oriented transport protocol है.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 15,
+      "questionText": "DNS का कार्य क्या है?",
+      "options": [
+        "Domain name को IP address में resolve करना",
+        "Files compress करना",
+        "RAM बढ़ाना",
+        "Virus हटाना"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Domain name को IP address में resolve करना",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "DNS name resolution करता है.",
+      "topicTag": "Internet",
+      "format": "MCQ"
+    },
+    {
+      "order": 16,
+      "questionText": "HTTP का default port है:",
+      "options": [
+        "21",
+        "25",
+        "80",
+        "110"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "80",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "HTTP = port 80; HTTPS सामान्यतः 443.",
+      "topicTag": "Internet",
+      "format": "MCQ"
+    },
+    {
+      "order": 17,
+      "questionText": "HTTPS में सामान्यतः कौन-सा port होता है?",
+      "options": [
+        "80",
+        "110",
+        "443",
+        "8080"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "443",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "HTTPS default port 443.",
+      "topicTag": "Internet",
+      "format": "MCQ"
+    },
+    {
+      "order": 18,
+      "questionText": "SQL में data retrieve करने के लिए command है:",
+      "options": [
+        "SELECT",
+        "INSERT",
+        "DELETE",
+        "UPDATE"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "SELECT",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "SELECT rows/data retrieve करता है.",
+      "topicTag": "DBMS / SQL",
+      "format": "MCQ"
+    },
+    {
+      "order": 19,
+      "questionText": "SQL में नई row जोड़ने के लिए:",
+      "options": [
+        "SELECT",
+        "INSERT",
+        "DROP",
+        "ALTER"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "INSERT",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "INSERT data add करता है.",
+      "topicTag": "DBMS / SQL",
+      "format": "MCQ"
+    },
+    {
+      "order": 20,
+      "questionText": "Primary Key की मुख्य property है:",
+      "options": [
+        "Duplicate values allowed",
+        "Unique identification",
+        "Only text",
+        "Always NULL"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "Unique identification",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Primary key row को uniquely identify करती है.",
+      "topicTag": "DBMS",
+      "format": "MCQ"
+    },
+    {
+      "order": 21,
+      "questionText": "Normalization का उद्देश्य क्या है?",
+      "options": [
+        "Redundancy कम करना",
+        "Monitor size बढ़ाना",
+        "CPU speed घटाना",
+        "Passwords हटाना"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Redundancy कम करना",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Database redundancy और anomalies कम करना.",
+      "topicTag": "DBMS",
+      "format": "MCQ"
+    },
+    {
+      "order": 22,
+      "questionText": "MS Word में Save As का common shortcut है:",
+      "options": [
+        "F12",
+        "F1",
+        "Ctrl+P",
+        "Ctrl+Z"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "F12",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Word में F12 Save As dialog खोलता है.",
+      "topicTag": "MS Word",
+      "format": "MCQ"
+    },
+    {
+      "order": 23,
+      "questionText": "MS Word में Find shortcut है:",
+      "options": [
+        "Ctrl+F",
+        "Ctrl+H",
+        "Ctrl+G",
+        "Ctrl+K"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Ctrl+F",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Ctrl+F = Find.",
+      "topicTag": "MS Word",
+      "format": "MCQ"
+    },
+    {
+      "order": 24,
+      "questionText": "MS Word में Copy shortcut है:",
+      "options": [
+        "Ctrl+X",
+        "Ctrl+C",
+        "Ctrl+V",
+        "Ctrl+P"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "Ctrl+C",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Ctrl+C = Copy.",
+      "topicTag": "MS Word",
+      "format": "MCQ"
+    },
+    {
+      "order": 25,
+      "questionText": "MS Excel में formula किस symbol से शुरू होता है?",
+      "options": [
+        "#",
+        "@",
+        "=",
+        "$"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "=",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Excel formula = से शुरू होता है.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 26,
+      "questionText": "Excel में सबसे बड़ी value निकालने का function है:",
+      "options": [
+        "MIN",
+        "MAX",
+        "COUNT",
+        "SUM"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "MAX",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "MAX maximum value देता है.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 27,
+      "questionText": "Excel में numbers का योग करने के लिए:",
+      "options": [
+        "SUM",
+        "AVG",
+        "MAX",
+        "ROUND"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "SUM",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "SUM जोड़ करता है.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 28,
+      "questionText": "Excel में filtering किस tab से संबंधित है?",
+      "options": [
+        "Data",
+        "Review",
+        "View only",
+        "Help"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Data",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Filter command Data tab में होता है.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 29,
+      "questionText": "Excel में Table बनाने का shortcut है:",
+      "options": [
+        "Ctrl+T",
+        "Ctrl+L",
+        "Ctrl+R",
+        "Ctrl+M"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Ctrl+T",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Ctrl+T = Create Table.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 30,
+      "questionText": "Excel में cell address का उदाहरण है:",
+      "options": [
+        "1A",
+        "A1",
+        "AA",
+        "ROW1"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "A1",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Column letter + row number = A1.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 31,
+      "questionText": "PowerPoint में Slide Sorter view का उपयोग मुख्यतः किसलिए होता है?",
+      "options": [
+        "Slides को arrange/reorder करना",
+        "Database बनाना",
+        "Formula लिखना",
+        "Mail भेजना"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Slides को arrange/reorder करना",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Slide thumbnails के माध्यम से ordering/manage करना आसान होता है.",
+      "topicTag": "MS PowerPoint",
+      "format": "MCQ"
+    },
+    {
+      "order": 32,
+      "questionText": "PowerPoint में एक slide से दूसरी slide के बीच effect को क्या कहते हैं?",
+      "options": [
+        "Animation",
+        "Transition",
+        "Formula",
+        "Filter"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "Transition",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Transition slide-to-slide effect है.",
+      "topicTag": "MS PowerPoint",
+      "format": "MCQ"
+    },
+    {
+      "order": 33,
+      "questionText": "MS Access में Primary Key का उपयोग:",
+      "options": [
+        "Record uniquely identify करने के लिए",
+        " केवल font बदलने के लिए",
+        "Print करने के लिए",
+        "Image crop करने के लिए"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Record uniquely identify करने के लिए",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Primary key unique record identification देती है.",
+      "topicTag": "MS Access",
+      "format": "MCQ"
+    },
+    {
+      "order": 34,
+      "questionText": "Notepad की सामान्य text file extension है:",
+      "options": [
+        ".docx",
+        ".txt",
+        ".xlsx",
+        ".pptx"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": ".txt",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Plain text = .txt.",
+      "topicTag": "File Types",
+      "format": "MCQ"
+    },
+    {
+      "order": 35,
+      "questionText": "MP3 मुख्यतः किस प्रकार की file है?",
+      "options": [
+        "Audio",
+        "Image",
+        "Database",
+        "Spreadsheet"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Audio",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "MP3 audio format है.",
+      "topicTag": "File Types",
+      "format": "MCQ"
+    },
+    {
+      "order": 36,
+      "questionText": "ISO image सामान्यतः किससे संबंधित है?",
+      "options": [
+        "Disc image",
+        "Spreadsheet",
+        "Audio only",
+        "Font only"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Disc image",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "ISO optical-disc/file-system image format है.",
+      "topicTag": "File Types",
+      "format": "MCQ"
+    },
+    {
+      "order": 37,
+      "questionText": "OCR का full form है:",
+      "options": [
+        "Optical Character Recognition",
+        "Online Code Reader",
+        "Optical Computer Register",
+        "Output Character Router"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Optical Character Recognition",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "OCR printed/scanned text को machine-readable text में बदल सकता है.",
+      "topicTag": "Input Devices",
+      "format": "MCQ"
+    },
+    {
+      "order": 38,
+      "questionText": "OMR का उपयोग किसमें होता है?",
+      "options": [
+        "Marked bubbles/forms पढ़ने में",
+        "Voice recording",
+        "Printing",
+        "Video editing"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Marked bubbles/forms पढ़ने में",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "OMR marked responses detect करता है.",
+      "topicTag": "Input Devices",
+      "format": "MCQ"
+    },
+    {
+      "order": 39,
+      "questionText": "MICR मुख्यतः कहाँ उपयोग होता है?",
+      "options": [
+        "Bank cheques",
+        "Web pages",
+        "Games",
+        "Presentations"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Bank cheques",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "MICR cheque characters पढ़ने में उपयोग होता है.",
+      "topicTag": "Input Devices",
+      "format": "MCQ"
+    },
+    {
+      "order": 40,
+      "questionText": "DMP का full form है:",
+      "options": [
+        "Dot Matrix Printer",
+        "Digital Memory Printer",
+        "Data Management Protocol",
+        "Direct Matrix Processor"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Dot Matrix Printer",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "DMP = Dot Matrix Printer.",
+      "topicTag": "Printers",
+      "format": "MCQ"
+    },
+    {
+      "order": 41,
+      "questionText": "Firewall का मुख्य उद्देश्य है:",
+      "options": [
+        "Network traffic को filter/control करना",
+        "RAM बढ़ाना",
+        "Images बनाना",
+        "CPU replace करना"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Network traffic को filter/control करना",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Firewall access rules के आधार पर traffic control करता है.",
+      "topicTag": "Network Security",
+      "format": "MCQ"
+    },
+    {
+      "order": 42,
+      "questionText": "Phishing क्या है?",
+      "options": [
+        "Fraudulent attempt to obtain sensitive information",
+        "Data compression",
+        "Printer fault",
+        "Disk formatting"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Fraudulent attempt to obtain sensitive information",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Phishing social engineering attack है.",
+      "topicTag": "Cyber Security",
+      "format": "MCQ"
+    },
+    {
+      "order": 43,
+      "questionText": "Spoofing का अर्थ है:",
+      "options": [
+        "Identity/source को forged दिखाना",
+        "File backup",
+        "Data sorting",
+        "Printing"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Identity/source को forged दिखाना",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Spoofing में identity/source information को deceive किया जाता है.",
+      "topicTag": "Cyber Security",
+      "format": "MCQ"
+    },
+    {
+      "order": 44,
+      "questionText": "Spamming का अर्थ है:",
+      "options": [
+        "Unsolicited bulk messages",
+        "Disk cleanup",
+        "Encryption",
+        "Database normalization"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Unsolicited bulk messages",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Spam unwanted bulk communication है.",
+      "topicTag": "Cyber Security",
+      "format": "MCQ"
+    },
+    {
+      "order": 45,
+      "questionText": "Backup का उद्देश्य है:",
+      "options": [
+        "Data recovery",
+        "CPU cooling",
+        "Network speed doubling",
+        "Screen resolution"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Data recovery",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Backup loss/corruption के बाद recovery में मदद करता है.",
+      "topicTag": "Network Security",
+      "format": "MCQ"
+    },
+    {
+      "order": 46,
+      "questionText": "Full backup में:",
+      "options": [
+        "Selected/new files only",
+        "All selected data का backup",
+        "Only changed bytes always",
+        "No data"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "All selected data का backup",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Full backup selected dataset की complete copy बनाता है.",
+      "topicTag": "Backup",
+      "format": "MCQ"
+    },
+    {
+      "order": 47,
+      "questionText": "Star topology में central device सामान्यतः क्या होता है?",
+      "options": [
+        "Hub/Switch",
+        "Printer only",
+        "Modem only",
+        "Scanner"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Hub/Switch",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Nodes central hub/switch से जुड़े होते हैं.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 48,
+      "questionText": "Bus topology में मुख्य shared medium क्या है?",
+      "options": [
+        "Backbone cable",
+        "Central switch",
+        "Ring",
+        "Satellite only"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Backbone cable",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Bus network common backbone use करता है.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 49,
+      "questionText": "Full duplex communication में:",
+      "options": [
+        "दोनों directions simultaneously",
+        "केवल एक direction",
+        "एक समय में एक direction",
+        "कोई transmission नहीं"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "दोनों directions simultaneously",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Full duplex simultaneous two-way communication है.",
+      "topicTag": "Data Communication",
+      "format": "MCQ"
+    },
+    {
+      "order": 50,
+      "questionText": "Half duplex में:",
+      "options": [
+        "दोनों directions, लेकिन simultaneously नहीं",
+        "केवल one-way",
+        "Simultaneously both ways",
+        "No communication"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "दोनों directions, लेकिन simultaneously नहीं",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Half duplex में direction बदल सकती है, पर एक समय में एक दिशा.",
+      "topicTag": "Data Communication",
+      "format": "MCQ"
+    },
+    {
+      "order": 51,
+      "questionText": "Simplex communication में:",
+      "options": [
+        "One-way communication",
+        "Two-way simultaneous",
+        "Two-way alternate",
+        "No transmission"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "One-way communication",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Simplex = one-way.",
+      "topicTag": "Data Communication",
+      "format": "MCQ"
+    },
+    {
+      "order": 52,
+      "questionText": "Serial transmission में bits:",
+      "options": [
+        "एक-एक करके transmit होते हैं",
+        "सभी एक साथ",
+        "केवल 4 bits",
+        "केवल 8 bits"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "एक-एक करके transmit होते हैं",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Serial में bits sequentially भेजे जाते हैं.",
+      "topicTag": "Data Communication",
+      "format": "MCQ"
+    },
+    {
+      "order": 53,
+      "questionText": "Parallel transmission में:",
+      "options": [
+        "Multiple bits simultaneously transmit हो सकते हैं",
+        "Only one bit",
+        "No clock",
+        "Only wireless"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Multiple bits simultaneously transmit हो सकते हैं",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Parallel multiple bit lines use कर सकता है.",
+      "topicTag": "Data Communication",
+      "format": "MCQ"
+    },
+    {
+      "order": 54,
+      "questionText": "NAT का मुख्य उपयोग है:",
+      "options": [
+        "Private और public IP addressing के बीच translation",
+        "Text formatting",
+        "Printing",
+        "File compression"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Private और public IP addressing के बीच translation",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "NAT address translation करता है.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 55,
+      "questionText": "Hub किस OSI layer पर सामान्यतः operate करता है?",
+      "options": [
+        "Physical",
+        "Data Link",
+        "Network",
+        "Transport"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Physical",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Traditional hub Layer 1 device है.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 56,
+      "questionText": "Switch सामान्यतः किस OSI layer पर operate करता है?",
+      "options": [
+        "Physical only",
+        "Data Link",
+        "Transport only",
+        "Application"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "Data Link",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Basic Ethernet switch Layer 2 पर MAC addresses use करता है.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 57,
+      "questionText": "Router सामान्यतः किस OSI layer पर operate करता है?",
+      "options": [
+        "Physical",
+        "Data Link",
+        "Network",
+        "Application"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "Network",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Router IP-based Layer 3 forwarding करता है.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 58,
+      "questionText": "Mesh topology की प्रमुख विशेषता है:",
+      "options": [
+        "High redundancy",
+        "Single backbone only",
+        "No links",
+        "Only one node"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "High redundancy",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Multiple paths होने से reliability बढ़ती है.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 59,
+      "questionText": "OSI model की Network layer का प्रमुख protocol उदाहरण है:",
+      "options": [
+        "IP",
+        "HTTP",
+        "FTP",
+        "SMTP"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "IP",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "IP Network layer protocol है.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 60,
+      "questionText": "MAC address किससे संबंधित है?",
+      "options": [
+        "Network interface hardware address",
+        "Domain name",
+        "File extension",
+        "CPU register"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Network interface hardware address",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "MAC network interface का link-layer hardware address है.",
+      "topicTag": "Networking",
+      "format": "MCQ"
+    },
+    {
+      "order": 61,
+      "questionText": "Selection sort की worst-case time complexity है:",
+      "options": [
+        "O(log N)",
+        "O(N)",
+        "O(N²)",
+        "O(N log N)"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "O(N²)",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Selection sort comparisons लगभग N²/2 होते हैं.",
+      "topicTag": "Algorithm",
+      "format": "MCQ"
+    },
+    {
+      "order": 62,
+      "questionText": "What is the sum of the Hexadecimal numbers (FF)16 and (BA)16?",
+      "options": [
+        "(B9)16",
+        "(2B9)16",
+        "(1B9)16",
+        "(139)16"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "(1B9)16",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "FF + BA = 1B9 in hexadecimal. F+A=19(hex): write 9, carry 1; F+B+1=1B.",
+      "topicTag": "Number System",
+      "format": "MCQ"
+    },
+    {
+      "order": 63,
+      "questionText": "The postfix expression 823^/23*+51*- is evaluated using a stack. What is the result?",
+      "options": [
+        "6, 1",
+        "5, 7",
+        "3, 2",
+        "1, 5"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "3, 2",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Evaluate postfix from left to right using a stack: 2^3=8, 8/8=1, 2*3=6, 1+6=7, 5*1=5, 7-5=2. The final result is 2. The displayed sub-question/options about the intermediate stack are somewhat ambiguous, so this item should be checked against the original key.",
+      "topicTag": "Stack / Postfix",
+      "format": "MCQ"
+    },
+    {
+      "order": 64,
+      "questionText": "At the time of sorting an array of size N by normal selection sort, the number of comparisons made in the first iteration is:",
+      "options": [
+        "N",
+        "N - 1",
+        "N × (N - 1/2)",
+        "N log N"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "N - 1",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "पहले iteration में first element को बाकी N-1 elements से compare किया जाता है.",
+      "topicTag": "Algorithm",
+      "format": "MCQ"
+    },
+    {
+      "order": 65,
+      "questionText": "Consider Q: ((A+B)*D) ↑ (E-F). The equivalent postfix expression is:",
+      "options": [
+        "AB+D*EF↑-",
+        "AB+D*−↑EF",
+        "AB+DE*F−↑",
+        "AB+D*EF−↑"
+      ],
+      "correctOptionIndex": 3,
+      "correctOptionText": "AB+D*EF−↑",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "पहले A+B → AB+, फिर *D → AB+D*, और E-F → EF−; अंत में exponentiation ↑.",
+      "topicTag": "Stack / Expression Conversion",
+      "format": "MCQ"
+    },
+    {
+      "order": 66,
+      "questionText": "For a two-dimensional character array A[1:5, 2:7], row-major storage, base address 500, what is the address of A[2][3]?",
+      "options": [
+        "501",
+        "506",
+        "507",
+        "508"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "507",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Columns = 7-2+1 = 6. Offset = (2-1)*6 + (3-2) = 7. Address = 500+7 = 507.",
+      "topicTag": "Arrays / Address Calculation",
+      "format": "MCQ"
+    },
+    {
+      "order": 67,
+      "questionText": "Inorder traversal is d,b,e,a,f,c,g and preorder traversal is a,b,d,e,c,f,g. The postorder traversal is:",
+      "options": [
+        "d,e,b,f,g,c,a",
+        "e,d,b,g,f,c,a",
+        "e,d,b,f,g,c,a",
+        "d,e,f,g,b,c,a"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "d,e,b,f,g,c,a",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Preorder से root a मिलता है. Left subtree: b-d-e; right subtree: c-f-g. Postorder = d,e,b,f,g,c,a.",
+      "topicTag": "Binary Tree",
+      "format": "MCQ"
+    },
+    {
+      "order": 68,
+      "questionText": "A BST is constructed by inserting 60,25,72,15,30,68,101,13,18,47,70,34. The number of nodes in the left subtree of 60 is:",
+      "options": [
+        "7",
+        "6",
+        "3",
+        "5"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "7",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "60 से छोटे सभी inserted nodes left subtree में होंगे: 25,15,30,13,18,47,34 = 7.",
+      "topicTag": "Binary Search Tree",
+      "format": "MCQ"
+    },
+    {
+      "order": 69,
+      "questionText": "In the given Excel sheet, =SUMIF(B2:B11,\"<50\",D2:D11) in D12 gives:",
+      "options": [
+        "120",
+        "254",
+        "90",
+        "244"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "254",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "B में <50 values 40,30,25,25 हैं; corresponding D values 70+62+57+65 = 254.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 70,
+      "questionText": "A1 contains =C5+A4. If A1 is copied and pasted into D5, what formula appears in D5?",
+      "options": [
+        "C5+A4",
+        "C10+A9",
+        "F5+D4",
+        "F9+D8"
+      ],
+      "correctOptionIndex": 3,
+      "correctOptionText": "F9+D8",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "A1→D5 means +3 columns and +4 rows. C5→F9 and A4→D8.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 71,
+      "questionText": "In MS Excel 365: (i) right-clicking a cell and choosing Format Cells can format cells; (ii) Conditional Formatting can highlight specified values/cells. Which is correct?",
+      "options": [
+        "i-False, ii-True",
+        "i-False, ii-False",
+        "i-True, ii-True",
+        "i-True, ii-False"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "i-True, ii-True",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "दोनों statements सही हैं.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 72,
+      "questionText": "For MS Word 365: (i) Ctrl+Shift+K applies Small Caps; (ii) Ctrl+Shift+A applies All Caps; (iii) Ctrl+= applies Subscript. Which is correct?",
+      "options": [
+        "i-True, ii-False, iii-True",
+        "i-True, ii-True, iii-True",
+        "i-False, ii-True, iii-True",
+        "i-False, ii-False, iii-True"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "i-True, ii-True, iii-True",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "तीनों shortcuts सही हैं.",
+      "topicTag": "MS Word",
+      "format": "MCQ"
+    },
+    {
+      "order": 73,
+      "questionText": "MS Word में Ctrl+Shift+K किस formatting को apply करता है?",
+      "options": [
+        "Small Caps",
+        "Underline",
+        "Subscript",
+        "Superscript"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Small Caps",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Ctrl+Shift+K = Small Caps.",
+      "topicTag": "MS Word",
+      "format": "MCQ"
+    },
+    {
+      "order": 74,
+      "questionText": "MS Word में Ctrl+= किसके लिए है?",
+      "options": [
+        "Superscript",
+        "Subscript",
+        "Small Caps",
+        "All Caps"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "Subscript",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Ctrl+= = Subscript; Ctrl+Shift+= = Superscript.",
+      "topicTag": "MS Word",
+      "format": "MCQ"
+    },
+    {
+      "order": 75,
+      "questionText": "Excel में relative reference का उदाहरण है:",
+      "options": [
+        "$A$1",
+        "A1",
+        "$A1",
+        "A$1"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "A1",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "A1 row और column दोनों relative हैं.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 76,
+      "questionText": "Excel में absolute reference का उदाहरण है:",
+      "options": [
+        "A1",
+        "$A$1",
+        "A$1",
+        "$A1"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "$A$1",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "$A$1 column और row दोनों lock करता है.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 77,
+      "questionText": "Excel में =COUNT(A1:A10) क्या count करता है?",
+      "options": [
+        "Text only",
+        "Numeric cells",
+        "Blank cells only",
+        "Formatting"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "Numeric cells",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "COUNT numeric values वाले cells count करता है.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 78,
+      "questionText": "Excel में =COUNTA(A1:A10) क्या करता है?",
+      "options": [
+        "Non-empty cells count",
+        "Only numeric cells",
+        "Only blank cells",
+        "Sum"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Non-empty cells count",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "COUNTA non-empty cells count करता है.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 79,
+      "questionText": "Excel में conditional formatting का उपयोग है:",
+      "options": [
+        "Values based highlighting",
+        "Operating system install करना",
+        "Database server बनाना",
+        "RAM allocate करना"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Values based highlighting",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Rules के आधार पर cells को visually highlight करता है.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 80,
+      "questionText": "Excel में Format Cells dialog खोलने का common shortcut है:",
+      "options": [
+        "Ctrl+1",
+        "Ctrl+2",
+        "Ctrl+3",
+        "Ctrl+4"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Ctrl+1",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Ctrl+1 = Format Cells.",
+      "topicTag": "MS Excel",
+      "format": "MCQ"
+    },
+    {
+      "order": 81,
+      "questionText": "Binary tree में inorder traversal का order है:",
+      "options": [
+        "Root-Left-Right",
+        "Left-Root-Right",
+        "Left-Right-Root",
+        "Root-Right-Left"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "Left-Root-Right",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Inorder = Left, Root, Right.",
+      "topicTag": "Binary Tree",
+      "format": "MCQ"
+    },
+    {
+      "order": 82,
+      "questionText": "Which permutation can be obtained using a stack for input sequence 5,6,7,8,9 in that order?",
+      "options": [
+        "7,8,9,5,6",
+        "5,9,6,7,8",
+        "7,8,9,6,5",
+        "9,8,7,5,6"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "7,8,9,6,5",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "7,8,9,6,5 stack permutation है: push 5,6,7→pop7; push8→pop8; push9→pop9; फिर 6,5 pop.",
+      "topicTag": "Stack",
+      "format": "MCQ"
+    },
+    {
+      "order": 83,
+      "questionText": "Postfix expression evaluation में operator मिलने पर सामान्यतः:",
+      "options": [
+        "Operands stack से pop करके operation किया जाता है",
+        "Operator discard होता है",
+        "Queue use होती है",
+        "Sorting होती है"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Operands stack से pop करके operation किया जाता है",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Postfix evaluation stack-based है.",
+      "topicTag": "Stack",
+      "format": "MCQ"
+    },
+    {
+      "order": 84,
+      "questionText": "Which statements about laser printers are correct? A: use dry ink/toner. B: unlike dot matrix and inkjet, they do not use liquid ink. C: use static electricity. D: can produce ozone and toner particulates.",
+      "options": [
+        "A, B and D only",
+        "A, C and D only",
+        "B, C and D only",
+        "A and C only"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "A, C and D only",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Laser printer toner आधारित printing और electrostatic principle पर काम करता है; ozone/toner particulate emission भी हो सकती है.",
+      "topicTag": "Printers",
+      "format": "MCQ"
+    },
+    {
+      "order": 85,
+      "questionText": "Which CSS property allows you to set multiple list properties at once?",
+      "options": [
+        "list-style-type",
+        "list-style",
+        "list-style-position",
+        "list-style-image"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "list-style",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "list-style shorthand property type, position और image जैसी list properties को एक साथ set कर सकती है.",
+      "topicTag": "CSS / Web Technology",
+      "format": "MCQ"
+    },
+    {
+      "order": 86,
+      "questionText": "A CPU has a 32-bit program counter. This means that the CPU can address:",
+      "options": [
+        "32 KB memory locations",
+        "32 MB memory locations",
+        "2 GB memory locations",
+        "4 GB memory locations"
+      ],
+      "correctOptionIndex": 3,
+      "correctOptionText": "4 GB memory locations",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "32-bit address space = 2^32 byte-addressable locations = 4 GB.",
+      "topicTag": "Computer Architecture",
+      "format": "MCQ"
+    },
+    {
+      "order": 87,
+      "questionText": "Program Counter (PC) में सामान्यतः क्या रहता है?",
+      "options": [
+        "Next instruction का address",
+        "Current data value only",
+        "Printer status",
+        "File name"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Next instruction का address",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "PC next instruction address track करता है.",
+      "topicTag": "Computer Architecture",
+      "format": "MCQ"
+    },
+    {
+      "order": 88,
+      "questionText": "When an ASP.NET file is placed on an IIS server and viewed through a browser, the resulting HTML page contains:",
+      "options": [
+        "All ASP.NET code",
+        "As much ASP.NET code as is in the ASP.NET file",
+        "All HTML code",
+        "A mix of ASP.NET and HTML code"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "All HTML code",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "ASP.NET server-side code executes on the server; browser को generated HTML response मिलता है.",
+      "topicTag": "ASP.NET / Web Technology",
+      "format": "MCQ"
+    },
+    {
+      "order": 89,
+      "questionText": "ASP.NET का server-side code browser को सामान्यतः:",
+      "options": [
+        "ज्यों का त्यों भेजता है",
+        "Execute होकर generated HTML भेजता है",
+        "Binary CPU code भेजता है",
+        "कुछ नहीं भेजता"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "Execute होकर generated HTML भेजता है",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Server ASP.NET code execute करके response, सामान्यतः HTML, generate करता है.",
+      "topicTag": "ASP.NET",
+      "format": "MCQ"
+    },
+    {
+      "order": 90,
+      "questionText": "IIS का full form है:",
+      "options": [
+        "Internet Information Services",
+        "Internet Input System",
+        "Internal Information Server",
+        "Internet Integration Software"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Internet Information Services",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "IIS = Internet Information Services.",
+      "topicTag": "Web Technology",
+      "format": "MCQ"
+    },
+    {
+      "order": 91,
+      "questionText": "Which domain reflects attitudes, values, and interests?",
+      "options": [
+        "Cognitive domain",
+        "Affective domain",
+        "Psychomotor domain",
+        "None of the above"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "Affective domain",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Affective domain attitudes, values, feelings and interests से संबंधित है.",
+      "topicTag": "Computer Pedagogy",
+      "format": "MCQ"
+    },
+    {
+      "order": 92,
+      "questionText": "Bloom's taxonomy में attitudes और values किस domain से संबंधित हैं?",
+      "options": [
+        "Cognitive",
+        "Affective",
+        "Psychomotor",
+        "Logical"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "Affective",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Affective domain attitudes, values, feelings से जुड़ा है.",
+      "topicTag": "Computer Pedagogy",
+      "format": "MCQ"
+    },
+    {
+      "order": 93,
+      "questionText": "Psychomotor domain मुख्यतः किससे संबंधित है?",
+      "options": [
+        "Physical/motor skills",
+        "Attitudes",
+        "Facts only",
+        "Memory only"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Physical/motor skills",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Psychomotor = skills and coordinated physical performance.",
+      "topicTag": "Computer Pedagogy",
+      "format": "MCQ"
+    },
+    {
+      "order": 94,
+      "questionText": "Cognitive domain मुख्यतः किससे संबंधित है?",
+      "options": [
+        "Knowledge and thinking",
+        "Physical skills only",
+        "Feelings only",
+        "Printing"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Knowledge and thinking",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Cognitive domain knowledge, understanding, reasoning आदि से जुड़ा है.",
+      "topicTag": "Computer Pedagogy",
+      "format": "MCQ"
+    },
+    {
+      "order": 95,
+      "questionText": "Laser printer में मुख्य consumable क्या होता है?",
+      "options": [
+        "Toner",
+        "Liquid ink cartridge only",
+        "Ribbon only",
+        "Graphite pencil"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Toner",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Laser printer toner powder use करता है.",
+      "topicTag": "Printers",
+      "format": "MCQ"
+    },
+    {
+      "order": 96,
+      "questionText": "Laser printer image formation में कौन-सा principle महत्वपूर्ण है?",
+      "options": [
+        "Electrostatic attraction",
+        "Magnetic tape only",
+        "Mechanical typing",
+        "Thermal paper only"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Electrostatic attraction",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Photoconductive drum और electrostatic charging toner transfer में महत्वपूर्ण हैं.",
+      "topicTag": "Printers",
+      "format": "MCQ"
+    },
+    {
+      "order": 97,
+      "questionText": "CSS में list-style shorthand किन properties को combine कर सकता है?",
+      "options": [
+        "type, position, image",
+        "font, color, margin",
+        "border, padding, width",
+        "display, float, clear"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "type, position, image",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "list-style shorthand list-style-type, position और image को combine कर सकता है.",
+      "topicTag": "CSS",
+      "format": "MCQ"
+    },
+    {
+      "order": 98,
+      "questionText": "32-bit address space में addressable byte locations कितने होते हैं?",
+      "options": [
+        "2^16",
+        "2^24",
+        "2^32",
+        "2^64"
+      ],
+      "correctOptionIndex": 2,
+      "correctOptionText": "2^32",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "32 address bits से 2^32 distinct addresses मिलते हैं.",
+      "topicTag": "Computer Architecture",
+      "format": "MCQ"
+    },
+    {
+      "order": 99,
+      "questionText": "Binary Search Tree में left child/subtree के keys सामान्यतः:",
+      "options": [
+        "Root से छोटे",
+        "Root से बड़े",
+        "सभी समान",
+        "Random"
+      ],
+      "correctOptionIndex": 0,
+      "correctOptionText": "Root से छोटे",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "BST rule: left < node < right, assuming distinct keys.",
+      "topicTag": "Binary Search Tree",
+      "format": "MCQ"
+    },
+    {
+      "order": 100,
+      "questionText": "Stack का मूल principle क्या है?",
+      "options": [
+        "FIFO",
+        "LIFO",
+        "Random access only",
+        "Priority first"
+      ],
+      "correctOptionIndex": 1,
+      "correctOptionText": "LIFO",
+      "examTag": "Basic Computer Instructor Exam 2022 Paper 2",
+      "explanation": "Stack = Last In, First Out.",
+      "topicTag": "Data Structure",
+      "format": "MCQ"
+    }
+  ]
+}

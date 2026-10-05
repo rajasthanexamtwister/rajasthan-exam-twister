@@ -14,6 +14,7 @@ import {
   ShieldAlert,
 } from "lucide-react";
 import { DailyGoalWidget } from "@/components/public/daily-goal-widget";
+import { QuizFilterBar } from "@/components/public/quiz-filter-bar";
 import clsx from "clsx";
 import { getSiteUrl } from "@/server/lib/seo";
 
@@ -135,124 +136,15 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
         {/* Student Daily & Weekly Goal Tracker Widget */}
         <DailyGoalWidget />
 
-        {/* Discovery Filter Section */}
-        <div className="bg-white rounded-3xl border border-amber-200/80 p-5 shadow-xs space-y-4">
-          <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-            <div className="flex items-center gap-2 text-sm font-extrabold text-[#0B132B]">
-              <Filter className="w-4 h-4 text-amber-600" />
-              <span>Filter & Discover Tests</span>
-            </div>
-            {(activeExam || activeSubject || activeDifficulty) && (
-              <Link
-                href="/quizzes"
-                className="text-xs font-bold text-amber-700 hover:text-amber-800 underline"
-              >
-                Reset Filters
-              </Link>
-            )}
-          </div>
-
-          {/* Browse by Exam Chips */}
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 text-xs font-bold text-[#0B132B] uppercase tracking-wider">
-              <Target className="w-3.5 h-3.5 text-amber-600" />
-              <span>Target Exam</span>
-            </div>
-            <div className="flex items-center gap-1.5 flex-wrap">
-              <Link
-                href={buildFilterUrl({ exam: undefined })}
-                className={clsx(
-                  "px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all border",
-                  !activeExam
-                    ? "bg-[#0B132B] text-white border-[#0B132B] shadow-xs font-bold"
-                    : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-amber-50 hover:border-amber-300"
-                )}
-              >
-                All Exams
-              </Link>
-              {distinctExams.map((ex) => (
-                <Link
-                  key={ex.slug}
-                  href={buildFilterUrl({ exam: ex.name })}
-                  className={clsx(
-                    "px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all border inline-flex items-center gap-1.5",
-                    activeExam?.toLowerCase() === ex.name.toLowerCase() ||
-                    activeExam?.toLowerCase() === ex.slug.toLowerCase()
-                      ? "bg-[#0B132B] text-white border-[#0B132B] shadow-xs font-bold"
-                      : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-amber-50 hover:border-amber-300"
-                  )}
-                >
-                  <span>{ex.name}</span>
-                  <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-amber-200/60 text-[#0B132B] font-bold">
-                    {ex.count}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Browse by Subject Chips */}
-          {distinctSubjects.length > 0 && (
-            <div className="space-y-2 pt-2 border-t border-slate-100">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#0B132B] uppercase tracking-wider">
-                <BookOpen className="w-3.5 h-3.5 text-amber-600" />
-                <span>Subject / Category</span>
-              </div>
-              <div className="flex items-center gap-1.5 flex-wrap">
-                <Link
-                  href={buildFilterUrl({ subject: undefined })}
-                  className={clsx(
-                    "px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all border",
-                    !activeSubject
-                      ? "bg-amber-500 text-slate-950 font-bold border-amber-500 shadow-xs"
-                      : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-amber-50 hover:border-amber-300"
-                  )}
-                >
-                  All Subjects
-                </Link>
-                {distinctSubjects.map((sub) => (
-                  <Link
-                    key={sub.slug}
-                    href={buildFilterUrl({ subject: sub.name })}
-                    className={clsx(
-                      "px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all border inline-flex items-center gap-1.5",
-                      activeSubject?.toLowerCase() === sub.name.toLowerCase()
-                        ? "bg-amber-500 text-slate-950 font-bold border-amber-500 shadow-xs"
-                        : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-amber-50 hover:border-amber-300"
-                    )}
-                  >
-                    <span>{sub.name}</span>
-                    <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-slate-200/80 text-slate-800 font-bold">
-                      {sub.count}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Difficulty Filter Chips */}
-          <div className="flex items-center gap-2 pt-2 border-t border-slate-100 flex-wrap">
-            <span className="text-xs font-bold text-slate-600 mr-1">Difficulty:</span>
-            {["all", "easy", "medium", "hard"].map((diff) => {
-              const isSelected = diff === "all" ? !activeDifficulty : activeDifficulty === diff;
-              return (
-                <Link
-                  key={diff}
-                  href={buildFilterUrl({ difficulty: diff === "all" ? undefined : diff })}
-                  className={clsx(
-                    "px-2.5 py-0.5 rounded-lg text-xs font-bold capitalize transition-all border",
-                    isSelected
-                      ? "bg-slate-900 text-white border-slate-900 shadow-xs"
-                      : "bg-white text-slate-600 border-slate-200 hover:bg-slate-100"
-                  )}
-                >
-                  {diff}
-                </Link>
-              );
-            })}
-          </div>
-        </div>
+        {/* Discovery Filter Section with Dropdowns & Quick Pills */}
+        <QuizFilterBar
+          distinctExams={distinctExams}
+          distinctSubjects={distinctSubjects}
+          activeExam={activeExam}
+          activeSubject={activeSubject}
+          activeDifficulty={activeDifficulty}
+          activeCategory={activeCategory}
+        />
 
         {/* Quizzes Grid */}
         {quizzes.length === 0 ? (
