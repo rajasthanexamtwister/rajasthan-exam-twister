@@ -3,13 +3,34 @@
 import { useState, useEffect } from "react";
 import { Send, X, Sparkles } from "lucide-react";
 import { SOCIAL_LINKS } from "@/server/lib/social-links";
+import { useSession } from "next-auth/react";
+
+export const TELEGRAM_BANNER_INTERVAL_JOINED_DAYS = 30;
+export const TELEGRAM_BANNER_INTERVAL_NOT_JOINED_DAYS = 7;
 
 export function TelegramStickyBar() {
+  const { data: session } = useSession();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const dismissed = sessionStorage.getItem("ret_telegram_bar_dismissed");
-    if (dismissed) return;
+    // Determine user joined state
+    const isJoinedStored = typeof window !== "undefined" && localStorage.getItem("ret_telegram_joined") === "true";
+    const userJoinedSession = Boolean((session?.user as any)?.telegramJoined);
+    const isJoined = isJoinedStored || userJoinedSession;
+
+    const intervalDays = isJoined
+      ? TELEGRAM_BANNER_INTERVAL_JOINED_DAYS
+      : TELEGRAM_BANNER_INTERVAL_NOT_JOINED_DAYS;
+
+    const intervalMs = intervalDays * 24 * 60 * 60 * 1000;
+
+    const lastDismissedAt = localStorage.getItem("ret_telegram_banner_dismissed_at");
+    if (lastDismissedAt) {
+      const elapsed = Date.now() - Number(lastDismissedAt);
+      if (elapsed < intervalMs) {
+        return; // Respect frequency window (30 days for joined, 7 days for others)
+      }
+    }
 
     const handleScroll = () => {
       if (window.scrollY > 350) {
@@ -24,11 +45,17 @@ export function TelegramStickyBar() {
       window.removeEventListener("scroll", handleScroll);
       clearTimeout(timer);
     };
-  }, []);
+  }, [session]);
 
   const handleDismiss = () => {
     setIsVisible(false);
-    sessionStorage.setItem("ret_telegram_bar_dismissed", "true");
+    localStorage.setItem("ret_telegram_banner_dismissed_at", Date.now().toString());
+  };
+
+  const handleJoinClick = () => {
+    localStorage.setItem("ret_telegram_banner_dismissed_at", Date.now().toString());
+    localStorage.setItem("ret_telegram_joined", "true");
+    setIsVisible(false);
   };
 
   if (!isVisible) return null;
@@ -36,7 +63,7 @@ export function TelegramStickyBar() {
   return (
     <aside
       aria-label="Telegram Channel Invitation"
-      className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 animate-in fade-in slide-in-from-bottom-5 duration-300"
+      className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 animate-in fade-in slide-in-from-bottom-5 duration-300 print:hidden"
     >
       <div className="bg-[#0F172A] text-white p-4 rounded-2xl border border-sky-500/30 shadow-2xl backdrop-blur-md flex items-center justify-between gap-4 relative overflow-hidden group">
         {/* Subtle glowing background accent */}
@@ -65,6 +92,7 @@ export function TelegramStickyBar() {
             href={SOCIAL_LINKS.telegram.url}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleJoinClick}
             className="px-3.5 py-2 text-xs font-bold bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white rounded-xl transition-all shadow-md hover:shadow-sky-500/25 flex items-center gap-1.5 whitespace-nowrap"
           >
             <span>Join Free</span>

@@ -1,11 +1,20 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { QuizService } from "@/server/services/quiz-service";
-import { CategoryService } from "@/server/services/category-service";
-import { CheckSquare, Clock, Award, Trophy, ArrowRight, Zap, Target, BookOpen } from "lucide-react";
+import {
+  CheckSquare,
+  Clock,
+  Award,
+  Trophy,
+  ArrowRight,
+  Zap,
+  Target,
+  BookOpen,
+  Filter,
+  ShieldAlert,
+} from "lucide-react";
 import { DailyGoalWidget } from "@/components/public/daily-goal-widget";
 import clsx from "clsx";
-
 import { getSiteUrl } from "@/server/lib/seo";
 
 export const revalidate = 60;
@@ -74,9 +83,9 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
     QuizService.listDistinctSubjects(),
   ]);
 
-  const { quizzes, total, totalPages } = quizzesData;
+  const { quizzes, totalPages } = quizzesData;
 
-  // Build query string helper for filters
+  // Helper for filter navigation URLs
   const buildFilterUrl = (overrides: Record<string, string | undefined>) => {
     const params = new URLSearchParams();
     const current = {
@@ -128,6 +137,21 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
 
         {/* Discovery Filter Section */}
         <div className="bg-white rounded-3xl border border-amber-200/80 p-5 shadow-xs space-y-4">
+          <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+            <div className="flex items-center gap-2 text-sm font-extrabold text-[#0B132B]">
+              <Filter className="w-4 h-4 text-amber-600" />
+              <span>Filter & Discover Tests</span>
+            </div>
+            {(activeExam || activeSubject || activeDifficulty) && (
+              <Link
+                href="/quizzes"
+                className="text-xs font-bold text-amber-700 hover:text-amber-800 underline"
+              >
+                Reset Filters
+              </Link>
+            )}
+          </div>
+
           {/* Browse by Exam Chips */}
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-xs font-bold text-[#0B132B] uppercase tracking-wider">
@@ -140,7 +164,7 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
                 className={clsx(
                   "px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all border",
                   !activeExam
-                    ? "bg-[#0B132B] text-white border-[#0B132B] shadow-xs"
+                    ? "bg-[#0B132B] text-white border-[#0B132B] shadow-xs font-bold"
                     : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-amber-50 hover:border-amber-300"
                 )}
               >
@@ -153,7 +177,7 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
                   className={clsx(
                     "px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap transition-all border inline-flex items-center gap-1.5",
                     activeExam?.toLowerCase() === ex.name.toLowerCase()
-                      ? "bg-[#0B132B] text-white border-[#0B132B] shadow-xs"
+                      ? "bg-[#0B132B] text-white border-[#0B132B] shadow-xs font-bold"
                       : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-amber-50 hover:border-amber-300"
                   )}
                 >
@@ -171,7 +195,7 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
             <div className="space-y-2 pt-2 border-t border-slate-100">
               <div className="flex items-center gap-2 text-xs font-bold text-[#0B132B] uppercase tracking-wider">
                 <BookOpen className="w-3.5 h-3.5 text-amber-600" />
-                <span>Subject / Topic</span>
+                <span>Subject / Category</span>
               </div>
               <div className="flex items-center gap-1.5 flex-wrap">
                 <Link
@@ -250,6 +274,7 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {quizzes.map((quiz) => {
               const diffConfig = DIFFICULTY_STYLES[quiz.difficulty || "medium"] || DIFFICULTY_STYLES.medium;
+              const hasNegativeMarking = quiz.defaultNegativeMarks > 0;
 
               return (
                 <div
@@ -286,9 +311,9 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
                     </div>
 
                     {/* Quiz Title */}
-                    <h3 className="text-base font-extrabold text-[#0B132B] group-hover:text-amber-700 transition-colors line-clamp-2 leading-snug">
+                    <h2 className="text-base font-extrabold text-[#0B132B] group-hover:text-amber-700 transition-colors line-clamp-2 leading-snug">
                       <Link href={`/quizzes/${quiz.slug}`}>{quiz.title}</Link>
-                    </h3>
+                    </h2>
 
                     {/* Exam Tags */}
                     {quiz.examTags && quiz.examTags.length > 0 && (
@@ -304,26 +329,40 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
                       </div>
                     )}
 
-                    {/* Stats */}
-                    <div className="flex items-center gap-3 text-xs text-slate-600 font-medium pt-1">
-                      <span className="font-bold text-slate-800">
-                        {quiz.questionCount || 0} Questions
-                      </span>
-                      <span>&bull;</span>
-                      <span className="inline-flex items-center gap-1 font-semibold text-slate-800">
-                        <Award className="w-3.5 h-3.5 text-amber-600" />
-                        +{quiz.defaultMarks}{" "}
-                        {quiz.defaultNegativeMarks > 0 ? `(-${quiz.defaultNegativeMarks})` : ""}
-                      </span>
-                      {quiz.attemptCount !== undefined && quiz.attemptCount > 0 && (
-                        <>
-                          <span>&bull;</span>
+                    {/* Stats & Negative Marking Badge */}
+                    <div className="space-y-1.5 pt-1">
+                      <div className="flex items-center justify-between text-xs text-slate-600 font-medium">
+                        <span className="font-bold text-slate-800">
+                          {quiz.questionCount || 0} Questions
+                        </span>
+                        <span className="inline-flex items-center gap-1 font-semibold text-slate-800">
+                          <Award className="w-3.5 h-3.5 text-amber-600" />
+                          +{quiz.defaultMarks} Marks
+                        </span>
+                      </div>
+
+                      <div className="flex items-center justify-between text-[11px]">
+                        <span
+                          className={clsx(
+                            "inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-semibold border",
+                            hasNegativeMarking
+                              ? "bg-rose-50 text-rose-800 border-rose-200"
+                              : "bg-emerald-50 text-emerald-800 border-emerald-200"
+                          )}
+                        >
+                          <ShieldAlert className="w-3 h-3" />
+                          {hasNegativeMarking
+                            ? `Negative Marking (-${quiz.defaultNegativeMarks})`
+                            : "No Negative Marking"}
+                        </span>
+
+                        {quiz.attemptCount !== undefined && quiz.attemptCount > 0 && (
                           <span className="inline-flex items-center gap-0.5 text-amber-900 font-bold text-[11px]">
                             <Zap className="w-3 h-3 text-amber-600" />
                             {quiz.attemptCount} {quiz.attemptCount === 1 ? "attempt" : "attempts"}
                           </span>
-                        </>
-                      )}
+                        )}
+                      </div>
                     </div>
                   </div>
 
@@ -333,9 +372,9 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
                     </span>
                     <Link
                       href={`/quizzes/${quiz.slug}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#0B132B] group-hover:text-amber-600 transition-colors"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold shadow-xs transition-all group-hover:scale-102"
                     >
-                      <span>Take Quiz</span>
+                      <span>Start Quiz</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                     </Link>
                   </div>
@@ -368,4 +407,3 @@ export default async function PublicQuizzesPage({ searchParams }: QuizzesPagePro
     </div>
   );
 }
-

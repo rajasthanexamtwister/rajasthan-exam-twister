@@ -440,4 +440,105 @@ export class QuizService {
       submittedAt: attempt.submittedAt,
     };
   }
+
+  /**
+   * Evaluates a single question answer securely upon selection in single-question mode
+   */
+  static async checkSingleQuestionAnswer(
+    quizId: string,
+    questionId: string,
+    selectedOptionIndex: number | null,
+    isPracticeMode: boolean = false
+  ): Promise<{
+    isCorrect: boolean;
+    isUnattempted: boolean;
+    correctOptionIndex: number;
+    explanation: string;
+    marksAwarded: number;
+  } | null> {
+    const quiz = await QuizRepository.findById(quizId);
+    if (!quiz || quiz.status !== "PUBLISHED") return null;
+
+    const question = await QuizQuestionRepository.findById(questionId);
+    if (!question || question.quizId.toString() !== quiz._id.toString()) return null;
+
+    const isUnattempted = selectedOptionIndex === null || selectedOptionIndex === undefined;
+    const isCorrect = !isUnattempted && selectedOptionIndex === question.correctOptionIndex;
+
+    const qMarks = question.marks ?? quiz.defaultMarks;
+    const qNegative = question.negativeMarks ?? quiz.defaultNegativeMarks;
+
+    let marksAwarded = 0;
+    if (isCorrect) {
+      marksAwarded = qMarks;
+    } else if (!isUnattempted) {
+      marksAwarded = isPracticeMode || qNegative === 0 ? 0 : -qNegative;
+    }
+
+    return {
+      isCorrect,
+      isUnattempted,
+      correctOptionIndex: question.correctOptionIndex,
+      explanation: question.explanation || "",
+      marksAwarded: Math.round(marksAwarded * 100) / 100,
+    };
+  }
+
+  /**
+   * Determines the next published quiz in the same topic/series/subject
+   */
+  static async getNextQuizInSeries(
+    currentQuizId: string
+  ): Promise<{ id: string; title: string; slug: string; subject?: string } | null> {
+    const currentQuiz = await QuizRepository.findById(currentQuizId);
+    if (!currentQuiz || currentQuiz.status !== "PUBLISHED") return null;
+
+    const query: any = {
+      status: "PUBLISHED",
+      _id: { $ne: currentQuiz._id },
+    };
+
+    // Filter by subject, category, or examTags
+    const conditions: any[] = [];
+    if (currentQuiz.subject) {
+      conditions.push({ subject: currentQuiz.subject });
+    }
+    if (currentQuiz.categoryId) {
+      conditions.push({ categoryId: currentQuiz.categoryId });
+    }
+    if (currentQuiz.examTags && currentQuiz.examTags.length > 0) {
+      conditions.push({ examTags: { $in: currentQuiz.examTags } });
+    }
+
+    if (conditions.length > 0) {
+      query.$or = conditions;
+    }
+
+    // Try finding next quiz created after current quiz
+    let nextQuiz = await Quiz.findOne({
+      ...query,
+      createdAt: { $gt: currentQuiz.createdAt },
+    })
+      .sort({ createdAt: 1 })
+      .lean()
+      .exec();
+
+    // Fallback: get first quiz in series
+    if (!nextQuiz) {
+      nextQuiz = await Quiz.findOne(query)
+        .sort({ createdAt: 1 })
+        .lean()
+        .exec();
+    }
+
+    if (!nextQuiz) return null;
+
+    return {
+      id: nextQuiz._id.toString(),
+      title: nextQuiz.title,
+      slug: nextQuiz.slug,
+      subject: nextQuiz.subject || undefined,
+    };
+  }
 }
+

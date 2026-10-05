@@ -4,7 +4,6 @@ import Image from "next/image";
 import { NoteRepository } from "@/server/repositories/note";
 import { ContentRenderer } from "@/components/content/content-renderer";
 import { TelegramBannerCard } from "@/components/public/telegram-banner-card";
-import { AudioSummaryPlayer } from "@/components/public/audio-summary-player";
 import { BookmarkButton } from "@/components/public/bookmark-button";
 import { BrandedPdfDownloader } from "@/components/public/branded-pdf-downloader";
 import { generateMetaDescription, getSiteUrl } from "@/server/lib/seo";
@@ -397,14 +396,6 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
             ))}
           </section>
         )}
-
-        {/* Audio AI Voice Summary Player */}
-        <div className="print:hidden">
-          <AudioSummaryPlayer
-            textToRead={note.content || note.title}
-            title={`${note.title} — Audio Summary`}
-          />
-        </div>
 
         {/* Main Text Content via Shared ContentRenderer */}
         {note.content && (
