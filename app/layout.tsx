@@ -155,15 +155,15 @@ export default function RootLayout({
           fetchPriority="high"
         />
 
-        {/* Google AdSense Script (Non-render-blocking lazyOnload) */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8986858563387447"
-          crossOrigin="anonymous"
-          strategy="lazyOnload"
-        />
       </head>
       <body className="min-h-full flex flex-col font-sans antialiased bg-[#FAF8F5] text-slate-900 selection:bg-amber-200 selection:text-amber-950">
+        {/* Google AdSense Script */}
+        <Script
+          id="google-adsense"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8986858563387447"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         {/* Site-wide Organization + WebSite structured data for Google brand recognition */}
         <script
           type="application/ld+json"
