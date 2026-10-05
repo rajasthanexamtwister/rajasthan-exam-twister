@@ -133,6 +133,18 @@ describe("Custom Consent Management & Google Consent Mode v2", () => {
     window.removeEventListener(OPEN_CONSENT_EVENT, listener);
   });
 
+  it("should verify regional Consent Mode v2 configuration covers EEA countries", async () => {
+    const { EEA_REGIONS } = await import("@/components/privacy/google-consent-scripts");
+    expect(Array.isArray(EEA_REGIONS)).toBe(true);
+    expect(EEA_REGIONS).toContain("DE"); // Germany
+    expect(EEA_REGIONS).toContain("FR"); // France
+    expect(EEA_REGIONS).toContain("GB"); // UK
+    expect(EEA_REGIONS).toContain("IT"); // Italy
+    expect(EEA_REGIONS).toContain("ES"); // Spain
+    expect(EEA_REGIONS).not.toContain("IN"); // India (non-EEA)
+    expect(EEA_REGIONS).not.toContain("US"); // US (non-EEA)
+  });
+
   it("should verify Google Consent Scripts and RootLayout render without duplicate GA4 / AdSense tags", () => {
     const layoutPath = path.join(process.cwd(), "app", "layout.tsx");
     const layoutContent = fs.readFileSync(layoutPath, "utf-8");

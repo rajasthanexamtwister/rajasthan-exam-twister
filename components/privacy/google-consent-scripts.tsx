@@ -4,14 +4,26 @@ interface GoogleConsentScriptsProps {
   gaMeasurementId?: string;
 }
 
+export const EEA_REGIONS = [
+  "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR",
+  "DE", "GR", "EL", "HU", "IE", "IT", "LV", "LT", "LU", "MT",
+  "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI",
+  "NO", "GB", "CH"
+];
+
 /**
  * Renders Google Consent Mode v2 inline initialization and GA4 gtag.js script.
- * Synchronously establishes conservative denied defaults before any Google tags process data.
+ * Adheres to Google Consent Mode v2 regional guidelines:
+ * - EEA / UK / Swiss regions: Default denied (strict opt-in compliance).
+ * - Non-EEA regions (India, global): Default granted (opt-out compliance; resolves Google 0% consent warning).
+ * - Saved user choice: Explicit user preference overrides defaults immediately on first load.
  */
 export function GoogleConsentScripts({
   gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-B6W6YLVPSQ",
 }: GoogleConsentScriptsProps) {
-  // Synchronous script establishing Consent Mode v2 default state from localStorage or strict denied defaults
+  const eeaRegionsJson = JSON.stringify(EEA_REGIONS);
+
+  // Synchronous script establishing Consent Mode v2 regional defaults or stored choice
   const consentInitCode = `
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -27,16 +39,42 @@ export function GoogleConsentScripts({
       }
     } catch (e) {}
 
-    gtag('consent', 'default', {
-      'ad_storage': retConsent && retConsent.advertising ? 'granted' : 'denied',
-      'ad_user_data': retConsent && retConsent.advertising ? 'granted' : 'denied',
-      'ad_personalization': retConsent && retConsent.advertising ? 'granted' : 'denied',
-      'analytics_storage': retConsent && retConsent.analytics ? 'granted' : 'denied',
-      'functionality_storage': 'granted',
-      'personalization_storage': retConsent && retConsent.advertising ? 'granted' : 'denied',
-      'security_storage': 'granted',
-      'wait_for_update': 500
-    });
+    if (retConsent) {
+      // User's explicit choice overrides defaults
+      gtag('consent', 'default', {
+        'ad_storage': retConsent.advertising ? 'granted' : 'denied',
+        'ad_user_data': retConsent.advertising ? 'granted' : 'denied',
+        'ad_personalization': retConsent.advertising ? 'granted' : 'denied',
+        'analytics_storage': retConsent.analytics ? 'granted' : 'denied',
+        'functionality_storage': 'granted',
+        'personalization_storage': retConsent.advertising ? 'granted' : 'denied',
+        'security_storage': 'granted'
+      });
+    } else {
+      // 1. Strict denied defaults for European Economic Area (EEA), UK, and Switzerland
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied',
+        'functionality_storage': 'granted',
+        'personalization_storage': 'denied',
+        'security_storage': 'granted',
+        'region': ${eeaRegionsJson},
+        'wait_for_update': 500
+      });
+
+      // 2. Default granted for Non-EEA traffic (India, US, global traffic - fixes 0% non-EEA consent rate warning)
+      gtag('consent', 'default', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted',
+        'functionality_storage': 'granted',
+        'personalization_storage': 'granted',
+        'security_storage': 'granted'
+      });
+    }
 
     gtag('js', new Date());
     ${gaMeasurementId ? `gtag('config', '${gaMeasurementId}', { anonymize_ip: true });` : ""}
@@ -44,7 +82,7 @@ export function GoogleConsentScripts({
 
   return (
     <>
-      {/* 1. Synchronous Consent Mode v2 default configuration */}
+      {/* 1. Synchronous Consent Mode v2 regional default configuration */}
       <script
         id="google-consent-mode-init"
         dangerouslySetInnerHTML={{ __html: consentInitCode }}

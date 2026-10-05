@@ -23,19 +23,23 @@ describe("Google AdSense & Content Security Policy Audit", () => {
     expect(cspValue).toContain("https://googleads.g.doubleclick.net");
     expect(cspValue).toContain("https://www.google-analytics.com");
 
-    // Verify script-src contains necessary Google AdSense and Tag Manager script domains
+    // Verify script-src contains necessary Google AdSense, Tag Manager, and SODAR script domains
     expect(cspValue).toContain("script-src");
     expect(cspValue).toContain("https://pagead2.googlesyndication.com");
     expect(cspValue).toContain("https://googleads.g.doubleclick.net");
     expect(cspValue).toContain("https://tpc.googlesyndication.com");
     expect(cspValue).toContain("https://www.googletagservices.com");
     expect(cspValue).toContain("https://www.googletagmanager.com");
+    expect(cspValue).toContain("https://ep1.adtrafficquality.google");
+    expect(cspValue).toContain("https://ep2.adtrafficquality.google");
 
     // Verify frame-src contains necessary iframe sources
     expect(cspValue).toContain("frame-src");
     expect(cspValue).toContain("https://googleads.g.doubleclick.net");
     expect(cspValue).toContain("https://tpc.googlesyndication.com");
     expect(cspValue).toContain("https://pagead2.googlesyndication.com");
+    expect(cspValue).toContain("https://ep1.adtrafficquality.google");
+    expect(cspValue).toContain("https://ep2.adtrafficquality.google");
 
     // Verify security constraints: no wildcard '*' in connect-src or script-src
     expect(cspValue).not.toMatch(/connect-src[^;]*\*/);
