@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Sora, Plus_Jakarta_Sans, Noto_Sans_Devanagari } from "next/font/google";
 import { getSiteUrl } from "@/server/lib/seo";
 import { OFFICIAL_SOCIAL_URLS } from "@/server/lib/social-links";
@@ -140,33 +139,27 @@ export default function RootLayout({
         {/* PWA Web App Manifest & Mobile App Meta Tags */}
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0B132B" />
+        <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Exam Twister" />
 
         {/* Resource Preconnect Hints */}
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link
-          rel="preload"
-          as="image"
-          href="/brand/banner.webp"
-          type="image/webp"
-          // @ts-ignore
-          fetchPriority="high"
-        />
-
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="min-h-full flex flex-col font-sans antialiased bg-[#FAF8F5] text-slate-900 selection:bg-amber-200 selection:text-amber-950">
         {/* Google Consent Mode v2 & Google Analytics 4 Script */}
         <GoogleConsentScripts />
 
-        {/* Google AdSense Script */}
-        <Script
+        {/* Google AdSense Script (Native async script to prevent data-nscript validation notices) */}
+        <script
+          async
           id="google-adsense"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8986858563387447"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
         {/* Site-wide Organization + WebSite structured data for Google brand recognition */}
         <script

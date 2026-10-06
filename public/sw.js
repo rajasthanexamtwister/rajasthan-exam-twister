@@ -1,4 +1,4 @@
-const CACHE_NAME = "ret-pwa-v1";
+const CACHE_NAME = "ret-pwa-v2";
 const STATIC_ASSETS = [
   "/",
   "/notes",
@@ -36,14 +36,14 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// Fetch event - Network First with Cache Fallback for dynamic pages
+// Fetch event - Network First with Cache Fallback for same-origin requests
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
   const url = new URL(event.request.url);
 
-  // Skip cross-origin chrome-extension or external tracking requests
-  if (url.protocol !== "http:" && url.protocol !== "https:") return;
+  // Strictly skip cross-origin requests (Google Tag Manager, AdSense, Analytics, CDN, etc.)
+  if (url.origin !== self.location.origin) return;
 
   event.respondWith(
     fetch(event.request)

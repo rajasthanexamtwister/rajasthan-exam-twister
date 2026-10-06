@@ -11,14 +11,14 @@
   "categories": ["education", "books", "productivity"],
   "icons": [
     {
-      "src": "/icon.png",
-      "sizes": "192x192",
+      "src": "/brand/logo-512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
       "src": "/apple-icon.png",
-      "sizes": "512x512",
+      "sizes": "180x180",
       "type": "image/png",
       "purpose": "any maskable"
     }
