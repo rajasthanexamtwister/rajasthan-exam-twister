@@ -1,6 +1,5 @@
-import Script from "next/script";
-
 interface GoogleConsentScriptsProps {
+  googleTagId?: string;
   gaMeasurementId?: string;
 }
 
@@ -12,14 +11,15 @@ export const EEA_REGIONS = [
 ];
 
 /**
- * Renders Google Consent Mode v2 inline initialization and GA4 gtag.js script.
+ * Renders Google Consent Mode v2 inline initialization and Google tag (gtag.js) script.
  * Adheres to Google Consent Mode v2 regional guidelines:
  * - EEA / UK / Swiss regions: Default denied (strict opt-in compliance).
  * - Non-EEA regions (India, global): Default granted (opt-out compliance; resolves Google 0% consent warning).
  * - Saved user choice: Explicit user preference overrides defaults immediately on first load.
  */
 export function GoogleConsentScripts({
-  gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-B6W6YLVPSQ",
+  googleTagId = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID || "GT-KDDT6VRQ",
+  gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
 }: GoogleConsentScriptsProps) {
   const eeaRegionsJson = JSON.stringify(EEA_REGIONS);
 
@@ -77,25 +77,26 @@ export function GoogleConsentScripts({
     }
 
     gtag('js', new Date());
-    ${gaMeasurementId ? `gtag('config', '${gaMeasurementId}', { anonymize_ip: true });` : ""}
+    ${googleTagId ? `gtag('config', '${googleTagId}');` : ""}
+    ${gaMeasurementId && gaMeasurementId !== googleTagId ? `gtag('config', '${gaMeasurementId}', { anonymize_ip: true });` : ""}
   `.trim();
 
   return (
     <>
-      {/* 1. Synchronous Consent Mode v2 regional default configuration */}
+      {/* 1. Google tag (gtag.js) native async loader for instant crawler & bot detection */}
+      {googleTagId && (
+        <script
+          async
+          id="google-tag-manager-gtag"
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`}
+        />
+      )}
+
+      {/* 2. Synchronous Consent Mode v2 & Google Tag initialization */}
       <script
         id="google-consent-mode-init"
         dangerouslySetInnerHTML={{ __html: consentInitCode }}
       />
-
-      {/* 2. Google Analytics gtag.js loader */}
-      {gaMeasurementId && (
-        <Script
-          id="google-gtag-js"
-          src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
-          strategy="afterInteractive"
-        />
-      )}
     </>
   );
 }
