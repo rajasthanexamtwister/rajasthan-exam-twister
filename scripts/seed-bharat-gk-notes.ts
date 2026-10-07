@@ -397,7 +397,7 @@ async function seedBharatGkNotes() {
       existingNote.subject = n.subject;
       existingNote.content = n.content;
       existingNote.categoryId = n.categoryId;
-      existingNote.status = n.status;
+      existingNote.status = n.status as ContentStatus;
       if (!existingNote.publishedAt) {
         existingNote.publishedAt = n.publishedAt;
       }

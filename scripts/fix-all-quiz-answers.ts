@@ -150,7 +150,7 @@ async function fixAllQuizzes() {
       const { bestIndex, confidence, rationale } = determineBestOption(
         q.questionText,
         q.options,
-        q.explanation
+        q.explanation || ""
       );
 
       if (bestIndex !== q.correctOptionIndex) {

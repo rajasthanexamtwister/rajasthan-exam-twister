@@ -42,7 +42,7 @@ async function diagnose() {
     for (const q of questions) {
       if (q.correctOptionIndex === 0) zeroCount++;
 
-      const expNorm = normalizeDevanagari(q.explanation);
+      const expNorm = normalizeDevanagari(q.explanation || "");
       const currentSelectedOpt = q.options[q.correctOptionIndex] || "";
       const currentNorm = normalizeDevanagari(currentSelectedOpt);
 
