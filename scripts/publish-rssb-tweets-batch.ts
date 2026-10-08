@@ -2,7 +2,7 @@ import path from "path";
 import dotenv from "dotenv";
 dotenv.config({ path: path.resolve(process.cwd(), ".env") });
 
-import { connectToDatabase } from "../server/lib/mongodb";
+import { connectToDatabase } from "../server/b/mongodb";
 import { Blog } from "../server/models/Blog";
 import { Category } from "../server/models/Category";
 import { Tag } from "../server/models/Tag";

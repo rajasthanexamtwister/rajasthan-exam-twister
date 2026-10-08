@@ -32,7 +32,7 @@ export function ContentRenderer({ content, className }: ContentRendererProps) {
         "[&_th]:bg-slate-100 [&_th]:border [&_th]:border-slate-300 [&_th]:px-2.5 sm:[&_th]:px-4 [&_th]:py-2 [&_th]:text-left [&_th]:text-xs [&_th]:font-bold [&_th]:uppercase [&_th]:tracking-wider [&_th]:text-slate-800 [&_th]:break-words",
         "[&_td]:border [&_td]:border-slate-300 [&_td]:px-2.5 sm:[&_td]:px-4 [&_td]:py-2 [&_td]:text-xs sm:[&_td]:text-sm [&_td]:text-slate-700 [&_td]:break-words",
         "[&_tr:nth-child(even)]:bg-slate-50/70",
-        "[&_img]:max-w-full [&_img]:h-auto [&_img]:rounded-xl [&_img]:my-6 [&_img]:shadow-md [&_img]:object-contain [&_img]:bg-slate-100",
+        "[&_img]:max-w-full [&_img]:h-auto [&_img]:w-full sm:[&_img]:w-auto [&_img]:mx-auto [&_img]:rounded-2xl [&_img]:my-6 [&_img]:shadow-md [&_img]:object-contain [&_img]:bg-slate-100",
         "[&_a]:text-amber-600 [&_a]:underline [&_a]:decoration-amber-400 [&_a]:underline-offset-2 hover:[&_a]:text-amber-700 [&_a]:break-words",
         "[&>hr]:my-8 [&>hr]:border-slate-200",
         className

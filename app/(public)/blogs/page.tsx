@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { BlogRepository } from "@/server/repositories/blog";
 import { CategoryRepository } from "@/server/repositories/category";
 import { Clock, Calendar, ArrowRight, FileText, User, Sparkles, Filter, X } from "lucide-react";
@@ -149,60 +150,86 @@ export default async function PublicBlogsPage({ searchParams }: BlogsPageProps) 
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogs.map((blog) => (
-            <article
-              key={blog._id.toString()}
-              className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col group"
-            >
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between text-xs text-slate-600 font-medium">
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5 text-amber-700" />
-                      {blog.readingTime || 1} min read
-                    </span>
-                    {blog.publishedAt && (
-                      <span className="flex items-center gap-1">
-                        <Calendar className="w-3.5 h-3.5 text-amber-700" />
-                        {new Date(blog.publishedAt).toLocaleDateString("en-IN", {
-                          day: "numeric",
-                          month: "short",
-                          year: "numeric",
-                        })}
+          {blogs.map((blog) => {
+            const coverImageDoc = blog.coverImageId as unknown as { url?: string; altText?: string } | undefined;
+            const categoryDoc = blog.categoryId as unknown as { name?: string; slug?: string } | undefined;
+
+            return (
+              <article
+                key={blog._id.toString()}
+                className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col group"
+              >
+                {/* Responsive Cover Image Banner */}
+                {coverImageDoc?.url && (
+                  <Link
+                    href={`/blogs/${blog.slug}`}
+                    className="block relative aspect-video w-full overflow-hidden bg-slate-100"
+                  >
+                    <Image
+                      src={coverImageDoc.url}
+                      alt={coverImageDoc.altText || blog.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    {categoryDoc?.name && (
+                      <span className="absolute top-3 left-3 px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-950/80 backdrop-blur-xs text-amber-300 border border-amber-400/20 shadow-xs">
+                        {categoryDoc.name}
                       </span>
+                    )}
+                  </Link>
+                )}
+
+                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between text-xs text-slate-600 font-medium">
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3.5 h-3.5 text-amber-700" />
+                        {blog.readingTime || 1} min read
+                      </span>
+                      {blog.publishedAt && (
+                        <span className="flex items-center gap-1">
+                          <Calendar className="w-3.5 h-3.5 text-amber-700" />
+                          {new Date(blog.publishedAt).toLocaleDateString("en-IN", {
+                            day: "numeric",
+                            month: "short",
+                            year: "numeric",
+                          })}
+                        </span>
+                      )}
+                    </div>
+
+                    <Link
+                      href={`/blogs/${blog.slug}`}
+                      className="block font-bold text-lg text-slate-900 group-hover:text-amber-700 transition-colors line-clamp-2 leading-snug"
+                    >
+                      {blog.title}
+                    </Link>
+
+                    {blog.excerpt && (
+                      <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
+                        {blog.excerpt}
+                      </p>
                     )}
                   </div>
 
-                  <Link
-                    href={`/blogs/${blog.slug}`}
-                    className="block font-bold text-lg text-slate-900 group-hover:text-amber-700 transition-colors line-clamp-2"
-                  >
-                    {blog.title}
-                  </Link>
-
-                  {blog.excerpt && (
-                    <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
-                      {blog.excerpt}
-                    </p>
-                  )}
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <span className="text-xs text-slate-600 font-medium flex items-center gap-1.5">
+                      <User className="w-3.5 h-3.5 text-slate-500" />
+                      {blog.author || "Admin"}
+                    </span>
+                    <Link
+                      href={`/blogs/${blog.slug}`}
+                      className="text-xs font-bold text-amber-800 hover:text-amber-900 flex items-center gap-1 group-hover:translate-x-0.5 transition-all"
+                    >
+                      Read Article
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
                 </div>
-
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-xs text-slate-600 font-medium flex items-center gap-1.5">
-                    <User className="w-3.5 h-3.5 text-slate-500" />
-                    {blog.author || "Admin"}
-                  </span>
-                  <Link
-                    href={`/blogs/${blog.slug}`}
-                    className="text-xs font-bold text-amber-800 hover:text-amber-900 flex items-center gap-1 group-hover:translate-x-0.5 transition-all"
-                  >
-                    Read Article
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       )}
 

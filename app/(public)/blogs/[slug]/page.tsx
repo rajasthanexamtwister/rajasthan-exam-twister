@@ -281,18 +281,18 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           {/* Cover Image if attached */}
           {coverImageDoc?.url && (
             <figure className="pt-4">
-              <div className="relative w-full h-72 sm:h-96 rounded-3xl overflow-hidden border border-amber-200 shadow-sm bg-slate-100">
+              <div className="relative aspect-video sm:aspect-[21/9] w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-amber-200/80 shadow-md bg-slate-100">
                 <Image
                   src={coverImageDoc.url}
                   alt={coverImageDoc.altText || blog.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, 896px"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 896px"
                   priority
                   className="object-cover"
                 />
               </div>
               {coverImageDoc.caption && (
-                <figcaption className="text-xs text-slate-500 text-center mt-2">
+                <figcaption className="text-xs text-slate-500 text-center mt-2 italic font-medium">
                   {coverImageDoc.caption}
                 </figcaption>
               )}
