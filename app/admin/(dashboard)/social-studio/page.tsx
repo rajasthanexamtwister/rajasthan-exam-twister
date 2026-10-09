@@ -629,7 +629,7 @@ export default function SocialStudioPage() {
                 </div>
 
                 {/* 9:16 Phone Mockup Container */}
-                <div className="relative w-full max-w-[290px] aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-900 bg-slate-950 group">
+                <div className="relative w-full max-w-[290px] aspect-[9/16] rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-900 bg-slate-950">
                   <Image
                     src={activePost.instagramImageUrl}
                     alt="Instagram Reel Question"
@@ -638,31 +638,6 @@ export default function SocialStudioPage() {
                     className="object-cover object-center"
                     priority
                   />
-                  {/* Subtle overlay on hover */}
-                  <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2.5 p-4">
-                    <button
-                      onClick={() =>
-                        handleDownloadImage(
-                          activePost.instagramImageUrl,
-                          `CET_Reel_${activePost.date.replace(/ /g, "_")}.jpg`
-                        )
-                      }
-                      className="px-4 py-2 bg-white text-slate-950 text-xs font-bold rounded-lg shadow-lg flex items-center gap-1.5 hover:bg-amber-400 transition-colors"
-                    >
-                      <Download className="w-4 h-4" /> Download HD
-                    </button>
-                    <button
-                      onClick={() => handleCopyImage(activePost.instagramImageUrl, "instaImage")}
-                      className="px-4 py-2 bg-slate-900 text-white text-xs font-bold rounded-lg shadow-lg flex items-center gap-1.5 hover:bg-slate-800 transition-colors"
-                    >
-                      {copiedField === "instaImage" ? (
-                        <Check className="w-4 h-4 text-emerald-400" />
-                      ) : (
-                        <Copy className="w-4 h-4" />
-                      )}
-                      {copiedField === "instaImage" ? "Copied!" : "Copy Image"}
-                    </button>
-                  </div>
                 </div>
 
                 {/* Direct Action Buttons Under Image */}
