@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import time
+import base64
 import subprocess
 from pathlib import Path
 from PIL import Image
@@ -17,6 +18,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SOCIAL_KITS_DIR = BASE_DIR / "public" / "uploads" / "social-kits"
 HISTORY_FILE = BASE_DIR / "public" / "uploads" / "social_posts_history.json"
 DATA_FILE = BASE_DIR / "scripts" / "remaining_questions_data.json"
+LOGO_FILE = BASE_DIR / "public" / "brand" / "examtwister_logo.png"
+
+def get_logo_data_uri():
+    if LOGO_FILE.exists():
+        with open(LOGO_FILE, "rb") as f:
+            return f"data:image/png;base64,{base64.b64encode(f.read()).decode('utf-8')}"
+    return ""
 
 def get_browser_path():
     candidates = [
@@ -36,7 +44,8 @@ def build_html_template(
     question_hi,
     question_sub,
     options,
-    topic_name="राजस्थान भर्ती परीक्षा"
+    topic_name="राजस्थान भर्ती परीक्षा",
+    logo_src=""
 ):
     # Ensure 4 options
     opt_a = options[0]["text"] if len(options) > 0 else "विकल्प A"
@@ -451,7 +460,7 @@ def build_html_template(
         <div class="heritage-backdrop"></div>
         <div class="header-top-row">
             <div class="brand-logo-wrap">
-                <img src="http://localhost:3000/brand/examtwister_logo.png" alt="Logo">
+                <img src="{logo_src or 'http://localhost:3000/brand/examtwister_logo.png'}" alt="Logo">
             </div>
             <div class="header-center-info">
                 <div class="main-subject-title">{exam_title}</div>
@@ -475,7 +484,7 @@ def build_html_template(
         <div class="hero-elements-row">
             <div class="hero-portrait-card">
                 <div class="portrait-img-box">
-                    <img src="http://localhost:3000/brand/examtwister_logo.png" alt="Mascot">
+                    <img src="{logo_src or 'http://localhost:3000/brand/examtwister_logo.png'}" alt="Mascot">
                 </div>
                 <div class="portrait-plaque">
                     <h4>RAJASTHAN EXAM TWISTER</h4>
@@ -549,6 +558,7 @@ def build_html_template(
 
 def main():
     browser = get_browser_path()
+    logo_data_uri = get_logo_data_uri()
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         questions = json.load(f)
 
@@ -596,7 +606,8 @@ def main():
             question_hi=q_text,
             question_sub="(निम्न में से सबसे उपयुक्त विकल्प चुनें)",
             options=opt_list,
-            topic_name=quiz_group
+            topic_name=quiz_group,
+            logo_src=logo_data_uri
         )
 
         tmp_html = BASE_DIR / f"temp_batch_{q_num}.html"

@@ -24,6 +24,11 @@ import {
   Eye,
   FileText,
   Trash2,
+  Cloud,
+  AlertTriangle,
+  Zap,
+  Database,
+  CheckCheck,
 } from "lucide-react";
 import { SocialCanvasPreview } from "@/components/admin/social-canvas-preview";
 
@@ -52,6 +57,8 @@ interface PostItem {
   explanation: string;
   instagramImageUrl: string;
   twitterImageUrl: string;
+  cloudinaryReelPublicId?: string;
+  cloudinaryTwitterPublicId?: string;
   instagramCaption: string;
   pinnedComment: string;
   suggestedSongs: Song[];
@@ -65,13 +72,26 @@ interface PostItem {
   createdAt: string;
 }
 
+interface StorageStats {
+  total: number;
+  unuploaded: number;
+  fullyUploaded: number;
+  cloudinaryConfigured: boolean;
+  warning: string | null;
+  hasUnuploadedBacklog: boolean;
+  storageLimitReached: boolean;
+}
+
 export default function SocialStudioPage() {
   const [history, setHistory] = useState<PostItem[]>([]);
+  const [stats, setStats] = useState<StorageStats | null>(null);
   const [activePost, setActivePost] = useState<PostItem | null>(null);
   const [activeTab, setActiveTab] = useState<"instagram" | "twitter" | "history">("instagram");
-  const [imageMode, setImageMode] = useState<"ai" | "canvas">("ai");
   const [copiedField, setCopiedField] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [syncingCloudinary, setSyncingCloudinary] = useState(false);
+  const [cleaningUp, setCleaningUp] = useState(false);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [showNewModal, setShowNewModal] = useState(false);
 
   // Form state for creating a new daily question
@@ -89,14 +109,24 @@ export default function SocialStudioPage() {
     explanation: "‘प्रत्येक’ में यण संधि है। प्रति + एक मिलकर प्रत्येक बनता है (इ + ए = ये)।",
   });
 
+  const showToast = (msg: string) => {
+    setToastMessage(msg);
+    setTimeout(() => setToastMessage(null), 4000);
+  };
+
   const fetchHistory = async () => {
     try {
       setLoading(true);
       const res = await fetch("/api/admin/social-studio");
       const data = await res.json();
-      if (data.success && data.history?.length) {
-        setHistory(data.history);
-        setActivePost(data.history[0]);
+      if (data.success) {
+        setHistory(data.history || []);
+        if (data.history?.length) {
+          setActivePost(data.history[0]);
+        }
+        if (data.stats) {
+          setStats(data.stats);
+        }
       }
     } catch (err) {
       console.error("Failed to load social history", err);
@@ -119,7 +149,6 @@ export default function SocialStudioPage() {
     try {
       const response = await fetch(imgUrl);
       const blob = await response.blob();
-      // Only png is supported in clipboard api in some browsers, fallback to direct download notification
       try {
         await navigator.clipboard.write([
           new ClipboardItem({
@@ -129,7 +158,6 @@ export default function SocialStudioPage() {
         setCopiedField(fieldName);
         setTimeout(() => setCopiedField(null), 2500);
       } catch (err) {
-        // Fallback: download file
         handleDownloadImage(imgUrl, `${fieldName}.jpg`);
         setCopiedField(fieldName);
         setTimeout(() => setCopiedField(null), 2500);
@@ -167,9 +195,75 @@ export default function SocialStudioPage() {
         if (activePost?.id === id) {
           setActivePost(data.item);
         }
+        if (data.stats) setStats(data.stats);
+        if (data.isFullyUploaded) {
+          showToast("🎉 पूरा सवाल अपलोड हो चुका है! आप 'Auto Clean' दबाकर स्पेस फ्री कर सकते हैं।");
+        }
       }
     } catch (err) {
       console.error("Failed to update status", err);
+    }
+  };
+
+  // Sync to Cloudinary
+  const handleSyncCloudinary = async () => {
+    try {
+      setSyncingCloudinary(true);
+      const res = await fetch("/api/admin/social-studio", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "sync_cloudinary" }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setHistory(data.history);
+        if (data.stats) setStats(data.stats);
+        if (activePost) {
+          const updatedActive = data.history.find((h: PostItem) => h.id === activePost.id);
+          if (updatedActive) setActivePost(updatedActive);
+        }
+        showToast(data.message || "Cloudinary sync complete!");
+      } else {
+        alert(data.error || "Failed to sync with Cloudinary.");
+      }
+    } catch (err: any) {
+      alert("Cloudinary sync error: " + err.message);
+    } finally {
+      setSyncingCloudinary(false);
+    }
+  };
+
+  // Auto-Cleanup already uploaded images
+  const handleCleanupUploaded = async () => {
+    if (
+      !confirm(
+        "क्या आप वाकई उन सभी प्रश्नों की इमेजेस क्लाउड और डिस्क से हटाना चाहते हैं जो Instagram और Twitter पर अपलोड हो चुके हैं?"
+      )
+    ) {
+      return;
+    }
+    try {
+      setCleaningUp(true);
+      const res = await fetch("/api/admin/social-studio", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "cleanup_uploaded" }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setHistory(data.history);
+        if (data.stats) setStats(data.stats);
+        if (data.history.length > 0) {
+          setActivePost(data.history[0]);
+        } else {
+          setActivePost(null);
+        }
+        showToast(data.message || "Cleaned up uploaded media successfully!");
+      }
+    } catch (err: any) {
+      alert("Cleanup error: " + err.message);
+    } finally {
+      setCleaningUp(false);
     }
   };
 
@@ -185,6 +279,7 @@ export default function SocialStudioPage() {
       const data = await res.json();
       if (data.success) {
         setHistory(data.history);
+        if (data.stats) setStats(data.stats);
         if (activePost?.id === id) {
           setActivePost(data.history[0] || null);
         }
@@ -195,7 +290,7 @@ export default function SocialStudioPage() {
   };
 
   const handleDeleteAll = async () => {
-    if (!confirm("Are you sure you want to delete all saved question kits?")) return;
+    if (!confirm("Are you sure you want to delete all saved question kits and free all storage?")) return;
     try {
       const res = await fetch("/api/admin/social-studio", {
         method: "POST",
@@ -205,6 +300,7 @@ export default function SocialStudioPage() {
       const data = await res.json();
       if (data.success) {
         setHistory([]);
+        if (data.stats) setStats(data.stats);
         setActivePost(null);
       }
     } catch (err) {
@@ -233,13 +329,18 @@ export default function SocialStudioPage() {
           ],
           correctOption: newForm.correctOption,
           explanation: newForm.explanation,
+          force: true,
         }),
       });
       const data = await res.json();
       if (data.success) {
         setHistory((prev) => [data.item, ...prev]);
+        if (data.stats) setStats(data.stats);
         setActivePost(data.item);
         setShowNewModal(false);
+        showToast("✨ नया सवाल सोशल स्टूडियो में जुड़ गया!");
+      } else if (data.needsConfirmation) {
+        alert(data.warning);
       }
     } catch (err) {
       console.error("Failed to create post", err);
@@ -251,7 +352,7 @@ export default function SocialStudioPage() {
       <div className="flex items-center justify-center min-h-[400px]">
         <div className="flex flex-col items-center gap-3">
           <RefreshCw className="w-8 h-8 text-amber-500 animate-spin" />
-          <p className="text-sm font-medium text-slate-600">Loading Social Studio...</p>
+          <p className="text-sm font-medium text-slate-600">Loading Social Studio & Storage Status...</p>
         </div>
       </div>
     );
@@ -259,27 +360,68 @@ export default function SocialStudioPage() {
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto pb-12">
+      {/* Toast Notification */}
+      {toastMessage && (
+        <div className="fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl border border-amber-500/40 text-xs font-semibold flex items-center gap-2 animate-bounce">
+          <CheckCircle2 className="w-4 h-4 text-amber-400" />
+          <span>{toastMessage}</span>
+        </div>
+      )}
+
       {/* Top Header Card */}
       <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-4 sm:p-6 text-white shadow-xl border border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2 mb-1.5">
+          <div className="flex items-center gap-2 mb-1.5 flex-wrap">
             <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-500 text-slate-950 flex items-center gap-1 shadow-sm">
               <Sparkles className="w-3.5 h-3.5" /> AI Daily Studio
             </span>
             <span className="text-xs text-slate-400">CET & Rajasthan Exam Twister</span>
+            <span
+              className={`px-2 py-0.5 rounded-full text-[11px] font-bold flex items-center gap-1 ${
+                stats?.cloudinaryConfigured
+                  ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+                  : "bg-amber-500/20 text-amber-300 border border-amber-500/30"
+              }`}
+            >
+              <Cloud className="w-3 h-3" />
+              {stats?.cloudinaryConfigured ? "Cloudinary CDN Active" : "Local Storage Mode"}
+            </span>
           </div>
           <h1 className="text-xl sm:text-2xl font-black text-white tracking-tight">
             Today&apos;s Question & Social Media Hub
           </h1>
           <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
-            1-Click automated generator for Instagram Reels (9:16), Captions, Trending Audio, and X (Twitter) posts with instant upload tracking.
+            Auto-generator with Cloudinary CDN hosting, 1-click Instagram Reel (9:16) & Twitter Cards, and automatic storage lifecycle cleanup.
           </p>
         </div>
 
-        <div className="flex items-center gap-2.5 shrink-0">
+        {/* Action Buttons Toolbar */}
+        <div className="flex items-center gap-2 flex-wrap shrink-0">
+          <button
+            onClick={handleSyncCloudinary}
+            disabled={syncingCloudinary}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white font-bold text-xs shadow-md shadow-indigo-600/20 transition-all active:scale-95"
+            title="Upload all images to Cloudinary CDN"
+          >
+            <Cloud className={`w-3.5 h-3.5 ${syncingCloudinary ? "animate-spin" : ""}`} />
+            <span>{syncingCloudinary ? "Syncing..." : "Sync Cloudinary"}</span>
+          </button>
+
+          {stats && stats.fullyUploaded > 0 && (
+            <button
+              onClick={handleCleanupUploaded}
+              disabled={cleaningUp}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-rose-600/90 hover:bg-rose-600 disabled:opacity-50 text-white font-bold text-xs shadow-md transition-all active:scale-95"
+              title="Delete uploaded images from Cloudinary & disk to save space"
+            >
+              <Trash2 className="w-3.5 h-3.5" />
+              <span>{cleaningUp ? "Cleaning..." : `Clean Uploaded (${stats.fullyUploaded})`}</span>
+            </button>
+          )}
+
           <button
             onClick={() => setShowNewModal(true)}
-            className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02] active:scale-95"
+            className="flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-slate-950 font-bold text-sm shadow-lg shadow-amber-500/20 transition-all hover:scale-[1.02] active:scale-95"
           >
             <PlusCircle className="w-4 h-4" />
             <span>Generate New</span>
@@ -287,12 +429,40 @@ export default function SocialStudioPage() {
         </div>
       </div>
 
+      {/* STORAGE & UNUPLOADED WARNING BANNER */}
+      {stats && stats.hasUnuploadedBacklog && (
+        <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm">
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold shrink-0 shadow-sm">
+              <AlertTriangle className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-amber-950 flex items-center gap-2">
+                <span>⚠️ ध्यान दें: {stats.unuploaded} प्रश्न अपलोड होना बाकी हैं!</span>
+                <span className="text-xs font-semibold bg-amber-200 text-amber-900 px-2 py-0.5 rounded-full">
+                  Pending Upload
+                </span>
+              </h4>
+              <p className="text-xs text-amber-800 mt-0.5">
+                पुराने प्रश्नों को Instagram और Twitter पर पोस्ट करके <b>&apos;Mark Uploaded&apos;</b> करें। नए सवाल जनरेट करते समय स्टोरेज और डेटा को सुरक्षित रखने के लिए यह ज़रूरी है।
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 self-end sm:self-center shrink-0">
+            <span className="text-xs font-bold text-slate-700 bg-white px-3 py-1.5 rounded-lg border border-amber-200">
+              Total: {stats.total} | Uploaded: {stats.fullyUploaded}
+            </span>
+          </div>
+        </div>
+      )}
+
       {/* Active Question Info Strip */}
       {activePost && (
         <div className="bg-white rounded-xl p-4 border border-slate-200/80 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-start sm:items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-base shrink-0 border border-amber-200">
-              Q1
+              Q{history.findIndex((h) => h.id === activePost.id) + 1}
             </div>
             <div>
               <div className="flex items-center gap-2 flex-wrap text-xs text-slate-500 font-medium mb-0.5">
@@ -305,6 +475,11 @@ export default function SocialStudioPage() {
                 <span className="flex items-center gap-1">
                   <Calendar className="w-3.5 h-3.5 text-slate-400" /> {activePost.date}
                 </span>
+                {activePost.instagramImageUrl.startsWith("http") && (
+                  <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+                    <Cloud className="w-2.5 h-2.5" /> Cloud CDN
+                  </span>
+                )}
               </div>
               <p className="text-sm font-bold text-slate-800 line-clamp-1">
                 {activePost.questionText}
@@ -345,7 +520,7 @@ export default function SocialStudioPage() {
         </div>
       )}
 
-      {/* Mobile-Friendly Navigation Tabs */}
+      {/* Navigation Tabs */}
       <div className="flex items-center gap-2 border-b border-slate-200 bg-white p-1.5 rounded-xl shadow-sm">
         <button
           onClick={() => setActiveTab("instagram")}
@@ -380,7 +555,7 @@ export default function SocialStudioPage() {
           }`}
         >
           <History className="w-4 h-4" />
-          <span>Archives & History</span>
+          <span>Archives & History ({history.length})</span>
         </button>
       </div>
 
@@ -410,6 +585,7 @@ export default function SocialStudioPage() {
                     src={activePost.instagramImageUrl}
                     alt="Instagram Reel Question"
                     fill
+                    unoptimized
                     className="object-cover object-center"
                     priority
                   />
@@ -641,6 +817,7 @@ export default function SocialStudioPage() {
                       src={activePost.twitterImageUrl || activePost.instagramImageUrl}
                       alt="Twitter Question Card"
                       fill
+                      unoptimized
                       className="object-cover object-center"
                     />
                   </div>
@@ -770,17 +947,31 @@ export default function SocialStudioPage() {
                     Generated Questions & Upload Log
                   </h3>
                   <p className="text-xs text-slate-500">
-                    Track all questions previously created and their upload status.
+                    Track all questions previously created, their Cloud CDN state, and upload status.
                   </p>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap">
                   <span className="text-xs font-semibold bg-slate-100 text-slate-700 px-3 py-1 rounded-full">
-                    Total {history.length} Questions
+                    Total: {history.length}
                   </span>
+                  {stats && stats.unuploaded > 0 && (
+                    <span className="text-xs font-bold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">
+                      Pending: {stats.unuploaded}
+                    </span>
+                  )}
+                  {stats && stats.fullyUploaded > 0 && (
+                    <button
+                      onClick={handleCleanupUploaded}
+                      disabled={cleaningUp}
+                      className="px-3 py-1 rounded-lg text-xs font-bold text-rose-600 hover:bg-rose-50 border border-rose-200 transition-colors flex items-center gap-1"
+                    >
+                      <Trash2 className="w-3.5 h-3.5" /> Auto-Clean Uploaded ({stats.fullyUploaded})
+                    </button>
+                  )}
                   {history.length > 0 && (
                     <button
                       onClick={handleDeleteAll}
-                      className="px-3 py-1 rounded-lg text-xs font-bold text-rose-600 hover:bg-rose-50 border border-rose-200 transition-colors flex items-center gap-1"
+                      className="px-3 py-1 rounded-lg text-xs font-bold text-slate-500 hover:text-rose-600 hover:bg-rose-50 border border-slate-200 transition-colors flex items-center gap-1"
                     >
                       <Trash2 className="w-3.5 h-3.5" /> Clear All
                     </button>
@@ -794,7 +985,7 @@ export default function SocialStudioPage() {
                 </div>
               ) : (
                 <div className="divide-y divide-slate-100">
-                  {history.map((post) => (
+                  {history.map((post, pIdx) => (
                     <div
                       key={post.id}
                       className={`py-4 flex flex-col md:flex-row md:items-center justify-between gap-4 transition-colors ${
@@ -807,6 +998,7 @@ export default function SocialStudioPage() {
                             src={post.instagramImageUrl}
                             alt="Thumbnail"
                             fill
+                            unoptimized
                             className="object-cover"
                           />
                         </div>
@@ -814,12 +1006,17 @@ export default function SocialStudioPage() {
                         <div>
                           <div className="flex items-center gap-2 flex-wrap text-xs text-slate-500 mb-1">
                             <span className="font-bold text-slate-800 bg-slate-100 px-2 py-0.5 rounded">
-                              {post.date}
+                              Q{pIdx + 1} • {post.date}
                             </span>
                             <span>•</span>
                             <span className="text-amber-700 font-medium">{post.examName}</span>
                             <span>•</span>
                             <span>{post.subject}</span>
+                            {post.instagramImageUrl.startsWith("http") && (
+                              <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200 flex items-center gap-0.5">
+                                <Cloud className="w-2.5 h-2.5" /> CDN
+                              </span>
+                            )}
                           </div>
                           <h4 className="text-sm font-bold text-slate-900">{post.questionText}</h4>
                           <div className="flex items-center gap-2 mt-2 flex-wrap">
@@ -827,22 +1024,22 @@ export default function SocialStudioPage() {
                               className={`text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 ${
                                 post.status.instagramUploaded
                                   ? "bg-emerald-100 text-emerald-800"
-                                  : "bg-slate-100 text-slate-600"
+                                  : "bg-amber-100 text-amber-800"
                               }`}
                             >
                               <Instagram className="w-3 h-3" />
-                              {post.status.instagramUploaded ? "Uploaded" : "Not Uploaded"}
+                              {post.status.instagramUploaded ? "Insta Uploaded" : "Insta Pending"}
                             </span>
 
                             <span
                               className={`text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 ${
                                 post.status.twitterPosted
                                   ? "bg-blue-100 text-blue-800"
-                                  : "bg-slate-100 text-slate-600"
+                                  : "bg-amber-100 text-amber-800"
                               }`}
                             >
                               <Twitter className="w-3 h-3" />
-                              {post.status.twitterPosted ? "Posted" : "Not Posted"}
+                              {post.status.twitterPosted ? "X Posted" : "X Pending"}
                             </span>
                           </div>
                         </div>
@@ -875,30 +1072,11 @@ export default function SocialStudioPage() {
         </>
       )}
 
-      {/* Empty State when no active post and history is empty */}
-      {!activePost && history.length === 0 && (
-        <div className="bg-white rounded-2xl p-8 sm:p-12 border border-slate-200 shadow-sm text-center flex flex-col items-center justify-center space-y-4 max-w-xl mx-auto my-6">
-          <div className="w-16 h-16 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-2xl">
-            <Sparkles className="w-8 h-8" />
-          </div>
-          <h3 className="text-lg font-bold text-slate-900">No Question Kits in Database</h3>
-          <p className="text-xs sm:text-sm text-slate-500 max-w-md">
-            All previous items have been cleared. Click below to generate your first social media kit!
-          </p>
-          <button
-            onClick={() => setShowNewModal(true)}
-            className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm shadow-md transition-all"
-          >
-            + Generate First Kit
-          </button>
-        </div>
-      )}
-
       {/* CREATE NEW QUESTION MODAL */}
       {showNewModal && (
         <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
           <div className="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 my-8">
-            <div className="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
+            <div className="flex items-center justify-between mb-3 border-b border-slate-100 pb-3">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-amber-500" />
                 <h3 className="text-base font-bold text-slate-900">
@@ -912,6 +1090,19 @@ export default function SocialStudioPage() {
                 ✕
               </button>
             </div>
+
+            {/* In-modal Warning if Backlog Exists */}
+            {stats && stats.hasUnuploadedBacklog && (
+              <div className="mb-3.5 p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs flex items-start gap-2">
+                <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-bold">चेतावनी: {stats.unuploaded} प्रश्न अभी अपलोड होने बाकी हैं!</p>
+                  <p className="text-[11px] text-amber-800">
+                    नया सवाल जोड़ने पर भी पुराना अन-अपलोड डेटा सुरक्षित रहेगा। कृपया अपलोड होने के बाद &apos;Mark Uploaded&apos; अवश्य करें।
+                  </p>
+                </div>
+              </div>
+            )}
 
             <form onSubmit={handleCreateNew} className="space-y-3.5 text-xs">
               <div>

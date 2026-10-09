@@ -44,5 +44,8 @@ scripts/smart-import-report.json
 scripts/pre-import-scan-report.json
 
 
-# Local uploaded media files (served via Cloudinary in production)
-public/uploads/
+# Local uploaded media files (temporary user uploads)
+public/uploads/*
+!public/uploads/social-kits/
+!public/uploads/social-kits/**
+!public/uploads/social_posts_history.json
