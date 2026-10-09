@@ -210,6 +210,26 @@ export default function SocialStudioPage() {
       });
     }
 
+    // Sequential Workflow Progression:
+    if (newValue === true) {
+      if (platform === "instagram") {
+        // Step 1: After marking Instagram done -> Switch to Twitter for the same question
+        setActiveTab("twitter");
+        showToast("✅ Instagram पर मार्क हो गया! अब X (Twitter) पर पोस्ट करें 🚀");
+      } else if (platform === "twitter") {
+        // Step 2: After marking Twitter done -> Load next question and go to Instagram tab
+        const currentIndex = history.findIndex((item) => item.id === id);
+        if (currentIndex !== -1 && currentIndex + 1 < history.length) {
+          const nextPost = history[currentIndex + 1];
+          setActivePost(nextPost);
+          setActiveTab("instagram");
+          showToast(`🎉 सवाल #${currentIndex + 1} पूरा हुआ! अगला सवाल #${currentIndex + 2} लोड हो गया ➡️`);
+        } else {
+          showToast("🏆 बधाई हो! सभी सवाल सफलतापूर्वक अपलोड हो चुके हैं!");
+        }
+      }
+    }
+
     try {
       const res = await fetch("/api/admin/social-studio", {
         method: "POST",
@@ -224,13 +244,10 @@ export default function SocialStudioPage() {
       const data = await res.json();
       if (data.success) {
         setHistory((prev) => prev.map((item) => (item.id === id ? data.item : item)));
-        if (activePost?.id === id) {
+        if (activePost?.id === id && platform !== "twitter") {
           setActivePost(data.item);
         }
         if (data.stats) setStats(data.stats);
-        if (data.isFullyUploaded) {
-          showToast("🎉 पूरा सवाल अपलोड हो चुका है! आप 'Auto-Clean' दबाकर स्पेस फ्री कर सकते हैं।");
-        }
       }
     } catch (err) {
       console.error("Failed to update status", err);
