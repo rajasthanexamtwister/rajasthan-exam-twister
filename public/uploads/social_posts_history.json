@@ -1,1 +1,69 @@
-[]
+[
+  {
+    "id": "rajasthan-cet-2024-p421-q1",
+    "date": "09 Oct 2026",
+    "exam": "Rajasthan CET (Sr. Secondary)",
+    "year": "2024",
+    "examName": "Rajasthan CET 2024 (Paper 421 - Shift 1)",
+    "questionNumber": 1,
+    "subject": "GEOGRAPHY & DEMOGRAPHY | राजस्थान भूगोल व जनगणना",
+    "topic": "जनगणना 2011 (Census 2011)",
+    "questionHi": "2011 की जनगणना के अनुसार राजस्थान के किस जिले में लिंगानुपात सबसे अधिक है?",
+    "questionEn": "Which of the following district has highest sex ratio of Rajasthan according to Census, 2011?",
+    "questionText": "2011 की जनगणना के अनुसार राजस्थान के किस जिले में लिंगानुपात सबसे अधिक है?",
+    "questionTextEn": "(Which of the following district has highest sex ratio of Rajasthan according to Census, 2011?)",
+    "options": [
+      {
+        "key": "A",
+        "text": "जयपुर जिला (Jaipur)",
+        "isCorrect": false
+      },
+      {
+        "key": "B",
+        "text": "अलवर जिला (Alwar)",
+        "isCorrect": false
+      },
+      {
+        "key": "C",
+        "text": "डूंगरपुर जिला (Dungarpur)",
+        "isCorrect": true
+      },
+      {
+        "key": "D",
+        "text": "बीकानेर जिला (Bikaner)",
+        "isCorrect": false
+      }
+    ],
+    "correctOption": "C",
+    "explanation": "2011 की जनगणना के अनुसार डूंगरपुर जिले का लिंगानुपात 994 है, जो पूरे राजस्थान में सर्वाधिक है। इसके बाद राजसमंद (990) और पाली (987) का स्थान आता है।",
+    "relativePaths": {
+      "reelImage": "/uploads/social-kits/rajasthan-cet-sr-secondary/2024/question-1/reel_9_16.jpg",
+      "twitterImage": "/uploads/social-kits/rajasthan-cet-sr-secondary/2024/question-1/twitter_card.jpg",
+      "kitJson": "/uploads/social-kits/rajasthan-cet-sr-secondary/2024/question-1/kit.json"
+    },
+    "instagramImageUrl": "https://res.cloudinary.com/dplnd4t4j/image/upload/v1791533959/rajasthan_exam_twister/social_kits/replica_reel_1791533955295.jpg",
+    "twitterImageUrl": "https://res.cloudinary.com/dplnd4t4j/image/upload/v1791533961/rajasthan_exam_twister/social_kits/replica_twitter_1791533960199.jpg",
+    "instagramCaption": "🔥 राजस्थान CET 2024 (Shift 1) महत्वपूर्ण प्रश्न #1! 🎯\n\n📖 विषय: GEOGRAPHY & DEMOGRAPHY | राजस्थान भूगोल व जनगणना\n📌 टॉपिक: जनगणना 2011 (Census 2011)\n❓ प्रश्न: 2011 की जनगणना के अनुसार राजस्थान के किस जिले में लिंगानुपात सबसे अधिक है?\n(Which of the following district has highest sex ratio of Rajasthan according to Census, 2011?)\n\nविकल्प:\n(A) जयपुर जिला (Jaipur)\n(B) अलवर जिला (Alwar)\n(C) डूंगरपुर जिला (Dungarpur)\n(D) बीकानेर जिला (Bikaner)\n\n👇 बिना Google किए अपना Option तुरंत कमेंट में A, B, C या D बताएं!\n📌 सही उत्तर व विस्तृत व्याख्या पहले Pinned Comment में देखें!\n\n---\n🔔 रोज़ाना ऐसे ही उच्च-स्तरीय प्रश्नों और मास्टर रिवीजन नोट्स के लिए फॉलो करें: @rajasthanexamtwister\n🌐 फ्री टेस्ट व पीडीएफ नोट्स: rajasthanexamtwister.in\n\n#RajasthanGK #RajasthanCET #CET2024 #REET #LDC #Patwar #RSSB #RPSC #ExamTwister #StudyWithTwister",
+    "pinnedComment": "✅ सही उत्तर: विकल्प (C) डूंगरपुर जिला (Dungarpur - 994) ✅\n\n📌 विस्तृत व्याख्या (Explanation):\n2011 की जनगणना के अनुसार डूंगरपुर जिले का लिंगानुपात 994 है, जो पूरे राजस्थान में सर्वाधिक है (राजसमंद 990, पाली 987)।\n\n💡 ऐसे ही विषयवार उच्च स्तरीय क्विज़ और नोट्स के लिए हमारे प्रोफाइल बायो में दिए गए लिंक से फ्री में अभ्यास करें! 🏆",
+    "suggestedSongs": [
+      {
+        "title": "Aarambh Hai Prachand",
+        "artist": "Piyush Mishra",
+        "audioSnippet": "आरंभ है प्रचंड बोले मस्तकों के झुंड...",
+        "vibe": "Intense / Competitive Exam Energy"
+      },
+      {
+        "title": "Rajasthan Veeran Ri Dharti",
+        "artist": "Traditional Folk Fusion",
+        "audioSnippet": "केसरिया बालम आओ नी पधारो म्हारे देस...",
+        "vibe": "Royal Heritage / Cultural Glory"
+      }
+    ],
+    "status": {
+      "instagramUploaded": false,
+      "twitterPosted": false,
+      "uploadedAt": null
+    },
+    "createdAt": "2026-10-09T08:19:22.230Z"
+  }
+]
