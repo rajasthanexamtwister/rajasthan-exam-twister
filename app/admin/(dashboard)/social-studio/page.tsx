@@ -841,7 +841,7 @@ export default function SocialStudioPage() {
                   </div>
 
                   <p className="text-xs text-slate-200 whitespace-pre-wrap leading-relaxed">
-                    {activePost.tweetText}
+                    {activePost.tweetText || activePost.instagramCaption || ""}
                   </p>
 
                   <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden border border-slate-800 bg-slate-950">
@@ -898,17 +898,17 @@ export default function SocialStudioPage() {
                       <h3 className="text-sm font-bold text-slate-900">Tailored Tweet Copy</h3>
                     </div>
                     <span className="text-[11px] font-mono text-slate-500">
-                      {activePost.tweetText.length} / 280 chars
+                      {(activePost.tweetText || "").length} / 280 chars
                     </span>
                   </div>
 
                   <div className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 text-xs text-slate-800 font-sans whitespace-pre-wrap leading-relaxed min-h-[140px]">
-                    {activePost.tweetText}
+                    {activePost.tweetText || activePost.instagramCaption || ""}
                   </div>
 
                   <div className="flex flex-wrap items-center gap-2.5 mt-4">
                     <button
-                      onClick={() => handleCopyText(activePost.tweetText, "tweetText")}
+                      onClick={() => handleCopyText(activePost.tweetText || activePost.instagramCaption || "", "tweetText")}
                       className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-bold shadow transition-all active:scale-95"
                     >
                       {copiedField === "tweetText" ? (
@@ -921,7 +921,7 @@ export default function SocialStudioPage() {
 
                     <a
                       href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                        activePost.tweetText
+                        activePost.tweetText || activePost.instagramCaption || ""
                       )}`}
                       target="_blank"
                       rel="noopener noreferrer"
