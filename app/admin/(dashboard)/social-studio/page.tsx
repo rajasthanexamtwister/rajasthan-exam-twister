@@ -1052,27 +1052,39 @@ export default function SocialStudioPage() {
                           </div>
                           <h4 className="text-sm font-bold text-slate-900">{post.questionText}</h4>
                           <div className="flex items-center gap-2 mt-2 flex-wrap">
-                            <span
-                              className={`text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 ${
-                                post.status.instagramUploaded
-                                  ? "bg-emerald-100 text-emerald-800"
-                                  : "bg-amber-100 text-amber-800"
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleToggleStatus(post.id, "instagram", post.status?.instagramUploaded || false);
+                              }}
+                              title="Click to toggle Instagram uploaded status"
+                              className={`text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 transition-all active:scale-95 cursor-pointer shadow-sm ${
+                                post.status?.instagramUploaded
+                                  ? "bg-emerald-500 text-white hover:bg-emerald-600"
+                                  : "bg-amber-100 text-amber-900 hover:bg-amber-200 border border-amber-300"
                               }`}
                             >
                               <Instagram className="w-3 h-3" />
-                              {post.status.instagramUploaded ? "Insta Uploaded" : "Insta Pending"}
-                            </span>
+                              {post.status?.instagramUploaded ? "Insta Uploaded ✓" : "Mark Insta Uploaded"}
+                            </button>
 
-                            <span
-                              className={`text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1 ${
-                                post.status.twitterPosted
-                                  ? "bg-blue-100 text-blue-800"
-                                  : "bg-amber-100 text-amber-800"
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleToggleStatus(post.id, "twitter", post.status?.twitterPosted || false);
+                              }}
+                              title="Click to toggle Twitter posted status"
+                              className={`text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 transition-all active:scale-95 cursor-pointer shadow-sm ${
+                                post.status?.twitterPosted
+                                  ? "bg-blue-600 text-white hover:bg-blue-700"
+                                  : "bg-sky-100 text-sky-900 hover:bg-sky-200 border border-sky-300"
                               }`}
                             >
                               <Twitter className="w-3 h-3" />
-                              {post.status.twitterPosted ? "X Posted" : "X Pending"}
-                            </span>
+                              {post.status?.twitterPosted ? "X Posted ✓" : "Mark X Posted"}
+                            </button>
                           </div>
                         </div>
                       </div>
