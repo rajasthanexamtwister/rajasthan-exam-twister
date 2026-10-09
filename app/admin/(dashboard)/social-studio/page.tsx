@@ -178,6 +178,38 @@ export default function SocialStudioPage() {
 
   const handleToggleStatus = async (id: string, platform: "instagram" | "twitter", currentValue: boolean) => {
     const newValue = !currentValue;
+
+    // Optimistic UI update for instantaneous button responsiveness
+    setHistory((prev) =>
+      prev.map((item) => {
+        if (item.id !== id) return item;
+        const status = { ...item.status };
+        if (platform === "instagram") {
+          status.instagramUploaded = newValue;
+          status.instagramUploadedAt = newValue ? new Date().toISOString() : null;
+        } else {
+          status.twitterPosted = newValue;
+          status.twitterPostedAt = newValue ? new Date().toISOString() : null;
+        }
+        return { ...item, status };
+      })
+    );
+
+    if (activePost?.id === id) {
+      setActivePost((prev) => {
+        if (!prev) return null;
+        const status = { ...prev.status };
+        if (platform === "instagram") {
+          status.instagramUploaded = newValue;
+          status.instagramUploadedAt = newValue ? new Date().toISOString() : null;
+        } else {
+          status.twitterPosted = newValue;
+          status.twitterPostedAt = newValue ? new Date().toISOString() : null;
+        }
+        return { ...prev, status };
+      });
+    }
+
     try {
       const res = await fetch("/api/admin/social-studio", {
         method: "POST",
@@ -197,7 +229,7 @@ export default function SocialStudioPage() {
         }
         if (data.stats) setStats(data.stats);
         if (data.isFullyUploaded) {
-          showToast("🎉 पूरा सवाल अपलोड हो चुका है! आप 'Auto Clean' दबाकर स्पेस फ्री कर सकते हैं।");
+          showToast("🎉 पूरा सवाल अपलोड हो चुका है! आप 'Auto-Clean' दबाकर स्पेस फ्री कर सकते हैं।");
         }
       }
     } catch (err) {

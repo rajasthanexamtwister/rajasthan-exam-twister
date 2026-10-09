@@ -349,11 +349,19 @@ export async function POST(req: NextRequest) {
       const { id, platform, value } = body;
       const index = history.findIndex((item: any) => item.id === id);
       if (index !== -1) {
+        if (!history[index].status) {
+          history[index].status = {
+            instagramUploaded: false,
+            instagramUploadedAt: null,
+            twitterPosted: false,
+            twitterPostedAt: null,
+          };
+        }
         if (platform === "instagram") {
-          history[index].status.instagramUploaded = value;
+          history[index].status.instagramUploaded = Boolean(value);
           history[index].status.instagramUploadedAt = value ? new Date().toISOString() : null;
         } else if (platform === "twitter") {
-          history[index].status.twitterPosted = value;
+          history[index].status.twitterPosted = Boolean(value);
           history[index].status.twitterPostedAt = value ? new Date().toISOString() : null;
         }
         saveHistory(history);
@@ -374,8 +382,9 @@ export async function POST(req: NextRequest) {
         }
 
         const stats = getStorageStats(history);
-        const isFullyUploaded =
-          history[index].status.instagramUploaded && history[index].status.twitterPosted;
+        const isFullyUploaded = Boolean(
+          history[index].status.instagramUploaded && history[index].status.twitterPosted
+        );
 
         return NextResponse.json({
           success: true,
