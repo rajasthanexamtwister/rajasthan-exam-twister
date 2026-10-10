@@ -11,6 +11,8 @@ import {
   ShieldCheck,
   CheckCircle2,
   HelpCircle,
+  ChevronRight,
+  Sparkles,
 } from "lucide-react";
 
 import { getSiteUrl } from "@/server/lib/seo";
@@ -32,7 +34,7 @@ export async function generateMetadata({ params }: QuizPageProps): Promise<Metad
     };
   }
 
-  const title = `${quiz.title} — Online Mock Test`;
+  const title = `${quiz.title} | Online Mock Test`;
   const description = `Take the ${quiz.title} mock test (${quiz.questionCount} questions). Test your exam readiness with authentic scoring and explanations.`;
   const canonicalUrl = `${siteUrl}/quizzes/${quiz.slug}`;
 
@@ -43,13 +45,13 @@ export async function generateMetadata({ params }: QuizPageProps): Promise<Metad
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${quiz.title} — Online Mock Test | Rajasthan Exam Twister`,
+      title: `${quiz.title} | Online Mock Test | Rajasthan Exam Twister`,
       description,
       url: canonicalUrl,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${quiz.title} — Online Mock Test | Rajasthan Exam Twister`,
+      title: `${quiz.title} | Online Mock Test | Rajasthan Exam Twister`,
       description,
     },
   };
@@ -105,83 +107,83 @@ export default async function QuizIntroPage({ params }: QuizPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#FAF8F5] py-10 px-4 sm:px-6 lg:px-8">
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="max-w-3xl mx-auto space-y-8">
+      <div className="max-w-3xl mx-auto space-y-6">
         {/* Structured Breadcrumbs */}
         <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-2 text-xs text-slate-500 font-medium">
-          <Link href="/" className="hover:text-amber-600 transition-colors">
+          <Link href="/" className="hover:text-amber-700 transition-colors">
             Home
           </Link>
-          <span className="text-slate-300">/</span>
-          <Link href="/quizzes" className="hover:text-amber-600 transition-colors">
+          <ChevronRight className="w-3 h-3 text-slate-400" />
+          <Link href="/quizzes" className="hover:text-amber-700 transition-colors">
             Mock Quizzes
           </Link>
           {quiz.subject && (
             <>
-              <span className="text-slate-300">/</span>
+              <ChevronRight className="w-3 h-3 text-slate-400" />
               <span className="text-slate-600">{quiz.subject}</span>
             </>
           )}
-          <span className="text-slate-300">/</span>
-          <span className="text-slate-800 font-bold truncate max-w-xs sm:max-w-md">
+          <ChevronRight className="w-3 h-3 text-slate-400" />
+          <span className="text-slate-900 font-bold truncate max-w-xs sm:max-w-md">
             {quiz.title}
           </span>
         </nav>
 
         {/* Hero Card */}
-        <div className="bg-white rounded-3xl border border-slate-200 shadow-xl p-8 sm:p-10 space-y-6">
+        <div className="bg-white rounded-3xl border border-amber-200/80 shadow-md p-6 sm:p-10 space-y-6">
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2">
               {quiz.subject && (
-                <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-200">
+                <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-200 font-sans">
                   {quiz.subject}
                 </span>
               )}
               {quiz.category && (
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700">
+                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 font-sans">
                   {quiz.category.name}
                 </span>
               )}
-              <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
-                Official Mock Test
+              <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 font-sans">
+                Free Mock Test
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0B132B] leading-tight font-heading">
               {quiz.title}
             </h1>
           </div>
 
-          {/* Key Quiz Metrics */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-100">
-            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
-              <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">
-                Total in Topic Bank
+          {/* Key Quiz Metrics Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5 pt-4 border-t border-amber-100">
+            <div className="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/70">
+              <span className="text-[11px] font-semibold text-slate-600 uppercase tracking-wider block font-sans">
+                Topic Bank Questions
               </span>
-              <span className="text-xl font-black text-slate-900 mt-1 block">
+              <span className="text-xl font-black text-[#0B132B] mt-1 block font-heading">
                 {quiz.totalBankQuestions || quiz.questionCount} MCQs
               </span>
             </div>
 
-            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
-              <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">
-                Practice Mode
+            <div className="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/70">
+              <span className="text-[11px] font-semibold text-slate-600 uppercase tracking-wider block font-sans">
+                Part Structure
               </span>
-              <span className="text-xl font-black text-slate-900 mt-1 block">
-                10 / 20 / 30 MCQs
+              <span className="text-xl font-black text-[#0B132B] mt-1 block font-heading">
+                Dynamic (10-50 Qs)
               </span>
             </div>
 
-            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 col-span-2 sm:col-span-1">
-              <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider block">
-                Marking
+            <div className="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/70 col-span-2 sm:col-span-1">
+              <span className="text-[11px] font-semibold text-slate-600 uppercase tracking-wider block font-sans">
+                Marking Scheme
               </span>
-              <span className="text-xl font-black text-slate-900 mt-1 block">
+              <span className="text-xl font-black text-[#0B132B] mt-1 block font-heading">
                 +{quiz.defaultMarks} / -{quiz.defaultNegativeMarks}
               </span>
             </div>
@@ -189,36 +191,35 @@ export default async function QuizIntroPage({ params }: QuizPageProps) {
 
           {/* Marking Scheme Banner */}
           <div className="p-5 rounded-2xl bg-amber-50/80 border border-amber-200 space-y-2">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-amber-900 flex items-center gap-1.5">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-amber-900 flex items-center gap-1.5 font-heading">
               <Award className="w-4 h-4 text-amber-700" />
-              <span>Marking Scheme & Dynamic Sessions</span>
+              <span>Marking Scheme & Multi-Part Structure (मूल्यांकन व खंड नियम)</span>
             </h3>
-            <ul className="text-xs text-amber-950 space-y-1">
+            <ul className="text-xs text-amber-950 space-y-1.5 font-devanagari">
               <li className="flex items-center gap-2">
-                <span className="font-bold text-emerald-700">+{quiz.defaultMarks} marks</span> for every correct answer
+                <span className="font-bold text-emerald-700">+{quiz.defaultMarks} अंक:</span> प्रत्येक सही उत्तर के लिए
               </li>
               <li className="flex items-center gap-2">
                 <span className="font-bold text-red-700">
-                  {quiz.defaultNegativeMarks > 0 ? `-${quiz.defaultNegativeMarks} marks` : "0 marks"}
+                  {quiz.defaultNegativeMarks > 0 ? `-${quiz.defaultNegativeMarks} अंक` : "0 अंक"}:
                 </span>{" "}
-                deducted for each wrong answer (Negative Marking)
+                प्रत्येक गलत उत्तर पर नेगेटिव मार्किंग (Negative Marking)
               </li>
               <li className="flex items-center gap-2">
-                <span className="font-bold text-slate-700">Pending Questions Tracking:</span> Each session delivers newly unattempted questions from the topic bank.
+                <span className="font-bold text-slate-800">Sequential Practice:</span> सभी प्रश्नों को 20-20 के खंडों (Parts) में विभाजित किया गया है ताकि आप क्रमवार तैयारी कर सकें।
               </li>
             </ul>
           </div>
 
           {/* Test Instructions */}
           <div className="space-y-3 pt-2">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-500 font-heading">
               Exam Instructions & Rules
             </h3>
-            <ul className="text-xs text-slate-600 space-y-2 list-disc list-inside">
-              <li>Each question has multiple choice options with exactly 1 correct answer.</li>
-              <li>Choose your practice size (10, 20, or 30 questions) below.</li>
-              <li>Scores are computed authoritatively on the server to ensure accuracy.</li>
-              <li>A complete question-by-question review with explanations is shown upon test submission.</li>
+            <ul className="text-xs text-slate-700 space-y-2 list-disc list-inside font-devanagari">
+              <li>प्रत्येक प्रश्न में 4 विकल्प हैं जिनमें से केवल 1 सही उत्तर है।</li>
+              <li>नीचे दिए गए कार्ड्स में से किसी भी पार्ट (जैसे Quiz Part-1, Part-2) के 'Start Quiz' पर क्लिक करके अभ्यास शुरू करें।</li>
+              <li>सबमिट करने पर तुरंत प्रामाणिक स्कोरकार्ड और विस्तृत व्याख्या उपलब्ध कराई जाएगी।</li>
             </ul>
           </div>
 

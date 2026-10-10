@@ -18,6 +18,7 @@ import {
   XCircle,
 } from "lucide-react";
 import { recordQuizCompletion } from "@/components/public/daily-goal-widget";
+import { trackQuizStart, trackQuizCompletion } from "@/components/analytics/gtag-events";
 import clsx from "clsx";
 
 interface PublicQuestion {
@@ -61,6 +62,7 @@ export default function QuizAttemptPage() {
   const searchParams = useSearchParams();
   const slug = params.slug as string;
   const limit = searchParams?.get("limit") || "";
+  const part = searchParams?.get("part") || "";
 
   const [loading, setLoading] = useState(true);
   const [quiz, setQuiz] = useState<PublicQuizDetail | null>(null);
@@ -87,6 +89,9 @@ export default function QuizAttemptPage() {
         if (limit) {
           queryParams.set("limit", limit);
         }
+        if (part) {
+          queryParams.set("part", part);
+        }
 
         // Guest student local completion support
         if (typeof window !== "undefined") {
@@ -109,6 +114,14 @@ export default function QuizAttemptPage() {
           const data = await res.json();
           setQuiz(data.quiz);
 
+          // Track GA4 quiz_start event
+          trackQuizStart({
+            quizTitle: data.quiz.title,
+            slug: data.quiz.slug,
+            questionCount: data.quiz.questions?.length || 0,
+            subject: data.quiz.subject,
+          });
+
           // Initialize answer map
           const initialAnswers: Record<string, number | null> = {};
           (data.quiz.questions || []).forEach((q: PublicQuestion) => {
@@ -130,7 +143,7 @@ export default function QuizAttemptPage() {
     }
 
     loadQuiz();
-  }, [slug, limit, router]);
+  }, [slug, limit, part, router]);
 
   // Clean up auto-next timer on unmount
   useEffect(() => {
@@ -179,6 +192,17 @@ export default function QuizAttemptPage() {
         const data = await res.json();
         if (res.ok && data.result) {
           recordQuizCompletion();
+
+          // Dispatch GA4 conversion key event for quiz completion
+          trackQuizCompletion({
+            quizTitle: quiz.title,
+            slug: quiz.slug,
+            score: data.result.score ?? 0,
+            maxScore: data.result.maxScore ?? (quiz.questions.length * quiz.defaultMarks),
+            accuracy: data.result.accuracy ?? 0,
+            totalQuestions: data.result.totalQuestions ?? quiz.questions.length,
+            correctCount: data.result.correctAnswers ?? 0,
+          });
 
           // Save completed question IDs locally for guest progression
           if (typeof window !== "undefined") {

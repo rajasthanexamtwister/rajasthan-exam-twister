@@ -16,34 +16,55 @@ import {
   User,
   LogOut,
   ChevronDown,
+  BookOpen,
+  CheckSquare,
+  FileText,
+  FolderTree,
+  Bookmark,
+  Trophy,
+  Sparkles,
+  Info,
+  Phone,
+  Flame,
 } from "lucide-react";
 import clsx from "clsx";
+import { trackStudentLogin } from "@/components/analytics/gtag-events";
 import { SOCIAL_LINKS } from "@/server/lib/social-links";
-import { DailyStreakBadge } from "@/components/public/daily-streak-badge";
 
-const navItems = [
+// Streamlined top navigation items for desktop to avoid clutter
+const primaryNavItems = [
   { name: "Home", href: "/" },
-  { name: "Blogs", href: "/blogs" },
-  { name: "Notes", href: "/notes" },
-  { name: "Quizzes", href: "/quizzes" },
-  { name: "Notebook", href: "/notebook" },
-  { name: "Leaderboard", href: "/leaderboard" },
+  { name: "Test Series", href: "/test-series" },
+  { name: "Free Quizzes", href: "/quizzes", isQuiz: true },
+  { name: "Exam Notes", href: "/notes" },
+  { name: "Articles & GK", href: "/blogs" },
   { name: "Categories", href: "/categories" },
-  { name: "AI Quiz Tool", href: "/quiz-tools/create", highlight: true },
-  { name: "About", href: "/about" },
+];
+
+const moreNavItems = [
+  { name: "Revision Notebook", href: "/notebook", icon: Bookmark, desc: "Saved MCQs & Study Sheets" },
+  { name: "State Leaderboard", href: "/leaderboard", icon: Trophy, desc: "Rajasthan Student Rankings" },
+  { name: "AI Quiz Converter", href: "/quiz-tools/create", icon: Sparkles, desc: "Convert Exam Papers" },
+  { name: "About Exam Twister", href: "/about", icon: Info, desc: "Our Mission & Credentials" },
+  { name: "Contact & Support", href: "/contact", icon: Phone, desc: "Feedback & Inquiries" },
 ];
 
 export function PublicHeader() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const [moreDropdownOpen, setMoreDropdownOpen] = useState(false);
+
+  const userDropdownRef = useRef<HTMLDivElement | null>(null);
+  const moreDropdownRef = useRef<HTMLDivElement | null>(null);
 
   const { data: session, status } = useSession();
 
   // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
+    setUserDropdownOpen(false);
+    setMoreDropdownOpen(false);
   }, [pathname]);
 
   // Lock body scroll when mobile menu is open
@@ -58,25 +79,32 @@ export function PublicHeader() {
     };
   }, [mobileMenuOpen]);
 
-  // Close desktop user dropdown on outside click
+  // Close desktop dropdowns on outside click
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (userDropdownRef.current && !userDropdownRef.current.contains(event.target as Node)) {
         setUserDropdownOpen(false);
+      }
+      if (moreDropdownRef.current && !moreDropdownRef.current.contains(event.target as Node)) {
+        setMoreDropdownOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const isMoreActive = moreNavItems.some(
+    (item) => item.href === pathname || pathname.startsWith(item.href)
+  );
+
   return (
     <>
-      <header className="sticky top-0 z-40 bg-[#FFFDF9] border-b border-amber-200/70 shadow-xs">
+      <header className="sticky top-0 z-40 bg-[#FFFDF9] border-b border-amber-200/80 shadow-xs transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 gap-3 sm:gap-4">
-            {/* Brand Logo & Name */}
+            {/* Brand Logo & Editorial Title */}
             <Link href="/" className="flex items-center gap-2.5 sm:gap-3 shrink-0 group">
-              <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-sm ring-2 ring-amber-400/50 group-hover:scale-105 transition-transform bg-[#0B132B]">
+              <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-xs ring-2 ring-amber-400/70 group-hover:scale-105 transition-transform bg-[#0B132B]">
                 <Image
                   src="/brand/logo.png"
                   alt="Rajasthan Exam Twister Official Logo"
@@ -87,7 +115,7 @@ export function PublicHeader() {
                 />
               </div>
               <div className="leading-tight">
-                <span className="font-extrabold text-[#0B132B] tracking-tight block text-sm sm:text-base group-hover:text-amber-600 transition-colors">
+                <span className="font-extrabold text-[#0B132B] tracking-tight block text-sm sm:text-base group-hover:text-amber-700 transition-colors font-heading">
                   Rajasthan Exam Twister
                 </span>
                 <span className="text-[10px] text-amber-700 font-bold block leading-none font-devanagari">
@@ -96,9 +124,9 @@ export function PublicHeader() {
               </div>
             </Link>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
-              {navItems.map((item) => {
+            {/* Streamlined Desktop Navigation (Uncluttered, High Contrast) */}
+            <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5" aria-label="Main Navigation">
+              {primaryNavItems.map((item) => {
                 const isActive =
                   item.href === "/"
                     ? pathname === "/"
@@ -109,30 +137,80 @@ export function PublicHeader() {
                     key={item.name}
                     href={item.href}
                     className={clsx(
-                      "px-2.5 py-1.5 rounded-xl text-xs font-semibold transition-all whitespace-nowrap",
-                      item.highlight
-                        ? "text-amber-950 bg-amber-100/90 hover:bg-amber-200 border border-amber-300 font-extrabold shadow-2xs"
+                      "px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1.5",
+                      item.isQuiz
+                        ? isActive
+                          ? "bg-amber-500 text-[#0B132B] shadow-xs"
+                          : "bg-amber-100/80 text-amber-950 hover:bg-amber-200 border border-amber-300/80 shadow-2xs"
                         : isActive
-                        ? "bg-[#0B132B] text-amber-300 font-bold shadow-xs"
-                        : "text-slate-700 hover:text-amber-700 hover:bg-amber-50/60"
+                        ? "bg-[#0B132B] text-amber-300 shadow-xs"
+                        : "text-slate-700 hover:text-amber-800 hover:bg-amber-50/70"
                     )}
                   >
-                    {item.name}
+                    {item.isQuiz && <Flame className="w-3.5 h-3.5 text-amber-700" />}
+                    <span>{item.name}</span>
                   </Link>
                 );
               })}
+
+              {/* "More Tools" Clean Dropdown */}
+              <div className="relative" ref={moreDropdownRef}>
+                <button
+                  type="button"
+                  onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
+                  className={clsx(
+                    "px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1",
+                    isMoreActive
+                      ? "bg-[#0B132B] text-amber-300 shadow-xs"
+                      : "text-slate-700 hover:text-amber-800 hover:bg-amber-50/70"
+                  )}
+                  aria-expanded={moreDropdownOpen}
+                  aria-haspopup="true"
+                >
+                  <span>More Tools</span>
+                  <ChevronDown className={clsx("w-3.5 h-3.5 transition-transform", moreDropdownOpen && "rotate-180")} />
+                </button>
+
+                {moreDropdownOpen && (
+                  <div className="absolute left-0 mt-2 w-64 bg-white rounded-2xl border border-amber-200/90 shadow-xl p-2 space-y-1 animate-in fade-in zoom-in-95 duration-150 z-50">
+                    <div className="px-3 py-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider font-sans">
+                      Student Utilities
+                    </div>
+                    {moreNavItems.map((item) => {
+                      const Icon = item.icon;
+                      const isActive = pathname.startsWith(item.href);
+                      return (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          onClick={() => setMoreDropdownOpen(false)}
+                          className={clsx(
+                            "flex items-start gap-2.5 p-2 rounded-xl transition-colors text-left",
+                            isActive ? "bg-amber-50 text-amber-950 font-bold" : "text-slate-700 hover:bg-slate-50 hover:text-amber-900"
+                          )}
+                        >
+                          <div className="p-1.5 rounded-lg bg-amber-100 text-amber-900 shrink-0 mt-0.5">
+                            <Icon className="w-3.5 h-3.5" />
+                          </div>
+                          <div className="leading-tight">
+                            <div className="text-xs font-bold text-slate-900">{item.name}</div>
+                            <div className="text-[11px] text-slate-500 font-normal">{item.desc}</div>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
             </nav>
 
-            {/* Right Controls: Streak, Search & Student Auth */}
-            <div className="hidden sm:flex items-center gap-2">
-              {/* Daily Study Streak Badge */}
-              <div className="hidden xl:block">
-                <DailyStreakBadge />
-              </div>
+            {/* Right Controls: Search & Student Auth */}
+            <div className="hidden sm:flex items-center gap-2.5">
 
+              {/* Search Shortcut */}
               <Link
                 href="/search"
-                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-slate-700 hover:text-[#0B132B] bg-amber-50/60 hover:bg-amber-100/70 rounded-xl transition-all border border-amber-200/80 font-medium shadow-xs whitespace-nowrap"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs text-slate-700 hover:text-[#0B132B] bg-amber-50/70 hover:bg-amber-100/80 rounded-xl transition-all border border-amber-200/80 font-medium shadow-2xs whitespace-nowrap"
                 title="Search Rajasthan GK notes, topics, and blogs"
               >
                 <Search className="w-3.5 h-3.5 text-amber-700" />
@@ -143,11 +221,13 @@ export function PublicHeader() {
               {status === "loading" ? (
                 <div className="w-8 h-8 rounded-full bg-slate-100 animate-pulse" />
               ) : session?.user ? (
-                <div className="relative" ref={dropdownRef}>
+                <div className="relative" ref={userDropdownRef}>
                   <button
                     type="button"
                     onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-                    className="flex items-center gap-1.5 p-1 pl-1.5 pr-2 rounded-xl bg-amber-50 hover:bg-amber-100/80 border border-amber-200 transition-all text-xs font-semibold text-slate-900"
+                    className="flex items-center gap-1.5 p-1 pl-1.5 pr-2 rounded-xl bg-amber-50/80 hover:bg-amber-100 border border-amber-200 transition-all text-xs font-semibold text-slate-900"
+                    aria-label="User Account Menu"
+                    aria-expanded={userDropdownOpen}
                   >
                     {session.user.image ? (
                       <Image
@@ -162,13 +242,13 @@ export function PublicHeader() {
                         {(session.user.name || "S").charAt(0).toUpperCase()}
                       </div>
                     )}
-                    <span className="max-w-[100px] truncate">{session.user.name?.split(" ")[0]}</span>
+                    <span className="max-w-[90px] truncate">{session.user.name?.split(" ")[0]}</span>
                     <ChevronDown className="w-3 h-3 text-slate-500" />
                   </button>
 
-                  {/* Dropdown Menu */}
+                  {/* User Dropdown Menu */}
                   {userDropdownOpen && (
-                    <div className="absolute right-0 mt-2 w-56 bg-white rounded-2xl border border-slate-200 shadow-xl p-2 space-y-1 animate-in fade-in zoom-in-95 duration-150 z-50">
+                    <div className="absolute right-0 mt-2 w-56 bg-white rounded-2xl border border-amber-200/90 shadow-xl p-2 space-y-1 animate-in fade-in zoom-in-95 duration-150 z-50">
                       <div className="p-2.5 border-b border-slate-100">
                         <p className="text-xs font-bold text-slate-900 truncate">{session.user.name}</p>
                         <p className="text-[11px] text-slate-500 truncate">{session.user.email}</p>
@@ -181,6 +261,15 @@ export function PublicHeader() {
                       >
                         <User className="w-3.5 h-3.5 text-amber-600" />
                         <span>My Profile & Progress</span>
+                      </Link>
+
+                      <Link
+                        href="/notebook"
+                        onClick={() => setUserDropdownOpen(false)}
+                        className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-amber-50 hover:text-amber-900 transition-colors"
+                      >
+                        <Bookmark className="w-3.5 h-3.5 text-amber-600" />
+                        <span>Saved Revision Notebook</span>
                       </Link>
 
                       <button
@@ -200,8 +289,11 @@ export function PublicHeader() {
               ) : (
                 <button
                   type="button"
-                  onClick={() => signIn("google", { callbackUrl: "/profile" })}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl transition-all shadow-xs"
+                  onClick={() => {
+                    trackStudentLogin("google");
+                    signIn("google", { callbackUrl: "/profile" });
+                  }}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 active:bg-amber-600 rounded-xl transition-all shadow-xs cursor-pointer"
                 >
                   <svg className="w-3.5 h-3.5" viewBox="0 0 24 24">
                     <path
@@ -226,12 +318,12 @@ export function PublicHeader() {
               )}
             </div>
 
-            {/* Mobile Right Controls: Search Icon + Hamburger Toggle */}
-            <div className="flex items-center gap-1.5 lg:hidden">
+            {/* Mobile Controls: Search + Hamburger Toggle */}
+            <div className="flex items-center gap-2 lg:hidden">
               <Link
                 href="/search"
-                className="p-2 text-slate-700 hover:text-slate-950 rounded-xl bg-amber-50 hover:bg-amber-100/70 transition-colors border border-amber-200/60"
-                aria-label="Search"
+                className="p-2 text-slate-700 hover:text-slate-950 rounded-xl bg-amber-50 hover:bg-amber-100 transition-colors border border-amber-200/60"
+                aria-label="Search Rajasthan Exam Twister"
               >
                 <Search className="w-4 h-4 text-amber-700" />
               </Link>
@@ -239,7 +331,7 @@ export function PublicHeader() {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-slate-800 hover:text-[#0B132B] rounded-xl hover:bg-amber-50/80 transition-colors"
+                className="p-2 text-slate-800 hover:text-[#0B132B] rounded-xl hover:bg-amber-50 transition-colors border border-amber-200/60"
                 aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-expanded={mobileMenuOpen}
               >
@@ -254,25 +346,25 @@ export function PublicHeader() {
         </div>
       </header>
 
-      {/* Mobile Slide-Over Drawer with Backdrop (Rendered outside header flow) */}
+      {/* High-Performance Mobile Slide-Over Drawer with Opaque Backdrop */}
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-50 flex flex-col justify-start">
-          {/* Dark semi-transparent backdrop */}
+          {/* Dark backdrop */}
           <div
             className="fixed inset-0 bg-slate-950/60 backdrop-blur-xs transition-opacity animate-in fade-in duration-200"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
 
-          {/* Solid Opaque Drawer Container */}
+          {/* Drawer Body */}
           <div
             role="dialog"
             aria-modal="true"
             aria-label="Mobile Navigation Menu"
-            className="relative z-10 w-full bg-[#FAF8F5] border-b-2 border-amber-300 shadow-2xl flex flex-col max-h-[85vh] overflow-y-auto animate-in slide-in-from-top duration-200"
+            className="relative z-10 w-full bg-[#FAF8F5] border-b-2 border-amber-400 shadow-2xl flex flex-col max-h-[90vh] overflow-y-auto animate-in slide-in-from-top duration-200"
           >
             {/* Drawer Header Bar */}
-            <div className="flex items-center justify-between px-4 py-3.5 border-b border-amber-200/70 bg-white sticky top-0 z-20">
+            <div className="flex items-center justify-between px-4 py-3.5 border-b border-amber-200/80 bg-white sticky top-0 z-20">
               <div className="flex items-center gap-2.5">
                 <div className="relative w-8 h-8 rounded-full overflow-hidden ring-2 ring-amber-400 bg-[#0B132B]">
                   <Image
@@ -284,7 +376,7 @@ export function PublicHeader() {
                   />
                 </div>
                 <div>
-                  <span className="font-extrabold text-[#0B132B] text-xs block leading-tight">
+                  <span className="font-extrabold text-[#0B132B] text-xs block leading-tight font-heading">
                     Rajasthan Exam Twister
                   </span>
                   <span className="text-[9px] text-amber-700 font-bold block leading-none font-devanagari">
@@ -305,7 +397,25 @@ export function PublicHeader() {
 
             {/* Drawer Content */}
             <div className="p-4 space-y-4">
-              {/* Student Auth Banner */}
+              {/* Prominent Free Quiz Banner Callout on Mobile */}
+              <Link
+                href="/quizzes"
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-3.5 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 text-slate-950 flex items-center justify-between shadow-md border border-amber-300 font-bold text-xs"
+              >
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-xl bg-[#0B132B] text-amber-400 flex items-center justify-center shrink-0">
+                    <Flame className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="font-extrabold text-slate-950 font-heading">Free Mock Tests & MCQs</div>
+                    <div className="text-[10px] text-slate-800 font-medium">REET, RPSC, CET, Police SI</div>
+                  </div>
+                </div>
+                <ArrowRight className="w-4 h-4 text-slate-950" />
+              </Link>
+
+              {/* Student Auth Section */}
               <div className="p-3 bg-white rounded-2xl border border-amber-200/80 shadow-xs">
                 {session?.user ? (
                   <div className="flex items-center justify-between gap-3">
@@ -330,7 +440,7 @@ export function PublicHeader() {
                           onClick={() => setMobileMenuOpen(false)}
                           className="text-[11px] text-amber-700 hover:underline font-semibold block"
                         >
-                          View Profile &rarr;
+                          View Student Dashboard &rarr;
                         </Link>
                       </div>
                     </div>
@@ -351,9 +461,10 @@ export function PublicHeader() {
                     type="button"
                     onClick={() => {
                       setMobileMenuOpen(false);
+                      trackStudentLogin("google");
                       signIn("google", { callbackUrl: "/profile" });
                     }}
-                    className="w-full py-2.5 px-4 text-xs font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl transition-all shadow-xs flex items-center justify-center gap-2"
+                    className="w-full py-2.5 px-4 text-xs font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl transition-all shadow-xs flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <svg className="w-4 h-4" viewBox="0 0 24 24">
                       <path
@@ -378,55 +489,135 @@ export function PublicHeader() {
                 )}
               </div>
 
-              {/* Navigation Links */}
+              {/* Core Navigation Sections */}
               <div className="bg-white rounded-2xl border border-amber-200/80 p-2 space-y-1 shadow-xs">
                 <div className="text-[10px] font-bold text-amber-800 uppercase tracking-wider px-3 py-1 font-devanagari">
-                  नेविगेशन मेनू
+                  मुख्य अध्ययन भाग (Core Modules)
                 </div>
-                {navItems.map((item) => {
-                  const isActive =
-                    item.href === "/"
-                      ? pathname === "/"
-                      : pathname.startsWith(item.href);
-
-                  return (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className={clsx(
-                        "flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all",
-                        isActive
-                          ? "bg-amber-500 text-[#0B132B] font-bold shadow-xs"
-                          : "text-slate-800 hover:bg-amber-50"
-                      )}
-                    >
-                      <span>{item.name}</span>
-                      <ArrowRight className="w-3.5 h-3.5 opacity-60" />
-                    </Link>
-                  );
-                })}
-              </div>
-
-              {/* Search Shortcut */}
-              <div>
+                
                 <Link
-                  href="/search"
+                  href="/"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white hover:bg-amber-50 text-xs font-bold text-[#0B132B] transition-colors border border-amber-200/80 shadow-xs"
+                  className={clsx(
+                    "flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all min-h-[44px]",
+                    pathname === "/" ? "bg-amber-500 text-[#0B132B] font-bold shadow-xs" : "text-slate-800 hover:bg-amber-50"
+                  )}
                 >
-                  <Search className="w-4 h-4 text-amber-700" />
-                  <span>Search Entire Portal</span>
+                  <span>Home (मुख्य पृष्ठ)</span>
+                  <ArrowRight className="w-3.5 h-3.5 opacity-60" />
+                </Link>
+
+                <Link
+                  href="/quizzes"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={clsx(
+                    "flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all min-h-[44px]",
+                    pathname.startsWith("/quizzes") ? "bg-amber-500 text-[#0B132B] font-bold shadow-xs" : "text-slate-800 hover:bg-amber-50"
+                  )}
+                >
+                  <span className="flex items-center gap-1.5">
+                    <CheckSquare className="w-3.5 h-3.5 text-amber-700" />
+                    <span>Free Quizzes & Mock Tests</span>
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 opacity-60" />
+                </Link>
+
+                <Link
+                  href="/notes"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={clsx(
+                    "flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all min-h-[44px]",
+                    pathname.startsWith("/notes") ? "bg-amber-500 text-[#0B132B] font-bold shadow-xs" : "text-slate-800 hover:bg-amber-50"
+                  )}
+                >
+                  <span className="flex items-center gap-1.5">
+                    <BookOpen className="w-3.5 h-3.5 text-amber-700" />
+                    <span>Exam Notes & Revision Sheets</span>
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 opacity-60" />
+                </Link>
+
+                <Link
+                  href="/blogs"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={clsx(
+                    "flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all min-h-[44px]",
+                    pathname.startsWith("/blogs") ? "bg-amber-500 text-[#0B132B] font-bold shadow-xs" : "text-slate-800 hover:bg-amber-50"
+                  )}
+                >
+                  <span className="flex items-center gap-1.5">
+                    <FileText className="w-3.5 h-3.5 text-amber-700" />
+                    <span>Articles & Current Affairs</span>
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 opacity-60" />
+                </Link>
+
+                <Link
+                  href="/categories"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={clsx(
+                    "flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all min-h-[44px]",
+                    pathname.startsWith("/categories") ? "bg-amber-500 text-[#0B132B] font-bold shadow-xs" : "text-slate-800 hover:bg-amber-50"
+                  )}
+                >
+                  <span className="flex items-center gap-1.5">
+                    <FolderTree className="w-3.5 h-3.5 text-amber-700" />
+                    <span>All Exam Categories</span>
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 opacity-60" />
                 </Link>
               </div>
 
-              {/* Official Social Channel Strip */}
+              {/* Student Utilities Section */}
+              <div className="bg-white rounded-2xl border border-amber-200/80 p-2 space-y-1 shadow-xs">
+                <div className="text-[10px] font-bold text-amber-800 uppercase tracking-wider px-3 py-1 font-devanagari">
+                  विद्यार्थी टूल्स (Student Tools)
+                </div>
+
+                <Link
+                  href="/notebook"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-800 hover:bg-amber-50 min-h-[44px]"
+                >
+                  <span className="flex items-center gap-1.5">
+                    <Bookmark className="w-3.5 h-3.5 text-amber-700" />
+                    <span>Revision Notebook (सेव किए प्रश्न)</span>
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 opacity-60" />
+                </Link>
+
+                <Link
+                  href="/leaderboard"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-800 hover:bg-amber-50 min-h-[44px]"
+                >
+                  <span className="flex items-center gap-1.5">
+                    <Trophy className="w-3.5 h-3.5 text-amber-700" />
+                    <span>State Leaderboard (रैंकिंग)</span>
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 opacity-60" />
+                </Link>
+
+                <Link
+                  href="/quiz-tools/create"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-800 hover:bg-amber-50 min-h-[44px]"
+                >
+                  <span className="flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+                    <span>AI Quiz Converter (पेपर कन्वर्टर)</span>
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 opacity-60" />
+                </Link>
+              </div>
+
+              {/* Official Social Channels Strip */}
               <div className="bg-[#0B132B] rounded-2xl p-3 text-white flex items-center justify-around shadow-sm">
                 <a
                   href={SOCIAL_LINKS.telegram.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-1 text-[10px] font-bold text-slate-200 hover:text-sky-400 transition-colors"
+                  className="flex flex-col items-center gap-1 text-[10px] font-bold text-slate-200 hover:text-sky-400 transition-colors p-2"
                 >
                   <Send className="w-4 h-4 text-sky-400" />
                   <span>Telegram</span>
@@ -435,7 +626,7 @@ export function PublicHeader() {
                   href={SOCIAL_LINKS.instagram.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-1 text-[10px] font-bold text-slate-200 hover:text-pink-400 transition-colors"
+                  className="flex flex-col items-center gap-1 text-[10px] font-bold text-slate-200 hover:text-pink-400 transition-colors p-2"
                 >
                   <Instagram className="w-4 h-4 text-pink-400" />
                   <span>Instagram</span>
@@ -444,7 +635,7 @@ export function PublicHeader() {
                   href={SOCIAL_LINKS.twitter.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-1 text-[10px] font-bold text-slate-200 hover:text-amber-400 transition-colors"
+                  className="flex flex-col items-center gap-1 text-[10px] font-bold text-slate-200 hover:text-amber-400 transition-colors p-2"
                 >
                   <span className="font-mono text-sm leading-4">𝕏</span>
                   <span>Twitter</span>
@@ -453,7 +644,7 @@ export function PublicHeader() {
                   href={SOCIAL_LINKS.youtube.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center gap-1 text-[10px] font-bold text-slate-200 hover:text-red-400 transition-colors"
+                  className="flex flex-col items-center gap-1 text-[10px] font-bold text-slate-200 hover:text-red-400 transition-colors p-2"
                 >
                   <Youtube className="w-4 h-4 text-red-400" />
                   <span>YouTube</span>

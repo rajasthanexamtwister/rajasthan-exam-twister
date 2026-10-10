@@ -61,6 +61,8 @@ export function computeQuizContentFingerprint(
 
 export interface PublicQuizOptions {
   limit?: number;
+  part?: number;
+  skip?: number;
   studentId?: string;
   excludeQuestionIds?: string[];
   includeCompleted?: boolean;
@@ -241,9 +243,13 @@ export class QuizService {
     const pendingQuestionsCount = pendingQuestions.length;
     const isTopicCompleted = pendingQuestionsCount === 0 && totalBankQuestions > 0;
 
-    // Choose which subset of questions to return based on options.limit
+    // Choose which subset of questions to return based on options.part / options.limit
     let targetQuestionPool: IQuizQuestion[] = [];
-    if (options?.limit && options.limit > 0) {
+    if (options?.part && options.part > 0) {
+      const limit = options.limit && options.limit > 0 ? options.limit : 20;
+      const skip = (options.part - 1) * limit;
+      targetQuestionPool = rawQuestions.slice(skip, skip + limit);
+    } else if (options?.limit && options.limit > 0) {
       if (pendingQuestions.length > 0) {
         targetQuestionPool = pendingQuestions.slice(0, options.limit);
       } else {

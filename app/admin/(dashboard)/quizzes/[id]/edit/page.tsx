@@ -393,7 +393,7 @@ export default function AdminQuizEditPage() {
 
           <div>
             <label className="block text-xs font-semibold text-slate-700 mb-1">
-              Time Limit (in Minutes — leave empty for untimed)
+              Time Limit (in Minutes - leave empty for untimed)
             </label>
             <input
               type="number"

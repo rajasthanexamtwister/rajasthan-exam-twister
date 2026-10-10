@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     canonical: `${getSiteUrl()}/leaderboard`,
   },
   openGraph: {
-    title: "Student Leaderboard & Top Scorers — Rajasthan Exam Twister",
+    title: "Student Leaderboard & Top Scorers | Rajasthan Exam Twister",
     description:
       "Check top-ranking students across Rajasthan competitive exam mock tests and quizzes. Practice daily and climb the Rajasthan Exam Twister leaderboard!",
     url: `${getSiteUrl()}/leaderboard`,

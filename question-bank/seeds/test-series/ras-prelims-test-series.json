@@ -1,0 +1,46 @@
+{
+  "title": "RAS / RTS 2026 Prelims Mega Mock Test Series",
+  "slug": "ras-pre-2026-mega-mock-test-series",
+  "description": "Comprehensive full-length 150-question mock test papers strictly based on RPSC RAS syllabus with authentic negative marking and All-Rajasthan Rank Predictor.",
+  "targetExam": "RAS / RTS Prelims (RPSC)",
+  "examCategorySlug": "ras",
+  "features": [
+    "Full-Length Mock Papers (150 Questions Each)",
+    "Bilingual Hindi & English Exam Interface",
+    "All-Rajasthan Rank & Percentile Cutoff Scorecard",
+    "Subject-wise Strength & Weakness Analysis"
+  ],
+  "totalTestsCount": 2,
+  "freeTestsCount": 1,
+  "totalQuestionsCount": 300,
+  "language": "Hindi & English (Bilingual)",
+  "enrolledCount": 3420,
+  "rating": 4.9,
+  "status": "PUBLISHED",
+  "papers": [
+    {
+      "quizSlug": "ras-prelims-full-mock-1",
+      "title": "RAS Prelims Full Mock Test #1 (Rajasthan Art, Culture & History Special)",
+      "testType": "FULL_MOCK",
+      "order": 1,
+      "isFreeDemo": true,
+      "durationMinutes": 180,
+      "totalQuestions": 150,
+      "totalMarks": 200,
+      "negativeMarksPerQuestion": 0.66,
+      "marksPerQuestion": 1.33
+    },
+    {
+      "quizSlug": "ras-prelims-full-mock-2",
+      "title": "RAS Prelims Full Mock Test #2 (Rajasthan Geography, Borders & Districts)",
+      "testType": "FULL_MOCK",
+      "order": 2,
+      "isFreeDemo": false,
+      "durationMinutes": 180,
+      "totalQuestions": 150,
+      "totalMarks": 200,
+      "negativeMarksPerQuestion": 0.66,
+      "marksPerQuestion": 1.33
+    }
+  ]
+}

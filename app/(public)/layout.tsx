@@ -150,8 +150,13 @@ export default async function PublicLayout({
                   </Link>
                 </li>
                 <li>
+                  <Link href="/test-series" className="text-slate-300 hover:text-amber-300 transition-colors">
+                    Online Test Series
+                  </Link>
+                </li>
+                <li>
                   <Link href="/quizzes" className="text-slate-300 hover:text-amber-300 transition-colors">
-                    Mock Quizzes & Test Series
+                    Topic Mock Quizzes
                   </Link>
                 </li>
                 <li>

@@ -6,6 +6,7 @@ import { ContentRenderer } from "@/components/content/content-renderer";
 import { TelegramBannerCard } from "@/components/public/telegram-banner-card";
 import { generateMetaDescription, getSiteUrl } from "@/server/lib/seo";
 import { SocialShare } from "@/components/public/social-share";
+import { AdSenseUnit } from "@/components/public/adsense-unit";
 import { Clock, Calendar, ArrowLeft, User, Sparkles, BookOpen, ArrowRight, Layers, RefreshCw } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
   const blog = await BlogRepository.findBySlug(params.slug);
   if (!blog || blog.status !== "PUBLISHED") {
     return {
-      title: "Blog Not Found — Rajasthan Exam Twister",
+      title: "Blog Not Found | Rajasthan Exam Twister",
       description: "The requested blog article could not be found.",
     };
   }
@@ -306,10 +307,16 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           />
         </header>
 
+        {/* Ad Unit 1: notes-header-top (Before Content) */}
+        <AdSenseUnit slotId="4247851206" label="Sponsored" />
+
         {/* Main Content Area using Shared ContentRenderer */}
         <section className="bg-white rounded-3xl p-6 sm:p-10 border border-amber-200/70 shadow-xs">
-          <ContentRenderer content={blog.content} />
+          <ContentRenderer content={blog.content} inArticleAdSlotId="8486548924" />
         </section>
+
+        {/* Ad Unit 2: notes-bottom-download (End of Article / Before Telegram & Related) */}
+        <AdSenseUnit slotId="1637999739" label="Sponsored" />
 
         {/* High-Converting Telegram Channel Lead Magnet */}
         <TelegramBannerCard />
@@ -357,6 +364,16 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
             </div>
           </section>
         )}
+
+        {/* Ad Unit 4: Multiplex Grid Recommendations (notes-multiplex-bottom) */}
+        <div className="print:hidden">
+          <AdSenseUnit
+            slotId="6837501896"
+            adFormat="autorelaxed"
+            label="Recommended For You"
+            minHeight={250}
+          />
+        </div>
 
         {/* Bottom Call to Action */}
         <div className="bg-[#0B132B] text-white rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md border border-amber-500/20">

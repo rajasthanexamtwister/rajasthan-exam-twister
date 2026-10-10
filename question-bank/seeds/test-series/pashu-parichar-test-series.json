@@ -1,0 +1,46 @@
+{
+  "title": "Rajasthan Pashu Parichar (Animal Attendant) Full Mock Test Series 2026",
+  "slug": "rajasthan-pashu-parichar-mock-test-series",
+  "description": "Exhaustive model test series based on RSMSSB 150-question pattern (Part A: 105 GK & Science + Part B: 45 Animal Husbandry) with 1/4th negative marking.",
+  "targetExam": "Pashu Parichar (Animal Attendant)",
+  "examCategorySlug": "animal-attendant",
+  "features": [
+    "Part A (105 Qs) Rajasthan GK, Math & General Science + Part B (45 Qs) Animal Husbandry",
+    "Strict 1/4th (0.25) Negative Marking as per RSMSSB Guidelines",
+    "Detailed Animal Husbandry Breed & Veterinary Care Explanations",
+    "Bilingual Hindi & English Interface"
+  ],
+  "totalTestsCount": 2,
+  "freeTestsCount": 1,
+  "totalQuestionsCount": 300,
+  "language": "Hindi & English (Bilingual)",
+  "enrolledCount": 6120,
+  "rating": 4.9,
+  "status": "PUBLISHED",
+  "papers": [
+    {
+      "quizSlug": "pashu-parichar-full-mock-1",
+      "title": "Pashu Parichar Full Length Model Paper #1 (Part A General Studies & GK)",
+      "testType": "FULL_MOCK",
+      "order": 1,
+      "isFreeDemo": true,
+      "durationMinutes": 180,
+      "totalQuestions": 150,
+      "totalMarks": 150,
+      "negativeMarksPerQuestion": 0.25,
+      "marksPerQuestion": 1.0
+    },
+    {
+      "quizSlug": "pashu-parichar-full-mock-2",
+      "title": "Pashu Parichar Full Length Model Paper #2 (Rajasthan Heritage, Geography & Culture)",
+      "testType": "FULL_MOCK",
+      "order": 2,
+      "isFreeDemo": false,
+      "durationMinutes": 180,
+      "totalQuestions": 150,
+      "totalMarks": 150,
+      "negativeMarksPerQuestion": 0.25,
+      "marksPerQuestion": 1.0
+    }
+  ]
+}

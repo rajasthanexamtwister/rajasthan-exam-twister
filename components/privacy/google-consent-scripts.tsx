@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 interface GoogleConsentScriptsProps {
   googleTagId?: string;
   gaMeasurementId?: string;
@@ -83,18 +85,19 @@ export function GoogleConsentScripts({
 
   return (
     <>
-      {/* 1. Google tag (gtag.js) native async loader for instant crawler & bot detection */}
+      {/* 1. Google tag (gtag.js) non-blocking loader */}
       {googleTagId && (
-        <script
-          async
+        <Script
           id="google-tag-manager-gtag"
           src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`}
+          strategy="afterInteractive"
         />
       )}
 
-      {/* 2. Synchronous Consent Mode v2 & Google Tag initialization */}
-      <script
+      {/* 2. Consent Mode v2 & Google Tag initialization */}
+      <Script
         id="google-consent-mode-init"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{ __html: consentInitCode }}
       />
     </>

@@ -16,3 +16,4 @@ export * from "./Presence";
 export * from "./QuizSubmission";
 export * from "./BlogAutomationJob";
 export * from "./BlogResearch";
+export * from "./TestSeries";

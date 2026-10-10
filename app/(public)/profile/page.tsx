@@ -341,7 +341,7 @@ export default function StudentProfilePage() {
               Average Score
             </span>
             <span className="text-2xl font-black text-amber-700 block">
-              {stats.averagePercentage > 0 ? `${stats.averagePercentage}%` : "—"}
+              {stats.averagePercentage > 0 ? `${stats.averagePercentage}%` : "-"}
             </span>
             <span className="text-[10px] text-slate-400">Average accuracy across attempts</span>
           </div>
@@ -351,7 +351,7 @@ export default function StudentProfilePage() {
               Best Score
             </span>
             <span className="text-2xl font-black text-emerald-700 block">
-              {stats.bestPercentage > 0 ? `${stats.bestPercentage}%` : "—"}
+              {stats.bestPercentage > 0 ? `${stats.bestPercentage}%` : "-"}
             </span>
             <span className="text-[10px] text-slate-400">Highest performance achieved</span>
           </div>

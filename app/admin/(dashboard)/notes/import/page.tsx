@@ -514,7 +514,7 @@ export default function AdminNotesImportPage() {
                   <tr key={idx} className="hover:bg-slate-50/80 transition-colors">
                     <td className="py-3 px-4 font-mono text-[11px] text-slate-800">{item.fileName}</td>
                     <td className="py-3 px-4 font-semibold text-slate-900 max-w-xs truncate">
-                      {item.title || "—"}
+                      {item.title || "-"}
                     </td>
                     <td className="py-3 px-4 whitespace-nowrap">
                       <span
@@ -738,7 +738,7 @@ export default function AdminNotesImportPage() {
                                 {log.result}
                               </span>
                             </td>
-                            <td className="py-2.5 px-3 text-slate-600">{log.reason || "—"}</td>
+                            <td className="py-2.5 px-3 text-slate-600">{log.reason || "-"}</td>
                             <td className="py-2.5 px-3 text-slate-700">
                               {log.createdNoteId ? (
                                 <div className="flex items-center gap-2">
@@ -761,7 +761,7 @@ export default function AdminNotesImportPage() {
                                   </span>
                                 </div>
                               ) : (
-                                "—"
+                                "-"
                               )}
                             </td>
                           </tr>

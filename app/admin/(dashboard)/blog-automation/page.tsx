@@ -716,7 +716,7 @@ export default function BlogAutomationDashboard() {
 
               <div>
                 <label className="font-semibold text-slate-300 block mb-1">
-                  Custom Topics (Optional — 1 per line)
+                  Custom Topics (Optional - 1 per line)
                 </label>
                 <textarea
                   rows={4}

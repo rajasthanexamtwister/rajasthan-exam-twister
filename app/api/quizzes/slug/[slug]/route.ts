@@ -18,6 +18,8 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     const { searchParams } = new URL(request.url);
     const limitParam = searchParams.get("limit");
     const limit = limitParam ? parseInt(limitParam, 10) : undefined;
+    const partParam = searchParams.get("part");
+    const part = partParam ? parseInt(partParam, 10) : undefined;
     const excludeParam = searchParams.get("excludeQuestionIds");
     const excludeQuestionIds = excludeParam ? excludeParam.split(",").filter(Boolean) : undefined;
 
@@ -32,6 +34,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 
     const quiz = await QuizService.getPublicQuizBySlug(params.slug, {
       limit: limit && !isNaN(limit) ? limit : undefined,
+      part: part && !isNaN(part) ? part : undefined,
       studentId,
       excludeQuestionIds,
     });

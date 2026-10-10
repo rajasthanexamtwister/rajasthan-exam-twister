@@ -21,7 +21,10 @@ import {
   Image as ImageIcon,
   Flame,
   Send,
-  Users,
+  Bookmark,
+  Trophy,
+  HelpCircle,
+  GraduationCap,
 } from "lucide-react";
 import clsx from "clsx";
 
@@ -29,7 +32,7 @@ export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Rajasthan Exam Twister — Rajasthan GK, Notes, Quizzes & Current Affairs",
+    absolute: "Rajasthan Exam Twister | Rajasthan GK, Notes, Quizzes & Current Affairs",
   },
   description:
     "High-yield Rajasthan GK, Rajasthan notes, current affairs blogs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, and Rajasthan Police exam preparation on Rajasthan Exam Twister.",
@@ -37,7 +40,7 @@ export const metadata: Metadata = {
     canonical: getSiteUrl(),
   },
   openGraph: {
-    title: "Rajasthan Exam Twister — Rajasthan GK, Notes, Quizzes & Current Affairs",
+    title: "Rajasthan Exam Twister | Rajasthan GK, Notes, Quizzes & Current Affairs",
     description:
       "High-yield Rajasthan GK revision notes, current affairs blogs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, and Rajasthan Police exam preparation.",
     url: getSiteUrl(),
@@ -53,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rajasthan Exam Twister — Rajasthan GK, Notes, Quizzes & Current Affairs",
+    title: "Rajasthan Exam Twister | Rajasthan GK, Notes, Quizzes & Current Affairs",
     description:
       "High-yield Rajasthan GK revision notes, current affairs blogs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, and Rajasthan Police exam preparation.",
     images: ["/brand/banner.png"],
@@ -133,9 +136,6 @@ export default async function HomePage() {
     ],
   };
 
-  const featuredNote = recentNotes[0];
-  const otherNotes = recentNotes.slice(1);
-
   return (
     <div className="space-y-12 sm:space-y-16 pb-20">
       {/* Inject JSON-LD */}
@@ -144,13 +144,13 @@ export default async function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* 1. Hero Section with Optimized Brand Banner */}
+      {/* 1. Hero Section: Editorial Gazette with Direct Free Quiz Action */}
       <section className="relative overflow-hidden bg-[#0B132B] text-white border-b border-amber-500/20 pt-8 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
         {/* Subtle decorative glow */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/15 via-transparent to-transparent pointer-events-none" />
 
         <div className="max-w-6xl mx-auto space-y-8 relative z-10">
-          {/* Banner Graphic Frame with high-priority next/image */}
+          {/* Official Banner Graphic Frame */}
           <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-amber-400/40 bg-slate-950 aspect-[21/9] sm:aspect-[2.8/1] w-full">
             <Image
               src="/brand/banner.webp"
@@ -162,35 +162,65 @@ export default async function HomePage() {
             />
           </div>
 
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+          {/* Hero Content & Primary Call-to-Actions */}
+          <div className="text-center max-w-3xl mx-auto space-y-5">
+            <div className="flex flex-wrap items-center justify-center gap-2">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-xs font-bold shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                <span>Rajasthan Competitive Exam Study Hub</span>
+                <span className="font-devanagari">राजस्थान प्रतियोगी परीक्षा अध्ययन एवं मॉक टेस्ट पोर्टल</span>
               </div>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
-              Rajasthan Exam Twister — Master Revision Guides & Exam Preparation
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight font-heading">
+              Rajasthan Exam Twister | High-Yield GK & Test Series
             </h1>
 
-            <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              High-yield Rajasthan GK revision notes, current affairs blogs, infographic handbooks, and mock quizzes for REET, RPSC, CET, RSSB, Rajasthan Police, and other Rajasthan competitive exams.
+            <p className="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed font-devanagari">
+              REET, RPSC RAS, RSSB CET, राजस्थान पुलिस SI, पटवारी एवं राज्य परीक्षाओं के लिए निःशुल्क ऑनलाइन मॉक टेस्ट, विस्तृत व्याख्या एवं रिवीज़न हैंडबुक्स।
             </p>
 
-            {/* Prominent Search Bar */}
-            <div className="max-w-xl mx-auto pt-2">
+            {/* Primary Action Buttons (Spotlighting Free Test Series & Quizzes) */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+              <Link
+                href="/test-series"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 active:scale-95 text-[#0B132B] text-sm font-extrabold shadow-lg shadow-amber-500/20 transition-all font-heading"
+              >
+                <Trophy className="w-4 h-4 text-[#0B132B]" />
+                <span>ऑनलाइन टेस्ट सीरीज़ (Test Series)</span>
+                <ArrowRight className="w-4 h-4 text-[#0B132B]" />
+              </Link>
+
+              <Link
+                href="/quizzes"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/15 active:scale-95 text-white border border-white/20 text-sm font-bold transition-all"
+              >
+                <Flame className="w-4 h-4 text-amber-400" />
+                <span>फ्री टॉपिक क्विज़</span>
+              </Link>
+
+              <Link
+                href="/notes"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-white/10 hover:bg-white/15 active:scale-95 text-white border border-white/20 text-sm font-bold transition-all"
+              >
+                <BookOpen className="w-4 h-4 text-amber-400" />
+                <span>रिवीज़न नोट्स</span>
+              </Link>
+            </div>
+
+            {/* Search Bar with Accessible Form Controls */}
+            <div className="max-w-xl mx-auto pt-3">
               <form action="/search" method="GET" className="relative flex items-center shadow-lg">
                 <Search className="w-5 h-5 text-amber-700 absolute left-4 pointer-events-none" />
                 <input
                   type="text"
                   name="q"
                   placeholder="Search Rajasthan GK, history, notes, or topics..."
+                  aria-label="Search content across Rajasthan Exam Twister"
                   className="w-full pl-12 pr-28 py-3.5 text-xs sm:text-sm bg-white text-slate-950 rounded-2xl focus:outline-none focus:ring-2 focus:ring-amber-400 transition-all placeholder:text-slate-400 font-medium"
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 px-4 py-2 bg-amber-500 hover:bg-amber-400 text-[#0B132B] text-xs font-bold rounded-xl transition-all shadow-sm"
+                  className="absolute right-2 px-4 py-2 bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-[#0B132B] text-xs font-bold rounded-xl transition-all shadow-xs"
                 >
                   Search
                 </button>
@@ -200,36 +230,71 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* 2. Quick Access Grid */}
+      {/* 2. Core Study Modules Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-xl sm:text-2xl font-black text-[#0B132B] tracking-tight">
-                Quick Access Hub
+              <h2 className="text-xl sm:text-2xl font-black text-[#0B132B] tracking-tight font-heading">
+                Quick Access Hub (प्रमुख अध्ययन भाग)
               </h2>
-              <p className="text-xs text-slate-600">
-                Jump directly to core study modules and active syllabus streams.
+              <p className="text-xs text-slate-600 font-devanagari">
+                सीधे अपने पसंदीदा अध्ययन मॉड्यूल या टेस्ट सीरीज का चयन करें।
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-4">
-            {/* 1: Notes */}
+            {/* 1: Test Series (Primary Spotlight) */}
+            <Link
+              href="/test-series"
+              className="p-4 rounded-2xl bg-gradient-to-b from-amber-50/90 to-white border-2 border-amber-400/80 shadow-xs hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center text-center space-y-2 group relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 bg-amber-500 text-[#0B132B] font-extrabold text-[8px] uppercase px-2 py-0.5 rounded-bl-lg tracking-wider font-heading">
+                Full Mocks
+              </div>
+              <div className="w-11 h-11 rounded-xl bg-amber-500 text-[#0B132B] flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs">
+                <Trophy className="w-5 h-5" />
+              </div>
+              <span className="text-xs font-extrabold text-slate-900 group-hover:text-amber-800 transition-colors font-heading">
+                Test Series
+              </span>
+              <span className="text-[11px] text-amber-900 font-bold">
+                RAS &bull; REET &bull; CET
+              </span>
+            </Link>
+
+            {/* 2: Quizzes */}
+            <Link
+              href="/quizzes"
+              className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center text-center space-y-2 group"
+            >
+              <div className="w-11 h-11 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs">
+                <CheckSquare className="w-5 h-5 text-amber-700" />
+              </div>
+              <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors font-heading">
+                Mock Quizzes
+              </span>
+              <span className="text-[11px] text-slate-600 font-medium">
+                {publishedQuizzesCount > 0 ? `${publishedQuizzesCount} Topics` : "Free Practice"}
+              </span>
+            </Link>
+
+            {/* 2: Notes */}
             <Link
               href="/notes"
               className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center text-center space-y-2 group"
             >
-              <div className="w-11 h-11 rounded-xl bg-amber-100/80 text-amber-900 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="w-11 h-11 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <BookOpen className="w-5 h-5 text-amber-700" />
               </div>
-              <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
+              <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors font-heading">
                 Exam Notes
               </span>
-              <span className="text-xs text-slate-600 font-semibold">Revision Sheets</span>
+              <span className="text-[11px] text-slate-600 font-medium">Revision Sheets</span>
             </Link>
 
-            {/* 2: Blogs */}
+            {/* 3: Blogs & Current Affairs */}
             <Link
               href="/blogs"
               className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center text-center space-y-2 group"
@@ -237,13 +302,13 @@ export default async function HomePage() {
               <div className="w-11 h-11 rounded-xl bg-blue-100 text-blue-900 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <FileText className="w-5 h-5 text-blue-700" />
               </div>
-              <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
+              <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors font-heading">
                 Articles & GK
               </span>
-              <span className="text-xs text-slate-600 font-semibold">Current Affairs</span>
+              <span className="text-[11px] text-slate-600 font-medium">Current Affairs</span>
             </Link>
 
-            {/* 3: Categories */}
+            {/* 4: Categories */}
             <Link
               href="/categories"
               className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center text-center space-y-2 group"
@@ -251,70 +316,55 @@ export default async function HomePage() {
               <div className="w-11 h-11 rounded-xl bg-purple-100 text-purple-900 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <FolderTree className="w-5 h-5 text-purple-700" />
               </div>
-              <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
-                Categories
+              <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors font-heading">
+                All Categories
               </span>
-              <span className="text-xs text-slate-600 font-semibold">Subject Directory</span>
+              <span className="text-[11px] text-slate-600 font-medium">Subject Directory</span>
             </Link>
 
-            {/* 4: Quizzes */}
+            {/* 5: Revision Notebook */}
             <Link
-              href="/quizzes"
+              href="/notebook"
               className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center text-center space-y-2 group"
             >
               <div className="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <CheckSquare className="w-5 h-5 text-emerald-700" />
+                <Bookmark className="w-5 h-5 text-emerald-700" />
               </div>
-              <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
-                Mock Quizzes
+              <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors font-heading">
+                My Notebook
               </span>
-              <span className="text-xs text-slate-600 font-semibold">
-                {publishedQuizzesCount > 0 ? `${publishedQuizzesCount} Active Tests` : "Test Series"}
-              </span>
+              <span className="text-[11px] text-slate-600 font-medium">Saved Questions</span>
             </Link>
 
-            {/* 5: AI Quiz Tool */}
+            {/* 6: State Leaderboard */}
             <Link
-              href="/quiz-tools/create"
+              href="/leaderboard"
               className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center text-center space-y-2 group"
             >
-              <div className="w-11 h-11 rounded-xl bg-amber-500/15 text-amber-900 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Sparkles className="w-5 h-5 text-amber-700" />
+              <div className="w-11 h-11 rounded-xl bg-rose-100 text-rose-900 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Trophy className="w-5 h-5 text-rose-700" />
               </div>
-              <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
-                AI Quiz Tool
+              <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors font-heading">
+                Leaderboard
               </span>
-              <span className="text-xs text-slate-600 font-semibold">Convert Papers</span>
-            </Link>
-
-            {/* 6: Search Hub */}
-            <Link
-              href="/search"
-              className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-xs hover:shadow-md hover:border-amber-500 transition-all flex flex-col items-center text-center space-y-2 group"
-            >
-              <div className="w-11 h-11 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Search className="w-5 h-5 text-slate-700" />
-              </div>
-              <span className="text-xs font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
-                Search Hub
-              </span>
-              <span className="text-xs text-slate-600 font-semibold">Topic Explorer</span>
+              <span className="text-[11px] text-slate-600 font-medium">Top Rankers</span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 3. Popular Exam Streams Pills */}
+      {/* 3. Popular Exam Streams & Syllabus Pills */}
       {categories.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#FFFDF9] rounded-3xl border border-amber-200/80 p-6 sm:p-8 shadow-sm space-y-4">
+          <div className="bg-[#FFFDF9] rounded-3xl border border-amber-200/80 p-6 sm:p-8 shadow-xs space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-amber-100 pb-4">
               <div>
-                <h3 className="text-base sm:text-lg font-bold text-[#0B132B]">
-                  Popular Exam Streams & Syllabus
+                <h3 className="text-base sm:text-lg font-bold text-[#0B132B] font-heading flex items-center gap-2">
+                  <GraduationCap className="w-4 h-4 text-amber-700" />
+                  <span>Popular Exam Streams & Syllabus</span>
                 </h3>
-                <p className="text-xs text-slate-500">
-                  Explore notes and articles filtered by subject category.
+                <p className="text-xs text-slate-600 font-devanagari">
+                  अपनी परीक्षा के अनुसार विषयवार नोट्स एवं टेस्ट सीरीज चुनें।
                 </p>
               </div>
               <Link
@@ -331,7 +381,7 @@ export default async function HomePage() {
                 <Link
                   key={cat._id.toString()}
                   href={`/notes?category=${cat.slug}`}
-                  className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-white hover:bg-amber-100/70 hover:text-amber-950 text-slate-700 border border-amber-200/70 transition-all hover:border-amber-400 shadow-xs"
+                  className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-white hover:bg-amber-100/80 hover:text-amber-950 text-slate-700 border border-amber-200/80 transition-all hover:border-amber-400 shadow-2xs"
                 >
                   {cat.name}
                 </Link>
@@ -349,11 +399,11 @@ export default async function HomePage() {
               <Send className="w-3.5 h-3.5" />
               <span>Rajasthan Aspirants Telegram Community</span>
             </div>
-            <h3 className="text-lg sm:text-xl font-bold">
+            <h3 className="text-lg sm:text-xl font-bold font-heading">
               Join 10,000+ Students for Daily GK Polls & Notes
             </h3>
-            <p className="text-xs text-slate-300 max-w-xl">
-              Get instant updates on RPSC & RSSB notifications, daily MCQ quizzes, and downloadable PDF revision sheets directly on Telegram.
+            <p className="text-xs text-slate-300 max-w-xl leading-relaxed font-devanagari">
+              RPSC एवं RSSB परीक्षा अलर्ट, दैनिक वस्तुनिष्ठ प्रश्नोत्तरी और हस्तलिखित रिवीज़न PDF शीट्स तुरंत प्राप्त करें।
             </p>
           </div>
 
@@ -361,7 +411,7 @@ export default async function HomePage() {
             href={SOCIAL_LINKS.telegram.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-sky-700 hover:bg-sky-600 text-white font-bold text-xs shadow-lg shadow-sky-900/30 whitespace-nowrap transition-all hover:scale-105 active:scale-95 shrink-0"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-lg shadow-sky-900/30 whitespace-nowrap transition-all hover:scale-105 active:scale-95 shrink-0 font-heading"
           >
             <Send className="w-4 h-4" />
             <span>Join Official Telegram</span>
@@ -373,14 +423,14 @@ export default async function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-xl sm:text-2xl font-black text-[#0B132B] tracking-tight flex items-center gap-2">
+            <h2 className="text-xl sm:text-2xl font-black text-[#0B132B] tracking-tight flex items-center gap-2 font-heading">
               <span>Latest Revision Notes</span>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-200">
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-200 font-sans">
                 High-Yield
               </span>
             </h2>
-            <p className="text-xs text-slate-600">
-              High-yield visual infographics and summary sheets for state exams.
+            <p className="text-xs text-slate-600 font-devanagari">
+              परीक्षा उपयोगी त्वरित रिवीज़न हैंडबुक्स एवं माइंड मैप्स।
             </p>
           </div>
           <Link
@@ -417,7 +467,7 @@ export default async function HomePage() {
                   )}
                 >
                   {isFirst && (
-                    <div className="absolute top-0 right-0 bg-amber-500 text-[#0B132B] font-extrabold text-[9px] uppercase px-3 py-0.5 rounded-bl-xl tracking-wider shadow-xs flex items-center gap-1">
+                    <div className="absolute top-0 right-0 bg-amber-500 text-[#0B132B] font-extrabold text-[9px] uppercase px-3 py-0.5 rounded-bl-xl tracking-wider shadow-xs flex items-center gap-1 font-heading">
                       <Flame className="w-3 h-3" />
                       <span>Featured Note</span>
                     </div>
@@ -425,7 +475,7 @@ export default async function HomePage() {
 
                   <div className="space-y-3">
                     <div className="flex items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-200/80">
+                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-200/80 font-sans">
                         {note.subject || categoryName || "Revision Note"}
                       </span>
                       {note.imageIds && note.imageIds.length > 0 && (
@@ -438,13 +488,13 @@ export default async function HomePage() {
 
                     <Link
                       href={`/notes/${note.slug}`}
-                      className="block font-extrabold text-base text-slate-900 group-hover:text-amber-700 transition-colors line-clamp-2"
+                      className="block font-extrabold text-base text-slate-900 group-hover:text-amber-700 transition-colors line-clamp-2 font-heading leading-snug"
                     >
                       {note.title}
                     </Link>
 
                     {note.content && (
-                      <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                      <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed font-devanagari">
                         {note.content.replace(/<[^>]*>/g, " ")}
                       </p>
                     )}
@@ -480,11 +530,11 @@ export default async function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-xl sm:text-2xl font-black text-[#0B132B] tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-black text-[#0B132B] tracking-tight font-heading">
               Recent Articles & Current Affairs
             </h2>
-            <p className="text-xs text-slate-600">
-              Exam notifications, syllabus breakdowns, and GK articles.
+            <p className="text-xs text-slate-600 font-devanagari">
+              नवीनतम परीक्षा अधिसूचनाएं, पाठ्यक्रम विश्लेषण एवं करेंट अफेयर्स।
             </p>
           </div>
           <Link
@@ -531,13 +581,13 @@ export default async function HomePage() {
 
                   <Link
                     href={`/blogs/${blog.slug}`}
-                    className="block font-extrabold text-base text-slate-900 group-hover:text-amber-700 transition-colors line-clamp-2"
+                    className="block font-extrabold text-base text-slate-900 group-hover:text-amber-700 transition-colors line-clamp-2 font-heading leading-snug"
                   >
                     {blog.title}
                   </Link>
 
                   {blog.excerpt && (
-                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed font-devanagari">
                       {blog.excerpt}
                     </p>
                   )}
@@ -558,6 +608,32 @@ export default async function HomePage() {
             ))}
           </div>
         )}
+      </section>
+
+      {/* 6. Callout Strip: Free Practice Tests */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-[#FFFDF9] rounded-3xl border-2 border-amber-400/80 p-8 sm:p-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 text-center md:text-left">
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-extrabold bg-amber-100 text-amber-950 border border-amber-300">
+              <Flame className="w-3.5 h-3.5 text-amber-700" />
+              <span>Rajasthan Mock Test Series</span>
+            </span>
+            <h3 className="text-xl sm:text-2xl font-black text-[#0B132B] font-heading">
+              अपनी तैयारी को परखें : बिल्कुल निःशुल्क
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 max-w-xl font-devanagari">
+              वास्तविक परीक्षा पैटर्न पर आधारित प्रश्नोत्तरी, नेगेटिव मार्किंग और विस्तृत व्याख्या के साथ अभी टेस्ट शुरू करें।
+            </p>
+          </div>
+
+          <Link
+            href="/quizzes"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 active:bg-amber-600 text-[#0B132B] font-extrabold text-sm shadow-md transition-all shrink-0 font-heading"
+          >
+            <CheckSquare className="w-4 h-4" />
+            <span>सभी मॉक टेस्ट देखें (All Quizzes)</span>
+          </Link>
+        </div>
       </section>
     </div>
   );

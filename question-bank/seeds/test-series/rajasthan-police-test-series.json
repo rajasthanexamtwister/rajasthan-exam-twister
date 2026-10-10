@@ -1,0 +1,46 @@
+{
+  "title": "Rajasthan Police Constable & SI Booster Test Series",
+  "slug": "rajasthan-police-constable-si-booster-series",
+  "description": "Rigorous mock tests for Rajasthan Police SI & Constable exams covering Women & Child Crime Laws, State GK, Reasoning & General Science.",
+  "targetExam": "Rajasthan Police Constable & SI",
+  "examCategorySlug": "rajasthan-police",
+  "features": [
+    "Full SI & Constable Model Papers",
+    "Special Focus on IPC, Women & Child Safety Laws",
+    "Live Leaderboard Rank & Speed Analysis",
+    "100% Free Demo Mock Included"
+  ],
+  "totalTestsCount": 2,
+  "freeTestsCount": 1,
+  "totalQuestionsCount": 250,
+  "language": "Hindi & English",
+  "enrolledCount": 3870,
+  "rating": 4.8,
+  "status": "PUBLISHED",
+  "papers": [
+    {
+      "quizSlug": "police-constable-full-mock-1",
+      "title": "Rajasthan Police Constable Full Mock Paper #1 (GK, Geography & Culture)",
+      "testType": "FULL_MOCK",
+      "order": 1,
+      "isFreeDemo": true,
+      "durationMinutes": 120,
+      "totalQuestions": 150,
+      "totalMarks": 150,
+      "negativeMarksPerQuestion": 0.25,
+      "marksPerQuestion": 1.0
+    },
+    {
+      "quizSlug": "police-si-gk-mock-2",
+      "title": "Rajasthan Police SI Mock Paper #2 (Rajasthan General Knowledge & General Science)",
+      "testType": "FULL_MOCK",
+      "order": 2,
+      "isFreeDemo": false,
+      "durationMinutes": 120,
+      "totalQuestions": 100,
+      "totalMarks": 200,
+      "negativeMarksPerQuestion": 0.66,
+      "marksPerQuestion": 2.0
+    }
+  ]
+}

@@ -5,7 +5,7 @@ import { StudentSubmissionsClient } from "./student-submissions-client";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "My Quiz Submissions — Rajasthan Exam Twister",
+  title: "My Quiz Submissions | Rajasthan Exam Twister",
   description: "View and manage your saved AI quiz JSON submissions.",
   robots: {
     index: false,

@@ -267,7 +267,7 @@ export function MediaPicker({
                             {item.altText || "Untitled Asset"}
                           </p>
                           <p className="text-[10px] text-slate-400 font-mono">
-                            {item.fileSize ? `${Math.round(item.fileSize / 1024)} KB` : "—"}
+                            {item.fileSize ? `${Math.round(item.fileSize / 1024)} KB` : "-"}
                           </p>
                         </div>
                       </button>

@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
-import { Sora, Plus_Jakarta_Sans, Noto_Sans_Devanagari } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import Script from "next/script";
+import { Inter, Outfit, Noto_Sans_Devanagari, Noto_Serif_Devanagari } from "next/font/google";
 import { getSiteUrl } from "@/server/lib/seo";
 import { OFFICIAL_SOCIAL_URLS } from "@/server/lib/social-links";
 import { PublicSessionProvider } from "@/components/providers/session-provider";
@@ -7,18 +8,20 @@ import { GoogleConsentScripts } from "@/components/privacy/google-consent-script
 import { ConsentBanner } from "@/components/privacy/consent-banner";
 import "./globals.css";
 
-const headingFont = Sora({
+const headingFont = Outfit({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["700", "800"],
   variable: "--font-heading",
   display: "swap",
+  preload: true,
 });
 
-const bodyFont = Plus_Jakarta_Sans({
+const bodyFont = Inter({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   variable: "--font-sans",
   display: "swap",
+  preload: true,
 });
 
 const devanagariFont = Noto_Sans_Devanagari({
@@ -26,7 +29,22 @@ const devanagariFont = Noto_Sans_Devanagari({
   weight: ["400", "600", "700"],
   variable: "--font-devanagari",
   display: "swap",
+  preload: true,
 });
+
+const devanagariSerifFont = Noto_Serif_Devanagari({
+  subsets: ["devanagari"],
+  weight: ["700"],
+  variable: "--font-serif-devanagari",
+  display: "swap",
+});
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#0B132B",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
@@ -133,7 +151,7 @@ export default function RootLayout({
   return (
     <html
       lang="hi"
-      className={`${headingFont.variable} ${bodyFont.variable} ${devanagariFont.variable} h-full`}
+      className={`${headingFont.variable} ${bodyFont.variable} ${devanagariFont.variable} ${devanagariSerifFont.variable} h-full`}
     >
       <head>
         {/* PWA Web App Manifest & Mobile App Meta Tags */}
@@ -154,14 +172,15 @@ export default function RootLayout({
         {/* Google Consent Mode v2 & Google Analytics 4 Script */}
         <GoogleConsentScripts />
 
-        {/* Google AdSense Script (Native async script to prevent data-nscript validation notices) */}
-        <script
-          async
+        {/* Google AdSense Script (Loaded lazyOnload to unblock FCP & LCP) */}
+        <Script
           id="google-adsense"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8986858563387447"
+          strategy="lazyOnload"
           crossOrigin="anonymous"
         />
-        {/* Site-wide Organization + WebSite structured data for Google brand recognition */}
+
+        {/* Site-wide Organization + WebSite structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

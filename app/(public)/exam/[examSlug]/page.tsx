@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: ExamBrowsePageProps): Promise
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${examName} Mock Tests & Practice Quizzes — Rajasthan Exam Twister`,
+      title: `${examName} Mock Tests & Practice Quizzes | Rajasthan Exam Twister`,
       description,
       url: canonicalUrl,
     },

@@ -1,0 +1,46 @@
+{
+  "title": "Rajasthan CET 2026 (Graduate & 10+2) Speed Test Series",
+  "slug": "rajasthan-cet-2026-speed-test-series",
+  "description": "High-speed test series designed for Rajasthan Common Eligibility Test (CET) with state history, current affairs, computer, and general science.",
+  "targetExam": "Rajasthan CET (10+2 & Graduate)",
+  "examCategorySlug": "cet",
+  "features": [
+    "Full-Length Mock Tests + Daily Current Affairs Drills",
+    "Accuracy & Negative Marking Tracker",
+    "AI Weak-Topic Booster Practice Integration",
+    "Mobile-Optimized Fast Test Player"
+  ],
+  "totalTestsCount": 2,
+  "freeTestsCount": 1,
+  "totalQuestionsCount": 300,
+  "language": "Hindi & English (Bilingual)",
+  "enrolledCount": 4890,
+  "rating": 4.9,
+  "status": "PUBLISHED",
+  "papers": [
+    {
+      "quizSlug": "cet-full-length-mock-1",
+      "title": "Rajasthan CET Full Mock Paper #1 (Rajasthan GK & Computer Special)",
+      "testType": "FULL_MOCK",
+      "order": 1,
+      "isFreeDemo": true,
+      "durationMinutes": 180,
+      "totalQuestions": 150,
+      "totalMarks": 300,
+      "negativeMarksPerQuestion": 0.0,
+      "marksPerQuestion": 2.0
+    },
+    {
+      "quizSlug": "cet-full-length-mock-2",
+      "title": "Rajasthan CET Full Mock Paper #2 (Rajasthan Culture, Geography & Administration)",
+      "testType": "FULL_MOCK",
+      "order": 2,
+      "isFreeDemo": false,
+      "durationMinutes": 180,
+      "totalQuestions": 150,
+      "totalMarks": 300,
+      "negativeMarksPerQuestion": 0.0,
+      "marksPerQuestion": 2.0
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Send, X, Sparkles } from "lucide-react";
 import { SOCIAL_LINKS } from "@/server/lib/social-links";
 import { useSession } from "next-auth/react";
+import { trackGAEvent } from "@/components/analytics/gtag-events";
 
 export const TELEGRAM_BANNER_INTERVAL_JOINED_DAYS = 30;
 export const TELEGRAM_BANNER_INTERVAL_NOT_JOINED_DAYS = 7;
@@ -53,6 +54,10 @@ export function TelegramStickyBar() {
   };
 
   const handleJoinClick = () => {
+    trackGAEvent("telegram_join_click", {
+      placement: "sticky_bottom_bar",
+      channel_url: SOCIAL_LINKS.telegram.url,
+    });
     localStorage.setItem("ret_telegram_banner_dismissed_at", Date.now().toString());
     localStorage.setItem("ret_telegram_joined", "true");
     setIsVisible(false);

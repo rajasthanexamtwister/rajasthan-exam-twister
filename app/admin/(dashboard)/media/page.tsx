@@ -360,7 +360,7 @@ export default function AdminMediaPage() {
                       {item.altText || "Untitled Asset"}
                     </p>
                     <div className="flex items-center justify-between text-[10px] text-slate-400 font-mono">
-                      <span>{item.fileSize ? `${Math.round(item.fileSize / 1024)} KB` : "—"}</span>
+                      <span>{item.fileSize ? `${Math.round(item.fileSize / 1024)} KB` : "-"}</span>
                       <span>
                         {new Date(item.createdAt).toLocaleDateString("en-IN", {
                           day: "numeric",
@@ -497,7 +497,7 @@ export default function AdminMediaPage() {
                   <div>
                     <span className="block text-[10px] text-slate-400 uppercase font-bold">File Size</span>
                     <span className="font-semibold text-slate-800">
-                      {selectedItem.fileSize ? `${(selectedItem.fileSize / 1024).toFixed(1)} KB` : "—"}
+                      {selectedItem.fileSize ? `${(selectedItem.fileSize / 1024).toFixed(1)} KB` : "-"}
                     </span>
                   </div>
                   <div>

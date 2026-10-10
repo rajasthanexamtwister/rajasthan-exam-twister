@@ -1,0 +1,46 @@
+{
+  "title": "REET 2026 Level-1 & Level-2 Complete Model Paper Series",
+  "slug": "reet-2026-complete-model-paper-series",
+  "description": "Targeted model test series covering Child Pedagogy, Rajasthan Culture, Language 1 & 2, and Subject GK for 3rd Grade Teacher selection.",
+  "targetExam": "REET / 3rd Grade Teacher",
+  "examCategorySlug": "reet",
+  "features": [
+    "Full Model Papers for Level-1 & Level-2",
+    "Authentic Pedagogy & Teaching Method Questions",
+    "Instant Solution Keys with Detailed Devanagari Explanations",
+    "Personal Revision Notebook Bookmark Support"
+  ],
+  "totalTestsCount": 2,
+  "freeTestsCount": 1,
+  "totalQuestionsCount": 300,
+  "language": "Hindi & English (Bilingual)",
+  "enrolledCount": 5120,
+  "rating": 4.8,
+  "status": "PUBLISHED",
+  "papers": [
+    {
+      "quizSlug": "reet-level-1-full-mock-1",
+      "title": "REET Complete Model Paper #1 (Rajasthan GK & Cultural Heritage)",
+      "testType": "FULL_MOCK",
+      "order": 1,
+      "isFreeDemo": true,
+      "durationMinutes": 150,
+      "totalQuestions": 150,
+      "totalMarks": 150,
+      "negativeMarksPerQuestion": 0.0,
+      "marksPerQuestion": 1.0
+    },
+    {
+      "quizSlug": "reet-level-2-full-mock-2",
+      "title": "REET Complete Model Paper #2 (Rajasthan Geography & State Traditions)",
+      "testType": "FULL_MOCK",
+      "order": 2,
+      "isFreeDemo": false,
+      "durationMinutes": 150,
+      "totalQuestions": 150,
+      "totalMarks": 150,
+      "negativeMarksPerQuestion": 0.0,
+      "marksPerQuestion": 1.0
+    }
+  ]
+}

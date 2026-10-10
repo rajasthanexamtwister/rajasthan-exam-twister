@@ -9,6 +9,7 @@ import { BrandedPdfDownloader } from "@/components/public/branded-pdf-downloader
 import { generateMetaDescription, getSiteUrl } from "@/server/lib/seo";
 import { SocialShare } from "@/components/public/social-share";
 import { PrintNoteButton } from "@/components/public/print-note-button";
+import { AdSenseUnit } from "@/components/public/adsense-unit";
 import {
   BookOpen,
   Calendar,
@@ -37,7 +38,7 @@ export async function generateMetadata({ params }: NoteDetailPageProps): Promise
   const note = await NoteRepository.findBySlug(params.slug);
   if (!note || note.status !== "PUBLISHED") {
     return {
-      title: "Revision Note Not Found — Rajasthan Exam Twister",
+      title: "Revision Note Not Found | Rajasthan Exam Twister",
       description: "The requested revision note could not be found.",
     };
   }
@@ -370,6 +371,11 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
           </div>
         </header>
 
+        {/* Ad Unit 1: notes-header-top (Before Content) */}
+        <div className="print:hidden">
+          <AdSenseUnit slotId="4247851206" label="Sponsored" />
+        </div>
+
         {/* Ordered Infographic Gallery (Preserves insertion order) */}
         {images.length > 0 && (
           <section className="space-y-6" aria-label="Infographic Diagrams">
@@ -400,9 +406,14 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
         {/* Main Text Content via Shared ContentRenderer */}
         {note.content && (
           <section className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 border border-amber-200/80 shadow-xs study-sheet-content min-w-0 max-w-full">
-            <ContentRenderer content={note.content} />
+            <ContentRenderer content={note.content} inArticleAdSlotId="8486548924" />
           </section>
         )}
+
+        {/* Ad Unit 2: notes-bottom-download (End of Note / Before Telegram & Related) */}
+        <div className="print:hidden">
+          <AdSenseUnit slotId="1637999739" label="Sponsored" />
+        </div>
 
         {/* High-Converting Telegram Channel Lead Magnet */}
         <div className="print:hidden">
@@ -455,6 +466,16 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
             </div>
           </section>
         )}
+
+        {/* Ad Unit 4: Multiplex Grid Recommendations (notes-multiplex-bottom) */}
+        <div className="print:hidden">
+          <AdSenseUnit
+            slotId="6837501896"
+            adFormat="autorelaxed"
+            label="Recommended For You"
+            minHeight={250}
+          />
+        </div>
 
         {/* Tags Footer */}
         {tagDocs.length > 0 && (

@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import clsx from "clsx";
 
-const PROMPT_TEXT = `You are converting a set of exam questions into a strict JSON format for a quiz platform. I will give you a paper's worth of questions below (or describe/paste them). Convert ALL of them into a single JSON object matching EXACTLY this schema — no extra commentary, no markdown fences, JSON only:
+const PROMPT_TEXT = `You are converting a set of exam questions into a strict JSON format for a quiz platform. I will give you a paper's worth of questions below (or describe/paste them). Convert ALL of them into a single JSON object matching EXACTLY this schema - no extra commentary, no markdown fences, JSON only:
 
 {
   "quizTitle": "string, a short descriptive title based on the paper's subject/topic",
@@ -39,10 +39,10 @@ const PROMPT_TEXT = `You are converting a set of exam questions into a strict JS
 Rules:
 - correctOptionIndex is 0-based (0 = first option).
 - Every question must have between 2 and 6 options.
-- If the original paper doesn't specify marks/negative marking, default marks to 1 and negativeMarks to 0.33 per question — the website lets the uploader change these afterward, so defaults are fine.
+- If the original paper doesn't specify marks/negative marking, default marks to 1 and negativeMarks to 0.33 per question: the website lets the uploader change these afterward, so defaults are fine.
 - Do not invent questions that aren't in the source material.
 - Do not skip any question from the source material.
-- Output ONLY the JSON object, nothing else — no explanation, no markdown code fences, no preamble.
+- Output ONLY the JSON object, nothing else: no explanation, no markdown code fences, no preamble.
 
 Here are my questions:
 [PASTE YOUR QUESTIONS / DESCRIBE YOUR IMAGE OR PDF HERE]`;

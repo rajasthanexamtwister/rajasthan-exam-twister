@@ -72,12 +72,21 @@
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
-  font-feature-settings: "rlig" 1, "calt" 1;
+  font-family: var(--font-sans), var(--font-devanagari), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "rlig" 1, "calt" 1, "kern" 1;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading), var(--font-devanagari), system-ui, sans-serif;
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading), var(--font-serif-devanagari), var(--font-devanagari), system-ui, sans-serif;
   letter-spacing: -0.02em;
+}
+
+.font-devanagari {
+  font-family: var(--font-devanagari), var(--font-serif-devanagari), sans-serif;
+  line-height: 1.68;
 }
 
 /* Study Sheet & Print Stylesheet */
@@ -88,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 11pt !important;
   }
 
-  header, footer, nav, aside, .no-print, button, .print\\:hidden {
+  header, footer, nav, aside, .no-print, button, .print\:hidden {
     display: none !important;
   }
 

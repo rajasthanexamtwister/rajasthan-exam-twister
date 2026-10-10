@@ -1,0 +1,70 @@
+{
+  "title": "Rajasthan Computer Instructor (BCI / SCI) Mock Test Series 2026",
+  "slug": "bci-sci-computer-instructor-test-series",
+  "description": "Full-length exam-oriented mock tests and previous year question papers for RSMSSB Basic & Senior Computer Instructor (BCI/SCI) Paper-1 and Paper-2.",
+  "targetExam": "Computer Instructor (BCI / SCI)",
+  "examCategorySlug": "bci",
+  "features": [
+    "Complete Coverage of Paper-1 (General Ability) and Paper-2 (Computer Science)",
+    "Strict negative marking (1/3rd) as per RSMSSB pattern",
+    "Detailed Hindi & English technical explanations",
+    "Instant All-Rajasthan Rank and Performance Analysis"
+  ],
+  "totalTestsCount": 4,
+  "freeTestsCount": 1,
+  "totalQuestionsCount": 386,
+  "language": "Hindi & English (Bilingual)",
+  "enrolledCount": 2640,
+  "rating": 4.9,
+  "status": "PUBLISHED",
+  "papers": [
+    {
+      "quizSlug": "bci-sci-paper-1st",
+      "title": "Pre BCI/SCI Paper-1st Mock Test (General Studies & Aptitude)",
+      "testType": "FULL_MOCK",
+      "order": 1,
+      "isFreeDemo": true,
+      "durationMinutes": 120,
+      "totalQuestions": 100,
+      "totalMarks": 100,
+      "negativeMarksPerQuestion": 0.33,
+      "marksPerQuestion": 1.0
+    },
+    {
+      "quizSlug": "bci-sci-computer-instructor-paper-2",
+      "title": "BCI / SCI Computer Instructor Paper-2 Mock Test (Computer Science)",
+      "testType": "FULL_MOCK",
+      "order": 2,
+      "isFreeDemo": false,
+      "durationMinutes": 120,
+      "totalQuestions": 100,
+      "totalMarks": 100,
+      "negativeMarksPerQuestion": 0.33,
+      "marksPerQuestion": 1.0
+    },
+    {
+      "quizSlug": "rsmssb-basic-computer-instructor-bci-exam-18-june-2022-paper-1",
+      "title": "RSMSSB BCI 2022 Official Exam Paper-1 (PYQ)",
+      "testType": "SECTIONAL",
+      "order": 3,
+      "isFreeDemo": false,
+      "durationMinutes": 120,
+      "totalQuestions": 91,
+      "totalMarks": 100,
+      "negativeMarksPerQuestion": 0.33,
+      "marksPerQuestion": 1.0
+    },
+    {
+      "quizSlug": "papers-rsmssb-bci-2022-paper-2",
+      "title": "RSMSSB BCI 2022 Official Exam Paper-2 (PYQ)",
+      "testType": "SECTIONAL",
+      "order": 4,
+      "isFreeDemo": false,
+      "durationMinutes": 120,
+      "totalQuestions": 95,
+      "totalMarks": 100,
+      "negativeMarksPerQuestion": 0.33,
+      "marksPerQuestion": 1.0
+    }
+  ]
+}

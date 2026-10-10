@@ -2,40 +2,78 @@
 
 import { useState } from "react";
 import { Share2, Check, Send, MessageCircle } from "lucide-react";
+import { trackSocialShare } from "@/components/analytics/gtag-events";
 
 interface SocialShareProps {
   title: string;
   url?: string;
   category?: string;
+  contentType?: "note" | "blog" | "quiz";
 }
 
-export function SocialShare({ title, url, category }: SocialShareProps) {
+export function SocialShare({
+  title,
+  url,
+  category,
+  contentType = "note",
+}: SocialShareProps) {
   const [copied, setCopied] = useState(false);
 
   // Fallback to window location if url is relative or undefined
-  const shareUrl =
+  const rawBaseUrl =
     typeof window !== "undefined"
       ? url
         ? url.startsWith("http")
           ? url
           : `${window.location.origin}${url}`
-        : window.location.href
+        : window.location.href.split("?")[0]
       : url || "";
 
-  const encodedUrl = encodeURIComponent(shareUrl);
+  // Helper to build standardized UTM links to resolve 'Unassigned' GA4 traffic
+  const buildUtmUrl = (source: string, medium: string, campaign: string = "student_share") => {
+    try {
+      const u = new URL(rawBaseUrl);
+      u.searchParams.set("utm_source", source);
+      u.searchParams.set("utm_medium", medium);
+      u.searchParams.set("utm_campaign", campaign);
+      return u.toString();
+    } catch {
+      const separator = rawBaseUrl.includes("?") ? "&" : "?";
+      return `${rawBaseUrl}${separator}utm_source=${source}&utm_medium=${medium}&utm_campaign=${campaign}`;
+    }
+  };
+
+  const whatsappShareUrl = buildUtmUrl("whatsapp", "social_share", "student_share");
+  const telegramShareUrl = buildUtmUrl("telegram", "social_share", "student_share");
+  const twitterShareUrl = buildUtmUrl("twitter", "social_share", "student_share");
+  const copyShareUrl = buildUtmUrl("direct", "copy_link", "peer_share");
+
   const encodedTitle = encodeURIComponent(
     `📚 *${title}* ${category ? `[${category}]` : ""}\nCheck out this high-yield revision study material on Rajasthan Exam Twister:\n`
   );
 
-  const whatsappLink = `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`;
-  const telegramLink = `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`;
-  const twitterLink = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}&hashtags=RajasthanGK,RPSC,REET`;
+  const whatsappLink = `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodeURIComponent(whatsappShareUrl)}`;
+  const telegramLink = `https://t.me/share/url?url=${encodeURIComponent(telegramShareUrl)}&text=${encodedTitle}`;
+  const twitterLink = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodeURIComponent(twitterShareUrl)}&hashtags=RajasthanGK,RPSC,REET`;
+
+  const handleShareClick = (method: "whatsapp" | "telegram" | "twitter") => {
+    trackSocialShare({
+      method,
+      contentType,
+      title,
+    });
+  };
 
   const copyToClipboard = async () => {
     try {
       if (navigator.clipboard) {
-        await navigator.clipboard.writeText(shareUrl);
+        await navigator.clipboard.writeText(copyShareUrl);
         setCopied(true);
+        trackSocialShare({
+          method: "copy_link",
+          contentType,
+          title,
+        });
         setTimeout(() => setCopied(false), 2500);
       }
     } catch {
@@ -55,7 +93,7 @@ export function SocialShare({ title, url, category }: SocialShareProps) {
               Share this study resource
             </h4>
             <p className="text-[11px] text-slate-600">
-              Help your exam peers & study groups prepare better
+              Help your exam peers &amp; study groups prepare better
             </p>
           </div>
         </div>
@@ -66,6 +104,7 @@ export function SocialShare({ title, url, category }: SocialShareProps) {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => handleShareClick("whatsapp")}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shadow-sm transition-all hover:scale-105 active:scale-95"
             aria-label="Share on WhatsApp"
           >
@@ -78,6 +117,7 @@ export function SocialShare({ title, url, category }: SocialShareProps) {
             href={telegramLink}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => handleShareClick("telegram")}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-500 hover:bg-sky-600 text-white text-xs font-semibold shadow-sm transition-all hover:scale-105 active:scale-95"
             aria-label="Share on Telegram"
           >
@@ -90,6 +130,7 @@ export function SocialShare({ title, url, category }: SocialShareProps) {
             href={twitterLink}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => handleShareClick("twitter")}
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-sm transition-all hover:scale-105 active:scale-95"
             aria-label="Share on X"
           >
@@ -97,11 +138,11 @@ export function SocialShare({ title, url, category }: SocialShareProps) {
             <span className="hidden xs:inline">Post</span>
           </a>
 
-          {/* Copy Link */}
+          {/* Copy Link with UTM */}
           <button
             type="button"
             onClick={copyToClipboard}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-xs font-semibold shadow-sm transition-all hover:border-slate-300"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 text-xs font-semibold shadow-sm transition-all hover:border-slate-300 cursor-pointer"
             aria-label="Copy page link"
           >
             {copied ? (
