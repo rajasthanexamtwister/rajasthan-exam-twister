@@ -73,6 +73,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     },
     {
+      url: `${siteUrl}/test-series`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/leaderboard`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.7,
+    },
+    {
       url: `${siteUrl}/disclaimer`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -81,7 +93,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   try {
-    await connectToDatabase();
+    await Promise.race([
+      connectToDatabase(),
+      new Promise((_, reject) => setTimeout(() => reject(new Error("DB timeout")), 2500)),
+    ]);
 
     // Query PUBLISHED blogs only
     const publishedBlogs = await Blog.find(
@@ -131,7 +146,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       };
     });
 
-    return [...staticRoutes, ...blogRoutes, ...noteRoutes, ...quizRoutes];
+    // Query PUBLISHED test series only
+    const { TestSeries } = await import("@/server/models/TestSeries");
+    const publishedTestSeries = await TestSeries.find(
+      { status: "PUBLISHED" },
+      "slug updatedAt publishedAt"
+    ).lean();
+
+    const testSeriesRoutes: MetadataRoute.Sitemap = publishedTestSeries.map((ts) => {
+      const doc = ts as unknown as { slug: string; updatedAt?: Date; publishedAt?: Date };
+      return {
+        url: `${siteUrl}/test-series/${doc.slug}`,
+        lastModified: doc.updatedAt || doc.publishedAt || new Date(),
+        changeFrequency: "weekly",
+        priority: 0.8,
+      };
+    });
+
+    return [...staticRoutes, ...blogRoutes, ...noteRoutes, ...quizRoutes, ...testSeriesRoutes];
   } catch (err) {
     console.error("Error generating sitemap:", err);
     return staticRoutes;

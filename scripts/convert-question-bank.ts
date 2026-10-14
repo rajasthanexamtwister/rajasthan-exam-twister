@@ -338,73 +338,93 @@ export function extractBilingualOptions(rawOptionsList: any[]): { options: strin
 export function resolveCorrectOptionIndex(
   rawAns: unknown,
   cleanOptions: string[],
-  rawOptionsList: any[]
+  rawOptionsList: any[] = []
 ): number | null {
   if (rawAns === undefined || rawAns === null) return null;
-
-  // 1. Numeric check
-  if (typeof rawAns === "number" && Number.isInteger(rawAns)) {
-    if (rawAns >= 0 && rawAns < cleanOptions.length) return rawAns;
-    // 1-based index (1, 2, 3, 4)
-    if (rawAns >= 1 && rawAns <= cleanOptions.length) return rawAns - 1;
-  }
 
   const ansStr = String(rawAns).trim();
   if (!ansStr) return null;
 
-  // 2. Letter/number mapping: "A", "b", "(a)", "1", "D.", "(3)"
-  const directMatch = ansStr.match(/^\(?([a-eA-E1-5])\)?[\.\:\s]*$/);
+  // 1. Match against rawOptions object id (e.g. { id: "A", text: "..." } or { id: 1, text: "..." })
+  if (Array.isArray(rawOptionsList)) {
+    for (let i = 0; i < rawOptionsList.length; i++) {
+      const rawOpt = rawOptionsList[i];
+      if (typeof rawOpt === "object" && rawOpt !== null) {
+        const optId = String(rawOpt.id ?? "").trim().toUpperCase();
+        if (optId && (optId === ansStr.toUpperCase() || optId === String(rawAns).toUpperCase())) {
+          return i;
+        }
+      }
+    }
+  }
+
+  // 2. Direct letter/number and prefixed mapping: "A", "b", "(a)", "1", "4", "D.", "(3)", "Option 4", "विकल्प 4", "Ans: D"
+  const directMatch = ansStr.match(/^(?:option|विकल्प|उत्तर|ans(?:wer)?|q)?[\s:.\-–—]*[\(\[]?([a-eA-E1-5अ-दक-घ])[\)\]]?[\.\:\s]*$/i);
   if (directMatch) {
     const char = directMatch[1].toUpperCase();
     const map: Record<string, number> = {
       A: 0,
       "1": 0,
+      "अ": 0,
+      "क": 0,
       B: 1,
       "2": 1,
+      "ब": 1,
+      "ख": 1,
       C: 2,
       "3": 2,
+      "स": 2,
+      "ग": 2,
       D: 3,
       "4": 3,
+      "द": 3,
+      "घ": 3,
       E: 4,
       "5": 4,
     };
     const idx = map[char];
-    if (idx !== undefined) {
-      return idx < cleanOptions.length ? idx : null;
+    if (idx !== undefined && idx < cleanOptions.length) {
+      return idx;
     }
   }
 
-  // 3. Prefixed string: "(b) Implementation", "B. Implementation"
-  const prefixMatch = ansStr.match(/^[\(\[]?([a-eA-E1-5])[\)\]\.\:\-\s]+\s*(.*)$/);
+  // 3. Prefixed string: "(b) Implementation", "B. Implementation", "Option 4 - Fourth Option"
+  const prefixMatch = ansStr.match(/^(?:option|विकल्प|उत्तर|ans(?:wer)?)?[\s:.\-–—]*[\(\[]?([a-eA-E1-5अ-दक-घ])[\)\]\.\:\-\s]+\s*(.*)$/i);
   if (prefixMatch) {
     const char = prefixMatch[1].toUpperCase();
     const map: Record<string, number> = {
       A: 0,
       "1": 0,
+      "अ": 0,
+      "क": 0,
       B: 1,
       "2": 1,
+      "ब": 1,
+      "ख": 1,
       C: 2,
       "3": 2,
+      "स": 2,
+      "ग": 2,
       D: 3,
       "4": 3,
+      "द": 3,
+      "घ": 3,
       E: 4,
       "5": 4,
     };
     const idx = map[char];
-    if (idx !== undefined) {
-      return idx < cleanOptions.length ? idx : null;
+    if (idx !== undefined && idx < cleanOptions.length) {
+      return idx;
     }
   }
 
-  // 4. Match against rawOptions object id (e.g. { id: "A", text: "..." })
-  for (let i = 0; i < rawOptionsList.length; i++) {
-    const rawOpt = rawOptionsList[i];
-    if (typeof rawOpt === "object" && rawOpt !== null) {
-      const optId = String(rawOpt.id || "").trim().toUpperCase();
-      if (optId && optId === ansStr.toUpperCase()) {
-        return i;
-      }
-    }
+  // 4. Numeric check
+  if (typeof rawAns === "number" && Number.isInteger(rawAns)) {
+    // 0-based: 0 is always index 0
+    if (rawAns === 0 && cleanOptions.length > 0) return 0;
+    // 1-based index (1, 2, 3, 4) -> map 1 to 0, 4 to 3
+    if (rawAns >= 1 && rawAns <= cleanOptions.length) return rawAns - 1;
+    return null;
   }
 
   // 5. Match against clean option text

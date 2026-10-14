@@ -79,6 +79,9 @@ export default function QuizAttemptPage() {
 
   const autoSubmittedRef = useRef(false);
   const autoNextTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const answersRef = useRef<Record<string, number | null>>({});
+  const submitAttemptRef = useRef<(isAutoSubmit?: boolean) => Promise<void>>();
+  const advanceToNextQuestionRef = useRef<(targetIndex?: number) => void>();
 
   // Fetch public quiz
   useEffect(() => {
@@ -122,11 +125,12 @@ export default function QuizAttemptPage() {
             subject: data.quiz.subject,
           });
 
-          // Initialize answer map
+          // Initialize answer map synchronously in ref and state
           const initialAnswers: Record<string, number | null> = {};
           (data.quiz.questions || []).forEach((q: PublicQuestion) => {
             initialAnswers[q.id] = null;
           });
+          answersRef.current = { ...initialAnswers };
           setAnswers(initialAnswers);
 
           if (data.quiz.timeLimitSeconds) {
@@ -172,7 +176,9 @@ export default function QuizAttemptPage() {
         setSubmitting(true);
         setShowConfirmModal(false);
 
-        const answersPayload = Object.entries(answers).map(([questionId, selectedOptionIndex]) => ({
+        // Always read latest answers synchronously from answersRef to prevent closure staleness
+        const currentAnswers = answersRef.current;
+        const answersPayload = Object.entries(currentAnswers).map(([questionId, selectedOptionIndex]) => ({
           questionId,
           selectedOptionIndex,
         }));
@@ -237,26 +243,13 @@ export default function QuizAttemptPage() {
         setSubmitting(false);
       }
     },
-    [quiz, submitting, answers, startTime, mode, limit, router]
+    [quiz, submitting, startTime, mode, limit, router]
   );
 
-  // Countdown timer logic for overall test
+  // Keep submitAttemptRef up to date
   useEffect(() => {
-    if (timeLeft === null || timeLeft <= 0) return;
-
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev === null || prev <= 1) {
-          clearInterval(timer);
-          submitAttempt(true);
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [timeLeft, submitAttempt]);
+    submitAttemptRef.current = submitAttempt;
+  }, [submitAttempt]);
 
   // Navigate to next question safely
   const advanceToNextQuestion = useCallback(
@@ -273,16 +266,41 @@ export default function QuizAttemptPage() {
         setCurrentQuestionIndex(nextIdx);
       } else {
         // Reached end of questions -> trigger submission confirmation or auto-submit
-        submitAttempt(false);
+        submitAttemptRef.current?.(false);
       }
     },
-    [quiz, currentQuestionIndex, submitAttempt]
+    [quiz, currentQuestionIndex]
   );
+
+  // Keep advanceToNextQuestionRef up to date
+  useEffect(() => {
+    advanceToNextQuestionRef.current = advanceToNextQuestion;
+  }, [advanceToNextQuestion]);
+
+  // Countdown timer logic for overall test
+  useEffect(() => {
+    if (timeLeft === null || timeLeft <= 0) return;
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev === null || prev <= 1) {
+          clearInterval(timer);
+          submitAttemptRef.current?.(true);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [timeLeft]);
 
   // Evaluate answer selection & trigger auto-next timer
   const handleSelectOption = async (questionId: string, optionIndex: number | null) => {
     if (!quiz || evaluatingQuestionId || feedbackMap[questionId]) return;
 
+    // Immediately and synchronously update answersRef so any concurrent submit contains this answer
+    answersRef.current[questionId] = optionIndex;
     setEvaluatingQuestionId(questionId);
     setAnswers((prev) => ({ ...prev, [questionId]: optionIndex }));
 
@@ -309,8 +327,9 @@ export default function QuizAttemptPage() {
           clearTimeout(autoNextTimerRef.current);
         }
 
+        // Invoke via ref so that the latest advanceToNextQuestion callback is executed without stale closures
         autoNextTimerRef.current = setTimeout(() => {
-          advanceToNextQuestion();
+          advanceToNextQuestionRef.current?.();
         }, delayMs);
       }
     } catch (err) {
@@ -580,7 +599,10 @@ export default function QuizAttemptPage() {
               let badgeStyle = "bg-slate-100 text-slate-600";
 
               if (currentFeedback) {
-                const isCorrectOption = optIdx === currentFeedback.correctOptionIndex;
+                const isCorrectOption =
+                  currentFeedback.correctOptionIndex !== null &&
+                  currentFeedback.correctOptionIndex !== undefined &&
+                  optIdx === Number(currentFeedback.correctOptionIndex);
                 if (isCorrectOption) {
                   optionStyle = "bg-emerald-50 text-emerald-950 border-emerald-500 font-bold ring-2 ring-emerald-500/20";
                   badgeStyle = "bg-emerald-600 text-white";
@@ -594,6 +616,12 @@ export default function QuizAttemptPage() {
                 optionStyle = "bg-amber-500 text-slate-950 border-amber-500 font-bold shadow-sm";
                 badgeStyle = "bg-slate-950 text-white";
               }
+
+              const isFeedbackCorrectOption =
+                currentFeedback &&
+                currentFeedback.correctOptionIndex !== null &&
+                currentFeedback.correctOptionIndex !== undefined &&
+                optIdx === Number(currentFeedback.correctOptionIndex);
 
               return (
                 <button
@@ -616,7 +644,7 @@ export default function QuizAttemptPage() {
                   </span>
                   <span className="flex-1 leading-snug">{opt}</span>
 
-                  {currentFeedback && optIdx === currentFeedback.correctOptionIndex && (
+                  {isFeedbackCorrectOption && (
                     <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
                   )}
                   {currentFeedback && isSelected && !currentFeedback.isCorrect && (
@@ -678,7 +706,7 @@ export default function QuizAttemptPage() {
                 </div>
 
                 <span className="text-xs font-semibold text-slate-600">
-                  Correct Answer: Option {String.fromCharCode(65 + currentFeedback.correctOptionIndex)}
+                  Correct Answer: Option {String.fromCharCode(65 + Number(currentFeedback.correctOptionIndex))}
                 </span>
               </div>
 

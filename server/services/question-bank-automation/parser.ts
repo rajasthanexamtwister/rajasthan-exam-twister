@@ -69,9 +69,22 @@ export function detectTopicFromMarkdown(content: string, fileName: string): stri
  * Maps answer strings (A/B/C/D, a/b/c/d, 1/2/3/4, अ/ब/स/द) to 0-indexed integer
  */
 export function parseAnswerKeyToOptionIndex(ansStr: string): number | null {
+  if (!ansStr) return null;
   const clean = ansStr.trim().toLowerCase();
 
-  // Devanagari numerals / letters
+  // 1. Direct regex for letters/numbers with optional prefix/bullets like "Option 4", "(4)", "4.", "D.", "[D]", "उत्तर: 4"
+  const match = clean.match(/^(?:option|विकल्प|उत्तर|ans(?:wer)?|q)?[\s:.\-–—]*[\(\[]?([a-e1-6अ-दक-घ])[\)\]]?[\.\:\s]*$/i);
+  if (match) {
+    const char = match[1];
+    if (char === "अ" || char === "क" || char === "a" || char === "1") return 0;
+    if (char === "ब" || char === "ख" || char === "b" || char === "2") return 1;
+    if (char === "स" || char === "ग" || char === "c" || char === "3") return 2;
+    if (char === "द" || char === "घ" || char === "d" || char === "4") return 3;
+    if (char === "e" || char === "5") return 4;
+    if (char === "6") return 5;
+  }
+
+  // 2. Direct single character / paren matches fallback
   if (clean === "अ" || clean === "क" || clean === "a" || clean === "1" || clean === "(a)" || clean === "(1)" || clean === "(अ)") return 0;
   if (clean === "ब" || clean === "ख" || clean === "b" || clean === "2" || clean === "(b)" || clean === "(2)" || clean === "(ब)") return 1;
   if (clean === "स" || clean === "ग" || clean === "c" || clean === "3" || clean === "(c)" || clean === "(3)" || clean === "(स)") return 2;
@@ -287,26 +300,48 @@ export function parseLineByLineTelegramFormat(content: string, filePath: string)
       // Resolve correct option index from explanation text matching options
       let optIndex = 0;
       if (explanation) {
-        // Priority 1: Check if explanation contains exact full option text
-        let matched = false;
-        for (let idx = 0; idx < options.length; idx++) {
-          const opt = options[idx].trim();
-          if (opt && opt.length >= 2 && explanation.includes(opt)) {
-            optIndex = idx;
-            matched = true;
-            // Prefer longest matching option string
+        // Priority 0: Explicit answer key inside explanation like "उत्तर - D", "विकल्प 4", "(द)", "Ans: D"
+        const explicitKeyMatch = explanation.match(/(?:उत्तर|सही उत्तर|विकल्प|Option|Ans(?:wer)?)\s*[:\-–]?\s*[\(\[]?([a-e1-6अ-दक-घ])[\)\]]?/i);
+        if (explicitKeyMatch) {
+          const parsed = parseAnswerKeyToOptionIndex(explicitKeyMatch[1]);
+          if (parsed !== null && parsed < options.length) {
+            optIndex = parsed;
           }
-        }
-
-        // Priority 2: Keyword / number heuristics if not matched
-        if (!matched) {
+        } else {
+          // Priority 1: Prefer longest exact full option text match in explanation
+          let bestLen = 0;
+          let bestIdx = -1;
           for (let idx = 0; idx < options.length; idx++) {
-            const optWords = options[idx].split(/[\s,]+/);
-            for (const w of optWords) {
-              if (w.length >= 3 && explanation.includes(w)) {
-                optIndex = idx;
-                break;
+            const opt = options[idx].trim();
+            if (opt && opt.length >= 2 && explanation.includes(opt)) {
+              if (opt.length > bestLen) {
+                bestLen = opt.length;
+                bestIdx = idx;
               }
+            }
+          }
+
+          if (bestIdx !== -1) {
+            optIndex = bestIdx;
+          } else {
+            // Priority 2: Keyword heuristics if not matched
+            let bestWordScore = 0;
+            let bestWordIdx = -1;
+            for (let idx = 0; idx < options.length; idx++) {
+              const optWords = options[idx].split(/[\s,]+/);
+              let wordScore = 0;
+              for (const w of optWords) {
+                if (w.length >= 3 && explanation.includes(w)) {
+                  wordScore += w.length;
+                }
+              }
+              if (wordScore > bestWordScore) {
+                bestWordScore = wordScore;
+                bestWordIdx = idx;
+              }
+            }
+            if (bestWordIdx !== -1) {
+              optIndex = bestWordIdx;
             }
           }
         }

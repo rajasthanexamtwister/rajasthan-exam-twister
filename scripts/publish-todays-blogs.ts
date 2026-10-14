@@ -14,7 +14,7 @@ const NEW_BLOGS = [
     tags: ["RSMSSB", "LDC", "Clerk Grade II", "Score Card", "Alok Raj RSSB", "Rajasthan LDC"],
     metaTitle: "RSMSSB LDC 2026 Score Card Out (जारी) | स्कोर कार्ड डायरेक्ट डाउनलोड लिंक व कट-ऑफ",
     metaDescription: "राजस्थान कर्मचारी चयन बोर्ड (RSSB) द्वारा LDC भर्ती 2026 के स्कोर कार्ड जारी कर दिए गए हैं। आधिकारिक वेबसाइट एवं SSO ID से मार्क्स चेक करने का डायरेक्ट लिंक और फेज-2 टाइपिंग गाइड यहाँ देखें।",
-    featuredImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80",
+    featuredImage: "/uploads/blogs/rsmssb-ldc-2026-scorecard.jpg",
     content: `
 # RSMSSB LDC 2026 Score Card Out: राजस्थान एलडीसी भर्ती स्कोर कार्ड जारी
 
@@ -79,7 +79,7 @@ const NEW_BLOGS = [
     tags: ["REET", "REET Level 1", "Alok Raj RSSB", "High Court Stay", "Rajasthan 3rd Grade Teacher", "4th Class Bharti"],
     metaTitle: "REET Level 1 कोर्ट केस व स्टे हियरिंग अपडेट | 12 अक्टूबर सुनवाई व आलोक राज का संदेश",
     metaDescription: "REET Level 1 कोर्ट स्टे और 12 अक्टूबर को होने वाली हाईकोर्ट सुनवाई को लेकर चयन बोर्ड अध्यक्ष मेजर जनरल आलोक राज ने स्थिति स्पष्ट की। AAG पैरवी और 4th Class भर्ती अपडेट यहाँ पढ़ें।",
-    featuredImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80",
+    featuredImage: "/uploads/blogs/reet-level1-court-stay-update.jpg",
     content: `
 # REET Level 1 कोर्ट केस व स्टे हियरिंग अपडेट: 12 अक्टूबर सुनवाई पर चयन बोर्ड का रुख
 

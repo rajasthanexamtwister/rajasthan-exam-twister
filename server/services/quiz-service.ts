@@ -450,7 +450,11 @@ export class QuizService {
         isUnattempted = true;
         unattemptedCount++;
         marksAwarded = 0;
-      } else if (userSelected === q.correctOptionIndex) {
+      } else if (
+        q.correctOptionIndex !== null &&
+        q.correctOptionIndex !== undefined &&
+        Number(userSelected) === Number(q.correctOptionIndex)
+      ) {
         // Correct
         isCorrect = true;
         correctCount++;
@@ -545,7 +549,11 @@ export class QuizService {
     if (!question || question.quizId.toString() !== quiz._id.toString()) return null;
 
     const isUnattempted = selectedOptionIndex === null || selectedOptionIndex === undefined;
-    const isCorrect = !isUnattempted && selectedOptionIndex === question.correctOptionIndex;
+    const isCorrect =
+      !isUnattempted &&
+      question.correctOptionIndex !== null &&
+      question.correctOptionIndex !== undefined &&
+      Number(selectedOptionIndex) === Number(question.correctOptionIndex);
 
     const qMarks = question.marks ?? quiz.defaultMarks;
     const qNegative = question.negativeMarks ?? quiz.defaultNegativeMarks;

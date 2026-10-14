@@ -630,8 +630,14 @@ ${quizUrl}
                   {/* Options List */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {displayOptions.map((opt, optIdx) => {
-                      const isCorrectAnswer = optIdx === q.correctOptionIndex;
-                      const isUserSelection = optIdx === q.selectedOptionIndex;
+                      const isCorrectAnswer =
+                        q.correctOptionIndex !== null &&
+                        q.correctOptionIndex !== undefined &&
+                        optIdx === Number(q.correctOptionIndex);
+                      const isUserSelection =
+                        q.selectedOptionIndex !== null &&
+                        q.selectedOptionIndex !== undefined &&
+                        optIdx === Number(q.selectedOptionIndex);
                       const letter = String.fromCharCode(65 + optIdx);
 
                       return (
