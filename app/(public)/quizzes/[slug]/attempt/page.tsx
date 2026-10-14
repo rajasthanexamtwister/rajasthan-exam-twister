@@ -16,7 +16,9 @@ import {
   Sparkles,
   HelpCircle as QuestionIcon,
   XCircle,
+  Flag,
 } from "lucide-react";
+import { QuestionReportModal } from "@/components/public/question-report-modal";
 import { recordQuizCompletion } from "@/components/public/daily-goal-widget";
 import { trackQuizStart, trackQuizCompletion } from "@/components/analytics/gtag-events";
 import clsx from "clsx";
@@ -75,6 +77,7 @@ export default function QuizAttemptPage() {
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [startTime] = useState<string>(new Date().toISOString());
 
   const autoSubmittedRef = useRef(false);
@@ -574,9 +577,21 @@ export default function QuizAttemptPage() {
               </span>
             </div>
 
-            <span className="text-xs font-bold px-2.5 py-1 rounded-lg bg-amber-50 text-amber-900 border border-amber-200">
-              +{currentQuestion.marks || quiz.defaultMarks} Marks
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold px-2.5 py-1 rounded-lg bg-amber-50 text-amber-900 border border-amber-200">
+                +{currentQuestion.marks || quiz.defaultMarks} Marks
+              </span>
+              <button
+                type="button"
+                id="report-question-btn-header"
+                onClick={() => setIsReportModalOpen(true)}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold text-slate-500 hover:text-amber-700 bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition-all cursor-pointer"
+                title="Report an issue with this question"
+              >
+                <Flag className="w-3.5 h-3.5 text-slate-400 group-hover:text-amber-600" />
+                <span>Report Issue</span>
+              </button>
+            </div>
           </div>
 
           {/* Question Text */}
@@ -719,6 +734,23 @@ export default function QuizAttemptPage() {
             </div>
           )}
 
+          {/* Report Issue Link */}
+          <div className="pt-2 flex items-center justify-between text-xs border-t border-slate-100">
+            <button
+              type="button"
+              id="report-question-btn-footer"
+              onClick={() => setIsReportModalOpen(true)}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-amber-700 transition-colors cursor-pointer py-1"
+              title={`Report an issue with Question ${currentQuestionIndex + 1}`}
+            >
+              <Flag className="w-3.5 h-3.5 text-slate-400 hover:text-amber-600" />
+              <span>Report an Issue with Question {currentQuestionIndex + 1}</span>
+            </button>
+            <span className="text-[11px] text-slate-400 font-medium hidden sm:inline">
+              Found an error? Let our editorial team know
+            </span>
+          </div>
+
           {/* Question Navigation Control Bar */}
           <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-4">
             <button
@@ -796,6 +828,19 @@ export default function QuizAttemptPage() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Question Issue Report Modal */}
+      {quiz && currentQuestion && (
+        <QuestionReportModal
+          isOpen={isReportModalOpen}
+          onClose={() => setIsReportModalOpen(false)}
+          quizId={quiz.id}
+          quizSlug={quiz.slug}
+          questionId={currentQuestion.id}
+          questionNumber={currentQuestionIndex + 1}
+          questionSnippet={displayQuestionText}
+        />
       )}
     </div>
   );

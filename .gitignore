@@ -43,9 +43,15 @@ next-env.d.ts
 scripts/smart-import-report.json
 scripts/pre-import-scan-report.json
 
+# Question bank raw inputs & temporary extraction scripts
+/question-bank/newQuestions/
+/scripts/append-*.ts
+/scripts/inspect-*.ts
+/scripts/test-*.ts
 
 # Local uploaded media files (temporary user uploads)
 public/uploads/*
 !public/uploads/social-kits/
 !public/uploads/social-kits/**
 !public/uploads/social_posts_history.json
+
