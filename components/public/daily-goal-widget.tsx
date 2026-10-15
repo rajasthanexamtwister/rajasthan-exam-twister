@@ -137,7 +137,7 @@ export function DailyGoalWidget() {
         <div className="md:col-span-2 space-y-3">
           <div className="flex items-center justify-between text-xs font-bold">
             <span className="text-slate-100">
-              आज की प्रगति (Today's Progress): <strong className="text-amber-400">{completedToday}</strong> / {target} Quizzes
+              आज की प्रगति (Today&apos;s Progress): <strong className="text-amber-400">{completedToday}</strong> / {target} Quizzes
             </span>
             <span className="text-amber-400 font-mono text-sm">{progressPercent}%</span>
           </div>

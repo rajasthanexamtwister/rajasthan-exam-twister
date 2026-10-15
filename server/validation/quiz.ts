@@ -199,3 +199,27 @@ export const QuizQuerySchema = z.object({
 });
 
 export type QuizQueryInput = z.infer<typeof QuizQuerySchema>;
+
+// Verify and Publish Question Schema (Admin SEO Audit Workflow)
+export const VerifyQuestionSchema = z.object({
+  verifiedOptionIndex: z
+    .number({ required_error: "verifiedOptionIndex is required" })
+    .int("verifiedOptionIndex must be an integer")
+    .min(0, "verifiedOptionIndex must be 0 or greater"),
+  verificationSource: z
+    .string({ required_error: "verificationSource is required" })
+    .min(3, "verificationSource must be at least 3 characters")
+    .max(300, "verificationSource cannot exceed 300 characters"),
+  seoSlug: z
+    .string({ required_error: "seoSlug is required" })
+    .min(3, "seoSlug must be at least 3 characters")
+    .max(200, "seoSlug cannot exceed 200 characters")
+    .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "seoSlug must be lowercase alphanumeric with hyphens"),
+  seoTitle: z.string().max(200).optional(),
+  seoDescription: z.string().max(500).optional(),
+  examSource: z.string().max(200).optional(),
+  explanation: z.string().max(3000).optional(),
+  publishImmediately: z.boolean().optional().default(true),
+});
+
+export type VerifyQuestionInputSchema = z.infer<typeof VerifyQuestionSchema>;

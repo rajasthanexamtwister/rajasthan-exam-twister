@@ -39,6 +39,12 @@ vi.mock("@/server/models/TestSeries", () => ({
   },
 }));
 
+vi.mock("@/server/repositories/question-seo", () => ({
+  QuestionSeoRepository: {
+    listPublishedQuestionSlugs: vi.fn().mockResolvedValue([]),
+  },
+}));
+
 describe("SEO Utilities & Metadata Generation", () => {
   it("should strip HTML and truncate at word boundary for fallback meta description", () => {
     const rawHtml = "<h2>Key Points</h2><p>Rajasthan has diverse physical divisions including the Aravalli Range, Thar Desert, Eastern Plains, and Hadoti Plateau. This guide covers all essentials for REET and RPSC.</p>";

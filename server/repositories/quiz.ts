@@ -2,6 +2,7 @@ import mongoose, { FilterQuery } from "mongoose";
 import { connectToDatabase } from "@/server/lib/mongodb";
 import { Quiz, IQuiz, QuizDifficulty } from "@/server/models/Quiz";
 import { QuizQuestion } from "@/server/models/QuizQuestion";
+import { Category } from "@/server/models/Category";
 import { generateUniqueSlug } from "@/server/lib/slugify";
 import { ContentStatus } from "@/server/models/Blog";
 import { normalizeToCanonicalExam, buildExamMatcherRegex } from "@/server/lib/exam-canonical";

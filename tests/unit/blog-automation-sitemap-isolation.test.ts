@@ -9,6 +9,7 @@ import { Blog } from "@/server/models/Blog";
 import { Note } from "@/server/models/Note";
 import { Quiz } from "@/server/models/Quiz";
 import { TestSeries } from "@/server/models/TestSeries";
+import { QuestionSeoRepository } from "@/server/repositories/question-seo";
 import { getSiteUrl } from "@/server/lib/seo";
 
 describe("Sitemap & Domain Isolation (https://www.rajasthanexamtwister.in)", () => {
@@ -44,6 +45,8 @@ describe("Sitemap & Domain Isolation (https://www.rajasthanexamtwister.in)", () 
     vi.spyOn(TestSeries, "find").mockReturnValue({
       lean: vi.fn().mockResolvedValue([]),
     } as any);
+
+    vi.spyOn(QuestionSeoRepository, "listPublishedQuestionSlugs").mockResolvedValue([]);
 
     const sitemapEntries = await sitemap();
 

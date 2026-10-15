@@ -48,7 +48,7 @@ export function TestSeriesPaperList({
       series_title: seriesTitle,
     });
     signIn("google", {
-      callbackUrl: `/quizzes/${quizSlug}/attempt`,
+      callbackUrl: `/quizzes/${quizSlug}/attempt?mode=exam`,
     });
   };
 
@@ -131,7 +131,7 @@ export function TestSeriesPaperList({
               <div className="shrink-0">
                 {canAttemptDirectly ? (
                   <Link
-                    href={`/quizzes/${quiz.slug}/attempt`}
+                    href={`/quizzes/${quiz.slug}/attempt?mode=exam`}
                     className={clsx(
                       "w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl text-xs font-bold transition-all shadow-xs font-heading",
                       isFree

@@ -15,3 +15,4 @@ This skill activates whenever the user provides a quiz batch (PDF or images) and
 5. **Local Only:** Never write to MongoDB during batch collection. Keep everything in local JSON.
 6. **DB Seeding:** Only run `npx tsx scripts/seed-topic-batch.ts --apply` when user explicitly says "Save in DB" / "Seed".
 7. **No inline terminal scripts:** Always execute via `.ts` script files.
+8. **DB Entity is Single Topic Quiz (NO batches in DB):** Batches are strictly an ingestion/input mechanism. In MongoDB, there is ONLY ONE `Quiz` per topic (`title: <topic.title>`, `slug: <topic.slug>`). All questions across all batches are merged sequentially into this single Quiz (`order: 1..N`). Never create separate batch/quiz records in MongoDB.

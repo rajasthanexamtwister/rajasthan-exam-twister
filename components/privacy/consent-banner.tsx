@@ -70,6 +70,7 @@ export function ConsentBanner() {
   return (
     <section
       aria-label="Cookie & Privacy Consent"
+      role={showPreferences ? "dialog" : undefined}
       aria-modal={showPreferences ? "true" : undefined}
       className="fixed bottom-0 inset-x-0 z-50 p-3 sm:p-4 md:p-6 pointer-events-none"
     >

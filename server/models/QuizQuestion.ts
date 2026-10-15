@@ -1,5 +1,7 @@
 import mongoose, { Schema, Document, Model } from "mongoose";
 
+export type QuestionSeoStatus = "DRAFT" | "PUBLISHED" | "ARCHIVED";
+
 export interface IQuizQuestion extends Document {
   _id: mongoose.Types.ObjectId;
   quizId: mongoose.Types.ObjectId;
@@ -12,6 +14,19 @@ export interface IQuizQuestion extends Document {
   explanation?: string;
   marks?: number;
   negativeMarks?: number;
+
+  // Editorial Verification & SEO Architecture Fields
+  seoStatus: QuestionSeoStatus;
+  seoSlug?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  isAnswerVerified: boolean;
+  verifiedOptionIndex?: number;
+  verificationSource?: string;
+  reviewedBy?: string;
+  reviewedAt?: Date;
+  examSource?: string;
+
   createdAt: Date;
   updatedAt: Date;
 }
@@ -68,6 +83,49 @@ const QuizQuestionSchema = new Schema<IQuizQuestion>(
       type: Number,
       min: 0,
     },
+    seoStatus: {
+      type: String,
+      enum: ["DRAFT", "PUBLISHED", "ARCHIVED"],
+      default: "DRAFT",
+      index: true,
+    },
+    seoSlug: {
+      type: String,
+      trim: true,
+      lowercase: true,
+    },
+    seoTitle: {
+      type: String,
+      trim: true,
+    },
+    seoDescription: {
+      type: String,
+      trim: true,
+    },
+    isAnswerVerified: {
+      type: Boolean,
+      default: false,
+      index: true,
+    },
+    verifiedOptionIndex: {
+      type: Number,
+      min: 0,
+    },
+    verificationSource: {
+      type: String,
+      trim: true,
+    },
+    reviewedBy: {
+      type: String,
+      trim: true,
+    },
+    reviewedAt: {
+      type: Date,
+    },
+    examSource: {
+      type: String,
+      trim: true,
+    },
   },
   {
     timestamps: true,
@@ -76,6 +134,10 @@ const QuizQuestionSchema = new Schema<IQuizQuestion>(
 
 // Compound index for querying questions by quiz and order
 QuizQuestionSchema.index({ quizId: 1, order: 1 });
+
+// Indexes for public SEO question retrieval and sitemap generation
+QuizQuestionSchema.index({ seoSlug: 1 }, { unique: true, sparse: true });
+QuizQuestionSchema.index({ seoStatus: 1, isAnswerVerified: 1, updatedAt: -1 });
 
 export const QuizQuestion: Model<IQuizQuestion> =
   mongoose.models.QuizQuestion ||

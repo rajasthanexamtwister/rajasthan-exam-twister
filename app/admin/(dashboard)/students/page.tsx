@@ -310,7 +310,7 @@ export default function AdminStudentsPage() {
             </div>
 
             <p className="text-xs text-slate-600 leading-relaxed">
-              This will permanently delete this student's account and all{" "}
+              This will permanently delete this student&apos;s account and all{" "}
               <span className="font-bold text-red-600">
                 {confirmModalStudent.attemptCount} quiz attempt{confirmModalStudent.attemptCount !== 1 ? "s" : ""}
               </span>{" "}

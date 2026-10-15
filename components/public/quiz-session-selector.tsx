@@ -16,14 +16,19 @@ interface QuizSessionSelectorProps {
   slug: string;
   totalBankQuestions: number;
   defaultMarks: number;
+  defaultNegativeMarks?: number;
 }
 
 export function QuizSessionSelector({
   slug,
   totalBankQuestions,
   defaultMarks,
+  defaultNegativeMarks = 0,
 }: QuizSessionSelectorProps) {
   const totalCount = Math.max(1, totalBankQuestions);
+
+  // Default mode: practice (NO negative marking by default in quizzes)
+  const [attemptMode, setAttemptMode] = useState<"practice" | "exam">("practice");
 
   // Available part size options
   const sizeOptions = useMemo(() => {
@@ -121,6 +126,45 @@ export function QuizSessionSelector({
             })}
           </div>
         </div>
+
+        {/* Mode Selector Toggle */}
+        <div className="pt-2.5 border-t border-amber-200/70 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+          <span className="font-bold text-[#0B132B] flex items-center gap-1.5 font-heading">
+            <span>Marking Scheme:</span>
+            <span className={attemptMode === "practice" ? "text-emerald-700 font-extrabold" : "text-amber-900 font-extrabold"}>
+              {attemptMode === "practice"
+                ? "⚡ Practice Quiz (0 Negative Marking - Default)"
+                : `🎯 Exam Test Mode (-${defaultNegativeMarks > 0 ? defaultNegativeMarks : (defaultMarks / 3).toFixed(2)} Negative Marking)`}
+            </span>
+          </span>
+
+          <div className="inline-flex items-center bg-white p-1 rounded-xl border border-amber-200 shadow-2xs">
+            <button
+              type="button"
+              onClick={() => setAttemptMode("practice")}
+              className={clsx(
+                "px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1",
+                attemptMode === "practice"
+                  ? "bg-emerald-600 text-white shadow-xs"
+                  : "text-slate-600 hover:text-slate-900"
+              )}
+            >
+              <span>⚡ Practice (No Negative)</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setAttemptMode("exam")}
+              className={clsx(
+                "px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer flex items-center gap-1",
+                attemptMode === "exam"
+                  ? "bg-amber-500 text-slate-950 shadow-xs"
+                  : "text-slate-600 hover:text-slate-900"
+              )}
+            >
+              <span>🎯 Exam Test (Negative)</span>
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Dynamic Header */}
@@ -128,11 +172,11 @@ export function QuizSessionSelector({
         <div className="flex items-center gap-2">
           <Layers className="w-4 h-4 text-amber-600" />
           <h2 className="text-sm font-black uppercase tracking-wider text-[#0B132B] font-heading">
-            Practice Parts ({parts.length} Parts Available)
+            Quiz Parts ({parts.length} Parts Available)
           </h2>
         </div>
-        <span className="text-xs text-slate-500">
-          Click &lsquo;Start Quiz&rsquo; on any part
+        <span className="text-xs text-slate-500 font-medium">
+          {attemptMode === "practice" ? "Practice Mode Active (No Negative)" : "Exam Test Mode Active (Negative Marking Applied)"}
         </span>
       </div>
 
@@ -156,7 +200,7 @@ export function QuizSessionSelector({
                 </div>
 
                 <p className="text-xs text-slate-500">
-                  Topic Practice Session
+                  {attemptMode === "practice" ? "Topic Practice Session (0 Negative)" : "Authentic Exam Test Simulation"}
                 </p>
               </div>
 
@@ -182,13 +226,34 @@ export function QuizSessionSelector({
               </div>
 
               {/* Start Quiz Action */}
-              <Link
-                href={`/quizzes/${slug}/attempt?part=${part.partNumber}&limit=${partSize}`}
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold text-slate-950 bg-amber-500 hover:bg-amber-400 active:bg-amber-600 rounded-xl shadow-xs transition-all group-hover:scale-[1.02] font-heading cursor-pointer"
-              >
-                <span>Start Quiz</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              <div className="space-y-2">
+                <Link
+                  href={`/quizzes/${slug}/attempt?part=${part.partNumber}&limit=${partSize}&mode=${attemptMode}`}
+                  className={clsx(
+                    "w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold rounded-xl shadow-xs transition-all group-hover:scale-[1.02] font-heading cursor-pointer",
+                    attemptMode === "practice"
+                      ? "text-slate-950 bg-amber-500 hover:bg-amber-400 active:bg-amber-600"
+                      : "text-white bg-[#0B132B] hover:bg-slate-800 active:bg-slate-950"
+                  )}
+                >
+                  <span>
+                    {attemptMode === "practice" ? "Start Practice Quiz" : "Start Exam Test"}
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                <div className="flex items-center justify-between text-[11px] text-slate-500 font-medium">
+                  <span>
+                    {attemptMode === "practice" ? "0 Negative" : `-${defaultNegativeMarks > 0 ? defaultNegativeMarks : (defaultMarks / 3).toFixed(2)} per wrong`}
+                  </span>
+                  <Link
+                    href={`/quizzes/${slug}/attempt?part=${part.partNumber}&limit=${partSize}&mode=${attemptMode === "practice" ? "exam" : "practice"}`}
+                    className="text-amber-800 hover:text-amber-950 underline font-semibold"
+                  >
+                    {attemptMode === "practice" ? "Start as Test →" : "Practice mode →"}
+                  </Link>
+                </div>
+              </div>
             </div>
           );
         })}

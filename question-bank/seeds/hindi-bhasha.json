@@ -1,0 +1,711 @@
+{
+  "topic": {
+    "title": "भाषा एवं वर्ण विचार",
+    "subject": "सामान्य हिन्दी",
+    "slug": "hindi-bhasha",
+    "description": "हिन्दी वर्णमाला, स्वर, व्यंजन, उच्चारण स्थान (कंठ्य, तालव्य, मूर्धन्य, दंत्य, ओष्ठ्य), अल्पप्राण, महाप्राण, घोष, अघोष, संयुक्त व्यंजन एवं भाषा की महत्वपूर्ण इकाइयां।"
+  },
+  "batches": [
+    {
+      "batchName": "Quiz 1",
+      "questionCount": 30,
+      "questions": [
+        {
+          "order": 1,
+          "questionText": "हिन्दी वर्णमाला में कितने स्वर हैं -",
+          "options": [
+            "दस",
+            "ग्यारह",
+            "तेरह",
+            "बारह"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "हिन्दी वर्णमाला में कुल 11 स्वर होते हैं: अ, आ, इ, ई, उ, ऊ, ऋ, ए, ऐ, ओ, औ।",
+          "examSource": "Asstt. Jailor Exam 2013 (paper-I)"
+        },
+        {
+          "order": 2,
+          "questionText": "हिन्दी वर्णमाला में संयुक्त स्वर कितने हैं -",
+          "options": [
+            "तीन",
+            "पाँच",
+            "चार",
+            "छः"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "हिन्दी में 4 संयुक्त स्वर होते हैं: ए (अ + इ/ई), ऐ (अ + ए), ओ (अ + उ/ऊ), औ (अ + ओ)।",
+          "examSource": "Asstt. Jailor Exam 2013 (paper-I)"
+        },
+        {
+          "order": 3,
+          "questionText": "हिन्दी वर्णमाला में मुख्य(मूल) स्वर कितने हैं -",
+          "options": [
+            "चार",
+            "सात",
+            "छः",
+            "पाँच"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "मूल (ह्रस्व) स्वर चार होते हैं: अ, इ, उ, ऋ।",
+          "examSource": "Asstt. Jailor Exam 2013 (paper-I)"
+        },
+        {
+          "order": 4,
+          "questionText": "इनमें से कौन सा स्वर दीर्घ है -",
+          "options": [
+            "इ",
+            "उ",
+            "ऋ",
+            "आ"
+          ],
+          "correctOptionIndex": 3,
+          "explanation": "दिए गए विकल्पों में 'आ' दीर्घ स्वर है, जबकि इ, उ, ऋ मूल (ह्रस्व) स्वर हैं।",
+          "examSource": "Asstt. Jailor Exam 2013 (paper-I)"
+        },
+        {
+          "order": 5,
+          "questionText": "इनमें से कौन से स्वर परस्पर सवर्ण (सजातीय) हैं -",
+          "options": [
+            "अ-इ",
+            "ओ-औ",
+            "उ-ऊ",
+            "ए-ऐ"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "समान उच्चारण स्थान और प्रयत्न वाले स्वर सवर्ण (सजातीय) कहलाते हैं, जैसे उ-ऊ, अ-आ, इ-ई।",
+          "examSource": "Asstt. Jailor Exam 2013 (paper-I)"
+        },
+        {
+          "order": 6,
+          "questionText": "हिन्दी वर्णमाला में 'स्पर्श व्यंजन' कितने हैं -",
+          "options": [
+            "25",
+            "10",
+            "20",
+            "15"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "क-वर्ग से म-वर्ग तक कुल 5 वर्गों में 25 स्पर्श व्यंजन होते हैं।",
+          "examSource": "Asstt. Jailor Exam 2013 (paper-I)"
+        },
+        {
+          "order": 7,
+          "questionText": "उच्चारण की दृष्टि से कौन सा वर्ण 'तालव्य' है -",
+          "options": [
+            "ट",
+            "ज",
+            "क",
+            "व"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "'इचुयश तालु' नियम के अनुसार च-वर्ग (च, छ, ज, झ, ञ) तालव्य वर्ण हैं।",
+          "examSource": "Asstt. Jailor Exam 2013 (paper-I)"
+        },
+        {
+          "order": 8,
+          "questionText": "इनमें से कौन सा वर्ण 'मूर्धन्य' नहीं है -",
+          "options": [
+            "ऋ",
+            "ई",
+            "ण",
+            "ठ"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "'ई' तालव्य स्वर है, मूर्धन्य नहीं। ऋ, ट, ठ, ड, ढ, ण, ष मूर्धन्य वर्ण हैं।",
+          "examSource": "Asstt. Jailor Exam 2013 (paper-I)"
+        },
+        {
+          "order": 9,
+          "questionText": "हिन्दी वर्णमाला का 'ग्यारहवां' व्यंजन कौन सा है -",
+          "options": [
+            "ढ",
+            "ठ",
+            "ट",
+            "ड"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "क-वर्ग के 5 (क, ख, ग, घ, ङ) + च-वर्ग के 5 (च, छ, ज, झ, ञ) = 10 व्यंजन। 11वां व्यंजन ट-वर्ग का पहला वर्ण 'ट' है।",
+          "examSource": "Asstt. Jailor Exam 2013 (paper-I)"
+        },
+        {
+          "order": 10,
+          "questionText": "इनमें 'नासिक्य' व्यंजन कौन सा है ?",
+          "options": [
+            "म",
+            "प",
+            "य",
+            "ड़"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "प्रत्येक वर्ग का पंचमाक्षर (ङ, ञ, ण, न, म) नासिक्य व्यंजन होता है।",
+          "examSource": "Asstt. Jailor Exam 2013 (paper-I)"
+        },
+        {
+          "order": 11,
+          "questionText": "इनमें 'उत्क्षिप्त' व्यंजन कौन सा है ?",
+          "options": [
+            "ल",
+            "ड़",
+            "र",
+            "फ"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "हिन्दी में 'ड़' और 'ढ़' को उत्क्षिप्त (ताड़नजात या द्विस्पृष्ट) व्यंजन कहा जाता है।",
+          "examSource": "Asstt. Jailor Exam 2013 (paper-I)"
+        },
+        {
+          "order": 12,
+          "questionText": "इनमें से कौन सा कथन गलत है ?",
+          "options": [
+            "'ऋ' का उच्चारण स्थान मूर्धा है।",
+            "'य' और 'व' को अर्धस्वर भी कहते हैं।",
+            "स्वरों के उच्चारण में किसी अन्य वर्ण की सहायता नहीं ली जाती।",
+            "व्यंजन वर्णों के उच्चारण में स्वरों के उच्चारण से दुगुना समय लगता है।"
+          ],
+          "correctOptionIndex": 3,
+          "explanation": "व्यंजनों के उच्चारण में स्वरों की सहायता ली जाती है, किन्तु स्वरों से दुगुना समय लगने का नियम गुरु (दीर्घ) स्वरों के लिए है, व्यंजनों के लिए नहीं।",
+          "examSource": "Asstt. Jailor Exam 2013 (paper-I)"
+        },
+        {
+          "order": 13,
+          "questionText": "इनमें से कौन सा कथन सही है ?",
+          "options": [
+            "मात्राओं का स्वर से कोई संबंध नहीं है।",
+            "उच्चारण की दृष्टि से 'उ-ऊ' ओष्ठ्य माने गये हैं।",
+            "समस्त स्वर महाप्राण होते हैं।",
+            "विसर्ग(:) की गणना नासिक्य वर्णों में की जाती है।"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "'उपूपध्मानीय ओष्ठौ' नियम के अनुसार उ और ऊ ओष्ठ्य स्वर हैं। सभी स्वर अल्पप्राण और घोष होते हैं।",
+          "examSource": "Asstt. Jailor Exam 2013 (paper-I)"
+        },
+        {
+          "order": 14,
+          "questionText": "इनमें से कौन सा वर्ण 'कंठ्य' नहीं है ?",
+          "options": [
+            "ख",
+            "ह",
+            "इ",
+            "आ"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "'इ' तालव्य स्वर है। अ, आ, क-वर्ग और 'ह' कंठ्य वर्ण हैं।",
+          "examSource": "Asstt. Jailor Exam 2013 (paper-I)"
+        },
+        {
+          "order": 15,
+          "questionText": "'फ' का उच्चारण स्थान है -",
+          "options": [
+            "दन्त",
+            "कंठ",
+            "मूर्धा",
+            "ओष्ठ"
+          ],
+          "correctOptionIndex": 3,
+          "explanation": "प-वर्ग (प, फ, ब, भ, म) का उच्चारण स्थान ओष्ठ है।",
+          "examSource": "Stenographer Pre Exam (21 March 2021) (Paper II)"
+        },
+        {
+          "order": 16,
+          "questionText": "इनमें संयुक्त व्यंजन कौन सा है -",
+          "options": [
+            "ड़",
+            "ज्ञ",
+            "ड",
+            "ढ़"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "'ज्ञ' संयुक्त व्यंजन है जो ज् + ञ के योग से बनता है।",
+          "examSource": "Stenographer Pre Exam (21 March 2021) (Paper II)"
+        },
+        {
+          "order": 17,
+          "questionText": "हिन्दी वर्णमाला में स्वरों की कुल संख्या कितनी -",
+          "options": [
+            "10",
+            "11",
+            "12",
+            "13"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "हिन्दी में मानक स्वरों की कुल संख्या 11 मानी जाती है।",
+          "examSource": "Stenographer Pre Exam (21 March 2021) (Paper II)"
+        },
+        {
+          "order": 18,
+          "questionText": "अनुनासिक का संबंध होता है -",
+          "options": [
+            "केवल नाक से",
+            "केवल मुख से",
+            "नाक और मुख से",
+            "इनमें से कोई नहीं"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "जिन वर्णों के उच्चारण में वायु नाक और मुख दोनों से निकलती है, उन्हें अनुनासिक कहते हैं।",
+          "examSource": "Stenographer Pre Exam (21 March 2021) (Paper II)"
+        },
+        {
+          "order": 19,
+          "questionText": "'कंठ्य' ध्वनि का उदाहरण है -",
+          "options": [
+            "च",
+            "ट",
+            "क",
+            "त"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "क-वर्ग (क, ख, ग, घ, ङ) की ध्वनियां कंठ्य कहलाती हैं।",
+          "examSource": "Stenographer Pre Exam (21 March 2021) (Paper II)"
+        },
+        {
+          "order": 20,
+          "questionText": "'ह' वर्ण का उच्चारण स्थान है -",
+          "options": [
+            "कण्ठ",
+            "तालु",
+            "मूर्धा",
+            "दंत"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "'अकुहविसर्जनीयानां कण्ठः' सूत्र के अनुसार 'ह' का उच्चारण स्थान कंठ (काकल्य) है।",
+          "examSource": "Stenographer Pre Exam (21 March 2021) (Paper II)"
+        },
+        {
+          "order": 21,
+          "questionText": "ध्वनि के लिखित रूप को कहते हैं -",
+          "options": [
+            "पद",
+            "शब्द",
+            "वर्ण",
+            "वाक्य"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "मौखिक ध्वनि के लिखित चिह्न को वर्ण (अक्षर) कहते हैं।",
+          "examSource": "Stenographer Comp. Exam - 2011 (Paper II)"
+        },
+        {
+          "order": 22,
+          "questionText": "निम्न में से दीर्घ स्वर नहीं है -",
+          "options": [
+            "आ",
+            "इ",
+            "ए",
+            "ऐ"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "'इ' ह्रस्व स्वर है, जबकि आ, ए, ऐ दीर्घ स्वर हैं।",
+          "examSource": "Stenographer Comp. Exam - 2011 (Paper II)"
+        },
+        {
+          "order": 23,
+          "questionText": "निम्न में से कौन-सा वर्ण स्वतंत्र ध्वनि है ?",
+          "options": [
+            "क",
+            "अ",
+            "न",
+            "प"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "स्वर स्वतंत्र ध्वनियां होते हैं जिनके उच्चारण में किसी अन्य वर्ण की सहायता नहीं लेनी पड़ती; अतः 'अ' स्वतंत्र ध्वनि है।",
+          "examSource": "Stenographer Comp. Exam - 2011 (Paper II)"
+        },
+        {
+          "order": 24,
+          "questionText": "निम्न में से किसमें संयुक्त व्यंजन है ?",
+          "options": [
+            "भाषा",
+            "न्याय",
+            "मानव",
+            "गोभी"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "'न्याय' शब्द में 'न्' और 'य' का संयोग (संयुक्ताक्षर) है।",
+          "examSource": "Stenographer Comp. Exam - 2011 (Paper II)"
+        },
+        {
+          "order": 25,
+          "questionText": "निम्न में से कंठ्य व्यंजन है -",
+          "options": [
+            "ट",
+            "त",
+            "घ",
+            "प"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "क-वर्ग का वर्ण 'घ' कंठ्य व्यंजन है।",
+          "examSource": "Stenographer Comp. Exam - 2011 (Paper II)"
+        },
+        {
+          "order": 26,
+          "questionText": "निम्न में से दंत्य व्यंजन नहीं है -",
+          "options": [
+            "त",
+            "च",
+            "द",
+            "थ"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "'च' तालव्य व्यंजन है। त, थ, द दंत्य व्यंजन हैं।",
+          "examSource": "Stenographer Comp. Exam - 2011 (Paper II)"
+        },
+        {
+          "order": 27,
+          "questionText": "क् और ष का योग है -",
+          "options": [
+            "क्ष",
+            "त्र",
+            "ज्ञ",
+            "ड़"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "क् + ष् के योग से संयुक्त वर्ण 'क्ष' बनता है।",
+          "examSource": "Stenographer Comp. Exam - 2011 (Paper II)"
+        },
+        {
+          "order": 28,
+          "questionText": "'द्वित्व' का प्रयोग किस शब्द में नहीं हुआ है -",
+          "options": [
+            "सच्चा",
+            "कुत्ता",
+            "वल्गा",
+            "बग्गा"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "जब एक ही व्यंजन का अपने समान व्यंजन के साथ संयोग होता है तो उसे द्वित्व कहते हैं (जैसे च्च, त्त, ग्ग)। 'वल्गा' में ल्+ग भिन्न व्यंजन हैं, अतः यह द्वित्व नहीं है।",
+          "examSource": "Stenographer Comp. Exam - 2011 (Paper II)"
+        },
+        {
+          "order": 29,
+          "questionText": "व्यंजन वर्णों के संबंध में कौन - सा विकल्प सुमेलित नहीं है?",
+          "options": [
+            "श, ष - संघर्षहीन",
+            "ग, घ - स्पर्श व्यंजन",
+            "य, व - अर्धस्वर",
+            "च, छ - स्पर्श संघर्षी"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "श, ष ऊष्म (संघर्षी) व्यंजन हैं, संघर्षहीन नहीं। संघर्षहीन (अर्धस्वर) 'य' और 'व' होते हैं।",
+          "examSource": "CET 2022 (Graduate) 07 January 2023 Shift-1"
+        },
+        {
+          "order": 30,
+          "questionText": "असंगत विकल्प चुनिए -",
+          "options": [
+            "ष - अल्पप्राण, मूर्धन्य, अघोष",
+            "ई - अग्र, संवृत, अवृत्तमुखी",
+            "य - तालव्य, अल्पप्राण, घोष",
+            "ब - ओष्ठ्य, घोष, अल्पप्राण"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "'ष' महाप्राण, मूर्धन्य, अघोष वर्ण है। विकल्प में इसे अल्पप्राण लिखा गया है, अतः यह असंगत है।",
+          "examSource": "CET 2022 (Graduate) 07 January 2023 Shift-2"
+        }
+      ]
+    },
+    {
+      "batchName": "Quiz 2",
+      "questionCount": 23,
+      "questions": [
+        {
+          "order": 1,
+          "questionText": "सुमेलित कीजिए-\n(i) मूल स्वर (क) ख छ, फ, स\n(ii) दीर्घ स्वर (ख) आ, ई, ऊ, ऐ\n(iii) अल्पप्राण व्यंजन (ग) अ, इ, उ, ऋ\n(iv) अघोष व्यंजन (घ) य, र, ल, व",
+          "options": [
+            "(i) - (क), (ii) - (ख), (iii) - (घ), (iv) - (ग)",
+            "(i) - (क), (ii) - (ख), (iii) - (ग), (iv) - (घ)",
+            "(i) - (ग), (ii) - (ख), (iii) - (घ), (iv) - (क)",
+            "(i) - (ख), (ii) - (ग), (iii) - (घ), (iv) - (क)"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "मूल स्वर: अ, इ, उ, ऋ (ग); दीर्घ स्वर: आ, ई, ऊ, ऐ (ख); अल्पप्राण: य, र, ल, व (घ); अघोष व्यंजन: ख, छ, फ, स (क)। सही कूट C है।",
+          "examSource": "CET 2022 (Graduate) 08 January 2023 Shift-1"
+        },
+        {
+          "order": 2,
+          "questionText": "निम्नलिखित वर्णों को उनके उच्चारण स्थान से सुमेलित कीजिए -\n1. क a. दन्त\n2. त b. तालु\n3. न c. कण्ठ\n4. श d. नासिका",
+          "options": [
+            "1-a, 2-c, 3-d, 4-b",
+            "1-c, 2-a, 3-d, 4-b",
+            "1-b, 2-d, 3-a, 4-c",
+            "1-a, 2-b, 3-c, 4-d"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "क का उच्चारण स्थान कण्ठ (1-c), त का दन्त (2-a), न का नासिका (3-d), श का तालु (4-b) है।",
+          "examSource": "3rd Grade Teacher 2022 Hindi L2"
+        },
+        {
+          "order": 3,
+          "questionText": "'अंतःस्थ' व्यंजन नहीं है -",
+          "options": [
+            "र",
+            "ल",
+            "ब",
+            "य"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "अंतःस्थ व्यंजन 4 होते हैं: य, र, ल, व। 'ब' ओष्ठ्य स्पर्श व्यंजन है, अंतःस्थ नहीं।",
+          "examSource": "3rd Grade Teacher 2022 Hindi L2"
+        },
+        {
+          "order": 4,
+          "questionText": "अंतस्थ व्यंजन कौन सा है ?",
+          "options": [
+            "ख",
+            "च",
+            "झ",
+            "य"
+          ],
+          "correctOptionIndex": 3,
+          "explanation": "'य, र, ल, व' अंतस्थ व्यंजन हैं, अतः 'य' सही उत्तर है।",
+          "examSource": "3rd Grade Teacher 2022 Hindi L2"
+        },
+        {
+          "order": 5,
+          "questionText": "निम्नलिखित में से भाषा की लघुतम लिखित इकाई है -",
+          "options": [
+            "पद",
+            "शब्द",
+            "वर्ण",
+            "ध्वनि"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "भाषा की सबसे छोटी मौखिक इकाई ध्वनि है और सबसे छोटी लिखित इकाई 'वर्ण' है।",
+          "examSource": "3rd Grade Teacher 2022 Hindi L2"
+        },
+        {
+          "order": 6,
+          "questionText": "'ड़' वर्ण का उच्चारण स्थान है :",
+          "options": [
+            "दन्त",
+            "तालु",
+            "मूर्धा",
+            "नासिका"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "ट-वर्ग के अंतर्गत आने वाले उत्क्षिप्त वर्ण 'ड़' का उच्चारण स्थान मूर्धा है।",
+          "examSource": "Stenographer Exam 2024 (Paper - II)"
+        },
+        {
+          "order": 7,
+          "questionText": "निम्नलिखित में अघोष वर्ण है :",
+          "options": [
+            "ड",
+            "अ",
+            "क",
+            "ह"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "प्रत्येक वर्ग का पहला और दूसरा वर्ण तथा श, ष, स अघोष होते हैं। 'क' वर्ग का प्रथम वर्ण होने से अघोष है।",
+          "examSource": "Stenographer Exam 2024 (Paper - II)"
+        },
+        {
+          "order": 8,
+          "questionText": "निम्नलिखित में ह्रस्व स्वर नहीं है :",
+          "options": [
+            "उ",
+            "ऋ",
+            "अ",
+            "ए"
+          ],
+          "correctOptionIndex": 3,
+          "explanation": "'ए' संयुक्त दीर्घ स्वर है। अ, उ, ऋ ह्रस्व स्वर हैं।",
+          "examSource": "Stenographer Exam 2024 (Paper - II)"
+        },
+        {
+          "order": 9,
+          "questionText": "निम्नलिखित में से 'झ' का उच्चारण स्थान है :",
+          "options": [
+            "कण्ठ - तालु",
+            "कण्ठ",
+            "तालु",
+            "दन्त"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "च-वर्ग (च, छ, ज, झ, ञ) का उच्चारण स्थान तालु है।",
+          "examSource": "Stenographer Exam 2024 (Paper - II)"
+        },
+        {
+          "order": 10,
+          "questionText": "सूची-I के साथ सूची-II का मिलान कीजिए।\nसूची-I सूची-II\nवर्ण उच्चारण स्थान\n(a) ओ (i) कण्ठ\n(b) ए (ii) दन्त ओष्ठ\n(c) व (iii) कण्ठ तालु\n(d) ह (iv) कण्ठ ओष्ठ\nनीचे दिए गए विकल्पों में से सर्वाधिक उपयुक्त उत्तर का चयन कीजिए :",
+          "options": [
+            "(a) - (ii), (b) - (iv), (c) - (iii), (d) - (i)",
+            "(a) - (iv), (b) - (iii), (c) - (ii), (d) - (i)",
+            "(a) - (i), (b) - (iii), (c) - (ii), (d) - (iv)",
+            "(a) - (iv), (b) - (i), (c) - (iii), (d) - (ii)"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "ओ = कण्ठ-ओष्ठ (iv); ए = कण्ठ-तालु (iii); व = दन्त-ओष्ठ (ii); ह = कण्ठ (i)। सही मिलान विकल्प B है।",
+          "examSource": "Stenographer Exam 2024 (Paper - II)"
+        },
+        {
+          "order": 11,
+          "questionText": "निम्नलिखित में किस वर्ण का उच्चारण स्थान दंत - ओष्ठ है?",
+          "options": [
+            "व",
+            "ऐ",
+            "फ",
+            "ल"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "'वकारस्य दन्तोष्ठम्' सूत्र के अनुसार 'व' का उच्चारण स्थान दंत-ओष्ठ (दन्तोष्ठ्य) है।",
+          "examSource": "Stenographer Exam 2024 (Paper - II)"
+        },
+        {
+          "order": 12,
+          "questionText": "निम्नांकित में से कौन-सा वर्ण घोष वर्ण है?",
+          "options": [
+            "क",
+            "थ",
+            "ल",
+            "स"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "वर्ग के तीसरे, चौथे, पांचवे वर्ण तथा सभी स्वर, य, र, ल, व, ह सघोष (घोष) होते हैं। अतः 'ल' घोष वर्ण है।",
+          "examSource": "Stenographer Exam 2024 (Paper - II)"
+        },
+        {
+          "order": 13,
+          "questionText": "नीचे दो कथन दिए गए हैं :\nकथन-I: 'र' अन्तःस्थ व्यंजन वर्ण है।\nकथन-II: 'ई' का उच्चारण स्थान तालु है।\nउपर्युक्त कथनों के आलोक में निम्नलिखित विकल्पों में से सर्वाधिक उपयुक्त उत्तर चुनें :",
+          "options": [
+            "कथन I सत्य है, किन्तु कथन II असत्य है।",
+            "कथन I असत्य है, किन्तु कथन II सत्य है।",
+            "कथन I और II दोनों सत्य हैं।",
+            "कथन I और II दोनों असत्य हैं।"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "'र' अंतःस्थ व्यंजन (य, र, ल, व) है तथा 'ई' तालव्य स्वर (इचुयश तालु) है। अतः दोनों कथन सत्य हैं।",
+          "examSource": "CET 2024 (Graduate) 27 September 2024 Shift-1"
+        },
+        {
+          "order": 14,
+          "questionText": "निम्नलिखित में से कौन-सी ध्वनियाँ अघोष हैं?\na. छ b. ज़\nc. त d. न\ne. प\nनीचे दिए गए विकल्पों में से सर्वाधिक उपयुक्त उत्तर का चयन कीजिए:",
+          "options": [
+            "केवल b, d और e",
+            "केवल b, c और d",
+            "केवल a, c और e",
+            "केवल a, d और e"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "प्रत्येक वर्ग के प्रथम व द्वितीय वर्ण अघोष होते हैं। छ (च-वर्ग का द्वितीय), त (त-वर्ग का प्रथम) एवं प (प-वर्ग का प्रथम) अघोष ध्वनियां हैं (a, c और e)।",
+          "examSource": "CET 2024 (Graduate) 27 September 2024 Shift-2"
+        },
+        {
+          "order": 15,
+          "questionText": "जब एक ही स्वर के ह्रस्व या दीर्घ रूप साथ-साथ आएँ तो दोनों स्वरों के स्थान पर कौन-सा स्वर हो जाता है ?",
+          "options": [
+            "पूर्ण स्वर",
+            "ह्रस्व स्वर",
+            "दीर्घ स्वर",
+            "अर्द्ध स्वर"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "दीर्घ संधि के नियमानुसार सजातीय ह्रस्व या दीर्घ स्वर मिलकर दीर्घ स्वर बन जाते हैं (अकः सवर्णे दीर्घः)।",
+          "examSource": "CET 2024 (Graduate) 27 September 2024 Shift-2"
+        },
+        {
+          "order": 16,
+          "questionText": "नीचे दो कथन दिए गए हैं:\nकथन-I: 'ह' अनुनासिक वर्ण है।\nकथन-II: 'उ' घोष वर्ण है।\nउपर्युक्त कथनों के आलोक में निम्नलिखित विकल्पों में से सर्वाधिक उपयुक्त उत्तर चुनें:",
+          "options": [
+            "कथन I सत्य है किन्तु कथन II असत्य है।",
+            "कथन I असत्य है, किन्तु कथन II सत्य है।",
+            "कथन I और II दोनों सत्य हैं।",
+            "कथन I और II दोनों असत्य हैं।"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "'ह' ऊष्म/काकल्य वर्ण है, अनुनासिक नहीं (कथन I असत्य)। समस्त स्वर घोष होते हैं, अतः 'उ' घोष वर्ण है (कथन II सत्य)।",
+          "examSource": "CET 2024 (Graduate) 28 September 2024 Shift-1"
+        },
+        {
+          "order": 17,
+          "questionText": "नीचे दो कथन दिए गए हैं :\nकथन (I): 'ह' वर्ण का उच्चारण स्थान कंठ है।\nकथन (II): 'ऋ' तथा 'ठ' दोनों वर्णों का उच्चारण स्थान मूर्धा है।\nउपरोक्त कथनों के आलोक में निम्नलिखित विकल्पों में से सही उत्तर चुनें :",
+          "options": [
+            "कथन (I) असत्य है, किन्तु कथन (II) सत्य है।",
+            "कथन (I) और (II) दोनों सत्य हैं।",
+            "कथन (I) और (II) दोनों असत्य हैं।",
+            "कथन (I) सत्य है, किन्तु कथन (II) असत्य है।"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "'ह' का उच्चारण स्थान कंठ है (अकुहविसर्जनीयानां कण्ठः) तथा 'ऋ' और 'ठ' का उच्चारण स्थान मूर्धा है (ऋटुरषाणां मूर्धा)। अतः दोनों कथन सत्य हैं।",
+          "examSource": "CET 2024 (Graduate) 28 September 2024 Shift-2"
+        },
+        {
+          "order": 18,
+          "questionText": "हिन्दी स्वर-विषयक असंगत कथन है",
+          "options": [
+            "स्वर घोष वर्ण होते हैं।",
+            "'अ' ह्रस्व स्वर है।",
+            "वैयाकरण 'ऐ' संयुक्त स्वर है।",
+            "ई, ऊ महाप्राण ध्वनि है।"
+          ],
+          "correctOptionIndex": 3,
+          "explanation": "सभी स्वर अल्पप्राण होते हैं, महाप्राण नहीं। अतः 'ई, ऊ महाप्राण ध्वनि है' कथन असंगत है।",
+          "examSource": "Deputy Jailor Comp. Exam-2024"
+        },
+        {
+          "order": 19,
+          "questionText": "'ड़' वर्ण के परिचय संबंधी कौन सा विकल्प सही है?",
+          "options": [
+            "उत्क्षिप्त, मूर्धन्य, सघोष, अल्पप्राण",
+            "उत्क्षिप्त, तालव्य, सघोष, अल्पप्राण",
+            "उत्क्षिप्त, मूर्ध्य, अघोष, अल्पप्राण",
+            "उत्क्षिप्त, मूर्धन्य, सघोष, महाप्राण"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "'ड़' उत्क्षिप्त (ताड़नजात), मूर्धन्य उच्चारण स्थान, सघोष (घोष) और अल्पप्राण वर्ण है।",
+          "examSource": "Deputy Jailor Comp. Exam-2024"
+        },
+        {
+          "order": 20,
+          "questionText": "'र' वर्ण किस वर्ग के अन्तर्गत आता है ?",
+          "options": [
+            "उत्क्षिप्त",
+            "अनुनासिक",
+            "पार्श्विक",
+            "लुंठित"
+          ],
+          "correctOptionIndex": 3,
+          "explanation": "'र' के उच्चारण में जिह्वा लुढ़कती या कंपन करती है, इसलिए इसे 'लुंठित' (प्रकंपित) व्यंजन कहा जाता है। 'ल' पार्श्विक व्यंजन है।",
+          "examSource": "Deputy Jailor Comp. Exam-2024"
+        },
+        {
+          "order": 21,
+          "questionText": "कौन सा वर्ण-परिचय गलत है ?",
+          "options": [
+            "'न्' - नासिक्य, अल्पप्राण",
+            "'म्' - ओष्ठ्य, सघोष",
+            "'ण्' - मूर्धन्य, अल्पप्राण",
+            "'ञ्' - तालव्य, अघोष"
+          ],
+          "correctOptionIndex": 3,
+          "explanation": "'ञ्' च-वर्ग का पंचमाक्षर है जो सघोष (घोष) और अल्पप्राण होता है, अघोष नहीं। अतः विकल्प D गलत है।",
+          "examSource": "Deputy Jailor Comp. Exam-2024"
+        },
+        {
+          "order": 22,
+          "questionText": "संयुक्त व्यंजन 'क्ष' किन वर्णों से मिलकर बना है ?",
+          "options": [
+            "क् + स्",
+            "क् + श्",
+            "क् + ष्",
+            "क् + छ्"
+          ],
+          "correctOptionIndex": 2,
+          "explanation": "'क्ष' संयुक्त व्यंजन क् + ष् + अ के योग से बनता है।",
+          "examSource": "Deputy Jailor Comp. Exam-2024"
+        },
+        {
+          "order": 23,
+          "questionText": "निम्न में अग्र स्वर कौन सा है ?",
+          "options": [
+            "ऊ",
+            "ऐ",
+            "ओ",
+            "आ"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "जिह्वा के उत्थापित भाग के आधार पर इ, ई, ए, ऐ अग्र स्वर होते हैं। आ पश्च-मध्य स्वर तथा उ, ऊ, ओ, औ पश्च स्वर हैं।",
+          "examSource": "Deputy Jailor Comp. Exam-2024"
+        }
+      ]
+    }
+  ]
+}

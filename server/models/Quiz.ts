@@ -1,5 +1,6 @@
 import mongoose, { Schema, Document, Model } from "mongoose";
 import { ContentStatus } from "./Blog";
+import "./Category";
 
 export type QuizDifficulty = "easy" | "medium" | "hard";
 

@@ -26,8 +26,10 @@ import {
   Send,
   Play,
   CheckSquare,
+  Flag,
 } from "lucide-react";
 import { BookmarkButton } from "@/components/public/bookmark-button";
+import { QuestionReportModal } from "@/components/public/question-report-modal";
 import clsx from "clsx";
 
 interface AttemptQuestionBreakdown {
@@ -85,6 +87,11 @@ export default function QuizResultPage() {
   const [copiedShare, setCopiedShare] = useState(false);
   const [showAiFallbackModal, setShowAiFallbackModal] = useState(false);
   const [aiTextContent, setAiTextContent] = useState("");
+  const [reportingQuestion, setReportingQuestion] = useState<{
+    id: string;
+    number: number;
+    snippet: string;
+  } | null>(null);
 
   const reviewSectionRef = useRef<HTMLDivElement>(null);
 
@@ -584,6 +591,21 @@ ${quizUrl}
                     </div>
 
                     <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setReportingQuestion({
+                            id: q.questionId,
+                            number: q.order,
+                            snippet: q.questionText,
+                          })
+                        }
+                        className="p-1.5 text-slate-400 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors border border-transparent hover:border-amber-200"
+                        title="Report an issue with this question"
+                        aria-label="Report an issue with this question"
+                      >
+                        <Flag className="w-4 h-4" />
+                      </button>
                       <BookmarkButton
                         item={{
                           id: q.questionId,
@@ -741,6 +763,19 @@ ${quizUrl}
             </div>
           </div>
         </div>
+      )}
+
+      {/* Question Issue Report Modal */}
+      {result && reportingQuestion && (
+        <QuestionReportModal
+          isOpen={!!reportingQuestion}
+          onClose={() => setReportingQuestion(null)}
+          quizId={result.quizId}
+          quizSlug={slug}
+          questionId={reportingQuestion.id}
+          questionNumber={reportingQuestion.number}
+          questionSnippet={reportingQuestion.snippet}
+        />
       )}
     </div>
   );

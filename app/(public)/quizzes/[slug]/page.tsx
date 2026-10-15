@@ -184,7 +184,10 @@ export default async function QuizIntroPage({ params }: QuizPageProps) {
                 Marking Scheme
               </span>
               <span className="text-xl font-black text-[#0B132B] mt-1 block font-heading">
-                +{quiz.defaultMarks} / -{quiz.defaultNegativeMarks}
+                +{quiz.defaultMarks} / 0 (Practice)
+              </span>
+              <span className="text-[10px] text-slate-500 font-medium block mt-0.5">
+                Exam Test: -{quiz.defaultNegativeMarks > 0 ? quiz.defaultNegativeMarks : (quiz.defaultMarks / 3).toFixed(2)}
               </span>
             </div>
           </div>
@@ -200,13 +203,16 @@ export default async function QuizIntroPage({ params }: QuizPageProps) {
                 <span className="font-bold text-emerald-700">+{quiz.defaultMarks} अंक:</span> प्रत्येक सही उत्तर के लिए
               </li>
               <li className="flex items-center gap-2">
-                <span className="font-bold text-red-700">
-                  {quiz.defaultNegativeMarks > 0 ? `-${quiz.defaultNegativeMarks} अंक` : "0 अंक"}:
-                </span>{" "}
-                प्रत्येक गलत उत्तर पर नेगेटिव मार्किंग (Negative Marking)
+                <span className="font-bold text-emerald-800">0 अंक (Default Quiz Mode):</span> क्विज़ अभ्यास में कोई नेगेटिव मार्किंग नहीं (No negative marking)
               </li>
               <li className="flex items-center gap-2">
-                <span className="font-bold text-slate-800">Sequential Practice:</span> सभी प्रश्नों को 20-20 के खंडों (Parts) में विभाजित किया गया है ताकि आप क्रमवार तैयारी कर सकें।
+                <span className="font-bold text-red-700">
+                  -{quiz.defaultNegativeMarks > 0 ? quiz.defaultNegativeMarks : (quiz.defaultMarks / 3).toFixed(2)} अंक (Exam Test Mode):
+                </span>{" "}
+                परीक्षा पेपर नियम के अनुसार टेस्ट मोड में नेगेटिव मार्किंग लागू होगी
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="font-bold text-slate-800">Sequential Practice:</span> सभी प्रश्नों को खंडों (Parts) में विभाजित किया गया है ताकि आप क्रमवार तैयारी कर सकें।
               </li>
             </ul>
           </div>
@@ -218,7 +224,7 @@ export default async function QuizIntroPage({ params }: QuizPageProps) {
             </h3>
             <ul className="text-xs text-slate-700 space-y-2 list-disc list-inside font-devanagari">
               <li>प्रत्येक प्रश्न में 4 विकल्प हैं जिनमें से केवल 1 सही उत्तर है।</li>
-              <li>नीचे दिए गए कार्ड्स में से किसी भी पार्ट (जैसे Quiz Part-1, Part-2) के 'Start Quiz' पर क्लिक करके अभ्यास शुरू करें।</li>
+              <li>बाय डिफॉल्ट क्विज़ अभ्यास में कोई नेगेटिव मार्किंग नहीं है। यदि आप परीक्षा जैसा टेस्ट देना चाहते हैं तो &lsquo;Exam Test&rsquo; मोड चुन सकते हैं।</li>
               <li>सबमिट करने पर तुरंत प्रामाणिक स्कोरकार्ड और विस्तृत व्याख्या उपलब्ध कराई जाएगी।</li>
             </ul>
           </div>
@@ -228,6 +234,7 @@ export default async function QuizIntroPage({ params }: QuizPageProps) {
             slug={quiz.slug}
             totalBankQuestions={quiz.totalBankQuestions || quiz.questionCount}
             defaultMarks={quiz.defaultMarks}
+            defaultNegativeMarks={quiz.defaultNegativeMarks}
           />
         </div>
       </div>

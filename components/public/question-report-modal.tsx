@@ -195,7 +195,7 @@ export function QuestionReportModal({
                   Question:
                 </span>
                 <p className="line-clamp-2 italic text-slate-600">
-                  "{questionSnippet}"
+                  &ldquo;{questionSnippet}&rdquo;
                 </p>
               </div>
             )}
@@ -294,7 +294,7 @@ export function QuestionReportModal({
 
               {isDescriptionRequired && isDescriptionEmpty && (
                 <p className="text-[11px] text-amber-700 font-medium">
-                  * A brief description is required when selecting 'Other'.
+                  * A brief description is required when selecting &apos;Other&apos;.
                 </p>
               )}
             </div>

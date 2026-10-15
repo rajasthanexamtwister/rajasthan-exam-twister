@@ -65,6 +65,7 @@ export default function QuizAttemptPage() {
   const slug = params.slug as string;
   const limit = searchParams?.get("limit") || "";
   const part = searchParams?.get("part") || "";
+  const modeParam = searchParams?.get("mode");
 
   const [loading, setLoading] = useState(true);
   const [quiz, setQuiz] = useState<PublicQuizDetail | null>(null);
@@ -73,12 +74,23 @@ export default function QuizAttemptPage() {
   const [feedbackMap, setFeedbackMap] = useState<Record<string, QuestionFeedback>>({});
   const [evaluatingQuestionId, setEvaluatingQuestionId] = useState<string | null>(null);
   const [language, setLanguage] = useState<"hi" | "en">("hi");
-  const [mode, setMode] = useState<"exam" | "practice">("exam");
+  const [mode, setMode] = useState<"exam" | "practice">(() => {
+    return modeParam === "exam" ? "exam" : "practice";
+  });
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [startTime] = useState<string>(new Date().toISOString());
+
+  // Synchronize mode if query parameter changes
+  useEffect(() => {
+    if (modeParam === "exam") {
+      setMode("exam");
+    } else if (modeParam === "practice") {
+      setMode("practice");
+    }
+  }, [modeParam]);
 
   const autoSubmittedRef = useRef(false);
   const autoNextTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -447,20 +459,6 @@ export default function QuizAttemptPage() {
             >
               <button
                 type="button"
-                onClick={() => setMode("exam")}
-                className={clsx(
-                  "px-2.5 py-1 text-xs font-bold rounded-lg transition-all flex items-center gap-1",
-                  mode === "exam"
-                    ? "bg-amber-500 text-slate-950 shadow-xs font-extrabold"
-                    : "text-slate-500 hover:text-slate-900"
-                )}
-                title="Exam Mode (Negative Marking Active)"
-              >
-                <span>🎯</span>
-                <span className="hidden sm:inline">Exam Mode</span>
-              </button>
-              <button
-                type="button"
                 onClick={() => setMode("practice")}
                 className={clsx(
                   "px-2.5 py-1 text-xs font-bold rounded-lg transition-all flex items-center gap-1",
@@ -472,6 +470,20 @@ export default function QuizAttemptPage() {
               >
                 <span>⚡</span>
                 <span className="hidden sm:inline">Practice Mode</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setMode("exam")}
+                className={clsx(
+                  "px-2.5 py-1 text-xs font-bold rounded-lg transition-all flex items-center gap-1",
+                  mode === "exam"
+                    ? "bg-amber-500 text-slate-950 shadow-xs font-extrabold"
+                    : "text-slate-500 hover:text-slate-900"
+                )}
+                title="Exam Test Mode (Negative Marking Active as per paper)"
+              >
+                <span>🎯</span>
+                <span className="hidden sm:inline">Exam Mode</span>
               </button>
             </div>
 
@@ -545,8 +557,8 @@ export default function QuizAttemptPage() {
       {/* Main Single Question Container */}
       <main className="max-w-3xl mx-auto w-full px-4 sm:px-6 pt-6 space-y-6 flex-1">
         {/* Compact Counters & Status Bar */}
-        <div className="flex items-center justify-between text-xs font-bold bg-white p-3 rounded-2xl border border-slate-200 shadow-xs">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-bold bg-white p-3 rounded-2xl border border-slate-200 shadow-xs">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <span className="inline-flex items-center gap-1 text-emerald-700">
               🟢 Correct: <strong className="text-emerald-950">{correctCount}</strong>
             </span>
@@ -558,10 +570,10 @@ export default function QuizAttemptPage() {
             </span>
           </div>
 
-          <span className="text-slate-500 font-semibold">
+          <span className="text-[11px] sm:text-xs text-slate-500 font-bold truncate">
             {mode === "practice"
-              ? "⚡ Practice Mode (No Negative)"
-              : `🎯 Wrong: -${currentQuestion.negativeMarks ?? quiz.defaultNegativeMarks}`}
+              ? "⚡ Practice Mode (No Negative Marking)"
+              : `🎯 Exam Test Mode: Negative Marking -${currentQuestion.negativeMarks ?? quiz.defaultNegativeMarks}`}
           </span>
         </div>
 
@@ -679,7 +691,7 @@ export default function QuizAttemptPage() {
                 disabled={evaluatingQuestionId === currentQuestion.id}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-slate-200 transition-all"
               >
-                <span>⚪ Don't Know / Skip</span>
+                <span>⚪ Don&apos;t Know / Skip</span>
               </button>
 
               <span className="text-[11px] text-slate-500 font-medium">

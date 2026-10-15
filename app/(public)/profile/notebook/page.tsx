@@ -1,7 +1,8 @@
+
 "use client";
 
 import { useSession, signIn } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -54,7 +55,7 @@ export default function NotebookPage() {
   const [boosterError, setBoosterError] = useState<string | null>(null);
   const [togglingBookmark, setTogglingBookmark] = useState<string | null>(null);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     if (!session?.user) return;
     setLoading(true);
 
@@ -78,13 +79,13 @@ export default function NotebookPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [session?.user]);
 
   useEffect(() => {
     if (session?.user) {
       fetchData();
     }
-  }, [session]);
+  }, [session?.user, fetchData]);
 
   const handleToggleBookmark = async (question: NotebookQuestion) => {
     if (!session?.user) return;

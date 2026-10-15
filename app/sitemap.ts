@@ -163,7 +163,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       };
     });
 
-    return [...staticRoutes, ...blogRoutes, ...noteRoutes, ...quizRoutes, ...testSeriesRoutes];
+    // Query verified PUBLISHED question SEO pages only
+    let questionRoutes: MetadataRoute.Sitemap = [];
+    try {
+      const { QuestionSeoRepository } = await import("@/server/repositories/question-seo");
+      const publishedQuestionSlugs = await QuestionSeoRepository.listPublishedQuestionSlugs();
+
+      questionRoutes = publishedQuestionSlugs.map((q) => ({
+        url: `${siteUrl}/questions/${q.seoSlug}`,
+        lastModified: q.updatedAt || new Date(),
+        changeFrequency: "monthly",
+        priority: 0.7,
+      }));
+    } catch (e) {
+      console.warn("Could not load question routes for sitemap:", e);
+    }
+
+    return [
+      ...staticRoutes,
+      ...blogRoutes,
+      ...noteRoutes,
+      ...quizRoutes,
+      ...testSeriesRoutes,
+      ...questionRoutes,
+    ];
   } catch (err) {
     console.error("Error generating sitemap:", err);
     return staticRoutes;

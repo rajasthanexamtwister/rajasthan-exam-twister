@@ -38,7 +38,7 @@ export default function ContactPage() {
                 Contact Us
               </h1>
               <p className="text-xs text-slate-500">
-                We'd love to hear from you. Get in touch with our student support & content team.
+                We&apos;d love to hear from you. Get in touch with our student support & content team.
               </p>
             </div>
           </div>
