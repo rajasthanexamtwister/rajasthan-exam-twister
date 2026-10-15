@@ -211,6 +211,7 @@ export class BoosterService {
       slug: boosterSlug,
       subject: targetSubjects[0] || "General Studies",
       difficulty: "medium",
+      isPersonalizedBooster: true,
       status: "PUBLISHED",
       publishedAt: new Date(),
       defaultMarks: 1,

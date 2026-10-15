@@ -99,6 +99,44 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Editorial Standards & Fact Verification */}
+        <section className="p-6 rounded-2xl bg-white border border-amber-200/90 space-y-3 shadow-2xs">
+          <div className="flex items-center gap-2.5 text-amber-800">
+            <Users className="w-5 h-5 text-amber-700" />
+            <h2 className="text-base sm:text-lg font-bold text-[#0B132B]">Editorial Standards & Fact Verification</h2>
+          </div>
+          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+            Content reliability is the cornerstone of student success. Our study notes, question banks, and mock test solutions undergo a systematic verification process:
+          </p>
+          <ul className="list-disc pl-5 space-y-1.5 text-xs text-slate-600">
+            <li>
+              <strong>Authentic Board Answer Keys:</strong> Questions and official explanations are strictly verified against official RPSC and RSSB (RSMSSB) final answer keys and official gazette notifications.
+            </li>
+            <li>
+              <strong>Active Student Reporting Mechanism:</strong> Through our integrated question report system, students can flag potential typos or answer discrepancies from both practice and review screens. All submissions are audited by our editorial staff.
+            </li>
+            <li>
+              <strong>Curriculum Specialists:</strong> Our research team operates from Jaipur, Rajasthan, curating syllabus-aligned revision materials tailored to state recruitment requirements.
+            </li>
+          </ul>
+        </section>
+
+        {/* Operational Transparency & Non-Government Disclaimer Notice */}
+        <section className="p-5 rounded-2xl bg-amber-50/70 border border-amber-200/80 text-xs text-slate-700 space-y-1.5">
+          <span className="font-bold text-slate-900 block text-xs">Operational Transparency & Inquiries</span>
+          <p>
+            Rajasthan Exam Twister is an independent educational portal managed by curriculum researchers and educators based in Jaipur, Rajasthan, India. We are not affiliated with or endorsed by RPSC, RSSB, or the Government of Rajasthan. For editorial feedback, study inquiries, or corrections, reach us directly at{" "}
+            <a href="mailto:rajasthanexamtwister@gmail.com" className="text-amber-800 font-bold underline">
+              rajasthanexamtwister@gmail.com
+            </a>{" "}
+            or visit our{" "}
+            <Link href="/contact" className="text-amber-800 font-bold underline">
+              Contact Us
+            </Link>{" "}
+            page.
+          </p>
+        </section>
+
         {/* Quick Action Navigation CTA */}
         <section className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md">
           <div className="space-y-1 text-center sm:text-left">

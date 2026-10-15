@@ -37,8 +37,9 @@ export function ContentRenderer({ content, className, inArticleAdSlotId }: Conte
     );
   }
 
-  // If inArticleAdSlotId is provided and content is sufficiently long (> 600 characters)
-  if (inArticleAdSlotId && content.length > 600) {
+  // If inArticleAdSlotId is provided, manual ads are enabled, and content is sufficiently long (> 600 characters)
+  const isManualAdsEnabled = process.env.NEXT_PUBLIC_ENABLE_MANUAL_ADS === "true";
+  if (isManualAdsEnabled && inArticleAdSlotId && content.length > 600) {
     const h2Regex = /<h2[\s>]/gi;
     let match;
     let count = 0;

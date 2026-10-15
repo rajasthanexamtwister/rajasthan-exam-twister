@@ -132,7 +132,7 @@ export function QuestionReportModal({
         }
       }}
     >
-      <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 w-full max-w-lg overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+      <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 w-full max-w-lg max-h-[90vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-150">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4.5 bg-gradient-to-r from-amber-500/10 via-amber-50 to-white border-b border-amber-100">
           <div className="flex items-center gap-3">
@@ -188,7 +188,7 @@ export function QuestionReportModal({
             </div>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="p-6 space-y-5">
+          <form onSubmit={handleSubmit} className="p-6 space-y-5 overflow-y-auto">
             {questionSnippet && (
               <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-3 text-xs text-slate-700">
                 <span className="font-bold text-slate-900 block mb-0.5">

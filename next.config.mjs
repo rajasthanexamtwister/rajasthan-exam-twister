@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  staticPageGenerationTimeout: 180,
   compiler: {
     removeConsole: process.env.NODE_ENV === "production" ? { exclude: ["error", "warn"] } : false,
   },
@@ -16,6 +17,55 @@ const nextConfig = {
         hostname: "**",
       },
     ],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/blogs/2026-27",
+        destination: "/blogs/cm-anuprati-coaching-yojana-2026-27",
+        permanent: true,
+      },
+      {
+        source: "/blogs/rajasthan-ke-khanij-khanij-ke-kaka",
+        destination: "/blogs/rajasthan-ke-khanij-sansadhan-guide",
+        permanent: true,
+      },
+      {
+        source: "/blogs/rajasthan-ke-ka-ki-ka",
+        destination: "/blogs/rajasthan-prajamandal-andolan-timeline",
+        permanent: true,
+      },
+      {
+        source: "/blogs/rajasthan-polity-polity-ka",
+        destination: "/blogs/rajasthan-polity-complete-guide",
+        permanent: true,
+      },
+      {
+        source: "/blogs/1857-ki-rajasthan-ka-ka",
+        destination: "/blogs/1857-kranti-rajasthan-contribution",
+        permanent: true,
+      },
+      {
+        source: "/blogs/rajasthan-ke-lok-nritya-ka-nritya",
+        destination: "/blogs/rajasthan-ke-lok-nritya-complete-guide",
+        permanent: true,
+      },
+      {
+        source: "/blogs/rsmssb-ldc-2026-score-card-out-download-link",
+        destination: "/blogs/rssb-ldc-score-card-2026-out-check-marks-direct-link",
+        permanent: true,
+      },
+      {
+        source: "/blogs/rajasthan-cet-graduate-level-form-reopen-status-rssb-update",
+        destination: "/blogs/rajasthan-cet-2026-ke-syllabus-preparation",
+        permanent: true,
+      },
+      {
+        source: "/notes/rajasthan-lok-sanskriti-mela-tyohar-master-handbook",
+        destination: "/notes/rajasthan-mela-tyohar-combined",
+        permanent: true,
+      },
+    ];
   },
   async headers() {
     return [

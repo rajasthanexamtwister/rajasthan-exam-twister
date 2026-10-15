@@ -28,6 +28,7 @@ import {
   Send,
   Phone,
   Smartphone,
+  Flag,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import clsx from "clsx";
@@ -48,6 +49,30 @@ interface AttemptHistoryItem {
   incorrectCount: number;
   unattemptedCount: number;
   submittedAt: string;
+}
+
+interface StudentReportItem {
+  _id: string;
+  quizId?: {
+    _id: string;
+    title: string;
+    slug: string;
+    subject?: string;
+  };
+  quizSlug: string;
+  questionId?: {
+    _id: string;
+    questionText: string;
+    order: number;
+  };
+  reason: string;
+  reasonLabel: string;
+  description?: string;
+  status: "PENDING" | "UNDER_REVIEW" | "RESOLVED" | "REJECTED";
+  resolutionReason?: string;
+  studentFeedback?: string;
+  resolvedAt?: string;
+  createdAt: string;
 }
 
 interface WeakTopicItem {
@@ -72,6 +97,8 @@ export default function StudentProfilePage() {
   const router = useRouter();
   const [attempts, setAttempts] = useState<AttemptHistoryItem[]>([]);
   const [weakTopics, setWeakTopics] = useState<WeakTopicItem[]>([]);
+  const [reports, setReports] = useState<StudentReportItem[]>([]);
+  const [loadingReports, setLoadingReports] = useState(false);
   const [stats, setStats] = useState<StudentStats>({
     totalAttempts: 0,
     averagePercentage: 0,
@@ -191,6 +218,17 @@ export default function StudentProfilePage() {
         })
         .catch((err) => console.error("Failed to load weak topics:", err))
         .finally(() => setLoadingWeakTopics(false));
+
+      setLoadingReports(true);
+      fetch("/api/student/question-reports")
+        .then((res) => (res.ok ? res.json() : null))
+        .then((data) => {
+          if (data?.data?.reports) {
+            setReports(data.data.reports);
+          }
+        })
+        .catch((err) => console.error("Failed to load student reports:", err))
+        .finally(() => setLoadingReports(false));
     }
   }, [session]);
 
@@ -718,6 +756,122 @@ export default function StudentProfilePage() {
                         </Link>
                       )}
                     </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        {/* My Reported Questions Section (Dispute Tracking) */}
+        <div className="bg-white rounded-3xl border border-amber-200/80 shadow-xs overflow-hidden">
+          <div className="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Flag className="w-4 h-4 text-amber-600" />
+              <h2 className="text-sm font-extrabold text-[#0B132B] uppercase tracking-wider">
+                My Reported Questions &amp; Dispute Status
+              </h2>
+            </div>
+            <span className="text-xs text-slate-500 font-semibold">
+              {reports.length} Submitted
+            </span>
+          </div>
+
+          {loadingReports ? (
+            <div className="p-8 text-center space-y-2">
+              <Loader2 className="w-6 h-6 animate-spin text-amber-500 mx-auto" />
+              <p className="text-xs text-slate-500 font-medium">Checking your reported questions...</p>
+            </div>
+          ) : reports.length === 0 ? (
+            <div className="p-6 text-center space-y-1.5 text-slate-500 text-xs">
+              <p className="font-semibold text-slate-700">No question reports submitted yet.</p>
+              <p className="text-[11px] text-slate-400">
+                If you encounter an error during any test, click the flag icon on that question to submit an editorial review request.
+              </p>
+            </div>
+          ) : (
+            <div className="divide-y divide-slate-100">
+              {reports.map((rep) => {
+                const isPending = rep.status === "PENDING";
+                const isUnderReview = rep.status === "UNDER_REVIEW";
+                const isResolved = rep.status === "RESOLVED";
+                const isRejected = rep.status === "REJECTED";
+
+                const formattedDate = new Date(rep.createdAt).toLocaleDateString("en-IN", {
+                  day: "numeric",
+                  month: "short",
+                  year: "numeric",
+                });
+
+                return (
+                  <div
+                    key={rep._id}
+                    className="p-4 sm:px-6 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-amber-50/30 transition-colors"
+                  >
+                    <div className="space-y-1.5 flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span
+                          className={clsx(
+                            "px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border",
+                            isPending && "bg-amber-50 text-amber-800 border-amber-300",
+                            isUnderReview && "bg-sky-50 text-sky-800 border-sky-300",
+                            isResolved && "bg-emerald-50 text-emerald-800 border-emerald-300",
+                            isRejected && "bg-rose-50 text-rose-800 border-rose-300"
+                          )}
+                        >
+                          {rep.status === "PENDING"
+                            ? "Pending Review"
+                            : rep.status === "UNDER_REVIEW"
+                            ? "Under Review"
+                            : rep.status === "RESOLVED"
+                            ? "Resolved & Verified"
+                            : "Rejected - Key Upheld"}
+                        </span>
+
+                        <span className="text-[11px] font-bold text-slate-700">
+                          {rep.reasonLabel}
+                        </span>
+
+                        <span className="text-[11px] text-slate-400 font-medium">
+                          {formattedDate}
+                        </span>
+                      </div>
+
+                      {rep.questionId?.questionText && (
+                        <p className="text-xs font-bold text-[#0B132B] line-clamp-1">
+                          Question: &ldquo;{rep.questionId.questionText}&rdquo;
+                        </p>
+                      )}
+
+                      {/* Editorial feedback for student (if resolved/rejected) */}
+                      {rep.studentFeedback ? (
+                        <div className="text-[11px] bg-slate-50 p-2 rounded-xl border border-slate-200 text-slate-700">
+                          <span className="font-bold text-slate-900 block text-[10px] uppercase">
+                            Editorial Board Notice:
+                          </span>
+                          {rep.studentFeedback}
+                        </div>
+                      ) : rep.resolutionReason ? (
+                        <div className="text-[11px] bg-slate-50 p-2 rounded-xl border border-slate-200 text-slate-700">
+                          <span className="font-bold text-slate-900 block text-[10px] uppercase">
+                            Resolution Note:
+                          </span>
+                          {rep.resolutionReason}
+                        </div>
+                      ) : null}
+                    </div>
+
+                    {rep.quizSlug && (
+                      <div className="shrink-0 pt-2 sm:pt-0">
+                        <Link
+                          href={`/quizzes/${rep.quizSlug}`}
+                          className="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-amber-400 hover:text-slate-950 text-slate-700 text-xs font-bold transition-all whitespace-nowrap inline-flex items-center gap-1"
+                        >
+                          <span>View Quiz</span>
+                          <ArrowRight className="w-3 h-3" />
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 );
               })}

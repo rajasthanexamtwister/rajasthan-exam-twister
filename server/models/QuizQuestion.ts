@@ -2,6 +2,26 @@ import mongoose, { Schema, Document, Model } from "mongoose";
 
 export type QuestionSeoStatus = "DRAFT" | "PUBLISHED" | "ARCHIVED";
 
+export interface IQuestionAuditEntry {
+  modifiedBy: string;
+  modifiedAt: Date;
+  changeReason: string;
+  evidenceSource?: string;
+  reportId?: mongoose.Types.ObjectId | null;
+  previousState: {
+    questionText: string;
+    options: string[];
+    correctOptionIndex: number;
+    explanation?: string;
+  };
+  newState: {
+    questionText: string;
+    options: string[];
+    correctOptionIndex: number;
+    explanation?: string;
+  };
+}
+
 export interface IQuizQuestion extends Document {
   _id: mongoose.Types.ObjectId;
   quizId: mongoose.Types.ObjectId;
@@ -26,6 +46,9 @@ export interface IQuizQuestion extends Document {
   reviewedBy?: string;
   reviewedAt?: Date;
   examSource?: string;
+
+  // Question Correction Audit Trail
+  auditTrail?: IQuestionAuditEntry[];
 
   createdAt: Date;
   updatedAt: Date;
@@ -126,6 +149,27 @@ const QuizQuestionSchema = new Schema<IQuizQuestion>(
       type: String,
       trim: true,
     },
+    auditTrail: [
+      {
+        modifiedBy: { type: String, required: true },
+        modifiedAt: { type: Date, default: Date.now },
+        changeReason: { type: String, required: true, trim: true },
+        evidenceSource: { type: String, trim: true },
+        reportId: { type: Schema.Types.ObjectId, ref: "QuestionIssueReport", default: null },
+        previousState: {
+          questionText: { type: String, required: true },
+          options: { type: [String], required: true },
+          correctOptionIndex: { type: Number, required: true },
+          explanation: { type: String, default: "" },
+        },
+        newState: {
+          questionText: { type: String, required: true },
+          options: { type: [String], required: true },
+          correctOptionIndex: { type: Number, required: true },
+          explanation: { type: String, default: "" },
+        },
+      },
+    ],
   },
   {
     timestamps: true,

@@ -87,13 +87,18 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
 
     try {
       const session = await getServerSession(authOptions);
-      if (session?.user?.email) {
-        studentEmail = session.user.email;
+      if (session?.user) {
+        studentEmail = session.user.email || null;
         studentName = session.user.name || null;
 
-        const student = await Student.findOne({ email: session.user.email.toLowerCase() }).select("_id").lean();
-        if (student) {
-          studentId = student._id as mongoose.Types.ObjectId;
+        const sessionUserId = (session.user as any).id;
+        if (sessionUserId && mongoose.Types.ObjectId.isValid(sessionUserId)) {
+          studentId = new mongoose.Types.ObjectId(sessionUserId);
+        } else if (session.user.email) {
+          const student = await Student.findOne({ email: session.user.email.toLowerCase() }).select("_id").lean();
+          if (student) {
+            studentId = student._id as mongoose.Types.ObjectId;
+          }
         }
       }
     } catch (sessionErr) {
@@ -101,11 +106,11 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
       console.warn("Session retrieval fallback in question report:", sessionErr);
     }
 
-    // Duplicate check: Look for existing pending report for this question
+    // Duplicate check: Look for existing pending or under-review report for this question
     const duplicateQuery: any = {
       questionId: new mongoose.Types.ObjectId(questionId),
       reason,
-      status: "PENDING",
+      status: { $in: ["PENDING", "UNDER_REVIEW"] },
       createdAt: { $gte: new Date(Date.now() - 2 * 60 * 60 * 1000) }, // within last 2 hours
     };
 

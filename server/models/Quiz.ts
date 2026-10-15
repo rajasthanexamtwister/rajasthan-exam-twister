@@ -14,6 +14,7 @@ export interface IQuiz extends Document {
   difficulty: QuizDifficulty;
   attemptCount: number;
   contentFingerprint?: string;
+  isPersonalizedBooster?: boolean;
   status: ContentStatus;
   timeLimitSeconds?: number | null;
   shuffleQuestions: boolean;
@@ -72,6 +73,11 @@ const QuizSchema = new Schema<IQuiz>(
       sparse: true,
       trim: true,
     },
+    isPersonalizedBooster: {
+      type: Boolean,
+      default: false,
+      index: true,
+    },
     status: {
       type: String,
       enum: ["DRAFT", "PUBLISHED", "ARCHIVED"],
@@ -115,6 +121,7 @@ const QuizSchema = new Schema<IQuiz>(
 
 // Compound indexes for published listings & discovery
 QuizSchema.index({ status: 1, publishedAt: -1 });
+QuizSchema.index({ isPersonalizedBooster: 1, status: 1 });
 QuizSchema.index({ subject: 1, status: 1 });
 QuizSchema.index({ examTags: 1, status: 1 });
 QuizSchema.index({ difficulty: 1, status: 1 });

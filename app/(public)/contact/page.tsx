@@ -82,11 +82,11 @@ export default function ContactPage() {
               <MapPin className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-[#0B132B]">Headquarters</h3>
-              <p className="text-xs text-slate-500 mt-1">Rajasthan Competitive Examination Hub</p>
+              <h3 className="text-sm font-bold text-[#0B132B]">Operational Base</h3>
+              <p className="text-xs text-slate-500 mt-1">Editorial & Educational Content Desk</p>
             </div>
             <p className="text-xs font-bold text-slate-800">
-              Jaipur, Rajasthan, India (302001)
+              Jaipur, Rajasthan, India
             </p>
           </div>
         </div>

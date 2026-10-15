@@ -47,6 +47,11 @@ export class QuizRepository {
 
     if (!isAdmin) {
       query.status = "PUBLISHED";
+      // Exclude personalized booster tests using explicit data flag and fallback slug pattern
+      query.isPersonalizedBooster = { $ne: true };
+      query.slug = { $not: /^booster-|alternative-name-but-same-questions/i };
+      // Quality criteria: exclude internal developer / test quizzes
+      query.title = { $not: /alternative-name-but-same-questions|^\[?test\]?/i };
     } else if (filter.status && filter.status !== "ALL") {
       query.status = filter.status;
     }

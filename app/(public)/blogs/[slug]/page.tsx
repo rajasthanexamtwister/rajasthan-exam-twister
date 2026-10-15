@@ -18,9 +18,20 @@ interface BlogDetailPageProps {
   };
 }
 
+// Known legacy/mangled blog slug aliases mapped to target database slugs
+const BLOG_SLUG_ALIASES: Record<string, string> = {
+  "2026-27": "cm-anuprati-coaching-yojana-2026-27",
+  "rajasthan-anuprati-coaching-yojana-2026-27": "cm-anuprati-coaching-yojana-2026-27",
+};
+
+function resolveBlogSlug(slug: string): string {
+  return BLOG_SLUG_ALIASES[slug.toLowerCase()] || slug;
+}
+
 export async function generateMetadata({ params }: BlogDetailPageProps): Promise<Metadata> {
   const siteUrl = getSiteUrl();
-  const blog = await BlogRepository.findBySlug(params.slug);
+  const targetSlug = resolveBlogSlug(params.slug);
+  const blog = await BlogRepository.findBySlug(targetSlug);
   if (!blog || blog.status !== "PUBLISHED") {
     return {
       title: "Blog Not Found | Rajasthan Exam Twister",
@@ -32,7 +43,26 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
   const title = rawTitle.includes("[") ? rawTitle : `${rawTitle} [2026 Strategy & Guide]`;
   const ogTitle = blog.metaTitle || `${title} | Rajasthan Exam Twister`;
   const description = generateMetaDescription(blog.content, blog.metaDescription, blog.excerpt);
-  const canonicalUrl = blog.canonicalUrl || `${siteUrl}/blogs/${blog.slug}`;
+
+  // Normalize canonical URL to always use primary siteUrl domain
+  let canonicalUrl = `${siteUrl}/blogs/${params.slug}`;
+  if (blog.canonicalUrl && blog.canonicalUrl.trim()) {
+    try {
+      const parsed = new URL(blog.canonicalUrl.trim());
+      const primaryUrl = new URL(siteUrl);
+      if (parsed.hostname.replace(/^www\./, "") === primaryUrl.hostname.replace(/^www\./, "")) {
+        parsed.hostname = primaryUrl.hostname;
+        if (parsed.pathname === "/blogs/2026-27" && params.slug !== "2026-27") {
+          parsed.pathname = `/blogs/${params.slug}`;
+        }
+        canonicalUrl = parsed.toString().replace(/\/$/, "");
+      } else {
+        canonicalUrl = blog.canonicalUrl.trim();
+      }
+    } catch {
+      canonicalUrl = `${siteUrl}/blogs/${params.slug}`;
+    }
+  }
   
   const coverImageDoc = blog.coverImageId as unknown as { url?: string } | undefined;
   const ogImageUrl = coverImageDoc?.url || `${siteUrl}/brand/banner.png`;
@@ -69,7 +99,8 @@ export async function generateMetadata({ params }: BlogDetailPageProps): Promise
 
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const siteUrl = getSiteUrl();
-  const blog = await BlogRepository.findBySlug(params.slug);
+  const targetSlug = resolveBlogSlug(params.slug);
+  const blog = await BlogRepository.findBySlug(targetSlug);
 
   if (!blog || blog.status !== "PUBLISHED") {
     notFound();
@@ -370,7 +401,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
           <AdSenseUnit
             slotId="6837501896"
             adFormat="autorelaxed"
-            label="Recommended For You"
+            label="Advertisements"
             minHeight={250}
           />
         </div>

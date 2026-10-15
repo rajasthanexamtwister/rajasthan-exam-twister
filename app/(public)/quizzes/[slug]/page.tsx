@@ -38,9 +38,22 @@ export async function generateMetadata({ params }: QuizPageProps): Promise<Metad
   const description = `Take the ${quiz.title} mock test (${quiz.questionCount} questions). Test your exam readiness with authentic scoring and explanations.`;
   const canonicalUrl = `${siteUrl}/quizzes/${quiz.slug}`;
 
+  const isBoosterOrTest =
+    Boolean((quiz as any).isPersonalizedBooster) ||
+    quiz.slug.startsWith("booster-") ||
+    /alternative-name-but-same-questions|^\[?test\]?/i.test(quiz.title);
+
   return {
     title,
     description,
+    ...(isBoosterOrTest
+      ? {
+          robots: {
+            index: false,
+            follow: false,
+          },
+        }
+      : {}),
     alternates: {
       canonical: canonicalUrl,
     },

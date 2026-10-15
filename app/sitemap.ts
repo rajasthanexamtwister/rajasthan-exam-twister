@@ -130,9 +130,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       };
     });
 
-    // Query PUBLISHED quizzes only
+    // Query PUBLISHED public quizzes only (exclude personalized booster tests and developer test quizzes)
     const publishedQuizzes = await Quiz.find(
-      { status: "PUBLISHED" },
+      {
+        status: "PUBLISHED",
+        isPersonalizedBooster: { $ne: true },
+        slug: { $not: /^booster-|alternative-name-but-same-questions/i },
+        title: { $not: /alternative-name-but-same-questions|^\[?test\]?/i },
+      },
       "slug updatedAt publishedAt"
     ).lean();
 

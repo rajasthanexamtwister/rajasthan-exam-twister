@@ -55,3 +55,6 @@ public/uploads/*
 !public/uploads/social-kits/**
 !public/uploads/social_posts_history.json
 
+# Scratch directory
+/scratch/
+

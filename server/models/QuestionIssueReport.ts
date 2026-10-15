@@ -5,9 +5,10 @@ export type QuestionIssueReason =
   | "INCORRECT_QUESTION"
   | "SPELLING_TYPO"
   | "OPTIONS_INCORRECT"
+  | "INCORRECT_EXPLANATION"
   | "OTHER";
 
-export type QuestionIssueStatus = "PENDING" | "REVIEWED" | "RESOLVED" | "REJECTED";
+export type QuestionIssueStatus = "PENDING" | "UNDER_REVIEW" | "RESOLVED" | "REJECTED";
 
 export interface IQuestionIssueReport extends Document {
   _id: mongoose.Types.ObjectId;
@@ -22,6 +23,11 @@ export interface IQuestionIssueReport extends Document {
   description?: string;
   status: QuestionIssueStatus;
   adminNotes?: string;
+  assignedTo?: string | null;
+  assignedAt?: Date | null;
+  evidenceSource?: string | null;
+  resolutionReason?: string | null;
+  studentFeedback?: string | null;
   resolvedAt?: Date | null;
   resolvedBy?: string | null;
   clientIp?: string | null;
@@ -74,6 +80,7 @@ const QuestionIssueReportSchema = new Schema<IQuestionIssueReport>(
         "INCORRECT_QUESTION",
         "SPELLING_TYPO",
         "OPTIONS_INCORRECT",
+        "INCORRECT_EXPLANATION",
         "OTHER",
       ],
       index: true,
@@ -91,7 +98,7 @@ const QuestionIssueReportSchema = new Schema<IQuestionIssueReport>(
     },
     status: {
       type: String,
-      enum: ["PENDING", "REVIEWED", "RESOLVED", "REJECTED"],
+      enum: ["PENDING", "UNDER_REVIEW", "RESOLVED", "REJECTED"],
       default: "PENDING",
       index: true,
     },
@@ -99,6 +106,30 @@ const QuestionIssueReportSchema = new Schema<IQuestionIssueReport>(
       type: String,
       trim: true,
       default: "",
+    },
+    assignedTo: {
+      type: String,
+      default: null,
+      trim: true,
+    },
+    assignedAt: {
+      type: Date,
+      default: null,
+    },
+    evidenceSource: {
+      type: String,
+      trim: true,
+      default: null,
+    },
+    resolutionReason: {
+      type: String,
+      trim: true,
+      default: null,
+    },
+    studentFeedback: {
+      type: String,
+      trim: true,
+      default: null,
     },
     resolvedAt: {
       type: Date,
@@ -125,6 +156,7 @@ const QuestionIssueReportSchema = new Schema<IQuestionIssueReport>(
 
 QuestionIssueReportSchema.index({ quizId: 1, questionId: 1, createdAt: -1 });
 QuestionIssueReportSchema.index({ status: 1, createdAt: -1 });
+QuestionIssueReportSchema.index({ studentId: 1, createdAt: -1 });
 
 export const QuestionIssueReport: Model<IQuestionIssueReport> =
   mongoose.models.QuestionIssueReport ||

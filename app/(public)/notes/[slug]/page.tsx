@@ -472,7 +472,7 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
           <AdSenseUnit
             slotId="6837501896"
             adFormat="autorelaxed"
-            label="Recommended For You"
+            label="Advertisements"
             minHeight={250}
           />
         </div>

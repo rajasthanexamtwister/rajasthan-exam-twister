@@ -17,12 +17,14 @@ import {
   Users,
   Share2,
   X,
+  Flag,
 } from "lucide-react";
 import clsx from "clsx";
 import { useMobileSidebar } from "./admin-shell";
 
 const navigation = [
   { name: "Dashboard", href: "/admin", icon: LayoutDashboard, exact: true },
+  { name: "Question Reports", href: "/admin/question-reports", icon: Flag, exact: false },
   { name: "Social Studio", href: "/admin/social-studio", icon: Share2, exact: false },
   { name: "AI Automation", href: "/admin/blog-automation", icon: Sparkles, exact: false },
   { name: "Blogs", href: "/admin/blogs", icon: FileText, exact: false },

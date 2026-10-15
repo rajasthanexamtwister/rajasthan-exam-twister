@@ -132,10 +132,16 @@ describe("Robots & Sitemap Configuration", () => {
 
     const entries = await sitemap();
 
-    // Verify Mongo query strictly searched { status: "PUBLISHED" }
+    // Verify Mongo query strictly searched { status: "PUBLISHED" } and excludes boosters
     expect(Blog.find).toHaveBeenCalledWith({ status: "PUBLISHED" }, expect.any(String));
     expect(Note.find).toHaveBeenCalledWith({ status: "PUBLISHED" }, expect.any(String));
-    expect(Quiz.find).toHaveBeenCalledWith({ status: "PUBLISHED" }, expect.any(String));
+    expect(Quiz.find).toHaveBeenCalledWith(
+      expect.objectContaining({
+        status: "PUBLISHED",
+        isPersonalizedBooster: { $ne: true },
+      }),
+      expect.any(String)
+    );
 
     const urls = entries.map((e) => e.url);
 

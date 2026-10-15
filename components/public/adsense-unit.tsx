@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface AdSenseUnitProps {
   slotId: string;
@@ -13,6 +13,19 @@ interface AdSenseUnitProps {
   minHeight?: number;
 }
 
+/**
+ * Google AdSense policy strictly permits only "Advertisements" or "Sponsored Links" (or "Sponsored").
+ * Disallowed labels such as "Recommended For You", "Partners", etc. are strictly sanitized.
+ */
+function sanitizeAdLabel(label?: string): string {
+  if (!label) return "Advertisements";
+  const trimmed = label.trim().toLowerCase();
+  if (trimmed === "sponsored" || trimmed === "sponsored links") {
+    return "Sponsored";
+  }
+  return "Advertisements";
+}
+
 export function AdSenseUnit({
   slotId,
   adFormat = "auto",
@@ -20,13 +33,20 @@ export function AdSenseUnit({
   fullWidthResponsive = true,
   className = "",
   style,
-  label = "Sponsored",
+  label = "Advertisements",
   minHeight = 100,
 }: AdSenseUnitProps) {
   const adRef = useRef<HTMLModElement | null>(null);
   const isPushed = useRef(false);
+  const [adLoaded, setAdLoaded] = useState(false);
+
+  // Manual ad slots are suppressed during initial AdSense site review.
+  // The primary Auto-Ads script in app/layout.tsx remains active for verification.
+  const isManualAdsEnabled = process.env.NEXT_PUBLIC_ENABLE_MANUAL_ADS === "true";
 
   useEffect(() => {
+    if (!isManualAdsEnabled) return;
+
     try {
       if (typeof window !== "undefined" && adRef.current && !isPushed.current) {
         if (!adRef.current.hasAttribute("data-adsbygoogle-status")) {
@@ -35,17 +55,23 @@ export function AdSenseUnit({
         }
       }
     } catch (err) {
-      // Ignore adsbygoogle duplicate push errors in React strict mode
       console.warn("AdSense push notice:", err);
     }
-  }, []);
+  }, [isManualAdsEnabled]);
+
+  // If manual ads are disabled during site review, render nothing (no empty bordered box)
+  if (!isManualAdsEnabled) {
+    return null;
+  }
+
+  const compliantLabel = sanitizeAdLabel(label);
 
   return (
     <div
       className={`my-6 mx-auto w-full text-center overflow-hidden rounded-2xl border border-amber-200/60 bg-[#FAF8F5]/80 p-2 sm:p-3 shadow-2xs ${className}`}
     >
       <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1 font-sans">
-        {label}
+        {compliantLabel}
       </div>
       <div
         className="w-full flex justify-center items-center overflow-hidden"
@@ -65,3 +91,4 @@ export function AdSenseUnit({
     </div>
   );
 }
+
