@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import { connectToDatabase } from "@/server/lib/mongodb";
 import { getSessionFromRequest } from "@/server/lib/token";
 import { QuestionIssueReport } from "@/server/models/QuestionIssueReport";
+import { Quiz } from "@/server/models/Quiz";
+import { QuizQuestion } from "@/server/models/QuizQuestion";
 import { errorResponse, successResponse } from "@/server/lib/api-response";
 
 export const dynamic = "force-dynamic";
@@ -89,19 +91,31 @@ export async function GET(request: NextRequest) {
         QuestionIssueReport.countDocuments({ status: "REJECTED" }),
       ]);
 
+    const counts = {
+      pending: pendingCount,
+      underReview: underReviewCount,
+      resolved: resolvedCount,
+      rejected: rejectedCount,
+      total: pendingCount + underReviewCount + resolvedCount + rejectedCount,
+    };
+    const totalPages = Math.ceil(total / pageSize) || 1;
+
     return successResponse({
+      success: true,
+      data: {
+        reports,
+        total,
+        page,
+        pageSize,
+        totalPages,
+        counts,
+      },
       reports,
       total,
       page,
       pageSize,
-      totalPages: Math.ceil(total / pageSize) || 1,
-      counts: {
-        pending: pendingCount,
-        underReview: underReviewCount,
-        resolved: resolvedCount,
-        rejected: rejectedCount,
-        total: pendingCount + underReviewCount + resolvedCount + rejectedCount,
-      },
+      totalPages,
+      counts,
     });
   } catch (error: any) {
     console.error("Admin question reports fetch error:", error);

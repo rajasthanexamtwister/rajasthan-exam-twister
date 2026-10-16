@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 import { Inter, Outfit, Noto_Sans_Devanagari, Noto_Serif_Devanagari } from "next/font/google";
 import { getSiteUrl } from "@/server/lib/seo";
 import { OFFICIAL_SOCIAL_URLS } from "@/server/lib/social-links";
@@ -167,18 +166,18 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Google AdSense Script (Standard async script tag required by Google to prevent data-nscript rejection) */}
+        <script
+          async
+          id="google-adsense"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8986858563387447"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="min-h-full flex flex-col font-sans antialiased bg-[#FAF8F5] text-slate-900 selection:bg-amber-200 selection:text-amber-950">
         {/* Google Consent Mode v2 & Google Analytics 4 Script */}
         <GoogleConsentScripts />
-
-        {/* Google AdSense Script (Loaded lazyOnload to unblock FCP & LCP) */}
-        <Script
-          id="google-adsense"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8986858563387447"
-          strategy="lazyOnload"
-          crossOrigin="anonymous"
-        />
 
         {/* Site-wide Organization + WebSite structured data */}
         <script

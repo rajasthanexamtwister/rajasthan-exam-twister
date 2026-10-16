@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import { connectToDatabase } from "@/server/lib/mongodb";
 import { getSessionFromRequest } from "@/server/lib/token";
 import { QuestionIssueReport } from "@/server/models/QuestionIssueReport";
+import { Quiz } from "@/server/models/Quiz";
 import { QuizQuestion } from "@/server/models/QuizQuestion";
 import { UpdateQuestionReportStatusSchema } from "@/server/validation/question-report";
 import { errorResponse, successResponse } from "@/server/lib/api-response";
@@ -51,6 +52,11 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
       .lean();
 
     return successResponse({
+      success: true,
+      data: {
+        report,
+        otherReports,
+      },
       report,
       otherReports,
     });
@@ -143,6 +149,11 @@ export async function PATCH(request: NextRequest, { params }: RouteParams) {
     await existingReport.save();
 
     return successResponse({
+      success: true,
+      data: {
+        report: existingReport,
+        message: `Report status updated to ${status}.`,
+      },
       report: existingReport,
       message: `Report status updated to ${status}.`,
     });

@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import { connectToDatabase } from "@/server/lib/mongodb";
 import { getSessionFromRequest } from "@/server/lib/token";
 import { QuestionIssueReport } from "@/server/models/QuestionIssueReport";
+import { Quiz } from "@/server/models/Quiz";
 import { QuizQuestion, IQuestionAuditEntry } from "@/server/models/QuizQuestion";
 import { QuizAttempt } from "@/server/models/QuizAttempt";
 import { CorrectQuestionSchema } from "@/server/validation/question-report";
@@ -163,6 +164,19 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
 
     return successResponse(
       {
+        success: true,
+        data: {
+          message: "Question corrected successfully and issue report resolved.",
+          questionId: question._id,
+          reportId: report._id,
+          auditEntry,
+          affectedAttemptsCount,
+          seoStatus: question.seoStatus,
+          historicalNotice:
+            affectedAttemptsCount > 0
+              ? `${affectedAttemptsCount} historical student attempt(s) previously answered this question. Historical attempt scores are preserved and remain immutable.`
+              : "No historical attempts were impacted.",
+        },
         message: "Question corrected successfully and issue report resolved.",
         questionId: question._id,
         reportId: report._id,

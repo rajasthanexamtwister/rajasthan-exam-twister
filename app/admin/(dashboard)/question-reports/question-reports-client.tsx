@@ -187,15 +187,16 @@ export function QuestionReportsClient() {
       }
 
       const json = await res.json();
-      if (json.success && json.data) {
-        setReports(json.data.reports || []);
-        setTotalPages(json.data.totalPages || 1);
-        setTotalItems(json.data.total || 0);
-        if (json.data.counts) {
-          setCounts(json.data.counts);
+      const payload = json.data || json;
+      if (res.ok && json.success !== false && (payload.reports !== undefined || Array.isArray(payload.reports))) {
+        setReports(payload.reports || []);
+        setTotalPages(payload.totalPages || 1);
+        setTotalItems(payload.total || 0);
+        if (payload.counts) {
+          setCounts(payload.counts);
         }
       } else {
-        throw new Error(json.error?.message || "Failed to load reports");
+        throw new Error(json.error?.message || payload.error?.message || "Failed to load reports");
       }
     } catch (err: any) {
       console.error("Fetch question reports error:", err);
@@ -219,10 +220,12 @@ export function QuestionReportsClient() {
       const res = await fetch(`/api/admin/question-reports/${reportId}`);
       if (!res.ok) throw new Error("Failed to fetch report details");
       const json = await res.json();
-      const reportData: QuestionReportItem = json.data.report;
+      const payload = json.data || json;
+      const reportData: QuestionReportItem = payload.report;
+      if (!reportData) throw new Error(json.error?.message || "Report details not found");
 
       setSelectedReport(reportData);
-      setOtherReportsForQuestion(json.data.otherReports || []);
+      setOtherReportsForQuestion(payload.otherReports || []);
 
       // Prepopulate form fields
       setActionNotes(reportData.adminNotes || "");
@@ -262,12 +265,15 @@ export function QuestionReportsClient() {
       });
 
       const json = await res.json();
-      if (!res.ok || !json.success) {
+      if (!res.ok || json.success === false) {
         throw new Error(json.error?.message || "Failed to update review status");
       }
 
+      const payload = json.data || json;
       setActionFeedbackMsg({ type: "success", text: `Report status updated to ${newStatus}.` });
-      setSelectedReport(json.data.report);
+      if (payload.report) {
+        setSelectedReport(payload.report);
+      }
       fetchReports();
     } catch (err: any) {
       console.error("Update review action error:", err);
@@ -342,12 +348,13 @@ export function QuestionReportsClient() {
       });
 
       const json = await res.json();
-      if (!res.ok || !json.success) {
+      if (!res.ok || json.success === false) {
         throw new Error(json.error?.message || "Failed to apply question correction");
       }
 
+      const payload = json.data || json;
       setCorrectionSuccessMsg(
-        `Question corrected successfully! ${json.data.historicalNotice || ""}`
+        `Question corrected successfully! ${payload.historicalNotice || ""}`
       );
 
       // Refresh data

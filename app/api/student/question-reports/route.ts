@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import { connectToDatabase } from "@/server/lib/mongodb";
 import { authOptions } from "@/server/lib/auth-options";
 import { QuestionIssueReport } from "@/server/models/QuestionIssueReport";
+import { Quiz } from "@/server/models/Quiz";
+import { QuizQuestion } from "@/server/models/QuizQuestion";
 import { Student } from "@/server/models/Student";
 import { errorResponse, successResponse } from "@/server/lib/api-response";
 
@@ -54,6 +56,11 @@ export async function GET(request: NextRequest) {
       .lean();
 
     return successResponse({
+      success: true,
+      data: {
+        reports,
+        total: reports.length,
+      },
       reports,
       total: reports.length,
     });
