@@ -48,8 +48,16 @@ export async function GET(request: NextRequest) {
     const reports = await QuestionIssueReport.find(filter)
       .sort({ createdAt: -1 })
       .limit(50)
-      .populate("quizId", "title slug subject")
-      .populate("questionId", "questionText order")
+      .populate({
+        path: "quizId",
+        model: Quiz,
+        select: "title slug subject",
+      })
+      .populate({
+        path: "questionId",
+        model: QuizQuestion,
+        select: "questionText order",
+      })
       .select(
         "_id quizId quizSlug questionId reason reasonLabel description status resolutionReason studentFeedback resolvedAt createdAt"
       )

@@ -31,11 +31,17 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     await connectToDatabase();
 
     const report = await QuestionIssueReport.findById(id)
-      .populate("quizId", "title slug subject difficulty status")
-      .populate(
-        "questionId",
-        "questionText questionTextEn options optionsEn correctOptionIndex explanation order seoStatus isAnswerVerified verifiedOptionIndex verificationSource reviewedBy reviewedAt auditTrail"
-      )
+      .populate({
+        path: "quizId",
+        model: Quiz,
+        select: "title slug subject difficulty status",
+      })
+      .populate({
+        path: "questionId",
+        model: QuizQuestion,
+        select:
+          "questionText questionTextEn options optionsEn correctOptionIndex explanation order seoStatus isAnswerVerified verifiedOptionIndex verificationSource reviewedBy reviewedAt auditTrail",
+      })
       .lean();
 
     if (!report) {

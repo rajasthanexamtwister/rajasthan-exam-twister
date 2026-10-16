@@ -45,6 +45,15 @@ self.addEventListener("fetch", (event) => {
   // Strictly skip cross-origin requests (Google Tag Manager, AdSense, Analytics, CDN, etc.)
   if (url.origin !== self.location.origin) return;
 
+  // Never intercept API routes, Next.js assets/chunks, or Admin routes
+  if (
+    url.pathname.startsWith("/api/") ||
+    url.pathname.startsWith("/admin") ||
+    url.pathname.startsWith("/_next/")
+  ) {
+    return;
+  }
+
   event.respondWith(
     fetch(event.request)
       .then((networkResponse) => {

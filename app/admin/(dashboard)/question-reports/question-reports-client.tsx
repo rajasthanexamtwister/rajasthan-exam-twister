@@ -183,7 +183,14 @@ export function QuestionReportsClient() {
 
       const res = await fetch(`/api/admin/question-reports?${query.toString()}`);
       if (!res.ok) {
-        throw new Error(`Failed to load reports (HTTP ${res.status})`);
+        let msg = `HTTP ${res.status}`;
+        try {
+          const errData = await res.json();
+          if (errData?.error?.message) {
+            msg = `${errData.error.message} (${msg})`;
+          }
+        } catch {}
+        throw new Error(`Failed to load reports: ${msg}`);
       }
 
       const json = await res.json();

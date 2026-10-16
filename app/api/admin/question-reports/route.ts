@@ -72,17 +72,26 @@ export async function GET(request: NextRequest) {
 
     const skip = (page - 1) * pageSize;
 
+    // Ensure models are registered on mongoose instance
+    const _quizModel = Quiz;
+    const _questionModel = QuizQuestion;
+
     const [reports, total, pendingCount, underReviewCount, resolvedCount, rejectedCount] =
       await Promise.all([
         QuestionIssueReport.find(filter)
           .sort({ createdAt: -1 })
           .skip(skip)
           .limit(pageSize)
-          .populate("quizId", "title slug subject difficulty")
-          .populate(
-            "questionId",
-            "questionText options correctOptionIndex explanation order seoStatus isAnswerVerified"
-          )
+          .populate({
+            path: "quizId",
+            model: _quizModel,
+            select: "title slug subject difficulty",
+          })
+          .populate({
+            path: "questionId",
+            model: _questionModel,
+            select: "questionText options correctOptionIndex explanation order seoStatus isAnswerVerified",
+          })
           .lean(),
         QuestionIssueReport.countDocuments(filter),
         QuestionIssueReport.countDocuments({ status: "PENDING" }),
@@ -119,6 +128,10 @@ export async function GET(request: NextRequest) {
     });
   } catch (error: any) {
     console.error("Admin question reports fetch error:", error);
-    return errorResponse("INTERNAL_ERROR", "Failed to retrieve question reports", 500);
+    return errorResponse(
+      "INTERNAL_ERROR",
+      error?.message || "Failed to retrieve question reports",
+      500
+    );
   }
 }
