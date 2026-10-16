@@ -303,7 +303,7 @@ export default function AdminQuizImportPage() {
                 className="p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs space-y-2.5"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <span className="font-bold text-slate-900">
+                  <span className="font-bold text-slate-900 whitespace-pre-line leading-relaxed">
                     Q{idx + 1}. {q.questionText}
                   </span>
                   <span className="text-[10px] bg-slate-200 text-slate-700 font-semibold px-2 py-0.5 rounded shrink-0">

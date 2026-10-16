@@ -194,7 +194,7 @@ export function QuestionReportModal({
                 <span className="font-bold text-slate-900 block mb-0.5">
                   Question:
                 </span>
-                <p className="line-clamp-2 italic text-slate-600">
+                <p className="line-clamp-3 italic text-slate-600 whitespace-pre-line">
                   &ldquo;{questionSnippet}&rdquo;
                 </p>
               </div>

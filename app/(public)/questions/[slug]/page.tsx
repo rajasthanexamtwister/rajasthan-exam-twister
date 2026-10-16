@@ -230,7 +230,7 @@ export default async function PublicQuestionPage({ params }: QuestionPageProps) 
               <span className="w-8 h-8 rounded-xl bg-[#0B132B] text-amber-400 font-black text-sm flex items-center justify-center shrink-0 mt-0.5 font-heading">
                 Q{question.order}
               </span>
-              <h1 className="text-xl sm:text-2xl font-extrabold text-[#0B132B] leading-relaxed font-devanagari">
+              <h1 className="text-xl sm:text-2xl font-extrabold text-[#0B132B] leading-relaxed font-devanagari whitespace-pre-line">
                 {question.questionText}
               </h1>
             </div>

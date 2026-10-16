@@ -838,7 +838,7 @@ export default function StudentProfilePage() {
                       </div>
 
                       {rep.questionId?.questionText && (
-                        <p className="text-xs font-bold text-[#0B132B] line-clamp-1">
+                        <p className="text-xs font-bold text-[#0B132B] whitespace-pre-line line-clamp-3">
                           Question: &ldquo;{rep.questionId.questionText}&rdquo;
                         </p>
                       )}

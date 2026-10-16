@@ -28,6 +28,7 @@ import {
   Edit3,
 } from "lucide-react";
 import clsx from "clsx";
+import { FormattedQuestionText } from "@/components/public/formatted-question-text";
 import {
   QUESTION_ISSUE_REASONS,
   QUESTION_REPORT_STATUSES,
@@ -668,8 +669,10 @@ export function QuestionReportsClient() {
                     </div>
 
                     {/* Question text snippet */}
-                    <div className="text-xs text-slate-900 font-bold leading-relaxed line-clamp-2">
-                      {report.questionId?.questionText || (
+                    <div className="text-xs text-slate-900 font-bold leading-relaxed whitespace-pre-line">
+                      {report.questionId?.questionText ? (
+                        <FormattedQuestionText text={report.questionId.questionText} size="sm" />
+                      ) : (
                         <span className="text-slate-400 italic">Question content loaded</span>
                       )}
                     </div>
@@ -872,8 +875,11 @@ export function QuestionReportsClient() {
                     </div>
 
                     {/* Question Text */}
-                    <div className="text-sm font-bold text-slate-900">
-                      {selectedReport.questionId?.questionText}
+                    <div className="font-bold text-slate-900 leading-relaxed">
+                      <FormattedQuestionText
+                        text={selectedReport.questionId?.questionText || ""}
+                        size="base"
+                      />
                     </div>
 
                     {/* Options list with correct indicator */}
@@ -1191,8 +1197,11 @@ export function QuestionReportsClient() {
                   <span className="text-[10px] font-black uppercase tracking-wider text-slate-500 block">
                     Before Modification (Original Stored State)
                   </span>
-                  <div className="text-xs font-bold text-slate-800 line-clamp-2">
-                    {selectedReport.questionId?.questionText}
+                  <div className="text-xs font-bold text-slate-800 whitespace-pre-line leading-relaxed max-h-48 overflow-y-auto">
+                    <FormattedQuestionText
+                      text={selectedReport.questionId?.questionText || ""}
+                      size="sm"
+                    />
                   </div>
                   <div className="space-y-1 pt-1">
                     {selectedReport.questionId?.options?.map((opt, idx) => (

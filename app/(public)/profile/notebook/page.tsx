@@ -429,7 +429,7 @@ export default function NotebookPage() {
                     <div className="text-xs font-black text-amber-700 uppercase tracking-wider">
                       Question #{idx + 1}
                     </div>
-                    <p className="text-sm sm:text-base font-bold text-[#0B132B] leading-relaxed">
+                    <p className="text-sm sm:text-base font-bold text-[#0B132B] leading-relaxed whitespace-pre-line">
                       {item.questionText}
                     </p>
                   </div>

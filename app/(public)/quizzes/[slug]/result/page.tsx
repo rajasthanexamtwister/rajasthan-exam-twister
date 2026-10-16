@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import { BookmarkButton } from "@/components/public/bookmark-button";
 import { QuestionReportModal } from "@/components/public/question-report-modal";
+import { FormattedQuestionText } from "@/components/public/formatted-question-text";
 import clsx from "clsx";
 
 interface AttemptQuestionBreakdown {
@@ -640,14 +641,14 @@ ${quizUrl}
                   </div>
 
                   {/* Question Text */}
-                  <p className="text-sm font-semibold text-slate-900 leading-relaxed">
-                    {displayQuestionText}
+                  <div className="font-semibold text-slate-900 leading-relaxed">
+                    <FormattedQuestionText text={displayQuestionText} size="base" />
                     {isFallbackHindi && (
-                      <span className="inline-block ml-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md align-middle border border-slate-200">
+                      <span className="inline-block mt-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md align-middle border border-slate-200">
                         Hindi only
                       </span>
                     )}
-                  </p>
+                  </div>
 
                   {/* Options List */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">

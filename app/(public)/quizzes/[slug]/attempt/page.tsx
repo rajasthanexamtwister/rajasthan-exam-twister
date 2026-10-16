@@ -19,6 +19,7 @@ import {
   Flag,
 } from "lucide-react";
 import { QuestionReportModal } from "@/components/public/question-report-modal";
+import { FormattedQuestionText } from "@/components/public/formatted-question-text";
 import { recordQuizCompletion } from "@/components/public/daily-goal-widget";
 import { trackQuizStart, trackQuizCompletion } from "@/components/analytics/gtag-events";
 import clsx from "clsx";
@@ -607,14 +608,14 @@ export default function QuizAttemptPage() {
           </div>
 
           {/* Question Text */}
-          <p className="text-base sm:text-lg font-bold text-slate-900 leading-relaxed">
-            {displayQuestionText}
+          <div className="font-bold text-slate-900 leading-relaxed">
+            <FormattedQuestionText text={displayQuestionText} size="base" />
             {isFallbackHindi && (
-              <span className="inline-block ml-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md align-middle border border-slate-200">
+              <span className="inline-block mt-2 text-[10px] font-semibold uppercase tracking-wider text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md align-middle border border-slate-200">
                 Hindi only
               </span>
             )}
-          </p>
+          </div>
 
           {/* Options List */}
           <div className="space-y-3 pt-2">

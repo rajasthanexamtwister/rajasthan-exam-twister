@@ -165,7 +165,7 @@ export default function PersonalNotebookPage() {
 
               {item.type === "quiz_question" && item.options ? (
                 <div className="space-y-4">
-                  <h3 className="font-bold text-base text-slate-900 leading-relaxed font-devanagari">
+                  <h3 className="font-bold text-base text-slate-900 leading-relaxed font-devanagari whitespace-pre-line">
                     {item.questionText || item.title}
                   </h3>
 

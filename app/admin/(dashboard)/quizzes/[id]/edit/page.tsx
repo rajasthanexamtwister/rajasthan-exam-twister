@@ -591,7 +591,7 @@ export default function AdminQuizEditPage() {
                   /* Read-Only View with Quick Edit Button */
                   <div>
                     <div className="flex items-start justify-between gap-4">
-                      <span className="font-bold text-slate-900">
+                      <span className="font-bold text-slate-900 whitespace-pre-line leading-relaxed">
                         Q{idx + 1}. {q.questionText}
                       </span>
                       <button
