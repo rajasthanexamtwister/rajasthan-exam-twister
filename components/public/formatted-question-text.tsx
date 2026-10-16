@@ -15,8 +15,22 @@ export function FormattedQuestionText({
 }: FormattedQuestionTextProps) {
   if (!text) return null;
 
-  // Split lines by newline and trim
-  const lines = text
+  // 1. Normalize line endings and escaped newlines
+  let processed = text
+    .replace(/\\r\\n/g, "\n")
+    .replace(/\\n/g, "\n")
+    .replace(/\r\n/g, "\n");
+
+  // 2. Intelligently format inline match items / statements if cramped on single line
+  processed = processed
+    .replace(
+      /\s+(\([1-4a-d]\)|\([iIvVxX]+\)|\b[1-4]\)|\b[a-d]\)|\b[1-4]\.\)|\b[1-4]\.|\b[A-D]\.|\b[अ-द]\.)\s+/g,
+      "\n$1 "
+    )
+    .replace(/\s+(कूट\s*[-:]|कूट:|सही कूट\s*[-:]|नीचे दिए गए कूट)/g, "\n$1");
+
+  // 3. Split lines and trim
+  const lines = processed
     .split("\n")
     .map((l) => l.trim())
     .filter(Boolean);
@@ -25,7 +39,7 @@ export function FormattedQuestionText({
     size === "sm"
       ? "text-xs sm:text-sm"
       : size === "lg"
-      ? "text-lg sm:text-xl"
+      ? "text-base sm:text-lg md:text-xl"
       : "text-sm sm:text-base md:text-lg";
 
   // If simple single line question, render cleanly with whitespace preservation
