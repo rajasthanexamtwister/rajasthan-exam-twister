@@ -219,7 +219,7 @@ def parse_docx(docx_path):
     elif "history" in parent_dir or "इतिहास" in topic_title:
         subject = "राजस्थान का इतिहास"
         category_slug = "rajasthan-history"
-    elif "art" in parent_dir or "culture" in parent_dir or "संस्कृति" in topic_title or "देवता" in topic_title:
+    elif "art" in parent_dir or "culture" in parent_dir or "संस्कृति" in topic_title or "देवता" in topic_title or "चित्र" in topic_title:
         subject = "राजस्थान कला एवं संस्कृति"
         category_slug = "rajasthan-art-culture"
     elif "hindi" in parent_dir or "हिन्दी" in topic_title:
@@ -231,6 +231,8 @@ def parse_docx(docx_path):
         topic_slug = "marusthalikaran"
     elif "1857" in topic_title:
         topic_slug = "1857-ki-kranti"
+    elif "चित्र" in topic_title:
+        topic_slug = "chitra-shailiyan"
 
     seed_data = {
         "topic": {
