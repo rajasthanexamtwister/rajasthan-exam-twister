@@ -229,6 +229,8 @@ def parse_docx(docx_path):
     topic_slug = slugify(topic_title)
     if "मरुस्थल" in topic_title:
         topic_slug = "marusthalikaran"
+    elif "1857" in topic_title:
+        topic_slug = "1857-ki-kranti"
 
     seed_data = {
         "topic": {
