@@ -35,6 +35,7 @@ async function main() {
     options: string[];
     correctOptionIndex: number;
     explanation?: string;
+    examSource?: string;
   }> = [];
 
   for (const b of data.batches) {
@@ -44,6 +45,7 @@ async function main() {
         options: q.options,
         correctOptionIndex: q.correctOptionIndex,
         explanation: q.explanation || "",
+        examSource: q.examSource || undefined,
       });
     }
   }
@@ -150,6 +152,7 @@ async function main() {
           explanation: q.explanation || "",
           marks: 2,
           negativeMarks: 0.66,
+          ...(q.examSource ? { examSource: q.examSource } : {}),
         },
       },
       { upsert: true, new: true }
