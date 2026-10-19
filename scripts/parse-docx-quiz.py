@@ -233,6 +233,10 @@ def parse_docx(docx_path):
         topic_slug = "1857-ki-kranti"
     elif "चित्र" in topic_title:
         topic_slug = "chitra-shailiyan"
+    elif "जल" in topic_title:
+        topic_slug = "paramparagat-jal-prabandhan"
+    elif "किसान" in topic_title or "आन्दोलन" in topic_title or "आंदोलन" in topic_title:
+        topic_slug = "kisan-tatha-adivasi-andolan"
 
     seed_data = {
         "topic": {
