@@ -76,6 +76,13 @@ interface StorageStats {
   total: number;
   unuploaded: number;
   fullyUploaded: number;
+  lastUploaded?: {
+    id: string;
+    questionNumber?: number;
+    questionText: string;
+    date: string;
+    uploadedAt: string | null;
+  } | null;
   cloudinaryConfigured: boolean;
   warning: string | null;
   hasUnuploadedBacklog: boolean;
@@ -86,6 +93,7 @@ export default function SocialStudioPage() {
   const [history, setHistory] = useState<PostItem[]>([]);
   const [stats, setStats] = useState<StorageStats | null>(null);
   const [activePost, setActivePost] = useState<PostItem | null>(null);
+  const [filterMode, setFilterMode] = useState<"pending" | "uploaded" | "all">("pending");
   const [activeTab, setActiveTab] = useState<"instagram" | "twitter" | "history">("instagram");
   const [copiedField, setCopiedField] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -93,6 +101,10 @@ export default function SocialStudioPage() {
   const [cleaningUp, setCleaningUp] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [showNewModal, setShowNewModal] = useState(false);
+
+  // Derived filtered lists
+  const pendingList = history.filter((item) => !item.status?.instagramUploaded);
+  const uploadedList = history.filter((item) => item.status?.instagramUploaded);
 
   // Form state for creating a new daily question
   const [newForm, setNewForm] = useState({
@@ -122,7 +134,9 @@ export default function SocialStudioPage() {
       if (data.success) {
         setHistory(data.history || []);
         if (data.history?.length) {
-          setActivePost(data.history[0]);
+          // Priority to first pending item
+          const firstPending = data.history.find((h: any) => !h.status?.instagramUploaded);
+          setActivePost(firstPending || data.history[0]);
         }
         if (data.stats) {
           setStats(data.stats);
@@ -195,39 +209,26 @@ export default function SocialStudioPage() {
       })
     );
 
-    if (activePost?.id === id) {
-      setActivePost((prev) => {
-        if (!prev) return null;
-        const status = { ...prev.status };
-        if (platform === "instagram") {
-          status.instagramUploaded = newValue;
-          status.instagramUploadedAt = newValue ? new Date().toISOString() : null;
-        } else {
-          status.twitterPosted = newValue;
-          status.twitterPostedAt = newValue ? new Date().toISOString() : null;
-        }
-        return { ...prev, status };
-      });
-    }
-
-    // Sequential Workflow Progression:
+    // Auto-advance / Remove from Pending Queue immediately
     if (newValue === true) {
       if (platform === "instagram") {
-        // Step 1: After marking Instagram done -> Switch to Twitter for the same question
-        setActiveTab("twitter");
-        showToast("✅ Instagram पर मार्क हो गया! अब X (Twitter) पर पोस्ट करें 🚀");
-      } else if (platform === "twitter") {
-        // Step 2: After marking Twitter done -> Load next question and go to Instagram tab
-        const currentIndex = history.findIndex((item) => item.id === id);
-        if (currentIndex !== -1 && currentIndex + 1 < history.length) {
-          const nextPost = history[currentIndex + 1];
-          setActivePost(nextPost);
-          setActiveTab("instagram");
-          showToast(`🎉 सवाल #${currentIndex + 1} पूरा हुआ! अगला सवाल #${currentIndex + 2} लोड हो गया ➡️`);
+        if (filterMode === "pending") {
+          const remainingPending = history.filter((item) => item.id !== id && !item.status?.instagramUploaded);
+          if (remainingPending.length > 0) {
+            setActivePost(remainingPending[0]);
+            showToast("✅ सवाल इंस्टाग्राम पर मार्क हो गया और पेंडिंग कतार से हट गया! अगला सवाल लोड हुआ ➡️");
+          } else {
+            setActivePost(null);
+            showToast("🏆 बधाई हो! आपके सभी सवाल पोस्ट हो चुके हैं! पेंडिंग कतार खाली है।");
+          }
         } else {
-          showToast("🏆 बधाई हो! सभी सवाल सफलतापूर्वक अपलोड हो चुके हैं!");
+          showToast("✅ Instagram पर मार्क हो गया! इतिहास में सुरक्षित है।");
         }
+      } else if (platform === "twitter") {
+        showToast("🚀 X (Twitter) पर पोस्ट मार्क हो गया!");
       }
+    } else {
+      showToast("🔄 सवाल को वापस पेंडिंग कतार में मार्क किया गया।");
     }
 
     try {
@@ -359,6 +360,19 @@ export default function SocialStudioPage() {
 
   const handleCreateNew = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Client-side Duplicate Check
+    const cleanNew = newForm.questionText.trim().toLowerCase().replace(/[^\w\s\u0900-\u097F]/gi, "");
+    const duplicate = history.find((h) => {
+      const cleanH = (h.questionText || "").trim().toLowerCase().replace(/[^\w\s\u0900-\u097F]/gi, "");
+      return cleanH.length > 5 && (cleanH === cleanNew || cleanH.includes(cleanNew) || cleanNew.includes(cleanH));
+    });
+
+    if (duplicate) {
+      alert(`⚠️ डुप्लीकेट सवाल अलर्ट:\nयह सवाल पहले से आपके डेटाबेस में मौजूद है (#${duplicate.id} - ${duplicate.date})!\n"${duplicate.questionText}"\n\nडुप्लीकेट पोस्ट रोकने के लिए इसे रिजेक्ट कर दिया गया है।`);
+      return;
+    }
+
     try {
       const res = await fetch("/api/admin/social-studio", {
         method: "POST",
@@ -388,6 +402,8 @@ export default function SocialStudioPage() {
         setActivePost(data.item);
         setShowNewModal(false);
         showToast("✨ नया सवाल सोशल स्टूडियो में जुड़ गया!");
+      } else if (data.error) {
+        alert(data.error);
       } else if (data.needsConfirmation) {
         alert(data.warning);
       }
@@ -478,30 +494,119 @@ export default function SocialStudioPage() {
         </div>
       </div>
 
-      {/* STORAGE & UNUPLOADED WARNING BANNER */}
-      {stats && stats.hasUnuploadedBacklog && (
-        <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm">
-          <div className="flex items-start gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold shrink-0 shadow-sm">
-              <AlertTriangle className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="text-sm font-bold text-amber-950 flex items-center gap-2">
-                <span>⚠️ ध्यान दें: {stats.unuploaded} प्रश्न अपलोड होना बाकी हैं!</span>
-                <span className="text-xs font-semibold bg-amber-200 text-amber-900 px-2 py-0.5 rounded-full">
-                  Pending Upload
-                </span>
-              </h4>
-              <p className="text-xs text-amber-800 mt-0.5">
-                पुराने प्रश्नों को Instagram और Twitter पर पोस्ट करके <b>&apos;Mark Uploaded&apos;</b> करें। नए सवाल जनरेट करते समय स्टोरेज और डेटा को सुरक्षित रखने के लिए यह ज़रूरी है।
-              </p>
-            </div>
+      {/* QUEUE FILTER TABS & UPLOAD PROGRESS LEDGER */}
+      <div className="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm space-y-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="flex items-center gap-1.5 p-1 bg-slate-100 rounded-xl border border-slate-200/80">
+            <button
+              onClick={() => {
+                setFilterMode("pending");
+                const nextP = history.find((h) => !h.status?.instagramUploaded);
+                setActivePost(nextP || null);
+              }}
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold transition-all ${
+                filterMode === "pending"
+                  ? "bg-amber-500 text-slate-950 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              <Clock className="w-3.5 h-3.5" />
+              <span>पेंडिंग सवाल ({pendingList.length})</span>
+            </button>
+
+            <button
+              onClick={() => {
+                setFilterMode("uploaded");
+                const nextU = history.find((h) => h.status?.instagramUploaded);
+                setActivePost(nextU || null);
+              }}
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold transition-all ${
+                filterMode === "uploaded"
+                  ? "bg-emerald-600 text-white shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              <span>अपलोड हो चुके ({uploadedList.length})</span>
+            </button>
+
+            <button
+              onClick={() => {
+                setFilterMode("all");
+                if (!activePost && history.length > 0) setActivePost(history[0]);
+              }}
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-bold transition-all ${
+                filterMode === "all"
+                  ? "bg-slate-900 text-white shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              <Layers className="w-3.5 h-3.5" />
+              <span>सभी सवाल ({history.length})</span>
+            </button>
           </div>
 
-          <div className="flex items-center gap-2 self-end sm:self-center shrink-0">
-            <span className="text-xs font-bold text-slate-700 bg-white px-3 py-1.5 rounded-lg border border-amber-200">
-              Total: {stats.total} | Uploaded: {stats.fullyUploaded}
+          {/* Upload Progress Stats */}
+          <div className="flex items-center gap-3 text-xs flex-wrap">
+            <span className="font-bold text-slate-700 bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200 flex items-center gap-1.5">
+              <span>📊 अपलोड प्रगति:</span>
+              <span className="text-emerald-700 font-extrabold">{uploadedList.length}</span>
+              <span className="text-slate-400">/</span>
+              <span>{history.length}</span>
+              <span className="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold">
+                {Math.round((uploadedList.length / (history.length || 1)) * 100)}%
+              </span>
             </span>
+
+            {stats?.lastUploaded && (
+              <span className="bg-amber-50 text-amber-900 font-semibold px-3 py-1.5 rounded-xl border border-amber-200 flex items-center gap-1.5 truncate max-w-xs">
+                <span>🎯 अंतिम अपलोड:</span>
+                <span className="truncate max-w-[140px]" title={stats.lastUploaded.questionText}>
+                  {stats.lastUploaded.questionText}
+                </span>
+                {stats.lastUploaded.uploadedAt && (
+                  <span className="text-[10px] text-amber-700 font-mono">
+                    ({new Date(stats.lastUploaded.uploadedAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })})
+                  </span>
+                )}
+              </span>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* ALL CAUGHT UP STATE FOR PENDING VIEW */}
+      {filterMode === "pending" && pendingList.length === 0 && (
+        <div className="bg-white rounded-2xl p-10 border border-slate-200 shadow-sm text-center flex flex-col items-center justify-center space-y-4">
+          <div className="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center shadow-inner">
+            <CheckCheck className="w-8 h-8" />
+          </div>
+          <div className="max-w-md">
+            <h3 className="text-lg font-bold text-slate-900">
+              🎉 All Caught Up! पेंडिंग कतार पूरी तरह खाली है!
+            </h3>
+            <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
+              आपके सभी <b>{uploadedList.length}</b> सवाल इंस्टाग्राम पर सफलतापूर्वक मार्क हो चुके हैं। डेटाबेस में सभी का पूर्ण रिकॉर्ड सुरक्षित है और कोई भी सवाल दोबारा डुप्लीकेट नहीं जाएगा।
+            </p>
+          </div>
+          <div className="flex items-center gap-3 pt-2">
+            <button
+              onClick={() => {
+                setFilterMode("uploaded");
+                if (uploadedList.length > 0) setActivePost(uploadedList[0]);
+              }}
+              className="px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-bold hover:bg-slate-800 transition-all flex items-center gap-1.5"
+            >
+              <Eye className="w-3.5 h-3.5" />
+              <span>अपलोड किए गए सवाल देखें ({uploadedList.length})</span>
+            </button>
+            <button
+              onClick={() => setShowNewModal(true)}
+              className="px-4 py-2 rounded-xl bg-amber-500 text-slate-950 text-xs font-bold hover:bg-amber-400 transition-all flex items-center gap-1.5"
+            >
+              <PlusCircle className="w-3.5 h-3.5" />
+              <span>+ नया सवाल जोड़ें</span>
+            </button>
           </div>
         </div>
       )}
@@ -545,11 +650,11 @@ export default function SocialStudioPage() {
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all ${
                 activePost.status.instagramUploaded
                   ? "bg-emerald-50 text-emerald-700 border-emerald-300 shadow-sm"
-                  : "bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100"
+                  : "bg-amber-500 text-slate-950 font-bold border-amber-600 hover:bg-amber-400 shadow-sm"
               }`}
             >
               <Instagram className="w-3.5 h-3.5" />
-              <span>{activePost.status.instagramUploaded ? "Uploaded on Insta ✓" : "Mark Uploaded"}</span>
+              <span>{activePost.status.instagramUploaded ? "Uploaded on Insta ✓" : "Mark Uploaded ✓"}</span>
             </button>
 
             <button
@@ -1077,6 +1182,12 @@ export default function SocialStudioPage() {
                               <Twitter className="w-3 h-3" />
                               {post.status?.twitterPosted ? "X Posted ✓" : "Mark X Posted"}
                             </button>
+
+                            {post.status?.instagramUploadedAt && (
+                              <span className="text-[10px] font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                                📅 अपलोड: {new Date(post.status.instagramUploadedAt).toLocaleDateString("en-IN", { day: '2-digit', month: 'short' })}, {new Date(post.status.instagramUploadedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                              </span>
+                            )}
                           </div>
                         </div>
                       </div>

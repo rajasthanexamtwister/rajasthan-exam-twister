@@ -61,11 +61,12 @@
     }
   ],
   "status": {
-    "instagramUploaded": false,
-    "instagramUploadedAt": null,
+    "instagramUploaded": true,
+    "instagramUploadedAt": "2026-10-19T07:23:20.972159+00:00",
     "twitterPosted": false,
     "twitterPostedAt": null
   },
   "createdAt": "2026-10-09T08:37:54.181Z",
-  "tweetText": "📚 Rajasthan CET 2024 (Paper 421) Question #3:\n\nनिम्न सूत्रों में से कौन एकन्यूनसूत्रता (Monosomy) को दर्शाता है?\n\nA) 2n − 1\nB) 2n − 3\nC) 2n + 1\nD) 2n + 3\n\n💡 बिना Google किए सही उत्तर कमेंट में बताएं! 👇\n\n#RajasthanGK #CET2024 #RajasthanCET #RSSB #ExamTwister"
+  "tweetText": "📚 Rajasthan CET 2024 (Paper 421) Question #3:\n\nनिम्न सूत्रों में से कौन एकन्यूनसूत्रता (Monosomy) को दर्शाता है?\n\nA) 2n − 1\nB) 2n − 3\nC) 2n + 1\nD) 2n + 3\n\n💡 बिना Google किए सही उत्तर कमेंट में बताएं! 👇\n\n#RajasthanGK #CET2024 #RajasthanCET #RSSB #ExamTwister",
+  "uploadSequence": 3
 }

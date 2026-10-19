@@ -40,7 +40,7 @@
     "twitterImage": "/uploads/social-kits/rajasthan-cet-sr-secondary/2024/question-1/twitter_card.jpg",
     "kitJson": "/uploads/social-kits/rajasthan-cet-sr-secondary/2024/question-1/kit.json"
   },
-  "instagramImageUrl": "https://res.cloudinary.com/dplnd4t4j/image/upload/v1791535068/rajasthan_exam_twister/social_kits/cet_replica_reel_q1_1791535064740.jpg",
+  "instagramImageUrl": "/uploads/social-kits/rajasthan-cet-sr-secondary/2024/question-1/reel_9_16.jpg?v=2",
   "twitterImageUrl": "https://res.cloudinary.com/dplnd4t4j/image/upload/v1791535069/rajasthan_exam_twister/social_kits/cet_replica_twitter_q1_1791535069118.jpg",
   "cloudinaryReelPublicId": "rajasthan_exam_twister/social_kits/cet_replica_reel_q1_1791535064740",
   "cloudinaryTwitterPublicId": "rajasthan_exam_twister/social_kits/cet_replica_twitter_q1_1791535069118",
@@ -61,11 +61,12 @@
     }
   ],
   "status": {
-    "instagramUploaded": false,
-    "instagramUploadedAt": null,
+    "instagramUploaded": true,
+    "instagramUploadedAt": "2026-10-19T07:23:20.972159+00:00",
     "twitterPosted": false,
     "twitterPostedAt": null
   },
   "createdAt": "2026-10-09T08:37:50.117Z",
-  "tweetText": "📚 Rajasthan CET 2024 (Paper 421) Question #1:\n\n2011 की जनगणना के अनुसार राजस्थान के किस जिले में लिंगानुपात सबसे अधिक है?\n\nA) जयपुर जिला (Jaipur)\nB) अलवर जिला (Alwar)\nC) डूंगरपुर जिला (Dungarpur)\nD) बीकानेर जिला (Bikaner)\n\n💡 बिना Google किए सही उत्तर कमेंट में बताएं! 👇\n\n#RajasthanGK #CET2024 #RajasthanCET #RSSB #ExamTwister"
+  "tweetText": "📚 Rajasthan CET 2024 (Paper 421) Question #1:\n\n2011 की जनगणना के अनुसार राजस्थान के किस जिले में लिंगानुपात सबसे अधिक है?\n\nA) जयपुर जिला (Jaipur)\nB) अलवर जिला (Alwar)\nC) डूंगरपुर जिला (Dungarpur)\nD) बीकानेर जिला (Bikaner)\n\n💡 बिना Google किए सही उत्तर कमेंट में बताएं! 👇\n\n#RajasthanGK #CET2024 #RajasthanCET #RSSB #ExamTwister",
+  "uploadSequence": 1
 }

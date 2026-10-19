@@ -131,23 +131,41 @@ function getStorageStats(history: any[]) {
   const isConfigured = initCloudinary();
   const total = history.length;
   const unuploaded = history.filter(
-    (h: any) => !h.status?.instagramUploaded || !h.status?.twitterPosted
+    (h: any) => !h.status?.instagramUploaded
   ).length;
   const fullyUploaded = history.filter(
-    (h: any) => h.status?.instagramUploaded && h.status?.twitterPosted
+    (h: any) => h.status?.instagramUploaded
   ).length;
+
+  // Track the most recently uploaded question
+  const uploadedItems = history
+    .filter((h: any) => h.status?.instagramUploaded)
+    .sort((a: any, b: any) => {
+      const timeA = new Date(a.status?.instagramUploadedAt || a.createdAt || 0).getTime();
+      const timeB = new Date(b.status?.instagramUploadedAt || b.createdAt || 0).getTime();
+      return timeB - timeA;
+    });
+
+  const lastUploaded = uploadedItems.length > 0 ? {
+    id: uploadedItems[0].id,
+    questionNumber: uploadedItems[0].questionNumber,
+    questionText: uploadedItems[0].questionText,
+    date: uploadedItems[0].date,
+    uploadedAt: uploadedItems[0].status?.instagramUploadedAt,
+  } : null;
 
   let warning: string | null = null;
   if (unuploaded > 0) {
-    warning = `चेतावनी: आपके पास ${unuploaded} ऐसे प्रश्न हैं जो Instagram या Twitter/X पर अभी तक अपलोड नहीं हुए हैं! नए सवाल जनरेट करने से पहले इन्हें अपलोड करें या मार्क करें ताकि स्पेस और डेटा सुरक्षित रहे।`;
-  } else if (total >= 40) {
-    warning = `डेटाबेस में कुल ${total} प्रश्न हैं। स्पेस फ्री करने के लिए अपलोड किए जा चुके पुराने प्रश्नों को क्लीन करें।`;
+    warning = `पेंडिंग कतार: आपके पास ${unuploaded} सवाल बाकी हैं। जैसे ही आप 'Mark Uploaded' करेंगे, वह पेंडिंग लिस्ट से हट जाएगा और इतिहास में सुरक्षित रहेगा।`;
+  } else if (total > 0 && unuploaded === 0) {
+    warning = `शानदार! सभी ${total} सवाल इंस्टाग्राम पर अपलोड हो चुके हैं। कोई भी पेंडिंग सवाल नहीं बचा है।`;
   }
 
   return {
     total,
     unuploaded,
     fullyUploaded,
+    lastUploaded,
     cloudinaryConfigured: isConfigured,
     warning,
     hasUnuploadedBacklog: unuploaded > 0,
@@ -360,6 +378,10 @@ export async function POST(req: NextRequest) {
         if (platform === "instagram") {
           history[index].status.instagramUploaded = Boolean(value);
           history[index].status.instagramUploadedAt = value ? new Date().toISOString() : null;
+          if (value && !history[index].uploadSequence) {
+            const alreadyUploadedCount = history.filter((h: any) => h.status?.instagramUploaded).length;
+            history[index].uploadSequence = alreadyUploadedCount;
+          }
         } else if (platform === "twitter") {
           history[index].status.twitterPosted = Boolean(value);
           history[index].status.twitterPostedAt = value ? new Date().toISOString() : null;
@@ -374,6 +396,9 @@ export async function POST(req: NextRequest) {
             if (fs.existsSync(kitFullPath)) {
               const kitData = JSON.parse(fs.readFileSync(kitFullPath, "utf8"));
               kitData.status = history[index].status;
+              if (history[index].uploadSequence) {
+                kitData.uploadSequence = history[index].uploadSequence;
+              }
               fs.writeFileSync(kitFullPath, JSON.stringify(kitData, null, 2), "utf8");
             }
           }
@@ -396,7 +421,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, error: "Post not found" }, { status: 404 });
     }
 
-    // 6. CREATE CUSTOM KIT WITH CLOUDINARY UPLOAD
+    // 6. CREATE CUSTOM KIT WITH CLOUDINARY UPLOAD & DUPLICATE PREVENTION
     if (action === "create_custom" || action === "generate_kit") {
       const {
         questionText,
@@ -410,6 +435,31 @@ export async function POST(req: NextRequest) {
         date = new Date().toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }),
         force = false,
       } = body;
+
+      if (!questionText || questionText.trim().length < 5) {
+        return NextResponse.json(
+          { success: false, error: "कृपया एक वैध प्रश्न दर्ज करें (कम से कम 5 अक्षर)!" },
+          { status: 400 }
+        );
+      }
+
+      // STRICT DUPLICATE PREVENTION GUARD
+      const cleanNewText = questionText.trim().toLowerCase().replace(/[^\w\s\u0900-\u097F]/gi, "");
+      const duplicateFound = history.find((h: any) => {
+        const cleanExisting = (h.questionText || "").trim().toLowerCase().replace(/[^\w\s\u0900-\u097F]/gi, "");
+        return cleanExisting.length > 5 && (cleanExisting === cleanNewText || cleanExisting.includes(cleanNewText) || cleanNewText.includes(cleanExisting));
+      });
+
+      if (duplicateFound) {
+        return NextResponse.json(
+          {
+            success: false,
+            error: `डुप्लीकेट अलर्ट: यह प्रश्न पहले से मौजूद है (#${duplicateFound.id} - ${duplicateFound.date})! एक ही सवाल दोबारा पोस्ट नहीं किया जा सकता।`,
+            duplicateItem: duplicateFound,
+          },
+          { status: 400 }
+        );
+      }
 
       const stats = getStorageStats(history);
 

@@ -61,11 +61,12 @@
     }
   ],
   "status": {
-    "instagramUploaded": false,
-    "instagramUploadedAt": null,
+    "instagramUploaded": true,
+    "instagramUploadedAt": "2026-10-19T07:23:20.972159+00:00",
     "twitterPosted": false,
     "twitterPostedAt": null
   },
   "createdAt": "2026-10-09T08:38:07.042Z",
-  "tweetText": "📚 Rajasthan CET 2024 (Paper 421) Question #9:\n\nइनमें से बीज अंकुरण के लिए सबसे अधिक आवश्यक क्या है?\n\nA) खाद (Fertilizer)\nB) उच्च तापमान (High Temperature)\nC) पानी (Water / H2O)\nD) रोशनी (Light)\n\n💡 बिना Google किए सही उत्तर कमेंट में बताएं! 👇\n\n#RajasthanGK #CET2024 #RajasthanCET #RSSB #ExamTwister"
+  "tweetText": "📚 Rajasthan CET 2024 (Paper 421) Question #9:\n\nइनमें से बीज अंकुरण के लिए सबसे अधिक आवश्यक क्या है?\n\nA) खाद (Fertilizer)\nB) उच्च तापमान (High Temperature)\nC) पानी (Water / H2O)\nD) रोशनी (Light)\n\n💡 बिना Google किए सही उत्तर कमेंट में बताएं! 👇\n\n#RajasthanGK #CET2024 #RajasthanCET #RSSB #ExamTwister",
+  "uploadSequence": 9
 }

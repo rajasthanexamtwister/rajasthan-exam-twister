@@ -61,11 +61,12 @@
     }
   ],
   "status": {
-    "instagramUploaded": false,
-    "instagramUploadedAt": null,
+    "instagramUploaded": true,
+    "instagramUploadedAt": "2026-10-19T07:23:20.972159+00:00",
     "twitterPosted": false,
     "twitterPostedAt": null
   },
   "createdAt": "2026-10-09T08:37:52.172Z",
-  "tweetText": "📚 Rajasthan CET 2024 (Paper 421) Question #2:\n\nसरदार सरोवर बांध किस नदी पर बनाया गया है?\n\nA) गोदावरी नदी (Godavari)\nB) कृष्णा नदी (Krishna)\nC) तापी नदी (Tapi)\nD) नर्मदा नदी (Narmada)\n\n💡 बिना Google किए सही उत्तर कमेंट में बताएं! 👇\n\n#RajasthanGK #CET2024 #RajasthanCET #RSSB #ExamTwister"
+  "tweetText": "📚 Rajasthan CET 2024 (Paper 421) Question #2:\n\nसरदार सरोवर बांध किस नदी पर बनाया गया है?\n\nA) गोदावरी नदी (Godavari)\nB) कृष्णा नदी (Krishna)\nC) तापी नदी (Tapi)\nD) नर्मदा नदी (Narmada)\n\n💡 बिना Google किए सही उत्तर कमेंट में बताएं! 👇\n\n#RajasthanGK #CET2024 #RajasthanCET #RSSB #ExamTwister",
+  "uploadSequence": 2
 }
