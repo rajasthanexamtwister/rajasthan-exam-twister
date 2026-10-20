@@ -52,7 +52,7 @@ describe("Google AdSense & Content Security Policy Audit", () => {
 
     const content = fs.readFileSync(adsTxtPath, "utf-8").trim();
     // Google AdSense format: google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
-    expect(content).toBe("google.com, pub-8986858563387447, DIRECT, f08c47fec0942fa0");
+    expect(content).toBe("google.com, pub-1617995815866036, DIRECT, f08c47fec0942fa0");
   });
 
   it("should verify layout file contains consistent publisher ID and no duplicate scripts", () => {
@@ -60,9 +60,9 @@ describe("Google AdSense & Content Security Policy Audit", () => {
     const layoutContent = fs.readFileSync(layoutPath, "utf-8");
 
     // Publisher ID consistency
-    expect(layoutContent).toContain("pub-8986858563387447");
+    expect(layoutContent).toContain("pub-1617995815866036");
     expect(layoutContent).toContain("google-adsense-account");
-    expect(layoutContent).toContain("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8986858563387447");
+    expect(layoutContent).toContain("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1617995815866036");
 
     // Verify exactly one AdSense script tag
     const scriptOccurrences = (layoutContent.match(/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js/g) || []).length;

@@ -425,7 +425,7 @@ describe("Quiz Bug Fixes: Answer Highlighting & Final Question Submission", () =
       expect(fs.existsSync(adsTxtPath)).toBe(true);
       const content = fs.readFileSync(adsTxtPath, "utf-8");
       expect(content).toContain("google.com");
-      expect(content).toContain("pub-8986858563387447");
+      expect(content).toContain("pub-1617995815866036");
       expect(content).toContain("DIRECT");
       expect(content).toContain("f08c47fec0942fa0");
     });
