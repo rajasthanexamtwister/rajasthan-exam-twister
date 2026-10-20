@@ -150,16 +150,22 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/15 via-transparent to-transparent pointer-events-none" />
 
         <div className="max-w-6xl mx-auto space-y-8 relative z-10">
-          {/* Official Banner Graphic Frame */}
-          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-amber-400/40 bg-slate-950 aspect-[21/9] sm:aspect-[2.8/1] w-full">
-            <Image
-              src="/brand/banner.webp"
-              alt="Rajasthan Exam Twister - Sawaal Seedha Nahi, Soch Tedhi Karo - Exam Preparation Banner"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1152px"
-              className="object-cover object-center"
-            />
+          {/* Official Banner Graphic Frame (Optimized for Mobile LCP & Zero CLS) */}
+          <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-amber-400/40 bg-slate-950 aspect-[2.5/1] w-full">
+            <picture>
+              <source media="(max-width: 768px)" srcSet="/brand/banner-mobile.webp" type="image/webp" />
+              <source media="(min-width: 769px)" srcSet="/brand/banner.webp" type="image/webp" />
+              <img
+                src="/brand/banner-mobile.webp"
+                alt="Rajasthan Exam Twister - Sawaal Seedha Nahi, Soch Tedhi Karo - Exam Preparation Banner"
+                width={1983}
+                height={793}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-full object-cover object-center"
+              />
+            </picture>
           </div>
 
           {/* Hero Content & Primary Call-to-Actions */}

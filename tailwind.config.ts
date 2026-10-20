@@ -12,9 +12,9 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)", "var(--font-devanagari)", "system-ui", "-apple-system", "sans-serif"],
-        heading: ["var(--font-heading)", "var(--font-serif-devanagari)", "var(--font-devanagari)", "system-ui", "sans-serif"],
-        devanagari: ["var(--font-devanagari)", "var(--font-serif-devanagari)", "sans-serif"],
-        serif: ["var(--font-serif-devanagari)", "serif"],
+        heading: ["var(--font-heading)", "var(--font-devanagari)", "system-ui", "sans-serif"],
+        devanagari: ["var(--font-devanagari)", "sans-serif"],
+        serif: ["Georgia", "Cambria", "serif"],
       },
       colors: {
         background: "hsl(var(--background))",

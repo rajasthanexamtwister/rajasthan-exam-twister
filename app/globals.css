@@ -80,12 +80,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .font-heading {
-  font-family: var(--font-heading), var(--font-serif-devanagari), var(--font-devanagari), system-ui, sans-serif;
+  font-family: var(--font-heading), var(--font-devanagari), system-ui, sans-serif;
   letter-spacing: -0.02em;
 }
 
 .font-devanagari {
-  font-family: var(--font-devanagari), var(--font-serif-devanagari), sans-serif;
+  font-family: var(--font-devanagari), system-ui, sans-serif;
   line-height: 1.68;
 }
 
