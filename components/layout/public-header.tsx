@@ -509,6 +509,26 @@ export function PublicHeader() {
                 </Link>
 
                 <Link
+                  href="/test-series"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={clsx(
+                    "flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all min-h-[44px]",
+                    pathname.startsWith("/test-series") ? "bg-amber-500 text-[#0B132B] font-bold shadow-xs" : "text-slate-800 hover:bg-amber-50"
+                  )}
+                >
+                  <span className="flex items-center gap-1.5">
+                    <Trophy className="w-3.5 h-3.5 text-amber-700" />
+                    <span>Online Test Series (टेस्ट सीरीज़)</span>
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="text-[9px] font-bold bg-amber-100 text-amber-900 border border-amber-300 px-1.5 py-0.5 rounded-md">
+                      Mocks
+                    </span>
+                    <ArrowRight className="w-3.5 h-3.5 opacity-60" />
+                  </span>
+                </Link>
+
+                <Link
                   href="/quizzes"
                   onClick={() => setMobileMenuOpen(false)}
                   className={clsx(
@@ -536,6 +556,27 @@ export function PublicHeader() {
                     <span>Exam Notes & Revision Sheets</span>
                   </span>
                   <ArrowRight className="w-3.5 h-3.5 opacity-60" />
+                </Link>
+
+                {/* Recommended Books Link in Mobile Menu */}
+                <Link
+                  href="/books"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={clsx(
+                    "flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all min-h-[44px]",
+                    pathname.startsWith("/books") ? "bg-amber-500 text-[#0B132B] font-bold shadow-xs" : "text-slate-800 hover:bg-amber-50"
+                  )}
+                >
+                  <span className="flex items-center gap-1.5">
+                    <BookOpen className="w-3.5 h-3.5 text-amber-700" />
+                    <span>Recommended Books (सर्वश्रेष्ठ पुस्तकें)</span>
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="text-[9px] font-bold bg-amber-100 text-amber-900 border border-amber-300 px-1.5 py-0.5 rounded-md">
+                      Book Store
+                    </span>
+                    <ArrowRight className="w-3.5 h-3.5 opacity-60" />
+                  </span>
                 </Link>
 
                 <Link
