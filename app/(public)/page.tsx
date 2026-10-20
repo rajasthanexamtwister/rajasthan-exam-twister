@@ -25,8 +25,12 @@ import {
   Trophy,
   HelpCircle,
   GraduationCap,
+  ShoppingBag,
+  Star,
+  ExternalLink,
 } from "lucide-react";
 import clsx from "clsx";
+import affiliateConfig from "@/config/affiliate-books.json";
 
 export const revalidate = 60;
 
@@ -616,7 +620,75 @@ export default async function HomePage() {
         )}
       </section>
 
-      {/* 6. Callout Strip: Free Practice Tests */}
+      {/* 6. Curated Exam Preparation Books & Study Guides */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-amber-200/80">
+          <div className="space-y-1">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-extrabold bg-amber-100 text-amber-950 border border-amber-300">
+              <ShoppingBag className="w-3.5 h-3.5 text-amber-700" />
+              <span>Recommended Study Resources</span>
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[#0B132B] font-heading tracking-tight">
+              राजस्थान परीक्षाओं हेतु अनुशंसित पुस्तकें
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 font-devanagari">
+              RPSC, RSSB, REET और CET की प्रामाणिक तैयारी हेतु चुनिंदा सर्वश्रेष्ठ पुस्तकें
+            </p>
+          </div>
+
+          <Link
+            href="/books"
+            className="inline-flex items-center gap-1.5 font-extrabold text-xs text-amber-800 hover:text-amber-900 bg-amber-100/80 hover:bg-amber-200/80 px-4 py-2 rounded-xl transition-all self-start sm:self-auto shrink-0 font-heading"
+          >
+            <span>सभी पुस्तकें देखें (View All Books)</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {Object.entries(affiliateConfig.recommendedBooks).map(([key, book]) => (
+            <div
+              key={key}
+              className="bg-white rounded-3xl p-6 border border-amber-200/70 hover:border-amber-400/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] font-bold text-amber-800 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-full">
+                    {book.tag}
+                  </span>
+                  <div className="flex items-center gap-1 text-[11px] font-bold text-slate-600 bg-slate-50 px-2 py-0.5 rounded-full">
+                    <Star className="w-3 h-3 fill-amber-400 text-amber-500" />
+                    <span>4.8</span>
+                  </div>
+                </div>
+
+                <h3 className="font-bold text-sm text-slate-900 group-hover:text-amber-700 transition-colors line-clamp-2">
+                  {book.title}
+                </h3>
+
+                <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed">
+                  {book.description}
+                </p>
+              </div>
+
+              <div className="pt-4 mt-4 border-t border-slate-100">
+                <a
+                  href={book.link}
+                  target="_blank"
+                  rel="sponsored nofollow noopener"
+                  className="w-full inline-flex items-center justify-center gap-1.5 bg-[#FF9900] hover:bg-[#e88b00] active:scale-[0.99] text-slate-950 font-bold px-3 py-2.5 rounded-xl text-xs transition-all shadow-xs"
+                >
+                  <ShoppingBag className="w-3.5 h-3.5 text-slate-950" />
+                  <span>Amazon पर देखें</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 7. Callout Strip: Free Practice Tests */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-[#FFFDF9] rounded-3xl border-2 border-amber-400/80 p-8 sm:p-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left">

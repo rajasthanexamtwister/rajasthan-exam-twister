@@ -42,6 +42,7 @@ const primaryNavItems = [
 ];
 
 const moreNavItems = [
+  { name: "Recommended Books", href: "/books", icon: BookOpen, desc: "Curated Exam Prep Books & Store" },
   { name: "Revision Notebook", href: "/notebook", icon: Bookmark, desc: "Saved MCQs & Study Sheets" },
   { name: "State Leaderboard", href: "/leaderboard", icon: Trophy, desc: "Rajasthan Student Rankings" },
   { name: "AI Quiz Converter", href: "/quiz-tools/create", icon: Sparkles, desc: "Convert Exam Papers" },

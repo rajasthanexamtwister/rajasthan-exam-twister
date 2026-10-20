@@ -1,0 +1,30 @@
+{
+  "affiliateTag": "theshoppi0d89-21",
+  "disclosure": "राजस्थान एग्जाम ट्विस्टर Amazon Services LLC Associates Program का सहभागी है। यदि आप हमारे लिंक से खरीदारी करते हैं तो हमें बिना किसी अतिरिक्त शुल्क के छोटा कमीशन मिल सकता है।",
+  "recommendedBooks": {
+    "rajasthan_pariksha_20": {
+      "title": "Disha Rajasthan Pariksha-20 (सेट ऑफ़ 2 बुक्स)",
+      "link": "https://link.amazon/B06kTOsEU",
+      "tag": "भूगोल, अर्थव्यवस्था, राजव्यवस्था, इतिहास व कला-संस्कृति",
+      "description": "राजस्थान के विभिन्न प्रतियोगी परीक्षाओं के 20 वर्षों के पिछले प्रश्न-पत्रों का हल व व्याख्या।"
+    },
+    "rajasthan_history_culture": {
+      "title": "राजस्थान इतिहास एवं कला संस्कृति",
+      "link": "https://link.amazon/B02Wc1xkf",
+      "tag": "इतिहास, कला व संस्कृति",
+      "description": "राजस्थान के लोक देवता, देवियाँ, दुर्ग, मेले, त्यौहार और चित्र शैलियों का प्रामाणिक संकलन।"
+    },
+    "rajasthan_geography": {
+      "title": "राजस्थान का भूगोल एवं अर्थव्यवस्था",
+      "link": "https://link.amazon/B01pXdswY",
+      "tag": "भूगोल",
+      "description": "भौतिक प्रदेश, सीमाएं, मरुस्थलीकरण एवं जल प्रबंधन का विस्तृत अध्ययन।"
+    },
+    "rajasthan_current_affairs": {
+      "title": "राजस्थान करेंट अफेयर्स वार्षिकांक",
+      "link": "https://link.amazon/B04owJx5c",
+      "tag": "करेंट अफेयर्स",
+      "description": "राजस्थान की नवीनतम योजनाएं, बजट, फ्लैगशिप कार्यक्रम और समसामयिकी।"
+    }
+  }
+}

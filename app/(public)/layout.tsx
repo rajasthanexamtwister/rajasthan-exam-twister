@@ -164,6 +164,11 @@ export default async function PublicLayout({
                     AI Quiz Converter
                   </Link>
                 </li>
+                <li>
+                  <Link href="/books" className="text-amber-300 hover:text-amber-200 transition-colors font-medium flex items-center gap-1.5">
+                    <span>📚 Recommended Books</span>
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -255,6 +260,9 @@ export default async function PublicLayout({
               </p>
             </div>
           </div>
+          <p className="text-[11px] text-slate-400/80 mt-3 text-center sm:text-left">
+            राजस्थान एग्जाम ट्विस्टर Amazon Services LLC Associates Program का सहभागी है। यदि आप हमारे अनुशंसित लिंक्स से खरीदारी करते हैं तो हमें बिना किसी अतिरिक्त शुल्क के छोटा कमीशन प्राप्त हो सकता है।
+          </p>
         </div>
       </footer>
     </div>

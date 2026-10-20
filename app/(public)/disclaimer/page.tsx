@@ -76,9 +76,18 @@ export default function DisclaimerPage() {
           </section>
 
           <section className="space-y-2 border-t border-amber-200/60 pt-4">
+            <h2 className="text-base sm:text-lg font-bold text-[#0B132B]">
+              3. Amazon Affiliate Disclosure
+            </h2>
+            <p>
+              Rajasthan Exam Twister is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.in. We recommend only curated exam preparation books. Purchasing via these links incurs zero additional cost to you while helping support our free revision platform.
+            </p>
+          </section>
+
+          <section className="space-y-2 border-t border-amber-200/60 pt-4">
             <h2 className="text-base sm:text-lg font-bold text-[#0B132B] flex items-center gap-2">
               <HelpCircle className="w-4 h-4 text-amber-600" />
-              3. Questions & Feedback
+              4. Questions & Feedback
             </h2>
             <p>
               If you notice any typographical or factual discrepancy in any question, note, or current affair article, please contact us immediately at{" "}
