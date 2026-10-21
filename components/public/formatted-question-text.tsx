@@ -8,12 +8,297 @@ interface FormattedQuestionTextProps {
   size?: "sm" | "base" | "lg";
 }
 
+interface ParsedMatchingQuestion {
+  prompt: string;
+  leftHeader: string;
+  rightHeader: string;
+  leftItems: { prefix: string; text: string }[];
+  rightItems: { prefix: string; text: string }[];
+  footer: string;
+  examBadge?: string;
+}
+
+function tryParseMatchingQuestion(text: string): ParsedMatchingQuestion | null {
+  if (!text) return null;
+
+  const normalized = text
+    .replace(/\\r\\n/g, "\n")
+    .replace(/\\n/g, "\n")
+    .replace(/\r\n/g, "\n");
+
+  const rawLines = normalized
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean);
+
+  if (rawLines.length < 5) return null;
+
+  const hasMatchKeyword = /मिलान|सुमेलित|कॉलम|सूची|कोड से सही उत्तर|कूट/i.test(normalized);
+  if (!hasMatchKeyword) return null;
+
+  let headerIndex = -1;
+  let leftHeader = "";
+  let rightHeader = "";
+
+  const isInstructionLine = (l: string) =>
+    l.includes("मिलान") ||
+    l.includes("सुमेलित") ||
+    l.includes("कीजिए") ||
+    l.includes("चुनें") ||
+    l.length > 50;
+
+  const isCol1 = (l: string) =>
+    !isInstructionLine(l) &&
+    /^(कॉलम\s*I\b|कॉलम\s*1\b|सूची\s*[-–]?\s*[1I]\b|सूची\s*[-–]?\s*I\b|लिस्ट\s*[-–]?\s*1|शैली\/उपशैली)/i.test(
+      l
+    );
+
+  const isCol2 = (l: string) =>
+    !isInstructionLine(l) &&
+    /^(कॉलम\s*II\b|कॉलम\s*2\b|सूची\s*[-–]?\s*[28II]\b|सूची\s*[-–]?\s*II\b|लिस्ट\s*[-–]?\s*2|चित्रकार)/i.test(
+      l
+    );
+
+  for (let i = 0; i < rawLines.length; i++) {
+    const l = rawLines[i];
+    if (isCol1(l)) {
+      headerIndex = i;
+      break;
+    }
+  }
+
+  if (headerIndex === -1) {
+    for (let i = 1; i <= 3 && i < rawLines.length - 1; i++) {
+      if (
+        !isInstructionLine(rawLines[i]) &&
+        (rawLines[i].includes("कॉलम") ||
+          rawLines[i].includes("सूची") ||
+          rawLines[i].includes("शैली")) &&
+        (rawLines[i + 1].includes("कॉलम") ||
+          rawLines[i + 1].includes("सूची") ||
+          rawLines[i + 1].includes("चित्रकार"))
+      ) {
+        headerIndex = i;
+        break;
+      }
+    }
+  }
+
+  let prompt = "";
+  let cursor = 0;
+
+  if (headerIndex !== -1) {
+    prompt = rawLines.slice(0, headerIndex).join(" ");
+    cursor = headerIndex;
+    leftHeader = rawLines[cursor];
+    cursor++;
+
+    if (
+      cursor < rawLines.length &&
+      rawLines[cursor].startsWith("(") &&
+      !isCol2(rawLines[cursor])
+    ) {
+      leftHeader += " " + rawLines[cursor];
+      cursor++;
+    }
+
+    if (
+      cursor < rawLines.length &&
+      (isCol2(rawLines[cursor]) ||
+        rawLines[cursor].includes("सूची") ||
+        rawLines[cursor].includes("कॉलम") ||
+        rawLines[cursor].includes("चित्रकार"))
+    ) {
+      rightHeader = rawLines[cursor];
+      cursor++;
+      if (cursor < rawLines.length && rawLines[cursor].startsWith("(")) {
+        rightHeader += " " + rawLines[cursor];
+        cursor++;
+      }
+    }
+  } else {
+    prompt = rawLines[0];
+    cursor = 1;
+    leftHeader = "सूची - I";
+    rightHeader = "सूची - II";
+  }
+
+  rightHeader = rightHeader.replace(/सूची-28\b/g, "सूची-2");
+
+  if (!leftHeader) leftHeader = "कॉलम I / सूची - I";
+  if (!rightHeader) rightHeader = "कॉलम II / सूची - II";
+
+  const remainingLines = rawLines.slice(cursor);
+  const leftItems: { prefix: string; text: string }[] = [];
+  const rightItems: { prefix: string; text: string }[] = [];
+  let footer = "";
+  let examBadge = "";
+
+  const matchItemPrefix = (str: string) => {
+    const m = str.match(
+      /^(\([0-9]{1,2}\)|[0-9]{1,2}[\.\)]|\([a-eA-E]\)|[a-eA-E][\.\)]|\((?:i{1,3}|iv|v|vi)\)|(?:i{1,3}|iv|v|vi)[\.\)]|\([अबसदयकखगघ]\)|[अबसदयकखगघ][\.\)])\s*(.*)$/i
+    );
+    if (m && m[1]) {
+      const rawPrefix = m[1].replace(/[\(\)\.\)]/g, "").trim();
+      return { prefix: rawPrefix, text: m[2].trim() };
+    }
+    return null;
+  };
+
+  const isFooterLine = (l: string) => {
+    return (
+      l.startsWith("कूट") ||
+      l.startsWith("कुट") ||
+      l.startsWith("सही कूट") ||
+      l.includes("कूट -") ||
+      l.includes("कूट:") ||
+      l.includes("उपयुक्त विकल्प") ||
+      l.includes("सही विकल्प") ||
+      l.includes("सही उत्तर") ||
+      l.match(/^[A-D]\s+[A-D]\s+[A-D]/) ||
+      l.match(/^[iIvVxX]+\s+[iIvVxX]+/)
+    );
+  };
+
+  const isExamLine = (l: string) => {
+    return (
+      /Exam|Officer|Paper|20\d\d|19\d\d|RPSC|RSMSSB/i.test(l) &&
+      !l.includes("कूट")
+    );
+  };
+
+  for (let i = 0; i < remainingLines.length; i++) {
+    const l = remainingLines[i];
+    if (isExamLine(l)) {
+      examBadge = l;
+      continue;
+    }
+    if (isFooterLine(l)) {
+      footer = footer ? `${footer} | ${l}` : l;
+      continue;
+    }
+
+    const item = matchItemPrefix(l);
+    if (item) {
+      if (leftItems.length === rightItems.length) {
+        leftItems.push(item);
+      } else {
+        rightItems.push(item);
+      }
+    } else {
+      if (rightItems.length > 0 && rightItems.length === leftItems.length) {
+        rightItems[rightItems.length - 1].text += " " + l;
+      } else if (leftItems.length > rightItems.length) {
+        leftItems[leftItems.length - 1].text += " " + l;
+      } else {
+        footer = footer ? `${footer} ${l}` : l;
+      }
+    }
+  }
+
+  if (leftItems.length < 2 || rightItems.length < 2) {
+    return null;
+  }
+
+  return {
+    prompt: prompt || "सुमेलित कीजिए:",
+    leftHeader,
+    rightHeader,
+    leftItems,
+    rightItems,
+    footer,
+    examBadge,
+  };
+}
+
 export function FormattedQuestionText({
   text,
   className = "",
   size = "base",
 }: FormattedQuestionTextProps) {
   if (!text) return null;
+
+  const textSizeClass =
+    size === "sm"
+      ? "text-xs sm:text-sm"
+      : size === "lg"
+      ? "text-base sm:text-lg md:text-xl"
+      : "text-sm sm:text-base md:text-lg";
+
+  // Check if this is a matching-type question (Col I / Col II or सूची-1 / सूची-2)
+  const matching = tryParseMatchingQuestion(text);
+  if (matching) {
+    return (
+      <div className={`space-y-3 font-devanagari ${textSizeClass} ${className}`}>
+        {/* Main Prompt */}
+        <div className="font-extrabold text-slate-900 leading-snug">
+          {matching.prompt}
+        </div>
+
+        {/* Side-by-side Matching Columns Card */}
+        <div className="rounded-2xl border border-amber-200/90 bg-linear-to-b from-amber-50/40 to-white p-3.5 sm:p-4 shadow-xs">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {/* Left Column Card */}
+            <div className="rounded-xl border border-amber-200/80 bg-white p-3 space-y-2 shadow-2xs">
+              <div className="flex items-center gap-2 text-xs font-black text-amber-950 border-b border-amber-100 pb-1.5 uppercase tracking-wide">
+                <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0" />
+                <span className="truncate">{matching.leftHeader}</span>
+              </div>
+              <div className="space-y-2">
+                {matching.leftItems.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-start gap-2 bg-amber-50/60 p-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-900 border border-amber-100/80"
+                  >
+                    <span className="w-6 h-6 rounded-lg bg-amber-500 text-slate-950 font-black text-xs flex items-center justify-center shrink-0 shadow-2xs">
+                      {item.prefix}
+                    </span>
+                    <span className="leading-snug pt-0.5">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column Card */}
+            <div className="rounded-xl border border-sky-200/80 bg-white p-3 space-y-2 shadow-2xs">
+              <div className="flex items-center gap-2 text-xs font-black text-sky-950 border-b border-sky-100 pb-1.5 uppercase tracking-wide">
+                <span className="w-2 h-2 rounded-full bg-sky-500 shrink-0" />
+                <span className="truncate">{matching.rightHeader}</span>
+              </div>
+              <div className="space-y-2">
+                {matching.rightItems.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-start gap-2 bg-sky-50/60 p-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-900 border border-sky-100/80"
+                  >
+                    <span className="w-6 h-6 rounded-lg bg-sky-500 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-2xs">
+                      {item.prefix}
+                    </span>
+                    <span className="leading-snug pt-0.5">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Footer instruction or Koot selection prompt */}
+          {(matching.footer || matching.examBadge) && (
+            <div className="mt-3 pt-2.5 border-t border-amber-200/70 flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-amber-950">
+              <span className="flex items-center gap-1.5">
+                <span className="text-amber-600">🎯</span>
+                <span>{matching.footer || "कूट से सही उत्तर का चयन कीजिए:"}</span>
+              </span>
+              {matching.examBadge && (
+                <span className="text-[10px] bg-slate-100 border border-slate-200 text-slate-700 px-2.5 py-0.5 rounded-md font-bold">
+                  {matching.examBadge}
+                </span>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   // 1. Normalize line endings and escaped newlines
   let processed = text
@@ -35,17 +320,12 @@ export function FormattedQuestionText({
     .map((l) => l.trim())
     .filter(Boolean);
 
-  const textSizeClass =
-    size === "sm"
-      ? "text-xs sm:text-sm"
-      : size === "lg"
-      ? "text-base sm:text-lg md:text-xl"
-      : "text-sm sm:text-base md:text-lg";
-
   // If simple single line question, render cleanly with whitespace preservation
   if (lines.length <= 1) {
     return (
-      <span className={`whitespace-pre-line leading-relaxed font-devanagari ${textSizeClass} ${className}`}>
+      <span
+        className={`whitespace-pre-line leading-relaxed font-devanagari ${textSizeClass} ${className}`}
+      >
         {text}
       </span>
     );
@@ -64,6 +344,7 @@ export function FormattedQuestionText({
         const isFooter =
           !isFirstLine &&
           (line.startsWith("कूट") ||
+            line.startsWith("कुट") ||
             line.startsWith("सही कूट") ||
             line.includes("दिए गए कूट") ||
             line.includes("सही उत्तर चुनिए") ||
@@ -101,7 +382,27 @@ export function FormattedQuestionText({
           );
         }
 
-        // Ordered statement or match item: e.g. (1) ... or 1. ... or i. ... or A. ...
+        // Ordered statement or item: e.g. (1) ... or 1. ... or i. ... or A. ...
+        const itemMatch = line.match(
+          /^(\([0-9a-zA-Zअ-दiIvVxX]+\)|[0-9a-zA-Zअ-दiIvVxX]+[\.\)]?)\s*(.*)$/
+        );
+
+        if (itemMatch && itemMatch[1]) {
+          const prefix = itemMatch[1].replace(/[\(\)\.\)]/g, "");
+          const content = itemMatch[2];
+          return (
+            <div
+              key={idx}
+              className="flex items-start gap-2.5 pl-1 sm:pl-2 text-slate-800 font-semibold leading-relaxed"
+            >
+              <span className="px-1.5 py-0.5 rounded-md bg-amber-100 text-amber-900 font-bold text-xs shrink-0 mt-0.5">
+                {prefix}
+              </span>
+              <span className="flex-1 break-words">{content}</span>
+            </div>
+          );
+        }
+
         return (
           <div
             key={idx}
