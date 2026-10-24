@@ -58,3 +58,11 @@ public/uploads/*
 # Scratch directory
 /scratch/
 
+# Python cache & temp folders
+__pycache__/
+*.py[cod]
+*$py.class
+/temp-ldc-paper/
+/temp-*/
+
+

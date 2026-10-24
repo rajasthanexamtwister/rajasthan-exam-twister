@@ -51,7 +51,9 @@ export function BlogForm({ initialData, isEdit }: BlogFormProps) {
   const [title, setTitle] = useState(initialData?.title || "");
   const [content, setContent] = useState(initialData?.content || "");
   const [excerpt, setExcerpt] = useState(initialData?.excerpt || "");
-  const [author, setAuthor] = useState(initialData?.author || "Admin");
+  const [author, setAuthor] = useState(
+    initialData?.author || "Rajasthan Exam Twister Editorial Team"
+  );
   const [metaTitle, setMetaTitle] = useState(initialData?.metaTitle || "");
   const [metaDescription, setMetaDescription] = useState(initialData?.metaDescription || "");
   const [canonicalUrl, setCanonicalUrl] = useState(initialData?.canonicalUrl || "");
@@ -90,9 +92,21 @@ export function BlogForm({ initialData, isEdit }: BlogFormProps) {
       return;
     }
 
-    if (publishImmediately && (!content || !content.replace(/<[^>]*>/g, "").trim())) {
-      setError("Cannot publish a blog with empty content");
-      return;
+    if (publishImmediately) {
+      if (!content || !content.replace(/<[^>]*>/g, "").trim()) {
+        setError("Cannot publish a blog with empty content");
+        return;
+      }
+
+      // AdSense Quality Check: Warn if content is thin (< 800 words)
+      if (wordCount < 800) {
+        const proceed = window.confirm(
+          `⚠️ AdSense Quality Alert (Low-Value Content Risk):\n\nThis article only contains ${wordCount} words.\n\nGoogle AdSense strongly recommends at least 800–1200 words of comprehensive, original content to avoid rejection for "Low-Value / Thin Content".\n\nClick "OK" to publish anyway, or "Cancel" to continue writing and expand the article.`
+        );
+        if (!proceed) {
+          return;
+        }
+      }
     }
 
     try {
@@ -299,16 +313,112 @@ export function BlogForm({ initialData, isEdit }: BlogFormProps) {
               <label className="block text-xs font-bold uppercase tracking-wider text-slate-500">
                 Article Body (HTML Supported)
               </label>
-              <span className="text-xs text-slate-400 font-mono">
-                {wordCount} words
-              </span>
+              <div className="flex items-center gap-2">
+                <span
+                  className={clsx(
+                    "text-xs px-2.5 py-0.5 rounded-full font-semibold border flex items-center gap-1",
+                    wordCount >= 800
+                      ? "bg-emerald-50 text-emerald-800 border-emerald-300"
+                      : wordCount >= 500
+                      ? "bg-amber-50 text-amber-800 border-amber-300"
+                      : "bg-red-50 text-red-800 border-red-300"
+                  )}
+                  title={
+                    wordCount >= 800
+                      ? "AdSense & SEO Ready"
+                      : "Target 800+ words to prevent AdSense Low-Value Content flags"
+                  }
+                >
+                  <span>{wordCount >= 800 ? "✅" : "⚠️"}</span>
+                  <span>{wordCount} words</span>
+                  <span className="text-[10px] opacity-75">
+                    {wordCount >= 800 ? "(AdSense Ready)" : "(Min 800 Recommended)"}
+                  </span>
+                </span>
+              </div>
             </div>
             <TiptapEditor content={content} onChange={setContent} />
           </div>
         </div>
 
-        {/* Sidebar Column: Cover Image, Excerpt, Meta, Author */}
+        {/* Sidebar Column: Quality Checklist, Cover Image, Excerpt, Meta, Author */}
         <div className="space-y-6">
+          {/* AdSense & E-E-A-T Quality Checklist Card */}
+          <div className="bg-white p-5 rounded-2xl border border-amber-200/80 shadow-sm space-y-3 bg-gradient-to-br from-amber-50/50 to-white">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-amber-950 uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+                <span>AdSense Quality Checklist</span>
+              </div>
+              <span
+                className={clsx(
+                  "text-[10px] font-bold px-2 py-0.5 rounded-full",
+                  wordCount >= 800 && title.length >= 20 && coverImageId
+                    ? "bg-emerald-100 text-emerald-800"
+                    : "bg-amber-100 text-amber-900"
+                )}
+              >
+                {wordCount >= 800 && title.length >= 20 && coverImageId ? "Ready" : "In Progress"}
+              </span>
+            </div>
+
+            <ul className="space-y-2 text-xs">
+              <li className="flex items-center justify-between text-slate-700">
+                <span className="flex items-center gap-1.5">
+                  <span>{wordCount >= 800 ? "✅" : "⚠️"}</span>
+                  <span>800+ Words (No Thin Content)</span>
+                </span>
+                <span className="font-mono text-[11px] font-bold">
+                  {wordCount}/800
+                </span>
+              </li>
+
+              <li className="flex items-center justify-between text-slate-700">
+                <span className="flex items-center gap-1.5">
+                  <span>{title.trim().length >= 20 ? "✅" : "⚠️"}</span>
+                  <span>Descriptive Title (20+ chars)</span>
+                </span>
+                <span className="font-mono text-[11px]">
+                  {title.trim().length} chars
+                </span>
+              </li>
+
+              <li className="flex items-center justify-between text-slate-700">
+                <span className="flex items-center gap-1.5">
+                  <span>{coverImageId ? "✅" : "⚪"}</span>
+                  <span>Featured Cover Image</span>
+                </span>
+                <span className="text-[11px] font-semibold text-slate-500">
+                  {coverImageId ? "Selected" : "Missing"}
+                </span>
+              </li>
+
+              <li className="flex items-center justify-between text-slate-700">
+                <span className="flex items-center gap-1.5">
+                  <span>{author && author !== "Admin" ? "✅" : "⚠️"}</span>
+                  <span>E-E-A-T Author Identity</span>
+                </span>
+                <span className="text-[11px] font-semibold text-slate-500 truncate max-w-[100px]">
+                  {author || "Not set"}
+                </span>
+              </li>
+
+              <li className="flex items-center justify-between text-slate-700">
+                <span className="flex items-center gap-1.5">
+                  <span>{excerpt.trim().length >= 50 ? "✅" : "⚪"}</span>
+                  <span>Summary / Excerpt</span>
+                </span>
+                <span className="text-[11px] font-semibold text-slate-500">
+                  {excerpt.trim().length >= 50 ? "Added" : "Optional"}
+                </span>
+              </li>
+            </ul>
+
+            <p className="text-[10px] text-slate-500 leading-relaxed pt-1 border-t border-amber-200/50">
+              💡 <strong>AdSense Tip:</strong> Google rejects sites with thin (less than 800 words) or generic content. Ensure original analysis, syllabus points, and clear facts.
+            </p>
+          </div>
+
           {/* Cover Image Card */}
           <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
             <label className="block text-xs font-bold uppercase tracking-wider text-slate-600">

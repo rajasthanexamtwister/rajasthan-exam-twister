@@ -410,6 +410,38 @@ export default async function NoteDetailPage({ params }: NoteDetailPageProps) {
           </section>
         )}
 
+        {/* E-E-A-T Fact Verification & Curriculum Specialist Card */}
+        <div className="p-5 sm:p-6 rounded-3xl bg-amber-50/80 border border-amber-200/90 flex flex-col sm:flex-row items-start sm:items-center gap-4 shadow-2xs print:hidden">
+          <div className="relative w-12 h-12 rounded-2xl overflow-hidden ring-2 ring-amber-400 bg-slate-900 shrink-0">
+            <Image
+              src="/brand/logo.png"
+              alt="Rajasthan Exam Twister Editorial Research Team"
+              width={48}
+              height={48}
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <div className="space-y-1 flex-1">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="font-bold text-[#0B132B] text-sm">
+                Rajasthan Exam Twister Research Desk
+              </span>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-200 text-amber-950 border border-amber-300">
+                Syllabus Verified
+              </span>
+            </div>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Curated by competitive exam specialists in Jaipur, Rajasthan. Facts, historical dates, and revision bullet points are strictly verified against official RPSC, RSSB, and Hindi Granth Academy reference materials.
+            </p>
+          </div>
+          <Link
+            href="/about"
+            className="text-xs font-bold text-amber-900 hover:text-amber-950 hover:underline shrink-0 pt-1 sm:pt-0"
+          >
+            Editorial Policy &rarr;
+          </Link>
+        </div>
+
         {/* Ad Unit 2: notes-bottom-download (End of Note / Before Telegram & Related) */}
         <div className="print:hidden">
           <AdSenseUnit slotId="1637999739" label="Sponsored" />

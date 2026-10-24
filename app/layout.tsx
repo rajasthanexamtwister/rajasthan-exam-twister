@@ -169,11 +169,11 @@ export default function RootLayout({
         {/* Google Consent Mode v2 & Google Analytics 4 Script */}
         <GoogleConsentScripts />
 
-        {/* Google AdSense Script - lazyOnload strategy prevents blocking FCP, LCP, and TBT */}
+        {/* Google AdSense Script - afterInteractive ensures review bot & crawlers detect script immediately */}
         <Script
           id="google-adsense"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1617995815866036"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           crossOrigin="anonymous"
         />
 

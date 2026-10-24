@@ -129,6 +129,8 @@ def parse_docx(docx_path):
                         i += 1
                         
                     opt_val = " ".join(opt_content_lines).strip()
+                    opt_val = re.sub(r"\s+(?:[A-Za-z\u0900-\u097F\s]+)?Quiz\s+\d+.*$", "", opt_val, flags=re.I)
+                    opt_val = re.sub(r"परिणाम\s*\d+%.*$", "", opt_val, flags=re.I).strip()
                     opt_idx = ord(target_letter) - ord('A')
                     
                     if is_letter_green or is_content_green:
@@ -237,6 +239,8 @@ def parse_docx(docx_path):
         topic_slug = "paramparagat-jal-prabandhan"
     elif "किसान" in topic_title or "आन्दोलन" in topic_title or "आंदोलन" in topic_title:
         topic_slug = "kisan-tatha-adivasi-andolan"
+    elif "स्थापत्य" in topic_title:
+        topic_slug = "sthaptya-kala"
 
     seed_data = {
         "topic": {

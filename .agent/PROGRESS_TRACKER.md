@@ -68,8 +68,8 @@ OVERALL COMPLETION: ~88%
   * Normalized string distance duplicate guard: blocks re-adding or re-uploading identical questions.
   * Instant auto-advance: clicking "Mark Uploaded" immediately moves the post from `Pending` to `Uploaded` and loads the next question.
 * **Current Upload Status (October 2026):**
-  * **Questions 1 to 11:** Marked as **Uploaded** (`instagramUploaded: true`) with timestamps and sequences 1 to 11.
-  * **Questions 12 to 15:** Active in **Pending Queue** with newly rendered balanced reels and Twitter cards ready for posting.
+  * **Questions 1 to 30:** Marked as **Uploaded** (`instagramUploaded: true`) with timestamps and sequences 1 to 30.
+  * **Next Active Slot:** Question 31 onwards ready on request.
 
 ### B. Interactive Quiz & Mock Test Series Engine (90% Functional)
 * **Location:** `app/(student)/test-series/`, `app/(student)/quiz/`, `server/services/quiz-service.ts`

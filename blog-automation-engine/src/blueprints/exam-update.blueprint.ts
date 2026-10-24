@@ -3,7 +3,7 @@ import { ArticleBlueprint } from './current-affairs.blueprint.js';
 export const ExamUpdateBlueprint: ArticleBlueprint = {
   type: 'EXAM_UPDATE',
   name: 'Rajasthan Exam Notification, Syllabus & Recruitment Update',
-  targetWordCount: { min: 700, max: 1400 },
+  targetWordCount: { min: 800, max: 1500 },
   requiredSections: [
     'H1 Title',
     'Official Update Summary (आधिकारिक अधिसूचना सारांश)',

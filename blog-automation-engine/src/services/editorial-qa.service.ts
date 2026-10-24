@@ -19,24 +19,24 @@ export class EditorialQAService {
     const wordCount = countWords(content);
     const readingTime = estimateReadingTime(content);
 
-    // 1. HARD BLOCK: Empty Article
-    if (!content || wordCount < 200) {
+        // 1. HARD BLOCK: Minimum 800 Words for AdSense & Quality Compliance
+    if (!content || wordCount < 800) {
       const check: QACheckResult = {
-        code: 'BLOCK_EMPTY_CONTENT',
-        name: 'Minimum Content Length Check',
+        code: 'BLOCK_INSUFFICIENT_LENGTH',
+        name: 'AdSense 800+ Word Count Depth',
         passed: false,
         severity: 'BLOCK',
-        message: `Article content is too short or empty (${wordCount} words). Minimum 200 required.`,
+        message: `Article content is too short (${wordCount} words). Minimum 800 words strictly required to ensure comprehensive exam depth and prevent AdSense Low-Value Content rejection.`,
       };
       checks.push(check);
       hardBlocks.push(check);
     } else {
       checks.push({
         code: 'PASS_CONTENT_LENGTH',
-        name: 'Minimum Content Length Check',
+        name: 'AdSense 800+ Word Count Depth',
         passed: true,
         severity: 'BLOCK',
-        message: `Article contains sufficient length (${wordCount} words).`,
+        message: `Article contains comprehensive depth (${wordCount} words, AdSense 800+ compliant).`,
       });
     }
 
