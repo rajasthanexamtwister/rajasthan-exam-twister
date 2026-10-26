@@ -19,10 +19,7 @@
     "blog:automation:batch": "tsx scripts/automation-batch.ts",
     "blog:automation:publish": "tsx scripts/automation-publish.ts",
     "blog:automation:queue": "tsx scripts/automation-queue.ts",
-    "blog:automation:retry": "tsx scripts/automation-retry.ts",
-    "engine:blog:batch": "tsx blog-automation-engine/scripts/generate_30_blogs_scheduled.ts",
-    "engine:blog:daily": "tsx blog-automation-engine/scripts/daily_blog_runner.ts",
-    "engine:blog:export": "tsx blog-automation-engine/scripts/blog_export.ts"
+    "blog:automation:retry": "tsx scripts/automation-retry.ts"
   },
   "dependencies": {
     "@tiptap/extension-image": "^3.31.3",
