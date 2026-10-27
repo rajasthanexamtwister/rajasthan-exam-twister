@@ -3,8 +3,8 @@
 This rule defines the authoritative, simplified Reel Generation and Question Publishing Workflow for Rajasthan Exam Twister.
 
 ## 📌 Status Tracker & Baseline
-- **Completed & Uploaded:** **Questions 1 to 30 (Q1 – Q30)** are fully uploaded to Instagram by the user.
-- **Current Active Slot:** **Q31 onwards** (Batch size: max 20 questions per day / user slot).
+- **Completed & Uploaded:** **Questions 1 to 35 (Q1 – Q35)** are fully uploaded to Instagram & X by the user.
+- **Current Active Slot:** **Q36 onwards** (Batch size: max 20 questions per day / user slot).
 
 ---
 

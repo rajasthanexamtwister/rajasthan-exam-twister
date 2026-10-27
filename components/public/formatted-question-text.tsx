@@ -416,8 +416,10 @@ export function FormattedQuestionText({
     .replace(/\\n/g, "\n")
     .replace(/\r\n/g, "\n");
 
-  // 2. Intelligently format inline match items / statements if cramped on single line
+  // 2. Intelligently format inline match items / statements / markdown images / bare Cloudinary URLs
   processed = processed
+    .replace(/(!\[.*?\]\(.*?\))/g, "\n$1\n")
+    .replace(/(https:\/\/res\.cloudinary\.com\/[^\s"'>\)]+\.(?:jpg|jpeg|png|webp|svg|gif))/gi, "\n$1\n")
     .replace(
       /\s+(कथन\s*(?:\([0-9a-zA-Z\u0900-\u097FivxIVX]+\)|[0-9a-zA-Z\u0900-\u097FivxIVX]+)?[:\s\-]|कारण\s*(?:\([0-9a-zA-Z\u0900-\u097FivxIVX]+\)|[0-9a-zA-Z\u0900-\u097FivxIVX]+)?[:\s\-]|अभिकथन\s*(?:\([0-9a-zA-Z\u0900-\u097FivxIVX]+\)|[0-9a-zA-Z\u0900-\u097FivxIVX]+)?[:\s\-]|वक्तव्य\s*(?:\([0-9a-zA-Z\u0900-\u097FivxIVX]+\)|[0-9a-zA-Z\u0900-\u097FivxIVX]+)?[:\s\-])/gi,
       "\n$1"
@@ -437,8 +439,10 @@ export function FormattedQuestionText({
     .map((l) => l.trim())
     .filter(Boolean);
 
-  // If simple single line question, render cleanly with whitespace preservation
-  if (lines.length <= 1) {
+  const hasAnyImage = processed.includes("![") || processed.includes("res.cloudinary.com");
+
+  // If simple single line question without images, render cleanly with whitespace preservation
+  if (lines.length <= 1 && !hasAnyImage) {
     return (
       <span
         className={`whitespace-pre-line leading-relaxed font-devanagari ${textSizeClass} ${className}`}
@@ -451,6 +455,26 @@ export function FormattedQuestionText({
   return (
     <div className={`space-y-2 font-devanagari ${textSizeClass} ${className}`}>
       {lines.map((line, idx) => {
+        // 0. Markdown image support: ![alt text](url) or bare Cloudinary URL
+        const imgMdMatch = line.match(/^!\[(.*?)\]\((.*?)\)$/);
+        const bareCloudinaryMatch = line.match(/^(https:\/\/res\.cloudinary\.com\/[^\s"'>\)]+\.(?:jpg|jpeg|png|webp|svg|gif))$/i);
+        const imgSrc = imgMdMatch ? imgMdMatch[2] : (bareCloudinaryMatch ? bareCloudinaryMatch[1] : null);
+        const imgAlt = imgMdMatch ? (imgMdMatch[1] || "Question diagram") : "Question diagram";
+
+        if (imgSrc) {
+          return (
+            <div key={idx} className="my-3 flex justify-center w-full">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={imgSrc}
+                alt={imgAlt}
+                className="max-h-80 w-auto max-w-full rounded-2xl border border-slate-200 bg-white p-2.5 shadow-sm object-contain"
+                loading="lazy"
+              />
+            </div>
+          );
+        }
+
         const isFirstLine = idx === 0;
 
         const isSubHeader =

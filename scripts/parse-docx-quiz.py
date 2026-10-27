@@ -117,12 +117,26 @@ def parse_docx(docx_path):
                     opt_content_lines = []
                     is_content_green = False
                     is_content_red = False
+                    next_target = chr(ord(target_letter) + 1) if target_letter != 'D' else None
                     
                     while i < len(raw_p_list):
                         sub = raw_p_list[i]
                         sub_text = sub['text']
-                        if sub_text in ['A', 'B', 'C', 'D'] or re.match(r"^प्रश्न\s*\d+", sub_text) or "💡" in sub_text or sub_text == "व्याख्या":
+                        
+                        # Stop conditions: question start, explanation icon/header
+                        if re.match(r"^प्रश्न\s*\d+", sub_text) or "💡" in sub_text or sub_text == "व्याख्या":
                             break
+                            
+                        # If sub_text is next option letter:
+                        if next_target and sub_text == next_target:
+                            # If no content yet, and next line is ALSO next_target, current line is content!
+                            if len(opt_content_lines) == 0 and i + 1 < len(raw_p_list) and raw_p_list[i + 1]['text'] == next_target:
+                                pass
+                            else:
+                                break
+                        elif target_letter != 'D' and sub_text in ['A', 'B', 'C', 'D'] and len(opt_content_lines) > 0:
+                            break
+                            
                         opt_content_lines.append(sub_text)
                         if sub['has_green']: is_content_green = True
                         if sub['has_red']: is_content_red = True
@@ -210,6 +224,13 @@ def parse_docx(docx_path):
     questions_with_exp = sum(1 for q in questions if q['explanation'])
     print(f"Questions with rich explanations: {questions_with_exp} / {len(questions)}")
 
+    # If topic_title was just a generic filename, infer clean topic title from the batch headers
+    if headers_count:
+        cleaned_headers = [re.sub(r"\s+Quiz\s+\d+.*$", "", h).strip() for h in headers_count.keys()]
+        common_header = Counter(cleaned_headers).most_common(1)[0][0]
+        if common_header and len(common_header) > 3 and not common_header.lower().startswith("history"):
+            topic_title = common_header
+
     # Subject & category inference
     parent_dir = os.path.basename(os.path.dirname(docx_path))
     subject = "राजस्थान सामान्य ज्ञान"
@@ -241,6 +262,8 @@ def parse_docx(docx_path):
         topic_slug = "kisan-tatha-adivasi-andolan"
     elif "स्थापत्य" in topic_title:
         topic_slug = "sthaptya-kala"
+    elif "स्त्रोत" in topic_title or "स्रोत" in topic_title:
+        topic_slug = "rajasthan-ka-itihas-janne-ke-srot"
 
     seed_data = {
         "topic": {
