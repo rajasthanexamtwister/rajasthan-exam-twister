@@ -1735,9 +1735,11 @@
     "aiPrompt": "Vertical 9:16 serene spiritual desert scene in Western Rajasthan, sacred high sand dune of Samrathal Dhora under a majestic golden sunset, herd of graceful blackbucks and chinkaras resting peacefully near Khejri trees, sacred holy fire (havan kund) with gentle fragrant smoke, ultra-realistic 8k cinematic Rajasthan cultural heritage, no text.",
     "status": {
       "instagramUploaded": true,
+      "instagramUploadedAt": "2026-10-27T18:00:00.000Z",
       "twitterPosted": true,
-      "uploadedAt": "2026-10-26T13:50:42.223Z"
-    }
+      "uploadedAt": "2026-10-27T18:00:00.000Z"
+    },
+    "uploadSequence": 31
   },
   {
     "id": "raj-culture-q32",
@@ -1776,9 +1778,11 @@
     "aiPrompt": "Vertical 9:16 dramatic cultural night photography in Bikaner desert. Traditional ascetic folk performers performing the awe-inspiring sacred fire dance barefoot over glowing golden-red charcoal embers (Dhoona), dramatic orange fire sparks flying in the night sky, mystical trance atmosphere, cinematic lighting, 8k photorealistic heritage, no text.",
     "status": {
       "instagramUploaded": true,
+      "instagramUploadedAt": "2026-10-27T18:00:00.000Z",
       "twitterPosted": true,
-      "uploadedAt": "2026-10-26T13:50:42.235Z"
-    }
+      "uploadedAt": "2026-10-27T18:00:00.000Z"
+    },
+    "uploadSequence": 32
   },
   {
     "id": "raj-culture-q33",
@@ -1817,9 +1821,11 @@
     "aiPrompt": "Vertical 9:16 grand historical heritage painting scene of 16th century Mughal-Rajput era. The wise Saint Dadu Dayal dressed in pure white ascetic robes engaged in deep philosophical discourse with Mughal Emperor Akbar inside an intricately carved imperial sandstone pavilion at Fatehpur Sikri, warm sunlight rays, royal Persian carpets, 8k cinematic realism, no text.",
     "status": {
       "instagramUploaded": true,
+      "instagramUploadedAt": "2026-10-27T18:00:00.000Z",
       "twitterPosted": true,
-      "uploadedAt": "2026-10-26T13:50:42.235Z"
-    }
+      "uploadedAt": "2026-10-27T18:00:00.000Z"
+    },
+    "uploadSequence": 33
   },
   {
     "id": "raj-culture-q34",
@@ -1858,9 +1864,11 @@
     "aiPrompt": "Vertical 9:16 elegant royal Kishangarh miniature aesthetic. Royal Rajput princess dressed in sheer golden-bordered odhani, wearing traditional pearl Besari nose ring, poised gracefully near Gundolav lake under a moonlit starlit sky, delicate lotus flowers in bloom, marble jharokha, rich midnight blue and gold palette, 8k ultra-detailed museum masterpiece, no text.",
     "status": {
       "instagramUploaded": true,
+      "instagramUploadedAt": "2026-10-27T18:00:00.000Z",
       "twitterPosted": true,
-      "uploadedAt": "2026-10-26T13:50:42.235Z"
-    }
+      "uploadedAt": "2026-10-27T18:00:00.000Z"
+    },
+    "uploadSequence": 34
   },
   {
     "id": "raj-culture-q35",
@@ -1899,8 +1907,225 @@
     "aiPrompt": "Vertical 9:16 breathtaking low-angle dramatic view of Mehrangarh Fort towering on the sheer cliff of Chidiyatook hill in the Golden Blue City Jodhpur. Majestic red sandstone ramparts illuminated by golden evening sun, flying pigeons, indigo blue painted houses below, epic cinematic scale, 8k photorealistic architectural perfection, no text.",
     "status": {
       "instagramUploaded": true,
+      "instagramUploadedAt": "2026-10-27T18:00:00.000Z",
       "twitterPosted": true,
-      "uploadedAt": "2026-10-26T13:50:42.235Z"
-    }
+      "uploadedAt": "2026-10-27T18:00:00.000Z"
+    },
+    "uploadSequence": 35
+  },
+  {
+    "id": "raj-culture-q36",
+    "questionNumber": 36,
+    "date": "27 Oct 2026",
+    "subject": "RAJASTHAN ART & CULTURE | कला एवं संस्कृति",
+    "topic": "राजस्थान के ऐतिहासिक दुर्ग एवं स्मारक (विजय स्तंभ, चित्तौड़गढ़)",
+    "questionHi": "मालवा विजय (सारंगपुर युद्ध, 1437 ई.) के उपलक्ष्य में महाराणा कुंभा द्वारा निर्मित 'विजय स्तंभ' (कीर्ति स्तंभ) कितने मंजिला है तथा इसके मुख्य शिल्पी/वास्तुकार कौन थे?",
+    "questionEn": "(How many storeys is the 'Vijay Stambh' built by Maharana Kumbha to commemorate the victory of Sarangpur, and who was its chief architect?)",
+    "options": [
+      {
+        "key": "A",
+        "text": "7 मंजिला, वास्तुकार मण्डन",
+        "isCorrect": false
+      },
+      {
+        "key": "B",
+        "text": "9 मंजिला, वास्तुकार जैता व पुत्र (नापा, पोमा)",
+        "isCorrect": true
+      },
+      {
+        "key": "C",
+        "text": "11 मंजिला, वास्तुकार लालचंद",
+        "isCorrect": false
+      },
+      {
+        "key": "D",
+        "text": "5 मंजिला, वास्तुकार सोढा",
+        "isCorrect": false
+      }
+    ],
+    "correctOption": "B",
+    "explanation": "विजय स्तंभ चित्तौड़गढ़ दुर्ग में स्थित 122 फीट ऊँचा, 9-मंजिला भव्य स्मारक है। इसका निर्माण महाराणा कुंभा ने मालवा के सुल्तान महमूद खिलजी पर विजय (1437 ई.) के उपलक्ष्य में करवाया था। इसके मुख्य शिल्पी 'जैता' तथा उनके पुत्र नापा, पोमा व पूंजा थे। इसे 'भारतीय मूर्तिकला का विश्वकोश' व 'मूर्तियों का अजायबघर' कहा जाता है। 15 अगस्त 1949 को इस पर 1 रुपये का डाक टिकट जारी हुआ था, जो राजस्थान की पहली इमारत है जिस पर डाक टिकट जारी हुआ। यह राजस्थान पुलिस व माध्यमिक शिक्षा बोर्ड का प्रतीक चिह्न भी है।",
+    "instagramImageUrl": "/uploads/social-kits/rajasthan-culture/question-36/reel_9_16.jpg",
+    "paperCropUrl": "/uploads/social-kits/rajasthan-culture/question-36/paper_crop.jpg",
+    "aiPrompt": "Vertical 9:16 majestic golden hour architectural view of the 9-storey carved marble and red sandstone Vijay Stambh (Tower of Victory) in Chittorgarh Fort, intricate Hindu deity sculptures on stone walls, flock of doves taking flight under crimson dusk sky, royal Rajput flags fluttering, 8k ultra-detailed photorealistic cinematic heritage, no text.",
+    "status": {
+      "instagramUploaded": true,
+      "instagramUploadedAt": "2026-10-27T13:45:28.351272+00:00",
+      "twitterPosted": true,
+      "uploadedAt": "2026-10-27T13:45:28.351272+00:00"
+    },
+    "uploadSequence": 36
+  },
+  {
+    "id": "raj-culture-q37",
+    "questionNumber": 37,
+    "date": "27 Oct 2026",
+    "subject": "RAJASTHAN ART & CULTURE | कला एवं संस्कृति",
+    "topic": "राजस्थान के प्रमुख दुर्ग (कुंभलगढ़ दुर्ग, राजसमंद)",
+    "questionHi": "राजस्थान के किस दुर्ग के भीतर स्थित अंतःदुर्ग 'कटारगढ़' को 'मेवाड़ की आँख' (Eye of Mewar) कहा जाता है, जहाँ वीर शिरोमणि महाराणा प्रताप का जन्म हुआ था?",
+    "questionEn": "(The inner fortress 'Katargarh' of which Rajasthani fort is revered as the 'Eye of Mewar', being the historic birthplace of Maharana Pratap?)",
+    "options": [
+      {
+        "key": "A",
+        "text": "अचलगढ़ दुर्ग (सिरोही)",
+        "isCorrect": false
+      },
+      {
+        "key": "B",
+        "text": "कुंभलगढ़ दुर्ग (राजसमंद)",
+        "isCorrect": true
+      },
+      {
+        "key": "C",
+        "text": "मांडलगढ़ दुर्ग (भीलवाड़ा)",
+        "isCorrect": false
+      },
+      {
+        "key": "D",
+        "text": "सज्जनगढ़ दुर्ग (उदयपुर)",
+        "isCorrect": false
+      }
+    ],
+    "correctOption": "B",
+    "explanation": "कुंभलगढ़ दुर्ग (राजसमंद) का निर्माण महाराणा कुंभा ने अपनी पत्नी कुंभलदेवी की स्मृति में शिल्पी मण्डन की देखरेख में करवाया था। इस दुर्ग का सबसे ऊँचा भाग 'कटारगढ़' कहलाता है जो महाराणा कुंभा का निवास स्थान था, इसे 'मेवाड़ की आँख' कहते हैं। कटारगढ़ के 'बादल महल' की 'जूंनी कचहरी' में 9 मई 1540 को महाराणा प्रताप का जन्म हुआ था। इस दुर्ग की प्राचीर 36 किमी लंबी और इतनी चौड़ी है कि उस पर 4 घुड़सवार एक साथ चल सकते हैं, इसे 'भारत की महान दीवार' (Great Wall of India) कहा जाता है।",
+    "instagramImageUrl": "/uploads/social-kits/rajasthan-culture/question-37/reel_9_16.jpg",
+    "paperCropUrl": "/uploads/social-kits/rajasthan-culture/question-37/paper_crop.jpg",
+    "aiPrompt": "Vertical 9:16 awe-inspiring aerial panoramic view of Kumbhalgarh Fort and its serpentine 36-kilometer Great Wall of India winding across lush green Aravalli ridges at sunrise. The crown fortress Katargarh piercing the morning mist, dramatic mountain fortress scale, 8k cinematic realism, no text.",
+    "status": {
+      "instagramUploaded": true,
+      "instagramUploadedAt": "2026-10-27T13:45:28.351272+00:00",
+      "twitterPosted": true,
+      "uploadedAt": "2026-10-27T13:45:28.351272+00:00"
+    },
+    "uploadSequence": 37
+  },
+  {
+    "id": "raj-culture-q38",
+    "questionNumber": 38,
+    "date": "27 Oct 2026",
+    "subject": "RAJASTHAN ART & CULTURE | कला एवं संस्कृति",
+    "topic": "राजस्थान के ऐतिहासिक दुर्ग (रणथंभौर दुर्ग, सवाई माधोपुर)",
+    "questionHi": "'तिरिया तेल हम्मीर हठ, चढ़े न दूजी बार' - यह प्रसिद्ध लोकोक्ति 1301 ई. में अलाउद्दीन खिलजी के विरुद्ध राजस्थान का प्रथम साका करने वाले रणथंभौर के किस पराक्रमी शासक से संबंधित है?",
+    "questionEn": "(The famous historical proverb 'Tiriya Tel Hammir Hath...' is associated with which valorous ruler of Ranthambore who led Rajasthan's first Saka against Alauddin Khalji in 1301 AD?)",
+    "options": [
+      {
+        "key": "A",
+        "text": "पृथ्वीराज चौहान तृतीय",
+        "isCorrect": false
+      },
+      {
+        "key": "B",
+        "text": "राव हम्मीर देव चौहान",
+        "isCorrect": true
+      },
+      {
+        "key": "C",
+        "text": "कान्हड़देव सोनगरा",
+        "isCorrect": false
+      },
+      {
+        "key": "D",
+        "text": "वीर सातलदेव चौहान",
+        "isCorrect": false
+      }
+    ],
+    "correctOption": "B",
+    "explanation": "रणथंभौर दुर्ग (सवाई माधोपुर) अपनी प्राकृतिक अभेद्यता के कारण 'बख्तरबंद दुर्ग' कहलाता है (अबुल फजल ने कहा: 'अन्य सब दुर्ग नंगे हैं, जबकि यह बख्तरबंद है')। यहाँ 11 जुलाई 1301 को अलाउद्दीन खिलजी के आक्रमण के समय राव हम्मीर देव चौहान के नेतृत्व में केसरिया हुआ तथा रानी रंगदेवी के नेतृत्व में राजस्थान का प्रथम जल जौहर (पद्मला तालाब) हुआ। इस दुर्ग में भारत का एकमात्र 'त्रिनेत्र गणेश जी' का प्रसिद्ध मंदिर, जोगी महल व 32 खंभों की छतरी (हम्मीर की कचहरी) स्थित है।",
+    "instagramImageUrl": "/uploads/social-kits/rajasthan-culture/question-38/reel_9_16.jpg",
+    "paperCropUrl": "/uploads/social-kits/rajasthan-culture/question-38/paper_crop.jpg",
+    "aiPrompt": "Vertical 9:16 ancient impregnable Ranthambore Fort perched atop forested cliffs inside tiger reserve, ancient stone gateway and Jogi Mahal by the lotus pond, historic Rajput bastion under golden afternoon sunlight, wild peacocks, 8k hyper-realistic atmospheric heritage landscape, no text.",
+    "status": {
+      "instagramUploaded": true,
+      "instagramUploadedAt": "2026-10-27T13:45:28.351272+00:00",
+      "twitterPosted": true,
+      "uploadedAt": "2026-10-27T13:45:28.351272+00:00"
+    },
+    "uploadSequence": 38
+  },
+  {
+    "id": "raj-culture-q39",
+    "questionNumber": 39,
+    "date": "27 Oct 2026",
+    "subject": "RAJASTHAN ART & CULTURE | कला एवं संस्कृति",
+    "topic": "राजस्थान के प्रमुख दुर्ग (गागरोन दुर्ग, झालावाड़ - ओदक दुर्ग)",
+    "questionHi": "राजस्थान का सर्वश्रेष्ठ जल दुर्ग (ओदक दुर्ग) 'गागरोन का किला' किन दो नदियों के पावन संगम (सामेला) पर बिना किसी नींव के एक सीधी चट्टान पर स्थित है?",
+    "questionEn": "(The premier water fortress 'Gagron Fort' of Rajasthan stands without an artificial foundation on a solid rocky bluff at the sacred confluence of which two rivers?)",
+    "options": [
+      {
+        "key": "A",
+        "text": "चम्बल और बामनी नदी",
+        "isCorrect": false
+      },
+      {
+        "key": "B",
+        "text": "आहू और कालीसिंध नदी",
+        "isCorrect": true
+      },
+      {
+        "key": "C",
+        "text": "बनास और बेड़च नदी",
+        "isCorrect": false
+      },
+      {
+        "key": "D",
+        "text": "सोम और जाखम नदी",
+        "isCorrect": false
+      }
+    ],
+    "correctOption": "B",
+    "explanation": "गागरोन दुर्ग (झालावाड़) आहू और कालीसिंध नदियों के संगम (सामेला) पर तीन तरफ से पानी से घिरा विश्वप्रसिद्ध जल दुर्ग (ओदक दुर्ग) है। यह राजस्थान का एकमात्र ऐसा दुर्ग है जो बिना किसी नींव के एक विशाल प्राकृतिक चट्टान पर खड़ा है। 2013 में यूनेस्को ने इसे विश्व धरोहर सूची में शामिल किया। यहाँ संत पीपा जी की छतरी, सूफी संत हमीदुद्दीन चिश्ती (मीठे शाह) की दरगाह तथा कोटा राज्य की प्रसिद्ध टकसाल स्थित थी। यहाँ का पहला साका 1423 ई. में अचलदास खींची के समय हुआ था।",
+    "instagramImageUrl": "/uploads/social-kits/rajasthan-culture/question-39/reel_9_16.jpg",
+    "paperCropUrl": "/uploads/social-kits/rajasthan-culture/question-39/paper_crop.jpg",
+    "aiPrompt": "Vertical 9:16 breathtaking river confluence view of the UNESCO world heritage Gagron Water Fort in Jhalawar. Ancient stone battlements surrounded on three sides by turquoise flowing waters of Ahu and Kalisindh rivers, lush green riverbanks, golden twilight reflections on water, 8k cinematic perfection, no text.",
+    "status": {
+      "instagramUploaded": true,
+      "instagramUploadedAt": "2026-10-27T13:45:28.351272+00:00",
+      "twitterPosted": true,
+      "uploadedAt": "2026-10-27T13:45:28.351272+00:00"
+    },
+    "uploadSequence": 39
+  },
+  {
+    "id": "raj-culture-q40",
+    "questionNumber": 40,
+    "date": "27 Oct 2026",
+    "subject": "RAJASTHAN ART & CULTURE | कला एवं संस्कृति",
+    "topic": "राजस्थान के प्रमुख स्मारक (हवा महल, जयपुर)",
+    "questionHi": "जयपुर के विश्वप्रसिद्ध 5-मंजिला 'हवा महल' का निर्माण 1799 ई. में सवाई प्रताप सिंह ने करवाया था, इसके प्रधान वास्तुकार कौन थे तथा इसमें कुल कितनी खिड़कियाँ/झरोखे हैं?",
+    "questionEn": "(Built in 1799 AD by Sawai Pratap Singh, who was the chief architect of Jaipur's iconic 5-storey Hawa Mahal and how many ornate casements/jharokhas does it have?)",
+    "options": [
+      {
+        "key": "A",
+        "text": "वास्तुकार विद्याधर भट्टाचार्य, 500 झरोखे",
+        "isCorrect": false
+      },
+      {
+        "key": "B",
+        "text": "वास्तुकार लालचंद उस्ता, 953 झरोखे",
+        "isCorrect": true
+      },
+      {
+        "key": "C",
+        "text": "वास्तुकार मण्डन, 750 झरोखे",
+        "isCorrect": false
+      },
+      {
+        "key": "D",
+        "text": "वास्तुकार अहमद लाहौरी, 1001 झरोखे",
+        "isCorrect": false
+      }
+    ],
+    "correctOption": "B",
+    "explanation": "हवा महल (जयपुर) का निर्माण 1799 ई. में सवाई प्रताप सिंह द्वारा भगवान श्रीकृष्ण के मुकुट के आकार में करवाया गया था। इसके प्रमुख वास्तुकार लालचंद उस्ता थे। यह 5-मंजिला इमारत बिना किसी नींव के सीधे धरातल पर खड़ी है। इसमें 953 नक्काशीदार खिड़कियाँ/झरोखे तथा 365 छोटी खिड़कियाँ हैं। इसकी पाँचों मंजिलों के नाम क्रमशः (नीचे से ऊपर): 1. शरद/प्रताप मंदिर, 2. रतन मंदिर, 3. विचित्र मंदिर, 4. प्रकाश मंदिर, 5. हवा मंदिर हैं। राजपरिवार की रानियाँ व महिलाएँ पर्दा प्रथा का पालन करते हुए यहाँ से शहर के तीज-गणगौर के जुलूस देखती थीं।",
+    "instagramImageUrl": "/uploads/social-kits/rajasthan-culture/question-40/reel_9_16.jpg",
+    "paperCropUrl": "/uploads/social-kits/rajasthan-culture/question-40/paper_crop.jpg",
+    "aiPrompt": "Vertical 9:16 stunning frontal close-up view of the iconic pink sandstone honeycomb facade of Hawa Mahal (Palace of Winds) in Jaipur, 953 intricate carved jharokha windows illuminated by morning pink dawn, bustling heritage street with royal pigeons, 8k photorealistic architectural perfection, no text.",
+    "status": {
+      "instagramUploaded": true,
+      "instagramUploadedAt": "2026-10-27T13:45:28.351272+00:00",
+      "twitterPosted": true,
+      "uploadedAt": "2026-10-27T13:45:28.351272+00:00"
+    },
+    "uploadSequence": 40
   }
 ]
