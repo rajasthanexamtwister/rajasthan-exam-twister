@@ -588,6 +588,7 @@ export class QuizService {
     subject?: string;
     isSameTopicNextBatch?: boolean;
     pendingQuestionsCount?: number;
+    totalBankQuestions?: number;
   } | null> {
     const currentQuiz = await QuizRepository.findById(currentQuizId);
     if (!currentQuiz || currentQuiz.status !== "PUBLISHED") return null;
@@ -630,6 +631,7 @@ export class QuizService {
         subject: currentQuiz.subject || undefined,
         isSameTopicNextBatch: true,
         pendingQuestionsCount: pendingCount,
+        totalBankQuestions: rawQuestions.length,
       };
     }
 

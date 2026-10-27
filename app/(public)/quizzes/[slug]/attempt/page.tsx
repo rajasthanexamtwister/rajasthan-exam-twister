@@ -245,9 +245,17 @@ export default function QuizAttemptPage() {
           }
 
           sessionStorage.setItem(`ret_quiz_result_${quiz.slug}`, JSON.stringify(data.result));
-          if (limit) {
-            sessionStorage.setItem(`ret_quiz_limit_${quiz.slug}`, limit);
-          }
+          const effectiveLimit = limit || String(quiz.questions.length || 20);
+          sessionStorage.setItem(`ret_quiz_limit_${quiz.slug}`, effectiveLimit);
+
+          const deducedPart = part
+            ? parseInt(part, 10)
+            : quiz.questions[0]?.order
+            ? Math.ceil(quiz.questions[0].order / (parseInt(effectiveLimit, 10) || 20))
+            : 1;
+          sessionStorage.setItem(`ret_quiz_part_${quiz.slug}`, String(deducedPart));
+          sessionStorage.setItem(`ret_quiz_mode_${quiz.slug}`, mode);
+
           router.push(`/quizzes/${quiz.slug}/result`);
         } else {
           alert(data.error?.message || "Failed to submit attempt. Please try again.");
@@ -259,7 +267,7 @@ export default function QuizAttemptPage() {
         setSubmitting(false);
       }
     },
-    [quiz, submitting, startTime, mode, limit, router]
+    [quiz, submitting, startTime, mode, limit, part, router]
   );
 
   // Keep submitAttemptRef up to date

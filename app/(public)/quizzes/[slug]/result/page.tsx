@@ -70,6 +70,7 @@ interface NextQuizInfo {
   subject?: string;
   isSameTopicNextBatch?: boolean;
   pendingQuestionsCount?: number;
+  totalBankQuestions?: number;
 }
 
 export default function QuizResultPage() {
@@ -83,6 +84,10 @@ export default function QuizResultPage() {
   const [loadingNext, setLoadingNext] = useState(true);
   const [language, setLanguage] = useState<"hi" | "en">("hi");
   const [filter, setFilter] = useState<"ALL" | "CORRECT" | "INCORRECT" | "UNATTEMPTED">("ALL");
+
+  const [currentPart, setCurrentPart] = useState<number>(1);
+  const [currentLimit, setCurrentLimit] = useState<number>(20);
+  const [currentMode, setCurrentMode] = useState<string>("practice");
 
   const [copiedAi, setCopiedAi] = useState(false);
   const [copiedShare, setCopiedShare] = useState(false);
@@ -102,6 +107,24 @@ export default function QuizResultPage() {
       try {
         const parsed: AttemptResult = JSON.parse(raw);
         setResult(parsed);
+
+        // Retrieve saved part, limit, and mode
+        const savedPart = sessionStorage.getItem(`ret_quiz_part_${slug}`);
+        const savedLimit = sessionStorage.getItem(`ret_quiz_limit_${slug}`);
+        const savedMode = sessionStorage.getItem(`ret_quiz_mode_${slug}`);
+
+        const limitNum = savedLimit ? parseInt(savedLimit, 10) : 20;
+        setCurrentLimit(limitNum);
+        if (savedMode) setCurrentMode(savedMode);
+
+        let partNum = 1;
+        if (savedPart) {
+          partNum = parseInt(savedPart, 10) || 1;
+        } else if (parsed.breakdown && parsed.breakdown.length > 0) {
+          const minOrder = Math.min(...parsed.breakdown.map((b) => b.order || 1));
+          partNum = Math.ceil(minOrder / limitNum) || 1;
+        }
+        setCurrentPart(partNum);
 
         // Fetch next quiz in series
         if (parsed.quizId) {
@@ -416,68 +439,110 @@ ${quizUrl}
               </button>
 
               <Link
-                href={`/quizzes/${slug}/attempt`}
+                href={`/quizzes/${slug}/attempt?part=${currentPart}&limit=${currentLimit}&mode=${currentMode}`}
                 className="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors border border-slate-200"
               >
                 <RotateCcw className="w-4 h-4" />
-                <span>Retry Quiz</span>
+                <span>Retry Part {currentPart}</span>
               </Link>
             </div>
 
             {/* Next Quiz / Series Completed Container */}
             <div className="pt-4 border-t border-slate-100">
-              {nextQuiz ? (
-                <div className="p-4 rounded-2xl bg-amber-50 border border-amber-300 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="space-y-0.5 text-center sm:text-left">
-                    <span className="text-[10px] font-extrabold uppercase tracking-wider text-amber-800">
-                      {nextQuiz.isSameTopicNextBatch
-                        ? `Topic Practice (${nextQuiz.pendingQuestionsCount} Questions Pending)`
-                        : "Continue Series & Practice"}
-                    </span>
-                    <h3 className="text-sm font-extrabold text-[#0B132B]">
-                      {nextQuiz.isSameTopicNextBatch
-                        ? `Next Batch: ${nextQuiz.title}`
-                        : `Next Quiz: ${nextQuiz.title}`}
-                    </h3>
-                  </div>
-                  <Link
-                    href={
-                      nextQuiz.isSameTopicNextBatch
-                        ? `/quizzes/${nextQuiz.slug}/attempt?limit=${(typeof window !== "undefined" && sessionStorage.getItem(`ret_quiz_limit_${slug}`)) || "10"}`
-                        : `/quizzes/${nextQuiz.slug}`
-                    }
-                    className="inline-flex items-center gap-2 px-6 py-2.5 text-xs font-extrabold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl transition-all shadow-md shrink-0"
-                  >
-                    <span>{nextQuiz.isSameTopicNextBatch ? "▶ Next Batch" : "▶ Next Quiz"}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+              {loadingNext ? (
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center gap-2 text-xs text-slate-500">
+                  <Loader2 className="w-4 h-4 animate-spin text-amber-600" />
+                  <span>Loading next quiz part...</span>
                 </div>
-              ) : (
-                <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-300 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="space-y-0.5">
-                    <h3 className="text-sm font-extrabold text-emerald-950">
-                      🎉 Topic / Series Completed!
-                    </h3>
-                    <p className="text-xs text-emerald-800">
-                      You have finished all active published tests in this category.
-                    </p>
+              ) : (() => {
+                const nextPart = currentPart + 1;
+                const totalParts = nextQuiz?.totalBankQuestions
+                  ? Math.ceil(nextQuiz.totalBankQuestions / currentLimit)
+                  : null;
+                const hasNextPartInTopic =
+                  Boolean(nextQuiz?.isSameTopicNextBatch) &&
+                  (!totalParts || nextPart <= totalParts);
+
+                if (hasNextPartInTopic && nextQuiz) {
+                  const startQ = (nextPart - 1) * currentLimit + 1;
+                  const endQ = totalParts
+                    ? Math.min(nextPart * currentLimit, nextQuiz.totalBankQuestions!)
+                    : nextPart * currentLimit;
+
+                  return (
+                    <div className="p-4 rounded-2xl bg-amber-50 border border-amber-300 flex flex-col sm:flex-row items-center justify-between gap-4">
+                      <div className="space-y-0.5 text-center sm:text-left">
+                        <span className="text-[10px] font-extrabold uppercase tracking-wider text-amber-800">
+                          Topic Practice &bull; Part {nextPart}
+                          {totalParts ? ` of ${totalParts}` : ""}
+                        </span>
+                        <h3 className="text-sm font-extrabold text-[#0B132B]">
+                          Next Batch: Part {nextPart} (Questions {startQ} - {endQ})
+                        </h3>
+                        <p className="text-[11px] text-slate-600 font-medium">
+                          Keep up your momentum! Proceed directly to the next {endQ - startQ + 1} questions.
+                        </p>
+                      </div>
+                      <Link
+                        href={`/quizzes/${slug}/attempt?part=${nextPart}&limit=${currentLimit}&mode=${currentMode}`}
+                        className="inline-flex items-center gap-2 px-6 py-2.5 text-xs font-extrabold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl transition-all shadow-md shrink-0"
+                      >
+                        <span>▶ Start Part {nextPart}</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  );
+                }
+
+                if (nextQuiz) {
+                  return (
+                    <div className="p-4 rounded-2xl bg-amber-50 border border-amber-300 flex flex-col sm:flex-row items-center justify-between gap-4">
+                      <div className="space-y-0.5 text-center sm:text-left">
+                        <span className="text-[10px] font-extrabold uppercase tracking-wider text-amber-800">
+                          Continue Series & Practice
+                        </span>
+                        <h3 className="text-sm font-extrabold text-[#0B132B]">
+                          Next Quiz: {nextQuiz.title}
+                        </h3>
+                      </div>
+                      <Link
+                        href={`/quizzes/${nextQuiz.slug}`}
+                        className="inline-flex items-center gap-2 px-6 py-2.5 text-xs font-extrabold text-slate-950 bg-amber-500 hover:bg-amber-400 rounded-xl transition-all shadow-md shrink-0"
+                      >
+                        <span>▶ Next Quiz</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  );
+                }
+
+                return (
+                  <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-300 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="space-y-0.5">
+                      <h3 className="text-sm font-extrabold text-emerald-950">
+                        🎉 Topic / Series Completed!
+                      </h3>
+                      <p className="text-xs text-emerald-800">
+                        You have finished all active published tests in this category.
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <Link
+                        href="/notes"
+                        className="px-3.5 py-2 rounded-xl text-xs font-bold bg-white text-emerald-900 border border-emerald-300 hover:bg-emerald-100 transition-colors"
+                      >
+                        Practice Weak Topics
+                      </Link>
+                      <Link
+                        href="/quizzes"
+                        className="px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-700 text-white hover:bg-emerald-800 transition-colors"
+                      >
+                        More Quizzes
+                      </Link>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <Link
-                      href="/notes"
-                      className="px-3.5 py-2 rounded-xl text-xs font-bold bg-white text-emerald-900 border border-emerald-300 hover:bg-emerald-100 transition-colors"
-                    >
-                      Practice Weak Topics
-                    </Link>
-                    <Link
-                      href="/quizzes"
-                      className="px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-700 text-white hover:bg-emerald-800 transition-colors"
-                    >
-                      More Quizzes
-                    </Link>
-                  </div>
-                </div>
-              )}
+                );
+              })()}
             </div>
           </div>
         </div>
