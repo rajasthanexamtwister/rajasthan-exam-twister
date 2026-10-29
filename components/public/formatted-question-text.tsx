@@ -26,7 +26,7 @@ function tryParseMatchingQuestion(text: string): ParsedMatchingQuestion | null {
     .replace(/\\n/g, "\n")
     .replace(/\r\n/g, "\n");
 
-  const hasMatchKeyword = /मिलान|सुमेलित|कॉलम|सूची|कोड से सही उत्तर|कूट/i.test(normalized);
+  const hasMatchKeyword = /मिलान|सुमेलित|कॉलम|सूची|स्तंभ/i.test(normalized);
   if (!hasMatchKeyword) return null;
 
   let rawLines = normalized
@@ -186,6 +186,16 @@ function tryParseMatchingQuestion(text: string): ParsedMatchingQuestion | null {
       }
     }
   } else {
+    // If no column 1 header was found, only consider matching if explicit match instruction exists or Col 2 header is present
+    const hasCol2 = rawLines.some(
+      (l) => isCol2(l) || ((l.includes("सूची") || l.includes("कॉलम")) && /(?:II|2)\b/.test(l))
+    );
+    const isExplicitMatching = /मिलान|सुमेलित/i.test(rawLines[0]);
+
+    if (!hasCol2 && !isExplicitMatching) {
+      return null;
+    }
+
     prompt = rawLines[0];
     cursor = 1;
     leftHeader = "सूची - I";
@@ -308,6 +318,15 @@ function tryParseMatchingQuestion(text: string): ParsedMatchingQuestion | null {
 
   if (leftItems.length < 2 || rightItems.length < 2) {
     return null;
+  }
+
+  // If there were no explicit column headers and all item prefixes are purely numeric (e.g. 1, 2, 3, 4),
+  // this is a sequential statement list, not a two-column matching question.
+  if (headerIndex === -1 && col2BlockIdx === -1) {
+    const allNumeric = [...leftItems, ...rightItems].every((it) => /^\d+$/.test(it.prefix));
+    if (allNumeric) {
+      return null;
+    }
   }
 
   return {
@@ -499,6 +518,8 @@ export function FormattedQuestionText({
           line.includes("उपर्युक्त में से") ||
           line.includes("विकल्पों में से") ||
           line.includes("सबसे उपयुक्त उत्तर") ||
+          line.includes("सही कूट चुनिए") ||
+          line.includes("कूट चुनिए") ||
           line.endsWith("कूट चुनिए -");
 
         // 1. Statement or Assertion label: e.g. कथन (I):, कथन (1):, कथन (अ):, कारण (R):, कारण (ब):, अभिकथन (A):
@@ -543,12 +564,14 @@ export function FormattedQuestionText({
         }
 
         if (isFooter) {
+          const hasIcon = /^[\p{Emoji}\u2600-\u27BF]/u.test(line);
           return (
             <div
               key={idx}
-              className="font-bold text-amber-950 text-xs sm:text-sm pt-2 border-t border-amber-200/70"
+              className="font-bold text-amber-950 text-xs sm:text-sm pt-2 border-t border-amber-200/70 flex items-center gap-1.5"
             >
-              {line}
+              {!hasIcon && <span className="text-amber-600 select-none">🎯</span>}
+              <span>{line}</span>
             </div>
           );
         }

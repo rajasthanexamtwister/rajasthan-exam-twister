@@ -258,7 +258,9 @@ def parse_docx(docx_path):
         topic_slug = "chitra-shailiyan"
     elif "जल" in topic_title:
         topic_slug = "paramparagat-jal-prabandhan"
-    elif "किसान" in topic_title or "आन्दोलन" in topic_title or "आंदोलन" in topic_title:
+    elif "प्रजामंडल" in topic_title or "प्रजामण्डल" in topic_title:
+        topic_slug = "prajamandal-andolan"
+    elif "किसान" in topic_title:
         topic_slug = "kisan-tatha-adivasi-andolan"
     elif "स्थापत्य" in topic_title:
         topic_slug = "sthaptya-kala"
