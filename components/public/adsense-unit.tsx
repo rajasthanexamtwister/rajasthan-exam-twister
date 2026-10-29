@@ -81,7 +81,7 @@ export function AdSenseUnit({
           ref={adRef}
           className="adsbygoogle"
           style={{ display: "block", width: "100%", ...style }}
-          data-ad-client="ca-pub-8986858563387447"
+          data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID || "ca-pub-1617995815866036"}
           data-ad-slot={slotId}
           data-ad-format={adFormat}
           {...(adLayout ? { "data-ad-layout": adLayout } : {})}

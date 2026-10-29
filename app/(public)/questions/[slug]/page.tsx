@@ -53,6 +53,10 @@ export async function generateMetadata({ params }: QuestionPageProps): Promise<M
     alternates: {
       canonical: canonicalUrl,
     },
+    robots: {
+      index: false,
+      follow: true,
+    },
     openGraph: {
       title,
       description,

@@ -177,16 +177,6 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
 
-        {/* Infolinks Ad Script - lazyOnload strategy prevents blocking FCP, LCP, and TBT */}
-        <Script id="infolinks-config" strategy="lazyOnload">
-          {`var infolinks_pid = 3448758; var infolinks_wsid = 0;`}
-        </Script>
-        <Script
-          id="infolinks-main"
-          src="https://resources.infolinks.com/js/infolinks_main.js"
-          strategy="lazyOnload"
-        />
-
         {/* Site-wide Organization + WebSite structured data */}
         <script
           type="application/ld+json"

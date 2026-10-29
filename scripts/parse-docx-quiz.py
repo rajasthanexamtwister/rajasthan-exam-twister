@@ -236,7 +236,7 @@ def parse_docx(docx_path):
     subject = "राजस्थान सामान्य ज्ञान"
     category_slug = "rajasthan-gk"
 
-    if "geography" in parent_dir or "भूगोल" in topic_title or "मरुस्थल" in topic_title:
+    if "geography" in parent_dir or "भूगोल" in topic_title or "मरुस्थल" in topic_title or "पशु" in topic_title or "पशुपालन" in topic_title:
         subject = "राजस्थान का भूगोल"
         category_slug = "rajasthan-geography"
     elif "history" in parent_dir or "इतिहास" in topic_title:
@@ -264,6 +264,8 @@ def parse_docx(docx_path):
         topic_slug = "sthaptya-kala"
     elif "स्त्रोत" in topic_title or "स्रोत" in topic_title:
         topic_slug = "rajasthan-ka-itihas-janne-ke-srot"
+    elif "पशु" in topic_title or "पशुपालन" in topic_title:
+        topic_slug = "rajasthan-me-pashupalan"
 
     seed_data = {
         "topic": {
