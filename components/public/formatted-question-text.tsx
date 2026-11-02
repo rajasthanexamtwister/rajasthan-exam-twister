@@ -41,7 +41,7 @@ function tryParseMatchingQuestion(text: string): ParsedMatchingQuestion | null {
       /\s+[a-d1-4]\.\s+|\s+\([a-d1-4A-D]\)\s+/i.test(normalized))
   ) {
     const pattern =
-      /\n|\t|\s+(?=(?:[0-9]{1,2}[\.\)]|\([0-9]{1,2}\)|\([a-eA-E]\)|[a-eA-E][\.\)]|\((?:i{1,4}|iv|v|vi)\)|(?:i{1,4}|iv|v|vi)[\.\)]|[अबसदयकखगघ][\.\)]|\([अबसदयकखगघ]\)|\b(?:कॉलम|सूची)\s*[-–]?(?:II|2)\b|\bकूट\b|\bनीचे\s*दिए))/i;
+      /\n|\t|\s+(?=(?:[0-9]{1,2}[\.\)]?|\([0-9]{1,2}\)|\([a-eA-E]\)|[a-eA-E][\.\)]?|\((?:i{1,4}|iv|v|vi)\)|(?:i{1,4}|iv|v|vi)[\.\)]?|[अबसदयकखगघ][\.\)]?|\([अबसदयकखगघ]\)|\b(?:कॉलम|सूची)\s*[-–]?(?:II|2)\b|\bकूट\b|\bनीचे\s*दिए))/i;
     rawLines = normalized
       .split(pattern)
       .map((t) => t.trim())
@@ -76,7 +76,7 @@ function tryParseMatchingQuestion(text: string): ParsedMatchingQuestion | null {
 
   const matchItemPrefix = (str: string) => {
     const m = str.match(
-      /^(\([0-9]{1,2}\)|[0-9]{1,2}[\.\)]|\([a-eA-E]\)|[a-eA-E][\.\)]|\((?:i{1,4}|iv|v|vi)\)|(?:i{1,4}|iv|v|vi)[\.\)]|\([अबसदयकखगघ]\)|[अबसदयकखगघ][\.\)])\s*(.*)$/i
+      /^(\([0-9]{1,2}\)|[0-9]{1,2}[\.\)]?|\([a-eA-E]\)|[a-eA-E][\.\)]?|\((?:i{1,4}|iv|v|vi)\)|(?:i{1,4}|iv|v|vi)[\.\)]?|\([अबसदयकखगघ]\)|[अबसदयकखगघ][\.\)]?)\s+(.*)$/i
     );
     if (m && m[1]) {
       const rawPrefix = m[1].replace(/[\(\)\.\)]/g, "").trim();
@@ -116,8 +116,9 @@ function tryParseMatchingQuestion(text: string): ParsedMatchingQuestion | null {
     // If it's a list item (e.g. "1. 1945", "3. 1922"), it is NEVER an exam line!
     if (matchItemPrefix(l)) return false;
     return (
-      /(?:Exam|Officer|Paper|RPSC|RSMSSB|Patwar|CET|REET|Police)/i.test(l) &&
-      !l.includes("कूट")
+      /(?:Exam|Officer|Paper|RPSC|RSMSSB|Patwar|CET|REET|Police|School Lecturer|Lecturer|Teacher|Grade|LDC|Vanpal|VDO|Lab Assistant)/i.test(
+        l
+      ) && !l.includes("कूट")
     );
   };
 
@@ -438,19 +439,26 @@ export function FormattedQuestionText({
   // 2. Intelligently format inline match items / statements / markdown images / bare Cloudinary URLs
   processed = processed
     .replace(/(!\[.*?\]\(.*?\))/g, "\n$1\n")
-    .replace(/(https:\/\/res\.cloudinary\.com\/[^\s"'>\)]+\.(?:jpg|jpeg|png|webp|svg|gif))/gi, "\n$1\n")
-    .replace(
-      /\s+(कथन\s*(?:\([0-9a-zA-Z\u0900-\u097FivxIVX]+\)|[0-9a-zA-Z\u0900-\u097FivxIVX]+)?[:\s\-]|कारण\s*(?:\([0-9a-zA-Z\u0900-\u097FivxIVX]+\)|[0-9a-zA-Z\u0900-\u097FivxIVX]+)?[:\s\-]|अभिकथन\s*(?:\([0-9a-zA-Z\u0900-\u097FivxIVX]+\)|[0-9a-zA-Z\u0900-\u097FivxIVX]+)?[:\s\-]|वक्तव्य\s*(?:\([0-9a-zA-Z\u0900-\u097FivxIVX]+\)|[0-9a-zA-Z\u0900-\u097FivxIVX]+)?[:\s\-])/gi,
-      "\n$1"
-    )
-    .replace(
-      /(?<!(?:कथन|कारण|अभिकथन|वक्तव्य))\s+(\([0-9a-zA-ZivxIVXअबसदकखगघ]+\)|[0-9a-zA-ZivxIVXअबसदकखगघ]+[\.\)])\s+/g,
-      "\n$1 "
-    )
-    .replace(
-      /\s+(कूट\s*[-:]|कूट:|सही कूट\s*[-:]|नीचे दिए गए कूट|उपरोक्त कथनों के|उपर्युक्त कथनों के|उपरोक्त में से|उपर्युक्त में से|विकल्प\s*[-:])/g,
-      "\n$1"
-    );
+    .replace(/(https:\/\/res\.cloudinary\.com\/[^\s"'>\)]+\.(?:jpg|jpeg|png|webp|svg|gif))/gi, "\n$1\n");
+
+  // Only split inline statement labels if text does not already contain structured newlines
+  const hasExistingLines = processed.split("\n").filter((l) => l.trim().length > 0).length > 2;
+
+  if (!hasExistingLines) {
+    processed = processed
+      .replace(
+        /\s+((?:कथन|कारण|अभिकथन|वक्तव्य)(?:\s*(?:\([0-9a-zA-Z\u0900-\u097FivxIVX]+\)|[0-9a-zA-Z\u0900-\u097FivxIVX]+))?[:\-])/gi,
+        "\n$1"
+      )
+      .replace(
+        /(?<!(?:कथन|कारण|अभिकथन|वक्तव्य))\s+(\([0-9a-zA-ZivxIVXअबसदकखगघ]+\)|[0-9a-zA-ZivxIVXअबसदकखगघ]+[\.\)])\s+/g,
+        "\n$1 "
+      )
+      .replace(
+        /\s+(कूट\s*[-:]|कूट:|सही कूट\s*[-:]|नीचे दिए गए कूट|उपरोक्त कथनों के|उपर्युक्त कथनों के|उपरोक्त कथन के|उपर्युक्त कथन के|उपरोक्त में से|उपर्युक्त में से|विकल्प\s*[-:])/g,
+        "\n$1"
+      );
+  }
 
   // 3. Split lines and trim
   const lines = processed
@@ -524,11 +532,11 @@ export function FormattedQuestionText({
 
         // 1. Statement or Assertion label: e.g. कथन (I):, कथन (1):, कथन (अ):, कारण (R):, कारण (ब):, अभिकथन (A):
         const statementMatch = line.match(
-          /^(कथन\s*(?:\([0-9a-zA-Z\u0900-\u097FivxIVX]+\)|[0-9a-zA-Z\u0900-\u097FivxIVX]+)?[:\s\-]|कारण\s*(?:\([0-9a-zA-Z\u0900-\u097FivxIVX]+\)|[0-9a-zA-Z\u0900-\u097FivxIVX]+)?[:\s\-]|अभिकथन\s*(?:\([0-9a-zA-Z\u0900-\u097FivxIVX]+\)|[0-9a-zA-Z\u0900-\u097FivxIVX]+)?[:\s\-]|वक्तव्य\s*(?:\([0-9a-zA-Z\u0900-\u097FivxIVX]+\)|[0-9a-zA-Z\u0900-\u097FivxIVX]+)?[:\s\-])\s*(.*)$/i
+          /^((?:कथन|कारण|अभिकथन|वक्तव्य)(?:\s*(?:\([0-9a-zA-Z\u0900-\u097FivxIVX]+\)|[0-9a-zA-Z\u0900-\u097FivxIVX]+))?)[:\-]\s*(.*)$/i
         );
 
         if (statementMatch && statementMatch[1]) {
-          const badgeText = statementMatch[1].replace(/[:\-]\s*$/, "").trim();
+          const badgeText = statementMatch[1].trim();
           const content = statementMatch[2];
           return (
             <div
@@ -580,7 +588,7 @@ export function FormattedQuestionText({
 
         // 2. Ordered item: e.g. (1) ... or (A) ... or 1. ... or A) ... or (क) ...
         const itemMatch = line.match(
-          /^(\([0-9a-zA-ZivxIVXअबसदकखगघ]+\)|[0-9a-zA-ZivxIVXअबसदकखगघ]+[\.\)])\s*(.*)$/
+          /^(\([0-9a-zA-ZivxIVXअबसदकखगघ]+\)|[0-9a-zA-ZivxIVXअबसदकखगघ]+[\.\)]?)\s+(.*)$/
         );
 
         if (itemMatch && itemMatch[1]) {

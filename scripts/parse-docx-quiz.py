@@ -236,15 +236,15 @@ def parse_docx(docx_path):
     subject = "राजस्थान सामान्य ज्ञान"
     category_slug = "rajasthan-gk"
 
-    if "geography" in parent_dir or "भूगोल" in topic_title or "मरुस्थल" in topic_title or "पशु" in topic_title or "पशुपालन" in topic_title:
+    if "नृत्य" in topic_title or "नाट्य" in topic_title or "art" in parent_dir or "culture" in parent_dir or "संस्कृति" in topic_title or "देवता" in topic_title or "चित्र" in topic_title or "त्योहार" in topic_title:
+        subject = "राजस्थान कला एवं संस्कृति"
+        category_slug = "rajasthan-art-culture"
+    elif "geography" in parent_dir or "भूगोल" in topic_title or "मरुस्थल" in topic_title or "पशु" in topic_title or "पशुपालन" in topic_title:
         subject = "राजस्थान का भूगोल"
         category_slug = "rajasthan-geography"
     elif "history" in parent_dir or "इतिहास" in topic_title:
         subject = "राजस्थान का इतिहास"
         category_slug = "rajasthan-history"
-    elif "art" in parent_dir or "culture" in parent_dir or "संस्कृति" in topic_title or "देवता" in topic_title or "चित्र" in topic_title:
-        subject = "राजस्थान कला एवं संस्कृति"
-        category_slug = "rajasthan-art-culture"
     elif "hindi" in parent_dir or "हिन्दी" in topic_title:
         subject = "सामान्य हिन्दी"
         category_slug = "hindi"
@@ -268,6 +268,8 @@ def parse_docx(docx_path):
         topic_slug = "rajasthan-ka-itihas-janne-ke-srot"
     elif "पशु" in topic_title or "पशुपालन" in topic_title:
         topic_slug = "rajasthan-me-pashupalan"
+    elif "नृत्य" in topic_title:
+        topic_slug = "rajasthan-me-nritya"
 
     seed_data = {
         "topic": {
