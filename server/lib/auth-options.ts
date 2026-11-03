@@ -4,11 +4,6 @@ import { connectToDatabase } from "@/server/lib/mongodb";
 import { Student } from "@/server/models/Student";
 
 const isProduction = process.env.NODE_ENV === "production";
-const nextAuthUrl = process.env.NEXTAUTH_URL || "";
-const cookieDomain =
-  isProduction && nextAuthUrl.includes("rajasthanexamtwister.in")
-    ? ".rajasthanexamtwister.in"
-    : undefined;
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -29,62 +24,19 @@ export const authOptions: NextAuthOptions = {
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   secret: process.env.NEXTAUTH_SECRET || process.env.JWT_SECRET || "ret_student_nextauth_secret_fallback_key",
+  useSecureCookies: isProduction,
   debug: true,
-  cookies: cookieDomain
-    ? {
-        sessionToken: {
-          name: `next-auth.session-token`,
-          options: {
-            httpOnly: true,
-            sameSite: "lax",
-            path: "/",
-            domain: cookieDomain,
-            secure: isProduction,
-          },
-        },
-        callbackUrl: {
-          name: `next-auth.callback-url`,
-          options: {
-            sameSite: "lax",
-            path: "/",
-            domain: cookieDomain,
-            secure: isProduction,
-          },
-        },
-        csrfToken: {
-          name: `next-auth.csrf-token`,
-          options: {
-            httpOnly: true,
-            sameSite: "lax",
-            path: "/",
-            domain: cookieDomain,
-            secure: isProduction,
-          },
-        },
-        pkceCodeVerifier: {
-          name: `next-auth.pkce.code_verifier`,
-          options: {
-            httpOnly: true,
-            sameSite: "lax",
-            path: "/",
-            domain: cookieDomain,
-            secure: isProduction,
-            maxAge: 900,
-          },
-        },
-        state: {
-          name: `next-auth.state`,
-          options: {
-            httpOnly: true,
-            sameSite: "lax",
-            path: "/",
-            domain: cookieDomain,
-            secure: isProduction,
-            maxAge: 900,
-          },
-        },
-      }
-    : undefined,
+  logger: {
+    error(code, metadata) {
+      console.error("[NextAuth Error]", code, metadata);
+    },
+    warn(code) {
+      console.warn("[NextAuth Warn]", code);
+    },
+    debug(code, metadata) {
+      console.log("[NextAuth Debug]", code, metadata);
+    },
+  },
   callbacks: {
     async signIn({ user, account, profile }) {
       if (account?.provider === "google" && user.email) {
