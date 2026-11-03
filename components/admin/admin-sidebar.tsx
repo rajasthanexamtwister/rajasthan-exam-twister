@@ -22,6 +22,7 @@ import { useMobileSidebar } from "./admin-shell";
 
 const navigation = [
   { name: "Dashboard", href: "/admin", icon: LayoutDashboard, exact: true },
+  { name: "BCI Survey 2026", href: "/admin/bci-survey", icon: CheckSquare, exact: false },
   { name: "Question Reports", href: "/admin/question-reports", icon: Flag, exact: false },
   { name: "Blogs", href: "/admin/blogs", icon: FileText, exact: false },
   { name: "Notes", href: "/admin/notes", icon: BookOpen, exact: false },

@@ -17,3 +17,6 @@ export * from "./QuizSubmission";
 export * from "./BlogAutomationJob";
 export * from "./BlogResearch";
 export * from "./TestSeries";
+export * from "./BciSurveySubmission";
+export * from "./BciSurveyConfig";
+
