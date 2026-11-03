@@ -1,7 +1,13 @@
 import mongoose from "mongoose";
 import dns from "dns"
 
-dns.setServers(['8.8.8.8', '8.8.4.4']);
+if (process.env.NODE_ENV !== "production") {
+  try {
+    dns.setServers(['8.8.8.8', '8.8.4.4']);
+  } catch {
+    // Ignore in environments where custom DNS servers are restricted
+  }
+}
 const MONGODB_URI = process.env.DATABASE_URL || process.env.MONGODB_URI || "mongodb://localhost:27017/rajasthan_exam_twister";
 
 interface MongooseCache {

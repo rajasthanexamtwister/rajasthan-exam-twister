@@ -3,11 +3,25 @@ import GoogleProvider from "next-auth/providers/google";
 import { connectToDatabase } from "@/server/lib/mongodb";
 import { Student } from "@/server/models/Student";
 
+const isProduction = process.env.NODE_ENV === "production";
+const nextAuthUrl = process.env.NEXTAUTH_URL || "";
+const cookieDomain =
+  isProduction && nextAuthUrl.includes("rajasthanexamtwister.in")
+    ? ".rajasthanexamtwister.in"
+    : undefined;
+
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID || "",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
+      authorization: {
+        params: {
+          prompt: "select_account",
+          access_type: "offline",
+          response_type: "code",
+        },
+      },
     }),
   ],
   session: {
@@ -15,8 +29,64 @@ export const authOptions: NextAuthOptions = {
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   secret: process.env.NEXTAUTH_SECRET || process.env.JWT_SECRET || "ret_student_nextauth_secret_fallback_key",
+  debug: true,
+  cookies: cookieDomain
+    ? {
+        sessionToken: {
+          name: `next-auth.session-token`,
+          options: {
+            httpOnly: true,
+            sameSite: "lax",
+            path: "/",
+            domain: cookieDomain,
+            secure: isProduction,
+          },
+        },
+        callbackUrl: {
+          name: `next-auth.callback-url`,
+          options: {
+            sameSite: "lax",
+            path: "/",
+            domain: cookieDomain,
+            secure: isProduction,
+          },
+        },
+        csrfToken: {
+          name: `next-auth.csrf-token`,
+          options: {
+            httpOnly: true,
+            sameSite: "lax",
+            path: "/",
+            domain: cookieDomain,
+            secure: isProduction,
+          },
+        },
+        pkceCodeVerifier: {
+          name: `next-auth.pkce.code_verifier`,
+          options: {
+            httpOnly: true,
+            sameSite: "lax",
+            path: "/",
+            domain: cookieDomain,
+            secure: isProduction,
+            maxAge: 900,
+          },
+        },
+        state: {
+          name: `next-auth.state`,
+          options: {
+            httpOnly: true,
+            sameSite: "lax",
+            path: "/",
+            domain: cookieDomain,
+            secure: isProduction,
+            maxAge: 900,
+          },
+        },
+      }
+    : undefined,
   callbacks: {
-    async signIn({ user, account }) {
+    async signIn({ user, account, profile }) {
       if (account?.provider === "google" && user.email) {
         try {
           await connectToDatabase();
@@ -35,12 +105,12 @@ export const authOptions: NextAuthOptions = {
           return true;
         } catch (err) {
           console.error("Failed to sync student during Google signIn:", err);
-          return true;
+          return true; // Still allow login even if background sync has DB blip
         }
       }
       return true;
     },
-    async jwt({ token }) {
+    async jwt({ token, user }) {
       if (token?.email) {
         try {
           await connectToDatabase();
