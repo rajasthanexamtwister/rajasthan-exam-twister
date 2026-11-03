@@ -22,11 +22,43 @@ async function logAuthDiagnostic(type: "error" | "warn" | "debug", code: string,
   }
 }
 
+function resolveGoogleSecret(rawSecret?: string): string {
+  if (!rawSecret) return "";
+  const trimmed = rawSecret.trim();
+  if (trimmed.startsWith("{") && trimmed.endsWith("}")) {
+    try {
+      const parsed = JSON.parse(trimmed);
+      if (parsed.web?.client_secret) return String(parsed.web.client_secret).trim();
+      if (parsed.client_secret) return String(parsed.client_secret).trim();
+      if (parsed.installed?.client_secret) return String(parsed.installed.client_secret).trim();
+    } catch {
+      // fall back to trimmed
+    }
+  }
+  return trimmed;
+}
+
+function resolveGoogleClientId(rawId?: string): string {
+  if (!rawId) return "";
+  const trimmed = rawId.trim();
+  if (trimmed.startsWith("{") && trimmed.endsWith("}")) {
+    try {
+      const parsed = JSON.parse(trimmed);
+      if (parsed.web?.client_id) return String(parsed.web.client_id).trim();
+      if (parsed.client_id) return String(parsed.client_id).trim();
+      if (parsed.installed?.client_id) return String(parsed.installed.client_id).trim();
+    } catch {
+      // fall back to trimmed
+    }
+  }
+  return trimmed;
+}
+
 export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
-      clientId: (process.env.GOOGLE_CLIENT_ID || "").trim(),
-      clientSecret: (process.env.GOOGLE_CLIENT_SECRET || "").trim(),
+      clientId: resolveGoogleClientId(process.env.GOOGLE_CLIENT_ID),
+      clientSecret: resolveGoogleSecret(process.env.GOOGLE_CLIENT_SECRET),
       checks: ["state"],
       authorization: {
         params: {
