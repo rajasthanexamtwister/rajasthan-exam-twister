@@ -7,13 +7,13 @@ export async function middleware(request: NextRequest) {
   const method = request.method.toUpperCase();
   const host = (request.headers.get("host") || "").split(":")[0];
 
-  // 1. Canonical domain redirect: non-www domain (rajasthanexamtwister.in) 301 redirects to www.rajasthanexamtwister.in
-  const isCustomCanonical = host === "www.rajasthanexamtwister.in";
+  // 1. Canonical domain handling: allow both apex and www without redirect collision with Vercel DNS
+  const isCustomDomain = host.endsWith("rajasthanexamtwister.in");
   const isLocalDev = host.includes("localhost") || host.includes("127.0.0.1");
   const isVercelPreview = host.endsWith(".vercel.app");
 
-  if (host && !isCustomCanonical && !isLocalDev && !isVercelPreview) {
-    const canonicalUrl = new URL(`https://www.rajasthanexamtwister.in${pathname}${search}`);
+  if (host && !isCustomDomain && !isLocalDev && !isVercelPreview) {
+    const canonicalUrl = new URL(`https://rajasthanexamtwister.in${pathname}${search}`);
     return NextResponse.redirect(canonicalUrl, { status: 301 });
   }
 
