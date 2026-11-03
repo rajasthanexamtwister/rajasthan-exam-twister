@@ -25,18 +25,12 @@ export async function GET(req: NextRequest) {
       : [];
 
     const rawSecret = process.env.GOOGLE_CLIENT_SECRET || "";
-    let resolvedSecret = rawSecret.trim();
-    if (resolvedSecret.startsWith("{") && resolvedSecret.endsWith("}")) {
-      try {
-        const parsed = JSON.parse(resolvedSecret);
-        resolvedSecret = parsed.web?.client_secret || parsed.client_secret || resolvedSecret;
-      } catch {}
-    }
-
-    const secretPreview =
-      resolvedSecret.length > 8
-        ? `${resolvedSecret.substring(0, 7)}...${resolvedSecret.substring(resolvedSecret.length - 4)} (resolved length: ${resolvedSecret.length}, raw length: ${rawSecret.length})`
-        : `short (length: ${resolvedSecret.length})`;
+    const lines = rawSecret.split(/\r?\n|\s+/);
+    const words = lines.map(w => ({
+      starts: w.substring(0, 10),
+      ends: w.substring(Math.max(0, w.length - 10)),
+      len: w.length
+    }));
 
     return NextResponse.json({
       environment: {
@@ -44,7 +38,8 @@ export async function GET(req: NextRequest) {
         nextAuthUrl: process.env.NEXTAUTH_URL,
         googleClientIdPresent: !!process.env.GOOGLE_CLIENT_ID,
         googleClientIdPrefix: (process.env.GOOGLE_CLIENT_ID || "").substring(0, 15) + "...",
-        googleClientSecretPreview: secretPreview,
+        rawSecretLength: rawSecret.length,
+        secretTokens: words,
         nextAuthSecretPresent: !!process.env.NEXTAUTH_SECRET,
       },
       request: {

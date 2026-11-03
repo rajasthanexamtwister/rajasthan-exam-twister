@@ -24,7 +24,10 @@ async function logAuthDiagnostic(type: "error" | "warn" | "debug", code: string,
 
 function resolveGoogleSecret(rawSecret?: string): string {
   if (!rawSecret) return "";
-  const trimmed = rawSecret.trim();
+  const match = rawSecret.match(/GOCSPX-[A-Za-z0-9_-]+/);
+  if (match) return match[0];
+
+  const trimmed = rawSecret.trim().replace(/^["']|["']$/g, "");
   if (trimmed.startsWith("{") && trimmed.endsWith("}")) {
     try {
       const parsed = JSON.parse(trimmed);
@@ -40,7 +43,10 @@ function resolveGoogleSecret(rawSecret?: string): string {
 
 function resolveGoogleClientId(rawId?: string): string {
   if (!rawId) return "";
-  const trimmed = rawId.trim();
+  const match = rawId.match(/[0-9]+-[a-z0-9_]+\.apps\.googleusercontent\.com/i);
+  if (match) return match[0];
+
+  const trimmed = rawId.trim().replace(/^["']|["']$/g, "");
   if (trimmed.startsWith("{") && trimmed.endsWith("}")) {
     try {
       const parsed = JSON.parse(trimmed);
