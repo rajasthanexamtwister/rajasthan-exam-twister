@@ -187,17 +187,29 @@ export async function submitSurvey(
   const editTokenHash = sha256(rawEditToken);
 
   let rollNumberHash: string | undefined;
-  let isDuplicate = false;
 
   if (input.rollNumber && input.rollNumber.trim()) {
     rollNumberHash = sha256(input.rollNumber.trim().toUpperCase());
     const existing = await BciSurveySubmission.findOne({
       exam: "BCI_2026",
       rollNumberHash,
-      isValid: true,
     });
     if (existing) {
-      isDuplicate = true;
+      throw new Error("इस रोल नंबर से पहले ही सर्वे भरा जा चुका है। यदि आप मार्क्स बदलना चाहते हैं, तो कृपया अपने गुप्त एडिट टोकन का उपयोग करें।");
+    }
+  }
+
+  // Anti-spam check on mobile number
+  if (input.mobile) {
+    const cleanMobile = input.mobile.replace(/\D/g, "");
+    if (cleanMobile) {
+      const mobileCount = await BciSurveySubmission.countDocuments({
+        exam: "BCI_2026",
+        mobile: cleanMobile,
+      });
+      if (mobileCount >= 2) {
+        throw new Error("इस मोबाइल नंबर से अधिकतम 2 सर्वे पहले ही भरे जा चुके हैं।");
+      }
     }
   }
 
@@ -220,17 +232,15 @@ export async function submitSurvey(
     editTokenHash,
     clientFingerprintHash,
     qualificationStatus: qualResult.label,
-    isValid: !isDuplicate,
-    isDuplicate,
-    adminStatus: isDuplicate ? "duplicate" : "approved",
+    isValid: true,
+    isDuplicate: false,
+    adminStatus: "approved",
     auditLog: [
       {
-        action: isDuplicate ? "SUBMITTED_AS_DUPLICATE" : "SUBMITTED",
+        action: "SUBMITTED",
         performedBy: "candidate",
         timestamp: new Date(),
-        details: isDuplicate
-          ? "Duplicate roll number detected"
-          : "Initial candidate submission",
+        details: "Verified candidate marks submission",
       },
     ],
   });
@@ -240,7 +250,7 @@ export async function submitSurvey(
     editToken: rawEditToken,
     totalMarks,
     qualificationStatus: qualResult.label,
-    isDuplicate,
+    isDuplicate: false,
   };
 }
 

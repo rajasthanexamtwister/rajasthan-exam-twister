@@ -18,22 +18,80 @@ import {
   Award,
   ChevronDown,
   ChevronUp,
+  User,
+  Hash,
+  Phone,
+  MapPin,
 } from "lucide-react";
 
+const RAJASTHAN_DISTRICTS = [
+  "Ajmer (अजमेर)",
+  "Alwar (अलवर)",
+  "Anupgarh (अनूपगढ़)",
+  "Balotra (बालोतरा)",
+  "Banswara (बांसवाड़ा)",
+  "Baran (बारां)",
+  "Barmer (बाड़मेर)",
+  "Beawar (ब्यावर)",
+  "Bharatpur (भरतपुर)",
+  "Bhilwara (भीलवाड़ा)",
+  "Bikaner (बीकानेर)",
+  "Bundi (बूंदी)",
+  "Chittorgarh (चित्तौड़गढ़)",
+  "Churu (चूरू)",
+  "Dausa (दौसा)",
+  "Deeg (डीग)",
+  "Dholpur (धौलपुर)",
+  "Didwana-Kuchaman (डीडवाना-कुचामन)",
+  "Dudu (दूदू)",
+  "Dungarpur (डूंगरपुर)",
+  "Gangapur City (गंगापुर सिटी)",
+  "Hanumangarh (हनुमानगढ़)",
+  "Jaipur (जयपुर)",
+  "Jaipur Rural (जयपुर ग्रामीण)",
+  "Jaisalmer (जैसलमेर)",
+  "Jalore (जालौर)",
+  "Jhalawar (झालावाड़)",
+  "Jhunjhunu (झुंझुनूं)",
+  "Jodhpur (जोधपुर)",
+  "Jodhpur Rural (जोधपुर ग्रामीण)",
+  "Karauli (करौली)",
+  "Kekri (केकड़ी)",
+  "Khairthal-Tijara (खैरथल-तिजारा)",
+  "Kota (कोटा)",
+  "Kotputli-Behror (कोटपूतली-बहरोड़)",
+  "Nagaur (नागौर)",
+  "Neem Ka Thana (नीम का थाना)",
+  "Pali (पाली)",
+  "Phalodi (फलोदी)",
+  "Pratapgarh (प्रतापगढ़)",
+  "Rajsamand (राजसमंद)",
+  "Salumbar (सलूंबर)",
+  "Sanchore (सांचौर)",
+  "Sawai Madhopur (सवाई माधोपुर)",
+  "Shahpura (शाहपुरा)",
+  "Sikar (सीकर)",
+  "Sirohi (सिरोही)",
+  "Sri Ganganagar (श्रीगंगानगर)",
+  "Tonk (टोंक)",
+  "Udaipur (उदयपुर)",
+  "Other / Outside Rajasthan (अन्य राज्य)",
+];
+
 export default function BciMarksSurveyPage() {
+  const [candidateName, setCandidateName] = useState<string>("");
+  const [rollNumber, setRollNumber] = useState<string>("");
+  const [mobile, setMobile] = useState<string>("");
+  const [district, setDistrict] = useState<string>("");
+  const [shift, setShift] = useState<string>("");
+
   const [area, setArea] = useState<"Non-TSP" | "TSP">("Non-TSP");
   const [category, setCategory] = useState<"UR" | "EWS" | "OBC" | "MBC" | "SC" | "ST">("UR");
   const [gender, setGender] = useState<"Male" | "Female" | "Other">("Male");
   const [paper1Marks, setPaper1Marks] = useState<string>("");
   const [paper2Marks, setPaper2Marks] = useState<string>("");
   const [marksSource, setMarksSource] = useState<string>("official_provisional_key");
-  const [district, setDistrict] = useState<string>("");
-  const [shift, setShift] = useState<string>("");
-  const [candidateName, setCandidateName] = useState<string>("");
-  const [mobile, setMobile] = useState<string>("");
-  const [rollNumber, setRollNumber] = useState<string>("");
   const [consent, setConsent] = useState<boolean>(true);
-  const [showOptional, setShowOptional] = useState<boolean>(false);
 
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
@@ -64,13 +122,37 @@ export default function BciMarksSurveyPage() {
     e.preventDefault();
     setErrorMsg(null);
 
+    // 1. Mandatory Identity Validations
+    const cleanName = candidateName.trim();
+    if (!cleanName || cleanName.length < 3) {
+      setErrorMsg("कृपया अपना वास्तविक पूरा नाम (कम से कम 3 अक्षर) दर्ज करें।");
+      return;
+    }
+
+    const cleanRoll = rollNumber.trim();
+    if (!cleanRoll || !/^\d{6,8}$/.test(cleanRoll)) {
+      setErrorMsg("कृपया अपना मान्य 6 से 8 अंकों का परीक्षा रोल नंबर दर्ज करें (उदा. 1029384)।");
+      return;
+    }
+
+    const cleanMobile = mobile.replace(/\D/g, "");
+    if (!cleanMobile || !/^[6-9]\d{9}$/.test(cleanMobile)) {
+      setErrorMsg("कृपया अपना 10 अंकों का मान्य मोबाइल नंबर दर्ज करें (उदा. 9829XXXXXX)।");
+      return;
+    }
+
+    if (!district) {
+      setErrorMsg("कृपया अपना गृह जिला (Home District) अवश्य चुनें।");
+      return;
+    }
+
     if (!validP1 || !validP2) {
-      setErrorMsg("Please enter valid marks between 0 and 100 for both Paper-I and Paper-II.");
+      setErrorMsg("कृपया Paper-I और Paper-II दोनों के 0 से 100 के बीच मान्य मार्क्स दर्ज करें।");
       return;
     }
 
     if (!consent) {
-      setErrorMsg("Please accept the survey consent agreement to proceed.");
+      setErrorMsg("कृपया आगे बढ़ने के लिए सहमति (Consent) बॉक्स को टिक करें।");
       return;
     }
 
@@ -81,17 +163,17 @@ export default function BciMarksSurveyPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          candidateName: cleanName,
+          rollNumber: cleanRoll,
+          mobile: cleanMobile,
+          district,
+          shift: shift.trim() || undefined,
           area,
           category,
           gender,
           paper1Marks: p1,
           paper2Marks: p2,
           marksSource,
-          district: district.trim() || undefined,
-          shift: shift.trim() || undefined,
-          candidateName: candidateName.trim() || undefined,
-          mobile: mobile.trim() || undefined,
-          rollNumber: rollNumber.trim() || undefined,
           consent,
         }),
       });
@@ -131,14 +213,14 @@ export default function BciMarksSurveyPage() {
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            BCI 2026 Result & Cut-off Tracker
+            100% Verified Candidate Sample
           </div>
           <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
             Basic Computer Instructor (BCI) 2026
             <span className="block text-indigo-600 mt-1">Marks Survey & Cut-off Estimator</span>
           </h1>
           <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
-            Participate in Rajasthan’s most transparent candidate marks survey. Enter your Paper-I & Paper-II marks to get your estimated percentile, sample rank range, and category-wise cut-off benchmark.
+            सटीक और प्रामाणिक कट-ऑफ अनुमान के लिए केवल वास्तविक परीक्षार्थी ही अपना विवरण दर्ज करें। फर्जी एंट्रीज को रोकने के लिए नाम, रोल नंबर एवं मोबाइल सत्यापन अनिवार्य किया गया है।
           </p>
 
           <div className="mt-4 flex flex-wrap justify-center gap-3 text-xs sm:text-sm">
@@ -170,14 +252,8 @@ export default function BciMarksSurveyPage() {
               Survey Submitted Successfully!
             </h2>
             <p className="text-sm text-center text-slate-600 mt-1 max-w-md mx-auto">
-              Your self-reported marks have been recorded into the live analytical sample pool.
+              अभ्यर्थी <strong>{candidateName}</strong> के मार्क्स प्रामाणिक विश्लेषणात्मक डेटाबेस में सुरक्षित दर्ज हो गए हैं।
             </p>
-
-            {submissionResult.isDuplicate && (
-              <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg text-xs text-amber-800 text-center">
-                Note: A submission with this roll number was already registered. Your entry has been recorded with a duplicate flag for verification.
-              </div>
-            )}
 
             {/* Quick Summary Card */}
             <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-4 p-5 bg-slate-50 rounded-xl border border-slate-200 text-center">
@@ -218,7 +294,7 @@ export default function BciMarksSurveyPage() {
                     Your Confidential Edit Token
                   </h4>
                   <p className="text-xs text-indigo-800 mt-0.5">
-                    Save this token securely. If the official answer key changes or you wish to update your marks later, you will need this key:
+                    इस सीक्रेट टोकन को कॉपी करके सुरक्षित रख लें। यदि संशोधित उत्तर कुंजी (Answer Key) के बाद आपको अपने मार्क्स अपडेट करने हों, तो यह आवश्यक होगा:
                   </p>
                   <div className="mt-2 flex items-center gap-2">
                     <input
@@ -274,11 +350,12 @@ export default function BciMarksSurveyPage() {
                   Candidate Marks Submission Form
                 </h2>
                 <p className="text-xs text-slate-300">
-                  Accurate data ensures precise cut-off predictions for all candidates.
+                  सटीक आंकड़ों हेतु वास्तविक अभ्यर्थी विवरण भरें। 1 रोल नंबर से केवल 1 एंट्री मान्य होगी।
                 </p>
               </div>
-              <span className="text-xs bg-slate-800 text-amber-300 px-3 py-1 rounded-full border border-slate-700">
-                100% Confidential
+              <span className="text-xs bg-slate-800 text-emerald-400 px-3 py-1 rounded-full border border-slate-700 font-semibold flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                Anti-Fake Verified
               </span>
             </div>
 
@@ -287,16 +364,118 @@ export default function BciMarksSurveyPage() {
               {errorMsg && (
                 <div className="p-4 bg-rose-50 border border-rose-200 rounded-xl flex items-start gap-3 text-rose-800 text-sm">
                   <AlertCircle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
-                  <div>{errorMsg}</div>
+                  <div className="font-medium">{errorMsg}</div>
                 </div>
               )}
 
-              {/* Area & Category Row */}
+              {/* SECTION 1: MANDATORY CANDIDATE VERIFICATION (ANTI-FAKE) */}
+              <div className="p-5 bg-slate-50 rounded-xl border border-slate-200 space-y-4">
+                <div className="flex items-center justify-between border-b border-slate-200 pb-2">
+                  <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+                    <User className="w-4 h-4 text-indigo-600" />
+                    1. अभ्यर्थी पहचान विवरण (Mandatory Candidate Details)
+                  </h3>
+                  <span className="text-[11px] font-semibold text-rose-600">सभी अनिवार्य (*)</span>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Candidate Name */}
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 mb-1">
+                      अभ्यर्थी का पूरा नाम (Full Name) *
+                    </label>
+                    <div className="relative">
+                      <User className="w-4 h-4 absolute left-3 top-2.5 text-slate-400" />
+                      <input
+                        type="text"
+                        required
+                        minLength={3}
+                        maxLength={60}
+                        value={candidateName}
+                        onChange={(e) => setCandidateName(e.target.value)}
+                        placeholder="उदा. Ramesh Kumar Sharma"
+                        className="w-full bg-white border border-slate-300 rounded-lg pl-9 pr-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 font-medium"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Roll Number */}
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 mb-1">
+                      रोल नंबर (RSSB Exam Roll No.) *
+                    </label>
+                    <div className="relative">
+                      <Hash className="w-4 h-4 absolute left-3 top-2.5 text-slate-400" />
+                      <input
+                        type="text"
+                        required
+                        pattern="\d{6,8}"
+                        value={rollNumber}
+                        onChange={(e) => setRollNumber(e.target.value.replace(/\D/g, ""))}
+                        placeholder="उदा. 1029384 (6-8 अंक)"
+                        className="w-full bg-white border border-slate-300 rounded-lg pl-9 pr-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 font-mono font-bold"
+                      />
+                    </div>
+                    <p className="text-[10px] text-slate-500 mt-1 flex items-center gap-1">
+                      <Lock className="w-3 h-3 text-emerald-600" />
+                      सुरक्षित: रोल नंबर एनक्रिप्टेड रहेगा, एक रोल नंबर से 1 ही बार एंट्री होगी।
+                    </p>
+                  </div>
+
+                  {/* Mobile Number */}
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 mb-1">
+                      मोबाइल नंबर (10-Digit Mobile) *
+                    </label>
+                    <div className="relative">
+                      <Phone className="w-4 h-4 absolute left-3 top-2.5 text-slate-400" />
+                      <input
+                        type="tel"
+                        required
+                        maxLength={10}
+                        value={mobile}
+                        onChange={(e) => setMobile(e.target.value.replace(/\D/g, ""))}
+                        placeholder="उदा. 9829XXXXXX"
+                        className="w-full bg-white border border-slate-300 rounded-lg pl-9 pr-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 font-mono font-bold"
+                      />
+                    </div>
+                    <p className="text-[10px] text-slate-500 mt-1 flex items-center gap-1">
+                      <Lock className="w-3 h-3 text-emerald-600" />
+                      गोपनीय: यह नंबर सार्वजनिक रूप से कभी नहीं दिखाया जाएगा।
+                    </p>
+                  </div>
+
+                  {/* District Dropdown */}
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 mb-1">
+                      गृह जिला (Home District) *
+                    </label>
+                    <div className="relative">
+                      <MapPin className="w-4 h-4 absolute left-3 top-2.5 text-slate-400 pointer-events-none" />
+                      <select
+                        required
+                        value={district}
+                        onChange={(e) => setDistrict(e.target.value)}
+                        className="w-full bg-white border border-slate-300 rounded-lg pl-9 pr-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 font-medium"
+                      >
+                        <option value="">-- अपना जिला चुनें --</option>
+                        {RAJASTHAN_DISTRICTS.map((d) => (
+                          <option key={d} value={d}>
+                            {d}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* SECTION 2: AREA, CATEGORY & GENDER */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {/* Area */}
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
-                    1. Area *
+                    2. क्षेत्र (Area) *
                   </label>
                   <div className="grid grid-cols-2 gap-2">
                     {(["Non-TSP", "TSP"] as const).map((a) => (
@@ -324,7 +503,7 @@ export default function BciMarksSurveyPage() {
                 {/* Category */}
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
-                    2. Social Category *
+                    3. सामाजिक श्रेणी (Category) *
                   </label>
                   <select
                     value={category}
@@ -335,7 +514,7 @@ export default function BciMarksSurveyPage() {
                     {area === "Non-TSP" && (
                       <>
                         <option value="EWS">EWS</option>
-                        <option value="OBC">OBC</option>
+                        <option value="OBC">OBC (Non-Creamy)</option>
                         <option value="MBC">MBC</option>
                       </>
                     )}
@@ -347,29 +526,29 @@ export default function BciMarksSurveyPage() {
                 {/* Gender */}
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
-                    3. Gender *
+                    4. लिंग (Gender) *
                   </label>
                   <select
                     value={gender}
                     onChange={(e) => setGender(e.target.value as any)}
                     className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 font-medium"
                   >
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option value="Male">Male (पुरुष)</option>
+                    <option value="Female">Female (महिला)</option>
                     <option value="Other">Other / Prefer not to say</option>
                   </select>
                 </div>
               </div>
 
-              {/* Marks Section */}
+              {/* SECTION 3: MARKS INPUT */}
               <div className="p-5 bg-indigo-50/50 rounded-xl border border-indigo-100 space-y-4">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-indigo-600" />
-                    Enter Marks (As per Answer Key)
+                    5. प्रश्नपत्र अनुसार प्राप्तांक (Marks as per Answer Key)
                   </h3>
                   <span className="text-xs text-indigo-700 font-medium">
-                    Passing Rule: Min {minRequired} marks per paper
+                    पासिंग नियम: प्रति पेपर न्यूनतम {minRequired} अंक
                   </span>
                 </div>
 
@@ -387,7 +566,7 @@ export default function BciMarksSurveyPage() {
                       required
                       value={paper1Marks}
                       onChange={(e) => setPaper1Marks(e.target.value)}
-                      placeholder="e.g. 54.5"
+                      placeholder="उदा. 54.5"
                       className="w-full bg-white border border-slate-300 rounded-lg px-3.5 py-2 text-slate-900 text-base font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     />
                     {validP1 && (
@@ -416,7 +595,7 @@ export default function BciMarksSurveyPage() {
                       required
                       value={paper2Marks}
                       onChange={(e) => setPaper2Marks(e.target.value)}
-                      placeholder="e.g. 48.0"
+                      placeholder="उदा. 48.0"
                       className="w-full bg-white border border-slate-300 rounded-lg px-3.5 py-2 text-slate-900 text-base font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     />
                     {validP2 && (
@@ -473,111 +652,36 @@ export default function BciMarksSurveyPage() {
                 )}
               </div>
 
-              {/* Marks Source */}
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
-                  4. Marks Source *
-                </label>
-                <select
-                  value={marksSource}
-                  onChange={(e) => setMarksSource(e.target.value)}
-                  className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                >
-                  <option value="official_provisional_key">Official Provisional Answer Key</option>
-                  <option value="coaching_key">Coaching Answer Key</option>
-                  <option value="self_calculated">Self Calculated</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
+              {/* SECTION 4: MARKS SOURCE & SHIFT */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                    6. उत्तर कुंजी स्रोत (Marks Source) *
+                  </label>
+                  <select
+                    value={marksSource}
+                    onChange={(e) => setMarksSource(e.target.value)}
+                    className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  >
+                    <option value="official_provisional_key">Official Provisional Answer Key</option>
+                    <option value="coaching_key">Coaching Answer Key</option>
+                    <option value="self_calculated">Self Calculated</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
 
-              {/* Optional Fields Toggle */}
-              <div className="border border-slate-200 rounded-xl p-4 bg-slate-50">
-                <button
-                  type="button"
-                  onClick={() => setShowOptional(!showOptional)}
-                  className="w-full flex items-center justify-between text-left text-sm font-semibold text-slate-700 hover:text-slate-900"
-                >
-                  <span className="flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                    Additional Information (Optional)
-                  </span>
-                  {showOptional ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                </button>
-
-                {showOptional && (
-                  <div className="mt-4 pt-4 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-medium text-slate-600 mb-1">
-                        Candidate Name (Optional)
-                      </label>
-                      <input
-                        type="text"
-                        value={candidateName}
-                        onChange={(e) => setCandidateName(e.target.value)}
-                        placeholder="e.g. Ramesh Kumar"
-                        className="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-sm"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-medium text-slate-600 mb-1">
-                        Home District (Optional)
-                      </label>
-                      <input
-                        type="text"
-                        value={district}
-                        onChange={(e) => setDistrict(e.target.value)}
-                        placeholder="e.g. Jaipur, Jodhpur, Udaipur"
-                        className="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-sm"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-medium text-slate-600 mb-1">
-                        Exam Shift (Optional)
-                      </label>
-                      <input
-                        type="text"
-                        value={shift}
-                        onChange={(e) => setShift(e.target.value)}
-                        placeholder="e.g. Shift 1 / Morning"
-                        className="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-sm"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-medium text-slate-600 mb-1">
-                        Roll Number (Optional - Privacy Protected)
-                      </label>
-                      <input
-                        type="text"
-                        value={rollNumber}
-                        onChange={(e) => setRollNumber(e.target.value)}
-                        placeholder="e.g. 1029384"
-                        className="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-sm"
-                      />
-                      <p className="text-[10px] text-slate-500 mt-0.5">
-                        Never stored in plain text. Stored as a one-way encrypted hash to prevent duplicate entries.
-                      </p>
-                    </div>
-
-                    <div className="sm:col-span-2">
-                      <label className="block text-xs font-medium text-slate-600 mb-1">
-                        Mobile Number (Optional - Never Shared Publicly)
-                      </label>
-                      <input
-                        type="tel"
-                        value={mobile}
-                        onChange={(e) => setMobile(e.target.value)}
-                        placeholder="e.g. 98XXXXXXXX"
-                        className="w-full bg-white border border-slate-300 rounded-lg px-3 py-1.5 text-sm"
-                      />
-                      <p className="text-[10px] text-slate-500 mt-0.5">
-                        Protected by database encryption. Strictly confidential.
-                      </p>
-                    </div>
-                  </div>
-                )}
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">
+                    7. परीक्षा पारी (Exam Shift - Optional)
+                  </label>
+                  <input
+                    type="text"
+                    value={shift}
+                    onChange={(e) => setShift(e.target.value)}
+                    placeholder="उदा. Morning / Shift 1"
+                    className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  />
+                </div>
               </div>
 
               {/* Consent Checkbox */}
@@ -591,9 +695,9 @@ export default function BciMarksSurveyPage() {
                 />
                 <label
                   htmlFor="survey-consent"
-                  className="text-xs text-slate-600 cursor-pointer select-none leading-relaxed"
+                  className="text-xs text-slate-700 cursor-pointer select-none leading-relaxed font-medium"
                 >
-                  I voluntarily provide these self-reported marks for the BCI 2026 statistical survey. I understand this is an independent estimate and not the official RSSB result.
+                  मैं प्रमाणित करता/करती हूँ कि मेरे द्वारा दिए गए मार्क्स एवं परीक्षा विवरण वास्तविक हैं। मैं समझता/समझती हूँ कि यह एक सांख्यिकीय सर्वेक्षण (Survey) है और RSSB का आधिकारिक परिणाम नहीं है।
                 </label>
               </div>
 
@@ -606,12 +710,12 @@ export default function BciMarksSurveyPage() {
                 {loading ? (
                   <>
                     <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Calculating Statistical Metrics...
+                    सत्यापित किया जा रहा है...
                   </>
                 ) : (
                   <>
                     <Calculator className="w-5 h-5" />
-                    Submit Marks & View Candidate Report
+                    Submit Verified Marks & View My Rank Report
                   </>
                 )}
               </button>
@@ -623,35 +727,35 @@ export default function BciMarksSurveyPage() {
         <div className="mt-12 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 space-y-4">
           <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
             <HelpCircle className="w-5 h-5 text-indigo-600" />
-            Methodology & Important Guidelines
+            Anti-Fake & Verification Guidelines (फर्जी डेटा रोकथाम नीति)
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-600">
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-              <h4 className="font-bold text-slate-800 mb-1">Independent Sample Survey</h4>
+              <h4 className="font-bold text-slate-800 mb-1">रोल नंबर आधारित सिंगल एंट्री</h4>
               <p>
-                All data collected on this platform is voluntarily self-reported by aspiring BCI 2026 candidates. Data is processed using weighted statistical sampling to compensate for category mix.
+                प्रत्येक अभ्यर्थी के रोल नंबर को SHA-256 एल्गोरिदम द्वारा सुरक्षित हैश में बदला जाता है। एक रोल नंबर से दोबारा सर्वे नहीं भरा जा सकता, जिससे डुप्लीकेट व फर्जी एंट्री पूर्णतया रुकती है।
               </p>
             </div>
 
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-              <h4 className="font-bold text-slate-800 mb-1">Qualifying Thresholds</h4>
+              <h4 className="font-bold text-slate-800 mb-1">गोपनीयता की 100% गारंटी</h4>
               <p>
-                As per initial rules, candidates must score at least 40% (40/100) per paper for UR/EWS/OBC/MBC and 35% (35/100) for SC/ST. A high score in one paper cannot compensate for failure in another.
+                आपका रोल नंबर और मोबाइल नंबर कभी भी सार्वजनिक रिजल्ट व कट-ऑफ बोर्ड पर नहीं दिखाया जाता। यह केवल फर्जीवाड़े की रोकथाम के लिए डेटाबेस स्तर पर सुरक्षित रखा जाता है।
               </p>
             </div>
 
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-              <h4 className="font-bold text-slate-800 mb-1">Strict Privacy Safeguards</h4>
+              <h4 className="font-bold text-slate-800 mb-1">सीक्रेट एडिट टोकन से मार्क्स अपडेट</h4>
               <p>
-                No candidate names or mobile numbers are displayed on public boards. Roll numbers are irreversibly hashed for duplicate mitigation.
+                फॉर्म सबमिट होते ही आपको 48-अक्षरों का एक सुरक्षित 'Edit Token' मिलता है। भविष्य में यदि बोर्ड की आंसर की बदलती है, तो आप उसी टोकन से अपने मार्क्स अपडेट कर सकेंगे।
               </p>
             </div>
 
             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-              <h4 className="font-bold text-slate-800 mb-1">Edit Anytime with Secret Token</h4>
+              <h4 className="font-bold text-slate-800 mb-1">पारदर्शी कट-ऑफ मॉडल</h4>
               <p>
-                Every submission generates a cryptographic Edit Token. If final answer keys revise your score, you can instantly update your entry.
+                सर्वेक्षण में प्राप्त डेटा को टीएसपी और नॉन-टीएसपी श्रेणियों तथा आरक्षण नियमों के आधार पर विश्लेषित कर सटीक 1x कट-ऑफ रेंज और पर्सेंटाइल निकाला जाता है।
               </p>
             </div>
           </div>

@@ -23,6 +23,44 @@ export async function POST(request: NextRequest) {
       consent,
     } = body;
 
+    // 1. Mandatory Identity Validations to prevent fake / spam entries
+    const cleanName = candidateName?.trim();
+    if (!cleanName || cleanName.length < 3) {
+      return errorResponse(
+        "VALIDATION_ERROR",
+        "कृपया अपना पूरा नाम दर्ज करें (कम से कम 3 अक्षर)।",
+        400
+      );
+    }
+
+    const cleanRoll = rollNumber?.trim();
+    if (!cleanRoll || !/^\d{6,8}$/.test(cleanRoll)) {
+      return errorResponse(
+        "VALIDATION_ERROR",
+        "कृपया अपना मान्य 6 से 8 अंकों का रोल नंबर दर्ज करें।",
+        400
+      );
+    }
+
+    const cleanMobile = mobile?.replace(/\D/g, "");
+    if (!cleanMobile || !/^[6-9]\d{9}$/.test(cleanMobile)) {
+      return errorResponse(
+        "VALIDATION_ERROR",
+        "कृपया अपना मान्य 10 अंकों का मोबाइल नंबर दर्ज करें।",
+        400
+      );
+    }
+
+    const cleanDistrict = district?.trim();
+    if (!cleanDistrict) {
+      return errorResponse(
+        "VALIDATION_ERROR",
+        "कृपया अपना गृह जिला अवश्य चुनें।",
+        400
+      );
+    }
+
+    // 2. Exam fields
     if (!["TSP", "Non-TSP"].includes(area)) {
       return errorResponse("VALIDATION_ERROR", "Invalid area. Must be TSP or Non-TSP", 400);
     }
@@ -35,6 +73,7 @@ export async function POST(request: NextRequest) {
       return errorResponse("VALIDATION_ERROR", "Invalid gender", 400);
     }
 
+    // 3. Marks validation
     const p1 = Number(paper1Marks);
     const p2 = Number(paper2Marks);
 
@@ -62,11 +101,11 @@ export async function POST(request: NextRequest) {
       paper1Marks: Math.round(p1 * 100) / 100,
       paper2Marks: Math.round(p2 * 100) / 100,
       marksSource: marksSource || "official_provisional_key",
-      district,
-      shift,
-      candidateName,
-      mobile,
-      rollNumber,
+      district: cleanDistrict,
+      shift: shift?.trim() || undefined,
+      candidateName: cleanName,
+      mobile: cleanMobile,
+      rollNumber: cleanRoll,
       consent: Boolean(consent),
     };
 
@@ -74,6 +113,11 @@ export async function POST(request: NextRequest) {
     return successResponse(result, 201);
   } catch (error: any) {
     console.error("Error submitting BCI survey:", error);
-    return errorResponse("INTERNAL_ERROR", error.message || "Failed to submit survey", 500);
+    const status = error.message?.includes("पहले ही") ? 409 : 500;
+    return errorResponse(
+      status === 409 ? "CONFLICT" : "INTERNAL_ERROR",
+      error.message || "Failed to submit survey",
+      status
+    );
   }
 }
