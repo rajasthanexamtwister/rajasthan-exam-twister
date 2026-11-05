@@ -209,6 +209,35 @@ export default function BciMarksSurveyPage() {
           </p>
         </div>
 
+        {/* Official Result Announcement Banner */}
+        <div className="mb-8 p-5 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-700 to-emerald-800 text-white shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4 border border-emerald-400/30">
+          <div className="space-y-1 text-center sm:text-left">
+            <span className="inline-block px-2.5 py-0.5 rounded-full bg-white/20 text-[11px] font-bold uppercase tracking-wider">
+              🎉 परिणाम घोषित (Official Result Out)
+            </span>
+            <h3 className="text-base sm:text-lg font-extrabold text-white">
+              RSMSSB द्वारा BCI / SCI 2026 का आधिकारिक परिणाम जारी!
+            </h3>
+            <p className="text-xs text-emerald-100 max-w-xl">
+              बोर्ड द्वारा आधिकारिक प्रोविजनल मेरिट लिस्ट, श्रेणीवार कट-ऑफ एवं स्क्रूटनी फॉर्म शेड्यूल जारी हो चुका है। आधिकारिक कट-ऑफ व पीडीएफ नीचे देखें।
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center gap-2 shrink-0 w-full sm:w-auto">
+            <Link
+              href="/bci-2026-result-tracker"
+              className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-white text-emerald-950 font-extrabold text-xs shadow-md hover:bg-emerald-50 transition text-center"
+            >
+              आधिकारिक कट-ऑफ व मेरिट देखें →
+            </Link>
+            <Link
+              href="/blogs/rsmssb-bci-sci-women-supervisor-result-merit-list-cut-off-2026"
+              className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-emerald-900/60 hover:bg-emerald-900 text-white font-bold text-xs border border-white/20 transition text-center"
+            >
+              विस्तृत DV विश्लेषण गाइड
+            </Link>
+          </div>
+        </div>
+
         {/* Hero Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-semibold mb-3">

@@ -15,6 +15,11 @@ import {
   ArrowRight,
   ShieldAlert,
   Info,
+  Download,
+  FileText,
+  ExternalLink,
+  Trophy,
+  Calendar,
 } from "lucide-react";
 
 export default function BciResultTrackerPage() {
@@ -69,37 +74,227 @@ export default function BciResultTrackerPage() {
           </p>
         </div>
 
-        {/* Hero Section */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold mb-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              Live Candidate Analytics & Cut-off Tracker
-            </div>
-            <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              BCI 2026 Live Result Tracker & Cut-off Model
-            </h1>
-            <p className="mt-1 text-sm sm:text-base text-slate-600">
-              Real-time statistical dashboard based on voluntary candidate marks submissions across Rajasthan.
-            </p>
-          </div>
+        {/* Official Declared Result & PDF Downloads Section */}
+        <div className="mb-10 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-indigo-500/30 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="flex items-center gap-3 shrink-0">
-            <Link
-              href="/bci-2026-marks-survey"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-bold text-sm shadow-md hover:bg-indigo-700 transition"
-            >
-              <Sparkles className="w-4 h-4" />
-              Submit Your Marks Now
-            </Link>
-            <button
-              onClick={fetchAnalytics}
-              disabled={loading}
-              className="p-2.5 rounded-xl bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 transition shadow-sm"
-              title="Refresh Analytics"
-            >
-              <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin text-indigo-600" : ""}`} />
-            </button>
+          <div className="relative z-10">
+            <div className="flex flex-wrap items-center gap-2 mb-3">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold uppercase tracking-wider">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                आधिकारिक परिणाम घोषित (Official Result Out)
+              </span>
+              <span className="text-xs text-slate-300 flex items-center gap-1">
+                <Calendar className="w-3.5 h-3.5 text-indigo-400" />
+                बोर्ड परिणाम घोषणा: 04 नवंबर 2026
+              </span>
+            </div>
+
+            <h2 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+              RSMSSB कंप्यूटर अनुदेशक (BCI / SCI 2026) आधिकारिक मेरिट व श्रेणीवार कट-ऑफ
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-3xl mb-6">
+              राजस्थान कर्मचारी चयन बोर्ड (RSSB जयपुर) द्वारा बेसिक कंप्यूटर अनुदेशक (BCI) व वरिष्ठ कंप्यूटर अनुदेशक (SCI) का प्रोविजनल परिणाम एवं दस्तावेज़ सत्यापन (DV) हेतु आधिकारिक कट-ऑफ जारी कर दिया गया है।
+            </p>
+
+            {/* Quick Action Download Buttons */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+              <a
+                href="https://rssb.rajasthan.gov.in/storage/result_item/1793800804.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 transition group backdrop-blur-sm"
+              >
+                <div>
+                  <div className="text-xs text-emerald-300 font-semibold">बेसिक कंप्यूटर अनुदेशक</div>
+                  <div className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
+                    BCI TSP Merit PDF
+                  </div>
+                </div>
+                <Download className="w-4 h-4 text-emerald-400 group-hover:translate-y-0.5 transition-transform shrink-0" />
+              </a>
+
+              <a
+                href="https://rssb.rajasthan.gov.in/storage/result_item/1793800830.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 transition group backdrop-blur-sm"
+              >
+                <div>
+                  <div className="text-xs text-amber-300 font-semibold">वरिष्ठ कंप्यूटर अनुदेशक</div>
+                  <div className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
+                    SCI Cut-Off & Result
+                  </div>
+                </div>
+                <Download className="w-4 h-4 text-amber-400 group-hover:translate-y-0.5 transition-transform shrink-0" />
+              </a>
+
+              <a
+                href="https://rssb.rajasthan.gov.in/storage/result_item/1793800878.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 transition group backdrop-blur-sm"
+              >
+                <div>
+                  <div className="text-xs text-sky-300 font-semibold">वरिष्ठ कंप्यूटर अनुदेशक</div>
+                  <div className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
+                    SCI TSP Merit PDF
+                  </div>
+                </div>
+                <Download className="w-4 h-4 text-sky-400 group-hover:translate-y-0.5 transition-transform shrink-0" />
+              </a>
+
+              <Link
+                href="/blogs/rsmssb-bci-sci-women-supervisor-result-merit-list-cut-off-2026"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition group shadow-lg shadow-amber-500/20"
+              >
+                <div>
+                  <div className="text-[11px] text-slate-900 font-semibold">विस्तृत विश्लेषण गाइड</div>
+                  <div className="text-sm font-black">कट-ऑफ व DV स्क्रूटनी →</div>
+                </div>
+                <ExternalLink className="w-4 h-4 text-slate-950 group-hover:translate-x-0.5 transition-transform shrink-0" />
+              </Link>
+            </div>
+
+            {/* Official Cut-Off & Toppers Summary Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-4 border-t border-white/10">
+              {/* Official Cut-Off Table (SCI Non-TSP & TSP) */}
+              <div className="bg-white/5 rounded-2xl p-4 sm:p-5 border border-white/10 backdrop-blur-md">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-sm font-bold text-amber-300 flex items-center gap-2">
+                    <Award className="w-4 h-4 text-amber-400" />
+                    वरिष्ठ कंप्यूटर अनुदेशक (SCI) आधिकारिक कट-ऑफ अंक
+                  </h3>
+                  <span className="text-[11px] text-slate-400">Non-TSP / TSP</span>
+                </div>
+
+                <div className="overflow-x-auto">
+                  <table className="w-full text-xs text-left">
+                    <thead className="bg-white/10 text-slate-200">
+                      <tr>
+                        <th className="py-2 px-3 rounded-l">श्रेणी (Category)</th>
+                        <th className="py-2 px-3">सामान्य (Male)</th>
+                        <th className="py-2 px-3 rounded-r">महिला (Female)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/5 text-slate-300">
+                      <tr>
+                        <td className="py-2 px-3 font-semibold text-white">अनारक्षित (GEN)</td>
+                        <td className="py-2 px-3 text-emerald-400 font-bold">102.2729</td>
+                        <td className="py-2 px-3 text-emerald-300">93.7291</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2 px-3 font-semibold text-white">आर्थिक रूप से कमजोर (EWS)</td>
+                        <td className="py-2 px-3 font-bold text-white">82.9095</td>
+                        <td className="py-2 px-3">82.9095</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2 px-3 font-semibold text-white">अन्य पिछड़ा वर्ग (OBC)</td>
+                        <td className="py-2 px-3 text-amber-400 font-bold">84.0802</td>
+                        <td className="py-2 px-3 text-amber-300">80.7875</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2 px-3 font-semibold text-white">अनुसूचित जाति (SC)</td>
+                        <td className="py-2 px-3 font-bold text-white">71.6547</td>
+                        <td className="py-2 px-3">71.6547</td>
+                      </tr>
+                      <tr>
+                        <td className="py-2 px-3 font-semibold text-white">अनुसूचित जनजाति (ST)</td>
+                        <td className="py-2 px-3 font-bold text-white">82.9303</td>
+                        <td className="py-2 px-3">74.6044</td>
+                      </tr>
+                      <tr className="bg-indigo-900/30">
+                        <td className="py-2 px-3 font-semibold text-indigo-300">TSP - अनारक्षित (GEN)</td>
+                        <td className="py-2 px-3 font-bold text-indigo-200" colSpan={2}>
+                          80.8182 (पुरुष एवं महिला)
+                        </td>
+                      </tr>
+                      <tr className="bg-indigo-900/30">
+                        <td className="py-2 px-3 font-semibold text-indigo-300">TSP - जनजाति (ST)</td>
+                        <td className="py-2 px-3 font-bold text-indigo-200" colSpan={2}>
+                          79.6957 (सामान्य पुरुष)
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* BCI Top Rankers & Key Notes */}
+              <div className="bg-white/5 rounded-2xl p-4 sm:p-5 border border-white/10 backdrop-blur-md flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-sm font-bold text-emerald-300 flex items-center gap-2">
+                      <Trophy className="w-4 h-4 text-emerald-400" />
+                      बेसिक कंप्यूटर अनुदेशक (BCI TSP) राज्य टॉपर मेरिट
+                    </h3>
+                    <span className="text-[11px] text-slate-400">Roll No. & Marks</span>
+                  </div>
+
+                  <div className="space-y-2 text-xs">
+                    <div className="flex items-center justify-between p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+                      <div className="flex items-center gap-2">
+                        <span className="w-5 h-5 rounded-full bg-emerald-500 text-slate-950 font-black text-[10px] flex items-center justify-center">
+                          1
+                        </span>
+                        <span className="font-bold text-white">दुर्गेश शर्मा (Roll: 2328278)</span>
+                      </div>
+                      <span className="font-mono font-extrabold text-emerald-400">155.1361 अंक</span>
+                    </div>
+
+                    <div className="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                      <div className="flex items-center gap-2">
+                        <span className="w-5 h-5 rounded-full bg-slate-700 text-white font-bold text-[10px] flex items-center justify-center">
+                          2
+                        </span>
+                        <span className="font-semibold text-slate-200">शैलेश पटेल (Roll: 2331560)</span>
+                      </div>
+                      <span className="font-mono font-bold text-slate-300">131.9524 अंक</span>
+                    </div>
+
+                    <div className="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                      <div className="flex items-center gap-2">
+                        <span className="w-5 h-5 rounded-full bg-slate-700 text-white font-bold text-[10px] flex items-center justify-center">
+                          3
+                        </span>
+                        <span className="font-semibold text-slate-200">राकेश जन्नावत (Roll: 2332529)</span>
+                      </div>
+                      <span className="font-mono font-bold text-slate-300">127.6803 अंक</span>
+                    </div>
+
+                    <div className="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                      <div className="flex items-center gap-2">
+                        <span className="w-5 h-5 rounded-full bg-slate-700 text-white font-bold text-[10px] flex items-center justify-center">
+                          4
+                        </span>
+                        <span className="font-semibold text-slate-200">नरहरि गोगरोत (Roll: 2326096)</span>
+                      </div>
+                      <span className="font-mono font-bold text-slate-300">127.1361 अंक</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-4 pt-3 border-t border-white/10 text-[11px] text-slate-300 flex items-start gap-2">
+                  <Info className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <div>
+                    <strong>स्क्रूटनी फॉर्म शेड्यूल:</strong> चयनित अभ्यर्थी SSO पोर्टल (Recruitment Portal) पर <strong>12 नवंबर से 21 नवंबर 2026</strong> तक विस्तृत संवीक्षा फॉर्म ऑनलाइन भरकर DV हेतु प्रस्तुत करेंगे।
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Section Header for Survey Research Archive */}
+        <div className="mb-4 flex items-center justify-between">
+          <div>
+            <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <BarChart3 className="w-5 h-5 text-indigo-600" />
+              सांख्यिकीय सर्वेक्षण व पूर्व-अनुमान विश्लेषण (Survey Research Pool)
+            </h3>
+            <p className="text-xs text-slate-500">
+              परीक्षा पूर्व अभ्यर्थियों द्वारा दर्ज किए गए स्व-घोषित प्राप्तांकों का तुलनात्मक डेटाबेस एवं पर्सेंटाइल मॉडल।
+            </p>
           </div>
         </div>
 
