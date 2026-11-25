@@ -43,12 +43,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
-      url: `${siteUrl}/search`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
       url: `${siteUrl}/about`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -77,18 +71,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/leaderboard`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/books`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
     },
     {
       url: `${siteUrl}/disclaimer`,
@@ -174,23 +156,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       };
     });
 
-    // Query published SEO questions
-    const { QuestionSeoRepository } = await import("@/server/repositories/question-seo");
-    const publishedQuestions = await QuestionSeoRepository.listPublishedQuestionSlugs().catch(() => []);
-    const questionRoutes: MetadataRoute.Sitemap = publishedQuestions.map((q) => ({
-      url: `${siteUrl}/questions/${q.seoSlug}`,
-      lastModified: q.updatedAt || new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    }));
-
     return [
       ...staticRoutes,
       ...blogRoutes,
       ...noteRoutes,
       ...quizRoutes,
       ...testSeriesRoutes,
-      ...questionRoutes,
     ];
   } catch (err) {
     console.error("Error generating sitemap:", err);

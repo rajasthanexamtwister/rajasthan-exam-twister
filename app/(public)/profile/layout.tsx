@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Student Profile & Analytics",
-  description: "Student practice dashboard, attempt history, and personalized revision tracking.",
+  title: "Student Profile",
   robots: {
     index: false,
     follow: false,
@@ -10,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function ProfileLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return children;
 }
