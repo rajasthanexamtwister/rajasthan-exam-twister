@@ -73,42 +73,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     },
     {
-      url: `${siteUrl}/bci-2026-marks-survey`,
-      lastModified: new Date(),
-      changeFrequency: "always",
-      priority: 1.0,
-    },
-    {
-      url: `${siteUrl}/bci-2026-result-tracker`,
-      lastModified: new Date(),
-      changeFrequency: "always",
-      priority: 1.0,
-    },
-    {
-      url: `${siteUrl}/bci-2026-cutoff-analysis`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/bci-2026/tsp`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/bci-2026/non-tsp`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.8,
-    },
-    {
-      url: `${siteUrl}/bci-2026/category-analysis`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 0.8,
-    },
-    {
       url: `${siteUrl}/test-series`,
       lastModified: new Date(),
       changeFrequency: "daily",

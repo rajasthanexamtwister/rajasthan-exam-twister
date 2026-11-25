@@ -34,7 +34,6 @@ import { SOCIAL_LINKS } from "@/server/lib/social-links";
 // Streamlined top navigation items for desktop to avoid clutter
 const primaryNavItems = [
   { name: "Home", href: "/" },
-  { name: "BCI 2026 Survey", href: "/bci-2026-marks-survey", isHighlight: true },
   { name: "Test Series", href: "/test-series" },
   { name: "Free Quizzes", href: "/quizzes", isQuiz: true },
   { name: "Exam Notes", href: "/notes" },
@@ -43,7 +42,6 @@ const primaryNavItems = [
 ];
 
 const moreNavItems = [
-  { name: "BCI Live Results Tracker", href: "/bci-2026-result-tracker", icon: Trophy, desc: "Live Cut-off & Marks Analytics" },
   { name: "Recommended Books", href: "/books", icon: BookOpen, desc: "Curated Exam Prep Books & Store" },
   { name: "Revision Notebook", href: "/notebook", icon: Bookmark, desc: "Saved MCQs & Study Sheets" },
   { name: "State Leaderboard", href: "/leaderboard", icon: Trophy, desc: "Rajasthan Student Rankings" },
@@ -141,11 +139,7 @@ export function PublicHeader() {
                     href={item.href}
                     className={clsx(
                       "px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1.5",
-                      item.isHighlight
-                        ? isActive
-                          ? "bg-indigo-600 text-white shadow-xs"
-                          : "bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border border-indigo-200 shadow-2xs"
-                        : item.isQuiz
+                      item.isQuiz
                         ? isActive
                           ? "bg-amber-500 text-[#0B132B] shadow-xs"
                           : "bg-amber-100/80 text-amber-950 hover:bg-amber-200 border border-amber-300/80 shadow-2xs"
@@ -154,7 +148,6 @@ export function PublicHeader() {
                         : "text-slate-700 hover:text-amber-800 hover:bg-amber-50/70"
                     )}
                   >
-                    {item.isHighlight && <Sparkles className="w-3.5 h-3.5 text-indigo-600" />}
                     {item.isQuiz && <Flame className="w-3.5 h-3.5 text-amber-700" />}
                     <span>{item.name}</span>
                   </Link>
@@ -502,23 +495,6 @@ export function PublicHeader() {
                 <div className="text-[10px] font-bold text-amber-800 uppercase tracking-wider px-3 py-1 font-devanagari">
                   मुख्य अध्ययन भाग (Core Modules)
                 </div>
-                
-                <Link
-                  href="/bci-2026-marks-survey"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={clsx(
-                    "flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all min-h-[44px]",
-                    pathname.startsWith("/bci-2026") ? "bg-indigo-600 text-white font-bold shadow-xs" : "bg-indigo-50/70 text-indigo-900 border border-indigo-200/60 hover:bg-indigo-100"
-                  )}
-                >
-                  <span className="flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                    <span>BCI 2026 Marks Survey & Cut-off</span>
-                  </span>
-                  <span className="text-[9px] font-bold bg-amber-400 text-slate-950 px-1.5 py-0.5 rounded-md">
-                    LIVE
-                  </span>
-                </Link>
 
                 <Link
                   href="/"

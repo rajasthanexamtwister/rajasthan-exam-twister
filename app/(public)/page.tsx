@@ -172,47 +172,6 @@ export default async function HomePage() {
             </picture>
           </div>
 
-          {/* BCI 2026 Marks Survey & Cut-off Estimator Announcement Banner */}
-          <div className="bg-gradient-to-r from-indigo-950 via-slate-900 to-indigo-900 border-2 border-indigo-500/40 rounded-2xl p-4 sm:p-5 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3.5 text-left">
-              <div className="w-11 h-11 rounded-xl bg-indigo-500/20 border border-indigo-400/30 flex items-center justify-center shrink-0">
-                <Sparkles className="w-5 h-5 text-amber-400 animate-pulse" />
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-400 text-slate-950 uppercase tracking-wider">
-                    LIVE NOW
-                  </span>
-                  <span className="text-xs text-indigo-300 font-bold">
-                    Basic Computer Instructor (BCI) 2026
-                  </span>
-                </div>
-                <h3 className="text-sm sm:text-base font-bold text-white mt-0.5">
-                  BCI 2026 Marks Survey & Category Cut-off Estimator
-                </h3>
-                <p className="text-xs text-slate-300">
-                  Self-reported marks survey • Instant percentile & sample rank range • Unofficial statistical estimate
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2.5 shrink-0 w-full md:w-auto">
-              <Link
-                href="/bci-2026-marks-survey"
-                className="flex-1 md:flex-initial inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs sm:text-sm shadow-md transition"
-              >
-                <span>Enter Marks</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/bci-2026-result-tracker"
-                className="flex-1 md:flex-initial inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm border border-white/20 transition"
-              >
-                <span>Live Tracker</span>
-              </Link>
-            </div>
-          </div>
-
           {/* Hero Content & Primary Call-to-Actions */}
           <div className="text-center max-w-3xl mx-auto space-y-5">
             <div className="flex flex-wrap items-center justify-center gap-2">

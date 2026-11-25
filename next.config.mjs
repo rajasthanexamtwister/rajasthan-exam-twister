@@ -71,6 +71,26 @@ const nextConfig = {
         destination: "/notes/rajasthan-mela-tyohar-combined",
         permanent: true,
       },
+      {
+        source: "/bci-2026-marks-survey/:path*",
+        destination: "/blogs/rsmssb-bci-sci-women-supervisor-result-merit-list-cut-off-2026",
+        permanent: true,
+      },
+      {
+        source: "/bci-2026-result-tracker",
+        destination: "/blogs/rsmssb-bci-sci-women-supervisor-result-merit-list-cut-off-2026",
+        permanent: true,
+      },
+      {
+        source: "/bci-2026-cutoff-analysis",
+        destination: "/blogs/rsmssb-bci-sci-women-supervisor-result-merit-list-cut-off-2026",
+        permanent: true,
+      },
+      {
+        source: "/bci-2026/:path*",
+        destination: "/blogs/rsmssb-bci-sci-women-supervisor-result-merit-list-cut-off-2026",
+        permanent: true,
+      },
     ];
   },
   async headers() {
