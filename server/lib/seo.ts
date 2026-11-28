@@ -7,12 +7,15 @@ export function getSiteUrl(): string {
 
   // Guard against missing, empty, or literal placeholder env strings
   if (!url || url.includes("NEXT_PUBLIC_SITE_URL") || url === "undefined" || url === "null") {
-    url = "https://www.rajasthanexamtwister.in";
+    url = "https://rajasthanexamtwister.in";
   }
 
   if (!url.startsWith("http://") && !url.startsWith("https://")) {
     url = `https://${url}`;
   }
+
+  // Canonicalize primary domain without www
+  url = url.replace(/^(https?:\/\/)www\.rajasthanexamtwister\.in/i, "$1rajasthanexamtwister.in");
 
   return url.replace(/\/$/, "");
 }

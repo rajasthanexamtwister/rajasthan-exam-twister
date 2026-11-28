@@ -6,6 +6,7 @@ import { OFFICIAL_SOCIAL_URLS } from "@/server/lib/social-links";
 import { PublicSessionProvider } from "@/components/providers/session-provider";
 import { GoogleConsentScripts } from "@/components/privacy/google-consent-scripts";
 import { ConsentBanner } from "@/components/privacy/consent-banner";
+import { AdSenseLoader } from "@/components/public/adsense-loader";
 import "./globals.css";
 
 const headingFont = Outfit({
@@ -169,13 +170,8 @@ export default function RootLayout({
         {/* Google Consent Mode v2 & Google Analytics 4 Script */}
         <GoogleConsentScripts />
 
-        {/* Google AdSense Script - afterInteractive ensures review bot & crawlers detect script immediately */}
-        <Script
-          id="google-adsense"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1617995815866036"
-          strategy="afterInteractive"
-          crossOrigin="anonymous"
-        />
+        {/* Google AdSense Script (excluded on admin/login, search, notebook, and active quiz attempt/result routes) */}
+        <AdSenseLoader />
 
         {/* Site-wide Organization + WebSite structured data */}
         <script

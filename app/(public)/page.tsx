@@ -4,9 +4,9 @@ import Image from "next/image";
 import { connectToDatabase } from "@/server/lib/mongodb";
 import { Blog } from "@/server/models/Blog";
 import { Note } from "@/server/models/Note";
-import { Category } from "@/server/models/Category";
+import { CategoryRepository, PopulatedCategorySummary } from "@/server/repositories/category";
 import { Quiz } from "@/server/models/Quiz";
-import { getSiteUrl } from "@/server/lib/seo";
+import { getSiteUrl, generateMetaDescription } from "@/server/lib/seo";
 import { SOCIAL_LINKS, OFFICIAL_SOCIAL_URLS } from "@/server/lib/social-links";
 import {
   Search,
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
 export default async function HomePage() {
   let recentBlogs: any[] = [];
   let recentNotes: any[] = [];
-  let categories: any[] = [];
+  let categories: PopulatedCategorySummary[] = [];
   let publishedQuizzesCount = 0;
 
   try {
@@ -87,7 +87,7 @@ export default async function HomePage() {
         .sort({ publishedAt: -1, createdAt: -1 })
         .limit(6)
         .lean(),
-      Category.find().sort({ name: 1 }).lean(),
+      CategoryRepository.listActiveWithCounts(),
       Quiz.countDocuments({ status: "PUBLISHED" }),
     ]);
 
@@ -389,8 +389,8 @@ export default async function HomePage() {
             <div className="flex flex-wrap gap-2 pt-1">
               {categories.map((cat) => (
                 <Link
-                  key={cat._id.toString()}
-                  href={`/notes?category=${cat.slug}`}
+                  key={cat._id}
+                  href={cat.href}
                   className="px-3.5 py-2 rounded-xl text-xs font-semibold bg-white hover:bg-amber-100/80 hover:text-amber-950 text-slate-700 border border-amber-200/80 transition-all hover:border-amber-400 shadow-2xs"
                 >
                   {cat.name}
@@ -503,9 +503,9 @@ export default async function HomePage() {
                       {note.title}
                     </Link>
 
-                    {note.content && (
+                    {(note.summary || note.content) && (
                       <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed font-devanagari">
-                        {note.content.replace(/<[^>]*>/g, " ")}
+                        {note.summary?.trim() || generateMetaDescription(note.content, null, null, 140)}
                       </p>
                     )}
                   </div>

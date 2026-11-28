@@ -24,8 +24,7 @@ export default async function PublicLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const categories = await CategoryRepository.list().catch(() => []);
-  const topCategories = categories.slice(0, 6);
+  const topCategories = (await CategoryRepository.listActiveWithCounts().catch(() => [])).slice(0, 6);
 
   return (
     <>
@@ -180,9 +179,9 @@ export default async function PublicLayout({
               {topCategories.length > 0 ? (
                 <ul className="space-y-2 text-xs">
                   {topCategories.map((cat) => (
-                    <li key={cat._id.toString()}>
+                    <li key={cat._id}>
                       <Link
-                        href={`/notes?category=${cat.slug}`}
+                        href={cat.href}
                         className="text-slate-300 hover:text-amber-300 transition-colors flex items-center justify-between group"
                       >
                         <span>{cat.name}</span>

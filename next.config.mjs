@@ -27,6 +27,12 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.rajasthanexamtwister.in" }],
+        destination: "https://rajasthanexamtwister.in/:path*",
+        permanent: true,
+      },
+      {
         source: "/blogs/2026-27",
         destination: "/blogs/cm-anuprati-coaching-yojana-2026-27",
         permanent: true,

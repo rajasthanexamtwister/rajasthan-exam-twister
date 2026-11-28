@@ -1,9 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { connectToDatabase } from "@/server/lib/mongodb";
-import { Category } from "@/server/models/Category";
-import { Blog } from "@/server/models/Blog";
-import { Note } from "@/server/models/Note";
+import { CategoryRepository, PopulatedCategorySummary } from "@/server/repositories/category";
 import { getSiteUrl } from "@/server/lib/seo";
 import { FolderTree, BookOpen, FileText, ArrowRight, ChevronRight, Sparkles } from "lucide-react";
 
@@ -24,38 +21,11 @@ export const metadata: Metadata = {
   },
 };
 
-interface CategoryWithCounts {
-  _id: string;
-  name: string;
-  slug: string;
-  blogCount: number;
-  noteCount: number;
-}
-
 export default async function PublicCategoriesPage() {
-  let categoriesWithCounts: CategoryWithCounts[] = [];
+  let categoriesWithCounts: PopulatedCategorySummary[] = [];
 
   try {
-    await connectToDatabase();
-
-    const categories = await Category.find().sort({ name: 1 }).lean();
-
-    categoriesWithCounts = await Promise.all(
-      categories.map(async (cat) => {
-        const [blogCount, noteCount] = await Promise.all([
-          Blog.countDocuments({ categoryId: cat._id, status: "PUBLISHED" }),
-          Note.countDocuments({ categoryId: cat._id, status: "PUBLISHED" }),
-        ]);
-
-        return {
-          _id: cat._id.toString(),
-          name: cat.name,
-          slug: cat.slug,
-          blogCount,
-          noteCount,
-        };
-      })
-    );
+    categoriesWithCounts = await CategoryRepository.listActiveWithCounts();
   } catch (err) {
     console.warn("PublicCategoriesPage: Database unavailable during static build, using empty fallback:", err);
   }
@@ -162,20 +132,26 @@ export default async function PublicCategoriesPage() {
                     </div>
 
                     <div className="pt-4 border-t border-amber-100 mt-4 flex items-center justify-between gap-2">
-                      <Link
-                        href={`/notes?category=${cat.slug}`}
-                        className="text-xs font-bold text-amber-700 hover:text-amber-800 flex items-center gap-1 font-heading"
-                      >
-                        <span>View Notes</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
+                      {cat.noteCount > 0 ? (
+                        <Link
+                          href={`/notes?category=${cat.slug}`}
+                          className="text-xs font-bold text-amber-700 hover:text-amber-800 flex items-center gap-1 font-heading"
+                        >
+                          <span>View Notes</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      ) : (
+                        <span />
+                      )}
 
-                      <Link
-                        href={`/blogs?category=${cat.slug}`}
-                        className="text-xs font-semibold text-slate-500 hover:text-slate-800 transition-colors font-sans"
-                      >
-                        Articles &rarr;
-                      </Link>
+                      {cat.blogCount > 0 && (
+                        <Link
+                          href={`/blogs?category=${cat.slug}`}
+                          className="text-xs font-bold text-blue-700 hover:text-blue-800 transition-colors font-sans"
+                        >
+                          View Articles &rarr;
+                        </Link>
+                      )}
                     </div>
                   </div>
                 );
